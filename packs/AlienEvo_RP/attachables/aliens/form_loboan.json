@@ -1,0 +1,56 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alienevo:form_loboan",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha",
+        "translucent": "entity_alphablend"
+      },
+      "textures": {
+        "part0": "textures/entity/aliens/loboan_0",
+        "part0_glow": "textures/entity/aliens/loboan_0_glow",
+        "part1": "textures/entity/aliens/loboan_1",
+        "part1_glow": "textures/entity/aliens/loboan_1_glow"
+      },
+      "geometry": {
+        "part0": "geometry.alienevo.loboan_0",
+        "part1": "geometry.alienevo.loboan_1"
+      },
+      "scripts": {
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "animate": [
+          "loop0",
+          "triggers"
+        ]
+      },
+      "render_controllers": [
+        {
+          "controller.render.alienevo.loboan_0": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.loboan_0_glow": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.loboan_1": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.loboan_1_glow": "!c.is_first_person"
+        }
+      ],
+      "animations": {
+        "loop0": "animation.alienevo.loboan.loboan.idle",
+        "t1": "animation.alienevo.loboan.loboan.rpunch",
+        "t2": "animation.alienevo.loboan.loboan.lpunch",
+        "t3": "animation.alienevo.loboan.loboan.mouth",
+        "t4": "animation.alienevo.loboan.loboan.mouthnt",
+        "t5": "animation.alienevo.loboan.loboan.sprint2",
+        "t6": "animation.alienevo.loboan.loboan.sprintnt",
+        "t7": "animation.alienevo.loboan.loboan.megamouth",
+        "t8": "animation.alienevo.loboan.loboan.bite",
+        "triggers": "controller.animation.alienevo.loboan"
+      }
+    }
+  }
+}

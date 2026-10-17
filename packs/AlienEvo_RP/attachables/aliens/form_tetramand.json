@@ -12,13 +12,13 @@
         "part0": "textures/entity/aliens/tetramand_0",
         "part0_glow": "textures/entity/aliens/tetramand_0_glow",
         "part1": "textures/entity/aliens/tetramand_1",
-        "badge": "textures/entity/aliens/badge",
-        "badge_glow": "textures/entity/aliens/badge_glow"
+        "part2": "textures/entity/aliens/tetramand_2",
+        "part2_glow": "textures/entity/aliens/tetramand_2_glow"
       },
       "geometry": {
         "part0": "geometry.alienevo.tetramand_0",
         "part1": "geometry.alienevo.tetramand_1",
-        "badge": "geometry.alienevo.tetramand_badge"
+        "part2": "geometry.alienevo.tetramand_2"
       },
       "scripts": {
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"
@@ -34,10 +34,10 @@
           "controller.render.alienevo.tetramand_1": "!c.is_first_person"
         },
         {
-          "controller.render.alienevo.badge": "!c.is_first_person"
+          "controller.render.alienevo.tetramand_2": "!c.is_first_person"
         },
         {
-          "controller.render.alienevo.badge_glow": "!c.is_first_person"
+          "controller.render.alienevo.tetramand_2_glow": "!c.is_first_person"
         }
       ]
     }

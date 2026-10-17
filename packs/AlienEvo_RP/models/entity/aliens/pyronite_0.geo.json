@@ -242,7 +242,7 @@
           ]
         },
         {
-          "name": "head",
+          "name": "head_inner",
           "parent": "head",
           "pivot": [
             0,
@@ -418,7 +418,7 @@
         },
         {
           "name": "mask",
-          "parent": "head",
+          "parent": "head_inner",
           "pivot": [
             0,
             32.32628,

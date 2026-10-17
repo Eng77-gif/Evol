@@ -1,0 +1,56 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alienevo:form_perkgourmand",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha",
+        "translucent": "entity_alphablend"
+      },
+      "textures": {
+        "part0": "textures/entity/aliens/perkgourmand_0",
+        "part0_glow": "textures/entity/aliens/perkgourmand_0_glow",
+        "part1": "textures/entity/aliens/perkgourmand_1",
+        "part1_glow": "textures/entity/aliens/perkgourmand_1_glow"
+      },
+      "geometry": {
+        "part0": "geometry.alienevo.perkgourmand_0",
+        "part1": "geometry.alienevo.perkgourmand_1"
+      },
+      "scripts": {
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "animate": [
+          "loop0",
+          "triggers"
+        ]
+      },
+      "render_controllers": [
+        {
+          "controller.render.alienevo.perkgourmand_0": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.perkgourmand_0_glow": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.perkgourmand_1": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.perkgourmand_1_glow": "!c.is_first_person"
+        }
+      ],
+      "animations": {
+        "loop0": "animation.alienevo.perkgourmand.tail",
+        "t1": "animation.alienevo.perkgourmand.bite",
+        "t2": "animation.alienevo.perkgourmand.shoot",
+        "t3": "animation.alienevo.perkgourmand.open_mouth",
+        "t4": "animation.alienevo.perkgourmand.spin2",
+        "t5": "animation.alienevo.perkgourmand.tummyache",
+        "t6": "animation.alienevo.perkgourmand.untummyache",
+        "t7": "animation.alienevo.perkgourmand.kaboom",
+        "t8": "animation.alienevo.perkgourmand.idle",
+        "triggers": "controller.animation.alienevo.perkgourmand"
+      }
+    }
+  }
+}

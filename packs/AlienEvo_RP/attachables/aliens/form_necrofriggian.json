@@ -9,23 +9,25 @@
         "translucent": "entity_alphablend"
       },
       "textures": {
-        "part0": "textures/entity/aliens/necrofriggian_0",
-        "part0_glow": "textures/entity/aliens/necrofriggian_0_glow"
+        "part0": "textures/entity/aliens/necrofriggian_0"
       },
       "geometry": {
         "part0": "geometry.alienevo.necrofriggian_0"
       },
       "scripts": {
-        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "animate": [
+          "loop0"
+        ]
       },
       "render_controllers": [
         {
           "controller.render.alienevo.necrofriggian_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.necrofriggian_0_glow": "!c.is_first_person"
         }
-      ]
+      ],
+      "animations": {
+        "loop0": "animation.alienevo.necrofriggian.bigchill.cloak_on"
+      }
     }
   }
 }

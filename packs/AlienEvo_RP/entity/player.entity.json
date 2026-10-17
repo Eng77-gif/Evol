@@ -23,7 +23,8 @@
           "variable.is_holding_right = 0.0;",
           "variable.is_blinking = 0.0;",
           "variable.last_blink_time = 0.0;",
-          "variable.hand_bob = 0.0;"
+          "variable.hand_bob = 0.0;",
+          "v.alienevo_anim = 0.0;"
         ],
         "pre_animation": [
           "variable.helmet_layer_visible = !query.has_head_gear;",
@@ -38,7 +39,7 @@
           "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;",
           "variable.riding_y_offset = query.is_riding_any_entity_of_type('minecraft:minecart', 'minecraft:boat', 'minecraft:chest_boat', 'minecraft:strider') ? -3.0 : 0.0;",
           "v.alienevo_is_alien = q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form');",
-          "v.alienevo_scale = q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_arburian_pelarota') ? 0.818 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_ectonurite') ? 1.236 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_galvanic_mechamorph') ? 1.182 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_piscciss_volann') ? 1.091 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_lepidopterran') ? 0.673 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_tetramand') ? 1.364 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_galvan') ? 0.909 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_kineceleran') ? 1.182 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_petrosapien') ? 1.127 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_vulpimancer') ? 0.945 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_pyronite') ? 1.036 : (1.0)))))))))));"
+          "v.alienevo_scale = q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_oryctini') ? 1.091 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_splixson') ? 1.091 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_ickthyperambuloid') ? 1.091 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_merlinisapien') ? 1.091 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_florauna') ? 1.273 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_transylian') ? 1.036 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_loboan') ? 1.036 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_orishan') ? 1.091 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_murkgourmand') ? 0.727 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_perkgourmand') ? 0.727 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_opticoid') ? 1.273 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_arburian_pelarota') ? 0.818 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_ectonurite') ? 1.236 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_galvanic_mechamorph') ? 1.182 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_piscciss_volann') ? 1.091 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_lepidopterran') ? 0.673 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_tetramand') ? 1.364 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_galvan') ? 0.909 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_kineceleran') ? 1.182 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_petrosapien') ? 1.127 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_vulpimancer') ? 0.945 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_pyronite') ? 1.036 : (1.0))))))))))))))))))))));"
         ],
         "animate": [
           "root",
@@ -52,7 +53,8 @@
           "variable.fp_melee_spear_attack_attachable_rotation_z": "public",
           "variable.tp_melee_spear_attack_attachable_position_z": "public",
           "variable.attack_time": "public",
-          "variable.item_use_normalized": "public"
+          "variable.item_use_normalized": "public",
+          "variable.alienevo_anim": "public"
         },
         "should_update_effects_offscreen": "1.0"
       },

@@ -7,7 +7,7 @@ import { shoot } from "./projectiles.js";
 import { getEnergy, setEnergy } from "./state.js";
 import {
     add, beam, coneTargets, effect, flatView, hurt, knockFrom, launch, nearbyTargets,
-    particle, rotateY, scale, sound,
+    normalize, particle, rotateY, scale, sound,
 } from "./util.js";
 
 /** @typedef {import("@minecraft/server").Player} Player */
@@ -705,7 +705,372 @@ export const ABILITIES = {
             }
         },
     },
+    // ---------------------------------------------------------------- eye guy
+    eye_beam: {
+        name: "Eye Beam", desc: "Fire laser beams from your eyes.", cooldown: 20,
+        run: (p) => {
+            const { targets } = beam(p, 32, "minecraft:electric_spark_particle");
+            for (const e of targets) hurt(e, 8, p, "magic");
+            sound(p, "alienevo.omni_extras.eyebeam");
+        },
+    },
+    super_eye_beam: {
+        name: "Super Eye Beam", desc: "Every eye fires at once.", cooldown: 140,
+        run: (p) => {
+            const { targets, end } = beam(p, 40, "minecraft:basic_flame_particle");
+            for (const e of targets) hurt(e, 14, p, "magic");
+            try {
+                p.dimension.createExplosion(end, 2.5, { breaksBlocks: false, causesFire: false, source: p });
+            } catch {
+                // Ignore.
+            }
+            sound(p, "alienevo.omni_extras.otherbeam");
+        },
+    },
+    elemental_eyes: {
+        name: "Elemental Eyes", desc: "Burn, freeze or shock everything around you.", cooldown: 120,
+        run: (p) => {
+            const mode = Math.floor(Math.random() * 3);
+            const particleId = ["minecraft:basic_flame_particle", "minecraft:snowflake_particle", "minecraft:electric_spark_particle"][mode];
+            for (let a = 0; a < 360; a += 20) particle(p, particleId, add(p.location, rotateY({ x: 3, y: 1, z: 0 }, a)));
+            for (const e of nearbyTargets(p, p.location, 6)) {
+                hurt(e, 5, p, mode === 0 ? "fire" : mode === 1 ? "freezing" : "lightning");
+                if (mode === 0) {
+                    try {
+                        e.setOnFire(5, true);
+                    } catch {
+                        // Ignore.
+                    }
+                } else if (mode === 1) effect(e, "slowness", 120, 3);
+                else effect(e, "weakness", 120, 1);
+            }
+            p.sendMessage(["§6Fire eyes!", "§bIce eyes!", "§eShock eyes!"][mode]);
+        },
+    },
+
+    // ---------------------------------------------------------------- upchuck
+    swallow: {
+        name: "Swallow", desc: "Pull the nearest creature in and eat it.", cooldown: 60,
+        run: (p) => {
+            const target = coneTargets(p, 7, 0.5)[0];
+            if (!target) {
+                p.sendMessage("§7Nothing to eat in front of you.");
+                return false;
+            }
+            knockFrom(target, p.location, -1.2, 0.2);
+            system.runTimeout(() => {
+                if (!p.isValid) return;
+                if (target.isValid) hurt(target, 8, p);
+                effect(p, "saturation", 1, 2);
+                effect(p, "absorption", 400, 1);
+                setEnergy(p, getEnergy(p) + 25);
+                sound(p, "alienevo.omni_extras.swallow");
+            }, 6);
+        },
+    },
+    gut_blast: {
+        name: "Gut Blast", desc: "Spit out eaten matter as an explosive energy ball (stronger with more energy).", cooldown: 50,
+        run: (p) => {
+            const energy = getEnergy(p);
+            shoot(p, "alienevo:energy_bolt", 1.4, {
+                damage: 6 + energy / 10, trail: "minecraft:villager_happy", explode: 1.5 + energy / 50,
+            });
+            setEnergy(p, energy - 25);
+            sound(p, "alienevo.omni_extras.blast");
+        },
+    },
+
+    // ---------------------------------------------------------------- armodrillo
+    drill: {
+        name: "Drill", desc: "Jackhammer a 3x3 tunnel in front of you.", cooldown: 30,
+        run: (p) => {
+            const eye = p.getHeadLocation();
+            const view = p.getViewDirection();
+            const right = normalize({ x: -view.z, y: 0, z: view.x });
+            const up = normalize({ x: view.y * view.x * -1, y: 1, z: view.y * view.z * -1 });
+            for (let d = 1; d <= 4; d++) {
+                system.runTimeout(() => {
+                    if (!p.isValid) return;
+                    const c = add(eye, scale(view, d));
+                    for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) breakBlock(p, add(add(c, scale(right, i)), scale(up, j)));
+                    particle(p, "minecraft:huge_explosion_emitter", c);
+                }, d * 3);
+            }
+            sound(p, "dig.stone", 1, 0.5);
+        },
+    },
+    quake: {
+        name: "Quake", desc: "Pound the ground to create an earthquake.", cooldown: 80,
+        run: (p) => slam(p, 7, 9, 0.8),
+    },
+
+    // ---------------------------------------------------------------- water hazard
+    water_cannon: {
+        name: "Water Cannon", desc: "Blast enemies away with pressurised water.", cooldown: 25,
+        run: (p) => {
+            const { targets, end } = beam(p, 24, "minecraft:water_splash_particle");
+            for (const e of targets) {
+                hurt(e, 5, p);
+                knockFrom(e, p.location, 2.2, 0.4);
+                try {
+                    e.extinguishFire(true);
+                } catch {
+                    // Ignore.
+                }
+            }
+            particle(p, "minecraft:water_evaporation_bucket_emitter", end);
+            sound(p, "random.splash");
+        },
+    },
+    water_cushion: {
+        name: "Water Cushion", desc: "Surround yourself with a protective water bubble.", cooldown: 200,
+        run: (p) => {
+            effect(p, "resistance", 200, 2);
+            effect(p, "slow_falling", 200, 0);
+            for (let a = 0; a < 360; a += 30) particle(p, "minecraft:basic_bubble_particle_manual", add(p.location, rotateY({ x: 1.2, y: 1, z: 0 }, a)));
+        },
+    },
+
+    // ---------------------------------------------------------------- electricity
+    electro_bolt: {
+        name: "Electro Bolt", desc: "Fire a bolt of electricity.", cooldown: 20,
+        run: (p) => {
+            const { targets } = beam(p, 28, "minecraft:electric_spark_particle");
+            for (const e of targets) {
+                hurt(e, 6, p, "lightning");
+                effect(e, "slowness", 40, 3);
+            }
+            sound(p, "random.fizz", 0.8, 1.6);
+        },
+    },
+    lightning_strike: {
+        name: "Lightning Strike", desc: "Call lightning down where you look.", cooldown: 100,
+        run: (p) => {
+            const { end } = beam(p, 40, "minecraft:electric_spark_particle");
+            try {
+                p.dimension.spawnEntity("minecraft:lightning_bolt", end);
+            } catch {
+                // Ignore.
+            }
+        },
+    },
+    discharge: {
+        name: "Discharge", desc: "Release a burst of electricity around you.", cooldown: 100,
+        run: (p) => {
+            for (let a = 0; a < 360; a += 20) particle(p, "minecraft:electric_spark_particle", add(p.location, rotateY({ x: 3.5, y: 1, z: 0 }, a)));
+            for (const e of nearbyTargets(p, p.location, 6)) {
+                hurt(e, 7, p, "lightning");
+                knockFrom(e, p.location, 0.8, 0.3);
+            }
+            sound(p, "ambient.weather.lightning.impact", 0.6, 1.4);
+        },
+    },
+    stun_field: {
+        name: "Stun Field", desc: "Electrify the air and stun nearby enemies.", cooldown: 120,
+        run: (p) => {
+            for (const e of nearbyTargets(p, p.location, 7)) {
+                hurt(e, 4, p, "lightning");
+                effect(e, "slowness", 100, 5);
+                effect(e, "weakness", 100, 1);
+                particle(e, "minecraft:electric_spark_particle", add(e.location, { x: 0, y: 1, z: 0 }));
+            }
+            sound(p, "ambient.weather.thunder", 0.5, 1.5);
+        },
+    },
+
+    // ---------------------------------------------------------------- benwolf
+    howl: {
+        name: "Sonic Howl", desc: "A howl that blasts enemies away.", cooldown: 60,
+        run: (p) => {
+            const eye = p.getHeadLocation();
+            const v = p.getViewDirection();
+            for (let d = 2; d <= 12; d += 2) particle(p, "minecraft:sonic_explosion", add(eye, scale(v, d)));
+            sound(p, "mob.wolf.big.growl", 1, 0.6);
+            for (const e of coneTargets(p, 13, 0.7)) {
+                hurt(e, 7, p, "sonicBoom");
+                knockFrom(e, p.location, 2, 0.4);
+                effect(e, "nausea", 100, 0);
+            }
+        },
+    },
+
+    // ---------------------------------------------------------------- wildvine / chamalien
+    fruit_bomb: {
+        name: "Fruit Bomb", desc: "Throw an exploding, poisonous seed pod.", cooldown: 40,
+        run: (p) => {
+            shoot(p, "alienevo:energy_bolt", 1.2, {
+                damage: 4, trail: "minecraft:villager_happy", explode: 1.5, radius: 3,
+                effects: [["poison", 100, 1]],
+            });
+        },
+    },
+    camouflage: {
+        name: "Camouflage", desc: "Blend into your surroundings.", cooldown: 300,
+        run: (p) => {
+            effect(p, "invisibility", 600, 0);
+            effect(p, "speed", 600, 0);
+            sound(p, "alienevo.omni_extras.stalk");
+        },
+    },
+    stinger: {
+        name: "Stinger", desc: "Lunge and sting with a paralysing tail.", cooldown: 30,
+        run: (p) => {
+            const v = flatView(p);
+            launch(p, { x: v.x * 1.5, y: 0.25, z: v.z * 1.5 });
+            system.runTimeout(() => {
+                if (!p.isValid) return;
+                for (const e of coneTargets(p, 3.5, 0.4)) {
+                    hurt(e, 6, p);
+                    effect(e, "poison", 100, 1);
+                    effect(e, "slowness", 60, 4);
+                }
+            }, 4);
+        },
+    },
+
+    // ---------------------------------------------------------------- walkatrout
+    slide: {
+        name: "Slide", desc: "Slide on your slippery belly.", cooldown: 30,
+        run: (p) => {
+            const v = flatView(p);
+            launch(p, { x: v.x * 2.4, y: 0.05, z: v.z * 2.4 });
+            effect(p, "speed", 60, 2);
+            for (let i = 0; i < 6; i++) particle(p, "minecraft:water_splash_particle", add(p.location, scale(v, -i * 0.5)));
+        },
+    },
+    water_blast: {
+        name: "Water Blast", desc: "Fire a jet of water.", cooldown: 20,
+        run: (p) => {
+            shoot(p, "alienevo:energy_bolt", 1.6, { damage: 4, knockback: 1.5, trail: "minecraft:water_splash_particle", impact: "minecraft:water_evaporation_bucket_emitter" });
+            sound(p, "random.splash");
+        },
+    },
+    flip: {
+        name: "Flip", desc: "Backflip into the air and land with a splash.", cooldown: 40,
+        run: (p) => {
+            const v = flatView(p);
+            launch(p, { x: -v.x * 0.8, y: 1.1, z: -v.z * 0.8 });
+            toggles.slamOnLand.set(p.id, { dmg: 4, at: system.currentTick });
+        },
+    },
+
+    // ---------------------------------------------------------------- ditto
+    clone_swarm: {
+        name: "Clone Swarm", desc: "Split into copies that pile onto nearby enemies.", cooldown: 120,
+        run: (p) => {
+            const targets = nearbyTargets(p, p.location, 6);
+            let n = 0;
+            const id = system.runInterval(() => {
+                if (!p.isValid || n++ >= 6) return system.clearRun(id);
+                for (const e of targets) {
+                    if (!e.isValid) continue;
+                    hurt(e, 2, p);
+                    particle(e, "minecraft:critical_hit_emitter", add(e.location, { x: 0, y: 1, z: 0 }));
+                }
+            }, 5);
+            sound(p, "alienevo.untapped.ditto_taunt");
+        },
+    },
+    taunt: {
+        name: "Taunt", desc: "Mock enemies so they become weak and slow.", cooldown: 80,
+        run: (p) => {
+            for (const e of nearbyTargets(p, p.location, 10)) {
+                effect(e, "weakness", 160, 1);
+                effect(e, "slowness", 160, 0);
+            }
+            sound(p, "alienevo.untapped.ditto_taunt");
+        },
+    },
+    uppercut: {
+        name: "Uppercut", desc: "Launch an enemy into the air.", cooldown: 30,
+        run: (p) => {
+            for (const e of coneTargets(p, 3.5, 0.5)) {
+                hurt(e, 6, p);
+                launch(e, { x: 0, y: 1.1, z: 0 });
+            }
+        },
+    },
+
+    // ---------------------------------------------------------------- eatle
+    eat: {
+        name: "Eat", desc: "Eat the block you look at to store energy.", cooldown: 15,
+        run: (p) => {
+            let hit;
+            try {
+                hit = p.getBlockFromViewDirection({ maxDistance: 4 });
+            } catch {
+                hit = undefined;
+            }
+            if (!hit || !canBreak(hit.block.typeId)) {
+                p.sendMessage("§7Look at a block to eat it.");
+                return false;
+            }
+            particle(p, "minecraft:huge_explosion_emitter", hit.block.center());
+            hit.block.setType("minecraft:air");
+            effect(p, "saturation", 1, 1);
+            setEnergy(p, getEnergy(p) + 10);
+            sound(p, "random.burp");
+        },
+    },
+    horn_beam: {
+        name: "Horn Beam", desc: "Fire eaten matter as an energy beam (stronger with more energy).", cooldown: 60,
+        run: (p) => {
+            const energy = getEnergy(p);
+            const { targets, end } = beam(p, 36, "minecraft:endrod");
+            for (const e of targets) hurt(e, 6 + energy / 6, p, "magic");
+            if (energy >= 50) {
+                try {
+                    p.dimension.createExplosion(end, 3, { breaksBlocks: false, causesFire: false, source: p });
+                } catch {
+                    // Ignore.
+                }
+            }
+            setEnergy(p, energy - 30);
+            sound(p, "alienevo.untapped.oryctini_beam");
+        },
+    },
+    ram: {
+        name: "Ram", desc: "Charge horn first.", cooldown: 40,
+        run: (p) => {
+            const v = flatView(p);
+            launch(p, { x: v.x * 2.6, y: 0.2, z: v.z * 2.6 });
+            let n = 0;
+            const id = system.runInterval(() => {
+                if (!p.isValid || n++ > 8) return system.clearRun(id);
+                for (const e of nearbyTargets(p, p.location, 2.2)) {
+                    hurt(e, 8, p);
+                    knockFrom(e, p.location, 2, 0.5);
+                }
+            }, 1);
+            sound(p, "alienevo.untapped.oryctini_blast");
+        },
+    },
 };
+
+const UNBREAKABLE = new Set([
+    "minecraft:bedrock", "minecraft:barrier", "minecraft:command_block", "minecraft:chain_command_block",
+    "minecraft:repeating_command_block", "minecraft:structure_block", "minecraft:structure_void", "minecraft:jigsaw",
+    "minecraft:end_portal", "minecraft:end_portal_frame", "minecraft:portal", "minecraft:end_gateway",
+    "minecraft:reinforced_deepslate", "minecraft:light_block", "minecraft:allow", "minecraft:deny", "minecraft:border_block",
+    "minecraft:water", "minecraft:lava", "minecraft:flowing_water", "minecraft:flowing_lava", "minecraft:air",
+]);
+
+/** @param {string} typeId */
+function canBreak(typeId) {
+    return !UNBREAKABLE.has(typeId) && !typeId.includes("light_block");
+}
+
+/** Break a block and drop it like a player would. @param {Player} p @param {Vector3} loc */
+function breakBlock(p, loc) {
+    try {
+        const b = p.dimension.getBlock(loc);
+        if (!b || !canBreak(b.typeId)) return;
+        const { x, y, z } = b.location;
+        p.dimension.runCommand(`setblock ${x} ${y} ${z} air destroy`);
+    } catch {
+        // Unloaded chunk.
+    }
+}
 
 export function initAbilityTicks() {
     // Fire shield, rolling and slam-on-landing.

@@ -1,0 +1,63 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alienevo:form_talpaedan",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha",
+        "translucent": "entity_alphablend"
+      },
+      "textures": {
+        "part0": "textures/entity/aliens/talpaedan_0",
+        "part0_glow": "textures/entity/aliens/talpaedan_0_glow",
+        "part1": "textures/entity/aliens/talpaedan_1",
+        "part1_glow": "textures/entity/aliens/talpaedan_1_glow"
+      },
+      "geometry": {
+        "part0": "geometry.alienevo.talpaedan_0",
+        "part1": "geometry.alienevo.talpaedan_1"
+      },
+      "scripts": {
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "animate": [
+          "loop0",
+          "loop1",
+          "triggers"
+        ]
+      },
+      "render_controllers": [
+        {
+          "controller.render.alienevo.talpaedan_0": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.talpaedan_0_glow": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.talpaedan_1": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.talpaedan_1_glow": "!c.is_first_person"
+        }
+      ],
+      "animations": {
+        "loop0": "animation.alienevo.talpaedan.tail",
+        "loop1": "animation.alienevo.talpaedan.idle_hands",
+        "t1": "animation.alienevo.talpaedan.drill_on_single",
+        "t2": "animation.alienevo.talpaedan.drill_off_single",
+        "t3": "animation.alienevo.talpaedan.spin_start_single",
+        "t4": "animation.alienevo.talpaedan.spin_end_single",
+        "t5": "animation.alienevo.talpaedan.drill_on_both",
+        "t6": "animation.alienevo.talpaedan.drill_off_both",
+        "t7": "animation.alienevo.talpaedan.spin_start_both",
+        "t8": "animation.alienevo.talpaedan.spin_end_both",
+        "t9": "animation.alienevo.talpaedan.aim_rot_right",
+        "t10": "animation.alienevo.talpaedan.charge_piston",
+        "t11": "animation.alienevo.talpaedan.rot_reset",
+        "t12": "animation.alienevo.talpaedan.spin_attack",
+        "t13": "animation.alienevo.talpaedan.ground_piston",
+        "triggers": "controller.animation.alienevo.talpaedan"
+      }
+    }
+  }
+}

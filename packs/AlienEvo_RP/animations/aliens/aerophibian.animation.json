@@ -1,0 +1,32 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alienevo.aerophibian.jetray.idle": {
+      "loop": true,
+      "override_previous_animation": true,
+      "bones": {
+        "tailbase": {
+          "rotation": [
+            "math.sin(q.anim_time*50)*6+6",
+            0,
+            0
+          ]
+        },
+        "tailmid": {
+          "rotation": [
+            0,
+            0,
+            "math.sin(q.anim_time*75)*15"
+          ]
+        },
+        "tailtip": {
+          "rotation": [
+            "math.sin(q.anim_time*75-90)*-7",
+            0,
+            "math.sin(q.anim_time*75-50)*15"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alienevo.vaxasaurian.humungousaur.tail": {
+      "loop": true,
+      "bones": {
+        "tail": {
+          "rotation": [
+            0,
+            "math.sin(q.anim_time*75)*15",
+            0
+          ]
+        },
+        "tail1": {
+          "rotation": [
+            "math.sin(q.anim_time*-50)*10",
+            "math.sin(q.anim_time*75-25)*15",
+            0
+          ]
+        },
+        "tail2": {
+          "rotation": [
+            "math.sin(q.anim_time*-25)*10",
+            "math.sin(q.anim_time*75-50)*15",
+            0
+          ]
+        },
+        "tail3": {
+          "rotation": [
+            "math.sin(q.anim_time*50)*5",
+            "math.sin(q.anim_time*75-75)*15",
+            0
+          ]
+        },
+        "tail_top": {
+          "rotation": [
+            "math.sin(q.anim_time*50)*4",
+            0,
+            0
+          ]
+        }
+      }
+    }
+  }
+}

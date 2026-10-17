@@ -1,0 +1,146 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alienevo.loboan_1",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 5,
+        "visible_bounds_offset": [
+          0,
+          1.5,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "head",
+          "pivot": [
+            0,
+            29.75,
+            0.75
+          ]
+        },
+        {
+          "name": "leftArm",
+          "pivot": [
+            4.5,
+            24.75,
+            1.75
+          ]
+        },
+        {
+          "name": "rightArm",
+          "pivot": [
+            -4.5,
+            24.75,
+            1.75
+          ]
+        },
+        {
+          "name": "leftLeg",
+          "pivot": [
+            1.15,
+            13.5,
+            1.5
+          ]
+        },
+        {
+          "name": "rightLeg",
+          "pivot": [
+            -1.15,
+            13.5,
+            1.5
+          ]
+        },
+        {
+          "name": "body",
+          "pivot": [
+            0,
+            26.5059,
+            -0.3038
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1.2,
+                15.77369,
+                -2.86423
+              ],
+              "size": [
+                2.4,
+                2.4,
+                1
+              ],
+              "inflate": 0.1,
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    12,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    13,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    11,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    9,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    1
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    10,
+                    2
+                  ],
+                  "uv_size": [
+                    2,
+                    -1
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

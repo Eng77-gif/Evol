@@ -1,0 +1,94 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alienevo.amperi.float_idle": {
+      "loop": true,
+      "animation_length": 8,
+      "bones": {
+        "body": {
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        "TENTACLE_1": {
+          "rotation": [
+            "math.cos(q.anim_time*40)*4-7.5",
+            "math.cos(q.anim_time*40-25)*2+9",
+            0
+          ]
+        },
+        "TENTACLE_14": {
+          "rotation": [
+            "math.cos(q.anim_time*40)*4-7.5",
+            "math.cos(q.anim_time*40-25)*2-9",
+            0
+          ]
+        },
+        "TENTACLE_27": {
+          "rotation": [
+            "math.cos(q.anim_time*40)*4-7.5",
+            "math.cos(q.anim_time*40-25)*2-9",
+            0
+          ]
+        },
+        "TENTACLE_40": {
+          "rotation": [
+            "math.cos(q.anim_time*40)*4-7.5",
+            "math.cos(q.anim_time*40-25)*2+9",
+            0
+          ]
+        },
+        "rightLeg": {
+          "rotation": [
+            "math.cos(q.anim_time*75+50)*2+5",
+            0,
+            "math.cos(q.anim_time*45+20)*4"
+          ]
+        },
+        "leftLeg": {
+          "rotation": [
+            "math.cos(q.anim_time*75+50)*2+4.9763",
+            0.54674,
+            "math.cos(q.anim_time*45+20)*-4"
+          ]
+        },
+        "feet": {
+          "rotation": [
+            50,
+            0,
+            "math.cos(q.anim_time*40+20)*-5"
+          ]
+        },
+        "feet2": {
+          "rotation": [
+            52.5,
+            0,
+            "math.cos(q.anim_time*40+20)*5"
+          ]
+        },
+        "flap": {
+          "scale": [
+            "math.cos(q.anim_time*40)*0.1+1",
+            1,
+            1
+          ]
+        },
+        "flap2": {
+          "scale": [
+            "math.cos(q.anim_time*40)*0.1+1",
+            1,
+            1
+          ]
+        },
+        "flap3": {
+          "scale": 1
+        },
+        "flap4": {
+          "scale": 1
+        }
+      }
+    }
+  }
+}

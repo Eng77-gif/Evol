@@ -12,7 +12,7 @@ import { add, effect, hurt, knockFrom, nearbyTargets, particle, scale } from "./
  * @typedef {{
  *   owner: Player, damage: number, trail?: string, impact?: string,
  *   effects?: [string, number, number][], fire?: number, radius?: number,
- *   knockback?: number, freeze?: boolean, ticks: number
+ *   knockback?: number, freeze?: boolean, explode?: number, ticks: number
  * }} Shot
  */
 
@@ -60,6 +60,13 @@ function impact(shot, dim, loc) {
     if (shot.impact) {
         try {
             dim.spawnParticle(shot.impact, loc);
+        } catch {
+            // Ignore.
+        }
+    }
+    if (shot.explode) {
+        try {
+            dim.createExplosion(loc, shot.explode, { breaksBlocks: false, causesFire: false, source: shot.owner.isValid ? shot.owner : undefined });
         } catch {
             // Ignore.
         }

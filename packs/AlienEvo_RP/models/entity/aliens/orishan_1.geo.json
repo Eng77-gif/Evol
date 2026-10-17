@@ -1,0 +1,146 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alienevo.orishan_1",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 4.5,
+        "visible_bounds_offset": [
+          0,
+          1.75,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "head",
+          "pivot": [
+            -0.13142,
+            33.83352,
+            -2.174
+          ]
+        },
+        {
+          "name": "body",
+          "pivot": [
+            0,
+            27.0359,
+            2.2269
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1.16,
+                19.20902,
+                -1.46713
+              ],
+              "size": [
+                2.446,
+                2.32,
+                1.312
+              ],
+              "inflate": 0.1,
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    12,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    13,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    11,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    9,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    1
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    10,
+                    2
+                  ],
+                  "uv_size": [
+                    2,
+                    -1
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "leftArm",
+          "pivot": [
+            7.73615,
+            31.185,
+            0.77339
+          ]
+        },
+        {
+          "name": "rightArm",
+          "pivot": [
+            -5.67,
+            31.185,
+            0.77339
+          ]
+        },
+        {
+          "name": "leftLeg",
+          "pivot": [
+            1.449,
+            17.01,
+            0.65961
+          ]
+        },
+        {
+          "name": "rightLeg",
+          "pivot": [
+            -2.86763,
+            15.35738,
+            0.65961
+          ]
+        }
+      ]
+    }
+  ]
+}

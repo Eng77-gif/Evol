@@ -1,0 +1,96 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alienevo.signal.1": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 1;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    },
+    "animation.alienevo.signal.2": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 2;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    },
+    "animation.alienevo.signal.3": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 3;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    },
+    "animation.alienevo.signal.4": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 4;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    },
+    "animation.alienevo.signal.5": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 5;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    },
+    "animation.alienevo.signal.6": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 6;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    },
+    "animation.alienevo.signal.7": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 7;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    },
+    "animation.alienevo.signal.8": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 8;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    },
+    "animation.alienevo.signal.9": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 9;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    },
+    "animation.alienevo.signal.10": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 10;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    },
+    "animation.alienevo.signal.11": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 11;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    },
+    "animation.alienevo.signal.12": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 12;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    },
+    "animation.alienevo.signal.13": {
+      "animation_length": 0.3,
+      "timeline": {
+        "0.0": "v.alienevo_anim = 13;",
+        "0.25": "v.alienevo_anim = 0;"
+      }
+    }
+  }
+}

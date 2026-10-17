@@ -11,15 +11,18 @@
       "textures": {
         "part0": "textures/entity/aliens/galvan_0",
         "part0_glow": "textures/entity/aliens/galvan_0_glow",
-        "badge": "textures/entity/aliens/badge",
-        "badge_glow": "textures/entity/aliens/badge_glow"
+        "part1": "textures/entity/aliens/galvan_1",
+        "part1_glow": "textures/entity/aliens/galvan_1_glow"
       },
       "geometry": {
         "part0": "geometry.alienevo.galvan_0",
-        "badge": "geometry.alienevo.galvan_badge"
+        "part1": "geometry.alienevo.galvan_1"
       },
       "scripts": {
-        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "animate": [
+          "triggers"
+        ]
       },
       "render_controllers": [
         {
@@ -29,12 +32,17 @@
           "controller.render.alienevo.galvan_0_glow": "!c.is_first_person"
         },
         {
-          "controller.render.alienevo.badge": "!c.is_first_person"
+          "controller.render.alienevo.galvan_1": "!c.is_first_person"
         },
         {
-          "controller.render.alienevo.badge_glow": "!c.is_first_person"
+          "controller.render.alienevo.galvan_1_glow": "!c.is_first_person"
         }
-      ]
+      ],
+      "animations": {
+        "t1": "animation.alienevo.galvan.greymatter.lick",
+        "t2": "animation.alienevo.galvan.greymatter.pose",
+        "triggers": "controller.animation.alienevo.galvan"
+      }
     }
   }
 }

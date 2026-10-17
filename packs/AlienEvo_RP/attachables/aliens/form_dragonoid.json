@@ -16,7 +16,11 @@
         "part0": "geometry.alienevo.dragonoid_0"
       },
       "scripts": {
-        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "animate": [
+          "loop0",
+          "triggers"
+        ]
       },
       "render_controllers": [
         {
@@ -25,7 +29,13 @@
         {
           "controller.render.alienevo.dragonoid_0_glow": "!c.is_first_person"
         }
-      ]
+      ],
+      "animations": {
+        "loop0": "animation.alienevo.dragonoid.drago.idle",
+        "t1": "animation.alienevo.dragonoid.drago.flight_on",
+        "t2": "animation.alienevo.dragonoid.drago.flight_off",
+        "triggers": "controller.animation.alienevo.dragonoid"
+      }
     }
   }
 }

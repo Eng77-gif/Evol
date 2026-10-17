@@ -1,0 +1,192 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alienevo.nosedeenian_1",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 4.5,
+        "visible_bounds_offset": [
+          0,
+          1.75,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "leftLeg",
+          "pivot": [
+            1.75,
+            10,
+            1
+          ]
+        },
+        {
+          "name": "rightArm",
+          "pivot": [
+            -3,
+            17.75,
+            1
+          ]
+        },
+        {
+          "name": "leftArm",
+          "pivot": [
+            3,
+            17.75,
+            1
+          ]
+        },
+        {
+          "name": "head",
+          "pivot": [
+            0,
+            18,
+            1
+          ]
+        },
+        {
+          "name": "rightLeg",
+          "pivot": [
+            -1.75,
+            10,
+            1
+          ]
+        },
+        {
+          "name": "body",
+          "pivot": [
+            6e-05,
+            14.2259,
+            0.10609
+          ],
+          "rotation": [
+            -7.5,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1.5499,
+                14.07163,
+                -3.7689
+              ],
+              "size": [
+                3,
+                3,
+                1
+              ],
+              "pivot": [
+                0.1501,
+                15.57163,
+                -2.6439
+              ],
+              "rotation": [
+                10,
+                0,
+                0
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    11,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    13,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    12,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    11,
+                    0
+                  ],
+                  "uv_size": [
+                    -2,
+                    1
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    11,
+                    2
+                  ],
+                  "uv_size": [
+                    -2,
+                    -1
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Torso",
+          "parent": "body",
+          "pivot": [
+            6e-05,
+            19.67586,
+            -0.39391
+          ]
+        },
+        {
+          "name": "UpperTorso",
+          "parent": "Torso",
+          "pivot": [
+            6e-05,
+            16.67586,
+            -0.39391
+          ]
+        },
+        {
+          "name": "LowerTorso",
+          "parent": "UpperTorso",
+          "pivot": [
+            0,
+            13.925,
+            -0.025
+          ],
+          "rotation": [
+            5.0215,
+            0.31185,
+            0.09251
+          ]
+        }
+      ]
+    }
+  ]
+}

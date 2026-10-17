@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alienevo:form_orishan",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha",
+        "translucent": "entity_alphablend"
+      },
+      "textures": {
+        "part0": "textures/entity/aliens/orishan_0",
+        "part0_glow": "textures/entity/aliens/orishan_0_glow",
+        "part1": "textures/entity/aliens/orishan_1",
+        "part1_glow": "textures/entity/aliens/orishan_1_glow"
+      },
+      "geometry": {
+        "part0": "geometry.alienevo.orishan_0",
+        "part1": "geometry.alienevo.orishan_1"
+      },
+      "scripts": {
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"
+      },
+      "render_controllers": [
+        {
+          "controller.render.alienevo.orishan_0": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.orishan_0_glow": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.orishan_1": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.orishan_1_glow": "!c.is_first_person"
+        }
+      ]
+    }
+  }
+}

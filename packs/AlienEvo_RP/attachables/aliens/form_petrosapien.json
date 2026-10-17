@@ -11,15 +11,18 @@
       "textures": {
         "part0": "textures/entity/aliens/petrosapien_0",
         "part0_glow": "textures/entity/aliens/petrosapien_0_glow",
-        "badge": "textures/entity/aliens/badge",
-        "badge_glow": "textures/entity/aliens/badge_glow"
+        "part1": "textures/entity/aliens/petrosapien_1",
+        "part1_glow": "textures/entity/aliens/petrosapien_1_glow"
       },
       "geometry": {
         "part0": "geometry.alienevo.petrosapien_0",
-        "badge": "geometry.alienevo.petrosapien_badge"
+        "part1": "geometry.alienevo.petrosapien_1"
       },
       "scripts": {
-        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "animate": [
+          "triggers"
+        ]
       },
       "render_controllers": [
         {
@@ -29,12 +32,25 @@
           "controller.render.alienevo.petrosapien_0_glow": "!c.is_first_person"
         },
         {
-          "controller.render.alienevo.badge": "!c.is_first_person"
+          "controller.render.alienevo.petrosapien_1": "!c.is_first_person"
         },
         {
-          "controller.render.alienevo.badge_glow": "!c.is_first_person"
+          "controller.render.alienevo.petrosapien_1_glow": "!c.is_first_person"
         }
-      ]
+      ],
+      "animations": {
+        "t1": "animation.alienevo.petrosapien.diamondhead.sword_on",
+        "t2": "animation.alienevo.petrosapien.diamondhead.sword_off",
+        "t3": "animation.alienevo.petrosapien.diamondhead.shield_spin",
+        "t4": "animation.alienevo.petrosapien.diamondhead.shield_off",
+        "t5": "animation.alienevo.petrosapien.diamondhead.shards_off",
+        "t6": "animation.alienevo.petrosapien.diamondhead.shards_on",
+        "t7": "animation.alienevo.petrosapien.diamondhead.sword_on_left",
+        "t8": "animation.alienevo.petrosapien.diamondhead.sword_off_left",
+        "t9": "animation.alienevo.petrosapien.diamondhead.shield_spin_left",
+        "t10": "animation.alienevo.petrosapien.diamondhead.shield_off_left",
+        "triggers": "controller.animation.alienevo.petrosapien"
+      }
     }
   }
 }

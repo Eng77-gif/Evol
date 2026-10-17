@@ -1,0 +1,156 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alienevo.piscciss_volann_1",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 3.5,
+        "visible_bounds_offset": [
+          0,
+          1.25,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "head",
+          "pivot": [
+            0,
+            29.27313,
+            -0.49888
+          ]
+        },
+        {
+          "name": "body",
+          "pivot": [
+            0,
+            29.2731,
+            -0.4989
+          ],
+          "cubes": [
+            {
+              "origin": [
+                2.5,
+                25.75,
+                -3.7
+              ],
+              "size": [
+                2,
+                2,
+                1
+              ],
+              "inflate": -0.1,
+              "pivot": [
+                0,
+                27.75,
+                -1.125
+              ],
+              "rotation": [
+                5,
+                0,
+                0
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    11,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    13,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    12,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    11,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    1
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    12,
+                    1
+                  ],
+                  "uv_size": [
+                    2,
+                    -1
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "leftArm",
+          "pivot": [
+            5,
+            27,
+            0
+          ]
+        },
+        {
+          "name": "rightArm",
+          "pivot": [
+            -5,
+            27,
+            0
+          ]
+        },
+        {
+          "name": "leftLeg",
+          "pivot": [
+            2.05,
+            15.75,
+            0.25
+          ]
+        },
+        {
+          "name": "rightLeg",
+          "pivot": [
+            -2.05,
+            15.75,
+            0.25
+          ]
+        }
+      ]
+    }
+  ]
+}

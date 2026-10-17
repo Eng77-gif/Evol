@@ -16,7 +16,10 @@
         "part0": "geometry.alienevo.nucleonix_0"
       },
       "scripts": {
-        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "animate": [
+          "loop0"
+        ]
       },
       "render_controllers": [
         {
@@ -25,7 +28,10 @@
         {
           "controller.render.alienevo.nucleonix_0_glow": "!c.is_first_person"
         }
-      ]
+      ],
+      "animations": {
+        "loop0": "animation.alienevo.nucleonix.atomix.idle"
+      }
     }
   }
 }

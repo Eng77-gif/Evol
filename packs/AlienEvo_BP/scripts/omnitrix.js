@@ -6,6 +6,7 @@ import { EquipmentSlot, ItemLockMode, ItemStack, system, world } from "@minecraf
 import { ActionFormData } from "@minecraft/server-ui";
 import { ABILITIES, clearToggles, toggles } from "./abilities.js";
 import { ALIEN_BY_ID, ALIENS, MAX_TIMER, OMNITRIX_TIERS, RECHARGE_TIMER } from "./aliens.js";
+import { ANIM_TRIGGERS } from "./anim_data.js";
 import {
     availableAliens, getAbilityIndex, getAlien, getLevel, getPlaylist, getRecharge, getSelected, getTimer,
     getXp, hasMasterControl, setAbilityIndex, setAlien, setPlaylist, setRecharge, setSelected, setTimer,
@@ -250,6 +251,41 @@ async function codex(p, tier) {
     return codex(p, tier);
 }
 
+/**
+ * Plays a GeckoLib trigger animation on the alien model (see tools/animations.py).
+ * @param {Player} p @param {Alien} alien @param {string} trigger
+ */
+export function playTrigger(p, alien, trigger) {
+    /** @type {Record<string, number> | undefined} */
+    const table = /** @type {any} */ (ANIM_TRIGGERS)[alien.key];
+    const index = table?.[trigger];
+    if (!index) return;
+    try {
+        p.playAnimation(`animation.alienevo.signal.${index}`, { blendOutTime: 0 });
+    } catch {
+        // Player left.
+    }
+}
+
+/** @param {Player} p @param {Alien} alien @param {string} abilityId */
+function animateAbility(p, alien, abilityId) {
+    if (abilityId === "roll") {
+        playTrigger(p, alien, toggles.rolling.has(p.id) ? "ball_in" : "ball_out");
+        return;
+    }
+    const anim = alien.anims?.[abilityId];
+    if (!anim) return;
+    if (typeof anim === "string") {
+        playTrigger(p, alien, anim);
+        return;
+    }
+    const [start, end, ticks] = anim;
+    playTrigger(p, alien, start);
+    system.runTimeout(() => {
+        if (p.isValid && getAlien(p) === alien.id) playTrigger(p, alien, end);
+    }, ticks);
+}
+
 /** @type {Map<string, number>} */
 const cooldowns = new Map();
 
@@ -271,7 +307,10 @@ export function castAbility(p, alien, index) {
     }
     // Levels (from killing mobs as this alien) shorten cooldowns by up to 30%.
     const cd = Math.round(ability.cooldown * (1 - getLevel(p, alien.key) * 0.03));
-    if (ability.run(p) !== false) cooldowns.set(`${p.id}:${id}`, system.currentTick + cd);
+    if (ability.run(p) !== false) {
+        cooldowns.set(`${p.id}:${id}`, system.currentTick + cd);
+        animateAbility(p, alien, id);
+    }
 }
 
 /** @param {Player} p @param {Alien} alien */
@@ -335,6 +374,7 @@ function flightTick(p, alien) {
     if (p.isOnGround) {
         if (++f.ground > 10) {
             flying.delete(p.id);
+            playTrigger(p, alien, "flight_off");
             return;
         }
     } else {
@@ -494,9 +534,11 @@ export function initOmnitrix() {
         if (now - last > 7) return;
         if (flying.has(p.id)) {
             flying.delete(p.id);
+            playTrigger(p, alien, "flight_off");
             actionbar(p, "§7Flight: OFF");
         } else {
             flying.set(p.id, { since: now, ground: 0 });
+            playTrigger(p, alien, "flight_on");
             p.applyKnockback({ x: 0, z: 0 }, 0.5);
             actionbar(p, "§bFlight: ON");
         }
@@ -533,6 +575,13 @@ export function initOmnitrix() {
         if (alien?.melee === "fire") {
             try {
                 ev.hitEntity.setOnFire(4, true);
+            } catch {
+                // Ignore.
+            }
+        } else if (alien?.melee === "shock") {
+            try {
+                ev.hitEntity.addEffect("slowness", 40, { amplifier: 2 });
+                ev.hitEntity.dimension.spawnParticle("minecraft:electric_spark_particle", ev.hitEntity.location);
             } catch {
                 // Ignore.
             }

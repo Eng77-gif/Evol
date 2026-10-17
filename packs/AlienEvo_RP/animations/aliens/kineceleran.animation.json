@@ -1,0 +1,231 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alienevo.kineceleran.xlr8.tail": {
+      "loop": true,
+      "animation_length": 8,
+      "override_previous_animation": true,
+      "bones": {
+        "TAIL_BASE": {
+          "rotation": {
+            "0.0": [
+              10,
+              "math.sin(q.anim_time*224)*15",
+              0
+            ],
+            "4.0": [
+              -10,
+              "math.sin(q.anim_time*224)*15",
+              0
+            ],
+            "8.0": [
+              10,
+              "math.sin(q.anim_time*224)*15",
+              0
+            ]
+          }
+        },
+        "TAIL_LOWMID": {
+          "rotation": {
+            "0.0": [
+              15,
+              "math.sin(q.anim_time*224-50)*20",
+              0
+            ],
+            "4.0": [
+              -15,
+              "math.sin(q.anim_time*224-50)*20",
+              0
+            ],
+            "8.0": [
+              15,
+              "math.sin(q.anim_time*224-50)*20",
+              0
+            ]
+          }
+        },
+        "TAIL_HIGHMID": {
+          "rotation": {
+            "0.0": [
+              20,
+              "math.sin(q.anim_time*224-100)*20",
+              0
+            ],
+            "4.0": [
+              -20,
+              "math.sin(q.anim_time*224-100)*20",
+              0
+            ],
+            "8.0": [
+              20,
+              "math.sin(q.anim_time*224-100)*20",
+              0
+            ]
+          }
+        },
+        "TAIL_HIGH": {
+          "rotation": {
+            "0.0": [
+              15,
+              "math.sin(q.anim_time*224-150)*25",
+              0
+            ],
+            "4.0": [
+              -15,
+              "math.sin(q.anim_time*224-150)*25",
+              0
+            ],
+            "8.0": [
+              15,
+              "math.sin(q.anim_time*224-150)*25",
+              0
+            ]
+          }
+        },
+        "head_scale": {
+          "rotation": [
+            7.5,
+            0,
+            0
+          ],
+          "scale": [
+            1.15,
+            1.2,
+            2.2
+          ]
+        },
+        "eyes_middle": {
+          "position": [
+            0,
+            -0.5,
+            1
+          ]
+        }
+      }
+    },
+    "animation.alienevo.kineceleran.xlr8.mask_on": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.3333,
+      "override_previous_animation": true,
+      "bones": {
+        "head_scale": {
+          "rotation": [
+            7.5,
+            0,
+            0
+          ],
+          "scale": [
+            1.15,
+            1.2,
+            2.2
+          ]
+        },
+        "MASK": {
+          "position": {
+            "0.0": [
+              0,
+              -1,
+              0
+            ],
+            "0.3333": [
+              0,
+              -1,
+              0
+            ]
+          },
+          "scale": {
+            "0.0": [
+              1,
+              0,
+              1
+            ],
+            "0.3333": {
+              "post": [
+                1,
+                2,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "eyes_middle": {
+          "position": {
+            "0.0": [
+              0,
+              0,
+              1
+            ],
+            "0.0833": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "animation.alienevo.kineceleran.xlr8.mask_off": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.3333,
+      "override_previous_animation": true,
+      "bones": {
+        "head_scale": {
+          "rotation": [
+            7.5,
+            0,
+            0
+          ],
+          "scale": [
+            1.15,
+            1.2,
+            2.2
+          ]
+        },
+        "MASK": {
+          "position": {
+            "0.0": [
+              0,
+              -1,
+              0
+            ],
+            "0.3333": [
+              0,
+              -1,
+              0
+            ]
+          },
+          "scale": {
+            "0.0": [
+              1,
+              2,
+              1
+            ],
+            "0.3333": {
+              "post": [
+                1,
+                0,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "eyes_middle": {
+          "position": {
+            "0.25": [
+              0,
+              0,
+              0
+            ],
+            "0.3333": [
+              0,
+              0,
+              1
+            ]
+          }
+        }
+      }
+    }
+  }
+}

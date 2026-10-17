@@ -2,6 +2,16 @@
 
 Bản chuyển đổi của mod **AlienEvo 1.1.3** (Fabric/Java, tác giả Habb và Stephen; mod này cần Palladium và KubeJS)
 sang **add-on Bedrock** (Behavior Pack + Resource Pack) chạy trên **Minecraft Bedrock / MCPE 26.50**.
+Bản này gộp thêm alien, model, texture và animation từ 6 addon của AlienEvo:
+
+| Addon | Tác giả | Thêm |
+|---|---|---|
+| Into The Omniverse 1.0.6 | AWildCanOfBeans | Echo Echo, Big Chill (Omniverse) |
+| Omni Extras 1.0.7.3 | Hibiquill | Eye Guy, Upchuck (Perk), Upchuck (Murk), Armodrillo, Water Hazard, Ampfibian, Buzzshock |
+| The Anur Trio 1.0.4 | AWildCanOfBeans | Benwolf, Frankenstrike |
+| Wildvine 1.0.3 | Babish_q | Wildvine |
+| Aliens Untapped 1.3.5 | Jaijorlon | Chamalien, Walkatrout, Ditto, Eatle |
+| Chromastone 1.9 | godday | Model và animation mới của Chromastone |
 
 Bedrock không chạy được file `.jar` của Java, nên mod được viết lại theo hệ thống add-on của Bedrock:
 model GeckoLib → attachable của Bedrock, Palladium/KubeJS → Script API (`@minecraft/server` 2.10.0, `@minecraft/server-ui` 2.2.0).
@@ -35,12 +45,20 @@ model GeckoLib → attachable của Bedrock, Palladium/KubeJS → Script API (`@
 | Tier | Alien |
 |---|---|
 | Prototype | Heatblast, Wildmutt, Diamondhead, XLR8, Grey Matter, Four Arms, Stinkfly, Ripjaws, Upgrade, Ghostfreak |
-| Phase 1 | Cannonbolt, Swampfire, Echo Echo, Humungousaur |
-| Phase 2 | Jetray, Big Chill, Chromastone, Atomix |
-| Evolved (10k) | Dragonoid, Astro Bot |
+| Phase 1 | Cannonbolt, Swampfire, Echo Echo, Humungousaur, Eye Guy, Upchuck (Perk), Water Hazard, Benwolf, Wildvine, Walkatrout, Ditto |
+| Phase 2 | Jetray, Big Chill, Chromastone, Atomix, Upchuck (Murk), Armodrillo, Ampfibian, Buzzshock, Frankenstrike, Chamalien |
+| Evolved (10k) | Dragonoid, Astro Bot, Eatle, Echo Echo (Omniverse), Big Chill (Omniverse) |
 
-Mỗi alien dùng đúng model và texture lấy từ mod gốc. Alien có hiệu ứng bị động riêng (sức mạnh, tốc độ, kháng lửa hoặc kháng băng,
-thở dưới nước…) và từ 2 đến 4 kỹ năng (cầu lửa, phun lửa, gai pha lê, dậm đất, ném đá tảng, chất nhờn, tia năng lượng, cuộn tròn, thét siêu âm…).
+Tổng cộng 36 alien, 79 kỹ năng. Mỗi alien dùng đúng model và texture lấy từ mod gốc hoặc addon. Alien có hiệu ứng bị động riêng
+(sức mạnh, tốc độ, kháng lửa/băng/điện, thở dưới nước…) và từ 2 đến 4 kỹ năng (cầu lửa, gai pha lê, dậm đất, ném đá tảng,
+tia mắt, nuốt và nhả năng lượng, khoan đất, vòi nước, sét, tiếng hú siêu âm, tàng hình, ăn khối…).
+
+### Animation
+
+Animation GeckoLib của mod và các addon đã được chuyển sang animation Bedrock:
+
+- **Animation lặp** (đuôi, cánh, thở, bay lơ lửng…) chạy liên tục trên model alien.
+- **Animation kỹ năng** (cắn, bắn tia mắt, cuộn tròn, hóa lỏng, gai tay, hú, khoan, trượt…) chạy khi dùng kỹ năng tương ứng.
 Xem chi tiết trong **Alien Codex** (nằm trong menu Omnitrix).
 
 ### Lệnh (cần quyền OP / cheat)
@@ -60,8 +78,10 @@ Bedrock không hỗ trợ một số thứ mà Palladium/GeckoLib làm được,
 - **Không có cấu trúc (structure)**: file `.nbt` của Java không đọc được trên Bedrock. Thay vào đó, Galvan Pod được rải sẵn khi sinh thế giới
   (cần **thế giới mới** hoặc vùng chưa khám phá). Pod cho cùng loại loot với bản gốc.
 - **Không có phím tắt riêng**: các phím của Palladium được thay bằng thao tác dùng Omnitrix, menu, và nhấn nhảy hai lần.
-- **Model alien không có animation riêng**: alien cử động theo động tác của người chơi. Không có animation tấn công riêng của GeckoLib.
+- **Animation**: tay chân alien vẫn cử động theo động tác của người chơi; animation GeckoLib (đuôi, cánh, kỹ năng) được thêm lên trên.
+  Một số animation của bản Java gắn với trạng thái riêng của Palladium (đổi dạng, tư thế đứng yên đặc biệt) chưa được dùng.
   Kích thước alien được mô phỏng bằng cách co giãn khung xương người chơi; hitbox thì không đổi.
+- **Ditto** không tách thành bản sao thật; kỹ năng *Clone Swarm* mô phỏng các bản sao tấn công kẻ địch xung quanh.
 - **Không có tùy chỉnh màu**: không có Color Module và palette màu. Alien dùng màu mặc định của bản *Prototype*.
 - Mob Machine/Galvan villager, villager profession và trade của bản gốc không được chuyển.
 - `palladium:raw_titanium` không có trên Bedrock nên được thay bằng `iron_ingot` trong các công thức.
@@ -75,15 +95,18 @@ tools/build_packs.py Script chuyển đổi: đọc file .jar → sinh lại tex
 dist/AlienEvo.mcaddon File cài đặt
 ```
 
-Muốn build lại từ file jar gốc thì chạy lệnh sau (cần Python 3 và Pillow):
+Muốn build lại từ các file jar gốc thì chạy lệnh sau (cần Python 3 và Pillow):
 
 ```
-python3 tools/build_packs.py AlienEvo-1.1.3-fabric.jar
+python3 tools/build_packs.py AlienEvo-1.1.3-fabric.jar IntoTheOmniverse-v1.0.6.jar omni-extras1.0.7.3.jar \
+    anur-v1.0.4.jar Wildvine1.0.3.jar AliensUntapped-1.3.5.jar chromastone-1.9_FIX_JAR.jar
+python3 tools/validate.py   # kiểm tra mọi tham chiếu giữa các file của pack
 ```
 
 Code gameplay nằm trong `packs/AlienEvo_BP/scripts/` và được viết tay. Script build không ghi đè các file này.
 
 ## Bản quyền
 
-Toàn bộ tài nguyên (model, texture, âm thanh) thuộc về tác giả gốc của AlienEvo (Habb và Stephen; giấy phép *All Rights Reserved*).
+Toàn bộ tài nguyên (model, texture, animation, âm thanh) thuộc về tác giả gốc của AlienEvo (Habb và Stephen) và tác giả
+các addon nêu ở trên (giấy phép *All Rights Reserved*).
 Bản chuyển đổi này chỉ dành cho mục đích cá nhân. Không phân phối lại nếu chưa được tác giả gốc cho phép.

@@ -1,0 +1,234 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alienevo.murkgourmand_1",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3.5,
+        "visible_bounds_offset": [
+          0,
+          1.25,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "head",
+          "pivot": [
+            -3.7095,
+            22.70757,
+            0.19669
+          ],
+          "rotation": [
+            2.5,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "BaseHead",
+          "parent": "head",
+          "pivot": [
+            9.54177,
+            23.27299,
+            5.2942
+          ]
+        },
+        {
+          "name": "Jaw",
+          "parent": "head",
+          "pivot": [
+            -3.7095,
+            30.70173,
+            -1.73299
+          ]
+        },
+        {
+          "name": "body",
+          "pivot": [
+            -3.7095,
+            12.13772,
+            -0.50867
+          ]
+        },
+        {
+          "name": "TAIL_BASE",
+          "parent": "body",
+          "pivot": [
+            -3.7095,
+            4.50821,
+            6.31774
+          ]
+        },
+        {
+          "name": "TAIL_LOWMID",
+          "parent": "TAIL_BASE",
+          "pivot": [
+            -3.7095,
+            4.50821,
+            8.32551
+          ]
+        },
+        {
+          "name": "TAIL_HIGHMID",
+          "parent": "TAIL_LOWMID",
+          "pivot": [
+            -3.7095,
+            4.50821,
+            12.34104
+          ]
+        },
+        {
+          "name": "leftArm",
+          "pivot": [
+            7.5,
+            15.975,
+            -0.7
+          ]
+        },
+        {
+          "name": "LeftArm",
+          "parent": "leftArm",
+          "pivot": [
+            7.3334,
+            15.7521,
+            -0.41
+          ],
+          "rotation": [
+            0,
+            0,
+            -30
+          ]
+        },
+        {
+          "name": "rightArm",
+          "pivot": [
+            -5.51,
+            16.94,
+            -0.23
+          ]
+        },
+        {
+          "name": "RightArm",
+          "parent": "rightArm",
+          "pivot": [
+            -4.8334,
+            16.8771,
+            -0.46
+          ],
+          "rotation": [
+            0,
+            0,
+            27.5
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -9.34841,
+                9.89033,
+                -1.23992
+              ],
+              "size": [
+                2.70598,
+                2.70598,
+                1.38508
+              ],
+              "inflate": 0.1,
+              "pivot": [
+                -7.99542,
+                11.24332,
+                -0.54738
+              ],
+              "rotation": [
+                130.29018,
+                88.86323,
+                132.70146
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    12,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    13,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    11,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    9,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    1
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    10,
+                    2
+                  ],
+                  "uv_size": [
+                    2,
+                    -1
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "leftLeg",
+          "pivot": [
+            1.30992,
+            6.11442,
+            -0.50867
+          ]
+        },
+        {
+          "name": "rightLeg",
+          "pivot": [
+            -8.77911,
+            3.7051,
+            0.69599
+          ]
+        }
+      ]
+    }
+  ]
+}

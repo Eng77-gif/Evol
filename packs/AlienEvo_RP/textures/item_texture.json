@@ -220,6 +220,54 @@
     },
     "alienevo:form_astrobot": {
       "textures": "textures/ui/aliens/astrobot"
+    },
+    "alienevo:form_opticoid": {
+      "textures": "textures/ui/aliens/opticoid"
+    },
+    "alienevo:form_perkgourmand": {
+      "textures": "textures/ui/aliens/perkgourmand"
+    },
+    "alienevo:form_murkgourmand": {
+      "textures": "textures/ui/aliens/murkgourmand"
+    },
+    "alienevo:form_talpaedan": {
+      "textures": "textures/ui/aliens/talpaedan"
+    },
+    "alienevo:form_orishan": {
+      "textures": "textures/ui/aliens/orishan"
+    },
+    "alienevo:form_amperi": {
+      "textures": "textures/ui/aliens/amperi"
+    },
+    "alienevo:form_nosedeenian": {
+      "textures": "textures/ui/aliens/nosedeenian"
+    },
+    "alienevo:form_loboan": {
+      "textures": "textures/ui/aliens/loboan"
+    },
+    "alienevo:form_transylian": {
+      "textures": "textures/ui/aliens/transylian"
+    },
+    "alienevo:form_florauna": {
+      "textures": "textures/ui/aliens/florauna"
+    },
+    "alienevo:form_merlinisapien": {
+      "textures": "textures/ui/aliens/merlinisapien"
+    },
+    "alienevo:form_ickthyperambuloid": {
+      "textures": "textures/ui/aliens/ickthyperambuloid"
+    },
+    "alienevo:form_splixson": {
+      "textures": "textures/ui/aliens/splixson"
+    },
+    "alienevo:form_oryctini": {
+      "textures": "textures/ui/aliens/oryctini"
+    },
+    "alienevo:form_sonorosian_ov": {
+      "textures": "textures/ui/aliens/sonorosian_ov"
+    },
+    "alienevo:form_necrofriggian_ov": {
+      "textures": "textures/ui/aliens/necrofriggian_ov"
     }
   }
 }

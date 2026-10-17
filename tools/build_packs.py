@@ -2,7 +2,10 @@
 """Convert the AlienEvo Fabric (Palladium/KubeJS) jar into a Bedrock add-on.
 
 Usage:
-    python3 tools/build_packs.py path/to/AlienEvo-1.1.3-fabric.jar
+    python3 tools/build_packs.py AlienEvo-1.1.3-fabric.jar [addon.jar ...]
+
+Add-on jars (Into The Omniverse, Omni Extras, The Anur Trio, Wildvine,
+Aliens Untapped, Chromastone) add new aliens and animations.
 
 The script regenerates every *generated* file of packs/AlienEvo_RP and
 packs/AlienEvo_BP (textures, geometry, attachables, sounds, items, blocks,
@@ -19,6 +22,11 @@ import sys
 import zipfile
 
 from PIL import Image
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from animations import build_alien_animations, signal_animations
+from icons import render_icon
+from layers import VFS, resolve
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RP = os.path.join(ROOT, "packs", "AlienEvo_RP")
@@ -51,98 +59,52 @@ BADGE_TEX = AE + "/textures/models/badge"
 GLOW = ["b3ff40", "a7f72e", "8ed721", "77b81a", "639d11"]
 
 
-def badge(alien_dir, name="badge_prototype"):
-    return {"geo": f"{G_AL}/{alien_dir}/{name}.geo.json"}
-
-
-# Every alien that has a model in the jar.  "parts" are rendered with the
-# composite of "layers"; "glow" layers are rendered with an emissive material.
+# Every alien: render layer file of the Java mods (resolved by layers.py).
 # "scale" comes from global.alienevo_scale_N (55 == player size).
+L = "assets/alienevo/palladium/render_layers/aliens"
 ALIENS = [
-    dict(id=1, key="pyronite", name="Heatblast", scale=57, parts=[
-        dict(geo=f"{G_AL}/alien_1/pyronite_prototype.geo.json",
-             layers=[f"{T_AL}/alien_1/heatblast_prototype.png", f"{T_AL}/alien_1/heatblast_ext_prototype.png"],
-             glow=[f"{T_AL}/alien_1/heatblast_0_glow_prototype.png"])],
-         badge=badge("alien_1")),
-    dict(id=2, key="vulpimancer", name="Wildmutt", scale=52, parts=[
-        dict(geo=f"{G_AL}/alien_2/vulpimancer_prototype.geo.json",
-             layers=[f"{T_AL}/alien_2/vulpimancer_skin_prototype.png", f"{T_AL}/alien_2/vulpimancer_uniform_prototype.png"])],
-         badge=badge("alien_2")),
-    dict(id=3, key="petrosapien", name="Diamondhead", scale=62, parts=[
-        dict(geo=f"{G_AL}/alien_3/petrosapien_prototype.geo.json",
-             layers=[f"{T_AL}/alien_3/petrosapien_skin_prototype.png", f"{T_AL}/alien_3/petrosapien_uniform_prototype.png"],
-             glow=[f"{T_AL}/alien_3/petrosapien_glow_prototype.png"])],
-         badge=badge("alien_3")),
-    dict(id=4, key="kineceleran", name="XLR8", scale=65, parts=[
-        dict(geo=f"{G_AL}/alien_4/kineceleran_prototype.geo.json",
-             layers=[f"{T_AL}/alien_4/kineceleran_skin_prototype.png", f"{T_AL}/alien_4/kineceleran_uniform_prototype.png"],
-             glow=[f"{T_AL}/alien_4/kineceleran_glow_prototype.png"])],
-         badge=badge("alien_4")),
-    dict(id=5, key="galvan", name="Grey Matter", scale=50, parts=[
-        dict(geo=f"{G_AL}/alien_5/galvan_prototype.geo.json",
-             layers=[f"{T_AL}/alien_5/galvan_skin_prototype.png", f"{T_AL}/alien_5/galvan_uniform_prototype.png"],
-             glow=[f"{T_AL}/alien_5/galvan_glow_prototype.png"])],
-         badge=badge("alien_5")),
-    dict(id=6, key="tetramand", name="Four Arms", scale=75, parts=[
-        dict(geo=f"{G_AL}/alien_6/tetramand_prototype.geo.json",
-             layers=[f"{T_AL}/alien_6/tetramand_skin_prototype.png", f"{T_AL}/alien_6/tetramand_uniform_prototype.png"],
-             glow=[f"{T_AL}/alien_6/tetramand_glow_prototype.png"]),
-        dict(geo=f"{G_AL}/alien_6/tetramand_arms_prototype.geo.json",
-             layers=[f"{T_AL}/alien_6/tetramand_skin_prototype.png", f"{T_AL}/alien_6/tetramand_uniform_prototype.png"])],
-         badge=badge("alien_6")),
-    dict(id=7, key="lepidopterran", name="Stinkfly", scale=37, parts=[
-        dict(geo=f"{G_AL}/alien_7/lepidopterran_prototype.geo.json",
-             layers=[f"{T_AL}/alien_7/lepidopterran_uniform_prototype.png", f"{T_AL}/alien_7/lepidopterran_skin_prototype.png"],
-             glow=[f"{T_AL}/alien_7/lepidopterran_glow_prototype.png"]),
-        dict(geo=f"{G_AL}/alien_7/lepidopterran_legs_prototype.geo.json",
-             layers=[f"{T_AL}/alien_7/lepidopterran_skin_prototype.png"]),
-        dict(geo=f"{G_AL}/alien_7/lepidopterran_wings.geo.json",
-             layers=[f"{T_AL}/alien_7/wings_prototype.png"], translucent=True)],
-         badge=badge("alien_7")),
-    dict(id=8, key="piscciss_volann", name="Ripjaws", scale=60, parts=[
-        dict(geo=f"{G_AL}/alien_8/piscciss_volann_prototype.geo.json",
-             layers=[f"{T_AL}/alien_8/piscciss_volann_skin_prototype.png", f"{T_AL}/alien_8/piscciss_volann_uniform_prototype.png"],
-             glow=[f"{T_AL}/alien_8/piscciss_volann_glow_prototype.png"])],
-         badge=badge("alien_8")),
-    dict(id=9, key="galvanic_mechamorph", name="Upgrade", scale=65, parts=[
-        dict(geo=f"{G_AL}/alien_9/galvanic_mechamorph_prototype.geo.json",
-             layers=[f"{T_AL}/alien_9/galvanic_mechamorph_prototype.png"],
-             glow=[f"{T_AL}/alien_9/galvanic_mechamorph_glow_prototype.png"])],
-         badge=badge("alien_9")),
-    dict(id=10, key="ectonurite", name="Ghostfreak", scale=68, parts=[
-        dict(geo=f"{G_AL}/alien_10/ectonurite_prototype.geo.json",
-             layers=[f"{T_AL}/alien_10/ectonurite_skin_0_prototype.png"],
-             glow=[f"{T_AL}/alien_10/ectonurite_glow_prototype.png"], translucent=True)],
-         badge=badge("alien_10")),
-    dict(id=11, key="arburian_pelarota", name="Cannonbolt", scale=45, parts=[
-        dict(geo=f"{G_AL}/alien_11/arburian_pelarota_prototype.geo.json",
-             layers=[f"{T_AL}/alien_11/arburian_pelarota_prototype.png"],
-             glow=[f"{T_AL}/alien_11/arburian_pelarota_glow_prototype.png"])],
-         badge=badge("alien_11")),
-    dict(id=31, key="methanosian", name="Swampfire", scale=55, parts=[
-        dict(geo=f"{AF}/geo/methanosian.geo.json", layers=[f"{AF}/textures/models/methanosian/methanosian.png"])]),
-    dict(id=32, key="sonorosian", name="Echo Echo", scale=55, parts=[
-        dict(geo=f"{AF}/geo/sonorosian.geo.json", layers=[f"{AF}/textures/models/sonorosian/sonorosian.png"],
-             glow=[f"{AF}/textures/models/sonorosian/sonorosian_glow.png"])]),
-    dict(id=33, key="vaxasaurian", name="Humungousaur", scale=55, parts=[
-        dict(geo=f"{AF}/geo/vaxasaurian.geo.json", layers=[f"{AF}/textures/models/vaxasaurian/vaxasaurian.png"])]),
-    dict(id=34, key="aerophibian", name="Jetray", scale=55, parts=[
-        dict(geo=f"{G_AL}/alien_34/aerophibian.geo.json", layers=[f"{T_AL}/alien_34/aerophibian.png"])]),
-    dict(id=35, key="necrofriggian", name="Big Chill", scale=55, parts=[
-        dict(geo=f"{AF}/geo/necrofriggian.geo.json", layers=[f"{AF}/textures/models/necrofriggian/necrofriggian_0.png"],
-             glow=[f"{AF}/textures/models/necrofriggian/necrofriggian_glow.png"])]),
-    dict(id=36, key="crystalsapien", name="Chromastone", scale=55, parts=[
-        dict(geo=f"{AF}/geo/crystalsapien.geo.json", layers=[f"{AF}/textures/models/crystalsapien/crystalsapien.png"],
-             glow=[f"{AF}/textures/models/crystalsapien/chromastone_glow.png"])]),
-    dict(id=80, key="nucleonix", name="Atomix", scale=55, parts=[
-        dict(geo=f"{G_AL}/alien_60/atomix.geo.json", layers=[f"{T_AL}/alien_60/atomix.png"],
-             glow=[f"{T_AL}/alien_60/atomix_glow_0.png"])]),
-    dict(id=100, key="dragonoid", name="Dragonoid", scale=55, parts=[
-        dict(geo=f"{G_AL}/alien_100/dragonoid.geo.json", layers=[f"{T_AL}/alien_100/dragonoid.png"],
-             glow=[f"{T_AL}/alien_100/dragonoid_glow.png"])]),
-    dict(id=101, key="astrobot", name="Astro Bot", scale=55, parts=[
-        dict(geo=f"{G_AL}/alien_101/astrobot.geo.json", layers=[f"{T_AL}/alien_101/astrobot.png"],
-             glow=[f"{T_AL}/alien_101/astrobot_glow.png"])]),
+    dict(id=1, key="pyronite", name="Heatblast", scale=57, layer=f"{L}/alien_1/pyronite.json"),
+    dict(id=2, key="vulpimancer", name="Wildmutt", scale=52, layer=f"{L}/alien_2/vulpimancer.json"),
+    dict(id=3, key="petrosapien", name="Diamondhead", scale=62, layer=f"{L}/alien_3/petrosapien.json"),
+    dict(id=4, key="kineceleran", name="XLR8", scale=65, layer=f"{L}/alien_4/kineceleran.json"),
+    dict(id=5, key="galvan", name="Grey Matter", scale=50, layer=f"{L}/alien_5/galvan.json"),
+    dict(id=6, key="tetramand", name="Four Arms", scale=75, layer=f"{L}/alien_6/tetramand.json"),
+    dict(id=7, key="lepidopterran", name="Stinkfly", scale=37, layer=f"{L}/alien_7/lepidopterran.json"),
+    dict(id=8, key="piscciss_volann", name="Ripjaws", scale=60, layer=f"{L}/alien_8/piscciss_volann.json"),
+    dict(id=9, key="galvanic_mechamorph", name="Upgrade", scale=65, layer=f"{L}/alien_9/galvanic_mechamorph.json"),
+    dict(id=10, key="ectonurite", name="Ghostfreak", scale=68, layer=f"{L}/alien_10/ectonurite.json"),
+    dict(id=11, key="arburian_pelarota", name="Cannonbolt", scale=45, layer=f"{L}/alien_11/arburian_pelarota.json"),
+    dict(id=31, key="methanosian", name="Swampfire", scale=55, layer="assets/afomni/palladium/render_layers/methanosian.json"),
+    dict(id=32, key="sonorosian", name="Echo Echo", scale=55, layer="assets/afomni/palladium/render_layers/sonorosian.json"),
+    dict(id=33, key="vaxasaurian", name="Humungousaur", scale=55, layer="assets/afomni/palladium/render_layers/vaxasaurian.json"),
+    dict(id=34, key="aerophibian", name="Jetray", scale=55, layer=f"{L}/alien_34/aerophibian.json"),
+    dict(id=35, key="necrofriggian", name="Big Chill", scale=55, layer="assets/afomni/palladium/render_layers/necrofriggian_cloak.json"),
+    # Chromastone add-on replaces the old afomni model.
+    dict(id=36, key="crystalsapien", name="Chromastone", scale=55, layer="assets/chromastone/palladium/render_layers/crystalsapien.json"),
+    dict(id=80, key="nucleonix", name="Atomix", scale=55, layer=f"{L}/alien_60/atomix.json"),
+    dict(id=100, key="dragonoid", name="Dragonoid", scale=55, layer=f"{L}/alien_100/dragonoid.json"),
+    dict(id=101, key="astrobot", name="Astro Bot", scale=55, layer=f"{L}/alien_101/astrobot.json"),
+    # Omni Extras
+    dict(id=110, key="opticoid", name="Eye Guy", scale=70, layer="assets/omni_extras/palladium/render_layers/opticoid.json"),
+    dict(id=111, key="perkgourmand", name="Upchuck (Perk)", scale=40, layer="assets/omni_extras/palladium/render_layers/perk_gourmand.json"),
+    dict(id=112, key="murkgourmand", name="Upchuck (Murk)", scale=40, layer="assets/omni_extras/palladium/render_layers/murk_gourmand.json"),
+    dict(id=190, key="talpaedan", name="Armodrillo", scale=55, layer="assets/omni_extras/palladium/render_layers/talpaedan.json"),
+    dict(id=192, key="orishan", name="Water Hazard", scale=60, layer="assets/omni_extras/palladium/render_layers/orishan.json"),
+    dict(id=193, key="amperi", name="Ampfibian", scale=55, layer="assets/omni_extras/palladium/render_layers/amperi.json"),
+    dict(id=299, key="nosedeenian", name="Buzzshock", scale=55, layer="assets/omni_extras/palladium/render_layers/nosedeenian.json"),
+    # The Anur Trio
+    dict(id=209, key="loboan", name="Benwolf", scale=57, layer="assets/anur/palladium/render_layers/loboan.json"),
+    dict(id=211, key="transylian", name="Frankenstrike", scale=57, layer="assets/anur/palladium/render_layers/transylian.json"),
+    # Wildvine
+    dict(id=222, key="florauna", name="Wildvine", scale=70, layer="assets/florauna/palladium/render_layers/aliens/alien_222/florauna.json"),
+    # Aliens Untapped
+    dict(id=200, key="merlinisapien", name="Chamalien", scale=60, layer="assets/untapped/palladium/render_layers/aliens/alien_200/merlinisapien.json"),
+    dict(id=201, key="ickthyperambuloid", name="Walkatrout", scale=60, layer="assets/untapped/palladium/render_layers/aliens/alien_201/ickthyperambuloid.json"),
+    dict(id=202, key="splixson", name="Ditto", scale=60, layer="assets/untapped/palladium/render_layers/aliens/alien_202/splixson.json"),
+    dict(id=203, key="oryctini", name="Eatle", scale=60, layer="assets/untapped/palladium/render_layers/aliens/alien_203/oryctini.json"),
+    # Into The Omniverse
+    dict(id=501, key="sonorosian_ov", name="Echo Echo (Omniverse)", scale=55, layer="assets/aeo/palladium/render_layers/aliens/alien_32/sonorosian.json"),
+    dict(id=503, key="necrofriggian_ov", name="Big Chill (Omniverse)", scale=55, layer="assets/aeo/palladium/render_layers/aliens/alien_35/necrofriggian_cloak.json"),
 ]
 
 COLORS = ["white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray",
@@ -253,20 +215,38 @@ def composite(images):
 # Geometry
 # --------------------------------------------------------------------------
 
-def convert_geo(src, identifier):
+def convert_geo(src, identifier, renames=None):
+    """GeckoLib armor geometry -> attachable geometry.
+
+    armorHead/armorBody/... become the player bone names so they follow the
+    player's animation.  A bone that already uses one of those names is renamed
+    (recorded in `renames`, used for the animations too).
+    """
     geo = src["minecraft:geometry"][0]
     desc = dict(geo["description"])
     desc["identifier"] = identifier
+    names = {b["name"] for b in geo.get("bones", [])}
+    rename = dict(BONE_MAP)
+    for old in list(names):
+        if old in BONE_MAP.values() and any(k in names for k, v in BONE_MAP.items() if v == old):
+            new = old + "_inner"
+            while new in names:
+                new += "_"
+            rename[old] = new
+    if renames is not None:
+        renames.update({k: v for k, v in rename.items() if k not in BONE_MAP})
     bones = []
     for bone in geo.get("bones", []):
         bone = dict(bone)
-        bone["name"] = BONE_MAP.get(bone["name"], bone["name"])
+        bone["name"] = rename.get(bone["name"], bone["name"])
         if "parent" in bone:
-            bone["parent"] = BONE_MAP.get(bone["parent"], bone["parent"])
+            bone["parent"] = rename.get(bone["parent"], bone["parent"])
         elif bone["name"] in BOOT_PARENT:
             bone["parent"] = BOOT_PARENT[bone["name"]]
         bones.append(bone)
-    return {"format_version": "1.12.0", "minecraft:geometry": [{"description": desc, "bones": bones}]}
+    # Per-face uv_rotation needs the 1.21.0 geometry format.
+    fmt = "1.21.0" if '"uv_rotation"' in json.dumps(bones) else "1.12.0"
+    return {"format_version": fmt, "minecraft:geometry": [{"description": desc, "bones": bones}]}
 
 
 def java_block_model_to_geo(model, identifier, tex_size):
@@ -312,83 +292,88 @@ def java_block_model_to_geo(model, identifier, tex_size):
 # Resource pack
 # --------------------------------------------------------------------------
 
-def build_aliens(jar, lang):
+def is_translucent(img):
+    a = img.getchannel("A")
+    hist = a.histogram()
+    partial = sum(hist[1:255])
+    return partial > 0.01 * img.size[0] * img.size[1]
+
+
+def build_aliens(vfs, lang):
     geo_dir = os.path.join(RP, "models", "entity", "aliens")
     tex_dir = os.path.join(RP, "textures", "entity", "aliens")
     att_dir = os.path.join(RP, "attachables", "aliens")
-    for d in (geo_dir, tex_dir, att_dir):
+    anim_dir = os.path.join(RP, "animations", "aliens")
+    ctrl_dir = os.path.join(RP, "animation_controllers", "aliens")
+    icon_dir = os.path.join(RP, "textures", "ui", "aliens")
+    for d in (geo_dir, tex_dir, att_dir, anim_dir, ctrl_dir, icon_dir):
         reset_dir(d)
 
     controllers = {}
-    badge_img = composite([jar.image(f"{BADGE_TEX}/badge_prototype.png")] + [
-        jar.image(f"{BADGE_TEX}/prototype/{p}/{p}_0.png") for p in ("core_side", "core_top", "dial_inner", "dial_outer")
-        if jar.exists(f"{BADGE_TEX}/prototype/{p}/{p}_0.png")])
-    save_png(badge_img, os.path.join(tex_dir, "badge.png"))
-    save_png(tint(jar.image(f"{BADGE_TEX}/badge_glow_default_prototype.png"), GLOW[0]), os.path.join(tex_dir, "badge_glow.png"))
-
+    triggers_out = {}
     for alien in ALIENS:
         key = alien["key"]
+        layers = resolve(vfs, alien["layer"])
+        if not layers:
+            raise SystemExit(f"no visible layers for {key}")
+        # Group layers by model, keeping the order of the render layer file.
+        parts = []
+        for layer in layers:
+            part = next((p for p in parts if p["geo"] == layer["geo"]), None)
+            if part is None:
+                part = {"geo": layer["geo"], "base": [], "glow": []}
+                parts.append(part)
+            img = layer["image"]
+            if "/badge/badge_glow" in layer["tex_path"]:
+                img = tint(img, GLOW[0])
+            (part["glow"] if layer["glow"] else part["base"]).append(img)
+
         textures, geometry, rcs = {}, {}, []
+        renames = {}
         materials = {"default": "entity_alphatest", "glow": "entity_emissive_alpha", "translucent": "entity_alphablend"}
-        for i, part in enumerate(alien["parts"]):
+        for i, part in enumerate(parts):
             pid = f"{key}_{i}"
             geo_id = f"geometry.alienevo.{pid}"
-            write_json(os.path.join(geo_dir, f"{pid}.geo.json"), convert_geo(jar.json(part["geo"]), geo_id))
-            save_png(composite([jar.image(p) for p in part["layers"]]), os.path.join(tex_dir, f"{pid}.png"))
+            write_json(os.path.join(geo_dir, f"{pid}.geo.json"), convert_geo(vfs.json(part["geo"]), geo_id, renames))
             geometry[f"part{i}"] = geo_id
-            textures[f"part{i}"] = f"textures/entity/aliens/{pid}"
-            mat = "translucent" if part.get("translucent") else "default"
-            rc = f"controller.render.alienevo.{pid}"
-            controllers[rc] = {"geometry": f"Geometry.part{i}", "materials": [{"*": f"Material.{mat}"}],
-                               "textures": [f"Texture.part{i}"]}
-            rcs.append({rc: "!c.is_first_person"})
-            if part.get("glow"):
-                save_png(composite([jar.image(p) for p in part["glow"]]), os.path.join(tex_dir, f"{pid}_glow.png"))
+            if part["base"]:
+                img = composite(part["base"])
+                save_png(img, os.path.join(tex_dir, f"{pid}.png"))
+                textures[f"part{i}"] = f"textures/entity/aliens/{pid}"
+                mat = "translucent" if is_translucent(img) else "default"
+                rc = f"controller.render.alienevo.{pid}"
+                controllers[rc] = {"geometry": f"Geometry.part{i}", "materials": [{"*": f"Material.{mat}"}],
+                                   "textures": [f"Texture.part{i}"]}
+                rcs.append({rc: "!c.is_first_person"})
+            if part["glow"]:
+                save_png(composite(part["glow"]), os.path.join(tex_dir, f"{pid}_glow.png"))
                 textures[f"part{i}_glow"] = f"textures/entity/aliens/{pid}_glow"
                 rcg = f"controller.render.alienevo.{pid}_glow"
                 controllers[rcg] = {"geometry": f"Geometry.part{i}", "materials": [{"*": "Material.glow"}],
                                     "textures": [f"Texture.part{i}_glow"]}
                 rcs.append({rcg: "!c.is_first_person"})
-        if alien.get("badge"):
-            geo_id = f"geometry.alienevo.{key}_badge"
-            write_json(os.path.join(geo_dir, f"{key}_badge.geo.json"), convert_geo(jar.json(alien["badge"]["geo"]), geo_id))
-            geometry["badge"] = geo_id
-            textures["badge"] = "textures/entity/aliens/badge"
-            textures["badge_glow"] = "textures/entity/aliens/badge_glow"
-            rcs.append({"controller.render.alienevo.badge": "!c.is_first_person"})
-            rcs.append({"controller.render.alienevo.badge_glow": "!c.is_first_person"})
 
-        write_json(os.path.join(att_dir, f"form_{key}.json"), {
-            "format_version": "1.10.0",
-            "minecraft:attachable": {
-                "description": {
-                    "identifier": f"alienevo:form_{key}",
-                    "materials": materials,
-                    "textures": textures,
-                    "geometry": geometry,
-                    "scripts": {"parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"},
-                    "render_controllers": rcs,
-                }
-            },
-        })
+        animations, animate, trig_index = build_alien_animations(vfs, key, layers, anim_dir, ctrl_dir, renames)
+        triggers_out[key] = trig_index
+        desc = {
+            "identifier": f"alienevo:form_{key}",
+            "materials": materials,
+            "textures": textures,
+            "geometry": geometry,
+            "scripts": {"parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"},
+            "render_controllers": rcs,
+        }
+        if animations:
+            desc["animations"] = animations
+            desc["scripts"]["animate"] = animate
+        write_json(os.path.join(att_dir, f"form_{key}.json"), {"format_version": "1.10.0", "minecraft:attachable": {"description": desc}})
         lang[f"item.alienevo:form_{key}"] = alien["name"]
+        icon = render_icon(vfs.json(parts[0]["geo"]), composite(parts[0]["base"] + parts[0]["glow"]))
+        save_png(icon, os.path.join(icon_dir, f"{key}.png"))
 
-    controllers["controller.render.alienevo.badge"] = {"geometry": "Geometry.badge", "materials": [{"*": "Material.default"}],
-                                                       "textures": ["Texture.badge"]}
-    controllers["controller.render.alienevo.badge_glow"] = {"geometry": "Geometry.badge", "materials": [{"*": "Material.glow"}],
-                                                            "textures": ["Texture.badge_glow"]}
     write_json(os.path.join(RP, "render_controllers", "alienevo.render_controllers.json"),
                {"format_version": "1.10.0", "render_controllers": controllers})
-
-    # Holograms of the aliens are used as the selection icons.
-    icon_dir = os.path.join(RP, "textures", "ui", "aliens")
-    reset_dir(icon_dir)
-    for alien in ALIENS:
-        img = jar.image(alien["parts"][0]["layers"][0])
-        # Face of a humanoid 64x64 skin is at (8,8)-(16,16).
-        scale = img.size[0] // 64 or 1
-        face = img.crop((8 * scale, 8 * scale, 16 * scale, 16 * scale)).resize((32, 32), Image.NEAREST)
-        save_png(face, os.path.join(icon_dir, f"{alien['key']}.png"))
+    return triggers_out
 
 
 def build_player_scale_animation():
@@ -432,6 +417,17 @@ def build_projectiles(jar):
     save_png(jar.image(T_AL + "/alien_6/boulder.png"), os.path.join(RP, "textures", "entity", "boulder.png"))
 
 
+def write_anim_data(triggers):
+    """Trigger animation indices for the server script (generated)."""
+    path = os.path.join(BP, "scripts", "anim_data.js")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("// Generated by tools/build_packs.py - trigger animation index per alien.\n")
+        f.write("// Played with Player.playAnimation(`animation.alienevo.signal.${index}`).\n")
+        f.write("export const ANIM_TRIGGERS = ")
+        json.dump(triggers, f, indent=4, sort_keys=True)
+        f.write(";\n")
+
+
 def build_player_entity(scale_expr):
     """Patch the vanilla player client entity (Bedrock 1.26) so the player's own
     body is hidden while an alien form is worn, and the skeleton is scaled."""
@@ -439,6 +435,8 @@ def build_player_entity(scale_expr):
         data = json.load(f)
     desc = data["minecraft:client_entity"]["description"]
     alien = "q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')"
+    desc["scripts"]["initialize"].append("v.alienevo_anim = 0.0;")
+    desc["scripts"].setdefault("variables", {})["variable.alienevo_anim"] = "public"
     desc["scripts"]["pre_animation"].append(f"v.alienevo_is_alien = {alien};")
     desc["scripts"]["pre_animation"].append(f"v.alienevo_scale = {scale_expr};")
     desc["animations"]["alienevo_scale"] = "animation.alienevo.player.scale"
@@ -507,11 +505,16 @@ def build_sounds(jar):
     out = os.path.join(RP, "sounds", "alienevo")
     reset_dir(out)
     defs = {}
-    for ns in ("alienevo", "afomni"):
+    namespaces = sorted({n.split("/")[1] for n in jar.files if n.endswith("/sounds.json") and n.count("/") == 2})
+    for ns in namespaces:
         sj = f"assets/{ns}/sounds.json"
-        if not jar.exists(sj):
-            continue
-        for event, data in jar.json(sj).items():
+        merged = {}
+        for version in jar.all_json(sj):
+            for event, data in version.items():
+                merged.setdefault(event, data)
+        for event, data in merged.items():
+            if event.startswith("music."):
+                continue  # menu music of the add-ons, not used here
             files = []
             for s in data.get("sounds", []):
                 name = s["name"] if isinstance(s, dict) else s
@@ -519,13 +522,15 @@ def build_sounds(jar):
                 src = f"assets/{sns}/sounds/{path}.ogg"
                 if not jar.exists(src):
                     continue
-                dst = os.path.join(out, path + ".ogg")
+                rel = path if sns in ("alienevo", "afomni") else f"{sns}/{path}"
+                dst = os.path.join(out, rel + ".ogg")
                 os.makedirs(os.path.dirname(dst), exist_ok=True)
                 with open(dst, "wb") as f:
                     f.write(jar.read(src))
-                files.append({"name": f"sounds/alienevo/{path}", "volume": 1.0})
+                files.append({"name": f"sounds/alienevo/{rel}", "volume": 1.0})
             if files:
-                defs[f"alienevo.{event}"] = {"category": "player", "sounds": files}
+                name = f"alienevo.{event}" if ns in ("alienevo", "afomni") else f"alienevo.{ns}.{event}"
+                defs.setdefault(name, {"category": "player", "sounds": files})
     write_json(os.path.join(RP, "sounds", "sound_definitions.json"),
                {"format_version": "1.20.20", "sound_definitions": defs})
 
@@ -833,14 +838,18 @@ def main():
         print(__doc__)
         sys.exit(1)
     jar = Jar(sys.argv[1])
+    vfs = VFS(sys.argv[1:])
     lang, item_textures, terrain = {}, {}, {}
     build_lang(jar, lang)
-    build_aliens(jar, lang)
+    triggers = build_aliens(vfs, lang)
+    signal_animations(max([len(t) for t in triggers.values()] + [1]),
+                      os.path.join(RP, "animations", "alienevo.signals.animation.json"))
+    write_anim_data(triggers)
     build_player_entity(build_player_scale_animation())
     build_projectiles(jar)
     build_items_rp(jar, lang, item_textures)
     build_blocks_rp(jar, terrain)
-    build_sounds(jar)
+    build_sounds(vfs)
     write_json(os.path.join(RP, "textures", "item_texture.json"),
                {"resource_pack_name": "alienevo", "texture_name": "atlas.items", "texture_data": item_textures})
     write_json(os.path.join(RP, "textures", "terrain_texture.json"),

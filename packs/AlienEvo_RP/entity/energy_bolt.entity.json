@@ -4,7 +4,7 @@
     "description": {
       "identifier": "alienevo:energy_bolt",
       "materials": { "default": "entity_alphatest" },
-      "textures": { "default": "textures/entity/aliens/badge_glow" },
+      "textures": { "default": "textures/entity/boulder" },
       "geometry": { "default": "geometry.alienevo.boulder" },
       "render_controllers": [],
       "scripts": { "scale": "0.0" }

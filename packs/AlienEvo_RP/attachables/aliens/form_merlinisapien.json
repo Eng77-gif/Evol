@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alienevo:form_merlinisapien",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha",
+        "translucent": "entity_alphablend"
+      },
+      "textures": {
+        "part0": "textures/entity/aliens/merlinisapien_0",
+        "part0_glow": "textures/entity/aliens/merlinisapien_0_glow",
+        "part1": "textures/entity/aliens/merlinisapien_1",
+        "part1_glow": "textures/entity/aliens/merlinisapien_1_glow"
+      },
+      "geometry": {
+        "part0": "geometry.alienevo.merlinisapien_0",
+        "part1": "geometry.alienevo.merlinisapien_1"
+      },
+      "scripts": {
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "animate": [
+          "loop0",
+          "triggers"
+        ]
+      },
+      "render_controllers": [
+        {
+          "controller.render.alienevo.merlinisapien_0": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.merlinisapien_0_glow": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.merlinisapien_1": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.merlinisapien_1_glow": "!c.is_first_person"
+        }
+      ],
+      "animations": {
+        "loop0": "animation.alienevo.merlinisapien.tail_standing",
+        "t1": "animation.alienevo.merlinisapien.stinger",
+        "triggers": "controller.animation.alienevo.merlinisapien"
+      }
+    }
+  }
+}

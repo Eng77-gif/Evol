@@ -1,0 +1,169 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alienevo.merlinisapien_1",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 4.5,
+        "visible_bounds_offset": [
+          0,
+          1.75,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "full_body",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rightLeg",
+          "parent": "full_body",
+          "pivot": [
+            -1.75,
+            4,
+            0
+          ]
+        },
+        {
+          "name": "head",
+          "parent": "full_body",
+          "pivot": [
+            0,
+            12,
+            0
+          ]
+        },
+        {
+          "name": "body",
+          "parent": "full_body",
+          "pivot": [
+            0,
+            12,
+            0
+          ]
+        },
+        {
+          "name": "leftArm",
+          "parent": "full_body",
+          "pivot": [
+            4.5281,
+            25.548,
+            -0.1961
+          ],
+          "cubes": [
+            {
+              "origin": [
+                7.04108,
+                17.13029,
+                -3.90483
+              ],
+              "size": [
+                2,
+                2,
+                1
+              ],
+              "pivot": [
+                8.04108,
+                18.13029,
+                -3.40483
+              ],
+              "rotation": [
+                -90.87091,
+                -60.01607,
+                85.7733
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    11,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    13,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    12,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    11,
+                    0
+                  ],
+                  "uv_size": [
+                    -2,
+                    1
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    11,
+                    2
+                  ],
+                  "uv_size": [
+                    -2,
+                    -1
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "rightArm",
+          "parent": "full_body",
+          "pivot": [
+            -3,
+            11.75,
+            0
+          ]
+        },
+        {
+          "name": "leftLeg",
+          "parent": "full_body",
+          "pivot": [
+            1.75,
+            4,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

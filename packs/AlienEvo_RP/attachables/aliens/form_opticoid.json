@@ -1,0 +1,53 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alienevo:form_opticoid",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha",
+        "translucent": "entity_alphablend"
+      },
+      "textures": {
+        "part0": "textures/entity/aliens/opticoid_0",
+        "part0_glow": "textures/entity/aliens/opticoid_0_glow",
+        "part1": "textures/entity/aliens/opticoid_1",
+        "part1_glow": "textures/entity/aliens/opticoid_1_glow"
+      },
+      "geometry": {
+        "part0": "geometry.alienevo.opticoid_0",
+        "part1": "geometry.alienevo.opticoid_1"
+      },
+      "scripts": {
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "animate": [
+          "loop0",
+          "triggers"
+        ]
+      },
+      "render_controllers": [
+        {
+          "controller.render.alienevo.opticoid_0": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.opticoid_0_glow": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.opticoid_1": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.opticoid_1_glow": "!c.is_first_person"
+        }
+      ],
+      "animations": {
+        "loop0": "animation.alienevo.opticoid.eye_blink",
+        "t1": "animation.alienevo.opticoid.newbeam",
+        "t2": "animation.alienevo.opticoid.newbeamdown",
+        "t3": "animation.alienevo.opticoid.supabeam",
+        "t4": "animation.alienevo.opticoid.supabeamdown",
+        "t5": "animation.alienevo.opticoid.10k_blink",
+        "triggers": "controller.animation.alienevo.opticoid"
+      }
+    }
+  }
+}

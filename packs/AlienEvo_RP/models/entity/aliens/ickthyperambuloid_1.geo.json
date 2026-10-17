@@ -1,0 +1,187 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alienevo.ickthyperambuloid_1",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 4.5,
+        "visible_bounds_offset": [
+          0,
+          1.75,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "full_body",
+          "pivot": [
+            0,
+            9.2113,
+            1.4981
+          ]
+        },
+        {
+          "name": "leftLeg",
+          "parent": "full_body",
+          "pivot": [
+            5.25,
+            4,
+            0
+          ]
+        },
+        {
+          "name": "rightArm",
+          "parent": "full_body",
+          "pivot": [
+            -4.25,
+            19.5,
+            0
+          ]
+        },
+        {
+          "name": "leftArm",
+          "parent": "full_body",
+          "pivot": [
+            7.75,
+            19.5,
+            0
+          ]
+        },
+        {
+          "name": "body",
+          "parent": "full_body",
+          "pivot": [
+            0,
+            13.1794,
+            3.1147
+          ]
+        },
+        {
+          "name": "body_inner",
+          "parent": "body",
+          "pivot": [
+            0,
+            13.1794,
+            3.1147
+          ]
+        },
+        {
+          "name": "mouth",
+          "parent": "body_inner",
+          "pivot": [
+            0,
+            13.1794,
+            3.1147
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -2.0912,
+                6.10938,
+                -13.506
+              ],
+              "size": [
+                4,
+                4,
+                2
+              ],
+              "pivot": [
+                -0.0912,
+                8.10938,
+                -12.506
+              ],
+              "rotation": [
+                -5,
+                0,
+                0
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    11,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    13,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    12,
+                    0
+                  ],
+                  "uv_size": [
+                    1,
+                    2
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    11,
+                    0
+                  ],
+                  "uv_size": [
+                    -2,
+                    1
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    11,
+                    2
+                  ],
+                  "uv_size": [
+                    -2,
+                    -1
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "head",
+          "parent": "full_body",
+          "pivot": [
+            1.75,
+            20,
+            0
+          ]
+        },
+        {
+          "name": "rightLeg",
+          "parent": "full_body",
+          "pivot": [
+            -1.75,
+            4,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}
