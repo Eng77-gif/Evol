@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alienevo:form_dragonoid",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha",
+        "translucent": "entity_alphablend"
+      },
+      "textures": {
+        "part0": "textures/entity/aliens/dragonoid_0",
+        "part0_glow": "textures/entity/aliens/dragonoid_0_glow"
+      },
+      "geometry": {
+        "part0": "geometry.alienevo.dragonoid_0"
+      },
+      "scripts": {
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"
+      },
+      "render_controllers": [
+        {
+          "controller.render.alienevo.dragonoid_0": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.dragonoid_0_glow": "!c.is_first_person"
+        }
+      ]
+    }
+  }
+}

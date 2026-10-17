@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alienevo:galvan_pod"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "gig",
+      "iCi",
+      "gig"
+    ],
+    "key": {
+      "g": {
+        "item": "minecraft:iron_ingot"
+      },
+      "i": {
+        "item": "alienevo:galvan_scrap"
+      },
+      "C": {
+        "item": "minecraft:chest"
+      }
+    },
+    "result": {
+      "item": "alienevo:galvan_pod",
+      "count": 1
+    }
+  }
+}

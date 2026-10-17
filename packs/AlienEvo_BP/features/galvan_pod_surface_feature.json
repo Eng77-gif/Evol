@@ -1,0 +1,18 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:single_block_feature": {
+    "description": { "identifier": "alienevo:galvan_pod_surface_feature" },
+    "places_block": "alienevo:galvan_pod",
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_attach_to": {
+      "min_sides_must_attach": 1,
+      "bottom": [
+        "minecraft:grass_block", "minecraft:dirt", "minecraft:coarse_dirt", "minecraft:podzol", "minecraft:sand",
+        "minecraft:red_sand", "minecraft:stone", "minecraft:gravel", "minecraft:snow", "minecraft:terracotta",
+        "minecraft:mycelium", "minecraft:mud", "minecraft:moss_block"
+      ]
+    },
+    "may_replace": ["minecraft:air", "minecraft:short_grass", "minecraft:tall_grass", "minecraft:snow_layer"]
+  }
+}

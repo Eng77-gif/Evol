@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alienevo:machined_panel"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "###",
+      "#E#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:dripstone_block"
+      },
+      "E": {
+        "item": "alienevo:upgrade_shards_brown"
+      }
+    },
+    "result": {
+      "item": "alienevo:machined_panel",
+      "count": 16
+    }
+  }
+}

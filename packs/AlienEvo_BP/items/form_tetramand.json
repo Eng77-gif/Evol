@@ -1,0 +1,24 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alienevo:form_tetramand",
+      "menu_category": {
+        "category": "none"
+      }
+    },
+    "components": {
+      "minecraft:icon": "alienevo:form_tetramand",
+      "minecraft:max_stack_size": 1,
+      "minecraft:wearable": {
+        "slot": "slot.armor.chest",
+        "protection": 0
+      },
+      "minecraft:tags": {
+        "tags": [
+          "alienevo:alien_form"
+        ]
+      }
+    }
+  }
+}

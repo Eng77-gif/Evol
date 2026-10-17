@@ -1,0 +1,50 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alienevo:form_lepidopterran",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha",
+        "translucent": "entity_alphablend"
+      },
+      "textures": {
+        "part0": "textures/entity/aliens/lepidopterran_0",
+        "part0_glow": "textures/entity/aliens/lepidopterran_0_glow",
+        "part1": "textures/entity/aliens/lepidopterran_1",
+        "part2": "textures/entity/aliens/lepidopterran_2",
+        "badge": "textures/entity/aliens/badge",
+        "badge_glow": "textures/entity/aliens/badge_glow"
+      },
+      "geometry": {
+        "part0": "geometry.alienevo.lepidopterran_0",
+        "part1": "geometry.alienevo.lepidopterran_1",
+        "part2": "geometry.alienevo.lepidopterran_2",
+        "badge": "geometry.alienevo.lepidopterran_badge"
+      },
+      "scripts": {
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"
+      },
+      "render_controllers": [
+        {
+          "controller.render.alienevo.lepidopterran_0": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.lepidopterran_0_glow": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.lepidopterran_1": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.lepidopterran_2": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.badge": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.badge_glow": "!c.is_first_person"
+        }
+      ]
+    }
+  }
+}

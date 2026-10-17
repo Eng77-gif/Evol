@@ -1,0 +1,66 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "alienevo:boulder",
+      "is_spawnable": false,
+      "is_summonable": true
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.75,
+        "height": 0.75
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "remove_on_hit": {}
+        },
+        "power": 1.4,
+        "gravity": 0.04,
+        "inertia": 0.99,
+        "liquid_inertia": 0.6,
+        "anchor": 1,
+        "offset": [
+          0,
+          -0.4,
+          0
+        ],
+        "should_bounce": false,
+        "hit_sound": "random.explode"
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 7,
+          "use_motion_prediction_hints": true
+        }
+      },
+      "minecraft:timer": {
+        "looping": false,
+        "time": 8,
+        "time_down_event": {
+          "event": "alienevo:despawn"
+        }
+      }
+    },
+    "events": {
+      "alienevo:despawn": {
+        "add": {
+          "component_groups": [
+            "alienevo:despawn"
+          ]
+        }
+      }
+    },
+    "component_groups": {
+      "alienevo:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    }
+  }
+}

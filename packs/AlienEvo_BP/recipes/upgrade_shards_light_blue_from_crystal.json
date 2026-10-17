@@ -1,0 +1,20 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "alienevo:upgrade_shards_light_blue_from_crystal"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "alienevo:upgrade_crystal_light_blue"
+      }
+    ],
+    "result": {
+      "item": "alienevo:upgrade_shards_light_blue",
+      "count": 9
+    }
+  }
+}

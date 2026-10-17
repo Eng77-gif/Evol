@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alienevo:form_vaxasaurian",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha",
+        "translucent": "entity_alphablend"
+      },
+      "textures": {
+        "part0": "textures/entity/aliens/vaxasaurian_0"
+      },
+      "geometry": {
+        "part0": "geometry.alienevo.vaxasaurian_0"
+      },
+      "scripts": {
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"
+      },
+      "render_controllers": [
+        {
+          "controller.render.alienevo.vaxasaurian_0": "!c.is_first_person"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alienevo:form_piscciss_volann",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha",
+        "translucent": "entity_alphablend"
+      },
+      "textures": {
+        "part0": "textures/entity/aliens/piscciss_volann_0",
+        "part0_glow": "textures/entity/aliens/piscciss_volann_0_glow",
+        "badge": "textures/entity/aliens/badge",
+        "badge_glow": "textures/entity/aliens/badge_glow"
+      },
+      "geometry": {
+        "part0": "geometry.alienevo.piscciss_volann_0",
+        "badge": "geometry.alienevo.piscciss_volann_badge"
+      },
+      "scripts": {
+        "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"
+      },
+      "render_controllers": [
+        {
+          "controller.render.alienevo.piscciss_volann_0": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.piscciss_volann_0_glow": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.badge": "!c.is_first_person"
+        },
+        {
+          "controller.render.alienevo.badge_glow": "!c.is_first_person"
+        }
+      ]
+    }
+  }
+}

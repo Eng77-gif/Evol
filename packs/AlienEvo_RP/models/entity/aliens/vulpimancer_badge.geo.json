@@ -1,0 +1,188 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alienevo.vulpimancer_badge",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [
+          0,
+          0.75,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "head",
+          "pivot": [
+            0,
+            17.89328,
+            -11.25111
+          ]
+        },
+        {
+          "name": "HeadAnim",
+          "parent": "head",
+          "pivot": [
+            0,
+            17.89328,
+            -11.25111
+          ]
+        },
+        {
+          "name": "Jaw",
+          "parent": "HeadAnim",
+          "pivot": [
+            0,
+            10.8829,
+            -18.36625
+          ],
+          "rotation": [
+            -5,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "TopJaw",
+          "parent": "HeadAnim",
+          "pivot": [
+            0,
+            19.8974,
+            -22.57621
+          ]
+        },
+        {
+          "name": "body",
+          "pivot": [
+            0,
+            17.8933,
+            -11.2511
+          ]
+        },
+        {
+          "name": "leftLeg",
+          "pivot": [
+            6,
+            15,
+            13
+          ]
+        },
+        {
+          "name": "rightLeg",
+          "pivot": [
+            -6,
+            15,
+            13
+          ]
+        },
+        {
+          "name": "leftArm",
+          "pivot": [
+            6.775,
+            18.7,
+            -3.3625
+          ],
+          "cubes": [
+            {
+              "origin": [
+                9.95772,
+                21.21744,
+                -2.65529
+              ],
+              "size": [
+                4,
+                3,
+                4
+              ],
+              "inflate": 0,
+              "pivot": [
+                11.95772,
+                22.21744,
+                -2.15529
+              ],
+              "rotation": [
+                56.0112,
+                -71.1493,
+                -164.1572
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    11,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    1
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    9,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    1
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    13,
+                    1
+                  ],
+                  "uv_size": [
+                    -2,
+                    1
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    9,
+                    1
+                  ],
+                  "uv_size": [
+                    2,
+                    1
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    13,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    2
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    9
+                  ],
+                  "uv_size": [
+                    9,
+                    -9
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "rightArm",
+          "pivot": [
+            -6.775,
+            18.7,
+            -3.3625
+          ]
+        }
+      ]
+    }
+  ]
+}

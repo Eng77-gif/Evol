@@ -1,0 +1,225 @@
+{
+  "resource_pack_name": "alienevo",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "alienevo:upgrade_crystal_white": {
+      "textures": "textures/items/upgrade_crystal_white"
+    },
+    "alienevo:upgrade_shards_white": {
+      "textures": "textures/items/upgrade_shards_white"
+    },
+    "alienevo:upgrade_crystal_orange": {
+      "textures": "textures/items/upgrade_crystal_orange"
+    },
+    "alienevo:upgrade_shards_orange": {
+      "textures": "textures/items/upgrade_shards_orange"
+    },
+    "alienevo:upgrade_crystal_magenta": {
+      "textures": "textures/items/upgrade_crystal_magenta"
+    },
+    "alienevo:upgrade_shards_magenta": {
+      "textures": "textures/items/upgrade_shards_magenta"
+    },
+    "alienevo:upgrade_crystal_light_blue": {
+      "textures": "textures/items/upgrade_crystal_light_blue"
+    },
+    "alienevo:upgrade_shards_light_blue": {
+      "textures": "textures/items/upgrade_shards_light_blue"
+    },
+    "alienevo:upgrade_crystal_yellow": {
+      "textures": "textures/items/upgrade_crystal_yellow"
+    },
+    "alienevo:upgrade_shards_yellow": {
+      "textures": "textures/items/upgrade_shards_yellow"
+    },
+    "alienevo:upgrade_crystal": {
+      "textures": "textures/items/upgrade_crystal"
+    },
+    "alienevo:upgrade_shards": {
+      "textures": "textures/items/upgrade_shards"
+    },
+    "alienevo:upgrade_crystal_pink": {
+      "textures": "textures/items/upgrade_crystal_pink"
+    },
+    "alienevo:upgrade_shards_pink": {
+      "textures": "textures/items/upgrade_shards_pink"
+    },
+    "alienevo:upgrade_crystal_gray": {
+      "textures": "textures/items/upgrade_crystal_gray"
+    },
+    "alienevo:upgrade_shards_gray": {
+      "textures": "textures/items/upgrade_shards_gray"
+    },
+    "alienevo:upgrade_crystal_light_gray": {
+      "textures": "textures/items/upgrade_crystal_light_gray"
+    },
+    "alienevo:upgrade_shards_light_gray": {
+      "textures": "textures/items/upgrade_shards_light_gray"
+    },
+    "alienevo:upgrade_crystal_cyan": {
+      "textures": "textures/items/upgrade_crystal_cyan"
+    },
+    "alienevo:upgrade_shards_cyan": {
+      "textures": "textures/items/upgrade_shards_cyan"
+    },
+    "alienevo:upgrade_crystal_purple": {
+      "textures": "textures/items/upgrade_crystal_purple"
+    },
+    "alienevo:upgrade_shards_purple": {
+      "textures": "textures/items/upgrade_shards_purple"
+    },
+    "alienevo:upgrade_crystal_blue": {
+      "textures": "textures/items/upgrade_crystal_blue"
+    },
+    "alienevo:upgrade_shards_blue": {
+      "textures": "textures/items/upgrade_shards_blue"
+    },
+    "alienevo:upgrade_crystal_brown": {
+      "textures": "textures/items/upgrade_crystal_brown"
+    },
+    "alienevo:upgrade_shards_brown": {
+      "textures": "textures/items/upgrade_shards_brown"
+    },
+    "alienevo:upgrade_crystal_green": {
+      "textures": "textures/items/upgrade_crystal_green"
+    },
+    "alienevo:upgrade_shards_green": {
+      "textures": "textures/items/upgrade_shards_green"
+    },
+    "alienevo:upgrade_crystal_red": {
+      "textures": "textures/items/upgrade_crystal_red"
+    },
+    "alienevo:upgrade_shards_red": {
+      "textures": "textures/items/upgrade_shards_red"
+    },
+    "alienevo:upgrade_crystal_black": {
+      "textures": "textures/items/upgrade_crystal_black"
+    },
+    "alienevo:upgrade_shards_black": {
+      "textures": "textures/items/upgrade_shards_black"
+    },
+    "alienevo:galvan_scrap": {
+      "textures": "textures/items/galvan_scrap"
+    },
+    "alienevo:galvan_metal": {
+      "textures": "textures/items/galvan_metal"
+    },
+    "alienevo:upgrade_chip": {
+      "textures": "textures/items/upgrade_chip"
+    },
+    "alienevo:machine_key": {
+      "textures": "textures/items/machine_key"
+    },
+    "alienevo:machine_urn": {
+      "textures": "textures/items/machine_urn"
+    },
+    "alienevo:plumber_badge": {
+      "textures": "textures/items/plumber_badge"
+    },
+    "alienevo:machine_scroll": {
+      "textures": "textures/items/machine_scroll"
+    },
+    "alienevo:code_tablet": {
+      "textures": "textures/items/code_tablet"
+    },
+    "alienevo:code_tablet_selfdestruct": {
+      "textures": "textures/items/code_tablet_selfdestruct"
+    },
+    "alienevo:smithing_template_galvan": {
+      "textures": "textures/items/smithing_template_galvan"
+    },
+    "alienevo:prototype_core": {
+      "textures": "textures/items/prototype_core"
+    },
+    "alienevo:prototype_omnitrix": {
+      "textures": "textures/items/prototype_omnitrix"
+    },
+    "alienevo:prototype_omnitrix_phase1": {
+      "textures": "textures/items/prototype_omnitrix_phase1"
+    },
+    "alienevo:prototype_omnitrix_phase2": {
+      "textures": "textures/items/prototype_omnitrix_phase2"
+    },
+    "alienevo:prototype_omnitrix_10k": {
+      "textures": "textures/items/prototype_omnitrix_10k"
+    },
+    "alienevo:galvan_sword": {
+      "textures": "textures/items/galvan_sword"
+    },
+    "alienevo:galvan_pickaxe": {
+      "textures": "textures/items/galvan_pickaxe"
+    },
+    "alienevo:galvan_axe": {
+      "textures": "textures/items/galvan_axe"
+    },
+    "alienevo:galvan_shovel": {
+      "textures": "textures/items/galvan_shovel"
+    },
+    "alienevo:galvan_hoe": {
+      "textures": "textures/items/galvan_hoe"
+    },
+    "alienevo:ancient_staff": {
+      "textures": "textures/items/ancient_staff"
+    },
+    "alienevo:form_pyronite": {
+      "textures": "textures/ui/aliens/pyronite"
+    },
+    "alienevo:form_vulpimancer": {
+      "textures": "textures/ui/aliens/vulpimancer"
+    },
+    "alienevo:form_petrosapien": {
+      "textures": "textures/ui/aliens/petrosapien"
+    },
+    "alienevo:form_kineceleran": {
+      "textures": "textures/ui/aliens/kineceleran"
+    },
+    "alienevo:form_galvan": {
+      "textures": "textures/ui/aliens/galvan"
+    },
+    "alienevo:form_tetramand": {
+      "textures": "textures/ui/aliens/tetramand"
+    },
+    "alienevo:form_lepidopterran": {
+      "textures": "textures/ui/aliens/lepidopterran"
+    },
+    "alienevo:form_piscciss_volann": {
+      "textures": "textures/ui/aliens/piscciss_volann"
+    },
+    "alienevo:form_galvanic_mechamorph": {
+      "textures": "textures/ui/aliens/galvanic_mechamorph"
+    },
+    "alienevo:form_ectonurite": {
+      "textures": "textures/ui/aliens/ectonurite"
+    },
+    "alienevo:form_arburian_pelarota": {
+      "textures": "textures/ui/aliens/arburian_pelarota"
+    },
+    "alienevo:form_methanosian": {
+      "textures": "textures/ui/aliens/methanosian"
+    },
+    "alienevo:form_sonorosian": {
+      "textures": "textures/ui/aliens/sonorosian"
+    },
+    "alienevo:form_vaxasaurian": {
+      "textures": "textures/ui/aliens/vaxasaurian"
+    },
+    "alienevo:form_aerophibian": {
+      "textures": "textures/ui/aliens/aerophibian"
+    },
+    "alienevo:form_necrofriggian": {
+      "textures": "textures/ui/aliens/necrofriggian"
+    },
+    "alienevo:form_crystalsapien": {
+      "textures": "textures/ui/aliens/crystalsapien"
+    },
+    "alienevo:form_nucleonix": {
+      "textures": "textures/ui/aliens/nucleonix"
+    },
+    "alienevo:form_dragonoid": {
+      "textures": "textures/ui/aliens/dragonoid"
+    },
+    "alienevo:form_astrobot": {
+      "textures": "textures/ui/aliens/astrobot"
+    }
+  }
+}

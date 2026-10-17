@@ -1,0 +1,9 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.alienevo.boulder.spin": {
+      "loop": true,
+      "bones": { "boulder": { "rotation": ["q.life_time * 360", 0, "q.life_time * 180"] } }
+    }
+  }
+}

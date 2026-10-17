@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alienevo:prototype_omnitrix_phase1",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": "alienevo:prototype_omnitrix_phase1",
+      "minecraft:max_stack_size": 1,
+      "minecraft:rarity": "epic",
+      "minecraft:fire_resistant": {
+        "value": true
+      },
+      "minecraft:tags": {
+        "tags": [
+          "alienevo:omnitrix",
+          "alienevo:omnitrix_tier_1"
+        ]
+      },
+      "alienevo:omnitrix": {
+        "tier": 1
+      }
+    }
+  }
+}

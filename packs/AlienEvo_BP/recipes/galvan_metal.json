@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alienevo:galvan_metal"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " # ",
+      "#n#",
+      " # "
+    ],
+    "key": {
+      "#": {
+        "item": "alienevo:galvan_scrap"
+      },
+      "n": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "alienevo:galvan_metal",
+      "count": 1
+    }
+  }
+}

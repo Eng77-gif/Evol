@@ -1,0 +1,15 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alienevo:upgrade_chip",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": "alienevo:upgrade_chip",
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

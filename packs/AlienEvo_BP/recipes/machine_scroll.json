@@ -1,0 +1,26 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alienevo:machine_scroll"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "#E#"
+    ],
+    "key": {
+      "#": {
+        "item": "alienevo:machine_key"
+      },
+      "E": {
+        "item": "alienevo:machine_urn"
+      }
+    },
+    "result": {
+      "item": "alienevo:machine_scroll",
+      "count": 1
+    }
+  }
+}

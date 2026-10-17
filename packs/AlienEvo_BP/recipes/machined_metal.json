@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "alienevo:machined_metal"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "###",
+      "#E#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:stone"
+      },
+      "E": {
+        "item": "alienevo:upgrade_shards"
+      }
+    },
+    "result": {
+      "item": "alienevo:machined_metal",
+      "count": 16
+    }
+  }
+}

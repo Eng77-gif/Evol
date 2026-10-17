@@ -1,0 +1,14 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alienevo:boulder",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/boulder" },
+      "geometry": { "default": "geometry.alienevo.boulder" },
+      "render_controllers": ["controller.render.alienevo.boulder"],
+      "animations": { "spin": "animation.alienevo.boulder.spin" },
+      "scripts": { "animate": ["spin"] }
+    }
+  }
+}

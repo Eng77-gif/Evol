@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21.40",
+  "alienevo:omnitrix_workbench": {
+    "sound": "metal"
+  },
+  "alienevo:galvan_pod": {
+    "sound": "metal"
+  },
+  "alienevo:machined_metal": {
+    "sound": "metal"
+  },
+  "alienevo:machined_panel": {
+    "sound": "metal"
+  },
+  "alienevo:permanent_taydenite_block": {
+    "sound": "amethyst_block"
+  },
+  "alienevo:permanent_smooth_taydenite_block": {
+    "sound": "amethyst_block"
+  }
+}

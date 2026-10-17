@@ -1,0 +1,15 @@
+# Vietnamese overrides merged into vi_VN.lang by tools/build_packs.py
+tile.alienevo:omnitrix_workbench.name=Bàn Chế Tạo Omnitrix
+tile.alienevo:galvan_pod.name=Kén Galvan
+tile.alienevo:machined_metal.name=Kim Loại Gia Công
+tile.alienevo:machined_panel.name=Tấm Kim Loại Gia Công
+item.alienevo:prototype_omnitrix=Omnitrix Nguyên Mẫu
+item.alienevo:prototype_omnitrix_phase1=Omnitrix Tiến Hóa (Giai đoạn 1)
+item.alienevo:prototype_omnitrix_phase2=Omnitrix Tiến Hóa (Giai đoạn 2)
+item.alienevo:prototype_omnitrix_10k=Omnitrix Hoàn Chỉnh
+item.alienevo:prototype_core=Lõi Omnitrix Nguyên Mẫu
+item.alienevo:galvan_scrap=Phế Liệu Galvan
+item.alienevo:galvan_metal=Tấm Galvan
+item.alienevo:upgrade_chip=Mạch Galvan
+item.alienevo:code_tablet=Bảng Mã (Master Control)
+item.alienevo:code_tablet_selfdestruct=Bảng Mã (Tự Hủy)

@@ -1,0 +1,456 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alienevo.pyronite_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.pyronite_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.vulpimancer_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.petrosapien_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.petrosapien_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.kineceleran_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.kineceleran_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.galvan_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.galvan_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.tetramand_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.tetramand_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.tetramand_1": {
+      "geometry": "Geometry.part1",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part1"
+      ]
+    },
+    "controller.render.alienevo.lepidopterran_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.lepidopterran_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.lepidopterran_1": {
+      "geometry": "Geometry.part1",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part1"
+      ]
+    },
+    "controller.render.alienevo.lepidopterran_2": {
+      "geometry": "Geometry.part2",
+      "materials": [
+        {
+          "*": "Material.translucent"
+        }
+      ],
+      "textures": [
+        "Texture.part2"
+      ]
+    },
+    "controller.render.alienevo.piscciss_volann_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.piscciss_volann_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.galvanic_mechamorph_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.galvanic_mechamorph_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.ectonurite_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.translucent"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.ectonurite_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.arburian_pelarota_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.arburian_pelarota_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.methanosian_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.sonorosian_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.sonorosian_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.vaxasaurian_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.aerophibian_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.necrofriggian_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.necrofriggian_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.crystalsapien_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.crystalsapien_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.nucleonix_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.nucleonix_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.dragonoid_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.dragonoid_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.astrobot_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.astrobot_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.badge": {
+      "geometry": "Geometry.badge",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.badge"
+      ]
+    },
+    "controller.render.alienevo.badge_glow": {
+      "geometry": "Geometry.badge",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.badge_glow"
+      ]
+    }
+  }
+}
