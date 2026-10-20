@@ -143,6 +143,9 @@
     "alienevo:prototype_omnitrix_10k": {
       "textures": "textures/items/prototype_omnitrix_10k"
     },
+    "alienevo:recal_omnitrix": {
+      "textures": "textures/items/recal_omnitrix"
+    },
     "alienevo:galvan_sword": {
       "textures": "textures/items/galvan_sword"
     },

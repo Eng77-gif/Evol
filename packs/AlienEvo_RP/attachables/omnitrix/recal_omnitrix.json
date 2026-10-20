@@ -1,0 +1,100 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alienevo:recal_omnitrix",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha",
+        "hologram": "entity_alphablend"
+      },
+      "textures": {
+        "watch_base": "textures/entity/omnitrix/omnitrix_recal_base",
+        "watch_glow": "textures/entity/omnitrix/omnitrix_recal_glow",
+        "holo_none": "textures/entity/omnitrix/slots/blank",
+        "holo_pyronite": "textures/entity/omnitrix/recal_holo_pyronite",
+        "holo_vulpimancer": "textures/entity/omnitrix/recal_holo_vulpimancer",
+        "holo_petrosapien": "textures/entity/omnitrix/recal_holo_petrosapien",
+        "holo_kineceleran": "textures/entity/omnitrix/recal_holo_kineceleran",
+        "holo_galvan": "textures/entity/omnitrix/recal_holo_galvan",
+        "holo_tetramand": "textures/entity/omnitrix/recal_holo_tetramand",
+        "holo_lepidopterran": "textures/entity/omnitrix/recal_holo_lepidopterran",
+        "holo_piscciss_volann": "textures/entity/omnitrix/recal_holo_piscciss_volann",
+        "holo_galvanic_mechamorph": "textures/entity/omnitrix/recal_holo_galvanic_mechamorph",
+        "holo_ectonurite": "textures/entity/omnitrix/recal_holo_ectonurite",
+        "holo_arburian_pelarota": "textures/entity/omnitrix/recal_holo_arburian_pelarota",
+        "holo_methanosian": "textures/entity/omnitrix/recal_holo_methanosian",
+        "holo_aerophibian": "textures/entity/omnitrix/recal_holo_aerophibian",
+        "holo_necrofriggian": "textures/entity/omnitrix/recal_holo_necrofriggian",
+        "holo_opticoid": "textures/entity/omnitrix/recal_holo_opticoid",
+        "holo_perkgourmand": "textures/entity/omnitrix/recal_holo_perkgourmand",
+        "holo_murkgourmand": "textures/entity/omnitrix/recal_holo_murkgourmand",
+        "holo_talpaedan": "textures/entity/omnitrix/recal_holo_talpaedan",
+        "holo_orishan": "textures/entity/omnitrix/recal_holo_orishan",
+        "holo_nosedeenian": "textures/entity/omnitrix/recal_holo_nosedeenian",
+        "holo_loboan": "textures/entity/omnitrix/recal_holo_loboan",
+        "holo_transylian": "textures/entity/omnitrix/recal_holo_transylian",
+        "holo_florauna": "textures/entity/omnitrix/recal_holo_florauna",
+        "holo_merlinisapien": "textures/entity/omnitrix/recal_holo_merlinisapien",
+        "holo_ickthyperambuloid": "textures/entity/omnitrix/recal_holo_ickthyperambuloid",
+        "holo_splixson": "textures/entity/omnitrix/recal_holo_splixson",
+        "holo_oryctini": "textures/entity/omnitrix/recal_holo_oryctini"
+      },
+      "geometry": {
+        "watch": "geometry.alienevo.omnitrix_recal",
+        "holo_none": "geometry.alienevo.holo_none",
+        "holo_pyronite": "geometry.alienevo.recal_holo_pyronite",
+        "holo_vulpimancer": "geometry.alienevo.recal_holo_vulpimancer",
+        "holo_petrosapien": "geometry.alienevo.recal_holo_petrosapien",
+        "holo_kineceleran": "geometry.alienevo.recal_holo_kineceleran",
+        "holo_galvan": "geometry.alienevo.recal_holo_galvan",
+        "holo_tetramand": "geometry.alienevo.recal_holo_tetramand",
+        "holo_lepidopterran": "geometry.alienevo.recal_holo_lepidopterran",
+        "holo_piscciss_volann": "geometry.alienevo.recal_holo_piscciss_volann",
+        "holo_galvanic_mechamorph": "geometry.alienevo.recal_holo_galvanic_mechamorph",
+        "holo_ectonurite": "geometry.alienevo.recal_holo_ectonurite",
+        "holo_arburian_pelarota": "geometry.alienevo.recal_holo_arburian_pelarota",
+        "holo_methanosian": "geometry.alienevo.recal_holo_methanosian",
+        "holo_aerophibian": "geometry.alienevo.recal_holo_aerophibian",
+        "holo_necrofriggian": "geometry.alienevo.recal_holo_necrofriggian",
+        "holo_opticoid": "geometry.alienevo.recal_holo_opticoid",
+        "holo_perkgourmand": "geometry.alienevo.recal_holo_perkgourmand",
+        "holo_murkgourmand": "geometry.alienevo.recal_holo_murkgourmand",
+        "holo_talpaedan": "geometry.alienevo.recal_holo_talpaedan",
+        "holo_orishan": "geometry.alienevo.recal_holo_orishan",
+        "holo_nosedeenian": "geometry.alienevo.recal_holo_nosedeenian",
+        "holo_loboan": "geometry.alienevo.recal_holo_loboan",
+        "holo_transylian": "geometry.alienevo.recal_holo_transylian",
+        "holo_florauna": "geometry.alienevo.recal_holo_florauna",
+        "holo_merlinisapien": "geometry.alienevo.recal_holo_merlinisapien",
+        "holo_ickthyperambuloid": "geometry.alienevo.recal_holo_ickthyperambuloid",
+        "holo_splixson": "geometry.alienevo.recal_holo_splixson",
+        "holo_oryctini": "geometry.alienevo.recal_holo_oryctini"
+      },
+      "render_controllers": [
+        {
+          "controller.render.alienevo.omnitrix_recal_base": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
+        },
+        {
+          "controller.render.alienevo.omnitrix_recal_glow": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
+        },
+        {
+          "controller.render.alienevo.omnitrix_recal_hologram": "c.owning_entity->q.property('alienevo:wv') && c.owning_entity->q.property('alienevo:sel') >= 0 && !c.owning_entity->v.alienevo_is_alien"
+        }
+      ],
+      "animations": {
+        "rest": "animation.alienevo.omnitrix_recal.rest_pose",
+        "t1": "animation.alienevo.omnitrix_recal.recal.spinleft",
+        "t2": "animation.alienevo.omnitrix_recal.recal.spinright",
+        "t3": "animation.alienevo.omnitrix_recal.recal.open",
+        "t4": "animation.alienevo.omnitrix_recal.recal.close",
+        "triggers": "controller.animation.alienevo.omnitrix_recal"
+      },
+      "scripts": {
+        "animate": [
+          "triggers"
+        ]
+      }
+    }
+  }
+}

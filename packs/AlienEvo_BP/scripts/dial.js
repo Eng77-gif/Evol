@@ -12,7 +12,7 @@ import { InputPermissionCategory, system, world } from "@minecraft/server";
 import { ALIEN_BY_ID } from "./aliens.js";
 import { checkCode } from "./codes.js";
 import { HOLO_KEYS } from "./holo_data.js";
-import { playWatch, selectionList, transform } from "./omnitrix.js";
+import { playWatch, selectionList, transform, wearsRecal } from "./omnitrix.js";
 import { getAlien, getRecharge, getSelected, setSelected } from "./state.js";
 import { actionbar, sound } from "./util.js";
 
@@ -44,6 +44,9 @@ export function showOnDial(p, key) {
     }
 }
 
+/** Icon of an alien as a text glyph. @param {string} key */
+const glyph = (key) => String.fromCharCode(0xe100 + Math.max(0, HOLO_KEYS.indexOf(key)));
+
 /** @param {Player} p @param {boolean} on */
 function watchView(p, on) {
     try {
@@ -73,7 +76,7 @@ export function openWorldDial(p, tier) {
         return;
     }
     const dial = open(p, "dial", list);
-    sound(p, "alienevo.prototype_activate");
+    sound(p, wearsRecal(p) ? "alienevo.recal_activation" : "alienevo.prototype_activate");
     playWatch(p, "open_trigger");
     try {
         dial.holo = p.dimension.spawnEntity(HOLOGRAM, holoPos(p, 0));
@@ -102,6 +105,11 @@ export function closeWorldDial(p, playClose = true) {
     if (!p.isValid) return;
     const sel = ALIEN_BY_ID.get(getSelected(p));
     showOnDial(p, sel?.key);
+    try {
+        p.onScreenDisplay.setTitle(" ", { fadeInDuration: 0, stayDuration: 0, fadeOutDuration: 0 });
+    } catch {
+        // Ignore.
+    }
     if (playClose) {
         playWatch(p, dial.mode === "code" ? "settings_trigger_close" : "close_trigger");
         actionbar(p, " ");
@@ -161,6 +169,15 @@ function show(p, dial) {
     const alien = dial.list[dial.index];
     const prev = dial.list[(dial.index - 1 + dial.list.length) % dial.list.length];
     const next = dial.list[(dial.index + 1) % dial.list.length];
+    // Alien strip (icon glyphs, font/glyph_E1.png) like the selection wheel.
+    const n = dial.list.length;
+    const at = (/** @type {number} */ k) => glyph(dial.list[(dial.index + k + n * 3) % n].key);
+    const strip = n >= 5 ? `§8${at(-2)} §7${at(-1)}  §f${at(0)}  §7${at(1)} §8${at(2)}` : dial.list.map((a, i) => (i === dial.index ? `§f${glyph(a.key)}` : `§8${glyph(a.key)}`)).join(" ");
+    try {
+        p.onScreenDisplay.setTitle(strip, { subtitle: `${alien.color}${alien.name}`, fadeInDuration: 0, stayDuration: 200, fadeOutDuration: 4 });
+    } catch {
+        // Player left.
+    }
     actionbar(p, `§8${prev.name} §7◄  ${alien.color}§l${alien.name}§r  §7► §8${next.name}\n§7Turn: spin  §a● Use/Jump: transform  §7Sneak: close`);
     showOnDial(p, alien.key);
     const i = HOLO_KEYS.indexOf(alien.key);
@@ -192,7 +209,7 @@ function step(p, dial, dir) {
     if (dial.list.length < 2) return;
     dial.index = (dial.index + dir + dial.list.length) % dial.list.length;
     playWatch(p, dir < 0 ? "spinl_trigger" : "spinr_trigger");
-    sound(p, "alienevo.prototype_cycle_1");
+    sound(p, wearsRecal(p) ? "alienevo.recal_cycle" : "alienevo.prototype_cycle_1");
     show(p, dial);
 }
 

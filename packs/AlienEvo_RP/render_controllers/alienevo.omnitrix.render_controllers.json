@@ -808,6 +808,122 @@
       "textures": [
         "Array.sils[c.owning_entity->q.property('alienevo:sel')]"
       ]
+    },
+    "controller.render.alienevo.omnitrix_recal_base": {
+      "geometry": "Geometry.watch",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.watch_base"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_recal_glow": {
+      "geometry": "Geometry.watch",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.watch_glow"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_recal_hologram": {
+      "arrays": {
+        "geometries": {
+          "Array.holo": [
+            "Geometry.holo_pyronite",
+            "Geometry.holo_vulpimancer",
+            "Geometry.holo_petrosapien",
+            "Geometry.holo_kineceleran",
+            "Geometry.holo_galvan",
+            "Geometry.holo_tetramand",
+            "Geometry.holo_lepidopterran",
+            "Geometry.holo_piscciss_volann",
+            "Geometry.holo_galvanic_mechamorph",
+            "Geometry.holo_ectonurite",
+            "Geometry.holo_arburian_pelarota",
+            "Geometry.holo_methanosian",
+            "Geometry.holo_none",
+            "Geometry.holo_none",
+            "Geometry.holo_aerophibian",
+            "Geometry.holo_necrofriggian",
+            "Geometry.holo_none",
+            "Geometry.holo_none",
+            "Geometry.holo_none",
+            "Geometry.holo_none",
+            "Geometry.holo_opticoid",
+            "Geometry.holo_perkgourmand",
+            "Geometry.holo_murkgourmand",
+            "Geometry.holo_talpaedan",
+            "Geometry.holo_orishan",
+            "Geometry.holo_none",
+            "Geometry.holo_nosedeenian",
+            "Geometry.holo_loboan",
+            "Geometry.holo_transylian",
+            "Geometry.holo_florauna",
+            "Geometry.holo_merlinisapien",
+            "Geometry.holo_ickthyperambuloid",
+            "Geometry.holo_splixson",
+            "Geometry.holo_oryctini",
+            "Geometry.holo_none",
+            "Geometry.holo_none"
+          ]
+        },
+        "textures": {
+          "Array.holo_tex": [
+            "Texture.holo_pyronite",
+            "Texture.holo_vulpimancer",
+            "Texture.holo_petrosapien",
+            "Texture.holo_kineceleran",
+            "Texture.holo_galvan",
+            "Texture.holo_tetramand",
+            "Texture.holo_lepidopterran",
+            "Texture.holo_piscciss_volann",
+            "Texture.holo_galvanic_mechamorph",
+            "Texture.holo_ectonurite",
+            "Texture.holo_arburian_pelarota",
+            "Texture.holo_methanosian",
+            "Texture.holo_none",
+            "Texture.holo_none",
+            "Texture.holo_aerophibian",
+            "Texture.holo_necrofriggian",
+            "Texture.holo_none",
+            "Texture.holo_none",
+            "Texture.holo_none",
+            "Texture.holo_none",
+            "Texture.holo_opticoid",
+            "Texture.holo_perkgourmand",
+            "Texture.holo_murkgourmand",
+            "Texture.holo_talpaedan",
+            "Texture.holo_orishan",
+            "Texture.holo_none",
+            "Texture.holo_nosedeenian",
+            "Texture.holo_loboan",
+            "Texture.holo_transylian",
+            "Texture.holo_florauna",
+            "Texture.holo_merlinisapien",
+            "Texture.holo_ickthyperambuloid",
+            "Texture.holo_splixson",
+            "Texture.holo_oryctini",
+            "Texture.holo_none",
+            "Texture.holo_none"
+          ]
+        }
+      },
+      "geometry": "Array.holo[c.owning_entity->q.property('alienevo:sel')]",
+      "materials": [
+        {
+          "*": "Material.hologram"
+        }
+      ],
+      "textures": [
+        "Array.holo_tex[c.owning_entity->q.property('alienevo:sel')]"
+      ],
+      "ignore_lighting": true
     }
   }
 }

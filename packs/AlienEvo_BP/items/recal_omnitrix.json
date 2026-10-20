@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "alienevo:recal_omnitrix",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": "alienevo:recal_omnitrix",
+      "minecraft:max_stack_size": 1,
+      "minecraft:rarity": "epic",
+      "minecraft:fire_resistant": {
+        "value": true
+      },
+      "minecraft:allow_off_hand": {
+        "value": true
+      },
+      "minecraft:tags": {
+        "tags": [
+          "alienevo:omnitrix",
+          "alienevo:omnitrix_tier_3"
+        ]
+      },
+      "alienevo:omnitrix": {
+        "tier": 3
+      }
+    }
+  }
+}

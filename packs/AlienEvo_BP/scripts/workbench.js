@@ -4,7 +4,7 @@
 import { EquipmentSlot, ItemStack, system } from "@minecraft/server";
 import { ActionFormData } from "@minecraft/server-ui";
 import { ALIENS, OMNITRIX_TIERS } from "./aliens.js";
-import { omnitrixTier } from "./omnitrix.js";
+import { omnitrixTier, RECAL } from "./omnitrix.js";
 import { hasMasterControl, setMasterControl } from "./state.js";
 import { particle, sound } from "./util.js";
 
@@ -16,6 +16,8 @@ const UPGRADE_COST = [
     [{ id: "alienevo:upgrade_chip", count: 4, label: "Galvan Circuit" }, { tag: "alienevo:upgrade_crystals", count: 8, label: "Omni Crystal (any colour)" }, { id: "minecraft:diamond_block", count: 1, label: "Block of Diamond" }],
     [{ id: "alienevo:upgrade_chip", count: 8, label: "Galvan Circuit" }, { tag: "alienevo:upgrade_crystals", count: 16, label: "Omni Crystal (any colour)" }, { id: "minecraft:netherite_ingot", count: 1, label: "Netherite Ingot" }],
 ];
+
+const RECAL_COST = 4;
 
 /** @param {import("@minecraft/server").ItemStack} item @param {{ id?: string, tag?: string }} req */
 function matches(item, req) {
@@ -79,11 +81,33 @@ export async function openWorkbench(p, block) {
     const form = new ActionFormData().title("§2Omnitrix Workbench").body(body);
     if (next) form.button("§2Upgrade", "textures/ui/smithing_icon");
     form.button("§5Customize colours", "textures/items/upgrade_crystal_magenta");
+    // The fully evolved watch can be recalibrated into the Recalibrated Omnitrix
+    // (hologram dial) and back; the Recalibrated model costs Galvan Circuits.
+    const recal = held?.typeId === RECAL;
+    if (tier === 3) form.button(recal ? "§aRestore Evolved Omnitrix" : `§aRecalibrate\n§8${RECAL_COST}x Galvan Circuit`, "textures/items/recal_omnitrix");
     form.button("§7Close");
     const res = await form.show(p);
     if (res.canceled || res.selection === undefined) return;
     if (res.selection === (next ? 1 : 0)) {
         await customizeMenu(p);
+        return;
+    }
+    if (tier === 3 && res.selection === 1) {
+        system.run(() => {
+            const current = eq?.getEquipment(EquipmentSlot.Mainhand);
+            if (omnitrixTier(current) !== 3) return;
+            const req = { id: "alienevo:upgrade_chip", count: RECAL_COST };
+            if (!recal && countOf(p, req) < RECAL_COST) {
+                p.sendMessage(`§cRecalibrating needs ${RECAL_COST} Galvan Circuits.`);
+                sound(p, "alienevo.prototype_failsafe");
+                return;
+            }
+            if (!recal) take(p, req);
+            eq?.setEquipment(EquipmentSlot.Mainhand, new ItemStack(recal ? OMNITRIX_TIERS[3].item : RECAL, 1));
+            sound(p, recal ? "alienevo.prototype_core_place" : "alienevo.recal_activation");
+            particle(p, "minecraft:totem_particle", block.center());
+            p.sendMessage(recal ? "§aThe Omnitrix is back to its Evolved form." : "§aThe Omnitrix has been §2recalibrated§a!");
+        });
         return;
     }
     if (res.selection !== 0 || !next || !cost) return;

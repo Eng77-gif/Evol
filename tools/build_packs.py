@@ -141,6 +141,8 @@ OMNITRIX_ITEMS = [
     ("prototype_omnitrix_phase1", "prototype_omnitrix_phase1", ["prototype_omnitrix_glow_1", "prototype_omnitrix_glow_2"], 1),
     ("prototype_omnitrix_phase2", "prototype_omnitrix_phase2", ["prototype_omnitrix_glow_1", "prototype_omnitrix_glow_2"], 2),
     ("prototype_omnitrix_10k", "10k_omnitrix", ["10k_omnitrix_glow_1", "10k_omnitrix_glow_2"], 3),
+    # Same powers as the 10k; recalibrated at the workbench (attachable: build_recal).
+    ("recal_omnitrix", "recal_omnitrix", ["recal_omnitrix_glow_1", "recal_omnitrix_glow_2"], 3),
 ]
 
 # Galvan tools: tier "level 3, 1756 uses, speed 8, +3 damage" (better than iron).
@@ -526,7 +528,7 @@ def build_omnitrix(vfs, triggers_out):
                                        "textures": [f"Array.colors[c.owning_entity->q.property('alienevo:col{si}') + 1]"]}
                     rcs.append({rc: f"{cond} && c.owning_entity->q.property('alienevo:col{si}') >= 0"})
         animations, animate, _ = build_alien_animations(vfs, f"omnitrix_{variant}", layers, anim_dir, ctrl_dir, renames, fixed)
-        items = [i[0] for i in OMNITRIX_ITEMS if (i[3] == 3) == (variant == "10k")]
+        items = [i[0] for i in OMNITRIX_ITEMS if (i[3] == 3) == (variant == "10k") and i[0] != "recal_omnitrix"]
         for item in items:
             desc = {
                 "identifier": f"alienevo:{item}",
@@ -539,8 +541,95 @@ def build_omnitrix(vfs, triggers_out):
                 desc["animations"] = animations
                 desc["scripts"] = {"animate": animate}
             write_json(os.path.join(att_dir, f"{item}.json"), {"format_version": "1.10.0", "minecraft:attachable": {"description": desc}})
+    print("recal holograms:", build_recal(vfs, controllers, fixed))
     write_json(os.path.join(RP, "render_controllers", "alienevo.omnitrix.render_controllers.json"),
                {"format_version": "1.10.0", "render_controllers": controllers})
+
+
+RECAL_LAYER = "assets/alienevo/palladium/render_layers/recal_omnitrix.json"
+# Always-on GeckoLib controllers of the recal layer: Bedrock multiplies scales,
+# so the "hide hologram" reset would hide it for good; visibility is done by
+# the render controller instead.
+RECAL_SKIP_LOOPS = {"animation.recal.holo", "animation.recal.xlr8"}
+
+
+def build_recal(vfs, controllers, fixed):
+    """Recalibrated Omnitrix (Omniverse watch): the 3D hologram of the alien
+    on the dial stands on the core while the watch is up (recal_omnitrix.json)."""
+    geo_dir = os.path.join(RP, "models", "entity", "omnitrix")
+    tex_dir = os.path.join(RP, "textures", "entity", "omnitrix")
+    anim_dir = os.path.join(RP, "animations", "omnitrix")
+    ctrl_dir = os.path.join(RP, "animation_controllers", "omnitrix")
+    layers = resolve(vfs, RECAL_LAYER)
+    for layer in layers:
+        layer["loops"] = [n for n in layer["loops"] if n not in RECAL_SKIP_LOOPS]
+    cond = "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
+    textures, geometry, rcs, renames = {}, {}, [], {}
+    watch = [l for l in layers if "/holograms/" not in l["geo"]]
+    gid = "geometry.alienevo.omnitrix_recal"
+    write_json(os.path.join(geo_dir, "omnitrix_recal.geo.json"), convert_geo(vfs.json(watch[0]["geo"]), gid, renames))
+    geometry["watch"] = gid
+    for kind, mat in (("base", "default"), ("glow", "glow")):
+        imgs = [l["image"] for l in watch if l["glow"] == (kind == "glow")]
+        if not imgs:
+            continue
+        save_png(composite(imgs), os.path.join(tex_dir, f"omnitrix_recal_{kind}.png"))
+        textures[f"watch_{kind}"] = f"textures/entity/omnitrix/omnitrix_recal_{kind}"
+        rc = f"controller.render.alienevo.omnitrix_recal_{kind}"
+        controllers[rc] = {"geometry": "Geometry.watch", "materials": [{"*": f"Material.{mat}"}], "textures": [f"Texture.watch_{kind}"]}
+        rcs.append({rc: cond})
+    # One hologram geometry per alien (index = HOLO_KEYS order, like alienevo:sel).
+    empty = {"format_version": "1.12.0", "minecraft:geometry": [{"description": {
+        "identifier": "geometry.alienevo.holo_none", "texture_width": 16, "texture_height": 16}, "bones": [{"name": "hologram", "pivot": [0, 0, 0]}]}]}
+    write_json(os.path.join(geo_dir, "holo_none.geo.json"), empty)
+    geometry["holo_none"] = "geometry.alienevo.holo_none"
+    textures["holo_none"] = "textures/entity/omnitrix/slots/blank"
+    geos, texs, found = [], [], 0
+    for alien in ALIENS:
+        src = next((f"assets/{ns}/geo/holograms/alien_{alien['id']}.geo.json" for ns in ("alienevo", "omni_evo", "evo_reds_alienpack", "aeo")
+                    if vfs.exists(f"assets/{ns}/geo/holograms/alien_{alien['id']}.geo.json")), None)
+        tex = src and src.replace("/geo/", "/textures/models/").replace(".geo.json", ".png")
+        if not src or not vfs.exists(tex):
+            geos.append("Geometry.holo_none")
+            texs.append("Texture.holo_none")
+            continue
+        found += 1
+        geo = vfs.json(src)
+        # Bones of the alien inside the hologram must not be mistaken for the
+        # player's bones (Bedrock matches attachable bones by name).
+        keep = set(BONE_MAP) | {"recal_omnitrix", "core", "hologram"}
+        for b in geo["minecraft:geometry"][0]["bones"]:
+            if b["name"] not in keep:
+                b["name"] = "holo_" + b["name"]
+            if b.get("parent") and b["parent"] not in keep:
+                b["parent"] = "holo_" + b["parent"]
+        hid = f"geometry.alienevo.recal_holo_{alien['key']}"
+        write_json(os.path.join(geo_dir, f"recal_holo_{alien['key']}.geo.json"), convert_geo(geo, hid))
+        save_png(vfs.image(tex), os.path.join(tex_dir, f"recal_holo_{alien['key']}.png"))
+        geometry[f"holo_{alien['key']}"] = hid
+        textures[f"holo_{alien['key']}"] = f"textures/entity/omnitrix/recal_holo_{alien['key']}"
+        geos.append(f"Geometry.holo_{alien['key']}")
+        texs.append(f"Texture.holo_{alien['key']}")
+    sel = "c.owning_entity->q.property('alienevo:sel')"
+    rc = "controller.render.alienevo.omnitrix_recal_hologram"
+    controllers[rc] = {"arrays": {"geometries": {"Array.holo": geos}, "textures": {"Array.holo_tex": texs}},
+                       "geometry": f"Array.holo[{sel}]", "materials": [{"*": "Material.hologram"}],
+                       "textures": [f"Array.holo_tex[{sel}]"], "ignore_lighting": True}
+    rcs.append({rc: f"c.owning_entity->q.property('alienevo:wv') && {sel} >= 0 && !c.owning_entity->v.alienevo_is_alien"})
+    animations, animate, _ = build_alien_animations(vfs, "omnitrix_recal", layers, anim_dir, ctrl_dir, renames, fixed)
+    desc = {
+        "identifier": "alienevo:recal_omnitrix",
+        "materials": {"default": "entity_alphatest", "glow": "entity_emissive_alpha", "hologram": "entity_alphablend"},
+        "textures": textures,
+        "geometry": geometry,
+        "render_controllers": rcs,
+    }
+    if animations:
+        desc["animations"] = animations
+        desc["scripts"] = {"animate": animate}
+    write_json(os.path.join(RP, "attachables", "omnitrix", "recal_omnitrix.json"),
+               {"format_version": "1.10.0", "minecraft:attachable": {"description": desc}})
+    return found
 
 
 def write_watch_slot_textures(vfs, out_dir):
@@ -986,6 +1075,17 @@ def build_hologram(lang):
         json.dump(keys, f)
         f.write(";\n")
     return len(keys)
+
+
+def build_glyphs():
+    """Alien icons as text glyphs U+E100.. (font/glyph_E1.png) so the dial can
+    show the alien strip on screen like the selection wheel of the Java mod."""
+    cell = 32
+    sheet = Image.new("RGBA", (cell * 16, cell * 16))
+    for i, alien in enumerate(ALIENS):
+        icon = Image.open(os.path.join(RP, "textures", "ui", "aliens", f"{alien['key']}.png")).convert("RGBA")
+        sheet.alpha_composite(icon.resize((cell, cell), Image.NEAREST), ((i % 16) * cell, (i // 16) * cell))
+    save_png(sheet, os.path.join(RP, "font", "glyph_E1.png"))
 
 
 def build_particles(vfs):
@@ -1642,6 +1742,7 @@ def main():
     build_mobs(vfs, lang)
     print("galvan trades:", build_galvan_scientist(vfs, lang))
     print("holograms:", build_hologram(lang))
+    build_glyphs()
     build_recipes(jar)
     untapped_recipes()
     for line in structures.build(vfs):

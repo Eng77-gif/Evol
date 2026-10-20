@@ -24,7 +24,29 @@ const INFINITE = 20000000;
 /** @param {import("@minecraft/server").ItemStack | undefined} item */
 export function omnitrixTier(item) {
     if (!item) return -1;
+    if (item.typeId === RECAL) return 3;
     return OMNITRIX_TIERS.findIndex((t) => t.item === item.typeId);
+}
+
+/** Recalibrated Omnitrix: same powers as the Evolved one, hologram dial and its own sounds. */
+export const RECAL = "alienevo:recal_omnitrix";
+
+/** @param {Player} p */
+export function wearsRecal(p) {
+    const eq = p.getComponent("minecraft:equippable");
+    return eq?.getEquipment(EquipmentSlot.Offhand)?.typeId === RECAL || eq?.getEquipment(EquipmentSlot.Mainhand)?.typeId === RECAL;
+}
+
+/**
+ * The bright flash of the Omnitrix (transform_bubble of the Java mod).
+ * @param {Player} p @param {{ red: number, green: number, blue: number }} [color]
+ */
+export function flash(p, color = { red: 0.55, green: 1, blue: 0.25 }) {
+    try {
+        p.camera.fade({ fadeColor: color, fadeTime: { fadeInTime: 0.05, holdTime: 0.12, fadeOutTime: 0.55 } });
+    } catch {
+        // Ignore.
+    }
 }
 
 /** Highest tier Omnitrix the player carries (hand or inventory). @param {Player} p */
@@ -130,8 +152,13 @@ export function transform(p, alien) {
     } catch {
         // Ignore.
     }
-    sound(p, prev ? "alienevo.prototype_cycle_2" : "alienevo.prototype_transform");
-    sound(p, "alienevo.prototype_1_transform", 0.6);
+    if (wearsRecal(p)) {
+        sound(p, "alienevo.recal_transform");
+    } else {
+        sound(p, prev ? "alienevo.prototype_cycle_2" : "alienevo.prototype_transform");
+        sound(p, "alienevo.prototype_1_transform", 0.6);
+    }
+    flash(p);
     for (let i = 0; i < 20; i++) {
         particle(p, "minecraft:villager_happy", add(p.location, { x: (Math.random() - 0.5) * 1.5, y: Math.random() * 2.2, z: (Math.random() - 0.5) * 1.5 }));
     }
@@ -161,8 +188,9 @@ export function detransform(p, reason) {
         sound(p, "alienevo.prototype_timeout");
         p.sendMessage(`§cThe Omnitrix timed out! §7Recharging for ${formatTime(RECHARGE_TIMER)}.`);
     } else {
-        sound(p, "alienevo.prototype_detransform");
+        sound(p, wearsRecal(p) ? "alienevo.recal_detransform" : "alienevo.prototype_detransform");
     }
+    flash(p, reason === "timeout" ? { red: 1, green: 0.25, blue: 0.2 } : undefined);
     for (let i = 0; i < 15; i++) {
         particle(p, reason === "timeout" ? "minecraft:redstone_wire_dust_particle" : "minecraft:villager_happy",
             add(p.location, { x: (Math.random() - 0.5) * 1.5, y: Math.random() * 2, z: (Math.random() - 0.5) * 1.5 }));
