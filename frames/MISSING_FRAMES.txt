@@ -1,0 +1,2 @@
+Missing frames: 053700-057599 (3900 frames, 14:55.000-15:59.983). Source data in that range is zero-filled in the Drive file.
+Frame N is at time (N-1)/60 s.
