@@ -359,8 +359,50 @@
           "*": "Material.default"
         }
       ],
+      "arrays": {
+        "textures": {
+          "Array.sils": [
+            "Texture.sil_pyronite",
+            "Texture.sil_vulpimancer",
+            "Texture.sil_petrosapien",
+            "Texture.sil_kineceleran",
+            "Texture.sil_galvan",
+            "Texture.sil_tetramand",
+            "Texture.sil_lepidopterran",
+            "Texture.sil_piscciss_volann",
+            "Texture.sil_galvanic_mechamorph",
+            "Texture.sil_ectonurite",
+            "Texture.sil_arburian_pelarota",
+            "Texture.sil_methanosian",
+            "Texture.sil_sonorosian",
+            "Texture.sil_vaxasaurian",
+            "Texture.sil_aerophibian",
+            "Texture.sil_necrofriggian",
+            "Texture.sil_crystalsapien",
+            "Texture.sil_nucleonix",
+            "Texture.sil_dragonoid",
+            "Texture.sil_astrobot",
+            "Texture.sil_opticoid",
+            "Texture.sil_perkgourmand",
+            "Texture.sil_murkgourmand",
+            "Texture.sil_talpaedan",
+            "Texture.sil_orishan",
+            "Texture.sil_amperi",
+            "Texture.sil_nosedeenian",
+            "Texture.sil_loboan",
+            "Texture.sil_transylian",
+            "Texture.sil_florauna",
+            "Texture.sil_merlinisapien",
+            "Texture.sil_ickthyperambuloid",
+            "Texture.sil_splixson",
+            "Texture.sil_oryctini",
+            "Texture.sil_sonorosian_ov",
+            "Texture.sil_necrofriggian_ov"
+          ]
+        }
+      },
       "textures": [
-        "Texture.part1"
+        "Array.sils[c.owning_entity->q.property('alienevo:sel')]"
       ]
     },
     "controller.render.alienevo.omnitrix_10k_0": {
@@ -721,8 +763,50 @@
           "*": "Material.default"
         }
       ],
+      "arrays": {
+        "textures": {
+          "Array.sils": [
+            "Texture.sil_pyronite",
+            "Texture.sil_vulpimancer",
+            "Texture.sil_petrosapien",
+            "Texture.sil_kineceleran",
+            "Texture.sil_galvan",
+            "Texture.sil_tetramand",
+            "Texture.sil_lepidopterran",
+            "Texture.sil_piscciss_volann",
+            "Texture.sil_galvanic_mechamorph",
+            "Texture.sil_ectonurite",
+            "Texture.sil_arburian_pelarota",
+            "Texture.sil_methanosian",
+            "Texture.sil_sonorosian",
+            "Texture.sil_vaxasaurian",
+            "Texture.sil_aerophibian",
+            "Texture.sil_necrofriggian",
+            "Texture.sil_crystalsapien",
+            "Texture.sil_nucleonix",
+            "Texture.sil_dragonoid",
+            "Texture.sil_astrobot",
+            "Texture.sil_opticoid",
+            "Texture.sil_perkgourmand",
+            "Texture.sil_murkgourmand",
+            "Texture.sil_talpaedan",
+            "Texture.sil_orishan",
+            "Texture.sil_amperi",
+            "Texture.sil_nosedeenian",
+            "Texture.sil_loboan",
+            "Texture.sil_transylian",
+            "Texture.sil_florauna",
+            "Texture.sil_merlinisapien",
+            "Texture.sil_ickthyperambuloid",
+            "Texture.sil_splixson",
+            "Texture.sil_oryctini",
+            "Texture.sil_sonorosian_ov",
+            "Texture.sil_necrofriggian_ov"
+          ]
+        }
+      },
       "textures": [
-        "Texture.part1"
+        "Array.sils[c.owning_entity->q.property('alienevo:sel')]"
       ]
     }
   }

@@ -7,8 +7,7 @@ import { ActionFormData } from "@minecraft/server-ui";
 import { ABILITIES, clearToggles, toggles } from "./abilities.js";
 import { ALIEN_BY_ID, ALIENS, MAX_TIMER, OMNITRIX_TIERS, RECHARGE_TIMER } from "./aliens.js";
 import { ANIM_TRIGGERS } from "./anim_data.js";
-import { enterCode } from "./codes.js";
-import { closeWorldDial, confirmWorldDial, isDialOpen, openWorldDial } from "./dial.js";
+import { closeWorldDial, confirmWorldDial, isDialOpen, openCodeMode, openWorldDial, showOnDial } from "./dial.js";
 import {
     getPoints, isSkillUnlocked, setPoints, unlockSkill,
     availableAliens, getAbilityIndex, getAlien, getLevel, getPlaylist, getRecharge, getSelected, getTimer,
@@ -123,6 +122,7 @@ export function transform(p, alien) {
     equipForm(p, alien);
     setAlien(p, alien.id);
     setSelected(p, alien.id);
+    showOnDial(p, alien.key);
     if (!prev) setTimer(p, MAX_TIMER);
     applyEffects(p, alien, true);
     try {
@@ -219,7 +219,7 @@ export async function openDial(p, tier) {
     } else if (res.selection === list.length + 1) {
         await codex(p, tier);
     } else {
-        await enterCode(p);
+        openCodeMode(p);
     }
 }
 

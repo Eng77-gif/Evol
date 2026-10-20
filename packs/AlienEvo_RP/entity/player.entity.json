@@ -44,6 +44,9 @@
           "root",
           {
             "alienevo_scale": "!v.is_first_person && v.alienevo_is_alien"
+          },
+          {
+            "alienevo_watch_view": "v.is_first_person && q.property('alienevo:wv')"
           }
         ],
         "variables": {
@@ -130,9 +133,13 @@
         "third_person_melee_spear_hold": "animation.humanoid.melee_spear_hold",
         "third_person_melee_spear_attack": "animation.player.melee_spear_attack",
         "third_person_melee_spear_controller": "controller.animation.player.melee_spear",
-        "alienevo_scale": "animation.alienevo.player.scale"
+        "alienevo_scale": "animation.alienevo.player.scale",
+        "alienevo_watch_view": "animation.alienevo.player.watch_view"
       },
       "render_controllers": [
+        {
+          "controller.render.alienevo.player.watch_arm": "v.is_first_person && !query.is_spectator && !v.alienevo_is_alien && q.property('alienevo:wv')"
+        },
         {
           "controller.render.player.first_person_spectator": "variable.is_first_person && query.is_spectator"
         },

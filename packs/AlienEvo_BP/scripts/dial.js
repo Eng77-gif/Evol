@@ -1,11 +1,16 @@
-// In-world Omnitrix dial, like the show and the Java mod: the watch opens, a
-// hologram of the selected alien rises from the core and the dial is turned
-// to cycle aliens, then the core is slammed down to transform.
+// The Omnitrix used in the world, like the show and the Java mod.  The left
+// arm is raised in front of the camera (player property alienevo:wv) and the
+// dial is turned by turning your view (or left/right):
 //
-// Controls: turn your view (or press left/right) to spin the dial, use the
-// Omnitrix again or jump to transform, sneak to close.
+//  - alien dial: a hologram of the selected alien rises from the core, use
+//    the Omnitrix again or jump to slam the core down, sneak to close.
+//  - code entry (settings mode, codes.js): each turn of the dial changes the
+//    highlighted digit, jump moves to the next digit, sneak closes.  The code
+//    is checked every time it changes, like the display_code ability.
 
 import { InputPermissionCategory, system, world } from "@minecraft/server";
+import { ALIEN_BY_ID } from "./aliens.js";
+import { checkCode } from "./codes.js";
 import { HOLO_KEYS } from "./holo_data.js";
 import { playWatch, selectionList, transform } from "./omnitrix.js";
 import { getAlien, getRecharge, getSelected, setSelected } from "./state.js";
@@ -21,8 +26,8 @@ const STEP = 28;
 const IDLE_TICKS = 400;
 
 /**
- * @typedef {{ list: Alien[], index: number, yaw: number, holo?: Entity, spin: number,
- *             idle: number, moveX: number, closing: boolean }} Dial
+ * @typedef {{ mode: "dial" | "code", list: Alien[], index: number, digits: number[], pos: number,
+ *             yaw: number, holo?: Entity, spin: number, idle: number, moveX: number, closing: boolean }} Dial
  */
 /** @type {Map<string, Dial>} */
 const dials = new Map();
@@ -30,23 +35,44 @@ const dials = new Map();
 /** @param {Player} p */
 export const isDialOpen = (p) => dials.has(p.id);
 
-/** @param {Player} p @param {number} tier */
+/** Shows an alien's silhouette on the watch face. @param {Player} p @param {string | undefined} key */
+export function showOnDial(p, key) {
+    try {
+        p.setProperty("alienevo:sel", key ? HOLO_KEYS.indexOf(key) : -1);
+    } catch {
+        // Player left.
+    }
+}
+
+/** @param {Player} p @param {boolean} on */
+function watchView(p, on) {
+    try {
+        p.setProperty("alienevo:wv", on);
+        p.inputPermissions.setPermissionCategory(InputPermissionCategory.Movement, !on);
+    } catch {
+        // Player left.
+    }
+}
+
+/** @param {Player} p @param {"dial" | "code"} mode @param {Alien[]} list */
+function open(p, mode, list) {
+    closeWorldDial(p, false);
+    const index = Math.max(0, list.findIndex((a) => a.id === getSelected(p)));
+    /** @type {Dial} */
+    const dial = { mode, list, index, digits: [0, 0, 0, 0, 0, 0], pos: 0, yaw: p.getRotation().y, spin: 0, idle: 0, moveX: 0, closing: false };
+    dials.set(p.id, dial);
+    watchView(p, true);
+    return dial;
+}
+
+/** Alien selection dial. @param {Player} p @param {number} tier */
 export function openWorldDial(p, tier) {
     const list = selectionList(p, tier);
     if (!list.length) {
         actionbar(p, "§cNo alien DNA available.");
         return;
     }
-    closeWorldDial(p, false);
-    const index = Math.max(0, list.findIndex((a) => a.id === getSelected(p)));
-    /** @type {Dial} */
-    const dial = { list, index, yaw: p.getRotation().y, spin: 0, idle: 0, moveX: 0, closing: false };
-    dials.set(p.id, dial);
-    try {
-        p.inputPermissions.setPermissionCategory(InputPermissionCategory.Movement, false);
-    } catch {
-        // Ignore.
-    }
+    const dial = open(p, "dial", list);
     sound(p, "alienevo.prototype_activate");
     playWatch(p, "open_trigger");
     try {
@@ -57,27 +83,42 @@ export function openWorldDial(p, tier) {
     show(p, dial);
 }
 
+/** Code entry (settings mode of the watch). @param {Player} p */
+export function openCodeMode(p) {
+    const dial = open(p, "code", []);
+    sound(p, "alienevo.prototype_activate");
+    playWatch(p, "settings_trigger");
+    showOnDial(p, undefined);
+    show(p, dial);
+}
+
 /** @param {Player} p @param {boolean} [playClose] */
 export function closeWorldDial(p, playClose = true) {
     const dial = dials.get(p.id);
     if (!dial) return;
     dials.delete(p.id);
     removeHolo(dial);
-    try {
-        p.inputPermissions.setPermissionCategory(InputPermissionCategory.Movement, true);
-    } catch {
-        // Player left.
-    }
-    if (playClose && p.isValid) {
-        playWatch(p, "close_trigger");
+    watchView(p, false);
+    if (!p.isValid) return;
+    const sel = ALIEN_BY_ID.get(getSelected(p));
+    showOnDial(p, sel?.key);
+    if (playClose) {
+        playWatch(p, dial.mode === "code" ? "settings_trigger_close" : "close_trigger");
         actionbar(p, " ");
     }
 }
 
-/** Slam the core down: transform into the alien on the dial. @param {Player} p */
+/** Use / jump: slam the core down (dial) or move to the next digit (code). @param {Player} p */
 export function confirmWorldDial(p) {
     const dial = dials.get(p.id);
     if (!dial || dial.closing) return;
+    if (dial.mode === "code") {
+        dial.pos = (dial.pos + 1) % 6;
+        dial.idle = 0;
+        sound(p, "alienevo.prototype_cycle_2", 0.6);
+        show(p, dial);
+        return;
+    }
     dial.closing = true;
     const alien = dial.list[dial.index];
     setSelected(p, alien.id);
@@ -101,20 +142,27 @@ function removeHolo(dial) {
     dial.holo = undefined;
 }
 
-/** In front of the eyes, a bit low, where the wrist is in first person. @param {Player} p @param {number} t */
+/** In front of the eyes, above the raised watch. @param {Player} p @param {number} t */
 function holoPos(p, t) {
     const eye = p.getHeadLocation();
     const yaw = (p.getRotation().y * Math.PI) / 180;
     const fx = -Math.sin(yaw), fz = Math.cos(yaw);
-    return { x: eye.x + fx * 1.5, y: eye.y - 0.75 + Math.sin(t / 8) * 0.04, z: eye.z + fz * 1.5 };
+    return { x: eye.x + fx * 1.6, y: eye.y - 0.5 + Math.sin(t / 8) * 0.04, z: eye.z + fz * 1.6 };
 }
 
 /** @param {Player} p @param {Dial} dial */
 function show(p, dial) {
+    if (dial.mode === "code") {
+        // Same display as the Java mod: "0 0 §e0§r 0 0 0".
+        const digits = dial.digits.map((d, i) => (i === dial.pos ? `§e${d}§r` : `${d}`)).join(" ");
+        actionbar(p, `${digits}\n§7Turn: digit  Jump/Use: next  Sneak: close`);
+        return;
+    }
     const alien = dial.list[dial.index];
     const prev = dial.list[(dial.index - 1 + dial.list.length) % dial.list.length];
     const next = dial.list[(dial.index + 1) % dial.list.length];
     actionbar(p, `§8${prev.name} §7◄  ${alien.color}§l${alien.name}§r  §7► §8${next.name}\n§7Turn: spin  §a● Use/Jump: transform  §7Sneak: close`);
+    showOnDial(p, alien.key);
     const i = HOLO_KEYS.indexOf(alien.key);
     try {
         if (dial.holo?.isValid && i >= 0) dial.holo.setProperty("alienevo:alien", i);
@@ -125,9 +173,24 @@ function show(p, dial) {
 
 /** @param {Player} p @param {Dial} dial @param {number} dir */
 function step(p, dial, dir) {
-    if (dial.closing || dial.list.length < 2) return;
-    dial.index = (dial.index + dir + dial.list.length) % dial.list.length;
+    if (dial.closing) return;
     dial.idle = 0;
+    if (dial.mode === "code") {
+        dial.digits[dial.pos] = (dial.digits[dial.pos] + dir + 10) % 10;
+        playWatch(p, dir < 0 ? "code_left" : "code_right");
+        sound(p, "alienevo.prototype_cycle_1");
+        if (checkCode(p, dial.digits.join(""))) {
+            dial.digits = [0, 0, 0, 0, 0, 0];
+            dial.pos = 0;
+            dial.closing = true;
+            system.runTimeout(() => p.isValid && closeWorldDial(p, false), 40);
+            return;
+        }
+        show(p, dial);
+        return;
+    }
+    if (dial.list.length < 2) return;
+    dial.index = (dial.index + dir + dial.list.length) % dial.list.length;
     playWatch(p, dir < 0 ? "spinl_trigger" : "spinr_trigger");
     sound(p, "alienevo.prototype_cycle_1");
     show(p, dial);
@@ -142,7 +205,7 @@ export function initWorldDial() {
                 dials.delete(id);
                 continue;
             }
-            if (getAlien(p) || ++dial.idle > IDLE_TICKS) {
+            if ((dial.mode === "dial" && getAlien(p)) || ++dial.idle > IDLE_TICKS) {
                 closeWorldDial(p);
                 continue;
             }
@@ -160,6 +223,10 @@ export function initWorldDial() {
             const dir = mx > 0.5 ? -1 : mx < -0.5 ? 1 : 0;
             if (dir && dir !== dial.moveX) step(p, dial, dir);
             dial.moveX = dir;
+            if (dial.mode === "code") {
+                if (system.currentTick % 20 === 0 && !dial.closing) show(p, dial);
+                continue;
+            }
 
             dial.spin = (dial.spin + 4) % 360;
             if (!dial.holo?.isValid) {
@@ -189,14 +256,8 @@ export function initWorldDial() {
         dials.delete(ev.playerId);
     });
 
-    // Movement is locked while the dial is open; never leave it locked.
-    world.afterEvents.playerSpawn.subscribe((ev) => {
-        try {
-            ev.player.inputPermissions.setPermissionCategory(InputPermissionCategory.Movement, true);
-        } catch {
-            // Ignore.
-        }
-    });
+    // Movement is locked while the watch is up; never leave it locked.
+    world.afterEvents.playerSpawn.subscribe((ev) => watchView(ev.player, false));
 
     // Stray holograms (server stopped while a dial was open).
     system.runInterval(() => {

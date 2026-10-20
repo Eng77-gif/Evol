@@ -34,6 +34,25 @@
           "chance": 0.8
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "alienevo:primus_link_circuit",
+          "weight": 1
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "killed_by_player"
+        },
+        {
+          "condition": "random_chance",
+          "chance": 0.05
+        }
+      ]
     }
   ]
 }

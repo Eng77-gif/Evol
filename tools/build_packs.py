@@ -295,7 +295,7 @@ def java_block_model_to_geo(model, identifier, tex_size):
 
 # In first person only the alien's arms are drawn (they replace the player's
 # own first person arm, see build_player_entity).
-FIRST_PERSON_ARMS = [{"*": "!c.is_first_person"}, {"rightArm": "1.0"}]
+FIRST_PERSON_ARMS = [{"*": "!c.is_first_person"}, {"rightArm": "1.0"}, {"leftArm": "c.owning_entity->q.property('alienevo:wv')"}]
 
 
 def is_translucent(img):
@@ -452,16 +452,42 @@ def build_omnitrix(vfs, triggers_out):
                 parts.append(part)
             img = layer["image"]
             (part["glow"] if layer["glow"] else part["base"]).append(img)
+            if "/models/sil/" in layer["tex_path"]:
+                part["sil"] = img.size
         textures, geometry, rcs, renames = {}, {}, [], {}
-        cond = "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien"
+        # Hidden in first person, except while looking at the watch (dial / code entry).
+        cond = "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
         slot_dir = os.path.join(tex_dir, "slots")
         if variant == "prototype":
             write_watch_slot_textures(vfs, slot_dir)
         for i, part in enumerate(parts):
             pid = f"omnitrix_{variant}_{i}"
             gid = f"geometry.alienevo.{pid}"
-            write_json(os.path.join(geo_dir, f"{pid}.geo.json"), convert_geo(vfs.json(part["geo"]), gid, renames))
+            geo = convert_geo(vfs.json(part["geo"]), gid, renames)
+            if part.get("sil"):
+                # GeckoLib draws the silhouette level with the core face; lift it
+                # a little so Bedrock does not hide it behind the face.
+                for bone in geo["minecraft:geometry"][0]["bones"]:
+                    for cube in bone.get("cubes", []):
+                        cube["origin"][0] = round(cube["origin"][0] + 0.15, 4)
+            write_json(os.path.join(geo_dir, f"{pid}.geo.json"), geo)
             geometry[f"part{i}"] = gid
+            if part.get("sil"):
+                # Silhouette of the alien on the dial (omnitrix_cycle -> sil/alien_N).
+                names = []
+                for alien in ALIENS:
+                    src_path = next((f"assets/{ns}/textures/models/sil/alien_{alien['id']}.png" for ns in ("alienevo", "aeo", "untapped", "omni_evo")
+                                     if vfs.exists(f"assets/{ns}/textures/models/sil/alien_{alien['id']}.png")), None)
+                    img = vfs.image(src_path).resize(part["sil"], Image.NEAREST) if src_path else Image.new("RGBA", part["sil"])
+                    save_png(img, os.path.join(tex_dir, f"sil_{alien['key']}.png"))
+                    textures[f"sil_{alien['key']}"] = f"textures/entity/omnitrix/sil_{alien['key']}"
+                    names.append(f"Texture.sil_{alien['key']}")
+                rc = f"controller.render.alienevo.{pid}"
+                controllers[rc] = {"geometry": f"Geometry.part{i}", "materials": [{"*": "Material.default"}],
+                                   "arrays": {"textures": {"Array.sils": names}},
+                                   "textures": ["Array.sils[c.owning_entity->q.property('alienevo:sel')]"]}
+                rcs.append({rc: f"{cond} && c.owning_entity->q.property('alienevo:sel') >= 0"})
+                continue
             for kind, mat in (("base", "default"), ("glow", "glow")):
                 if not part[kind]:
                     continue
@@ -664,8 +690,16 @@ def build_mobs(vfs, lang):
         lang[f"item.spawn_egg.entity.alienevo:{key}.name"] = f"Spawn {mob['name']}"
         src = f"data/alienevo/loot_tables/entities/{mob['loot']}.json"
         bp_items = {f"alienevo:{os.path.splitext(f)[0]}" for f in os.listdir(os.path.join(BP, "items"))}
-        write_json(os.path.join(BP, "loot_tables", "alienevo", "entities", f"{mob['loot']}.json"),
-                   structures.convert_loot(vfs.json(src), bp_items))
+        loot = structures.convert_loot(vfs.json(src), bp_items)
+        # Aliens Untapped: add_machine_husk_drop (transformation tablet); the
+        # Primus Link Circuit of the (not ported) Volaticus Biopsis drops from priests.
+        extra = {"machine_husk": ("alienevo:code_tablet_transformation", 0.1),
+                 "machine_husk_staff": ("alienevo:primus_link_circuit", 0.05)}.get(mob["loot"])
+        if extra:
+            loot.setdefault("pools", []).append({"rolls": 1, "entries": [{"type": "item", "name": extra[0], "weight": 1}],
+                                                 "conditions": [{"condition": "killed_by_player"},
+                                                                {"condition": "random_chance", "chance": extra[1]}]})
+        write_json(os.path.join(BP, "loot_tables", "alienevo", "entities", f"{mob['loot']}.json"), loot)
     write_json(os.path.join(RP, "render_controllers", "alienevo.mobs.render_controllers.json"),
                {"format_version": "1.10.0", "render_controllers": controllers})
 
@@ -678,6 +712,8 @@ def _trade_item(ref, bp_items):
     if isinstance(ref, str):
         ref = {"item": ref, "count": 1}
     item = ITEM_SUBSTITUTES.get(ref["item"], ref["item"])
+    if item.startswith("untapped:"):
+        item = "alienevo:" + item.split(":", 1)[1]
     if not item.startswith("minecraft:") and item not in bp_items:
         return None
     return {"item": item, "quantity": ref.get("count", 1)}
@@ -687,14 +723,18 @@ def build_galvan_scientist(vfs, lang):
     """Galvan Scientist villager (profession alienevo:galvan_scientist of the
     Java mod) with its trade levels converted to a Bedrock trade table."""
     key = "galvan_scientist"
-    bp_items = {f"alienevo:{os.path.splitext(f)[0]}" for f in os.listdir(os.path.join(BP, "items"))}
+    bp_items = {f"alienevo:{os.path.splitext(f)[0]}" for d in ("items", "blocks") for f in os.listdir(os.path.join(BP, d))}
+    bp_items |= {f"alienevo:{i[0]}" for i in UNTAPPED_ITEMS}
     tiers = []
     for level in range(1, 6):
-        groups = []
-        for data in vfs.all_json(f"addon/alienevo/villager_trades/galvan_trades_{level}.json"):
+        groups, seen = [], set()
+        files = sorted(n for n in vfs.files if re.fullmatch(rf"addon/[a-z_]+/villager_trades/galvan_trades_{level}\.json", n))
+        for data in (d for n in files for d in vfs.all_json(n)):
             for t in data.get("trades", []):
                 want, give = _trade_item(t["price"], bp_items), _trade_item(t["for_sale"], bp_items)
-                if want and give:
+                sig = json.dumps([want, give])
+                if want and give and sig not in seen:
+                    seen.add(sig)
                     groups.append({"wants": [want], "gives": [give], "trader_exp": t.get("xp", 1),
                                    "max_uses": t.get("max_trades", 12), "reward_exp": True})
         # Java villagers offer 2 random trades from each level's pool.
@@ -1023,8 +1063,25 @@ def build_player_scale_animation():
             "animation.alienevo.player.scale": {
                 "loop": True,
                 "bones": {"root": {"scale": "v.alienevo_scale"}},
-            }
+            },
+            "animation.alienevo.player.watch_view": {
+                "loop": True,
+                "bones": {"leftarm": {
+                    "position": [-11.5, "-6.5 + variable.short_arm_offset_left + math.sin(q.life_time * 60) * 0.15", 11.0],
+                    "rotation": [195.0, 182.5, 2.5],
+                    "scale": [0.9, 0.9, 0.9],
+                }},
+            },
         },
+    })
+    write_json(os.path.join(RP, "render_controllers", "alienevo.player.render_controllers.json"), {
+        "format_version": "1.10.0",
+        "render_controllers": {"controller.render.alienevo.player.watch_arm": {
+            "geometry": "Geometry.default",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.default"],
+            "part_visibility": [{"*": False}, {"leftArm": True}, {"leftSleeve": True}],
+        }},
     })
     return expr
 
@@ -1083,6 +1140,9 @@ def build_player_behavior():
         "alienevo:anim": {"type": "int", "range": [0, 63], "default": 0, "client_sync": True},
         "alienevo:fly": {"type": "bool", "default": False, "client_sync": True},
         "alienevo:glow": {"type": "int", "range": [-1, 15], "default": -1, "client_sync": True},
+        # Alien on the dial (index in HOLO_KEYS, -1 = none) and "looking at the watch".
+        "alienevo:sel": {"type": "int", "range": [-1, 63], "default": -1, "client_sync": True},
+        "alienevo:wv": {"type": "bool", "default": False, "client_sync": True},
     }
     for i in range(len(WATCH_SLOTS)):
         props[f"alienevo:col{i}"] = {"type": "int", "range": [-1, 15], "default": -1, "client_sync": True}
@@ -1102,7 +1162,11 @@ def build_player_entity(scale_expr):
     desc["scripts"]["pre_animation"].append(f"v.alienevo_scale = {scale_expr};")
     desc["animations"]["alienevo_scale"] = "animation.alienevo.player.scale"
     desc["scripts"]["animate"].append({"alienevo_scale": "!v.is_first_person && v.alienevo_is_alien"})
-    rcs = []
+    # Looking at the watch in first person: the left arm is raised in front of
+    # the camera (pose based on the vanilla off-hand map pose) and drawn.
+    desc["animations"]["alienevo_watch_view"] = "animation.alienevo.player.watch_view"
+    desc["scripts"]["animate"].append({"alienevo_watch_view": "v.is_first_person && q.property('alienevo:wv')"})
+    rcs = [{"controller.render.alienevo.player.watch_arm": "v.is_first_person && !query.is_spectator && !v.alienevo_is_alien && q.property('alienevo:wv')"}]
     for rc in desc["render_controllers"]:
         if isinstance(rc, dict) and "controller.render.player.first_person" in rc:
             rc = {"controller.render.player.first_person": rc["controller.render.player.first_person"] + " && !v.alienevo_is_alien"}
@@ -1135,6 +1199,50 @@ def build_items_rp(jar, lang, item_textures):
     # Alien form items reuse the selection icons.
     for alien in ALIENS:
         item_textures[f"alienevo:form_{alien['key']}"] = {"textures": f"textures/ui/aliens/{alien['key']}"}
+
+
+# Aliens Untapped transformation code tablets (transformation_code.js).
+UNTAPPED_ITEMS = [
+    # id, max stack, custom component
+    ("broken_code_tablet", 16, "alienevo:code_tablet"),
+    ("blank_code_tablet", 16, None),
+    ("code_tablet_transformation", 1, "alienevo:code_tablet"),
+    ("primus_link_circuit", 16, None),
+]
+
+
+def untapped_items_rp(vfs, lang, item_textures):
+    names = vfs.json("assets/untapped/lang/en_us.json")
+    tex_dir = os.path.join(RP, "textures", "items")
+    for item_id, _, _ in UNTAPPED_ITEMS:
+        img = vfs.image(f"assets/untapped/textures/item/{item_id}.png")
+        save_png(img.crop((0, 0, img.size[0], img.size[0])), os.path.join(tex_dir, f"{item_id}.png"))
+        item_textures[f"alienevo:{item_id}"] = {"textures": f"textures/items/{item_id}"}
+        lang[f"item.alienevo:{item_id}"] = names.get(f"item.untapped.{item_id}", item_id.replace("_", " ").title())
+
+
+def untapped_items_bp():
+    for item_id, stack, custom in UNTAPPED_ITEMS:
+        comps = {"minecraft:icon": f"alienevo:{item_id}", "minecraft:max_stack_size": stack}
+        if custom:
+            comps[custom] = {}
+        if item_id == "primus_link_circuit":
+            comps["minecraft:rarity"] = "rare"
+        write_json(os.path.join(BP, "items", f"{item_id}.json"), item_json(f"alienevo:{item_id}", comps))
+
+
+def untapped_recipes():
+    """dupe_code_tablet*.json: a read tablet + a blank tablet = two tablets."""
+    for tablet in ("code_tablet", "code_tablet_selfdestruct"):
+        write_json(os.path.join(BP, "recipes", f"dupe_{tablet}.json"), {
+            "format_version": "1.20.10",
+            "minecraft:recipe_shapeless": {
+                "description": {"identifier": f"alienevo:dupe_{tablet}"},
+                "tags": ["crafting_table"],
+                "ingredients": [{"item": f"alienevo:{tablet}"}, {"item": "alienevo:blank_code_tablet"}],
+                "result": {"item": f"alienevo:{tablet}", "count": 2},
+            },
+        })
 
 
 BLOCKS = {
@@ -1518,6 +1626,7 @@ def main():
     build_projectiles(jar)
     print("particles:", ", ".join(build_particles(vfs)))
     build_items_rp(jar, lang, item_textures)
+    untapped_items_rp(vfs, lang, item_textures)
     build_blocks_rp(jar, terrain)
     build_sounds(vfs)
     write_json(os.path.join(RP, "textures", "item_texture.json"),
@@ -1528,11 +1637,13 @@ def main():
     save_png(jar.image("alienevo_icon.png").resize((256, 256), Image.NEAREST), os.path.join(RP, "pack_icon.png"))
     save_png(jar.image("alienevo_icon.png").resize((256, 256), Image.NEAREST), os.path.join(BP, "pack_icon.png"))
     build_items_bp()
+    untapped_items_bp()
     build_blocks_bp()
     build_mobs(vfs, lang)
     print("galvan trades:", build_galvan_scientist(vfs, lang))
     print("holograms:", build_hologram(lang))
     build_recipes(jar)
+    untapped_recipes()
     for line in structures.build(vfs):
         print("structure", line)
     write_lang(lang)

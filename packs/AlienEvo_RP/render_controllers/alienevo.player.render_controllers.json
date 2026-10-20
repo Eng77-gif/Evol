@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alienevo.player.watch_arm": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.default"
+      ],
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "leftArm": true
+        },
+        {
+          "leftSleeve": true
+        }
+      ]
+    }
+  }
+}

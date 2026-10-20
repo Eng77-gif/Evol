@@ -29,6 +29,25 @@
           "chance": 0.8
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "alienevo:code_tablet_transformation",
+          "weight": 1
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "killed_by_player"
+        },
+        {
+          "condition": "random_chance",
+          "chance": 0.1
+        }
+      ]
     }
   ]
 }

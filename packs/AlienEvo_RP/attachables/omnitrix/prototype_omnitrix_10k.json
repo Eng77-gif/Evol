@@ -171,7 +171,42 @@
         "tubes_13": "textures/entity/omnitrix/slots/tubes_13",
         "tubes_14": "textures/entity/omnitrix/slots/tubes_14",
         "tubes_15": "textures/entity/omnitrix/slots/tubes_15",
-        "part1": "textures/entity/omnitrix/omnitrix_10k_1"
+        "sil_pyronite": "textures/entity/omnitrix/sil_pyronite",
+        "sil_vulpimancer": "textures/entity/omnitrix/sil_vulpimancer",
+        "sil_petrosapien": "textures/entity/omnitrix/sil_petrosapien",
+        "sil_kineceleran": "textures/entity/omnitrix/sil_kineceleran",
+        "sil_galvan": "textures/entity/omnitrix/sil_galvan",
+        "sil_tetramand": "textures/entity/omnitrix/sil_tetramand",
+        "sil_lepidopterran": "textures/entity/omnitrix/sil_lepidopterran",
+        "sil_piscciss_volann": "textures/entity/omnitrix/sil_piscciss_volann",
+        "sil_galvanic_mechamorph": "textures/entity/omnitrix/sil_galvanic_mechamorph",
+        "sil_ectonurite": "textures/entity/omnitrix/sil_ectonurite",
+        "sil_arburian_pelarota": "textures/entity/omnitrix/sil_arburian_pelarota",
+        "sil_methanosian": "textures/entity/omnitrix/sil_methanosian",
+        "sil_sonorosian": "textures/entity/omnitrix/sil_sonorosian",
+        "sil_vaxasaurian": "textures/entity/omnitrix/sil_vaxasaurian",
+        "sil_aerophibian": "textures/entity/omnitrix/sil_aerophibian",
+        "sil_necrofriggian": "textures/entity/omnitrix/sil_necrofriggian",
+        "sil_crystalsapien": "textures/entity/omnitrix/sil_crystalsapien",
+        "sil_nucleonix": "textures/entity/omnitrix/sil_nucleonix",
+        "sil_dragonoid": "textures/entity/omnitrix/sil_dragonoid",
+        "sil_astrobot": "textures/entity/omnitrix/sil_astrobot",
+        "sil_opticoid": "textures/entity/omnitrix/sil_opticoid",
+        "sil_perkgourmand": "textures/entity/omnitrix/sil_perkgourmand",
+        "sil_murkgourmand": "textures/entity/omnitrix/sil_murkgourmand",
+        "sil_talpaedan": "textures/entity/omnitrix/sil_talpaedan",
+        "sil_orishan": "textures/entity/omnitrix/sil_orishan",
+        "sil_amperi": "textures/entity/omnitrix/sil_amperi",
+        "sil_nosedeenian": "textures/entity/omnitrix/sil_nosedeenian",
+        "sil_loboan": "textures/entity/omnitrix/sil_loboan",
+        "sil_transylian": "textures/entity/omnitrix/sil_transylian",
+        "sil_florauna": "textures/entity/omnitrix/sil_florauna",
+        "sil_merlinisapien": "textures/entity/omnitrix/sil_merlinisapien",
+        "sil_ickthyperambuloid": "textures/entity/omnitrix/sil_ickthyperambuloid",
+        "sil_splixson": "textures/entity/omnitrix/sil_splixson",
+        "sil_oryctini": "textures/entity/omnitrix/sil_oryctini",
+        "sil_sonorosian_ov": "textures/entity/omnitrix/sil_sonorosian_ov",
+        "sil_necrofriggian_ov": "textures/entity/omnitrix/sil_necrofriggian_ov"
       },
       "geometry": {
         "part0": "geometry.alienevo.omnitrix_10k_0",
@@ -180,40 +215,40 @@
       },
       "render_controllers": [
         {
-          "controller.render.alienevo.omnitrix_10k_0": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien"
+          "controller.render.alienevo.omnitrix_10k_0": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_0_glow": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien"
+          "controller.render.alienevo.omnitrix_10k_0_glow": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_base_primary": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col0') >= 0"
+          "controller.render.alienevo.omnitrix_10k_base_primary": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col0') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_base_secondary": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col1') >= 0"
+          "controller.render.alienevo.omnitrix_10k_base_secondary": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col1') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_base_tertiary": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col2') >= 0"
+          "controller.render.alienevo.omnitrix_10k_base_tertiary": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col2') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_buttons": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col3') >= 0"
+          "controller.render.alienevo.omnitrix_10k_buttons": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col3') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_core_side": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col4') >= 0"
+          "controller.render.alienevo.omnitrix_10k_core_side": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col4') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_core_top": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col5') >= 0"
+          "controller.render.alienevo.omnitrix_10k_core_top": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col5') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_dial_inner": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col6') >= 0"
+          "controller.render.alienevo.omnitrix_10k_dial_inner": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col6') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_dial_outer": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col7') >= 0"
+          "controller.render.alienevo.omnitrix_10k_dial_outer": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col7') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_tubes": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col8') >= 0"
+          "controller.render.alienevo.omnitrix_10k_tubes": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col8') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_1": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien"
+          "controller.render.alienevo.omnitrix_10k_1": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:sel') >= 0"
         }
       ],
       "animations": {

@@ -68,6 +68,8 @@ function rollLoot() {
     if (Math.random() < 1 / TABLET_RARITY) {
         out.push(new ItemStack(Math.random() < 0.8 ? "alienevo:code_tablet" : "alienevo:code_tablet_selfdestruct", 1));
     }
+    // Aliens Untapped: add_incomplete_tablet_galvan.
+    if (Math.random() < 0.05) out.push(new ItemStack("alienevo:broken_code_tablet", 1));
     if (Math.random() < 1 / OMNITRIX_RARITY) out.push(new ItemStack("alienevo:prototype_omnitrix", 1));
     return out;
 }

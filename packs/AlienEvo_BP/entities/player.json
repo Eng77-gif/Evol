@@ -30,6 +30,20 @@
           "default": -1,
           "client_sync": true
         },
+        "alienevo:sel": {
+          "type": "int",
+          "range": [
+            -1,
+            63
+          ],
+          "default": -1,
+          "client_sync": true
+        },
+        "alienevo:wv": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        },
         "alienevo:col0": {
           "type": "int",
           "range": [
