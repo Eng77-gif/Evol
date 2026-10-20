@@ -8,6 +8,7 @@ import { ABILITIES, clearToggles, toggles } from "./abilities.js";
 import { ALIEN_BY_ID, ALIENS, MAX_TIMER, OMNITRIX_TIERS, RECHARGE_TIMER } from "./aliens.js";
 import { ANIM_TRIGGERS } from "./anim_data.js";
 import {
+    getPoints, isSkillUnlocked, setPoints, unlockSkill,
     availableAliens, getAbilityIndex, getAlien, getLevel, getPlaylist, getRecharge, getSelected, getTimer,
     getXp, hasMasterControl, setAbilityIndex, setAlien, setPlaylist, setRecharge, setSelected, setTimer,
 } from "./state.js";
@@ -328,10 +329,15 @@ function cooldownLeft(p, abilityId) {
 
 /** @param {Player} p @param {Alien} alien @param {number} [index] */
 export function castAbility(p, alien, index) {
-    const i = index ?? getAbilityIndex(p, alien.key);
-    const id = alien.abilities[i] ?? alien.abilities[0];
+    let i = index ?? getAbilityIndex(p, alien.key);
+    if (!alien.abilities[i]) i = 0;
+    const id = alien.abilities[i];
     const ability = ABILITIES[id];
     if (!ability) return;
+    if (!isSkillUnlocked(p, alien.key, i)) {
+        actionbar(p, `§c${ability.name} is locked §7- open the ability menu (sneak + use) to unlock it`);
+        return;
+    }
     const left = cooldownLeft(p, id);
     if (left > 0) {
         actionbar(p, `§c${ability.name} §7ready in §f${(left / 20).toFixed(1)}s`);
@@ -348,12 +354,17 @@ export function castAbility(p, alien, index) {
 /** @param {Player} p @param {Alien} alien */
 async function abilityMenu(p, alien) {
     const sel = getAbilityIndex(p, alien.key);
+    const points = getPoints(p, alien.key);
     const form = new ActionFormData()
         .title(`${alien.color}${alien.name}`)
-        .body("§7Choose an ability. Using the Omnitrix casts the selected ability.");
+        .body(`§7Choose an ability. Using the Omnitrix casts the selected ability.\n§7Skill points: §e${points}§7 (earned by levelling ${alien.name})`);
     alien.abilities.forEach((id, i) => {
         const a = ABILITIES[id];
         const left = cooldownLeft(p, id);
+        if (!isSkillUnlocked(p, alien.key, i)) {
+            form.button(`§8[Locked] §0${a.name} §8- 1 point\n§8${a.desc}`, "textures/ui/lock");
+            return;
+        }
         form.button(`${i === sel ? "§2> " : ""}§0${a.name}${left > 0 ? ` §c(${(left / 20).toFixed(0)}s)` : ""}\n§8${a.desc}`);
     });
     form.button("§cDetransform", "textures/ui/cancel");
@@ -364,6 +375,19 @@ async function abilityMenu(p, alien) {
         return;
     }
     const index = res.selection;
+    if (!isSkillUnlocked(p, alien.key, index)) {
+        if (getPoints(p, alien.key) < 1) {
+            p.sendMessage(`§cNot enough skill points. §7Defeat creatures as ${alien.name} to level up.`);
+            return;
+        }
+        system.run(() => {
+            setPoints(p, alien.key, getPoints(p, alien.key) - 1);
+            unlockSkill(p, alien.key, index);
+            sound(p, "random.levelup", 0.6, 1.4);
+            p.sendMessage(`§aUnlocked §e${ABILITIES[alien.abilities[index]].name}§a!`);
+        });
+        return;
+    }
     setAbilityIndex(p, alien.key, index);
     system.run(() => castAbility(p, alien, index));
 }
@@ -398,6 +422,8 @@ export function useOmnitrix(p, tier) {
 export const flying = new Map();
 /** @type {Map<string, number>} */
 const lastJump = new Map();
+/** @type {Map<string, number>} */
+const lastSneak = new Map();
 
 /** @param {Player} p @param {Alien} alien */
 function flightTick(p, alien) {
@@ -555,6 +581,32 @@ export function initOmnitrix() {
             else flightTick(/** @type {Player} */ (p), alien);
         }
     }, 1);
+
+    // Double tap sneak = use the Omnitrix worn in the offhand (or held):
+    // dial when human, ability menu when transformed.
+    world.afterEvents.playerButtonInput.subscribe((ev) => {
+        if (ev.button !== "Sneak" || ev.newButtonState !== "Pressed") return;
+        const p = ev.player;
+        const now = system.currentTick;
+        const last = lastSneak.get(p.id) ?? -100;
+        lastSneak.set(p.id, now);
+        if (now - last > 8) return;
+        lastSneak.delete(p.id);
+        const eq = p.getComponent("minecraft:equippable");
+        const tier = Math.max(omnitrixTier(eq?.getEquipment(EquipmentSlot.Offhand)), omnitrixTier(eq?.getEquipment(EquipmentSlot.Mainhand)));
+        if (tier < 0) return;
+        const alien = currentAlien(p);
+        if (alien) {
+            abilityMenu(p, alien);
+            return;
+        }
+        if (getRecharge(p) > 0) {
+            sound(p, "alienevo.prototype_failsafe");
+            actionbar(p, `§cRecharging... §f${formatTime(getRecharge(p))}`);
+            return;
+        }
+        openDial(p, tier);
+    });
 
     world.afterEvents.playerButtonInput.subscribe((ev) => {
         if (ev.button !== "Jump" || ev.newButtonState !== "Pressed") return;

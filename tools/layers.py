@@ -76,10 +76,12 @@ VAR_CHOICES = {
 GENERIC_CHOICES = ["-1", "0", "", "prototype", "default", "1", "purple", "green"]
 
 
-def substitute(vfs, path):
+def substitute(vfs, path, forced=None):
     """Replace #VARS in a path with the first combination that exists."""
     if path is None:
         return None
+    for name, value in (forced or {}).items():
+        path = path.replace("#" + name, value)
     names = re.findall(r"#([A-Z0-9]+)", path)
     if not names:
         return path if vfs.exists(path) else None
@@ -144,10 +146,10 @@ def flatten(layer, scores=None):
     return [layer] if layer_visible(layer, scores) else []
 
 
-def build_texture(vfs, tex):
+def build_texture(vfs, tex, forced=None):
     """Texture of a layer with overlay / alpha mask transformers applied."""
     base = tex.get("base") if isinstance(tex, dict) else tex
-    path = substitute(vfs, rl_path(base))
+    path = substitute(vfs, rl_path(base), forced)
     if not path:
         return None, None
     img = vfs.image(path)
@@ -155,14 +157,14 @@ def build_texture(vfs, tex):
         for tr in tex.get("transformers", []):
             t = tr.get("type")
             if t == "palladium:overlay":
-                op = substitute(vfs, rl_path(tr.get("overlay")))
+                op = substitute(vfs, rl_path(tr.get("overlay")), forced)
                 if op:
                     ov = vfs.image(op)
                     if ov.size != img.size:
                         ov = ov.resize(img.size, Image.NEAREST)
                     img = Image.alpha_composite(img, ov)
             elif t == "palladium:alpha_mask":
-                mp = substitute(vfs, rl_path(tr.get("mask")))
+                mp = substitute(vfs, rl_path(tr.get("mask")), forced)
                 if mp:
                     mask = vfs.image(mp)
                     if mask.size != img.size:
@@ -205,9 +207,27 @@ def resolve(vfs, layer_file, scores=None):
             elif ctrl.get("animation"):
                 loops.append(ctrl["animation"])
         anim = layer.get("animation_file")
+        # Flip-book textures driven by entity ticks (flames, wings, glowing crystals).
+        frames, ticks = [], 1
+        tex = layer.get("texture")
+        if isinstance(tex, dict):
+            for var, spec in (tex.get("variables") or {}).items():
+                if spec.get("type") != "palladium:entity_ticks":
+                    continue
+                ticks = max(1, int(spec.get("divide", 1)))
+                for i in range(int(spec.get("modulo", 1))):
+                    fimg, fpath = build_texture(vfs, tex, {var: str(i)})
+                    if fimg is None:
+                        break
+                    frames.append(fimg)
+                break
+        if len(frames) < 2:
+            frames = []
         out.append({
             "geo": geo,
             "image": img,
+            "frames": frames,
+            "frame_ticks": ticks,
             "tex_path": tex_path,
             "glow": layer.get("render_type") in ("glow", "eyes"),
             "translucent": layer.get("render_type") in ("translucent", "entity_translucent"),

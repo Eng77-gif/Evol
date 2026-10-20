@@ -9,7 +9,8 @@ import { currentAlien, detransform, initOmnitrix, omnitrixTier, transform, useOm
 import { openPod } from "./pod.js";
 import { initProjectiles } from "./projectiles.js";
 import {
-    getAlien, getExtraDna, getLevel, getXp, setExtraDna, setLevel, setMasterControl, setRecharge, setXp,
+    getAlien, getExtraDna, getLevel, getPoints, getXp, setAllSkills, setExtraDna, setLevel, setMasterControl,
+    setPoints, setRecharge, setXp,
 } from "./state.js";
 import { sound } from "./util.js";
 import { openWorkbench, useCodeTablet } from "./workbench.js";
@@ -121,6 +122,18 @@ system.beforeEvents.startup.subscribe((ev) => {
     });
 
     reg.registerCommand({
+        name: "alienevo:unlockskills",
+        description: "Unlock every ability of every alien (skill tree).",
+        permissionLevel: CommandPermissionLevel.GameDirectors,
+        mandatoryParameters: [{ name: "enabled", type: CustomCommandParamType.Boolean }],
+        optionalParameters: [{ name: "target", type: CustomCommandParamType.PlayerSelector }],
+    }, (origin, enabled, targets) => {
+        const players = playersFor(origin, targets);
+        system.run(() => players.forEach((p) => setAllSkills(p, !!enabled)));
+        return { status: CustomCommandStatus.Success };
+    });
+
+    reg.registerCommand({
         name: "alienevo:recharge",
         description: "Instantly recharge the Omnitrix.",
         permissionLevel: CommandPermissionLevel.GameDirectors,
@@ -163,9 +176,10 @@ world.afterEvents.entityDie.subscribe((ev) => {
     const needed = level === 0 ? 100 : 100 * level;
     if (xp >= needed) {
         setLevel(p, alien.key, level + 1);
+        setPoints(p, alien.key, getPoints(p, alien.key) + 1);
         setXp(p, alien.key, level + 1 >= 10 ? 0 : xp - needed);
         sound(p, "random.levelup");
-        p.sendMessage(`${alien.color}${alien.name}§a reached level §f${level + 1}§a! §7Ability cooldowns -${(level + 1) * 3}%`);
+        p.sendMessage(`${alien.color}${alien.name}§a reached level §f${level + 1}§a! §7+1 skill point, ability cooldowns -${(level + 1) * 3}%`);
     } else {
         setXp(p, alien.key, xp);
     }

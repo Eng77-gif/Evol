@@ -11,6 +11,14 @@
       "textures": {
         "part0": "textures/entity/aliens/pyronite_0",
         "part0_glow": "textures/entity/aliens/pyronite_0_glow",
+        "part0_glow_f0": "textures/entity/aliens/pyronite_0_glow_f0",
+        "part0_glow_f1": "textures/entity/aliens/pyronite_0_glow_f1",
+        "part0_glow_f2": "textures/entity/aliens/pyronite_0_glow_f2",
+        "part0_glow_f3": "textures/entity/aliens/pyronite_0_glow_f3",
+        "part0_glow_f4": "textures/entity/aliens/pyronite_0_glow_f4",
+        "part0_glow_f5": "textures/entity/aliens/pyronite_0_glow_f5",
+        "part0_glow_f6": "textures/entity/aliens/pyronite_0_glow_f6",
+        "part0_glow_f7": "textures/entity/aliens/pyronite_0_glow_f7",
         "part1": "textures/entity/aliens/pyronite_1",
         "part1_glow": "textures/entity/aliens/pyronite_1_glow"
       },

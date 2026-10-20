@@ -329,9 +329,13 @@ def build_aliens(vfs, lang):
                 part = {"geo": layer["geo"], "base": [], "glow": []}
                 parts.append(part)
             img = layer["image"]
+            frames = layer["frames"]
             if "/badge/badge_glow" in layer["tex_path"]:
                 img = tint(img, GLOW[0])
             (part["glow"] if layer["glow"] else part["base"]).append(img)
+            if frames:
+                part.setdefault("anim", {})["glow" if layer["glow"] else "base"] = (
+                    len(part["glow"] if layer["glow"] else part["base"]) - 1, frames, layer["frame_ticks"])
 
         textures, geometry, rcs = {}, {}, []
         renames = {}
@@ -356,6 +360,21 @@ def build_aliens(vfs, lang):
                 rcg = f"controller.render.alienevo.{pid}_glow"
                 controllers[rcg] = {"geometry": f"Geometry.part{i}", "materials": [{"*": "Material.glow"}],
                                     "textures": [f"Texture.part{i}_glow"], "part_visibility": FIRST_PERSON_ARMS}
+                anim = part.get("anim", {}).get("glow")
+                if anim:
+                    # Flip-book (e.g. Heatblast's flames): one texture per frame,
+                    # chosen from the attachable's life time.
+                    idx, frames, ticks = anim
+                    names = []
+                    for f, frame in enumerate(frames):
+                        layers_f = list(part["glow"])
+                        layers_f[idx] = frame
+                        save_png(composite(layers_f), os.path.join(tex_dir, f"{pid}_glow_f{f}.png"))
+                        textures[f"part{i}_glow_f{f}"] = f"textures/entity/aliens/{pid}_glow_f{f}"
+                        names.append(f"Texture.part{i}_glow_f{f}")
+                    fps = 20.0 / ticks
+                    controllers[rcg]["arrays"] = {"textures": {"Array.frames": names}}
+                    controllers[rcg]["textures"] = [f"Array.frames[math.mod(math.floor(q.life_time * {fps}), {len(names)})]"]
                 rcs.append(rcg)
 
         animations, animate, trig_index = build_alien_animations(vfs, key, layers, anim_dir, ctrl_dir, renames)
@@ -680,6 +699,9 @@ def build_items_bp():
             "minecraft:max_stack_size": 1,
             "minecraft:rarity": "epic",
             "minecraft:fire_resistant": {"value": True},
+            # Worn in the offhand the watch stays on the left wrist, like the
+            # Curios slot of the Java mod.
+            "minecraft:allow_off_hand": {"value": True},
             "minecraft:tags": {"tags": ["alienevo:omnitrix", f"alienevo:omnitrix_tier_{tier}"]},
             "alienevo:omnitrix": {"tier": tier},
         }

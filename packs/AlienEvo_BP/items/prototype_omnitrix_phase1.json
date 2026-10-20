@@ -14,6 +14,9 @@
       "minecraft:fire_resistant": {
         "value": true
       },
+      "minecraft:allow_off_hand": {
+        "value": true
+      },
       "minecraft:tags": {
         "tags": [
           "alienevo:omnitrix",

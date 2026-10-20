@@ -17,6 +17,9 @@ const P = {
     level: "alienevo:level_",
     xp: "alienevo:xp_",
     energy: "alienevo:energy",
+    points: "alienevo:points_",
+    skills: "alienevo:skills_",
+    allSkills: "alienevo:all_skills",
 };
 
 /** @param {Player} p @param {string} key @param {number} def */
@@ -115,3 +118,38 @@ export const setLevel = (p, key, v) => p.setDynamicProperty(P.level + key, v);
 export const getXp = (p, key) => num(p, P.xp + key);
 /** @param {Player} p @param {string} key @param {number} v */
 export const setXp = (p, key, v) => p.setDynamicProperty(P.xp + key, v);
+
+// ------------------------------------------------------------ skill tree
+// Like the Powers screen of the Java mod: the first FREE_SKILLS abilities of an
+// alien are available at once, the others are unlocked with skill points
+// earned by levelling that alien.
+
+export const FREE_SKILLS = 2;
+
+/** @param {Player} p @param {string} key */
+export const getPoints = (p, key) => num(p, P.points + key);
+/** @param {Player} p @param {string} key @param {number} v */
+export const setPoints = (p, key, v) => p.setDynamicProperty(P.points + key, Math.max(0, v));
+
+/** @param {Player} p @param {string} key @returns {number[]} */
+function unlockedSkills(p, key) {
+    try {
+        const v = p.getDynamicProperty(P.skills + key);
+        return typeof v === "string" ? JSON.parse(v) : [];
+    } catch {
+        return [];
+    }
+}
+
+/** @param {Player} p @param {string} key @param {number} index */
+export function isSkillUnlocked(p, key, index) {
+    return index < FREE_SKILLS || p.getDynamicProperty(P.allSkills) === true || unlockedSkills(p, key).includes(index);
+}
+
+/** @param {Player} p @param {string} key @param {number} index */
+export function unlockSkill(p, key, index) {
+    p.setDynamicProperty(P.skills + key, JSON.stringify([...new Set([...unlockedSkills(p, key), index])]));
+}
+
+/** @param {Player} p @param {boolean} v */
+export const setAllSkills = (p, v) => p.setDynamicProperty(P.allSkills, v);

@@ -288,7 +288,10 @@ def attachable_parts(path, include_glow=True):
         if not include_glow and name.endswith("_glow"):
             continue
         g = desc["geometry"][r["geometry"].split(".", 1)[1]]
-        t = desc["textures"][r["textures"][0].split(".", 1)[1]]
+        tref = r["textures"][0]
+        if tref.startswith("Array."):
+            tref = r["arrays"]["textures"][tref.split("[", 1)[0]][0]
+        t = desc["textures"][tref.split(".", 1)[1]]
         parts.append((geos[g], Image.open(os.path.join(RP, t + ".png")).convert("RGBA")))
     return desc, parts
 

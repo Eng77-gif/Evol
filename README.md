@@ -32,12 +32,14 @@ model GeckoLib → attachable của Bedrock, Palladium/KubeJS → Script API (`@
 | Tìm nguyên liệu | Tìm **Galvan Pod** (khối kim loại) trên mặt đất hoặc chôn dưới đá. Bấm vào pod để mở: rơi ra Galvan Scrap, Omni Shards/Crystals, Galvan Circuit. Hiếm hơn có **Prototype Omnitrix Core**, Code Tablet, đôi khi có luôn Omnitrix. |
 | Chế tạo Omnitrix | `Galvan Circuit` ở 4 góc, `Galvan Plate` ở 4 cạnh, `Prototype Omnitrix Core` ở giữa (công thức gốc). |
 | Chọn alien | Dùng (bấm giữ / chuột phải) Omnitrix → hiện vòng chọn alien. Bấm **ngồi + dùng** để biến ngay thành alien đã chọn lần trước. |
+| Đeo Omnitrix | Để Omnitrix ở **tay trái (offhand)**: đồng hồ luôn hiện trên cổ tay. **Ngồi hai lần liên tiếp** để mở vòng chọn alien (khi là alien: mở menu kỹ năng). |
 | Dùng kỹ năng | Khi đang là alien: **dùng Omnitrix** để tung kỹ năng đang chọn; **ngồi + dùng** để mở menu kỹ năng (chọn kỹ năng, hoặc *Detransform*). |
 | Bay | Alien biết bay (Stinkfly, Ghostfreak, Jetray, Big Chill, Atomix, Dragonoid): **nhấn nhảy hai lần** khi đang ở trên không. Nhảy = lên, ngồi = xuống, đi tới = bay theo hướng nhìn. |
 | Leo tường | Wildmutt, Grey Matter: đi thẳng vào tường. |
 | Hẹn giờ | Mỗi lần biến hình kéo dài 5 phút (như bản gốc). Hết giờ thì Omnitrix sạc lại 2 phút 30 giây. **Master Control** bỏ giới hạn thời gian. |
 | Nâng cấp | Đặt **Omnitrix Workbench**, cầm Omnitrix rồi bấm vào bàn: Prototype → Phase 1 → Phase 2 → Evolved (10k). Mỗi cấp mở khóa thêm alien; cấp 10k mở Master Control. |
 | Code Tablet | *Master Control*: dùng để mở Master Control. *Self Destruct*: đếm ngược 10 giây rồi nổ lớn (phá khối). |
+| Cây kỹ năng | Mỗi alien có sẵn 2 kỹ năng đầu. Kỹ năng còn lại bị khoá; mở bằng **điểm kỹ năng** (mỗi lần alien lên cấp được 1 điểm) trong menu kỹ năng. |
 | Cấp độ alien | Hạ quái khi đang là alien để nhận XP (công thức gốc: 42,5% máu tối đa của quái). Mỗi cấp (tối đa 10) giảm 3% thời gian hồi chiêu. |
 
 ### Danh sách alien
@@ -72,6 +74,7 @@ Animation GeckoLib của mod và các addon đã được chuyển sang animatio
 
 - **Animation lặp** (đuôi, cánh, thở, bay lơ lửng…) chạy liên tục trên model alien.
 - **Animation kỹ năng** (cắn, bắn tia mắt, cuộn tròn, hóa lỏng, gai tay, hú, khoan, trượt…) chạy khi dùng kỹ năng tương ứng.
+- **Texture động**: lửa của Heatblast cháy nhấp nháy (8 khung hình như bản Java).
 - **Animation di chuyển**: alien tự đổi tư thế khi bay (Stinkfly, Jetray, Big Chill, Dragonoid), bơi (Ripjaws, Walkatrout)
   và chạy nhanh (Benwolf). Tay chân alien luôn cử động theo người chơi khi đi, chạy, nhảy.
 - **Omnitrix 3D trên cổ tay**: khi cầm Omnitrix, đồng hồ GeckoLib hiện trên cổ tay trái (góc nhìn thứ ba). Khi dùng,
@@ -86,6 +89,7 @@ Xem chi tiết trong **Alien Codex** (nằm trong menu Omnitrix).
 /alienevo:unlock <alien|all> [người chơi]  mở khóa DNA alien bất kể tier
 /alienevo:mastercontrol <true|false>       bật/tắt Master Control
 /alienevo:recharge [người chơi]            sạc Omnitrix ngay
+/alienevo:unlockskills <true|false>        mở toàn bộ kỹ năng của mọi alien
 ```
 
 ## Khác biệt so với bản Java

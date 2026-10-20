@@ -142,9 +142,21 @@ for path in glob.glob(os.path.join(RP, "attachables", "**", "*.json"), recursive
         g = r["geometry"].split(".", 1)[1]
         if g not in desc.get("geometry", {}):
             err(f"{path}: {name} uses Geometry.{g} not defined")
+        arrays = r.get("arrays", {}).get("textures", {})
         for t in r.get("textures", []):
+            if t.startswith("Array."):
+                arr = t.split("[", 1)[0]
+                if arr not in arrays:
+                    err(f"{path}: {name} uses undefined {arr}")
+                if not molang_ok(t):
+                    err(f"{path}: {name} bad molang {t}")
+                continue
             if t.split(".", 1)[1] not in desc.get("textures", {}):
                 err(f"{path}: {name} uses {t} not defined")
+        for arr, items in arrays.items():
+            for t in items:
+                if t.split(".", 1)[1] not in desc.get("textures", {}):
+                    err(f"{path}: {name} array {arr} uses {t} not defined")
         for m in r.get("materials", []):
             for v in m.values():
                 if v.split(".", 1)[1] not in desc.get("materials", {}):

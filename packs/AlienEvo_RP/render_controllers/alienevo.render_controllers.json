@@ -28,7 +28,7 @@
         }
       ],
       "textures": [
-        "Texture.part0_glow"
+        "Array.frames[math.mod(math.floor(q.life_time * 10.0), 8)]"
       ],
       "part_visibility": [
         {
@@ -37,7 +37,21 @@
         {
           "rightArm": "1.0"
         }
-      ]
+      ],
+      "arrays": {
+        "textures": {
+          "Array.frames": [
+            "Texture.part0_glow_f0",
+            "Texture.part0_glow_f1",
+            "Texture.part0_glow_f2",
+            "Texture.part0_glow_f3",
+            "Texture.part0_glow_f4",
+            "Texture.part0_glow_f5",
+            "Texture.part0_glow_f6",
+            "Texture.part0_glow_f7"
+          ]
+        }
+      }
     },
     "controller.render.alienevo.pyronite_1": {
       "geometry": "Geometry.part1",
