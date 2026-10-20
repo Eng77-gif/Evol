@@ -376,6 +376,74 @@ def build_aliens(vfs, lang):
     return triggers_out
 
 
+OMNITRIX_LAYER = "assets/alienevo/palladium/render_layers/prototype_omnitrix.json"
+
+
+def build_omnitrix(vfs, triggers_out):
+    """The Omnitrix item is drawn as the GeckoLib watch on the player's left
+    wrist while it is held (attachable bones follow the player's bones)."""
+    geo_dir = os.path.join(RP, "models", "entity", "omnitrix")
+    tex_dir = os.path.join(RP, "textures", "entity", "omnitrix")
+    att_dir = os.path.join(RP, "attachables", "omnitrix")
+    anim_dir = os.path.join(RP, "animations", "omnitrix")
+    ctrl_dir = os.path.join(RP, "animation_controllers", "omnitrix")
+    for d in (geo_dir, tex_dir, att_dir, anim_dir, ctrl_dir):
+        reset_dir(d)
+    base_layers = resolve(vfs, OMNITRIX_LAYER)
+    fixed = {}
+    for layer in base_layers:
+        for trig in layer["triggers"]:
+            fixed.setdefault(trig, len(fixed) + 1)
+    triggers_out["omnitrix"] = fixed
+    controllers = {}
+    variants = {"prototype": None, "10k": {"AlienEvo.10kPhase": 1}}
+    for variant, scores in variants.items():
+        layers = resolve(vfs, OMNITRIX_LAYER, scores)
+        parts = []
+        for layer in layers:
+            part = next((p for p in parts if p["geo"] == layer["geo"]), None)
+            if part is None:
+                part = {"geo": layer["geo"], "base": [], "glow": []}
+                parts.append(part)
+            img = layer["image"]
+            if layer["glow"]:
+                img = tint(img, GLOW[0])
+            (part["glow"] if layer["glow"] else part["base"]).append(img)
+        textures, geometry, rcs, renames = {}, {}, [], {}
+        cond = "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien"
+        for i, part in enumerate(parts):
+            pid = f"omnitrix_{variant}_{i}"
+            gid = f"geometry.alienevo.{pid}"
+            write_json(os.path.join(geo_dir, f"{pid}.geo.json"), convert_geo(vfs.json(part["geo"]), gid, renames))
+            geometry[f"part{i}"] = gid
+            for kind, mat in (("base", "default"), ("glow", "glow")):
+                if not part[kind]:
+                    continue
+                suffix = "" if kind == "base" else "_glow"
+                save_png(composite(part[kind]), os.path.join(tex_dir, f"{pid}{suffix}.png"))
+                textures[f"part{i}{suffix}"] = f"textures/entity/omnitrix/{pid}{suffix}"
+                rc = f"controller.render.alienevo.{pid}{suffix}"
+                controllers[rc] = {"geometry": f"Geometry.part{i}", "materials": [{"*": f"Material.{mat}"}],
+                                   "textures": [f"Texture.part{i}{suffix}"]}
+                rcs.append({rc: cond})
+        animations, animate, _ = build_alien_animations(vfs, f"omnitrix_{variant}", layers, anim_dir, ctrl_dir, renames, fixed)
+        items = [i[0] for i in OMNITRIX_ITEMS if (i[3] == 3) == (variant == "10k")]
+        for item in items:
+            desc = {
+                "identifier": f"alienevo:{item}",
+                "materials": {"default": "entity_alphatest", "glow": "entity_emissive_alpha"},
+                "textures": textures,
+                "geometry": geometry,
+                "render_controllers": rcs,
+            }
+            if animations:
+                desc["animations"] = animations
+                desc["scripts"] = {"animate": animate}
+            write_json(os.path.join(att_dir, f"{item}.json"), {"format_version": "1.10.0", "minecraft:attachable": {"description": desc}})
+    write_json(os.path.join(RP, "render_controllers", "alienevo.omnitrix.render_controllers.json"),
+               {"format_version": "1.10.0", "render_controllers": controllers})
+
+
 def build_player_scale_animation():
     """Scale the player skeleton (and therefore the attachable) per alien."""
     expr = "1.0"
@@ -436,7 +504,9 @@ def build_player_entity(scale_expr):
     desc = data["minecraft:client_entity"]["description"]
     alien = "q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')"
     desc["scripts"]["initialize"].append("v.alienevo_anim = 0.0;")
-    desc["scripts"].setdefault("variables", {})["variable.alienevo_anim"] = "public"
+    desc["scripts"]["initialize"].append("v.alienevo_fly = 0.0;")
+    for var in ("alienevo_anim", "alienevo_fly", "alienevo_is_alien"):
+        desc["scripts"].setdefault("variables", {})[f"variable.{var}"] = "public"
     desc["scripts"]["pre_animation"].append(f"v.alienevo_is_alien = {alien};")
     desc["scripts"]["pre_animation"].append(f"v.alienevo_scale = {scale_expr};")
     desc["animations"]["alienevo_scale"] = "animation.alienevo.player.scale"
@@ -842,6 +912,7 @@ def main():
     lang, item_textures, terrain = {}, {}, {}
     build_lang(jar, lang)
     triggers = build_aliens(vfs, lang)
+    build_omnitrix(vfs, triggers)
     signal_animations(max([len(t) for t in triggers.values()] + [1]),
                       os.path.join(RP, "animations", "alienevo.signals.animation.json"))
     write_anim_data(triggers)

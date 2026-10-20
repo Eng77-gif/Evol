@@ -22,7 +22,8 @@
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
         "animate": [
           "loop0",
-          "triggers"
+          "triggers",
+          "movement"
         ]
       },
       "render_controllers": [
@@ -46,7 +47,9 @@
         "t3": "animation.alienevo.ickthyperambuloid.end_tail_brush",
         "t4": "animation.alienevo.ickthyperambuloid.slide",
         "t5": "animation.alienevo.ickthyperambuloid.end_slide",
-        "triggers": "controller.animation.alienevo.ickthyperambuloid"
+        "triggers": "controller.animation.alienevo.ickthyperambuloid",
+        "move_swim": "animation.alienevo.ickthyperambuloid.tail_swim",
+        "movement": "controller.animation.alienevo.ickthyperambuloid.movement"
       }
     }
   }

@@ -1,0 +1,71 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alienevo.omnitrix_prototype_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_prototype_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_prototype_1": {
+      "geometry": "Geometry.part1",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part1"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_10k_0": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part0"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_10k_0_glow": {
+      "geometry": "Geometry.part0",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.part0_glow"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_10k_1": {
+      "geometry": "Geometry.part1",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.part1"
+      ]
+    }
+  }
+}

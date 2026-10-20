@@ -378,6 +378,26 @@
           }
         }
       }
+    },
+    "animation.alienevo.lepidopterran.stinkfly.flight": {
+      "loop": true,
+      "override_previous_animation": true,
+      "bones": {
+        "wing_right": {
+          "rotation": [
+            7,
+            23,
+            21
+          ]
+        },
+        "wing_left": {
+          "rotation": [
+            7,
+            -23,
+            -21
+          ]
+        }
+      }
     }
   }
 }

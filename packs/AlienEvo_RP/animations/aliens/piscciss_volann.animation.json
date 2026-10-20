@@ -427,6 +427,47 @@
           }
         }
       }
+    },
+    "animation.alienevo.piscciss_volann.ripjaws.swim_fast": {
+      "loop": true,
+      "override_previous_animation": true,
+      "bones": {
+        "tail_1": {
+          "rotation": [
+            "math.cos(q.anim_time*850)*2",
+            0,
+            0
+          ]
+        },
+        "tail_2": {
+          "rotation": [
+            "math.cos(q.anim_time*850)*3",
+            0,
+            0
+          ]
+        },
+        "tail_3": {
+          "rotation": [
+            "math.cos(q.anim_time*850)*4",
+            0,
+            0
+          ]
+        },
+        "tail_4": {
+          "rotation": [
+            "math.cos(q.anim_time*850)*6",
+            0,
+            0
+          ]
+        },
+        "tail_5": {
+          "rotation": [
+            "math.cos(q.anim_time*850)*6",
+            0,
+            0
+          ]
+        }
+      }
     }
   }
 }

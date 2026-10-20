@@ -17,7 +17,8 @@
       "scripts": {
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
         "animate": [
-          "loop0"
+          "loop0",
+          "movement"
         ]
       },
       "render_controllers": [
@@ -26,7 +27,9 @@
         }
       ],
       "animations": {
-        "loop0": "animation.alienevo.necrofriggian.bigchill.cloak_on"
+        "loop0": "animation.alienevo.necrofriggian.bigchill.cloak_on",
+        "move_fly": "animation.alienevo.necrofriggian.bigchill.flight",
+        "movement": "controller.animation.alienevo.necrofriggian.movement"
       }
     }
   }

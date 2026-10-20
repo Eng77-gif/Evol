@@ -20,10 +20,7 @@ export const ANIM_TRIGGERS = {
         "explosion_end": 2,
         "explosion_start": 1
     },
-    "dragonoid": {
-        "flight_off": 2,
-        "flight_on": 1
-    },
+    "dragonoid": {},
     "ectonurite": {
         "strike": 2,
         "tentacles": 1
@@ -66,14 +63,12 @@ export const ANIM_TRIGGERS = {
         "wet_on": 2
     },
     "loboan": {
-        "bite": 8,
-        "megahowl": 7,
+        "bite": 6,
+        "megahowl": 5,
         "mouth_trigger": 3,
         "mouthnt_trigger": 4,
         "punch_left": 2,
-        "punch_right": 1,
-        "sprinting": 5,
-        "sprintingnt": 6
+        "punch_right": 1
     },
     "merlinisapien": {
         "stinger_combo_anim": 1
@@ -103,6 +98,20 @@ export const ANIM_TRIGGERS = {
         "tired": 3
     },
     "nucleonix": {},
+    "omnitrix": {
+        "close_trigger": 4,
+        "code_left": 9,
+        "code_right": 8,
+        "master_control": 12,
+        "open_trigger": 3,
+        "playlist_swap": 11,
+        "settings_trigger": 5,
+        "settings_trigger_close": 6,
+        "settings_trigger_left": 10,
+        "settings_trigger_right": 7,
+        "spinl_trigger": 1,
+        "spinr_trigger": 2
+    },
     "opticoid": {
         "beam_normal": 1,
         "beam_normal_down": 2,

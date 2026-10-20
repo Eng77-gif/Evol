@@ -23,12 +23,6 @@
             },
             {
               "t6": "c.owning_entity->v.alienevo_anim == 6"
-            },
-            {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
-            },
-            {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
             }
           ]
         },
@@ -51,12 +45,6 @@
             },
             {
               "t6": "c.owning_entity->v.alienevo_anim == 6"
-            },
-            {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
-            },
-            {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
             },
             {
               "default": "q.all_animations_finished && c.owning_entity->v.alienevo_anim != 1"
@@ -85,12 +73,6 @@
               "t6": "c.owning_entity->v.alienevo_anim == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
-            },
-            {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
-            },
-            {
               "default": "q.all_animations_finished && c.owning_entity->v.alienevo_anim != 2"
             }
           ],
@@ -115,12 +97,6 @@
             },
             {
               "t6": "c.owning_entity->v.alienevo_anim == 6"
-            },
-            {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
-            },
-            {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
             }
           ],
           "blend_transition": 0.15
@@ -144,12 +120,6 @@
             },
             {
               "t6": "c.owning_entity->v.alienevo_anim == 6"
-            },
-            {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
-            },
-            {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
             }
           ],
           "blend_transition": 0.15
@@ -173,12 +143,6 @@
             },
             {
               "t6": "c.owning_entity->v.alienevo_anim == 6"
-            },
-            {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
-            },
-            {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
             }
           ],
           "blend_transition": 0.15
@@ -202,73 +166,32 @@
             },
             {
               "t5": "c.owning_entity->v.alienevo_anim == 5"
-            },
-            {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
-            },
-            {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
             }
           ],
           "blend_transition": 0.15
-        },
-        "t7": {
-          "animations": [
-            "t7"
-          ],
+        }
+      }
+    },
+    "controller.animation.alienevo.loboan.movement": {
+      "initial_state": "default",
+      "states": {
+        "default": {
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
-            },
-            {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
-            },
-            {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
-            },
-            {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
-            },
-            {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
-            },
-            {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
-            },
-            {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "sprint": "c.owning_entity->q.is_sprinting && c.owning_entity->q.is_on_ground"
             }
-          ],
-          "blend_transition": 0.15
+          ]
         },
-        "t8": {
+        "sprint": {
           "animations": [
-            "t8"
+            "move_sprint"
           ],
+          "blend_transition": 0.2,
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
-            },
-            {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
-            },
-            {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
-            },
-            {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
-            },
-            {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
-            },
-            {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
-            },
-            {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "default": "!(c.owning_entity->q.is_sprinting && c.owning_entity->q.is_on_ground)"
             }
-          ],
-          "blend_transition": 0.15
+          ]
         }
       }
     }

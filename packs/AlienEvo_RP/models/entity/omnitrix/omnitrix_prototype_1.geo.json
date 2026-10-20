@@ -1,0 +1,133 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.alienevo.omnitrix_prototype_1",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [
+          0,
+          0.75,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "head",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "body",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rightArm",
+          "pivot": [
+            -5,
+            -2,
+            0
+          ]
+        },
+        {
+          "name": "leftArm",
+          "pivot": [
+            5,
+            22,
+            0
+          ]
+        },
+        {
+          "name": "os_omnitrix",
+          "parent": "leftArm",
+          "pivot": [
+            6,
+            21.5,
+            0
+          ]
+        },
+        {
+          "name": "core",
+          "parent": "os_omnitrix",
+          "pivot": [
+            8.7475,
+            15.25,
+            0
+          ]
+        },
+        {
+          "name": "aliens",
+          "parent": "core",
+          "pivot": [
+            8.78,
+            15.25,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                3.63,
+                9.4,
+                -5.85
+              ],
+              "size": [
+                10,
+                11.7,
+                11.7
+              ],
+              "inflate": -5,
+              "pivot": [
+                8.78,
+                15.25,
+                0
+              ],
+              "rotation": [
+                -90,
+                0,
+                0
+              ],
+              "uv": {
+                "west": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "rightLeg",
+          "pivot": [
+            -1.9,
+            12,
+            0
+          ]
+        },
+        {
+          "name": "leftLeg",
+          "pivot": [
+            1.9,
+            12,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

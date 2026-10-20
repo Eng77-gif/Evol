@@ -145,7 +145,7 @@ export function detransform(p, reason) {
     removeForm(p);
     if (alien) removeEffects(p, alien);
     clearToggles(p);
-    flying.delete(p.id);
+    if (flying.delete(p.id)) setFlightAnim(p, false);
     setAlien(p, 0);
     setTimer(p, 0);
     try {
@@ -180,6 +180,7 @@ export async function openDial(p, tier) {
     const list = selectionList(p, tier);
     const selected = getSelected(p);
     sound(p, "alienevo.prototype_activate");
+    playWatch(p, "open_trigger");
     const form = new ActionFormData()
         .title(`§a${OMNITRIX_TIERS[tier].name}`)
         .body(`§7Pick an alien. §8(Sneak + use to transform into the last selected alien instantly.)\n§7Master Control: ${hasMasterControl(p) ? "§aON" : "§cOFF"}`);
@@ -190,15 +191,26 @@ export async function openDial(p, tier) {
     form.button("§9Playlist...", "textures/ui/icon_recipe_item");
     form.button("§8Alien Codex", "textures/ui/icon_book_writable");
     const res = await form.show(p);
-    if (res.canceled || res.selection === undefined) return;
+    if (res.canceled || res.selection === undefined) {
+        playWatch(p, "close_trigger");
+        return;
+    }
     if (res.selection < list.length) {
         const alien = list[res.selection];
+        // Spin the dial to the alien, then slam the core down (like the Java mod).
+        playWatch(p, list.indexOf(alien) % 2 ? "spinl_trigger" : "spinr_trigger");
         sound(p, "alienevo.prototype_cycle_1");
-        system.run(() => {
-            if (getRecharge(p) > 0) return;
+        system.runTimeout(() => {
+            if (!p.isValid) return;
+            playWatch(p, "close_trigger");
+            sound(p, "alienevo.prototype_cycle_2");
+        }, 6);
+        system.runTimeout(() => {
+            if (!p.isValid || getRecharge(p) > 0 || getAlien(p)) return;
             transform(p, alien);
-        });
+        }, 16);
     } else if (res.selection === list.length) {
+        playWatch(p, "playlist_swap");
         await editPlaylist(p, tier);
     } else {
         await codex(p, tier);
@@ -261,7 +273,27 @@ export function playTrigger(p, alien, trigger) {
     const index = table?.[trigger];
     if (!index) return;
     try {
-        p.playAnimation(`animation.alienevo.signal.${index}`, { blendOutTime: 0 });
+        p.playAnimation(`animation.alienevo.signal.${index}`, { blendOutTime: 0, controller: "alienevo_signal" });
+    } catch {
+        // Player left.
+    }
+}
+
+/** Animation of the Omnitrix watch on the wrist. @param {Player} p @param {string} trigger */
+export function playWatch(p, trigger) {
+    const index = /** @type {any} */ (ANIM_TRIGGERS).omnitrix?.[trigger];
+    if (!index) return;
+    try {
+        p.playAnimation(`animation.alienevo.signal.${index}`, { blendOutTime: 0, controller: "alienevo_signal" });
+    } catch {
+        // Player left.
+    }
+}
+
+/** Tells the alien model whether the player flies. @param {Player} p @param {boolean} on */
+export function setFlightAnim(p, on) {
+    try {
+        p.playAnimation(on ? "animation.alienevo.flight.on" : "animation.alienevo.flight.off", { blendOutTime: 0, controller: "alienevo_flight" });
     } catch {
         // Player left.
     }
@@ -375,6 +407,7 @@ function flightTick(p, alien) {
         if (++f.ground > 10) {
             flying.delete(p.id);
             playTrigger(p, alien, "flight_off");
+            setFlightAnim(p, false);
             return;
         }
     } else {
@@ -535,10 +568,12 @@ export function initOmnitrix() {
         if (flying.has(p.id)) {
             flying.delete(p.id);
             playTrigger(p, alien, "flight_off");
+            setFlightAnim(p, false);
             actionbar(p, "§7Flight: OFF");
         } else {
             flying.set(p.id, { since: now, ground: 0 });
             playTrigger(p, alien, "flight_on");
+            setFlightAnim(p, true);
             p.applyKnockback({ x: 0, z: 0 }, 0.5);
             actionbar(p, "§bFlight: ON");
         }

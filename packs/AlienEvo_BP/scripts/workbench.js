@@ -4,7 +4,7 @@
 import { EquipmentSlot, ItemStack, system } from "@minecraft/server";
 import { ActionFormData, MessageFormData } from "@minecraft/server-ui";
 import { ALIENS, OMNITRIX_TIERS } from "./aliens.js";
-import { omnitrixTier } from "./omnitrix.js";
+import { omnitrixTier, playWatch } from "./omnitrix.js";
 import { hasMasterControl, setMasterControl } from "./state.js";
 import { particle, sound } from "./util.js";
 
@@ -111,6 +111,7 @@ export async function useCodeTablet(p, typeId) {
             setMasterControl(p, true);
             consumeHeld(p, typeId);
             sound(p, "alienevo.prototype_master_control");
+            playWatch(p, "master_control");
             p.sendMessage("§a§lMaster Control unlocked! §r§7The Omnitrix will no longer time out.");
         });
         return;

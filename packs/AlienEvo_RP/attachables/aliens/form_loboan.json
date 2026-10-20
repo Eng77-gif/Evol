@@ -22,7 +22,8 @@
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
         "animate": [
           "loop0",
-          "triggers"
+          "triggers",
+          "movement"
         ]
       },
       "render_controllers": [
@@ -45,11 +46,11 @@
         "t2": "animation.alienevo.loboan.loboan.lpunch",
         "t3": "animation.alienevo.loboan.loboan.mouth",
         "t4": "animation.alienevo.loboan.loboan.mouthnt",
-        "t5": "animation.alienevo.loboan.loboan.sprint2",
-        "t6": "animation.alienevo.loboan.loboan.sprintnt",
-        "t7": "animation.alienevo.loboan.loboan.megamouth",
-        "t8": "animation.alienevo.loboan.loboan.bite",
-        "triggers": "controller.animation.alienevo.loboan"
+        "t5": "animation.alienevo.loboan.loboan.megamouth",
+        "t6": "animation.alienevo.loboan.loboan.bite",
+        "triggers": "controller.animation.alienevo.loboan",
+        "move_sprint": "animation.alienevo.loboan.loboan.sprint2",
+        "movement": "controller.animation.alienevo.loboan.movement"
       }
     }
   }

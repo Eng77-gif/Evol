@@ -108,16 +108,35 @@ def convert_animation(anim, renames=None):
     return out
 
 
-def build_alien_animations(vfs, key, layers, anim_dir, ctrl_dir, renames=None):
-    """Returns (attachable animations map, animate list, {trigger: index})."""
+# Movement animations found by name in the alien's animation files.
+# (state, regex on the short animation name, owner condition)
+MOVEMENT = [
+    ("fly", r"(^|_)(flight|fly|flying|hover)(_on)?$", "c.owning_entity->v.alienevo_fly"),
+    ("swim", r"(swim_fast|tail_swim|swim)$", "c.owning_entity->q.is_swimming"),
+    ("sprint", r"^sprint\d*$", "c.owning_entity->q.is_sprinting && c.owning_entity->q.is_on_ground"),
+    ("walk", r"^walk$", "c.owning_entity->q.modified_move_speed > 0.1 && c.owning_entity->q.is_on_ground"),
+]
+
+
+def short(name):
+    return name.split(".")[-1].lower()
+
+
+def build_alien_animations(vfs, key, layers, anim_dir, ctrl_dir, renames=None, fixed_index=None):
+    """Returns (attachable animations map, animate list, {trigger: index}).
+
+    fixed_index: use this trigger numbering (shared by several attachables)."""
     sources = {}
     loops, triggers = [], {}
     loops_taken = False
+    all_anims = {}
     for layer in layers:
         f = layer["anim_file"]
         if not f or not vfs.exists(f):
             continue
         anims = vfs.json(f).get("animations", {})
+        for n, a in anims.items():
+            all_anims.setdefault(n, a)
         # Idle loops of the main (first animated) layer only: other layers of
         # the same alien may hold alternative poses (e.g. cloak on / off).
         if not loops_taken and layer["loops"]:
@@ -130,6 +149,40 @@ def build_alien_animations(vfs, key, layers, anim_dir, ctrl_dir, renames=None):
             if name in anims and trig not in triggers:
                 triggers[trig] = (name, mode)
                 sources[name] = anims[name]
+
+    # Movement states (fly / swim / sprint / walk) from every animation of the
+    # alien that the render layer does not already use.  Triggers that the Java
+    # mod fired on movement (sprinting, walking, flight_on) become states too.
+    movement = {}
+    for trig in list(triggers):
+        name, _ = triggers[trig]
+        t = trig.lower()
+        if t.endswith("nt") or "off" in t:
+            if any(k in t for k in ("sprint", "walk", "flight")):
+                del triggers[trig]
+            continue
+        for state, _, cond in MOVEMENT:
+            key_word = {"fly": "flight", "swim": "swim", "sprint": "sprint", "walk": "walk"}[state]
+            if key_word in t and state not in movement:
+                movement[state] = (name, cond)
+                del triggers[trig]
+                break
+    used = set(loops) | {n for n, _ in triggers.values()} | {n for n, _ in movement.values()}
+    for state, pattern, cond in MOVEMENT:
+        if state in movement:
+            continue
+        for name, anim in all_anims.items():
+            if name in used or short(name).endswith("nt") or "off" in short(name):
+                continue
+            if re.search(pattern, short(name)):
+                movement[state] = (name, cond)
+                sources[name] = anim
+                used.add(name)
+                break
+    # Keep the original order of MOVEMENT (priority) and register the sources.
+    movement = {state: movement[state] for state, _, _ in MOVEMENT if state in movement}
+    for name, _ in movement.values():
+        sources[name] = all_anims[name]
     if not sources:
         return {}, [], {}
 
@@ -141,39 +194,67 @@ def build_alien_animations(vfs, key, layers, anim_dir, ctrl_dir, renames=None):
         converted[new] = convert_animation(anim, renames)
         if name in loops:
             converted[new]["loop"] = True
+    for state, (name, _) in movement.items():
+        conv = converted[names[name]]
+        # Poses such as "flight_on" are held, everything else loops.
+        if conv.get("loop") not in (True, "hold_on_last_frame"):
+            conv["loop"] = "hold_on_last_frame" if short(name).endswith("_on") else True
     write_json(os.path.join(anim_dir, f"{key}.animation.json"), {"format_version": "1.8.0", "animations": converted})
 
     animations, animate = {}, []
     for i, name in enumerate(loops):
         animations[f"loop{i}"] = names[name]
         animate.append(f"loop{i}")
+    controllers = {}
 
     index = {}
     if triggers:
         states = {"default": {"transitions": []}}
-        trig_list = list(triggers.items())
-        for i, (trig, _) in enumerate(trig_list, start=1):
-            index[trig] = i
-        for i, (trig, (name, mode)) in enumerate(trig_list, start=1):
+        if fixed_index:
+            index = {t: fixed_index[t] for t in triggers if t in fixed_index}
+        else:
+            index = {t: i for i, t in enumerate(triggers, start=1)}
+        for trig, (name, mode) in triggers.items():
+            if trig not in index:
+                continue
+            i = index[trig]
             animations[f"t{i}"] = names[name]
             states["default"]["transitions"].append({f"t{i}": f"{OWNER_VAR} == {i}"})
             hold = mode in ("then_play_and_hold", "then_loop") or sources[name].get("loop") in (True, "hold_on_last_frame")
-            transitions = [{f"t{j}": f"{OWNER_VAR} == {j}"} for j in range(1, len(trig_list) + 1) if j != i]
+            transitions = [{f"t{j}": f"{OWNER_VAR} == {j}"} for j in index.values() if j != i]
             if not hold:
                 transitions.append({"default": f"q.all_animations_finished && {OWNER_VAR} != {i}"})
             states[f"t{i}"] = {"animations": [f"t{i}"], "transitions": transitions, "blend_transition": 0.15}
         ctrl = f"controller.animation.alienevo.{key}"
-        write_json(os.path.join(ctrl_dir, f"{key}.controller.json"), {
-            "format_version": "1.10.0",
-            "animation_controllers": {ctrl: {"initial_state": "default", "states": states}},
-        })
+        controllers[ctrl] = {"initial_state": "default", "states": states}
         animations["triggers"] = ctrl
         animate.append("triggers")
+
+    if movement:
+        states = {"default": {"transitions": [{state: cond} for state, (_, cond) in movement.items()]}}
+        for state, (name, cond) in movement.items():
+            animations[f"move_{state}"] = names[name]
+            # Higher priority states (earlier in MOVEMENT) can interrupt lower ones.
+            others = [{s: c} for s, (_, c) in movement.items() if s != state]
+            states[state] = {"animations": [f"move_{state}"], "blend_transition": 0.2,
+                             "transitions": [{"default": f"!({cond})"}] + others}
+        ctrl = f"controller.animation.alienevo.{key}.movement"
+        controllers[ctrl] = {"initial_state": "default", "states": states}
+        animations["movement"] = ctrl
+        animate.append("movement")
+
+    if controllers:
+        write_json(os.path.join(ctrl_dir, f"{key}.controller.json"),
+                   {"format_version": "1.10.0", "animation_controllers": controllers})
     return animations, animate, index
 
 
 def signal_animations(count, path):
-    anims = {}
+    anims = {
+        # Flight state for the movement controllers (kept until switched off).
+        "animation.alienevo.flight.on": {"animation_length": 0.05, "timeline": {"0.0": "v.alienevo_fly = 1;"}},
+        "animation.alienevo.flight.off": {"animation_length": 0.05, "timeline": {"0.0": "v.alienevo_fly = 0;"}},
+    }
     for i in range(1, count + 1):
         anims[f"animation.alienevo.signal.{i}"] = {
             "animation_length": 0.3,

@@ -1,0 +1,542 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.alienevo.omnitrix_prototype": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "t1": "c.owning_entity->v.alienevo_anim == 1"
+            },
+            {
+              "t2": "c.owning_entity->v.alienevo_anim == 2"
+            },
+            {
+              "t3": "c.owning_entity->v.alienevo_anim == 3"
+            },
+            {
+              "t4": "c.owning_entity->v.alienevo_anim == 4"
+            },
+            {
+              "t5": "c.owning_entity->v.alienevo_anim == 5"
+            },
+            {
+              "t6": "c.owning_entity->v.alienevo_anim == 6"
+            },
+            {
+              "t7": "c.owning_entity->v.alienevo_anim == 7"
+            },
+            {
+              "t8": "c.owning_entity->v.alienevo_anim == 8"
+            },
+            {
+              "t9": "c.owning_entity->v.alienevo_anim == 9"
+            },
+            {
+              "t10": "c.owning_entity->v.alienevo_anim == 10"
+            },
+            {
+              "t11": "c.owning_entity->v.alienevo_anim == 11"
+            },
+            {
+              "t12": "c.owning_entity->v.alienevo_anim == 12"
+            }
+          ]
+        },
+        "t1": {
+          "animations": [
+            "t1"
+          ],
+          "transitions": [
+            {
+              "t2": "c.owning_entity->v.alienevo_anim == 2"
+            },
+            {
+              "t3": "c.owning_entity->v.alienevo_anim == 3"
+            },
+            {
+              "t4": "c.owning_entity->v.alienevo_anim == 4"
+            },
+            {
+              "t5": "c.owning_entity->v.alienevo_anim == 5"
+            },
+            {
+              "t6": "c.owning_entity->v.alienevo_anim == 6"
+            },
+            {
+              "t7": "c.owning_entity->v.alienevo_anim == 7"
+            },
+            {
+              "t8": "c.owning_entity->v.alienevo_anim == 8"
+            },
+            {
+              "t9": "c.owning_entity->v.alienevo_anim == 9"
+            },
+            {
+              "t10": "c.owning_entity->v.alienevo_anim == 10"
+            },
+            {
+              "t11": "c.owning_entity->v.alienevo_anim == 11"
+            },
+            {
+              "t12": "c.owning_entity->v.alienevo_anim == 12"
+            }
+          ],
+          "blend_transition": 0.15
+        },
+        "t2": {
+          "animations": [
+            "t2"
+          ],
+          "transitions": [
+            {
+              "t1": "c.owning_entity->v.alienevo_anim == 1"
+            },
+            {
+              "t3": "c.owning_entity->v.alienevo_anim == 3"
+            },
+            {
+              "t4": "c.owning_entity->v.alienevo_anim == 4"
+            },
+            {
+              "t5": "c.owning_entity->v.alienevo_anim == 5"
+            },
+            {
+              "t6": "c.owning_entity->v.alienevo_anim == 6"
+            },
+            {
+              "t7": "c.owning_entity->v.alienevo_anim == 7"
+            },
+            {
+              "t8": "c.owning_entity->v.alienevo_anim == 8"
+            },
+            {
+              "t9": "c.owning_entity->v.alienevo_anim == 9"
+            },
+            {
+              "t10": "c.owning_entity->v.alienevo_anim == 10"
+            },
+            {
+              "t11": "c.owning_entity->v.alienevo_anim == 11"
+            },
+            {
+              "t12": "c.owning_entity->v.alienevo_anim == 12"
+            }
+          ],
+          "blend_transition": 0.15
+        },
+        "t3": {
+          "animations": [
+            "t3"
+          ],
+          "transitions": [
+            {
+              "t1": "c.owning_entity->v.alienevo_anim == 1"
+            },
+            {
+              "t2": "c.owning_entity->v.alienevo_anim == 2"
+            },
+            {
+              "t4": "c.owning_entity->v.alienevo_anim == 4"
+            },
+            {
+              "t5": "c.owning_entity->v.alienevo_anim == 5"
+            },
+            {
+              "t6": "c.owning_entity->v.alienevo_anim == 6"
+            },
+            {
+              "t7": "c.owning_entity->v.alienevo_anim == 7"
+            },
+            {
+              "t8": "c.owning_entity->v.alienevo_anim == 8"
+            },
+            {
+              "t9": "c.owning_entity->v.alienevo_anim == 9"
+            },
+            {
+              "t10": "c.owning_entity->v.alienevo_anim == 10"
+            },
+            {
+              "t11": "c.owning_entity->v.alienevo_anim == 11"
+            },
+            {
+              "t12": "c.owning_entity->v.alienevo_anim == 12"
+            }
+          ],
+          "blend_transition": 0.15
+        },
+        "t4": {
+          "animations": [
+            "t4"
+          ],
+          "transitions": [
+            {
+              "t1": "c.owning_entity->v.alienevo_anim == 1"
+            },
+            {
+              "t2": "c.owning_entity->v.alienevo_anim == 2"
+            },
+            {
+              "t3": "c.owning_entity->v.alienevo_anim == 3"
+            },
+            {
+              "t5": "c.owning_entity->v.alienevo_anim == 5"
+            },
+            {
+              "t6": "c.owning_entity->v.alienevo_anim == 6"
+            },
+            {
+              "t7": "c.owning_entity->v.alienevo_anim == 7"
+            },
+            {
+              "t8": "c.owning_entity->v.alienevo_anim == 8"
+            },
+            {
+              "t9": "c.owning_entity->v.alienevo_anim == 9"
+            },
+            {
+              "t10": "c.owning_entity->v.alienevo_anim == 10"
+            },
+            {
+              "t11": "c.owning_entity->v.alienevo_anim == 11"
+            },
+            {
+              "t12": "c.owning_entity->v.alienevo_anim == 12"
+            }
+          ],
+          "blend_transition": 0.15
+        },
+        "t5": {
+          "animations": [
+            "t5"
+          ],
+          "transitions": [
+            {
+              "t1": "c.owning_entity->v.alienevo_anim == 1"
+            },
+            {
+              "t2": "c.owning_entity->v.alienevo_anim == 2"
+            },
+            {
+              "t3": "c.owning_entity->v.alienevo_anim == 3"
+            },
+            {
+              "t4": "c.owning_entity->v.alienevo_anim == 4"
+            },
+            {
+              "t6": "c.owning_entity->v.alienevo_anim == 6"
+            },
+            {
+              "t7": "c.owning_entity->v.alienevo_anim == 7"
+            },
+            {
+              "t8": "c.owning_entity->v.alienevo_anim == 8"
+            },
+            {
+              "t9": "c.owning_entity->v.alienevo_anim == 9"
+            },
+            {
+              "t10": "c.owning_entity->v.alienevo_anim == 10"
+            },
+            {
+              "t11": "c.owning_entity->v.alienevo_anim == 11"
+            },
+            {
+              "t12": "c.owning_entity->v.alienevo_anim == 12"
+            }
+          ],
+          "blend_transition": 0.15
+        },
+        "t6": {
+          "animations": [
+            "t6"
+          ],
+          "transitions": [
+            {
+              "t1": "c.owning_entity->v.alienevo_anim == 1"
+            },
+            {
+              "t2": "c.owning_entity->v.alienevo_anim == 2"
+            },
+            {
+              "t3": "c.owning_entity->v.alienevo_anim == 3"
+            },
+            {
+              "t4": "c.owning_entity->v.alienevo_anim == 4"
+            },
+            {
+              "t5": "c.owning_entity->v.alienevo_anim == 5"
+            },
+            {
+              "t7": "c.owning_entity->v.alienevo_anim == 7"
+            },
+            {
+              "t8": "c.owning_entity->v.alienevo_anim == 8"
+            },
+            {
+              "t9": "c.owning_entity->v.alienevo_anim == 9"
+            },
+            {
+              "t10": "c.owning_entity->v.alienevo_anim == 10"
+            },
+            {
+              "t11": "c.owning_entity->v.alienevo_anim == 11"
+            },
+            {
+              "t12": "c.owning_entity->v.alienevo_anim == 12"
+            }
+          ],
+          "blend_transition": 0.15
+        },
+        "t7": {
+          "animations": [
+            "t7"
+          ],
+          "transitions": [
+            {
+              "t1": "c.owning_entity->v.alienevo_anim == 1"
+            },
+            {
+              "t2": "c.owning_entity->v.alienevo_anim == 2"
+            },
+            {
+              "t3": "c.owning_entity->v.alienevo_anim == 3"
+            },
+            {
+              "t4": "c.owning_entity->v.alienevo_anim == 4"
+            },
+            {
+              "t5": "c.owning_entity->v.alienevo_anim == 5"
+            },
+            {
+              "t6": "c.owning_entity->v.alienevo_anim == 6"
+            },
+            {
+              "t8": "c.owning_entity->v.alienevo_anim == 8"
+            },
+            {
+              "t9": "c.owning_entity->v.alienevo_anim == 9"
+            },
+            {
+              "t10": "c.owning_entity->v.alienevo_anim == 10"
+            },
+            {
+              "t11": "c.owning_entity->v.alienevo_anim == 11"
+            },
+            {
+              "t12": "c.owning_entity->v.alienevo_anim == 12"
+            }
+          ],
+          "blend_transition": 0.15
+        },
+        "t8": {
+          "animations": [
+            "t8"
+          ],
+          "transitions": [
+            {
+              "t1": "c.owning_entity->v.alienevo_anim == 1"
+            },
+            {
+              "t2": "c.owning_entity->v.alienevo_anim == 2"
+            },
+            {
+              "t3": "c.owning_entity->v.alienevo_anim == 3"
+            },
+            {
+              "t4": "c.owning_entity->v.alienevo_anim == 4"
+            },
+            {
+              "t5": "c.owning_entity->v.alienevo_anim == 5"
+            },
+            {
+              "t6": "c.owning_entity->v.alienevo_anim == 6"
+            },
+            {
+              "t7": "c.owning_entity->v.alienevo_anim == 7"
+            },
+            {
+              "t9": "c.owning_entity->v.alienevo_anim == 9"
+            },
+            {
+              "t10": "c.owning_entity->v.alienevo_anim == 10"
+            },
+            {
+              "t11": "c.owning_entity->v.alienevo_anim == 11"
+            },
+            {
+              "t12": "c.owning_entity->v.alienevo_anim == 12"
+            }
+          ],
+          "blend_transition": 0.15
+        },
+        "t9": {
+          "animations": [
+            "t9"
+          ],
+          "transitions": [
+            {
+              "t1": "c.owning_entity->v.alienevo_anim == 1"
+            },
+            {
+              "t2": "c.owning_entity->v.alienevo_anim == 2"
+            },
+            {
+              "t3": "c.owning_entity->v.alienevo_anim == 3"
+            },
+            {
+              "t4": "c.owning_entity->v.alienevo_anim == 4"
+            },
+            {
+              "t5": "c.owning_entity->v.alienevo_anim == 5"
+            },
+            {
+              "t6": "c.owning_entity->v.alienevo_anim == 6"
+            },
+            {
+              "t7": "c.owning_entity->v.alienevo_anim == 7"
+            },
+            {
+              "t8": "c.owning_entity->v.alienevo_anim == 8"
+            },
+            {
+              "t10": "c.owning_entity->v.alienevo_anim == 10"
+            },
+            {
+              "t11": "c.owning_entity->v.alienevo_anim == 11"
+            },
+            {
+              "t12": "c.owning_entity->v.alienevo_anim == 12"
+            }
+          ],
+          "blend_transition": 0.15
+        },
+        "t10": {
+          "animations": [
+            "t10"
+          ],
+          "transitions": [
+            {
+              "t1": "c.owning_entity->v.alienevo_anim == 1"
+            },
+            {
+              "t2": "c.owning_entity->v.alienevo_anim == 2"
+            },
+            {
+              "t3": "c.owning_entity->v.alienevo_anim == 3"
+            },
+            {
+              "t4": "c.owning_entity->v.alienevo_anim == 4"
+            },
+            {
+              "t5": "c.owning_entity->v.alienevo_anim == 5"
+            },
+            {
+              "t6": "c.owning_entity->v.alienevo_anim == 6"
+            },
+            {
+              "t7": "c.owning_entity->v.alienevo_anim == 7"
+            },
+            {
+              "t8": "c.owning_entity->v.alienevo_anim == 8"
+            },
+            {
+              "t9": "c.owning_entity->v.alienevo_anim == 9"
+            },
+            {
+              "t11": "c.owning_entity->v.alienevo_anim == 11"
+            },
+            {
+              "t12": "c.owning_entity->v.alienevo_anim == 12"
+            }
+          ],
+          "blend_transition": 0.15
+        },
+        "t11": {
+          "animations": [
+            "t11"
+          ],
+          "transitions": [
+            {
+              "t1": "c.owning_entity->v.alienevo_anim == 1"
+            },
+            {
+              "t2": "c.owning_entity->v.alienevo_anim == 2"
+            },
+            {
+              "t3": "c.owning_entity->v.alienevo_anim == 3"
+            },
+            {
+              "t4": "c.owning_entity->v.alienevo_anim == 4"
+            },
+            {
+              "t5": "c.owning_entity->v.alienevo_anim == 5"
+            },
+            {
+              "t6": "c.owning_entity->v.alienevo_anim == 6"
+            },
+            {
+              "t7": "c.owning_entity->v.alienevo_anim == 7"
+            },
+            {
+              "t8": "c.owning_entity->v.alienevo_anim == 8"
+            },
+            {
+              "t9": "c.owning_entity->v.alienevo_anim == 9"
+            },
+            {
+              "t10": "c.owning_entity->v.alienevo_anim == 10"
+            },
+            {
+              "t12": "c.owning_entity->v.alienevo_anim == 12"
+            }
+          ],
+          "blend_transition": 0.15
+        },
+        "t12": {
+          "animations": [
+            "t12"
+          ],
+          "transitions": [
+            {
+              "t1": "c.owning_entity->v.alienevo_anim == 1"
+            },
+            {
+              "t2": "c.owning_entity->v.alienevo_anim == 2"
+            },
+            {
+              "t3": "c.owning_entity->v.alienevo_anim == 3"
+            },
+            {
+              "t4": "c.owning_entity->v.alienevo_anim == 4"
+            },
+            {
+              "t5": "c.owning_entity->v.alienevo_anim == 5"
+            },
+            {
+              "t6": "c.owning_entity->v.alienevo_anim == 6"
+            },
+            {
+              "t7": "c.owning_entity->v.alienevo_anim == 7"
+            },
+            {
+              "t8": "c.owning_entity->v.alienevo_anim == 8"
+            },
+            {
+              "t9": "c.owning_entity->v.alienevo_anim == 9"
+            },
+            {
+              "t10": "c.owning_entity->v.alienevo_anim == 10"
+            },
+            {
+              "t11": "c.owning_entity->v.alienevo_anim == 11"
+            }
+          ],
+          "blend_transition": 0.15
+        }
+      }
+    }
+  }
+}

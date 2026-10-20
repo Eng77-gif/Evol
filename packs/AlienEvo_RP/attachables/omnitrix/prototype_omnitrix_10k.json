@@ -1,0 +1,52 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "alienevo:prototype_omnitrix_10k",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha"
+      },
+      "textures": {
+        "part0": "textures/entity/omnitrix/omnitrix_10k_0",
+        "part0_glow": "textures/entity/omnitrix/omnitrix_10k_0_glow",
+        "part1": "textures/entity/omnitrix/omnitrix_10k_1"
+      },
+      "geometry": {
+        "part0": "geometry.alienevo.omnitrix_10k_0",
+        "part1": "geometry.alienevo.omnitrix_10k_1"
+      },
+      "render_controllers": [
+        {
+          "controller.render.alienevo.omnitrix_10k_0": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien"
+        },
+        {
+          "controller.render.alienevo.omnitrix_10k_0_glow": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien"
+        },
+        {
+          "controller.render.alienevo.omnitrix_10k_1": "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien"
+        }
+      ],
+      "animations": {
+        "t1": "animation.alienevo.omnitrix_10k.prototype.spinleft",
+        "t2": "animation.alienevo.omnitrix_10k.prototype.spinright",
+        "t3": "animation.alienevo.omnitrix_10k.prototype.open",
+        "t4": "animation.alienevo.omnitrix_10k.prototype.close",
+        "t5": "animation.alienevo.omnitrix_10k.prototype.settings_open",
+        "t6": "animation.alienevo.omnitrix_10k.prototype.settings_close",
+        "t7": "animation.alienevo.omnitrix_10k.prototype.settings_spinright",
+        "t10": "animation.alienevo.omnitrix_10k.prototype.settings_spinleft",
+        "t11": "animation.alienevo.omnitrix_10k.prototype.playlistchange",
+        "t8": "animation.alienevo.omnitrix_10k.prototype.alt_spinright",
+        "t9": "animation.alienevo.omnitrix_10k.prototype.alt_spinleft",
+        "t12": "animation.alienevo.omnitrix_10k.prototype.unlock_master",
+        "triggers": "controller.animation.alienevo.omnitrix_10k"
+      },
+      "scripts": {
+        "animate": [
+          "triggers"
+        ]
+      }
+    }
+  }
+}

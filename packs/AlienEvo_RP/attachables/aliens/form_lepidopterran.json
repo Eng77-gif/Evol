@@ -26,7 +26,8 @@
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
         "animate": [
           "loop0",
-          "triggers"
+          "triggers",
+          "movement"
         ]
       },
       "render_controllers": [
@@ -54,7 +55,9 @@
         "t1": "animation.alienevo.lepidopterran.stinkfly.sonar",
         "t2": "animation.alienevo.lepidopterran.stinkfly.wet_on",
         "t3": "animation.alienevo.lepidopterran.stinkfly.wet_off",
-        "triggers": "controller.animation.alienevo.lepidopterran"
+        "triggers": "controller.animation.alienevo.lepidopterran",
+        "move_fly": "animation.alienevo.lepidopterran.stinkfly.flight",
+        "movement": "controller.animation.alienevo.lepidopterran.movement"
       }
     }
   }

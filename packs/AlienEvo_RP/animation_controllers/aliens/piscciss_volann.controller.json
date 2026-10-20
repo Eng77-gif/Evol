@@ -37,6 +37,29 @@
           "blend_transition": 0.15
         }
       }
+    },
+    "controller.animation.alienevo.piscciss_volann.movement": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "swim": "c.owning_entity->q.is_swimming"
+            }
+          ]
+        },
+        "swim": {
+          "animations": [
+            "move_swim"
+          ],
+          "blend_transition": 0.2,
+          "transitions": [
+            {
+              "default": "!(c.owning_entity->q.is_swimming)"
+            }
+          ]
+        }
+      }
     }
   }
 }

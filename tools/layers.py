@@ -73,7 +73,7 @@ VAR_CHOICES = {
     "BADGE": ["prototype"],
     "WATCHSTATE": ["default"],
 }
-GENERIC_CHOICES = ["0", "", "prototype", "default", "1", "purple", "green"]
+GENERIC_CHOICES = ["-1", "0", "", "prototype", "default", "1", "purple", "green"]
 
 
 def substitute(vfs, path):
@@ -97,23 +97,27 @@ def substitute(vfs, path):
     return rec(path, names)
 
 
-def evaluate(cond):
-    """Evaluate a Palladium condition for an alien in its idle default state."""
+def evaluate(cond, scores=None):
+    """Evaluate a Palladium condition for an alien in its idle default state.
+
+    `scores` overrides scoreboard objectives (e.g. AlienEvo.10kPhase = 1)."""
+    scores = scores or {}
     if isinstance(cond, bool):
         return cond
     if isinstance(cond, list):
-        return all(evaluate(c) for c in cond)
+        return all(evaluate(c, scores) for c in cond)
     t = cond.get("type", "")
     if t == "palladium:not":
-        return not evaluate(cond.get("conditions", []))
+        return not evaluate(cond.get("conditions", []), scores)
     if t == "palladium:or":
-        return any(evaluate(c) for c in cond.get("conditions", []))
+        return any(evaluate(c, scores) for c in cond.get("conditions", []))
     if t == "palladium:and":
-        return all(evaluate(c) for c in cond.get("conditions", []))
+        return all(evaluate(c, scores) for c in cond.get("conditions", []))
     if t in ("palladium:ability_integer_property", "palladium:integer_property", "palladium:objective_score"):
         lo = cond.get("min", cond.get("min_score", -(10 ** 9)))
         hi = cond.get("max", cond.get("max_score", 10 ** 9))
-        return lo <= 0 <= hi
+        value = scores.get(cond.get("objective", ""), 0)
+        return lo <= value <= hi
     if t in ("alienevo:uniform_type", "alienevo:watch_type"):
         return cond.get("value") == "prototype"
     if t == "alienevo:has_timeout_bubble":
@@ -122,22 +126,22 @@ def evaluate(cond):
     return False
 
 
-def layer_visible(layer):
+def layer_visible(layer, scores=None):
     for key in ("conditions", "third_person_conditions"):
-        if key in layer and not evaluate(layer[key]):
+        if key in layer and not evaluate(layer[key], scores):
             return False
     return True
 
 
-def flatten(layer):
+def flatten(layer, scores=None):
     if layer.get("type") == "palladium:compound":
-        if not layer_visible(layer):
+        if not layer_visible(layer, scores):
             return []
         out = []
         for sub in layer.get("layers", []):
-            out += flatten(sub)
+            out += flatten(sub, scores)
         return out
-    return [layer] if layer_visible(layer) else []
+    return [layer] if layer_visible(layer, scores) else []
 
 
 def build_texture(vfs, tex):
@@ -170,18 +174,19 @@ def build_texture(vfs, tex):
     return img, path
 
 
-def resolve(vfs, layer_file):
+def resolve(vfs, layer_file, scores=None):
     """Return the visible layers of a render layer file.
 
     [{geo, image, tex_path, glow, anim_file, loops, triggers}]
     """
     data = vfs.json(layer_file)
     out = []
-    for layer in flatten(data):
+    for layer in flatten(data, scores):
         if layer.get("type") != "geckolib:default":
             continue
         model = layer.get("model")
-        mbase = model.get("base") if isinstance(model, dict) else model
+        # Player-model layers give a "normal" and a "slim" (Alex) model.
+        mbase = (model.get("base") or model.get("normal")) if isinstance(model, dict) else model
         geo = substitute(vfs, rl_path(mbase))
         if not geo:
             continue

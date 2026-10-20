@@ -24,7 +24,8 @@
           "variable.is_blinking = 0.0;",
           "variable.last_blink_time = 0.0;",
           "variable.hand_bob = 0.0;",
-          "v.alienevo_anim = 0.0;"
+          "v.alienevo_anim = 0.0;",
+          "v.alienevo_fly = 0.0;"
         ],
         "pre_animation": [
           "variable.helmet_layer_visible = !query.has_head_gear;",
@@ -54,7 +55,9 @@
           "variable.tp_melee_spear_attack_attachable_position_z": "public",
           "variable.attack_time": "public",
           "variable.item_use_normalized": "public",
-          "variable.alienevo_anim": "public"
+          "variable.alienevo_anim": "public",
+          "variable.alienevo_fly": "public",
+          "variable.alienevo_is_alien": "public"
         },
         "should_update_effects_offscreen": "1.0"
       },

@@ -1,40 +1,26 @@
 {
   "format_version": "1.10.0",
   "animation_controllers": {
-    "controller.animation.alienevo.dragonoid": {
+    "controller.animation.alienevo.dragonoid.movement": {
       "initial_state": "default",
       "states": {
         "default": {
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
-            },
-            {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "fly": "c.owning_entity->v.alienevo_fly"
             }
           ]
         },
-        "t1": {
+        "fly": {
           "animations": [
-            "t1"
+            "move_fly"
           ],
+          "blend_transition": 0.2,
           "transitions": [
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "default": "!(c.owning_entity->v.alienevo_fly)"
             }
-          ],
-          "blend_transition": 0.15
-        },
-        "t2": {
-          "animations": [
-            "t2"
-          ],
-          "transitions": [
-            {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
-            }
-          ],
-          "blend_transition": 0.15
+          ]
         }
       }
     }

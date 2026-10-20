@@ -19,7 +19,7 @@
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
         "animate": [
           "loop0",
-          "triggers"
+          "movement"
         ]
       },
       "render_controllers": [
@@ -32,9 +32,8 @@
       ],
       "animations": {
         "loop0": "animation.alienevo.dragonoid.drago.idle",
-        "t1": "animation.alienevo.dragonoid.drago.flight_on",
-        "t2": "animation.alienevo.dragonoid.drago.flight_off",
-        "triggers": "controller.animation.alienevo.dragonoid"
+        "move_fly": "animation.alienevo.dragonoid.drago.flight_on",
+        "movement": "controller.animation.alienevo.dragonoid.movement"
       }
     }
   }

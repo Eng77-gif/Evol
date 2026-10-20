@@ -60,6 +60,29 @@
           "blend_transition": 0.15
         }
       }
+    },
+    "controller.animation.alienevo.lepidopterran.movement": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fly": "c.owning_entity->v.alienevo_fly"
+            }
+          ]
+        },
+        "fly": {
+          "animations": [
+            "move_fly"
+          ],
+          "blend_transition": 0.2,
+          "transitions": [
+            {
+              "default": "!(c.owning_entity->v.alienevo_fly)"
+            }
+          ]
+        }
+      }
     }
   }
 }

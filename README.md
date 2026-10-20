@@ -59,6 +59,10 @@ Animation GeckoLib của mod và các addon đã được chuyển sang animatio
 
 - **Animation lặp** (đuôi, cánh, thở, bay lơ lửng…) chạy liên tục trên model alien.
 - **Animation kỹ năng** (cắn, bắn tia mắt, cuộn tròn, hóa lỏng, gai tay, hú, khoan, trượt…) chạy khi dùng kỹ năng tương ứng.
+- **Animation di chuyển**: alien tự đổi tư thế khi bay (Stinkfly, Jetray, Big Chill, Dragonoid), bơi (Ripjaws, Walkatrout)
+  và chạy nhanh (Benwolf). Tay chân alien luôn cử động theo người chơi khi đi, chạy, nhảy.
+- **Omnitrix 3D trên cổ tay**: khi cầm Omnitrix, đồng hồ GeckoLib hiện trên cổ tay trái (góc nhìn thứ ba). Khi dùng,
+  mặt đồng hồ bật lên, xoay tới alien đã chọn rồi đập xuống trước khi biến hình như bản Java.
 Xem chi tiết trong **Alien Codex** (nằm trong menu Omnitrix).
 
 ### Lệnh (cần quyền OP / cheat)

@@ -17,7 +17,8 @@
       "scripts": {
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
         "animate": [
-          "loop0"
+          "loop0",
+          "movement"
         ]
       },
       "render_controllers": [
@@ -26,7 +27,9 @@
         }
       ],
       "animations": {
-        "loop0": "animation.alienevo.aerophibian.jetray.idle"
+        "loop0": "animation.alienevo.aerophibian.jetray.idle",
+        "move_fly": "animation.alienevo.aerophibian.jetray.flight_on",
+        "movement": "controller.animation.alienevo.aerophibian.movement"
       }
     }
   }
