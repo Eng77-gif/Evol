@@ -1139,6 +1139,17 @@
           }
         }
       }
+    },
+    "animation.alienevo.arburian_pelarota.rest_pose": {
+      "loop": true,
+      "bones": {
+        "shell_3": {
+          "scale": 0
+        },
+        "shell_4": {
+          "scale": 0
+        }
+      }
     }
   }
 }

@@ -10,6 +10,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.pyronite_0_glow": {
@@ -21,6 +29,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.pyronite_1": {
@@ -32,6 +48,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.pyronite_1_glow": {
@@ -43,6 +67,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.vulpimancer_0": {
@@ -54,6 +86,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.vulpimancer_1": {
@@ -65,6 +105,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.vulpimancer_1_glow": {
@@ -76,6 +124,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.petrosapien_0": {
@@ -87,6 +143,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.petrosapien_0_glow": {
@@ -98,6 +162,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.petrosapien_1": {
@@ -109,6 +181,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.petrosapien_1_glow": {
@@ -120,6 +200,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.kineceleran_0": {
@@ -131,6 +219,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.kineceleran_0_glow": {
@@ -142,6 +238,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.kineceleran_1": {
@@ -153,6 +257,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.kineceleran_1_glow": {
@@ -164,6 +276,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.galvan_0": {
@@ -175,6 +295,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.galvan_0_glow": {
@@ -186,6 +314,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.galvan_1": {
@@ -197,6 +333,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.galvan_1_glow": {
@@ -208,6 +352,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.tetramand_0": {
@@ -219,6 +371,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.tetramand_0_glow": {
@@ -230,6 +390,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.tetramand_1": {
@@ -241,6 +409,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.tetramand_2": {
@@ -252,6 +428,14 @@
       ],
       "textures": [
         "Texture.part2"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.tetramand_2_glow": {
@@ -263,6 +447,14 @@
       ],
       "textures": [
         "Texture.part2_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.lepidopterran_0": {
@@ -274,6 +466,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.lepidopterran_0_glow": {
@@ -285,6 +485,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.lepidopterran_1": {
@@ -296,6 +504,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.lepidopterran_2": {
@@ -307,6 +523,14 @@
       ],
       "textures": [
         "Texture.part2"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.lepidopterran_3": {
@@ -318,6 +542,14 @@
       ],
       "textures": [
         "Texture.part3"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.lepidopterran_3_glow": {
@@ -329,6 +561,14 @@
       ],
       "textures": [
         "Texture.part3_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.piscciss_volann_0": {
@@ -340,6 +580,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.piscciss_volann_0_glow": {
@@ -351,6 +599,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.piscciss_volann_1": {
@@ -362,6 +618,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.piscciss_volann_1_glow": {
@@ -373,6 +637,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.galvanic_mechamorph_0": {
@@ -384,6 +656,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.galvanic_mechamorph_0_glow": {
@@ -395,6 +675,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.galvanic_mechamorph_1": {
@@ -406,6 +694,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.galvanic_mechamorph_1_glow": {
@@ -417,6 +713,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.ectonurite_0": {
@@ -428,6 +732,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.ectonurite_0_glow": {
@@ -439,6 +751,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.ectonurite_1": {
@@ -450,6 +770,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.ectonurite_1_glow": {
@@ -461,6 +789,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.arburian_pelarota_0": {
@@ -472,6 +808,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.arburian_pelarota_0_glow": {
@@ -483,6 +827,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.arburian_pelarota_1": {
@@ -494,6 +846,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.arburian_pelarota_1_glow": {
@@ -505,6 +865,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.methanosian_0": {
@@ -516,6 +884,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.sonorosian_0": {
@@ -527,6 +903,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.sonorosian_0_glow": {
@@ -538,6 +922,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.vaxasaurian_0": {
@@ -549,6 +941,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.aerophibian_0": {
@@ -560,6 +960,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.necrofriggian_0": {
@@ -571,6 +979,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.crystalsapien_0": {
@@ -582,6 +998,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.crystalsapien_0_glow": {
@@ -593,6 +1017,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.crystalsapien_1": {
@@ -604,6 +1036,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.crystalsapien_1_glow": {
@@ -615,6 +1055,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.nucleonix_0": {
@@ -626,6 +1074,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.nucleonix_0_glow": {
@@ -637,6 +1093,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.dragonoid_0": {
@@ -648,6 +1112,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.dragonoid_0_glow": {
@@ -659,6 +1131,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.astrobot_0": {
@@ -670,6 +1150,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.astrobot_0_glow": {
@@ -681,6 +1169,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.opticoid_0": {
@@ -692,6 +1188,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.opticoid_0_glow": {
@@ -703,6 +1207,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.opticoid_1": {
@@ -714,6 +1226,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.opticoid_1_glow": {
@@ -725,6 +1245,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.perkgourmand_0": {
@@ -736,6 +1264,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.perkgourmand_0_glow": {
@@ -747,6 +1283,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.perkgourmand_1": {
@@ -758,6 +1302,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.perkgourmand_1_glow": {
@@ -769,6 +1321,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.murkgourmand_0": {
@@ -780,6 +1340,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.murkgourmand_0_glow": {
@@ -791,6 +1359,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.murkgourmand_1": {
@@ -802,6 +1378,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.murkgourmand_1_glow": {
@@ -813,6 +1397,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.talpaedan_0": {
@@ -824,6 +1416,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.talpaedan_0_glow": {
@@ -835,6 +1435,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.talpaedan_1": {
@@ -846,6 +1454,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.talpaedan_1_glow": {
@@ -857,6 +1473,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.orishan_0": {
@@ -868,6 +1492,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.orishan_0_glow": {
@@ -879,6 +1511,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.orishan_1": {
@@ -890,6 +1530,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.orishan_1_glow": {
@@ -901,6 +1549,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.amperi_0": {
@@ -912,6 +1568,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.nosedeenian_0": {
@@ -923,6 +1587,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.nosedeenian_0_glow": {
@@ -934,6 +1606,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.nosedeenian_1": {
@@ -945,6 +1625,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.nosedeenian_1_glow": {
@@ -956,6 +1644,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.loboan_0": {
@@ -967,6 +1663,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.loboan_0_glow": {
@@ -978,6 +1682,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.loboan_1": {
@@ -989,6 +1701,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.loboan_1_glow": {
@@ -1000,6 +1720,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.transylian_0": {
@@ -1011,6 +1739,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.transylian_0_glow": {
@@ -1022,6 +1758,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.transylian_1": {
@@ -1033,6 +1777,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.transylian_1_glow": {
@@ -1044,6 +1796,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.florauna_0": {
@@ -1055,6 +1815,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.florauna_0_glow": {
@@ -1066,6 +1834,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.florauna_1": {
@@ -1077,6 +1853,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.florauna_1_glow": {
@@ -1088,6 +1872,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.merlinisapien_0": {
@@ -1099,6 +1891,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.merlinisapien_0_glow": {
@@ -1110,6 +1910,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.merlinisapien_1": {
@@ -1121,6 +1929,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.merlinisapien_1_glow": {
@@ -1132,6 +1948,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.ickthyperambuloid_0": {
@@ -1143,6 +1967,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.ickthyperambuloid_0_glow": {
@@ -1154,6 +1986,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.ickthyperambuloid_1": {
@@ -1165,6 +2005,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.ickthyperambuloid_1_glow": {
@@ -1176,6 +2024,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.splixson_0": {
@@ -1187,6 +2043,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.splixson_0_glow": {
@@ -1198,6 +2062,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.splixson_1": {
@@ -1209,6 +2081,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.splixson_1_glow": {
@@ -1220,6 +2100,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.oryctini_0": {
@@ -1231,6 +2119,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.oryctini_0_glow": {
@@ -1242,6 +2138,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.oryctini_1": {
@@ -1253,6 +2157,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.oryctini_1_glow": {
@@ -1264,6 +2176,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.sonorosian_ov_0": {
@@ -1275,6 +2195,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.sonorosian_ov_0_glow": {
@@ -1286,6 +2214,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.sonorosian_ov_1": {
@@ -1297,6 +2233,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.sonorosian_ov_1_glow": {
@@ -1308,6 +2252,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.necrofriggian_ov_0": {
@@ -1319,6 +2271,14 @@
       ],
       "textures": [
         "Texture.part0"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.necrofriggian_ov_0_glow": {
@@ -1330,6 +2290,14 @@
       ],
       "textures": [
         "Texture.part0_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.necrofriggian_ov_1": {
@@ -1341,6 +2309,14 @@
       ],
       "textures": [
         "Texture.part1"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     },
     "controller.render.alienevo.necrofriggian_ov_1_glow": {
@@ -1352,6 +2328,14 @@
       ],
       "textures": [
         "Texture.part1_glow"
+      ],
+      "part_visibility": [
+        {
+          "*": "!c.is_first_person"
+        },
+        {
+          "rightArm": "1.0"
+        }
       ]
     }
   }

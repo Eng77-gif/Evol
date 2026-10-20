@@ -794,6 +794,32 @@
           ]
         }
       }
+    },
+    "animation.alienevo.galvanic_mechamorph.rest_pose": {
+      "loop": true,
+      "bones": {
+        "8": {
+          "scale": 0
+        },
+        "mace_scale": {
+          "scale": 0
+        },
+        "mace_scale2": {
+          "scale": 0
+        },
+        "spikes_angled": {
+          "scale": 0
+        },
+        "spikes_angled2": {
+          "scale": 0
+        },
+        "spikes_straight": {
+          "scale": 0
+        },
+        "spikes_straight2": {
+          "scale": 0
+        }
+      }
     }
   }
 }

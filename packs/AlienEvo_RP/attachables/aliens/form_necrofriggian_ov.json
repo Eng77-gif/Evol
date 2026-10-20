@@ -26,18 +26,10 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.necrofriggian_ov_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.necrofriggian_ov_0_glow": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.necrofriggian_ov_1": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.necrofriggian_ov_1_glow": "!c.is_first_person"
-        }
+        "controller.render.alienevo.necrofriggian_ov_0",
+        "controller.render.alienevo.necrofriggian_ov_0_glow",
+        "controller.render.alienevo.necrofriggian_ov_1",
+        "controller.render.alienevo.necrofriggian_ov_1_glow"
       ],
       "animations": {
         "loop0": "animation.alienevo.necrofriggian_ov.bigchill.cloak_on",

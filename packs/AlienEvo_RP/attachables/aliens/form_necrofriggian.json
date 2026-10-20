@@ -22,9 +22,7 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.necrofriggian_0": "!c.is_first_person"
-        }
+        "controller.render.alienevo.necrofriggian_0"
       ],
       "animations": {
         "loop0": "animation.alienevo.necrofriggian.bigchill.cloak_on",

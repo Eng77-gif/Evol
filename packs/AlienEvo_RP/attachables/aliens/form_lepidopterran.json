@@ -31,24 +31,12 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.lepidopterran_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.lepidopterran_0_glow": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.lepidopterran_1": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.lepidopterran_2": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.lepidopterran_3": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.lepidopterran_3_glow": "!c.is_first_person"
-        }
+        "controller.render.alienevo.lepidopterran_0",
+        "controller.render.alienevo.lepidopterran_0_glow",
+        "controller.render.alienevo.lepidopterran_1",
+        "controller.render.alienevo.lepidopterran_2",
+        "controller.render.alienevo.lepidopterran_3",
+        "controller.render.alienevo.lepidopterran_3_glow"
       ],
       "animations": {
         "loop0": "animation.alienevo.lepidopterran.stinkfly.idle",

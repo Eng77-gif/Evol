@@ -84,7 +84,11 @@ def convert_keyframe(kf):
     out = {}
     for k in ("pre", "post"):
         if k in kf:
-            out[k] = convert_value(kf[k])
+            v = kf[k]
+            # GeckoLib also writes {"post": {"vector": [...]}}.
+            if isinstance(v, dict):
+                v = v.get("vector", [0, 0, 0])
+            out[k] = convert_value(v)
     if "lerp_mode" in kf and kf["lerp_mode"] in ("linear", "catmullrom", "step"):
         out["lerp_mode"] = kf["lerp_mode"]
     return out
@@ -116,6 +120,54 @@ MOVEMENT = [
     ("sprint", r"^sprint\d*$", "c.owning_entity->q.is_sprinting && c.owning_entity->q.is_on_ground"),
     ("walk", r"^walk$", "c.owning_entity->q.modified_move_speed > 0.1 && c.owning_entity->q.is_on_ground"),
 ]
+
+
+def _first_last_scale(channel):
+    """(scale at the first keyframe, scale at the last keyframe) or None."""
+    def val(v):
+        if isinstance(v, dict):
+            v = v.get("post", v.get("pre", v.get("vector")))
+            if isinstance(v, dict):
+                v = v.get("vector")
+        if isinstance(v, (int, float)):
+            return [v, v, v]
+        if isinstance(v, list) and all(isinstance(x, (int, float)) for x in v):
+            return v
+        return None
+    if isinstance(channel, dict) and not ({"post", "pre", "vector"} & set(channel)):
+        keys = []
+        for k, v in channel.items():
+            try:
+                keys.append((float(k), v))
+            except ValueError:
+                pass
+        if not keys:
+            return None, None
+        keys.sort(key=lambda x: x[0])
+        return val(keys[0][1]), val(keys[-1][1])
+    v = val(channel)
+    return v, v
+
+
+def hidden_at_rest(trigger_anims):
+    """Bones that GeckoLib shows only during an ability (scaled to 0 at rest).
+
+    A bone is hidden when an "on" animation starts with it at scale 0 (the
+    part pops in during the ability)."""
+    hidden, shown = set(), set()
+    for name, anim in trigger_anims.items():
+        ending = any(w in short(name) for w in ("off", "out", "close", "end", "unextend", "stop"))
+        for bone, chans in (anim.get("bones") or {}).items():
+            if "scale" not in chans:
+                continue
+            if ending:
+                continue
+            first, last = _first_last_scale(chans["scale"])
+            zero = lambda v: v is not None and all(abs(x) < 1e-3 for x in v)
+            # Pops in: keyframed from 0 to a visible size.
+            if zero(first) and last is not None and not zero(last):
+                hidden.add(bone)
+    return hidden
 
 
 def short(name):
@@ -192,8 +244,12 @@ def build_alien_animations(vfs, key, layers, anim_dir, ctrl_dir, renames=None, f
         new = f"animation.alienevo.{key}.{sanitize(name)}"
         names[name] = new
         converted[new] = convert_animation(anim, renames)
-        if name in loops:
-            converted[new]["loop"] = True
+        if name in loops and converted[new].get("loop") is not True:
+            # A looping controller keeps animations that drive themselves with
+            # q.anim_time running; keyframed ones keep their own loop mode
+            # (e.g. "hold_on_last_frame" for a pose like cloak_on).
+            uses_time = "anim_time" in json.dumps(anim)
+            converted[new]["loop"] = True if uses_time else converted[new].get("loop", "hold_on_last_frame")
     for state, (name, _) in movement.items():
         conv = converted[names[name]]
         # Poses such as "flight_on" are held, everything else loops.
@@ -208,8 +264,17 @@ def build_alien_animations(vfs, key, layers, anim_dir, ctrl_dir, renames=None, f
     controllers = {}
 
     index = {}
+    rest_bones = hidden_at_rest({n: sources[n] for n, _ in triggers.values()})
+    if rest_bones:
+        rest = f"animation.alienevo.{key}.rest_pose"
+        converted[rest] = {"loop": True, "bones": {
+            ((renames or {}).get(b) or BONE_MAP.get(b, b)): {"scale": 0} for b in sorted(rest_bones)}}
+        write_json(os.path.join(anim_dir, f"{key}.animation.json"), {"format_version": "1.8.0", "animations": converted})
+        animations["rest"] = rest
     if triggers:
         states = {"default": {"transitions": []}}
+        if rest_bones:
+            states["default"]["animations"] = ["rest"]
         if fixed_index:
             index = {t: fixed_index[t] for t in triggers if t in fixed_index}
         else:

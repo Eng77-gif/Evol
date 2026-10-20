@@ -25,20 +25,13 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.galvanic_mechamorph_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.galvanic_mechamorph_0_glow": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.galvanic_mechamorph_1": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.galvanic_mechamorph_1_glow": "!c.is_first_person"
-        }
+        "controller.render.alienevo.galvanic_mechamorph_0",
+        "controller.render.alienevo.galvanic_mechamorph_0_glow",
+        "controller.render.alienevo.galvanic_mechamorph_1",
+        "controller.render.alienevo.galvanic_mechamorph_1_glow"
       ],
       "animations": {
+        "rest": "animation.alienevo.galvanic_mechamorph.rest_pose",
         "t1": "animation.alienevo.galvanic_mechamorph.upgrade.fists_on",
         "t2": "animation.alienevo.galvanic_mechamorph.upgrade.fists_off",
         "t3": "animation.alienevo.galvanic_mechamorph.upgrade.liquid",

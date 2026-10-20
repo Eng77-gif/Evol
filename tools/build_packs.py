@@ -292,6 +292,11 @@ def java_block_model_to_geo(model, identifier, tex_size):
 # Resource pack
 # --------------------------------------------------------------------------
 
+# In first person only the alien's arms are drawn (they replace the player's
+# own first person arm, see build_player_entity).
+FIRST_PERSON_ARMS = [{"*": "!c.is_first_person"}, {"rightArm": "1.0"}]
+
+
 def is_translucent(img):
     a = img.getchannel("A")
     hist = a.histogram()
@@ -343,15 +348,15 @@ def build_aliens(vfs, lang):
                 mat = "translucent" if is_translucent(img) else "default"
                 rc = f"controller.render.alienevo.{pid}"
                 controllers[rc] = {"geometry": f"Geometry.part{i}", "materials": [{"*": f"Material.{mat}"}],
-                                   "textures": [f"Texture.part{i}"]}
-                rcs.append({rc: "!c.is_first_person"})
+                                   "textures": [f"Texture.part{i}"], "part_visibility": FIRST_PERSON_ARMS}
+                rcs.append(rc)
             if part["glow"]:
                 save_png(composite(part["glow"]), os.path.join(tex_dir, f"{pid}_glow.png"))
                 textures[f"part{i}_glow"] = f"textures/entity/aliens/{pid}_glow"
                 rcg = f"controller.render.alienevo.{pid}_glow"
                 controllers[rcg] = {"geometry": f"Geometry.part{i}", "materials": [{"*": "Material.glow"}],
-                                    "textures": [f"Texture.part{i}_glow"]}
-                rcs.append({rcg: "!c.is_first_person"})
+                                    "textures": [f"Texture.part{i}_glow"], "part_visibility": FIRST_PERSON_ARMS}
+                rcs.append(rcg)
 
         animations, animate, trig_index = build_alien_animations(vfs, key, layers, anim_dir, ctrl_dir, renames)
         triggers_out[key] = trig_index
@@ -374,6 +379,26 @@ def build_aliens(vfs, lang):
     write_json(os.path.join(RP, "render_controllers", "alienevo.render_controllers.json"),
                {"format_version": "1.10.0", "render_controllers": controllers})
     return triggers_out
+
+
+# Real alien sizes: "size_change" (palladium:size, Pehkui) ability of each
+# alien's power.  The old global.alienevo_scale_N values only sized the GUI
+# preview.  Clamped to 3 so the camera stays usable.
+SIZES = {
+    "pyronite": 1.1, "vulpimancer": 1.0, "petrosapien": 1.35, "kineceleran": 1.1, "galvan": 0.25,
+    "tetramand": 2.0, "lepidopterran": 1.0, "piscciss_volann": 1.17, "galvanic_mechamorph": 1.4,
+    "ectonurite": 1.3, "arburian_pelarota": 1.33, "methanosian": 1.7, "sonorosian": 0.5, "vaxasaurian": 2.8,
+    "aerophibian": 1.0, "necrofriggian": 1.0, "crystalsapien": 1.45, "nucleonix": 3.3, "dragonoid": 8.7,
+    "astrobot": 0.55, "opticoid": 1.65, "perkgourmand": 0.63, "murkgourmand": 0.63, "talpaedan": 2.3,
+    "orishan": 1.25, "amperi": 1.0, "nosedeenian": 0.65, "loboan": 1.3, "transylian": 1.0, "florauna": 1.4,
+    "merlinisapien": 1.0, "ickthyperambuloid": 0.63, "splixson": 0.9, "oryctini": 1.6,
+    "sonorosian_ov": 0.5, "necrofriggian_ov": 1.0,
+}
+MAX_SIZE = 3.0
+
+
+def alien_size(key):
+    return max(0.25, min(MAX_SIZE, SIZES.get(key, 1.0)))
 
 
 OMNITRIX_LAYER = "assets/alienevo/palladium/render_layers/prototype_omnitrix.json"
@@ -448,7 +473,7 @@ def build_player_scale_animation():
     """Scale the player skeleton (and therefore the attachable) per alien."""
     expr = "1.0"
     for alien in ALIENS:
-        s = round(alien["scale"] / 55.0, 3)
+        s = round(alien_size(alien["key"]), 3)
         if s != 1.0:
             expr = f"q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_{alien['key']}') ? {s} : ({expr})"
     write_json(os.path.join(RP, "animations", "alienevo.player.animation.json"), {
@@ -513,6 +538,8 @@ def build_player_entity(scale_expr):
     desc["scripts"]["animate"].append({"alienevo_scale": "!v.is_first_person && v.alienevo_is_alien"})
     rcs = []
     for rc in desc["render_controllers"]:
+        if isinstance(rc, dict) and "controller.render.player.first_person" in rc:
+            rc = {"controller.render.player.first_person": rc["controller.render.player.first_person"] + " && !v.alienevo_is_alien"}
         if isinstance(rc, dict) and "controller.render.player.third_person" in rc:
             rc = {"controller.render.player.third_person": rc["controller.render.player.third_person"] + " && !v.alienevo_is_alien"}
         rcs.append(rc)

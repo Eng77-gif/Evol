@@ -21,9 +21,7 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.amperi_0": "!c.is_first_person"
-        }
+        "controller.render.alienevo.amperi_0"
       ],
       "animations": {
         "loop0": "animation.alienevo.amperi.float_idle"

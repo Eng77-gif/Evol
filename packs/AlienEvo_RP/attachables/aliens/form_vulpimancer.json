@@ -25,15 +25,9 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.vulpimancer_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.vulpimancer_1": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.vulpimancer_1_glow": "!c.is_first_person"
-        }
+        "controller.render.alienevo.vulpimancer_0",
+        "controller.render.alienevo.vulpimancer_1",
+        "controller.render.alienevo.vulpimancer_1_glow"
       ],
       "animations": {
         "loop0": "animation.alienevo.vulpimancer.wildmutt.10k_idle",

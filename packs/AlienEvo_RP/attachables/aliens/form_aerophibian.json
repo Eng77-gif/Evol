@@ -22,9 +22,7 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.aerophibian_0": "!c.is_first_person"
-        }
+        "controller.render.alienevo.aerophibian_0"
       ],
       "animations": {
         "loop0": "animation.alienevo.aerophibian.jetray.idle",

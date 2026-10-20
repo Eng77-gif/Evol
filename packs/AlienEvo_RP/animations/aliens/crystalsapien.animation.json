@@ -2,7 +2,7 @@
   "format_version": "1.8.0",
   "animations": {
     "animation.alienevo.crystalsapien.chromastone.arms_off": {
-      "loop": true,
+      "loop": "hold_on_last_frame",
       "animation_length": 0.3333,
       "override_previous_animation": true,
       "bones": {

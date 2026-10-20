@@ -25,20 +25,13 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.arburian_pelarota_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.arburian_pelarota_0_glow": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.arburian_pelarota_1": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.arburian_pelarota_1_glow": "!c.is_first_person"
-        }
+        "controller.render.alienevo.arburian_pelarota_0",
+        "controller.render.alienevo.arburian_pelarota_0_glow",
+        "controller.render.alienevo.arburian_pelarota_1",
+        "controller.render.alienevo.arburian_pelarota_1_glow"
       ],
       "animations": {
+        "rest": "animation.alienevo.arburian_pelarota.rest_pose",
         "t1": "animation.alienevo.arburian_pelarota.cannonbolt.ball_in",
         "t2": "animation.alienevo.arburian_pelarota.cannonbolt.ball_out",
         "triggers": "controller.animation.alienevo.arburian_pelarota"

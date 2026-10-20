@@ -26,18 +26,10 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.crystalsapien_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.crystalsapien_0_glow": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.crystalsapien_1": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.crystalsapien_1_glow": "!c.is_first_person"
-        }
+        "controller.render.alienevo.crystalsapien_0",
+        "controller.render.alienevo.crystalsapien_0_glow",
+        "controller.render.alienevo.crystalsapien_1",
+        "controller.render.alienevo.crystalsapien_1_glow"
       ],
       "animations": {
         "loop0": "animation.alienevo.crystalsapien.chromastone.arms_off",

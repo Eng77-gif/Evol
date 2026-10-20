@@ -18,6 +18,9 @@
             {
               "t4": "c.owning_entity->v.alienevo_anim == 4"
             }
+          ],
+          "animations": [
+            "rest"
           ]
         },
         "t1": {

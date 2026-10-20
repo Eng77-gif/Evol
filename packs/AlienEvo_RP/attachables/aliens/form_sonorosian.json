@@ -19,12 +19,8 @@
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.sonorosian_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.sonorosian_0_glow": "!c.is_first_person"
-        }
+        "controller.render.alienevo.sonorosian_0",
+        "controller.render.alienevo.sonorosian_0_glow"
       ]
     }
   }

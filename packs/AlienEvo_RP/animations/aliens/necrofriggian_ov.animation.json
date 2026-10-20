@@ -1111,7 +1111,7 @@
           }
         }
       },
-      "loop": true
+      "loop": "hold_on_last_frame"
     },
     "animation.alienevo.necrofriggian_ov.bigchill.flight": {
       "loop": true,

@@ -2537,6 +2537,35 @@
           ]
         }
       }
+    },
+    "animation.alienevo.petrosapien.rest_pose": {
+      "loop": true,
+      "bones": {
+        "SWORD": {
+          "scale": 0
+        },
+        "SWORD_left": {
+          "scale": 0
+        },
+        "shield": {
+          "scale": 0
+        },
+        "shield_core": {
+          "scale": 0
+        },
+        "shield_core_right": {
+          "scale": 0
+        },
+        "shield_right": {
+          "scale": 0
+        },
+        "shield_spin": {
+          "scale": 0
+        },
+        "shield_spin_right": {
+          "scale": 0
+        }
+      }
     }
   }
 }

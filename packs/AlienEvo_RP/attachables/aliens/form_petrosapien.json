@@ -25,20 +25,13 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.petrosapien_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.petrosapien_0_glow": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.petrosapien_1": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.petrosapien_1_glow": "!c.is_first_person"
-        }
+        "controller.render.alienevo.petrosapien_0",
+        "controller.render.alienevo.petrosapien_0_glow",
+        "controller.render.alienevo.petrosapien_1",
+        "controller.render.alienevo.petrosapien_1_glow"
       ],
       "animations": {
+        "rest": "animation.alienevo.petrosapien.rest_pose",
         "t1": "animation.alienevo.petrosapien.diamondhead.sword_on",
         "t2": "animation.alienevo.petrosapien.diamondhead.sword_off",
         "t3": "animation.alienevo.petrosapien.diamondhead.shield_spin",

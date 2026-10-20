@@ -25,18 +25,10 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.galvan_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.galvan_0_glow": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.galvan_1": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.galvan_1_glow": "!c.is_first_person"
-        }
+        "controller.render.alienevo.galvan_0",
+        "controller.render.alienevo.galvan_0_glow",
+        "controller.render.alienevo.galvan_1",
+        "controller.render.alienevo.galvan_1_glow"
       ],
       "animations": {
         "t1": "animation.alienevo.galvan.greymatter.lick",

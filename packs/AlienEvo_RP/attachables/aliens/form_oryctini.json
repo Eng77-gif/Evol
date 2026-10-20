@@ -25,18 +25,10 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.oryctini_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.oryctini_0_glow": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.oryctini_1": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.oryctini_1_glow": "!c.is_first_person"
-        }
+        "controller.render.alienevo.oryctini_0",
+        "controller.render.alienevo.oryctini_0_glow",
+        "controller.render.alienevo.oryctini_1",
+        "controller.render.alienevo.oryctini_1_glow"
       ],
       "animations": {
         "t1": "animation.alienevo.oryctini.eat",

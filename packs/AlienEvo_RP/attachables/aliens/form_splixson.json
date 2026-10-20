@@ -25,18 +25,10 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.splixson_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.splixson_0_glow": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.splixson_1": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.splixson_1_glow": "!c.is_first_person"
-        }
+        "controller.render.alienevo.splixson_0",
+        "controller.render.alienevo.splixson_0_glow",
+        "controller.render.alienevo.splixson_1",
+        "controller.render.alienevo.splixson_1_glow"
       ],
       "animations": {
         "t1": "animation.alienevo.splixson.taunt",

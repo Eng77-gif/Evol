@@ -86,6 +86,19 @@ for path in glob.glob(os.path.join(RP, "animations", "**", "*.json"), recursive=
             for ch, v in chans.items():
                 if ch not in ("rotation", "position", "scale"):
                     err(f"{path}: {name}/{bone} unknown channel {ch}")
+                frames = v.values() if isinstance(v, dict) and "post" not in v and "pre" not in v else [v]
+                for fr in frames:
+                    vals = [fr.get("pre"), fr.get("post")] if isinstance(fr, dict) else [fr]
+                    if isinstance(fr, dict) and set(fr) - {"pre", "post", "lerp_mode"}:
+                        err(f"{path}: {name}/{bone}/{ch} unknown keyframe keys {sorted(fr)}")
+                    for val in vals:
+                        if val is None:
+                            continue
+                        if isinstance(val, list):
+                            if len(val) != 3 or any(not isinstance(x, (int, float, str)) for x in val):
+                                err(f"{path}: {name}/{bone}/{ch} bad vector {val}")
+                        elif not isinstance(val, (int, float, str)):
+                            err(f"{path}: {name}/{bone}/{ch} bad value {val}")
                 for expr in re.findall(r'"([^"]*)"', json.dumps(v)):
                     if not molang_ok(expr):
                         err(f"{path}: {name}/{bone} bad molang {expr}")

@@ -53,6 +53,19 @@ Tổng cộng 36 alien, 79 kỹ năng. Mỗi alien dùng đúng model và textur
 (sức mạnh, tốc độ, kháng lửa/băng/điện, thở dưới nước…) và từ 2 đến 4 kỹ năng (cầu lửa, gai pha lê, dậm đất, ném đá tảng,
 tia mắt, nuốt và nhả năng lượng, khoan đất, vòi nước, sét, tiếng hú siêu âm, tàng hình, ăn khối…).
 
+### Model 3D
+
+![Xem trước 36 alien](docs/aliens_preview.png)
+
+Ảnh trên được dựng bằng `tools/render.py` từ chính file của Resource Pack, đúng như game sẽ vẽ ở tư thế nghỉ.
+
+- Model GeckoLib được gắn vào khung xương người chơi (đầu, thân, tay, chân), nên alien cử động theo người chơi.
+- Bộ phận chỉ xuất hiện khi dùng kỹ năng (kiếm và khiên của Diamondhead, gai và chùy của Upgrade, vỏ của Cannonbolt)
+  được ẩn khi nghỉ và chỉ bật ra cùng animation kỹ năng.
+- Kích thước alien lấy từ kỹ năng `size_change` trong power của bản Java, ví dụ Grey Matter ×0.25, Four Arms ×2,
+  Humungousaur ×2.8. Mức lớn nhất là ×3 để camera vẫn dùng được.
+- Ở góc nhìn thứ nhất, tay phải của alien thay cho tay của Steve.
+
 ### Animation
 
 Animation GeckoLib của mod và các addon đã được chuyển sang animation Bedrock:

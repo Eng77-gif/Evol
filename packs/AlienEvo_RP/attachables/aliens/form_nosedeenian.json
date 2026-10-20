@@ -25,18 +25,10 @@
         ]
       },
       "render_controllers": [
-        {
-          "controller.render.alienevo.nosedeenian_0": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.nosedeenian_0_glow": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.nosedeenian_1": "!c.is_first_person"
-        },
-        {
-          "controller.render.alienevo.nosedeenian_1_glow": "!c.is_first_person"
-        }
+        "controller.render.alienevo.nosedeenian_0",
+        "controller.render.alienevo.nosedeenian_0_glow",
+        "controller.render.alienevo.nosedeenian_1",
+        "controller.render.alienevo.nosedeenian_1_glow"
       ],
       "animations": {
         "t1": "animation.alienevo.nosedeenian.blink",
