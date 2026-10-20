@@ -251,6 +251,62 @@ export async function openDial(p, tier) {
     }
 }
 
+/** Title that makes the form use the wheel layout (RP ui/alienevo_wheel.json). */
+const WHEEL_TITLE = "alienevo:wheel";
+
+/**
+ * Quick change wheel (palladium:ability_wheel "quick_change" of the Java mod):
+ * ten slots around the player, clockwise from the top.  When human it
+ * transforms, when transformed it switches straight to the other alien.
+ * Buttons 0-9 = slots, 10 = menu, 11 = next page / close.
+ * @param {Player} p @param {number} tier @param {number} [page]
+ */
+export async function openWheel(p, tier, page = 0) {
+    const list = selectionList(p, tier);
+    const pages = Math.max(1, Math.ceil(list.length / 10));
+    page %= pages;
+    const slots = list.slice(page * 10, page * 10 + 10);
+    const current = currentAlien(p);
+    sound(p, wearsRecal(p) ? "alienevo.recal_activation" : "alienevo.prototype_activate");
+    playWatch(p, "open_trigger");
+    const form = new ActionFormData().title(WHEEL_TITLE).body(pages > 1 ? `Omnitrix  §7${page + 1}/${pages}` : "Omnitrix");
+    for (let i = 0; i < 10; i++) {
+        const a = slots[i];
+        if (a) form.button(`${a.id === current?.id ? "§2" : ""}${a.name}`, `textures/ui/aliens/${a.key}`);
+        else form.button("");
+    }
+    form.button(current ? "§eAbilities" : "§9Menu");
+    form.button(pages > 1 ? "Next ►" : "§7Close");
+    const res = await form.show(p);
+    if (res.canceled || res.selection === undefined) {
+        playWatch(p, "close_trigger");
+        return;
+    }
+    if (res.selection === 10) {
+        if (current) await abilityMenu(p, current);
+        else await openDial(p, tier);
+        return;
+    }
+    if (res.selection === 11) {
+        if (pages > 1) await openWheel(p, tier, page + 1);
+        else playWatch(p, "close_trigger");
+        return;
+    }
+    const alien = slots[res.selection];
+    if (!alien) return;
+    if (current) {
+        // Quick change: straight into the other alien.
+        if (alien.id !== current.id) system.run(() => p.isValid && transform(p, alien));
+        return;
+    }
+    sound(p, wearsRecal(p) ? "alienevo.recal_cycle" : "alienevo.prototype_cycle_2");
+    playWatch(p, "close_trigger");
+    system.runTimeout(() => {
+        if (!p.isValid || getRecharge(p) > 0 || getAlien(p)) return;
+        transform(p, alien);
+    }, 8);
+}
+
 /** @param {Player} p @param {number} tier */
 async function editPlaylist(p, tier) {
     const all = availableAliens(p, tier);
@@ -631,7 +687,7 @@ export function initOmnitrix() {
     }, 1);
 
     // Double tap sneak = use the Omnitrix worn in the offhand (or held):
-    // dial when human, ability menu when transformed.
+    // the quick change wheel (transform / switch alien).
     world.afterEvents.playerButtonInput.subscribe((ev) => {
         if (ev.button !== "Sneak" || ev.newButtonState !== "Pressed") return;
         const p = ev.player;
@@ -649,17 +705,12 @@ export function initOmnitrix() {
         const eq = p.getComponent("minecraft:equippable");
         const tier = Math.max(omnitrixTier(eq?.getEquipment(EquipmentSlot.Offhand)), omnitrixTier(eq?.getEquipment(EquipmentSlot.Mainhand)));
         if (tier < 0) return;
-        const alien = currentAlien(p);
-        if (alien) {
-            abilityMenu(p, alien);
-            return;
-        }
-        if (getRecharge(p) > 0) {
+        if (!currentAlien(p) && getRecharge(p) > 0) {
             sound(p, "alienevo.prototype_failsafe");
             actionbar(p, `§cRecharging... §f${formatTime(getRecharge(p))}`);
             return;
         }
-        openDial(p, tier);
+        openWheel(p, tier);
     });
 
     world.afterEvents.playerButtonInput.subscribe((ev) => {

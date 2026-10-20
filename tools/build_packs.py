@@ -15,6 +15,7 @@ packs into dist/AlienEvo.mcaddon.
 """
 import io
 import json
+import math
 import os
 import re
 import shutil
@@ -1088,6 +1089,113 @@ def build_glyphs():
     save_png(sheet, os.path.join(RP, "font", "glyph_E1.png"))
 
 
+WHEEL_TITLE = "alienevo:wheel"
+WHEEL_SIZE = 200
+
+
+def build_wheel_ui(vfs):
+    """Quick change wheel of the Java mod (palladium:ability_wheel with the
+    quick_wheel_sel_N textures and the player in the middle) as a JSON UI
+    layout of ActionFormData forms titled WHEEL_TITLE.  Buttons 0-9 are the
+    ten slots (clockwise from the top), 10 = menu, 11 = next page / close."""
+    ui_dir = os.path.join(RP, "ui")
+    tex_dir = os.path.join(RP, "textures", "ui", "alienevo")
+    reset_dir(ui_dir)
+    reset_dir(tex_dir)
+    src = "assets/alienevo/textures/gui/wheel/quick_wheel_sel_{}.png"
+    base = vfs.image(src.format(0))
+    save_png(base.resize((384, 384), Image.NEAREST), os.path.join(tex_dir, "wheel.png"))
+    bpx = base.load()
+    for i in range(1, 11):
+        img = vfs.image(src.format(i))
+        px = img.load()
+        hl = Image.new("RGBA", img.size)
+        for y in range(img.size[1]):
+            for x in range(img.size[0]):
+                if px[x, y] != bpx[x, y]:
+                    hl.putpixel((x, y), px[x, y])
+        save_png(hl.resize((384, 384), Image.NEAREST), os.path.join(tex_dir, f"wheel_sel_{i}.png"))
+
+    k = WHEEL_SIZE / 192.0
+    tex_bind = [
+        {"binding_name": "#form_button_texture", "binding_name_override": "#texture", "binding_type": "collection", "binding_collection_name": "form_buttons"},
+        {"binding_name": "#form_button_texture_file_system", "binding_name_override": "#texture_file_system", "binding_type": "collection", "binding_collection_name": "form_buttons"},
+    ]
+    has_text = [
+        {"binding_name": "#form_button_text", "binding_type": "collection", "binding_collection_name": "form_buttons"},
+        {"binding_type": "view", "source_property_name": "(not (#form_button_text = ''))", "target_property_name": "#visible"},
+    ]
+    ns = {"namespace": "alienevo_wheel"}
+    ns["icon"] = {"type": "image", "size": [26, 26], "layer": 4, "bindings": tex_bind}
+    ns["name_label"] = {"type": "label", "layer": 6, "color": [0.7, 1.0, 0.25], "shadow": True, "text": "#form_button_text",
+                        "bindings": [{"binding_name": "#form_button_text", "binding_type": "collection", "binding_collection_name": "form_buttons"}]}
+    ring = []
+    for i in range(10):
+        ang = math.radians(i * 36)
+        cx, cy = (96 + 72 * math.sin(ang)) * k, (96 - 72 * math.cos(ang)) * k
+        to_center = [round(WHEEL_SIZE / 2 - cx, 2), round(WHEEL_SIZE / 2 - cy, 2)]
+        highlight = {"type": "image", "texture": f"textures/ui/alienevo/wheel_sel_{i + 1}", "size": [WHEEL_SIZE, WHEEL_SIZE],
+                     "layer": 3, "offset": to_center}
+        name = {"name@alienevo_wheel.name_label": {"offset": [to_center[0], to_center[1] + WHEEL_SIZE / 2 + 10]}}
+        state = lambda hover: {"type": "panel", "size": ["100%", "100%"], "controls": (
+            [{"highlight": highlight}, name] if hover else []) + [{"icon@alienevo_wheel.icon": {}}]}
+        ring.append({f"slot_{i}": {
+            "type": "panel", "size": [30, 30], "anchor_from": "top_left", "anchor_to": "center",
+            "offset": [round(cx, 2), round(cy, 2)], "collection_index": i, "bindings": has_text,
+            "controls": [{"button@common.button": {
+                "size": ["100%", "100%"], "$pressed_button_name": "button.form_button_click",
+                "bindings": [{"binding_type": "collection_details", "binding_collection_name": "form_buttons"}],
+                "controls": [{"default": state(False)}, {"hover": state(True)}, {"pressed": state(True)}],
+            }}],
+        }})
+    for i, offset in ((10, [-48, WHEEL_SIZE / 2 + 26]), (11, [48, WHEEL_SIZE / 2 + 26])):
+        ring.append({f"text_button_{i}": {
+            "type": "panel", "size": [88, 20], "offset": offset, "collection_index": i, "bindings": has_text,
+            "controls": [{"button@common_buttons.light_text_button": {
+                "size": ["100%", "100%"], "$pressed_button_name": "button.form_button_click",
+                "$button_text": "#form_button_text", "$button_text_binding_type": "collection",
+                "$button_text_grid_collection_name": "form_buttons", "$button_text_max_size": ["100%", 20],
+                "bindings": [{"binding_type": "collection_details", "binding_collection_name": "form_buttons"}],
+            }}],
+        }})
+    ns["wheel"] = {
+        "type": "panel", "size": [WHEEL_SIZE, WHEEL_SIZE], "layer": 2, "collection_name": "form_buttons",
+        "controls": [
+            {"background": {"type": "image", "texture": "textures/ui/alienevo/wheel", "size": ["100%", "100%"], "layer": 1}},
+            {"player": {"type": "custom", "renderer": "live_player_renderer", "size": [44, 88], "layer": 5,
+                        "offset": [0, 10], "property_bag": {"#look_at_cursor": True}}},
+            {"title": {"type": "label", "text": "#form_text", "color": [0.7, 1.0, 0.25], "shadow": True, "layer": 6,
+                       "offset": [0, -WHEEL_SIZE / 2 - 10]}},
+        ] + ring,
+    }
+    is_wheel = f"(#title_text = '{WHEEL_TITLE}')"
+    ns["long_form_router"] = {
+        "type": "panel", "size": [0, 0],
+        "controls": [
+            {"default_form": {"type": "panel", "size": [0, 0],
+                              "bindings": [{"binding_name": "#title_text"}, {"binding_type": "view", "source_property_name": f"(not {is_wheel})", "target_property_name": "#visible"}],
+                              "controls": [{"long_form@server_form.long_form": {}}]}},
+            {"wheel_form": {"type": "panel", "size": [0, 0],
+                            "bindings": [{"binding_name": "#title_text"}, {"binding_type": "view", "source_property_name": is_wheel, "target_property_name": "#visible"}],
+                            "controls": [{"wheel@alienevo_wheel.wheel": {}}]}},
+        ],
+    }
+    write_json(os.path.join(ui_dir, "alienevo_wheel.json"), ns)
+    write_json(os.path.join(ui_dir, "_ui_defs.json"), {"ui_defs": ["ui/alienevo_wheel.json"]})
+    # Only the form factory of the vanilla screen is redirected (same content
+    # as the vanilla main_screen_content of 26.x, long_form -> router).
+    write_json(os.path.join(ui_dir, "server_form.json"), {
+        "namespace": "server_form",
+        "main_screen_content": {
+            "type": "panel", "size": [0, 0],
+            "controls": [{"server_form_factory": {"type": "factory", "control_ids": {
+                "long_form": "@alienevo_wheel.long_form_router",
+                "custom_form": "@server_form.custom_form",
+            }}}],
+        },
+    })
+
+
 def build_particles(vfs):
     """Java particle types (textures + lifetime/gravity/size) -> Bedrock
     particle effects with a flip-book of the original frames."""
@@ -1743,6 +1851,7 @@ def main():
     print("galvan trades:", build_galvan_scientist(vfs, lang))
     print("holograms:", build_hologram(lang))
     build_glyphs()
+    build_wheel_ui(vfs)
     build_recipes(jar)
     untapped_recipes()
     for line in structures.build(vfs):
