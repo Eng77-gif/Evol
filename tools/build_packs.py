@@ -553,6 +553,341 @@ def inflate_geo(geo, amount):
     return geo
 
 
+MOBS = [
+    # key, render layer, name, health, attack, speed, size, spawn weight, egg colours
+    dict(key="machine_husk", layer=f"{L}/machine/machine_husk.json", name="Machine Husk", health=30, attack=5,
+         speed=0.23, width=0.7, height=2.0, weight=40, loot="machine_husk", egg=("#3a3f45", "#8cff3a")),
+    dict(key="machine_husk_staff", layer=f"{L}/machine/machine_husk_staff.json", name="Machine Husk Priest", health=36,
+         attack=7, speed=0.22, width=0.7, height=2.0, weight=15, loot="machine_husk_staff", egg=("#3a3f45", "#e0c040")),
+    dict(key="machine_husk_baby", layer=f"{L}/machine/machine_husk_baby.json", name="Machine Drone", health=12,
+         attack=3, speed=0.33, width=0.5, height=0.9, weight=25, loot="machine_husk", egg=("#3a3f45", "#40e0ff")),
+]
+
+
+def build_mobs(vfs, lang):
+    """Machine husks of the Java mod (husks with a Palladium render layer)
+    as Bedrock entities using the GeckoLib models."""
+    geo_dir = os.path.join(RP, "models", "entity", "mobs")
+    tex_dir = os.path.join(RP, "textures", "entity", "mobs")
+    for d in (geo_dir, tex_dir):
+        reset_dir(d)
+    controllers = {}
+    for mob in MOBS:
+        key = mob["key"]
+        layers = resolve(vfs, mob["layer"])
+        geo_src = layers[0]["geo"]
+        base = composite([l["image"] for l in layers if not l["glow"]])
+        glow = [l["image"] for l in layers if l["glow"]]
+        gid = f"geometry.alienevo.{key}"
+        write_json(os.path.join(geo_dir, f"{key}.geo.json"), convert_geo(vfs.json(geo_src), gid))
+        save_png(base, os.path.join(tex_dir, f"{key}.png"))
+        textures = {"default": f"textures/entity/mobs/{key}"}
+        rcs = [f"controller.render.alienevo.mob.{key}"]
+        controllers[rcs[0]] = {"geometry": "Geometry.default", "materials": [{"*": "Material.default"}], "textures": ["Texture.default"]}
+        if glow:
+            save_png(composite(glow), os.path.join(tex_dir, f"{key}_glow.png"))
+            textures["glow"] = f"textures/entity/mobs/{key}_glow"
+            rcs.append(f"controller.render.alienevo.mob.{key}_glow")
+            controllers[rcs[1]] = {"geometry": "Geometry.default", "materials": [{"*": "Material.glow"}], "textures": ["Texture.glow"]}
+        write_json(os.path.join(RP, "entity", f"{key}.entity.json"), {
+            "format_version": "1.10.0",
+            "minecraft:client_entity": {"description": {
+                "identifier": f"alienevo:{key}",
+                "materials": {"default": "entity_alphatest", "glow": "entity_emissive_alpha"},
+                "textures": textures,
+                "geometry": {"default": gid},
+                "animations": {
+                    "move": "animation.humanoid.move",
+                    "look_at_target": "animation.humanoid.look_at_target.default",
+                    "attack": "animation.zombie.attack_bare_hand",
+                },
+                "scripts": {
+                    "pre_animation": ["variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"],
+                    "initialize": ["variable.gliding_speed_value = 1.0;"],
+                    "animate": ["move", "look_at_target", {"attack": "variable.attack_time > 0"}],
+                },
+                "render_controllers": rcs,
+                "spawn_egg": {"base_color": mob["egg"][0], "overlay_color": mob["egg"][1]},
+            }},
+        })
+        write_json(os.path.join(BP, "entities", f"{key}.json"), {
+            "format_version": "1.21.90",
+            "minecraft:entity": {
+                "description": {"identifier": f"alienevo:{key}", "is_spawnable": True, "is_summonable": True},
+                "components": {
+                    "minecraft:type_family": {"family": ["machine", "monster", "mob"]},
+                    "minecraft:health": {"value": mob["health"], "max": mob["health"]},
+                    "minecraft:attack": {"damage": mob["attack"]},
+                    "minecraft:movement": {"value": mob["speed"]},
+                    "minecraft:collision_box": {"width": mob["width"], "height": mob["height"]},
+                    "minecraft:physics": {},
+                    "minecraft:pushable": {"is_pushable": True, "is_pushable_by_piston": True},
+                    "minecraft:jump.static": {},
+                    "minecraft:movement.basic": {},
+                    "minecraft:navigation.walk": {"can_path_over_water": True, "avoid_damage_blocks": True, "can_open_doors": False},
+                    "minecraft:can_climb": {},
+                    "minecraft:breathable": {"total_supply": 15, "suffocate_time": 0, "breathes_water": True},
+                    "minecraft:nameable": {},
+                    "minecraft:despawn": {"despawn_from_distance": {}},
+                    "minecraft:loot": {"table": f"loot_tables/alienevo/entities/{mob['loot']}.json"},
+                    "minecraft:experience_reward": {"on_death": "q.last_hit_by_player ? 8 : 0"},
+                    "minecraft:behavior.float": {"priority": 0},
+                    "minecraft:behavior.melee_box_attack": {"priority": 2, "speed_multiplier": 1.2, "track_target": True},
+                    "minecraft:behavior.random_stroll": {"priority": 6, "speed_multiplier": 0.8},
+                    "minecraft:behavior.look_at_player": {"priority": 7, "look_distance": 8},
+                    "minecraft:behavior.random_look_around": {"priority": 8},
+                    "minecraft:behavior.hurt_by_target": {"priority": 1},
+                    "minecraft:behavior.nearest_attackable_target": {
+                        "priority": 2, "must_see": True, "reselect_targets": True,
+                        "entity_types": [{"filters": {"any_of": [
+                            {"test": "is_family", "subject": "other", "value": "player"},
+                            {"test": "is_family", "subject": "other", "value": "irongolem"}]}, "max_dist": 24}],
+                    },
+                },
+            },
+        })
+        write_json(os.path.join(BP, "spawn_rules", f"{key}.json"), {
+            "format_version": "1.8.0",
+            "minecraft:spawn_rules": {
+                "description": {"identifier": f"alienevo:{key}", "population_control": "monster"},
+                "conditions": [{
+                    "minecraft:spawns_underground": {},
+                    "minecraft:brightness_filter": {"min": 0, "max": 7, "adjust_for_weather": False},
+                    "minecraft:height_filter": {"min": -64, "max": 20},
+                    "minecraft:weight": {"default": mob["weight"] // 10},
+                    "minecraft:density_limit": {"underground": 3},
+                    "minecraft:biome_filter": {"test": "has_biome_tag", "value": "overworld"},
+                }],
+            },
+        })
+        lang[f"entity.alienevo:{key}.name"] = mob["name"]
+        lang[f"item.spawn_egg.entity.alienevo:{key}.name"] = f"Spawn {mob['name']}"
+        src = f"data/alienevo/loot_tables/entities/{mob['loot']}.json"
+        bp_items = {f"alienevo:{os.path.splitext(f)[0]}" for f in os.listdir(os.path.join(BP, "items"))}
+        write_json(os.path.join(BP, "loot_tables", "alienevo", "entities", f"{mob['loot']}.json"),
+                   structures.convert_loot(vfs.json(src), bp_items))
+    write_json(os.path.join(RP, "render_controllers", "alienevo.mobs.render_controllers.json"),
+               {"format_version": "1.10.0", "render_controllers": controllers})
+
+
+GALVAN_TIERS = [0, 10, 70, 150, 250]
+ITEM_SUBSTITUTES = {"palladium:raw_titanium": "minecraft:raw_iron"}
+
+
+def _trade_item(ref, bp_items):
+    if isinstance(ref, str):
+        ref = {"item": ref, "count": 1}
+    item = ITEM_SUBSTITUTES.get(ref["item"], ref["item"])
+    if not item.startswith("minecraft:") and item not in bp_items:
+        return None
+    return {"item": item, "quantity": ref.get("count", 1)}
+
+
+def build_galvan_scientist(vfs, lang):
+    """Galvan Scientist villager (profession alienevo:galvan_scientist of the
+    Java mod) with its trade levels converted to a Bedrock trade table."""
+    key = "galvan_scientist"
+    bp_items = {f"alienevo:{os.path.splitext(f)[0]}" for f in os.listdir(os.path.join(BP, "items"))}
+    tiers = []
+    for level in range(1, 6):
+        groups = []
+        for data in vfs.all_json(f"addon/alienevo/villager_trades/galvan_trades_{level}.json"):
+            for t in data.get("trades", []):
+                want, give = _trade_item(t["price"], bp_items), _trade_item(t["for_sale"], bp_items)
+                if want and give:
+                    groups.append({"wants": [want], "gives": [give], "trader_exp": t.get("xp", 1),
+                                   "max_uses": t.get("max_trades", 12), "reward_exp": True})
+        # Java villagers offer 2 random trades from each level's pool.
+        pools = [{"num_to_select": min(2, len(groups)), "trades": groups}] if groups else []
+        if level == 4:
+            # Cartographer trades of the Java mod (commands.txt) moved here.
+            pools.append({"trades": [
+                {"wants": [{"item": "alienevo:galvan_scrap", "quantity": 16}], "gives": [{"item": "alienevo:machine_key"}],
+                 "trader_exp": 10, "max_uses": 3, "reward_exp": True},
+                {"wants": [{"item": "alienevo:galvan_scrap", "quantity": 32}], "gives": [{"item": "alienevo:machine_urn"}],
+                 "trader_exp": 10, "max_uses": 3, "reward_exp": True},
+            ]})
+        if pools:
+            tiers.append({"total_exp_required": GALVAN_TIERS[level - 1], "groups": pools})
+    write_json(os.path.join(BP, "trading", "alienevo", f"{key}.json"), {"tiers": tiers})
+
+    geo_dir = os.path.join(RP, "models", "entity", "mobs")
+    tex_dir = os.path.join(RP, "textures", "entity", "mobs")
+    base = "assets/alienevo/palladium/model_layers/galvan_villager"
+    tex = "assets/alienevo/textures/models/aliens/galvan_villager"
+    geos, textures = {}, {"glow": f"textures/entity/mobs/{key}_glow"}
+    for i in (1, 2, 3):
+        gid = f"geometry.alienevo.{key}_{i}"
+        g = vfs.json(f"{base}/galvan_villager_0{i}.json")
+        g["minecraft:geometry"][0]["description"]["identifier"] = gid
+        write_json(os.path.join(geo_dir, f"{key}_{i}.geo.json"), g)
+        save_png(vfs.image(f"{tex}/galvan_villager_0{i}.png"), os.path.join(tex_dir, f"{key}_{i}.png"))
+        geos[f"v{i}"] = gid
+        textures[f"v{i}"] = f"textures/entity/mobs/{key}_{i}"
+    save_png(vfs.image(f"{tex}/galvan_villager_glow.png"), os.path.join(tex_dir, f"{key}_glow.png"))
+    write_json(os.path.join(RP, "animations", f"alienevo.{key}.animation.json"), {
+        "format_version": "1.8.0",
+        "animations": {
+            f"animation.alienevo.{key}.move": {"loop": True, "bones": {
+                "left_leg": {"rotation": ["math.cos(q.anim_time * 38.17 * 16) * 40 * q.modified_move_speed", 0, 0]},
+                "right_leg": {"rotation": ["-math.cos(q.anim_time * 38.17 * 16) * 40 * q.modified_move_speed", 0, 0]},
+                "arms": {"rotation": ["math.sin(q.life_time * 90) * 3", 0, 0]},
+                "body": {"position": [0, "math.abs(math.cos(q.anim_time * 38.17 * 16)) * 0.4 * q.modified_move_speed", 0]},
+            }},
+            f"animation.alienevo.{key}.look": {"loop": True, "bones": {
+                "head": {"rotation": ["-q.target_x_rotation", "-q.target_y_rotation", 0]},
+            }},
+            f"animation.alienevo.{key}.blink": {"loop": True, "animation_length": 4.0, "bones": {
+                "pupil": {"scale": {"0.0": [1, 1, 1], "3.85": [1, 1, 1], "3.9": [1, 0.1, 1], "4.0": [1, 1, 1]}},
+                "pupil2": {"scale": {"0.0": [1, 1, 1], "3.85": [1, 1, 1], "3.9": [1, 0.1, 1], "4.0": [1, 1, 1]}},
+            }},
+        },
+    })
+    rc_base = f"controller.render.alienevo.mob.{key}"
+    arrays_geo = {"Array.geos": ["Geometry.v1", "Geometry.v2", "Geometry.v3"]}
+    arrays_tex = {"Array.skins": ["Texture.v1", "Texture.v2", "Texture.v3"]}
+    write_json(os.path.join(RP, "render_controllers", f"alienevo.{key}.render_controllers.json"), {
+        "format_version": "1.10.0",
+        "render_controllers": {
+            rc_base: {"arrays": {"geometries": arrays_geo, "textures": arrays_tex},
+                      "geometry": "Array.geos[q.variant]", "materials": [{"*": "Material.default"}],
+                      "textures": ["Array.skins[q.variant]"]},
+            f"{rc_base}_glow": {"arrays": {"geometries": arrays_geo},
+                                "geometry": "Array.geos[q.variant]", "materials": [{"*": "Material.glow"}],
+                                "textures": ["Texture.glow"]},
+        },
+    })
+    write_json(os.path.join(RP, "entity", f"{key}.entity.json"), {
+        "format_version": "1.10.0",
+        "minecraft:client_entity": {"description": {
+            "identifier": f"alienevo:{key}",
+            "materials": {"default": "entity_alphatest", "glow": "entity_emissive_alpha"},
+            "textures": textures,
+            "geometry": geos,
+            "animations": {"move": f"animation.alienevo.{key}.move", "look": f"animation.alienevo.{key}.look",
+                           "blink": f"animation.alienevo.{key}.blink"},
+            "scripts": {"animate": ["move", "look", "blink"]},
+            "render_controllers": [rc_base, f"{rc_base}_glow"],
+            "spawn_egg": {"base_color": "#86d698", "overlay_color": "#332e27"},
+        }},
+    })
+    variants = {f"alienevo:v{i}": {"minecraft:variant": {"value": i}} for i in range(3)}
+    write_json(os.path.join(BP, "entities", f"{key}.json"), {
+        "format_version": "1.21.90",
+        "minecraft:entity": {
+            "description": {"identifier": f"alienevo:{key}", "is_spawnable": True, "is_summonable": True},
+            "component_groups": variants,
+            "components": {
+                "minecraft:type_family": {"family": ["galvan", "villager", "mob"]},
+                "minecraft:health": {"value": 20, "max": 20},
+                "minecraft:movement": {"value": 0.5},
+                "minecraft:collision_box": {"width": 0.5, "height": 0.75},
+                "minecraft:physics": {},
+                "minecraft:pushable": {"is_pushable": True, "is_pushable_by_piston": True},
+                "minecraft:jump.static": {},
+                "minecraft:movement.basic": {},
+                "minecraft:navigation.walk": {"can_path_over_water": True, "can_open_doors": True, "avoid_damage_blocks": True},
+                "minecraft:nameable": {},
+                "minecraft:persistent": {},
+                "minecraft:breathable": {"total_supply": 15, "suffocate_time": 0},
+                "minecraft:economy_trade_table": {"display_name": f"entity.alienevo:{key}.name",
+                                                  "table": f"trading/alienevo/{key}.json", "new_screen": True,
+                                                  "persist_trades": True, "cured_discount": [-25, -20]},
+                "minecraft:trade_resupply": {},
+                "minecraft:behavior.float": {"priority": 0},
+                "minecraft:behavior.panic": {"priority": 1, "speed_multiplier": 0.9},
+                "minecraft:behavior.trade_with_player": {"priority": 2},
+                "minecraft:behavior.look_at_trading_player": {"priority": 2},
+                "minecraft:behavior.avoid_mob_type": {"priority": 3, "entity_types": [{"filters": {"test": "is_family", "subject": "other", "value": "machine"}, "max_dist": 8, "walk_speed_multiplier": 0.6, "sprint_speed_multiplier": 0.9}]},
+                "minecraft:behavior.random_stroll": {"priority": 6, "speed_multiplier": 0.4},
+                "minecraft:behavior.look_at_player": {"priority": 7, "look_distance": 8},
+                "minecraft:behavior.random_look_around": {"priority": 8},
+            },
+            "events": {"minecraft:entity_spawned": {"randomize": [{"weight": 1, "add": {"component_groups": [g]}} for g in variants]}},
+        },
+    })
+    write_json(os.path.join(BP, "spawn_rules", f"{key}.json"), {
+        "format_version": "1.8.0",
+        "minecraft:spawn_rules": {
+            "description": {"identifier": f"alienevo:{key}", "population_control": "animal"},
+            "conditions": [{
+                "minecraft:spawns_on_surface": {},
+                "minecraft:brightness_filter": {"min": 7, "max": 15, "adjust_for_weather": False},
+                "minecraft:weight": {"default": 1},
+                "minecraft:density_limit": {"surface": 1},
+                "minecraft:herd": {"min_size": 1, "max_size": 1},
+                "minecraft:biome_filter": {"all_of": [{"test": "has_biome_tag", "value": "overworld"},
+                                                      {"test": "has_biome_tag", "operator": "!=", "value": "ocean"}]},
+            }],
+        },
+    })
+    lang[f"entity.alienevo:{key}.name"] = "Galvan Scientist"
+    lang[f"item.spawn_egg.entity.alienevo:{key}.name"] = "Spawn Galvan Scientist"
+    return sum(len(g["trades"]) for t in tiers for g in t["groups"])
+
+
+def build_particles(vfs):
+    """Java particle types (textures + lifetime/gravity/size) -> Bedrock
+    particle effects with a flip-book of the original frames."""
+    out_tex = os.path.join(RP, "textures", "particle", "alienevo")
+    out_json = os.path.join(RP, "particles")
+    reset_dir(out_tex)
+    reset_dir(out_json)
+    made = []
+    for ns in ("alienevo", "afomni"):
+        for path in sorted(n for n in vfs.files if n.startswith(f"assets/{ns}/particles/") and n.endswith(".json")):
+            name = os.path.basename(path)[:-5]
+            frames = []
+            for ref in vfs.json(path).get("textures", []):
+                tns, tpath = ref.split(":", 1)
+                f = f"assets/{tns}/textures/particle/{tpath}.png"
+                if vfs.exists(f):
+                    frames.append(vfs.image(f))
+            if not frames:
+                continue
+            w = max(f.size[0] for f in frames)
+            h = max(f.size[1] for f in frames)
+            strip = Image.new("RGBA", (w * len(frames), h))
+            for i, f in enumerate(frames):
+                strip.alpha_composite(f.resize((w, h), Image.NEAREST), (i * w, 0))
+            ident = name if ns == "alienevo" else f"{ns}_{name}"
+            save_png(strip, os.path.join(out_tex, f"{ident}.png"))
+            spec_path = next((p for p in (f"addon/{ns}/particle_types/{name}.json",) if vfs.exists(p)), None)
+            spec = vfs.json(spec_path) if spec_path else {}
+            life = max(2, spec.get("lifetime", 12)) / 20.0
+            gravity = spec.get("gravity", 0)
+            size = round(0.12 * spec.get("quad_size", 1.0), 3)
+            lit = spec.get("render_type", "lit") == "lit" and spec.get("brightness", 0) < 200
+            comps = {
+                "minecraft:emitter_rate_instant": {"num_particles": 1},
+                "minecraft:emitter_lifetime_once": {"active_time": 0.05},
+                "minecraft:emitter_shape_point": {"direction": ["math.random(-0.3, 0.3)", "math.random(0.1, 0.6)", "math.random(-0.3, 0.3)"]},
+                "minecraft:particle_initial_speed": 0.4,
+                "minecraft:particle_lifetime_expression": {"max_lifetime": life},
+                "minecraft:particle_motion_dynamic": {"linear_acceleration": [0, round(-gravity * 8, 3), 0], "linear_drag_coefficient": 1.5},
+                "minecraft:particle_appearance_billboard": {
+                    "size": [size, size], "facing_camera_mode": "rotate_xyz",
+                    "uv": {"texture_width": w * len(frames), "texture_height": h,
+                           "flipbook": {"base_UV": [0, 0], "size_UV": [w, h], "step_UV": [w, 0],
+                                        "frames_per_second": round(len(frames) / life, 2), "max_frame": len(frames),
+                                        "stretch_to_lifetime": True, "loop": False}},
+                },
+            }
+            if lit:
+                comps["minecraft:particle_appearance_lighting"] = {}
+            write_json(os.path.join(out_json, f"{ident}.json"), {
+                "format_version": "1.10.0",
+                "particle_effect": {
+                    "description": {"identifier": f"alienevo:{ident}",
+                                    "basic_render_parameters": {"material": "particles_blend",
+                                                                "texture": f"textures/particle/alienevo/{ident}"}},
+                    "components": comps,
+                },
+            })
+            made.append(ident)
+    return made
+
+
 def build_player_scale_animation():
     """Scale the player skeleton (and therefore the attachable) per alien."""
     expr = "1.0"
@@ -1059,6 +1394,7 @@ def main():
     build_player_entity(build_player_scale_animation())
     build_player_behavior()
     build_projectiles(jar)
+    print("particles:", ", ".join(build_particles(vfs)))
     build_items_rp(jar, lang, item_textures)
     build_blocks_rp(jar, terrain)
     build_sounds(vfs)
@@ -1071,6 +1407,8 @@ def main():
     save_png(jar.image("alienevo_icon.png").resize((256, 256), Image.NEAREST), os.path.join(BP, "pack_icon.png"))
     build_items_bp()
     build_blocks_bp()
+    build_mobs(vfs, lang)
+    print("galvan trades:", build_galvan_scientist(vfs, lang))
     build_recipes(jar)
     for line in structures.build(vfs):
         print("structure", line)

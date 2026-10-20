@@ -359,7 +359,8 @@ def block_entity(name, props, nbt, pos, loot_tables):
             be["Items"] = List(COMPOUND, [])
     elif bid == "MobSpawner":
         ent = (nbt.get("SpawnData", {}).get("entity", {}) or {}).get("id", "minecraft:zombie")
-        be["EntityIdentifier"] = String(ent)
+        # Spawners of the machine strongholds spawn the Machine Husks.
+        be["EntityIdentifier"] = String("alienevo:machine_husk" if ent == "minecraft:husk" else ent)
     return be
 
 

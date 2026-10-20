@@ -1,0 +1,52 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alienevo.mob.galvan_scientist": {
+      "arrays": {
+        "geometries": {
+          "Array.geos": [
+            "Geometry.v1",
+            "Geometry.v2",
+            "Geometry.v3"
+          ]
+        },
+        "textures": {
+          "Array.skins": [
+            "Texture.v1",
+            "Texture.v2",
+            "Texture.v3"
+          ]
+        }
+      },
+      "geometry": "Array.geos[q.variant]",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[q.variant]"
+      ]
+    },
+    "controller.render.alienevo.mob.galvan_scientist_glow": {
+      "arrays": {
+        "geometries": {
+          "Array.geos": [
+            "Geometry.v1",
+            "Geometry.v2",
+            "Geometry.v3"
+          ]
+        }
+      },
+      "geometry": "Array.geos[q.variant]",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.glow"
+      ]
+    }
+  }
+}

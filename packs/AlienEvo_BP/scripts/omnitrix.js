@@ -7,6 +7,7 @@ import { ActionFormData } from "@minecraft/server-ui";
 import { ABILITIES, clearToggles, toggles } from "./abilities.js";
 import { ALIEN_BY_ID, ALIENS, MAX_TIMER, OMNITRIX_TIERS, RECHARGE_TIMER } from "./aliens.js";
 import { ANIM_TRIGGERS } from "./anim_data.js";
+import { enterCode } from "./codes.js";
 import {
     getPoints, isSkillUnlocked, setPoints, unlockSkill,
     availableAliens, getAbilityIndex, getAlien, getLevel, getPlaylist, getRecharge, getSelected, getTimer,
@@ -191,6 +192,7 @@ export async function openDial(p, tier) {
     }
     form.button("§9Playlist...", "textures/ui/icon_recipe_item");
     form.button("§8Alien Codex", "textures/ui/icon_book_writable");
+    form.button("§6Enter code", "textures/items/code_tablet");
     const res = await form.show(p);
     if (res.canceled || res.selection === undefined) {
         playWatch(p, "close_trigger");
@@ -213,8 +215,10 @@ export async function openDial(p, tier) {
     } else if (res.selection === list.length) {
         playWatch(p, "playlist_swap");
         await editPlaylist(p, tier);
-    } else {
+    } else if (res.selection === list.length + 1) {
         await codex(p, tier);
+    } else {
+        await enterCode(p);
     }
 }
 
@@ -468,7 +472,7 @@ function flightTick(p, alien) {
     } catch {
         // Ignore.
     }
-    if (system.currentTick % 4 === 0) particle(p, alien.key === "dragonoid" || alien.key === "pyronite" ? "minecraft:basic_flame_particle" : "minecraft:white_smoke_particle", p.location);
+    if (system.currentTick % 4 === 0) particle(p, alien.key === "dragonoid" ? "alienevo:drago_flares" : alien.key === "pyronite" ? "alienevo:pyronite_surf" : "minecraft:white_smoke_particle", p.location);
 }
 
 // ------------------------------------------------------------------ passives

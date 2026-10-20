@@ -2,9 +2,9 @@
 // Omnitrix through its evolution phases and shows its status.
 
 import { EquipmentSlot, ItemStack, system } from "@minecraft/server";
-import { ActionFormData, MessageFormData } from "@minecraft/server-ui";
+import { ActionFormData } from "@minecraft/server-ui";
 import { ALIENS, OMNITRIX_TIERS } from "./aliens.js";
-import { omnitrixTier, playWatch } from "./omnitrix.js";
+import { omnitrixTier } from "./omnitrix.js";
 import { hasMasterControl, setMasterControl } from "./state.js";
 import { particle, sound } from "./util.js";
 
@@ -104,64 +104,6 @@ export async function openWorkbench(p, block) {
         particle(p, "minecraft:totem_particle", block.center());
         p.sendMessage(`§aYour Omnitrix evolved into the §2${next.name}§a!`);
     });
-}
-
-/** Code Tablets unlock Master Control or start the Self Destruct sequence. @param {Player} p @param {string} typeId */
-export async function useCodeTablet(p, typeId) {
-    if (typeId === "alienevo:code_tablet") {
-        if (hasMasterControl(p)) {
-            p.sendMessage("§7Master Control is already unlocked.");
-            return;
-        }
-        system.run(() => {
-            setMasterControl(p, true);
-            consumeHeld(p, typeId);
-            sound(p, "alienevo.prototype_master_control");
-            playWatch(p, "master_control");
-            p.sendMessage("§a§lMaster Control unlocked! §r§7The Omnitrix will no longer time out.");
-        });
-        return;
-    }
-    const res = await new MessageFormData()
-        .title("§4Self Destruct")
-        .body("§cThis will activate the Omnitrix self destruct sequence.\n§7In 10 seconds a huge explosion will destroy everything around you.\n\nAre you sure?")
-        .button1("§4Activate")
-        .button2("§7Cancel")
-        .show(p);
-    if (res.canceled || res.selection !== 0) return;
-    system.run(() => {
-        consumeHeld(p, typeId);
-        let n = 10;
-        const id = system.runInterval(() => {
-            if (!p.isValid) return system.clearRun(id);
-            if (n > 0) {
-                p.onScreenDisplay.setTitle(`§4${n}`, { fadeInDuration: 0, stayDuration: 20, fadeOutDuration: 0 });
-                sound(p, "alienevo.prototype_sdm_blink");
-                n--;
-                return;
-            }
-            system.clearRun(id);
-            sound(p, "alienevo.prototype_sdm");
-            try {
-                p.dimension.createExplosion(p.location, 10, { breaksBlocks: true, causesFire: true, source: p });
-            } catch {
-                // Ignore.
-            }
-        }, 20);
-    });
-}
-
-/** @param {Player} p @param {string} typeId */
-function consumeHeld(p, typeId) {
-    const eq = p.getComponent("minecraft:equippable");
-    const held = eq?.getEquipment(EquipmentSlot.Mainhand);
-    if (held?.typeId !== typeId) return;
-    if (held.amount > 1) {
-        held.amount--;
-        eq?.setEquipment(EquipmentSlot.Mainhand, held);
-    } else {
-        eq?.setEquipment(EquipmentSlot.Mainhand, undefined);
-    }
 }
 
 // ------------------------------------------------------------ colour modules

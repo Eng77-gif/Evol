@@ -30,7 +30,7 @@ export function clearToggles(p) {
     toggles.slamOnLand.delete(p.id);
 }
 
-const FIRE = "minecraft:basic_flame_particle";
+const FIRE = "alienevo:pyronite_flame";
 
 /** Flame/ice/sonic cone. @param {Player} p @param {string} particleId @param {(e: import("@minecraft/server").Entity) => void} hit */
 function breath(p, particleId, hit, range = 7, pulses = 8) {
@@ -107,7 +107,7 @@ export const ABILITIES = {
     fireball: {
         name: "Fireball", desc: "Throw a ball of fire.", cooldown: 10,
         run: (p) => {
-            shoot(p, "minecraft:small_fireball", 1.6, { damage: 3, fire: 4 });
+            shoot(p, "minecraft:small_fireball", 1.6, { damage: 3, fire: 4, trail: "alienevo:pyronite_ball" });
             sound(p, "alienevo.heatblast_fireshot");
         },
     },
@@ -137,7 +137,7 @@ export const ABILITIES = {
         run: (p) => {
             const v = flatView(p);
             launch(p, { x: v.x * 1.2, y: 1.3, z: v.z * 1.2 });
-            for (let i = 0; i < 8; i++) particle(p, "minecraft:mobflame_single", add(p.location, { x: Math.random() - 0.5, y: 0, z: Math.random() - 0.5 }));
+            for (let i = 0; i < 8; i++) particle(p, "alienevo:pyronite_flares", add(p.location, { x: Math.random() - 0.5, y: 0, z: Math.random() - 0.5 }));
             sound(p, "alienevo.heatblast_surf");
         },
     },
@@ -331,7 +331,7 @@ export const ABILITIES = {
     sonic_clap: {
         name: "Sonic Clap", desc: "Clap all four hands to make a shockwave.", cooldown: 80,
         run: (p) => {
-            particle(p, "minecraft:sonic_explosion", add(p.getHeadLocation(), scale(p.getViewDirection(), 2)));
+            particle(p, "alienevo:sonic_boom", add(p.getHeadLocation(), scale(p.getViewDirection(), 2)));
             sound(p, "alienevo.sonic_boom");
             for (const e of coneTargets(p, 10, 0.6)) {
                 hurt(e, 6, p);
@@ -353,7 +353,7 @@ export const ABILITIES = {
         name: "Slime Shot", desc: "Spit sticky slime that slows enemies.", cooldown: 15,
         run: (p) => {
             shoot(p, "alienevo:energy_bolt", 1.6, {
-                damage: 3, trail: "minecraft:villager_happy", impact: "minecraft:egg_destroy_emitter",
+                damage: 3, trail: "alienevo:slime_trail", impact: "alienevo:slime",
                 effects: [["slowness", 100, 3]],
             });
             sound(p, "mob.slime.small");
@@ -366,7 +366,7 @@ export const ABILITIES = {
             let n = 0;
             const id = system.runInterval(() => {
                 if (!p.isValid || n++ > 10) return system.clearRun(id);
-                for (let i = 0; i < 10; i++) particle(p, "minecraft:villager_happy", add(at, { x: (Math.random() - 0.5) * 8, y: Math.random() * 2, z: (Math.random() - 0.5) * 8 }));
+                for (let i = 0; i < 10; i++) particle(p, "alienevo:gas", add(at, { x: (Math.random() - 0.5) * 8, y: Math.random() * 2, z: (Math.random() - 0.5) * 8 }));
                 for (const e of nearbyTargets(p, at, 4.5)) {
                     effect(e, "poison", 80, 1);
                     effect(e, "nausea", 120, 0);
@@ -600,7 +600,7 @@ export const ABILITIES = {
         run: (p) => {
             const eye = p.getHeadLocation();
             const v = p.getViewDirection();
-            for (let d = 2; d <= 10; d += 2) particle(p, "minecraft:sonic_explosion", add(eye, scale(v, d)));
+            for (let d = 2; d <= 10; d += 2) particle(p, "alienevo:afomni_sonic_scream", add(eye, scale(v, d)));
             sound(p, "alienevo.sonorosian_scream");
             for (const e of coneTargets(p, 11, 0.7)) {
                 hurt(e, 6, p, "sonicBoom");
@@ -884,7 +884,7 @@ export const ABILITIES = {
         run: (p) => {
             const eye = p.getHeadLocation();
             const v = p.getViewDirection();
-            for (let d = 2; d <= 12; d += 2) particle(p, "minecraft:sonic_explosion", add(eye, scale(v, d)));
+            for (let d = 2; d <= 12; d += 2) particle(p, "alienevo:sonic_boom", add(eye, scale(v, d)));
             sound(p, "mob.wolf.big.growl", 1, 0.6);
             for (const e of coneTargets(p, 13, 0.7)) {
                 hurt(e, 7, p, "sonicBoom");

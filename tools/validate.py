@@ -103,6 +103,12 @@ for path in glob.glob(os.path.join(RP, "animations", "**", "*.json"), recursive=
                     if not molang_ok(expr):
                         err(f"{path}: {name}/{bone} bad molang {expr}")
 
+VANILLA_ANIMS = set()
+_vp = os.path.join(ROOT, "tools", "data", "vanilla_animations.txt")
+if os.path.exists(_vp):
+    with open(_vp, encoding="utf-8") as f:
+        VANILLA_ANIMS = {line.strip() for line in f if line.strip()}
+
 controllers = {}
 for path in glob.glob(os.path.join(RP, "animation_controllers", "**", "*.json"), recursive=True):
     d = load(path) or {}
@@ -139,9 +145,18 @@ for path in glob.glob(os.path.join(RP, "attachables", "**", "*.json"), recursive
             err(f"{path}: render controller {name} missing")
             continue
         r = render_controllers[name]
-        g = r["geometry"].split(".", 1)[1]
-        if g not in desc.get("geometry", {}):
-            err(f"{path}: {name} uses Geometry.{g} not defined")
+        if r["geometry"].startswith("Array."):
+            garrays = r.get("arrays", {}).get("geometries", {})
+            arr = r["geometry"].split("[", 1)[0]
+            if arr not in garrays:
+                err(f"{path}: {name} uses undefined {arr}")
+            for g in garrays.get(arr, []):
+                if g.split(".", 1)[1] not in desc.get("geometry", {}):
+                    err(f"{path}: {name} array {arr} uses {g} not defined")
+        else:
+            g = r["geometry"].split(".", 1)[1]
+            if g not in desc.get("geometry", {}):
+                err(f"{path}: {name} uses Geometry.{g} not defined")
         arrays = r.get("arrays", {}).get("textures", {})
         for t in r.get("textures", []):
             if t.startswith("Array."):
@@ -162,7 +177,7 @@ for path in glob.glob(os.path.join(RP, "attachables", "**", "*.json"), recursive
                 if v.split(".", 1)[1] not in desc.get("materials", {}):
                     err(f"{path}: {name} uses {v} not defined")
     for short, full in desc.get("animations", {}).items():
-        if full not in animations and full not in controllers:
+        if full not in animations and full not in controllers and full not in VANILLA_ANIMS:
             err(f"{path}: animation {full} missing")
     for a in desc.get("scripts", {}).get("animate", []):
         short = a if isinstance(a, str) else next(iter(a))
@@ -262,6 +277,22 @@ for path in glob.glob(os.path.join(BP, "structures", "**", "*.mcstructure"), rec
         lt = pd.get("block_entity_data", {}).get("LootTable")
         if lt and lt.startswith("loot_tables/alienevo/") and not os.path.exists(os.path.join(BP, lt)):
             err(f"{path}: loot table {lt} missing")
+
+# ------------------------------------------------------------- particles
+particles = set()
+for path in glob.glob(os.path.join(RP, "particles", "*.json")):
+    d = load(path) or {}
+    pe = d.get("particle_effect", {})
+    particles.add(pe.get("description", {}).get("identifier"))
+    tex = pe.get("description", {}).get("basic_render_parameters", {}).get("texture")
+    if tex and not tex_exists(tex):
+        err(f"{path}: texture {tex} missing")
+for pid in set(re.findall(r'"(alienevo:[a-z_0-9]+)"', script_text)):
+    if pid.split(":")[1] in ("energy_bolt", "boulder") or pid.startswith("alienevo:form_"):
+        continue
+    if any(pid in x for x in [script_text]) and re.search(rf'particle\([^)]*"{pid}"|trail: "{pid}"|impact: "{pid}"|FIRE = "{pid}"', script_text):
+        if pid not in particles:
+            err(f"script uses unknown particle {pid}")
 
 # ------------------------------------------------------------- manifests
 for pack in (BP, RP):

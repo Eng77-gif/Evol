@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alienevo:machine_husk_staff",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/mobs/machine_husk_staff",
+        "glow": "textures/entity/mobs/machine_husk_staff_glow"
+      },
+      "geometry": {
+        "default": "geometry.alienevo.machine_husk_staff"
+      },
+      "animations": {
+        "move": "animation.humanoid.move",
+        "look_at_target": "animation.humanoid.look_at_target.default",
+        "attack": "animation.zombie.attack_bare_hand"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "initialize": [
+          "variable.gliding_speed_value = 1.0;"
+        ],
+        "animate": [
+          "move",
+          "look_at_target",
+          {
+            "attack": "variable.attack_time > 0"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alienevo.mob.machine_husk_staff",
+        "controller.render.alienevo.mob.machine_husk_staff_glow"
+      ],
+      "spawn_egg": {
+        "base_color": "#3a3f45",
+        "overlay_color": "#e0c040"
+      }
+    }
+  }
+}

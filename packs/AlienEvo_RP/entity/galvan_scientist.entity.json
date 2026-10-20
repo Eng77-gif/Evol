@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alienevo:galvan_scientist",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha"
+      },
+      "textures": {
+        "glow": "textures/entity/mobs/galvan_scientist_glow",
+        "v1": "textures/entity/mobs/galvan_scientist_1",
+        "v2": "textures/entity/mobs/galvan_scientist_2",
+        "v3": "textures/entity/mobs/galvan_scientist_3"
+      },
+      "geometry": {
+        "v1": "geometry.alienevo.galvan_scientist_1",
+        "v2": "geometry.alienevo.galvan_scientist_2",
+        "v3": "geometry.alienevo.galvan_scientist_3"
+      },
+      "animations": {
+        "move": "animation.alienevo.galvan_scientist.move",
+        "look": "animation.alienevo.galvan_scientist.look",
+        "blink": "animation.alienevo.galvan_scientist.blink"
+      },
+      "scripts": {
+        "animate": [
+          "move",
+          "look",
+          "blink"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.alienevo.mob.galvan_scientist",
+        "controller.render.alienevo.mob.galvan_scientist_glow"
+      ],
+      "spawn_egg": {
+        "base_color": "#86d698",
+        "overlay_color": "#332e27"
+      }
+    }
+  }
+}

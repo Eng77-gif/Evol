@@ -4,6 +4,7 @@ import {
     CommandPermissionLevel, CustomCommandParamType, CustomCommandStatus, EquipmentSlot, system, world,
 } from "@minecraft/server";
 import { initAbilityTicks, setPlayerLookup } from "./abilities.js";
+import { revealCodes, useCodeTablet } from "./codes.js";
 import { ALIEN_BY_KEY, ALIENS } from "./aliens.js";
 import { currentAlien, detransform, initOmnitrix, omnitrixTier, transform, useOmnitrix } from "./omnitrix.js";
 import { openPod } from "./pod.js";
@@ -14,7 +15,7 @@ import {
 } from "./state.js";
 import { STRUCTURES } from "./structure_data.js";
 import { sound } from "./util.js";
-import { openWorkbench, useCodeTablet } from "./workbench.js";
+import { openWorkbench } from "./workbench.js";
 
 /** @typedef {import("@minecraft/server").Player} Player */
 
@@ -151,6 +152,17 @@ system.beforeEvents.startup.subscribe((ev) => {
     }, (origin, enabled, targets) => {
         const players = playersFor(origin, targets);
         system.run(() => players.forEach((p) => setAllSkills(p, !!enabled)));
+        return { status: CustomCommandStatus.Success };
+    });
+
+    reg.registerCommand({
+        name: "alienevo:revealcode",
+        description: "Show your Master Control and Self Destruct codes.",
+        permissionLevel: CommandPermissionLevel.GameDirectors,
+        optionalParameters: [{ name: "target", type: CustomCommandParamType.PlayerSelector }],
+    }, (origin, targets) => {
+        const players = playersFor(origin, targets);
+        system.run(() => players.forEach((p) => revealCodes(p)));
         return { status: CustomCommandStatus.Success };
     });
 

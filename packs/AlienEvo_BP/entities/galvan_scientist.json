@@ -1,0 +1,145 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "alienevo:galvan_scientist",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "component_groups": {
+      "alienevo:v0": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "alienevo:v1": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "alienevo:v2": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "galvan",
+          "villager",
+          "mob"
+        ]
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:movement": {
+        "value": 0.5
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.75
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "can_open_doors": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:nameable": {},
+      "minecraft:persistent": {},
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:economy_trade_table": {
+        "display_name": "entity.alienevo:galvan_scientist.name",
+        "table": "trading/alienevo/galvan_scientist.json",
+        "new_screen": true,
+        "persist_trades": true,
+        "cured_discount": [
+          -25,
+          -20
+        ]
+      },
+      "minecraft:trade_resupply": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.panic": {
+        "priority": 1,
+        "speed_multiplier": 0.9
+      },
+      "minecraft:behavior.trade_with_player": {
+        "priority": 2
+      },
+      "minecraft:behavior.look_at_trading_player": {
+        "priority": 2
+      },
+      "minecraft:behavior.avoid_mob_type": {
+        "priority": 3,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "machine"
+            },
+            "max_dist": 8,
+            "walk_speed_multiplier": 0.6,
+            "sprint_speed_multiplier": 0.9
+          }
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 0.4
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "alienevo:v0"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "alienevo:v1"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "alienevo:v2"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
