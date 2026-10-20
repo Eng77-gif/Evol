@@ -826,6 +826,128 @@ def build_galvan_scientist(vfs, lang):
     return sum(len(g["trades"]) for t in tiers for g in t["groups"])
 
 
+HOLO_RAMP = ((0x2c, 0x5a, 0x10), (0xb3, 0xff, 0x40), (0xf0, 0xff, 0xd0))
+
+
+def hologram_texture(img):
+    """Alien skin -> green see-through hologram (like the recal_omnitrix
+    hologram layer of the Java mod)."""
+    img = img.convert("RGBA")
+    out = Image.new("RGBA", img.size)
+    src, dst = img.load(), out.load()
+    for y in range(img.size[1]):
+        for x in range(img.size[0]):
+            r, g, b, a = src[x, y]
+            if a == 0:
+                continue
+            lum = (0.3 * r + 0.59 * g + 0.11 * b) / 255.0
+            lo, hi = (HOLO_RAMP[0], HOLO_RAMP[1]) if lum < 0.5 else (HOLO_RAMP[1], HOLO_RAMP[2])
+            t = lum * 2 if lum < 0.5 else lum * 2 - 1
+            c = tuple(int(lo[i] + (hi[i] - lo[i]) * t) for i in range(3))
+            # Scan lines.
+            alpha = int(min(a, 255) * (0.65 if y % 2 else 0.85))
+            dst[x, y] = c + (alpha,)
+    return out
+
+
+def build_hologram(lang):
+    """alienevo:omnitrix_hologram: the selected alien floating above the
+    Omnitrix while the dial is turned.  One geometry per alien, chosen by the
+    synced entity property alienevo:alien."""
+    key = "omnitrix_hologram"
+    geo_src = os.path.join(RP, "models", "entity", "aliens")
+    tex_src = os.path.join(RP, "textures", "entity", "aliens")
+    geo_dir = os.path.join(RP, "models", "entity", "hologram")
+    tex_dir = os.path.join(RP, "textures", "entity", "hologram")
+    for d in (geo_dir, tex_dir):
+        reset_dir(d)
+    anim_dir = os.path.join(RP, "animations", "aliens")
+    geometry, textures, keys = {}, {}, []
+    for alien in ALIENS:
+        akey = alien["key"]
+        geo = json.load(open(os.path.join(geo_src, f"{akey}_0.geo.json")))
+        g = geo["minecraft:geometry"][0]
+        # Bones the alien only shows during an ability (rest_pose) are dropped.
+        hidden = set()
+        anim_path = os.path.join(anim_dir, f"{akey}.animation.json")
+        if os.path.exists(anim_path):
+            for name, anim in json.load(open(anim_path))["animations"].items():
+                if name.endswith(".rest_pose"):
+                    hidden |= set(anim.get("bones", {}))
+        changed = True
+        while changed:
+            changed = False
+            for b in g["bones"]:
+                if b["name"] not in hidden and b.get("parent") in hidden:
+                    hidden.add(b["name"])
+                    changed = True
+        for b in g["bones"]:
+            if b["name"] in hidden:
+                b.pop("cubes", None)
+        gid = f"geometry.alienevo.holo_{akey}"
+        g["description"]["identifier"] = gid
+        write_json(os.path.join(geo_dir, f"{akey}.geo.json"), geo)
+        layers = [Image.open(os.path.join(tex_src, f"{akey}_0{s}.png")).convert("RGBA")
+                  for s in ("", "_glow") if os.path.exists(os.path.join(tex_src, f"{akey}_0{s}.png"))]
+        save_png(hologram_texture(composite(layers)), os.path.join(tex_dir, f"{akey}.png"))
+        geometry[akey] = gid
+        textures[akey] = f"textures/entity/hologram/{akey}"
+        keys.append(akey)
+    index = "q.property('alienevo:alien')"
+    write_json(os.path.join(RP, "render_controllers", f"alienevo.{key}.render_controllers.json"), {
+        "format_version": "1.10.0",
+        "render_controllers": {f"controller.render.alienevo.{key}": {
+            "arrays": {"geometries": {"Array.geos": [f"Geometry.{k}" for k in keys]},
+                       "textures": {"Array.skins": [f"Texture.{k}" for k in keys]}},
+            "geometry": f"Array.geos[{index}]",
+            "materials": [{"*": "Material.default"}],
+            "textures": [f"Array.skins[{index}]"],
+            "ignore_lighting": True,
+        }},
+    })
+    write_json(os.path.join(RP, "entity", f"{key}.entity.json"), {
+        "format_version": "1.10.0",
+        "minecraft:client_entity": {"description": {
+            "identifier": f"alienevo:{key}",
+            "materials": {"default": "entity_alphablend"},
+            "textures": textures,
+            "geometry": geometry,
+            "scripts": {"scale": "0.32"},
+            "render_controllers": [f"controller.render.alienevo.{key}"],
+        }},
+    })
+    write_json(os.path.join(BP, "entities", f"{key}.json"), {
+        "format_version": "1.21.90",
+        "minecraft:entity": {
+            "description": {
+                "identifier": f"alienevo:{key}", "is_spawnable": False, "is_summonable": True,
+                "properties": {"alienevo:alien": {"type": "int", "range": [0, 63], "default": 0, "client_sync": True}},
+            },
+            "components": {
+                "minecraft:type_family": {"family": ["alienevo_hologram", "inanimate"]},
+                "minecraft:collision_box": {"width": 0.01, "height": 0.01},
+                "minecraft:physics": {"has_gravity": False, "has_collision": False},
+                "minecraft:pushable": {"is_pushable": False, "is_pushable_by_piston": False},
+                "minecraft:damage_sensor": {"triggers": [{"cause": "all", "deals_damage": "no"}]},
+                "minecraft:health": {"value": 1, "max": 1},
+                "minecraft:fire_immune": {},
+                "minecraft:knockback_resistance": {"value": 1.0},
+                "minecraft:conditional_bandwidth_optimization": {"default_values": {
+                    "max_optimized_distance": 0, "max_dropped_ticks": 0, "use_motion_prediction_hints": True}},
+            },
+        },
+    })
+    lang[f"entity.alienevo:{key}.name"] = "Omnitrix Hologram"
+    path = os.path.join(BP, "scripts", "holo_data.js")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("// Generated by tools/build_packs.py - geometry index of each alien in the\n")
+        f.write("// alienevo:omnitrix_hologram entity (property alienevo:alien).\n")
+        f.write("export const HOLO_KEYS = ")
+        json.dump(keys, f)
+        f.write(";\n")
+    return len(keys)
+
+
 def build_particles(vfs):
     """Java particle types (textures + lifetime/gravity/size) -> Bedrock
     particle effects with a flip-book of the original frames."""
@@ -1409,6 +1531,7 @@ def main():
     build_blocks_bp()
     build_mobs(vfs, lang)
     print("galvan trades:", build_galvan_scientist(vfs, lang))
+    print("holograms:", build_hologram(lang))
     build_recipes(jar)
     for line in structures.build(vfs):
         print("structure", line)

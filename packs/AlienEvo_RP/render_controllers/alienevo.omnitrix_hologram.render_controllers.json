@@ -1,0 +1,99 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.alienevo.omnitrix_hologram": {
+      "arrays": {
+        "geometries": {
+          "Array.geos": [
+            "Geometry.pyronite",
+            "Geometry.vulpimancer",
+            "Geometry.petrosapien",
+            "Geometry.kineceleran",
+            "Geometry.galvan",
+            "Geometry.tetramand",
+            "Geometry.lepidopterran",
+            "Geometry.piscciss_volann",
+            "Geometry.galvanic_mechamorph",
+            "Geometry.ectonurite",
+            "Geometry.arburian_pelarota",
+            "Geometry.methanosian",
+            "Geometry.sonorosian",
+            "Geometry.vaxasaurian",
+            "Geometry.aerophibian",
+            "Geometry.necrofriggian",
+            "Geometry.crystalsapien",
+            "Geometry.nucleonix",
+            "Geometry.dragonoid",
+            "Geometry.astrobot",
+            "Geometry.opticoid",
+            "Geometry.perkgourmand",
+            "Geometry.murkgourmand",
+            "Geometry.talpaedan",
+            "Geometry.orishan",
+            "Geometry.amperi",
+            "Geometry.nosedeenian",
+            "Geometry.loboan",
+            "Geometry.transylian",
+            "Geometry.florauna",
+            "Geometry.merlinisapien",
+            "Geometry.ickthyperambuloid",
+            "Geometry.splixson",
+            "Geometry.oryctini",
+            "Geometry.sonorosian_ov",
+            "Geometry.necrofriggian_ov"
+          ]
+        },
+        "textures": {
+          "Array.skins": [
+            "Texture.pyronite",
+            "Texture.vulpimancer",
+            "Texture.petrosapien",
+            "Texture.kineceleran",
+            "Texture.galvan",
+            "Texture.tetramand",
+            "Texture.lepidopterran",
+            "Texture.piscciss_volann",
+            "Texture.galvanic_mechamorph",
+            "Texture.ectonurite",
+            "Texture.arburian_pelarota",
+            "Texture.methanosian",
+            "Texture.sonorosian",
+            "Texture.vaxasaurian",
+            "Texture.aerophibian",
+            "Texture.necrofriggian",
+            "Texture.crystalsapien",
+            "Texture.nucleonix",
+            "Texture.dragonoid",
+            "Texture.astrobot",
+            "Texture.opticoid",
+            "Texture.perkgourmand",
+            "Texture.murkgourmand",
+            "Texture.talpaedan",
+            "Texture.orishan",
+            "Texture.amperi",
+            "Texture.nosedeenian",
+            "Texture.loboan",
+            "Texture.transylian",
+            "Texture.florauna",
+            "Texture.merlinisapien",
+            "Texture.ickthyperambuloid",
+            "Texture.splixson",
+            "Texture.oryctini",
+            "Texture.sonorosian_ov",
+            "Texture.necrofriggian_ov"
+          ]
+        }
+      },
+      "geometry": "Array.geos[q.property('alienevo:alien')]",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[q.property('alienevo:alien')]"
+      ],
+      "ignore_lighting": true
+    }
+  }
+}

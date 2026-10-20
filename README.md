@@ -31,7 +31,8 @@ model GeckoLib → attachable của Bedrock, Palladium/KubeJS → Script API (`@
 |---|---|
 | Tìm nguyên liệu | Tìm **Galvan Pod** (khối kim loại) trên mặt đất hoặc chôn dưới đá. Bấm vào pod để mở: rơi ra Galvan Scrap, Omni Shards/Crystals, Galvan Circuit. Hiếm hơn có **Prototype Omnitrix Core**, Code Tablet, đôi khi có luôn Omnitrix. |
 | Chế tạo Omnitrix | `Galvan Circuit` ở 4 góc, `Galvan Plate` ở 4 cạnh, `Prototype Omnitrix Core` ở giữa (công thức gốc). |
-| Chọn alien | Dùng (bấm giữ / chuột phải) Omnitrix → hiện vòng chọn alien. Bấm **ngồi + dùng** để biến ngay thành alien đã chọn lần trước. |
+| Chọn alien (vòng xoay như phim) | **Dùng** Omnitrix (bấm giữ / chuột phải) → đồng hồ mở ra, **hologram 3D xanh** của alien hiện lên trước mặt và người chơi đứng yên. **Quay góc nhìn sang trái/phải** (hoặc nút trái/phải) để xoay vòng chọn sang alien trước/sau. **Dùng lần nữa hoặc nhảy** để ấn lõi xuống và biến hình; **ngồi** để đóng. Tự đóng sau 20 giây không thao tác. **Ngồi + dùng** biến ngay thành alien đã chọn lần trước. |
+| Menu đầy đủ | **Ngồi hai lần liên tiếp** (khi cầm/đeo Omnitrix) mở menu dạng danh sách: chọn alien, Playlist, Alien Codex, nhập mã. |
 | Đeo Omnitrix | Để Omnitrix ở **tay trái (offhand)**: đồng hồ luôn hiện trên cổ tay. **Ngồi hai lần liên tiếp** để mở vòng chọn alien (khi là alien: mở menu kỹ năng). |
 | Dùng kỹ năng | Khi đang là alien: **dùng Omnitrix** để tung kỹ năng đang chọn; **ngồi + dùng** để mở menu kỹ năng (chọn kỹ năng, hoặc *Detransform*). |
 | Bay | Alien biết bay (Stinkfly, Ghostfreak, Jetray, Big Chill, Atomix, Dragonoid): **nhấn nhảy hai lần** khi đang ở trên không. Nhảy = lên, ngồi = xuống, đi tới = bay theo hướng nhìn. |
@@ -112,7 +113,8 @@ Bedrock không hỗ trợ một số thứ mà Palladium/GeckoLib làm được,
 - **Ditto** không tách thành bản sao thật; kỹ năng *Clone Swarm* mô phỏng các bản sao tấn công kẻ địch xung quanh.
 - **Tùy chỉnh màu** chỉ áp dụng cho đồng hồ; alien vẫn dùng màu mặc định của bản *Prototype*.
 - **Galvan Scientist** là một entity riêng (Bedrock không cho thêm nghề cho dân làng vanilla); bảng giao dịch giữ nguyên giá/số lượt/XP của bản gốc. Vài giao dịch dùng vật phẩm chỉ có ở addon khác không có trong gói (`aeo:completed_core_blueprint`, `untapped:broken_code_tablet`) bị bỏ.
-- **Nhập mã**: bản Java dùng 3 phím (đổi vị trí, tăng, giảm chữ số) và hiện mã trên actionbar; ở Bedrock dùng form 6 thanh trượt. Hiện mã bằng hologram trên mặt đồng hồ cũng không làm được vì form che màn hình.
+- **Nhập mã**: bản Java dùng 3 phím (đổi vị trí, tăng, giảm chữ số) và hiện mã trên actionbar; ở Bedrock dùng form 6 thanh trượt. 
+- **Hologram**: là một thực thể nhỏ bay trước mặt người chơi (Bedrock không vẽ được hình nổi gắn trên đồng hồ ở góc nhìn thứ nhất); dùng model alien tô xanh, không dùng 32 model hologram riêng của bản Java (chỉ có cho một phần alien).
 - **Giao diện**: các màn hình riêng của Palladium (power screen, thanh kỹ năng có ảnh nền riêng) không thể tạo lại trên Bedrock nếu không sửa JSON UI của game; dùng form của Script API (vòng chọn alien, menu kỹ năng, Codex, Workbench) với icon và màu như bản gốc.
 - `palladium:raw_titanium` không có trên Bedrock nên được thay bằng `iron_ingot` trong các công thức.
 

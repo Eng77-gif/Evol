@@ -5,6 +5,7 @@ import {
 } from "@minecraft/server";
 import { initAbilityTicks, setPlayerLookup } from "./abilities.js";
 import { revealCodes, useCodeTablet } from "./codes.js";
+import { initWorldDial } from "./dial.js";
 import { ALIEN_BY_KEY, ALIENS } from "./aliens.js";
 import { currentAlien, detransform, initOmnitrix, omnitrixTier, transform, useOmnitrix } from "./omnitrix.js";
 import { openPod } from "./pod.js";
@@ -227,6 +228,7 @@ setPlayerLookup((id) => {
 initProjectiles();
 initAbilityTicks();
 initOmnitrix();
+initWorldDial();
 
 world.afterEvents.playerSpawn.subscribe((ev) => {
     if (!ev.initialSpawn) return;

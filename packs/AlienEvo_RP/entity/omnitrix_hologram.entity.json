@@ -1,0 +1,93 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "alienevo:omnitrix_hologram",
+      "materials": {
+        "default": "entity_alphablend"
+      },
+      "textures": {
+        "pyronite": "textures/entity/hologram/pyronite",
+        "vulpimancer": "textures/entity/hologram/vulpimancer",
+        "petrosapien": "textures/entity/hologram/petrosapien",
+        "kineceleran": "textures/entity/hologram/kineceleran",
+        "galvan": "textures/entity/hologram/galvan",
+        "tetramand": "textures/entity/hologram/tetramand",
+        "lepidopterran": "textures/entity/hologram/lepidopterran",
+        "piscciss_volann": "textures/entity/hologram/piscciss_volann",
+        "galvanic_mechamorph": "textures/entity/hologram/galvanic_mechamorph",
+        "ectonurite": "textures/entity/hologram/ectonurite",
+        "arburian_pelarota": "textures/entity/hologram/arburian_pelarota",
+        "methanosian": "textures/entity/hologram/methanosian",
+        "sonorosian": "textures/entity/hologram/sonorosian",
+        "vaxasaurian": "textures/entity/hologram/vaxasaurian",
+        "aerophibian": "textures/entity/hologram/aerophibian",
+        "necrofriggian": "textures/entity/hologram/necrofriggian",
+        "crystalsapien": "textures/entity/hologram/crystalsapien",
+        "nucleonix": "textures/entity/hologram/nucleonix",
+        "dragonoid": "textures/entity/hologram/dragonoid",
+        "astrobot": "textures/entity/hologram/astrobot",
+        "opticoid": "textures/entity/hologram/opticoid",
+        "perkgourmand": "textures/entity/hologram/perkgourmand",
+        "murkgourmand": "textures/entity/hologram/murkgourmand",
+        "talpaedan": "textures/entity/hologram/talpaedan",
+        "orishan": "textures/entity/hologram/orishan",
+        "amperi": "textures/entity/hologram/amperi",
+        "nosedeenian": "textures/entity/hologram/nosedeenian",
+        "loboan": "textures/entity/hologram/loboan",
+        "transylian": "textures/entity/hologram/transylian",
+        "florauna": "textures/entity/hologram/florauna",
+        "merlinisapien": "textures/entity/hologram/merlinisapien",
+        "ickthyperambuloid": "textures/entity/hologram/ickthyperambuloid",
+        "splixson": "textures/entity/hologram/splixson",
+        "oryctini": "textures/entity/hologram/oryctini",
+        "sonorosian_ov": "textures/entity/hologram/sonorosian_ov",
+        "necrofriggian_ov": "textures/entity/hologram/necrofriggian_ov"
+      },
+      "geometry": {
+        "pyronite": "geometry.alienevo.holo_pyronite",
+        "vulpimancer": "geometry.alienevo.holo_vulpimancer",
+        "petrosapien": "geometry.alienevo.holo_petrosapien",
+        "kineceleran": "geometry.alienevo.holo_kineceleran",
+        "galvan": "geometry.alienevo.holo_galvan",
+        "tetramand": "geometry.alienevo.holo_tetramand",
+        "lepidopterran": "geometry.alienevo.holo_lepidopterran",
+        "piscciss_volann": "geometry.alienevo.holo_piscciss_volann",
+        "galvanic_mechamorph": "geometry.alienevo.holo_galvanic_mechamorph",
+        "ectonurite": "geometry.alienevo.holo_ectonurite",
+        "arburian_pelarota": "geometry.alienevo.holo_arburian_pelarota",
+        "methanosian": "geometry.alienevo.holo_methanosian",
+        "sonorosian": "geometry.alienevo.holo_sonorosian",
+        "vaxasaurian": "geometry.alienevo.holo_vaxasaurian",
+        "aerophibian": "geometry.alienevo.holo_aerophibian",
+        "necrofriggian": "geometry.alienevo.holo_necrofriggian",
+        "crystalsapien": "geometry.alienevo.holo_crystalsapien",
+        "nucleonix": "geometry.alienevo.holo_nucleonix",
+        "dragonoid": "geometry.alienevo.holo_dragonoid",
+        "astrobot": "geometry.alienevo.holo_astrobot",
+        "opticoid": "geometry.alienevo.holo_opticoid",
+        "perkgourmand": "geometry.alienevo.holo_perkgourmand",
+        "murkgourmand": "geometry.alienevo.holo_murkgourmand",
+        "talpaedan": "geometry.alienevo.holo_talpaedan",
+        "orishan": "geometry.alienevo.holo_orishan",
+        "amperi": "geometry.alienevo.holo_amperi",
+        "nosedeenian": "geometry.alienevo.holo_nosedeenian",
+        "loboan": "geometry.alienevo.holo_loboan",
+        "transylian": "geometry.alienevo.holo_transylian",
+        "florauna": "geometry.alienevo.holo_florauna",
+        "merlinisapien": "geometry.alienevo.holo_merlinisapien",
+        "ickthyperambuloid": "geometry.alienevo.holo_ickthyperambuloid",
+        "splixson": "geometry.alienevo.holo_splixson",
+        "oryctini": "geometry.alienevo.holo_oryctini",
+        "sonorosian_ov": "geometry.alienevo.holo_sonorosian_ov",
+        "necrofriggian_ov": "geometry.alienevo.holo_necrofriggian_ov"
+      },
+      "scripts": {
+        "scale": "0.32"
+      },
+      "render_controllers": [
+        "controller.render.alienevo.omnitrix_hologram"
+      ]
+    }
+  }
+}

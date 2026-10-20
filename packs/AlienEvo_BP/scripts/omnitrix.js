@@ -8,6 +8,7 @@ import { ABILITIES, clearToggles, toggles } from "./abilities.js";
 import { ALIEN_BY_ID, ALIENS, MAX_TIMER, OMNITRIX_TIERS, RECHARGE_TIMER } from "./aliens.js";
 import { ANIM_TRIGGERS } from "./anim_data.js";
 import { enterCode } from "./codes.js";
+import { closeWorldDial, confirmWorldDial, isDialOpen, openWorldDial } from "./dial.js";
 import {
     getPoints, isSkillUnlocked, setPoints, unlockSkill,
     availableAliens, getAbilityIndex, getAlien, getLevel, getPlaylist, getRecharge, getSelected, getTimer,
@@ -171,7 +172,7 @@ export function detransform(p, reason) {
 // ------------------------------------------------------------------ menus
 
 /** @param {Player} p @param {number} tier */
-function selectionList(p, tier) {
+export function selectionList(p, tier) {
     const all = availableAliens(p, tier);
     const playlist = getPlaylist(p).filter((id) => all.some((a) => a.id === id));
     return playlist.length ? playlist.map((id) => /** @type {Alien} */ (ALIEN_BY_ID.get(id))) : all;
@@ -409,6 +410,10 @@ async function abilityMenu(p, alien) {
 
 /** Omnitrix item used. @param {Player} p @param {number} tier */
 export function useOmnitrix(p, tier) {
+    if (isDialOpen(p)) {
+        confirmWorldDial(p);
+        return;
+    }
     const alien = currentAlien(p);
     if (alien) {
         if (p.isSneaking) abilityMenu(p, alien);
@@ -428,7 +433,7 @@ export function useOmnitrix(p, tier) {
             return;
         }
     }
-    openDial(p, tier);
+    openWorldDial(p, tier);
 }
 
 // ------------------------------------------------------------------ flight
@@ -602,6 +607,12 @@ export function initOmnitrix() {
     world.afterEvents.playerButtonInput.subscribe((ev) => {
         if (ev.button !== "Sneak" || ev.newButtonState !== "Pressed") return;
         const p = ev.player;
+        if (isDialOpen(p)) {
+            // Sneak closes the in-world dial (and must not count as a double tap).
+            closeWorldDial(p);
+            lastSneak.delete(p.id);
+            return;
+        }
         const now = system.currentTick;
         const last = lastSneak.get(p.id) ?? -100;
         lastSneak.set(p.id, now);

@@ -2,6 +2,7 @@ entity.alienevo:galvan_scientist.name=Galvan Scientist
 entity.alienevo:machine_husk.name=Machine Husk
 entity.alienevo:machine_husk_baby.name=Machine Drone
 entity.alienevo:machine_husk_staff.name=Machine Husk Priest
+entity.alienevo:omnitrix_hologram.name=Omnitrix Hologram
 item.alienevo:ancient_staff=Ancient Staff
 item.alienevo:code_tablet=Code Tablet (Master Control)
 item.alienevo:code_tablet_selfdestruct=Code Tablet (Self Destruct)
