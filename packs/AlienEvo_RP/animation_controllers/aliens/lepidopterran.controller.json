@@ -7,13 +7,13 @@
         "default": {
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             }
           ]
         },
@@ -23,10 +23,10 @@
           ],
           "transitions": [
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             }
           ],
           "blend_transition": 0.15
@@ -37,10 +37,10 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             }
           ],
           "blend_transition": 0.15
@@ -51,10 +51,10 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             }
           ],
           "blend_transition": 0.15
@@ -67,7 +67,7 @@
         "default": {
           "transitions": [
             {
-              "fly": "c.owning_entity->v.alienevo_fly"
+              "fly": "c.owning_entity->q.property('alienevo:fly')"
             }
           ]
         },
@@ -78,7 +78,7 @@
           "blend_transition": 0.2,
           "transitions": [
             {
-              "default": "!(c.owning_entity->v.alienevo_fly)"
+              "default": "!(c.owning_entity->q.property('alienevo:fly'))"
             }
           ]
         }

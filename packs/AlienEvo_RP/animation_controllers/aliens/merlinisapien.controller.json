@@ -7,7 +7,7 @@
         "default": {
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             }
           ]
         },

@@ -12,6 +12,7 @@ import {
     getAlien, getExtraDna, getLevel, getPoints, getXp, setAllSkills, setExtraDna, setLevel, setMasterControl,
     setPoints, setRecharge, setXp,
 } from "./state.js";
+import { STRUCTURES } from "./structure_data.js";
 import { sound } from "./util.js";
 import { openWorkbench, useCodeTablet } from "./workbench.js";
 
@@ -119,6 +120,26 @@ system.beforeEvents.startup.subscribe((ev) => {
         const players = playersFor(origin, targets);
         system.run(() => players.forEach((p) => setMasterControl(p, !!enabled)));
         return { status: CustomCommandStatus.Success, message: `Master Control: ${enabled}` };
+    });
+
+    reg.registerEnum("alienevo:structure", STRUCTURES);
+    reg.registerCommand({
+        name: "alienevo:structure",
+        description: "Place an AlienEvo structure at your position (normally generated in new chunks).",
+        permissionLevel: CommandPermissionLevel.GameDirectors,
+        mandatoryParameters: [{ name: "alienevo:structure", type: CustomCommandParamType.Enum }],
+    }, (origin, name) => {
+        const src = origin.sourceEntity;
+        if (!src) return { status: CustomCommandStatus.Failure, message: "Run this as a player." };
+        system.run(() => {
+            try {
+                const loc = src.location;
+                world.structureManager.place(`alienevo:${name}`, src.dimension, { x: Math.floor(loc.x), y: Math.floor(loc.y), z: Math.floor(loc.z) });
+            } catch (e) {
+                console.warn(`[AlienEvo] could not place ${name}: ${e}`);
+            }
+        });
+        return { status: CustomCommandStatus.Success, message: `Placing ${name}.` };
     });
 
     reg.registerCommand({

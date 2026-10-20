@@ -265,36 +265,47 @@ async function codex(p, tier) {
 }
 
 /**
- * Plays a GeckoLib trigger animation on the alien model (see tools/animations.py).
+ * Starts trigger animation `index` of the attachable worn/held by the player:
+ * the synced property alienevo:anim is read by its animation controller
+ * (tools/animations.py) and cleared again a moment later.
+ * @param {Player} p @param {number} index
+ */
+function signal(p, index) {
+    try {
+        p.setProperty("alienevo:anim", index);
+    } catch {
+        return;
+    }
+    system.runTimeout(() => {
+        try {
+            if (p.isValid && p.getProperty("alienevo:anim") === index) p.setProperty("alienevo:anim", 0);
+        } catch {
+            // Player left.
+        }
+    }, 6);
+}
+
+/**
+ * Plays a GeckoLib trigger animation on the alien model.
  * @param {Player} p @param {Alien} alien @param {string} trigger
  */
 export function playTrigger(p, alien, trigger) {
     /** @type {Record<string, number> | undefined} */
     const table = /** @type {any} */ (ANIM_TRIGGERS)[alien.key];
     const index = table?.[trigger];
-    if (!index) return;
-    try {
-        p.playAnimation(`animation.alienevo.signal.${index}`, { blendOutTime: 0, controller: "alienevo_signal" });
-    } catch {
-        // Player left.
-    }
+    if (index) signal(p, index);
 }
 
 /** Animation of the Omnitrix watch on the wrist. @param {Player} p @param {string} trigger */
 export function playWatch(p, trigger) {
     const index = /** @type {any} */ (ANIM_TRIGGERS).omnitrix?.[trigger];
-    if (!index) return;
-    try {
-        p.playAnimation(`animation.alienevo.signal.${index}`, { blendOutTime: 0, controller: "alienevo_signal" });
-    } catch {
-        // Player left.
-    }
+    if (index) signal(p, index);
 }
 
 /** Tells the alien model whether the player flies. @param {Player} p @param {boolean} on */
 export function setFlightAnim(p, on) {
     try {
-        p.playAnimation(on ? "animation.alienevo.flight.on" : "animation.alienevo.flight.off", { blendOutTime: 0, controller: "alienevo_flight" });
+        p.setProperty("alienevo:fly", on);
     } catch {
         // Player left.
     }

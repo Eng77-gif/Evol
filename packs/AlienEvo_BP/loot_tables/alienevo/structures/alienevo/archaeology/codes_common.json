@@ -1,0 +1,114 @@
+{
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "item",
+          "name": "alienevo:galvan_scrap",
+          "weight": 28
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_ingot",
+          "weight": 32
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_ingot",
+          "weight": 32
+        },
+        {
+          "type": "item",
+          "name": "minecraft:copper_ingot",
+          "weight": 32
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_white",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_light_gray",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_black",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_brown",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_red",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_orange",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_yellow",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_green",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_cyan",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_light_blue",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_blue",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_purple",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_magenta",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "alienevo:upgrade_crystal_pink",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "minecraft:raw_iron",
+          "weight": 12
+        },
+        {
+          "type": "item",
+          "name": "alienevo:ancient_staff",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

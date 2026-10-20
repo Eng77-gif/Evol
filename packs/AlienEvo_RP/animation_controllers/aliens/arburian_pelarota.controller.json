@@ -7,10 +7,10 @@
         "default": {
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             }
           ],
           "animations": [
@@ -23,7 +23,7 @@
           ],
           "transitions": [
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             }
           ],
           "blend_transition": 0.15
@@ -34,7 +34,7 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             }
           ],
           "blend_transition": 0.15

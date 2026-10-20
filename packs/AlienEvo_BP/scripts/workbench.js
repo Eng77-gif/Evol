@@ -78,9 +78,15 @@ export async function openWorkbench(p, block) {
     }
     const form = new ActionFormData().title("§2Omnitrix Workbench").body(body);
     if (next) form.button("§2Upgrade", "textures/ui/smithing_icon");
+    form.button("§5Customize colours", "textures/items/upgrade_crystal_magenta");
     form.button("§7Close");
     const res = await form.show(p);
-    if (res.canceled || res.selection !== 0 || !next || !cost) return;
+    if (res.canceled || res.selection === undefined) return;
+    if (res.selection === (next ? 1 : 0)) {
+        await customizeMenu(p);
+        return;
+    }
+    if (res.selection !== 0 || !next || !cost) return;
 
     if (!cost.every((req) => countOf(p, req) >= req.count)) {
         p.sendMessage("§cYou are missing materials for this upgrade.");
@@ -156,4 +162,77 @@ function consumeHeld(p, typeId) {
     } else {
         eq?.setEquipment(EquipmentSlot.Mainhand, undefined);
     }
+}
+
+// ------------------------------------------------------------ colour modules
+// Like the Java workbench: every part of the watch can be recoloured with an
+// Omni Crystal of that colour; the glow too.  Stored in synced player
+// properties (BP entities/player.json) read by the watch attachable.
+
+const SLOTS = ["Primary base", "Secondary base", "Tertiary base", "Buttons", "Core (side)", "Core (top)",
+    "Dial (inner)", "Dial (outer)", "Tubes"];
+const COLOURS = ["lime", "white", "light_gray", "gray", "black", "brown", "red", "orange", "yellow", "green",
+    "cyan", "light_blue", "blue", "purple", "magenta", "pink"];
+const COLOUR_NAMES = ["Lime", "White", "Light Gray", "Gray", "Black", "Brown", "Red", "Orange", "Yellow", "Green",
+    "Cyan", "Light Blue", "Blue", "Purple", "Magenta", "Pink"];
+
+/** @param {number} i */
+const crystalId = (i) => (COLOURS[i] === "lime" ? "alienevo:upgrade_crystal" : `alienevo:upgrade_crystal_${COLOURS[i]}`);
+
+/** @param {Player} p @param {string} prop */
+function getColour(p, prop) {
+    const v = p.getProperty(prop);
+    return typeof v === "number" ? v : -1;
+}
+
+/** @param {Player} p */
+async function customizeMenu(p) {
+    const form = new ActionFormData().title("§5Omnitrix Colours").body("§7Pick a part of the watch. Each new colour costs one Omni Crystal of that colour.");
+    SLOTS.forEach((name, i) => {
+        const c = getColour(p, `alienevo:col${i}`);
+        form.button(`${name}\n§8${c < 0 ? "Default" : COLOUR_NAMES[c]}`, c < 0 ? "textures/ui/icon_recipe_item" : `textures/items/${crystalId(c).split(":")[1]}`);
+    });
+    const g = getColour(p, "alienevo:glow");
+    form.button(`§aGlow\n§8${g < 0 ? "Default" : COLOUR_NAMES[g]}`, g < 0 ? "textures/ui/icon_recipe_item" : `textures/items/${crystalId(g).split(":")[1]}`);
+    form.button("§cReset all to default");
+    const res = await form.show(p);
+    if (res.canceled || res.selection === undefined) return;
+    if (res.selection === SLOTS.length + 1) {
+        system.run(() => {
+            for (let i = 0; i < SLOTS.length; i++) p.setProperty(`alienevo:col${i}`, -1);
+            p.setProperty("alienevo:glow", -1);
+            sound(p, "alienevo.color_module_insert");
+        });
+        return;
+    }
+    const prop = res.selection < SLOTS.length ? `alienevo:col${res.selection}` : "alienevo:glow";
+    const label = res.selection < SLOTS.length ? SLOTS[res.selection] : "Glow";
+    await colourMenu(p, prop, label);
+    await customizeMenu(p);
+}
+
+/** @param {Player} p @param {string} prop @param {string} label */
+async function colourMenu(p, prop, label) {
+    const form = new ActionFormData().title(`§5${label}`).body("§7Choose a colour (needs one matching Omni Crystal).");
+    form.button("§8Default", "textures/ui/icon_recipe_item");
+    COLOURS.forEach((_, i) => {
+        const have = countOf(p, { id: crystalId(i), count: 1 });
+        form.button(`${have > 0 ? "§0" : "§8"}${COLOUR_NAMES[i]} §8(${have})`, `textures/items/${crystalId(i).split(":")[1]}`);
+    });
+    const res = await form.show(p);
+    if (res.canceled || res.selection === undefined) return;
+    const colour = res.selection - 1;
+    system.run(() => {
+        if (colour >= 0) {
+            const req = { id: crystalId(colour), count: 1 };
+            if (countOf(p, req) < 1) {
+                p.sendMessage(`§cYou need a ${COLOUR_NAMES[colour]} Omni Crystal.`);
+                return;
+            }
+            take(p, req);
+        }
+        p.setProperty(prop, colour);
+        sound(p, "alienevo.color_module_insert");
+        sound(p, "alienevo.prototype_cycle_color", 0.6);
+    });
 }

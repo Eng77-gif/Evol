@@ -38,6 +38,8 @@ model GeckoLib → attachable của Bedrock, Palladium/KubeJS → Script API (`@
 | Leo tường | Wildmutt, Grey Matter: đi thẳng vào tường. |
 | Hẹn giờ | Mỗi lần biến hình kéo dài 5 phút (như bản gốc). Hết giờ thì Omnitrix sạc lại 2 phút 30 giây. **Master Control** bỏ giới hạn thời gian. |
 | Nâng cấp | Đặt **Omnitrix Workbench**, cầm Omnitrix rồi bấm vào bàn: Prototype → Phase 1 → Phase 2 → Evolved (10k). Mỗi cấp mở khóa thêm alien; cấp 10k mở Master Control. |
+| Tùy chỉnh màu đồng hồ | Cầm Omnitrix, bấm vào **Bàn chế tạo Omnitrix** → *Customize colours*. Đổi màu cho 9 bộ phận (đế chính, đế phụ, đế thứ ba, nút, lõi cạnh, lõi trên, vòng trong, vòng ngoài, ống) và màu phát sáng. Mỗi lần đổi tốn 1 Omni Crystal cùng màu; *Default* thì miễn phí. Màu được lưu theo người chơi và người chơi khác cũng thấy. |
+| Công trình | Khi tạo **thế giới mới**, các công trình của mod tự sinh: tàu vũ trụ rơi (có Lõi Omnitrix), Galvan Pod, mỏ Galvan, tu viện Galvan, tháp, giếng, hầm nổ và pháo đài ngầm của Machine, cùng công trình của các addon (sọ Loboan, xác tàu Talpaedan, tàu Xylene, tháp Galvan đổ nát, phòng thí nghiệm bỏ hoang, nhà tù ngoài hành tinh). Có thể đặt thử bằng `/alienevo:structure <tên>`. |
 | Code Tablet | *Master Control*: dùng để mở Master Control. *Self Destruct*: đếm ngược 10 giây rồi nổ lớn (phá khối). |
 | Cây kỹ năng | Mỗi alien có sẵn 2 kỹ năng đầu. Kỹ năng còn lại bị khoá; mở bằng **điểm kỹ năng** (mỗi lần alien lên cấp được 1 điểm) trong menu kỹ năng. |
 | Cấp độ alien | Hạ quái khi đang là alien để nhận XP (công thức gốc: 42,5% máu tối đa của quái). Mỗi cấp (tối đa 10) giảm 3% thời gian hồi chiêu. |
@@ -90,20 +92,22 @@ Xem chi tiết trong **Alien Codex** (nằm trong menu Omnitrix).
 /alienevo:mastercontrol <true|false>       bật/tắt Master Control
 /alienevo:recharge [người chơi]            sạc Omnitrix ngay
 /alienevo:unlockskills <true|false>        mở toàn bộ kỹ năng của mọi alien
+/alienevo:structure <tên>                  đặt một công trình tại chỗ đứng
 ```
 
 ## Khác biệt so với bản Java
 
 Bedrock không hỗ trợ một số thứ mà Palladium/GeckoLib làm được, nên những phần sau đã được đơn giản hóa:
 
-- **Không có cấu trúc (structure)**: file `.nbt` của Java không đọc được trên Bedrock. Thay vào đó, Galvan Pod được rải sẵn khi sinh thế giới
-  (cần **thế giới mới** hoặc vùng chưa khám phá). Pod cho cùng loại loot với bản gốc.
+- **Công trình**: 14 file `.nbt` của Java được chuyển sang `.mcstructure` (bảng ánh xạ khối Java→Bedrock của minecraft-data,
+  bản Bedrock 1.26.30). Các công trình ghép bằng jigsaw (tàu rơi, pháo đài Machine) được ghép sẵn thành một khối.
+  Dân làng Galvan và các entity khác trong công trình không được chuyển; chữ trên biển và hoa văn cờ bị mất.
 - **Không có phím tắt riêng**: các phím của Palladium được thay bằng thao tác dùng Omnitrix, menu, và nhấn nhảy hai lần.
 - **Animation**: tay chân alien vẫn cử động theo động tác của người chơi; animation GeckoLib (đuôi, cánh, kỹ năng) được thêm lên trên.
   Một số animation của bản Java gắn với trạng thái riêng của Palladium (đổi dạng, tư thế đứng yên đặc biệt) chưa được dùng.
   Kích thước alien được mô phỏng bằng cách co giãn khung xương người chơi; hitbox thì không đổi.
 - **Ditto** không tách thành bản sao thật; kỹ năng *Clone Swarm* mô phỏng các bản sao tấn công kẻ địch xung quanh.
-- **Không có tùy chỉnh màu**: không có Color Module và palette màu. Alien dùng màu mặc định của bản *Prototype*.
+- **Tùy chỉnh màu** chỉ áp dụng cho đồng hồ; alien vẫn dùng màu mặc định của bản *Prototype*.
 - Mob Machine/Galvan villager, villager profession và trade của bản gốc không được chuyển.
 - `palladium:raw_titanium` không có trên Bedrock nên được thay bằng `iron_ingot` trong các công thức.
 

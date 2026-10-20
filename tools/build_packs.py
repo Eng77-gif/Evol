@@ -24,9 +24,10 @@ import zipfile
 from PIL import Image
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from animations import build_alien_animations, signal_animations
+from animations import build_alien_animations
 from icons import render_icon
 from layers import VFS, resolve
+import structures
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RP = os.path.join(ROOT, "packs", "AlienEvo_RP")
@@ -450,11 +451,12 @@ def build_omnitrix(vfs, triggers_out):
                 part = {"geo": layer["geo"], "base": [], "glow": []}
                 parts.append(part)
             img = layer["image"]
-            if layer["glow"]:
-                img = tint(img, GLOW[0])
             (part["glow"] if layer["glow"] else part["base"]).append(img)
         textures, geometry, rcs, renames = {}, {}, [], {}
         cond = "!c.is_first_person && !c.owning_entity->v.alienevo_is_alien"
+        slot_dir = os.path.join(tex_dir, "slots")
+        if variant == "prototype":
+            write_watch_slot_textures(vfs, slot_dir)
         for i, part in enumerate(parts):
             pid = f"omnitrix_{variant}_{i}"
             gid = f"geometry.alienevo.{pid}"
@@ -469,7 +471,34 @@ def build_omnitrix(vfs, triggers_out):
                 rc = f"controller.render.alienevo.{pid}{suffix}"
                 controllers[rc] = {"geometry": f"Geometry.part{i}", "materials": [{"*": f"Material.{mat}"}],
                                    "textures": [f"Texture.part{i}{suffix}"]}
+                if kind == "glow":
+                    # Glow colour module: one recoloured texture per Omni Crystal colour.
+                    names = [f"Texture.part{i}{suffix}"]
+                    for ci, colour in enumerate(CRYSTAL_ORDER):
+                        save_png(recolor(composite(part[kind]), DYE_RGB[colour]), os.path.join(tex_dir, f"{pid}{suffix}_{ci}.png"))
+                        textures[f"part{i}{suffix}_{ci}"] = f"textures/entity/omnitrix/{pid}{suffix}_{ci}"
+                        names.append(f"Texture.part{i}{suffix}_{ci}")
+                    controllers[rc]["arrays"] = {"textures": {"Array.glow": names}}
+                    controllers[rc]["textures"] = ["Array.glow[c.owning_entity->q.property('alienevo:glow') + 1]"]
                 rcs.append({rc: cond})
+            if i == 0:
+                # Colour modules: the watch drawn again, slightly inflated, with
+                # the overlay of each slot picked from the player's properties.
+                ogid = f"{gid}_overlay"
+                write_json(os.path.join(geo_dir, f"{pid}_overlay.geo.json"),
+                           inflate_geo(convert_geo(vfs.json(part["geo"]), ogid), 0.02))
+                geometry["overlay"] = ogid
+                textures["blank"] = "textures/entity/omnitrix/slots/blank"
+                for si, slot in enumerate(WATCH_SLOTS):
+                    names = ["Texture.blank"]
+                    for ci in range(len(CRYSTAL_ORDER)):
+                        textures[f"{slot}_{ci}"] = f"textures/entity/omnitrix/slots/{slot}_{ci}"
+                        names.append(f"Texture.{slot}_{ci}")
+                    rc = f"controller.render.alienevo.omnitrix_{variant}_{slot}"
+                    controllers[rc] = {"geometry": "Geometry.overlay", "materials": [{"*": "Material.default"}],
+                                       "arrays": {"textures": {"Array.colors": names}},
+                                       "textures": [f"Array.colors[c.owning_entity->q.property('alienevo:col{si}') + 1]"]}
+                    rcs.append({rc: f"{cond} && c.owning_entity->q.property('alienevo:col{si}') >= 0"})
         animations, animate, _ = build_alien_animations(vfs, f"omnitrix_{variant}", layers, anim_dir, ctrl_dir, renames, fixed)
         items = [i[0] for i in OMNITRIX_ITEMS if (i[3] == 3) == (variant == "10k")]
         for item in items:
@@ -486,6 +515,42 @@ def build_omnitrix(vfs, triggers_out):
             write_json(os.path.join(att_dir, f"{item}.json"), {"format_version": "1.10.0", "minecraft:attachable": {"description": desc}})
     write_json(os.path.join(RP, "render_controllers", "alienevo.omnitrix.render_controllers.json"),
                {"format_version": "1.10.0", "render_controllers": controllers})
+
+
+def write_watch_slot_textures(vfs, out_dir):
+    reset_dir(out_dir)
+    blank = Image.new("RGBA", (64, 64))
+    save_png(blank, os.path.join(out_dir, "blank.png"))
+    src = AE + "/textures/models/prototype_omnitrix"
+    for slot in WATCH_SLOTS:
+        for ci in range(len(CRYSTAL_ORDER)):
+            path = f"{src}/{slot}/{slot}_{ci}.png"
+            img = vfs.image(path) if vfs.exists(path) else blank
+            save_png(img, os.path.join(out_dir, f"{slot}_{ci}.png"))
+
+
+def recolor(img, hex_color):
+    """Re-hue a green glow texture to another colour, keeping its shading."""
+    r, g, b = int(hex_color[0:2], 16), int(hex_color[2:4], 16), int(hex_color[4:6], 16)
+    out = img.copy()
+    px = out.load()
+    ref = 0.299 * 0xb3 + 0.587 * 0xff + 0.114 * 0x40
+    for y in range(out.size[1]):
+        for x in range(out.size[0]):
+            pr, pg, pb, pa = px[x, y]
+            if pa == 0:
+                continue
+            k = (0.299 * pr + 0.587 * pg + 0.114 * pb) / ref
+            px[x, y] = (min(255, int(r * k)), min(255, int(g * k)), min(255, int(b * k)), pa)
+    return out
+
+
+def inflate_geo(geo, amount):
+    for g in geo["minecraft:geometry"]:
+        for bone in g.get("bones", []):
+            for cube in bone.get("cubes", []):
+                cube["inflate"] = round(cube.get("inflate", 0) + amount, 4)
+    return geo
 
 
 def build_player_scale_animation():
@@ -534,10 +599,38 @@ def write_anim_data(triggers):
     path = os.path.join(BP, "scripts", "anim_data.js")
     with open(path, "w", encoding="utf-8") as f:
         f.write("// Generated by tools/build_packs.py - trigger animation index per alien.\n")
-        f.write("// Played with Player.playAnimation(`animation.alienevo.signal.${index}`).\n")
+        f.write("// Set as the synced player property alienevo:anim while the animation plays.\n")
         f.write("export const ANIM_TRIGGERS = ")
         json.dump(triggers, f, indent=4, sort_keys=True)
         f.write(";\n")
+
+
+WATCH_SLOTS = ["base_primary", "base_secondary", "base_tertiary", "buttons", "core_side", "core_top",
+               "dial_inner", "dial_outer", "tubes"]
+# Omni Crystal colour -> overlay index of the Java watch textures (workbench_items.js).
+CRYSTAL_ORDER = ["lime", "white", "light_gray", "gray", "black", "brown", "red", "orange", "yellow", "green",
+                 "cyan", "light_blue", "blue", "purple", "magenta", "pink"]
+DYE_RGB = {
+    "lime": "b3ff40", "white": "f9fffe", "light_gray": "c6c6c0", "gray": "6b7377", "black": "3a3a40",
+    "brown": "a36a3e", "red": "ff4a3d", "orange": "ff9a2e", "yellow": "ffe04a", "green": "7fae2a",
+    "cyan": "29d4d4", "light_blue": "5fd0ff", "blue": "5a64ff", "purple": "b25cff", "magenta": "ff6be8", "pink": "ffa6c4",
+}
+
+
+def build_player_behavior():
+    """Vanilla player (Bedrock 26.50) + synced properties for the alien model
+    and the Omnitrix colours."""
+    with open(os.path.join(ROOT, "tools", "vanilla_player.bp.json"), encoding="utf-8") as f:
+        data = json.load(f)
+    props = {
+        "alienevo:anim": {"type": "int", "range": [0, 63], "default": 0, "client_sync": True},
+        "alienevo:fly": {"type": "bool", "default": False, "client_sync": True},
+        "alienevo:glow": {"type": "int", "range": [-1, 15], "default": -1, "client_sync": True},
+    }
+    for i in range(len(WATCH_SLOTS)):
+        props[f"alienevo:col{i}"] = {"type": "int", "range": [-1, 15], "default": -1, "client_sync": True}
+    data["minecraft:entity"]["description"]["properties"] = props
+    write_json(os.path.join(BP, "entities", "player.json"), data)
 
 
 def build_player_entity(scale_expr):
@@ -547,10 +640,7 @@ def build_player_entity(scale_expr):
         data = json.load(f)
     desc = data["minecraft:client_entity"]["description"]
     alien = "q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')"
-    desc["scripts"]["initialize"].append("v.alienevo_anim = 0.0;")
-    desc["scripts"]["initialize"].append("v.alienevo_fly = 0.0;")
-    for var in ("alienevo_anim", "alienevo_fly", "alienevo_is_alien"):
-        desc["scripts"].setdefault("variables", {})[f"variable.{var}"] = "public"
+    desc["scripts"].setdefault("variables", {})["variable.alienevo_is_alien"] = "public"
     desc["scripts"]["pre_animation"].append(f"v.alienevo_is_alien = {alien};")
     desc["scripts"]["pre_animation"].append(f"v.alienevo_scale = {scale_expr};")
     desc["animations"]["alienevo_scale"] = "animation.alienevo.player.scale"
@@ -962,10 +1052,12 @@ def main():
     build_lang(jar, lang)
     triggers = build_aliens(vfs, lang)
     build_omnitrix(vfs, triggers)
-    signal_animations(max([len(t) for t in triggers.values()] + [1]),
-                      os.path.join(RP, "animations", "alienevo.signals.animation.json"))
+    stale = os.path.join(RP, "animations", "alienevo.signals.animation.json")
+    if os.path.exists(stale):
+        os.remove(stale)
     write_anim_data(triggers)
     build_player_entity(build_player_scale_animation())
+    build_player_behavior()
     build_projectiles(jar)
     build_items_rp(jar, lang, item_textures)
     build_blocks_rp(jar, terrain)
@@ -980,6 +1072,8 @@ def main():
     build_items_bp()
     build_blocks_bp()
     build_recipes(jar)
+    for line in structures.build(vfs):
+        print("structure", line)
     write_lang(lang)
     package()
 

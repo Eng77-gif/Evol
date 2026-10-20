@@ -226,6 +226,43 @@ for s in set(re.findall(r'"textures/([a-z0-9_/]+)"', script_text)):
 for s in set(re.findall(r"`textures/ui/aliens/\$\{", script_text)):
     pass
 
+# ------------------------------------------------------------- features
+features = {}
+for path in glob.glob(os.path.join(BP, "features", "*.json")):
+    d = load(path) or {}
+    for kind, body in d.items():
+        if kind == "format_version":
+            continue
+        features[body["description"]["identifier"]] = body
+        if kind == "minecraft:structure_template_feature":
+            ns, name = body["structure_name"].split(":")
+            if not os.path.exists(os.path.join(BP, "structures", ns, name + ".mcstructure")):
+                err(f"{path}: structure {body['structure_name']} missing")
+        if kind == "minecraft:single_block_feature" and body["places_block"].startswith("alienevo:"):
+            if not os.path.exists(os.path.join(BP, "blocks", body["places_block"].split(":")[1] + ".json")):
+                err(f"{path}: block {body['places_block']} missing")
+for path in glob.glob(os.path.join(BP, "feature_rules", "*.json")):
+    d = load(path) or {}
+    rule = d.get("minecraft:feature_rules", {})
+    if rule.get("description", {}).get("places_feature") not in features:
+        err(f"{path}: feature {rule.get('description', {}).get('places_feature')} missing")
+for path in glob.glob(os.path.join(BP, "structures", "**", "*.mcstructure"), recursive=True):
+    sys.path.insert(0, os.path.join(ROOT, "tools"))
+    from nbt import Reader
+    with open(path, "rb") as f:
+        st = Reader(f.read(), little=True).root()
+    size = st["size"]
+    idx = st["structure"]["block_indices"]
+    pal = st["structure"]["palette"]["default"]["block_palette"]
+    if len(idx) != 2 or any(len(layer) != size[0] * size[1] * size[2] for layer in idx):
+        err(f"{path}: block_indices do not match size {size}")
+    if any(i >= len(pal) for layer in idx for i in layer):
+        err(f"{path}: palette index out of range")
+    for key, pd in st["structure"]["palette"]["default"]["block_position_data"].items():
+        lt = pd.get("block_entity_data", {}).get("LootTable")
+        if lt and lt.startswith("loot_tables/alienevo/") and not os.path.exists(os.path.join(BP, lt)):
+            err(f"{path}: loot table {lt} missing")
+
 # ------------------------------------------------------------- manifests
 for pack in (BP, RP):
     m = load(os.path.join(pack, "manifest.json")) or {}

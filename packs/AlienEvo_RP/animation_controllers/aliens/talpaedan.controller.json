@@ -7,43 +7,43 @@
         "default": {
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ]
         },
@@ -53,40 +53,40 @@
           ],
           "transitions": [
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ],
           "blend_transition": 0.15
@@ -97,40 +97,40 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ],
           "blend_transition": 0.15
@@ -141,40 +141,40 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ],
           "blend_transition": 0.15
@@ -185,40 +185,40 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ],
           "blend_transition": 0.15
@@ -229,40 +229,40 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ],
           "blend_transition": 0.15
@@ -273,40 +273,40 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ],
           "blend_transition": 0.15
@@ -317,40 +317,40 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ],
           "blend_transition": 0.15
@@ -361,40 +361,40 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ],
           "blend_transition": 0.15
@@ -405,40 +405,40 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ],
           "blend_transition": 0.15
@@ -449,40 +449,40 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ],
           "blend_transition": 0.15
@@ -493,40 +493,40 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ],
           "blend_transition": 0.15
@@ -537,40 +537,40 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t13": "c.owning_entity->v.alienevo_anim == 13"
+              "t13": "c.owning_entity->q.property('alienevo:anim') == 13"
             }
           ],
           "blend_transition": 0.15
@@ -581,40 +581,40 @@
           ],
           "transitions": [
             {
-              "t1": "c.owning_entity->v.alienevo_anim == 1"
+              "t1": "c.owning_entity->q.property('alienevo:anim') == 1"
             },
             {
-              "t2": "c.owning_entity->v.alienevo_anim == 2"
+              "t2": "c.owning_entity->q.property('alienevo:anim') == 2"
             },
             {
-              "t3": "c.owning_entity->v.alienevo_anim == 3"
+              "t3": "c.owning_entity->q.property('alienevo:anim') == 3"
             },
             {
-              "t4": "c.owning_entity->v.alienevo_anim == 4"
+              "t4": "c.owning_entity->q.property('alienevo:anim') == 4"
             },
             {
-              "t5": "c.owning_entity->v.alienevo_anim == 5"
+              "t5": "c.owning_entity->q.property('alienevo:anim') == 5"
             },
             {
-              "t6": "c.owning_entity->v.alienevo_anim == 6"
+              "t6": "c.owning_entity->q.property('alienevo:anim') == 6"
             },
             {
-              "t7": "c.owning_entity->v.alienevo_anim == 7"
+              "t7": "c.owning_entity->q.property('alienevo:anim') == 7"
             },
             {
-              "t8": "c.owning_entity->v.alienevo_anim == 8"
+              "t8": "c.owning_entity->q.property('alienevo:anim') == 8"
             },
             {
-              "t9": "c.owning_entity->v.alienevo_anim == 9"
+              "t9": "c.owning_entity->q.property('alienevo:anim') == 9"
             },
             {
-              "t10": "c.owning_entity->v.alienevo_anim == 10"
+              "t10": "c.owning_entity->q.property('alienevo:anim') == 10"
             },
             {
-              "t11": "c.owning_entity->v.alienevo_anim == 11"
+              "t11": "c.owning_entity->q.property('alienevo:anim') == 11"
             },
             {
-              "t12": "c.owning_entity->v.alienevo_anim == 12"
+              "t12": "c.owning_entity->q.property('alienevo:anim') == 12"
             }
           ],
           "blend_transition": 0.15

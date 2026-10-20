@@ -20,7 +20,336 @@
         }
       ],
       "textures": [
-        "Texture.part0_glow"
+        "Array.glow[c.owning_entity->q.property('alienevo:glow') + 1]"
+      ],
+      "arrays": {
+        "textures": {
+          "Array.glow": [
+            "Texture.part0_glow",
+            "Texture.part0_glow_0",
+            "Texture.part0_glow_1",
+            "Texture.part0_glow_2",
+            "Texture.part0_glow_3",
+            "Texture.part0_glow_4",
+            "Texture.part0_glow_5",
+            "Texture.part0_glow_6",
+            "Texture.part0_glow_7",
+            "Texture.part0_glow_8",
+            "Texture.part0_glow_9",
+            "Texture.part0_glow_10",
+            "Texture.part0_glow_11",
+            "Texture.part0_glow_12",
+            "Texture.part0_glow_13",
+            "Texture.part0_glow_14",
+            "Texture.part0_glow_15"
+          ]
+        }
+      }
+    },
+    "controller.render.alienevo.omnitrix_prototype_base_primary": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.base_primary_0",
+            "Texture.base_primary_1",
+            "Texture.base_primary_2",
+            "Texture.base_primary_3",
+            "Texture.base_primary_4",
+            "Texture.base_primary_5",
+            "Texture.base_primary_6",
+            "Texture.base_primary_7",
+            "Texture.base_primary_8",
+            "Texture.base_primary_9",
+            "Texture.base_primary_10",
+            "Texture.base_primary_11",
+            "Texture.base_primary_12",
+            "Texture.base_primary_13",
+            "Texture.base_primary_14",
+            "Texture.base_primary_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col0') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_prototype_base_secondary": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.base_secondary_0",
+            "Texture.base_secondary_1",
+            "Texture.base_secondary_2",
+            "Texture.base_secondary_3",
+            "Texture.base_secondary_4",
+            "Texture.base_secondary_5",
+            "Texture.base_secondary_6",
+            "Texture.base_secondary_7",
+            "Texture.base_secondary_8",
+            "Texture.base_secondary_9",
+            "Texture.base_secondary_10",
+            "Texture.base_secondary_11",
+            "Texture.base_secondary_12",
+            "Texture.base_secondary_13",
+            "Texture.base_secondary_14",
+            "Texture.base_secondary_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col1') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_prototype_base_tertiary": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.base_tertiary_0",
+            "Texture.base_tertiary_1",
+            "Texture.base_tertiary_2",
+            "Texture.base_tertiary_3",
+            "Texture.base_tertiary_4",
+            "Texture.base_tertiary_5",
+            "Texture.base_tertiary_6",
+            "Texture.base_tertiary_7",
+            "Texture.base_tertiary_8",
+            "Texture.base_tertiary_9",
+            "Texture.base_tertiary_10",
+            "Texture.base_tertiary_11",
+            "Texture.base_tertiary_12",
+            "Texture.base_tertiary_13",
+            "Texture.base_tertiary_14",
+            "Texture.base_tertiary_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col2') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_prototype_buttons": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.buttons_0",
+            "Texture.buttons_1",
+            "Texture.buttons_2",
+            "Texture.buttons_3",
+            "Texture.buttons_4",
+            "Texture.buttons_5",
+            "Texture.buttons_6",
+            "Texture.buttons_7",
+            "Texture.buttons_8",
+            "Texture.buttons_9",
+            "Texture.buttons_10",
+            "Texture.buttons_11",
+            "Texture.buttons_12",
+            "Texture.buttons_13",
+            "Texture.buttons_14",
+            "Texture.buttons_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col3') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_prototype_core_side": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.core_side_0",
+            "Texture.core_side_1",
+            "Texture.core_side_2",
+            "Texture.core_side_3",
+            "Texture.core_side_4",
+            "Texture.core_side_5",
+            "Texture.core_side_6",
+            "Texture.core_side_7",
+            "Texture.core_side_8",
+            "Texture.core_side_9",
+            "Texture.core_side_10",
+            "Texture.core_side_11",
+            "Texture.core_side_12",
+            "Texture.core_side_13",
+            "Texture.core_side_14",
+            "Texture.core_side_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col4') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_prototype_core_top": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.core_top_0",
+            "Texture.core_top_1",
+            "Texture.core_top_2",
+            "Texture.core_top_3",
+            "Texture.core_top_4",
+            "Texture.core_top_5",
+            "Texture.core_top_6",
+            "Texture.core_top_7",
+            "Texture.core_top_8",
+            "Texture.core_top_9",
+            "Texture.core_top_10",
+            "Texture.core_top_11",
+            "Texture.core_top_12",
+            "Texture.core_top_13",
+            "Texture.core_top_14",
+            "Texture.core_top_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col5') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_prototype_dial_inner": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.dial_inner_0",
+            "Texture.dial_inner_1",
+            "Texture.dial_inner_2",
+            "Texture.dial_inner_3",
+            "Texture.dial_inner_4",
+            "Texture.dial_inner_5",
+            "Texture.dial_inner_6",
+            "Texture.dial_inner_7",
+            "Texture.dial_inner_8",
+            "Texture.dial_inner_9",
+            "Texture.dial_inner_10",
+            "Texture.dial_inner_11",
+            "Texture.dial_inner_12",
+            "Texture.dial_inner_13",
+            "Texture.dial_inner_14",
+            "Texture.dial_inner_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col6') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_prototype_dial_outer": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.dial_outer_0",
+            "Texture.dial_outer_1",
+            "Texture.dial_outer_2",
+            "Texture.dial_outer_3",
+            "Texture.dial_outer_4",
+            "Texture.dial_outer_5",
+            "Texture.dial_outer_6",
+            "Texture.dial_outer_7",
+            "Texture.dial_outer_8",
+            "Texture.dial_outer_9",
+            "Texture.dial_outer_10",
+            "Texture.dial_outer_11",
+            "Texture.dial_outer_12",
+            "Texture.dial_outer_13",
+            "Texture.dial_outer_14",
+            "Texture.dial_outer_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col7') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_prototype_tubes": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.tubes_0",
+            "Texture.tubes_1",
+            "Texture.tubes_2",
+            "Texture.tubes_3",
+            "Texture.tubes_4",
+            "Texture.tubes_5",
+            "Texture.tubes_6",
+            "Texture.tubes_7",
+            "Texture.tubes_8",
+            "Texture.tubes_9",
+            "Texture.tubes_10",
+            "Texture.tubes_11",
+            "Texture.tubes_12",
+            "Texture.tubes_13",
+            "Texture.tubes_14",
+            "Texture.tubes_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col8') + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_prototype_1": {
@@ -53,7 +382,336 @@
         }
       ],
       "textures": [
-        "Texture.part0_glow"
+        "Array.glow[c.owning_entity->q.property('alienevo:glow') + 1]"
+      ],
+      "arrays": {
+        "textures": {
+          "Array.glow": [
+            "Texture.part0_glow",
+            "Texture.part0_glow_0",
+            "Texture.part0_glow_1",
+            "Texture.part0_glow_2",
+            "Texture.part0_glow_3",
+            "Texture.part0_glow_4",
+            "Texture.part0_glow_5",
+            "Texture.part0_glow_6",
+            "Texture.part0_glow_7",
+            "Texture.part0_glow_8",
+            "Texture.part0_glow_9",
+            "Texture.part0_glow_10",
+            "Texture.part0_glow_11",
+            "Texture.part0_glow_12",
+            "Texture.part0_glow_13",
+            "Texture.part0_glow_14",
+            "Texture.part0_glow_15"
+          ]
+        }
+      }
+    },
+    "controller.render.alienevo.omnitrix_10k_base_primary": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.base_primary_0",
+            "Texture.base_primary_1",
+            "Texture.base_primary_2",
+            "Texture.base_primary_3",
+            "Texture.base_primary_4",
+            "Texture.base_primary_5",
+            "Texture.base_primary_6",
+            "Texture.base_primary_7",
+            "Texture.base_primary_8",
+            "Texture.base_primary_9",
+            "Texture.base_primary_10",
+            "Texture.base_primary_11",
+            "Texture.base_primary_12",
+            "Texture.base_primary_13",
+            "Texture.base_primary_14",
+            "Texture.base_primary_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col0') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_10k_base_secondary": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.base_secondary_0",
+            "Texture.base_secondary_1",
+            "Texture.base_secondary_2",
+            "Texture.base_secondary_3",
+            "Texture.base_secondary_4",
+            "Texture.base_secondary_5",
+            "Texture.base_secondary_6",
+            "Texture.base_secondary_7",
+            "Texture.base_secondary_8",
+            "Texture.base_secondary_9",
+            "Texture.base_secondary_10",
+            "Texture.base_secondary_11",
+            "Texture.base_secondary_12",
+            "Texture.base_secondary_13",
+            "Texture.base_secondary_14",
+            "Texture.base_secondary_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col1') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_10k_base_tertiary": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.base_tertiary_0",
+            "Texture.base_tertiary_1",
+            "Texture.base_tertiary_2",
+            "Texture.base_tertiary_3",
+            "Texture.base_tertiary_4",
+            "Texture.base_tertiary_5",
+            "Texture.base_tertiary_6",
+            "Texture.base_tertiary_7",
+            "Texture.base_tertiary_8",
+            "Texture.base_tertiary_9",
+            "Texture.base_tertiary_10",
+            "Texture.base_tertiary_11",
+            "Texture.base_tertiary_12",
+            "Texture.base_tertiary_13",
+            "Texture.base_tertiary_14",
+            "Texture.base_tertiary_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col2') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_10k_buttons": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.buttons_0",
+            "Texture.buttons_1",
+            "Texture.buttons_2",
+            "Texture.buttons_3",
+            "Texture.buttons_4",
+            "Texture.buttons_5",
+            "Texture.buttons_6",
+            "Texture.buttons_7",
+            "Texture.buttons_8",
+            "Texture.buttons_9",
+            "Texture.buttons_10",
+            "Texture.buttons_11",
+            "Texture.buttons_12",
+            "Texture.buttons_13",
+            "Texture.buttons_14",
+            "Texture.buttons_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col3') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_10k_core_side": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.core_side_0",
+            "Texture.core_side_1",
+            "Texture.core_side_2",
+            "Texture.core_side_3",
+            "Texture.core_side_4",
+            "Texture.core_side_5",
+            "Texture.core_side_6",
+            "Texture.core_side_7",
+            "Texture.core_side_8",
+            "Texture.core_side_9",
+            "Texture.core_side_10",
+            "Texture.core_side_11",
+            "Texture.core_side_12",
+            "Texture.core_side_13",
+            "Texture.core_side_14",
+            "Texture.core_side_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col4') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_10k_core_top": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.core_top_0",
+            "Texture.core_top_1",
+            "Texture.core_top_2",
+            "Texture.core_top_3",
+            "Texture.core_top_4",
+            "Texture.core_top_5",
+            "Texture.core_top_6",
+            "Texture.core_top_7",
+            "Texture.core_top_8",
+            "Texture.core_top_9",
+            "Texture.core_top_10",
+            "Texture.core_top_11",
+            "Texture.core_top_12",
+            "Texture.core_top_13",
+            "Texture.core_top_14",
+            "Texture.core_top_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col5') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_10k_dial_inner": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.dial_inner_0",
+            "Texture.dial_inner_1",
+            "Texture.dial_inner_2",
+            "Texture.dial_inner_3",
+            "Texture.dial_inner_4",
+            "Texture.dial_inner_5",
+            "Texture.dial_inner_6",
+            "Texture.dial_inner_7",
+            "Texture.dial_inner_8",
+            "Texture.dial_inner_9",
+            "Texture.dial_inner_10",
+            "Texture.dial_inner_11",
+            "Texture.dial_inner_12",
+            "Texture.dial_inner_13",
+            "Texture.dial_inner_14",
+            "Texture.dial_inner_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col6') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_10k_dial_outer": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.dial_outer_0",
+            "Texture.dial_outer_1",
+            "Texture.dial_outer_2",
+            "Texture.dial_outer_3",
+            "Texture.dial_outer_4",
+            "Texture.dial_outer_5",
+            "Texture.dial_outer_6",
+            "Texture.dial_outer_7",
+            "Texture.dial_outer_8",
+            "Texture.dial_outer_9",
+            "Texture.dial_outer_10",
+            "Texture.dial_outer_11",
+            "Texture.dial_outer_12",
+            "Texture.dial_outer_13",
+            "Texture.dial_outer_14",
+            "Texture.dial_outer_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col7') + 1]"
+      ]
+    },
+    "controller.render.alienevo.omnitrix_10k_tubes": {
+      "geometry": "Geometry.overlay",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.blank",
+            "Texture.tubes_0",
+            "Texture.tubes_1",
+            "Texture.tubes_2",
+            "Texture.tubes_3",
+            "Texture.tubes_4",
+            "Texture.tubes_5",
+            "Texture.tubes_6",
+            "Texture.tubes_7",
+            "Texture.tubes_8",
+            "Texture.tubes_9",
+            "Texture.tubes_10",
+            "Texture.tubes_11",
+            "Texture.tubes_12",
+            "Texture.tubes_13",
+            "Texture.tubes_14",
+            "Texture.tubes_15"
+          ]
+        }
+      },
+      "textures": [
+        "Array.colors[c.owning_entity->q.property('alienevo:col8') + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_10k_1": {

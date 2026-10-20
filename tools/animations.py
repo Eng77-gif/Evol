@@ -3,10 +3,9 @@
 * Looping controllers of the Palladium render layer (idle, tail, wings...) are
   played all the time by the attachable.
 * Triggered animations (bite, beam, ball_in...) are played by an animation
-  controller of the attachable.  The server script starts them with
-  Player.playAnimation("animation.alienevo.signal.<n>"); that animation only
-  sets the public player variable v.alienevo_anim = n for a moment, which the
-  attachable reads through c.owning_entity.
+  controller of the attachable.  The server script sets the synced player
+  property alienevo:anim = n for a moment, which the attachable reads through
+  c.owning_entity->q.property('alienevo:anim').
 """
 import json
 import os
@@ -22,7 +21,8 @@ BONE_MAP = {
 }
 
 LERP = {"linear": "linear", "step": "step"}
-OWNER_VAR = "c.owning_entity->v.alienevo_anim"
+# Synced player property set by the server script (see BP entities/player.json).
+OWNER_VAR = "c.owning_entity->q.property('alienevo:anim')"
 
 
 def write_json(path, data):
@@ -115,7 +115,7 @@ def convert_animation(anim, renames=None):
 # Movement animations found by name in the alien's animation files.
 # (state, regex on the short animation name, owner condition)
 MOVEMENT = [
-    ("fly", r"(^|_)(flight|fly|flying|hover)(_on)?$", "c.owning_entity->v.alienevo_fly"),
+    ("fly", r"(^|_)(flight|fly|flying|hover)(_on)?$", "c.owning_entity->q.property('alienevo:fly')"),
     ("swim", r"(swim_fast|tail_swim|swim)$", "c.owning_entity->q.is_swimming"),
     ("sprint", r"^sprint\d*$", "c.owning_entity->q.is_sprinting && c.owning_entity->q.is_on_ground"),
     ("walk", r"^walk$", "c.owning_entity->q.modified_move_speed > 0.1 && c.owning_entity->q.is_on_ground"),
@@ -312,17 +312,3 @@ def build_alien_animations(vfs, key, layers, anim_dir, ctrl_dir, renames=None, f
         write_json(os.path.join(ctrl_dir, f"{key}.controller.json"),
                    {"format_version": "1.10.0", "animation_controllers": controllers})
     return animations, animate, index
-
-
-def signal_animations(count, path):
-    anims = {
-        # Flight state for the movement controllers (kept until switched off).
-        "animation.alienevo.flight.on": {"animation_length": 0.05, "timeline": {"0.0": "v.alienevo_fly = 1;"}},
-        "animation.alienevo.flight.off": {"animation_length": 0.05, "timeline": {"0.0": "v.alienevo_fly = 0;"}},
-    }
-    for i in range(1, count + 1):
-        anims[f"animation.alienevo.signal.{i}"] = {
-            "animation_length": 0.3,
-            "timeline": {"0.0": f"v.alienevo_anim = {i};", "0.25": "v.alienevo_anim = 0;"},
-        }
-    write_json(path, {"format_version": "1.8.0", "animations": anims})
