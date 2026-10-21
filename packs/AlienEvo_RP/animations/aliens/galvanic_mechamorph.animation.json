@@ -870,6 +870,854 @@
           "scale": 0
         }
       }
+    },
+    "animation.alienevo.galvanic_mechamorph.upgrade.fists_on.t1": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.5,
+      "override_previous_animation": true,
+      "bones": {
+        "forearm": {
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.125": {
+              "post": [
+                1,
+                0.8,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            },
+            "0.25": {
+              "post": [
+                1,
+                1.2,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            },
+            "0.4583": {
+              "post": [
+                1,
+                1,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "MACE": {
+          "scale": {
+            "0.2083": [
+              1,
+              0,
+              1
+            ],
+            "0.5": {
+              "post": [
+                1,
+                1,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "mace_scale": {
+          "scale": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.1667": [
+              3,
+              3,
+              3
+            ],
+            "0.4583": {
+              "post": [
+                4,
+                4,
+                4
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "spikes_angled": {
+          "scale": {
+            "0.2083": [
+              0,
+              0,
+              0
+            ],
+            "0.4167": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "spikes_straight": {
+          "scale": {
+            "0.2083": [
+              0,
+              0,
+              0
+            ],
+            "0.4167": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "forearm2": {
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.125": {
+              "post": [
+                1,
+                0.8,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            },
+            "0.25": {
+              "post": [
+                1,
+                1.2,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            },
+            "0.4583": {
+              "post": [
+                1,
+                1,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "MACE2": {
+          "scale": {
+            "0.2083": [
+              1,
+              0,
+              1
+            ],
+            "0.5": {
+              "post": [
+                1,
+                1,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "mace_scale2": {
+          "scale": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.1667": [
+              3,
+              3,
+              3
+            ],
+            "0.4583": {
+              "post": [
+                4,
+                4,
+                4
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "spikes_angled2": {
+          "scale": {
+            "0.2083": [
+              0,
+              0,
+              0
+            ],
+            "0.4167": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "spikes_straight2": {
+          "scale": {
+            "0.2083": [
+              0,
+              0,
+              0
+            ],
+            "0.4167": [
+              1,
+              1,
+              1
+            ]
+          }
+        }
+      },
+      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+    },
+    "animation.alienevo.galvanic_mechamorph.upgrade.fists_off.t2": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.5,
+      "override_previous_animation": true,
+      "bones": {
+        "forearm": {
+          "scale": {
+            "0.0417": [
+              1,
+              1,
+              1
+            ],
+            "0.2083": {
+              "post": [
+                1,
+                0.9,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            },
+            "0.5": {
+              "post": [
+                1,
+                1,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "MACE": {
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.2917": {
+              "post": [
+                0.6,
+                0,
+                0.6
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "mace_scale": {
+          "scale": {
+            "0.0833": [
+              4,
+              4,
+              4
+            ],
+            "0.5": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "spikes_angled": {
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.1667": {
+              "post": [
+                0,
+                0,
+                0
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "spikes_straight": {
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.1667": {
+              "post": [
+                0,
+                0,
+                0
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "forearm2": {
+          "scale": {
+            "0.0417": [
+              1,
+              1,
+              1
+            ],
+            "0.2083": {
+              "post": [
+                1,
+                0.9,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            },
+            "0.5": {
+              "post": [
+                1,
+                1,
+                1
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "MACE2": {
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.2917": {
+              "post": [
+                0.6,
+                0,
+                0.6
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "mace_scale2": {
+          "scale": [
+            4,
+            4,
+            4
+          ]
+        },
+        "spikes_angled2": {
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.1667": {
+              "post": [
+                0,
+                0,
+                0
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "spikes_straight2": {
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.1667": {
+              "post": [
+                0,
+                0,
+                0
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        }
+      },
+      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+    },
+    "animation.alienevo.galvanic_mechamorph.upgrade.liquid.t3": {
+      "loop": true,
+      "animation_length": 1.2667,
+      "override_previous_animation": true,
+      "bones": {
+        "1": {
+          "scale": {
+            "0.0": [
+              1,
+              3,
+              1
+            ],
+            "0.1583": [
+              1,
+              3,
+              1
+            ],
+            "0.1667": {
+              "pre": [
+                1,
+                3,
+                1
+              ],
+              "post": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "2": {
+          "scale": {
+            "0.15": [
+              0,
+              0,
+              0
+            ],
+            "0.1583": {
+              "pre": [
+                0,
+                0,
+                0
+              ],
+              "post": [
+                1,
+                3,
+                1
+              ]
+            },
+            "0.3167": [
+              1,
+              3,
+              1
+            ],
+            "0.325": {
+              "pre": [
+                1,
+                3,
+                1
+              ],
+              "post": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "3": {
+          "scale": {
+            "0.3083": [
+              0,
+              0,
+              0
+            ],
+            "0.3167": {
+              "pre": [
+                0,
+                0,
+                0
+              ],
+              "post": [
+                1,
+                3,
+                1
+              ]
+            },
+            "0.475": [
+              1,
+              3,
+              1
+            ],
+            "0.4833": {
+              "pre": [
+                1,
+                3,
+                1
+              ],
+              "post": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "4": {
+          "scale": {
+            "0.4667": [
+              0,
+              0,
+              0
+            ],
+            "0.475": {
+              "pre": [
+                0,
+                0,
+                0
+              ],
+              "post": [
+                1,
+                3,
+                1
+              ]
+            },
+            "0.6333": [
+              1,
+              3,
+              1
+            ],
+            "0.6417": {
+              "pre": [
+                1,
+                3,
+                1
+              ],
+              "post": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "5": {
+          "scale": {
+            "0.625": [
+              0,
+              0,
+              0
+            ],
+            "0.6333": {
+              "pre": [
+                0,
+                0,
+                0
+              ],
+              "post": [
+                1,
+                3,
+                1
+              ]
+            },
+            "0.7917": [
+              1,
+              3,
+              1
+            ],
+            "0.8": {
+              "pre": [
+                1,
+                3,
+                1
+              ],
+              "post": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "6": {
+          "scale": {
+            "0.7833": [
+              0,
+              0,
+              0
+            ],
+            "0.7917": {
+              "pre": [
+                0,
+                0,
+                0
+              ],
+              "post": [
+                1,
+                3,
+                1
+              ]
+            },
+            "0.95": [
+              1,
+              3,
+              1
+            ],
+            "0.9583": {
+              "pre": [
+                1,
+                3,
+                1
+              ],
+              "post": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "7": {
+          "scale": {
+            "0.9417": [
+              0,
+              0,
+              0
+            ],
+            "0.95": {
+              "pre": [
+                0,
+                0,
+                0
+              ],
+              "post": [
+                1,
+                3,
+                1
+              ]
+            },
+            "1.1083": [
+              1,
+              3,
+              1
+            ],
+            "1.1167": {
+              "pre": [
+                1,
+                3,
+                1
+              ],
+              "post": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "8": {
+          "scale": {
+            "1.1": [
+              0,
+              0,
+              0
+            ],
+            "1.1083": {
+              "pre": [
+                0,
+                0,
+                0
+              ],
+              "post": [
+                1,
+                3,
+                1
+              ]
+            },
+            "1.2667": [
+              1,
+              3,
+              1
+            ]
+          }
+        },
+        "l_arm": {
+          "scale": [
+            0,
+            0,
+            0
+          ]
+        },
+        "l_arm2": {
+          "scale": [
+            0,
+            0,
+            0
+          ]
+        },
+        "liquid_base": {
+          "position": [
+            0,
+            -21,
+            -1
+          ],
+          "scale": [
+            4,
+            4,
+            4
+          ]
+        },
+        "rightlegscale": {
+          "scale": [
+            0,
+            0,
+            0
+          ]
+        },
+        "headscale": {
+          "scale": [
+            0,
+            0,
+            0
+          ]
+        },
+        "bodyscale": {
+          "scale": [
+            0,
+            0,
+            0
+          ]
+        },
+        "leftlegscale": {
+          "scale": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "anim_time_update": "(q.property('alienevo:anim') == 3) ? (q.anim_time + q.delta_time) : 0.0"
+    },
+    "animation.alienevo.galvanic_mechamorph.upgrade.liquid_off.t4": {
+      "loop": "hold_on_last_frame",
+      "override_previous_animation": true,
+      "bones": {
+        "1": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "2": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "3": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "4": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "5": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "6": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "7": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "8": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "l_arm": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "l_arm2": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "liquid_base": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "rightlegscale": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "headscale": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "bodyscale": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "leftlegscale": {
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "anim_time_update": "(q.property('alienevo:anim') == 4) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

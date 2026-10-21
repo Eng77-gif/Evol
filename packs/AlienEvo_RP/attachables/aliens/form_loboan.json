@@ -20,10 +20,32 @@
       },
       "scripts": {
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "pre_animation": [
+          "v.alienevo_fp = c.is_first_person;"
+        ],
         "animate": [
           "loop0",
-          "triggers",
-          "movement"
+          {
+            "t1": "q.property('alienevo:anim') == 1"
+          },
+          {
+            "t2": "q.property('alienevo:anim') == 2"
+          },
+          {
+            "t3": "q.property('alienevo:anim') == 3"
+          },
+          {
+            "t4": "q.property('alienevo:anim') == 4"
+          },
+          {
+            "t5": "q.property('alienevo:anim') == 5"
+          },
+          {
+            "t6": "q.property('alienevo:anim') == 6"
+          },
+          {
+            "move_sprint": "(q.is_sprinting && q.is_on_ground)"
+          }
         ]
       },
       "render_controllers": [
@@ -34,15 +56,13 @@
       ],
       "animations": {
         "loop0": "animation.alienevo.loboan.loboan.idle",
-        "t1": "animation.alienevo.loboan.loboan.rpunch",
-        "t2": "animation.alienevo.loboan.loboan.lpunch",
-        "t3": "animation.alienevo.loboan.loboan.mouth",
-        "t4": "animation.alienevo.loboan.loboan.mouthnt",
-        "t5": "animation.alienevo.loboan.loboan.megamouth",
-        "t6": "animation.alienevo.loboan.loboan.bite",
-        "triggers": "controller.animation.alienevo.loboan",
-        "move_sprint": "animation.alienevo.loboan.loboan.sprint2",
-        "movement": "controller.animation.alienevo.loboan.movement"
+        "t1": "animation.alienevo.loboan.loboan.rpunch.t1",
+        "t2": "animation.alienevo.loboan.loboan.lpunch.t2",
+        "t3": "animation.alienevo.loboan.loboan.mouth.t3",
+        "t4": "animation.alienevo.loboan.loboan.mouthnt.t4",
+        "t5": "animation.alienevo.loboan.loboan.megamouth.t5",
+        "t6": "animation.alienevo.loboan.loboan.bite.t6",
+        "move_sprint": "animation.alienevo.loboan.loboan.sprint2"
       }
     }
   }

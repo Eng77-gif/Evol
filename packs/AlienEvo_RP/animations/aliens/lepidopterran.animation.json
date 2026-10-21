@@ -368,6 +368,255 @@
           ]
         }
       }
+    },
+    "animation.alienevo.lepidopterran.stinkfly.sonar.t1": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 10000,
+      "override_previous_animation": true,
+      "bones": {
+        "tail1": {
+          "rotation": {
+            "0.0": [
+              "-2.5+(math.sin(q.anim_time*75)*2.5)",
+              0,
+              0
+            ],
+            "0.4167": [
+              "7.5+(math.sin(q.anim_time*75)*2.5)",
+              0,
+              0
+            ],
+            "1.0417": [
+              "7.5+(math.sin(q.anim_time*75)*2.5)",
+              0,
+              0
+            ],
+            "1.5417": [
+              "-2.5+(math.sin(q.anim_time*75)*2.5)",
+              0,
+              0
+            ]
+          }
+        },
+        "tail2": {
+          "rotation": {
+            "0.0": [
+              "-2.5-(math.sin(q.anim_time*75-25)*2.5)",
+              0,
+              0
+            ],
+            "0.625": [
+              "10-(math.sin(q.anim_time*75-25)*2.5)",
+              0,
+              0
+            ],
+            "1.125": [
+              "10-(math.sin(q.anim_time*75-25)*2.5)",
+              0,
+              0
+            ],
+            "1.7083": [
+              "-2.5-(math.sin(q.anim_time*75-25)*2.5)",
+              0,
+              0
+            ]
+          }
+        },
+        "stinger": {
+          "rotation": {
+            "0.0": [
+              "10+(math.sin(q.anim_time*75-50)*5)",
+              0,
+              0
+            ],
+            "0.125": [
+              "10+(math.sin(q.anim_time*275-50)*5)",
+              0,
+              0
+            ],
+            "0.3333": [
+              10,
+              "(math.sin(q.anim_time*3275-50)*5)",
+              0
+            ],
+            "0.8333": [
+              10,
+              "(math.sin(q.anim_time*3275-50)*5)",
+              0
+            ],
+            "1.125": [
+              "10+(math.sin(q.anim_time*75-50)*5)",
+              0,
+              0
+            ]
+          },
+          "position": {
+            "0.0": [
+              0,
+              -0.25,
+              0.025
+            ],
+            "0.125": [
+              0,
+              -0.25,
+              0.03
+            ],
+            "0.8333": [
+              0,
+              -0.25,
+              0.03
+            ],
+            "1.125": [
+              0,
+              -0.25,
+              0.025
+            ]
+          }
+        }
+      },
+      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+    },
+    "animation.alienevo.lepidopterran.stinkfly.wet_on.t2": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 10000,
+      "override_previous_animation": true,
+      "blend_weight": 0.5,
+      "bones": {
+        "wing_right": {
+          "rotation": {
+            "0.0": [
+              "5+(math.sin(q.anim_time*75)*2.5)",
+              "15+(math.sin(q.anim_time*75)*7.5)",
+              "15+(math.sin(q.anim_time*75)*7.5)"
+            ],
+            "0.75": [
+              "2.5+(math.sin(q.anim_time*75)*2.5)",
+              "25+(math.sin(q.anim_time*75)*3.5)",
+              "30+(math.sin(q.anim_time*75)*3.5)"
+            ]
+          }
+        },
+        "wing_left": {
+          "rotation": {
+            "0.0": [
+              "5+(math.sin(q.anim_time*75)*2.5)",
+              "-15-(math.sin(q.anim_time*75)*7.5)",
+              "-15-(math.sin(q.anim_time*75)*7.5)"
+            ],
+            "0.75": [
+              "2.5+(math.sin(q.anim_time*75)*2.5)",
+              "-25-(math.sin(q.anim_time*75)*3.5)",
+              "-30-(math.sin(q.anim_time*75)*3.5)"
+            ]
+          }
+        },
+        "wing_right_inner": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "1.0": {
+              "post": [
+                0,
+                40,
+                0
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "wing_left_inner": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "1.0": {
+              "post": [
+                0,
+                -40,
+                0
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        }
+      },
+      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+    },
+    "animation.alienevo.lepidopterran.stinkfly.wet_off.t3": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 10000,
+      "override_previous_animation": true,
+      "blend_weight": 0.5,
+      "bones": {
+        "wing_right": {
+          "rotation": {
+            "0.25": [
+              "2.5+(math.sin(q.anim_time*75)*2.5)",
+              "25+(math.sin(q.anim_time*75)*3.5)",
+              "30+(math.sin(q.anim_time*75)*3.5)"
+            ],
+            "1.0": [
+              "5+(math.sin(q.anim_time*75)*2.5)",
+              "15+(math.sin(q.anim_time*75)*7.5)",
+              "15+(math.sin(q.anim_time*75)*7.5)"
+            ]
+          }
+        },
+        "wing_left": {
+          "rotation": {
+            "0.25": [
+              "2.5+(math.sin(q.anim_time*75)*2.5)",
+              "-25-(math.sin(q.anim_time*75)*3.5)",
+              "-30-(math.sin(q.anim_time*75)*3.5)"
+            ],
+            "1.0": [
+              "5+(math.sin(q.anim_time*75)*2.5)",
+              "-15-(math.sin(q.anim_time*75)*7.5)",
+              "-15-(math.sin(q.anim_time*75)*7.5)"
+            ]
+          }
+        },
+        "wing_right_inner": {
+          "rotation": {
+            "0.0": [
+              0,
+              40,
+              0
+            ],
+            "1.0": {
+              "post": [
+                0,
+                0,
+                0
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        },
+        "wing_left_inner": {
+          "rotation": {
+            "0.0": [
+              0,
+              -40,
+              0
+            ],
+            "1.0": {
+              "post": [
+                0,
+                0,
+                0
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        }
+      },
+      "anim_time_update": "(q.property('alienevo:anim') == 3) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

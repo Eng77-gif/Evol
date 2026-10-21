@@ -20,8 +20,37 @@
       },
       "scripts": {
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "pre_animation": [
+          "v.alienevo_fp = c.is_first_person;"
+        ],
         "animate": [
-          "triggers"
+          {
+            "t1": "q.property('alienevo:anim') == 1"
+          },
+          {
+            "t2": "q.property('alienevo:anim') == 2"
+          },
+          {
+            "t3": "q.property('alienevo:anim') == 3"
+          },
+          {
+            "t4": "q.property('alienevo:anim') == 4"
+          },
+          {
+            "t5": "q.property('alienevo:anim') == 5"
+          },
+          {
+            "t6": "q.property('alienevo:anim') == 6"
+          },
+          {
+            "t7": "q.property('alienevo:anim') == 7"
+          },
+          {
+            "t8": "q.property('alienevo:anim') == 8"
+          },
+          {
+            "t9": "q.property('alienevo:anim') == 9"
+          }
         ]
       },
       "render_controllers": [
@@ -31,16 +60,15 @@
         "controller.render.alienevo.splixson_1_glow"
       ],
       "animations": {
-        "t1": "animation.alienevo.splixson.taunt",
-        "t2": "animation.alienevo.splixson.burrow",
-        "t3": "animation.alienevo.splixson.reburrow",
-        "t4": "animation.alienevo.splixson.unburrow",
-        "t5": "animation.alienevo.splixson.deburrow",
-        "t6": "animation.alienevo.splixson.uppercut",
-        "t7": "animation.alienevo.splixson.thinking",
-        "t8": "animation.alienevo.splixson.unthinking",
-        "t9": "animation.alienevo.splixson.flip",
-        "triggers": "controller.animation.alienevo.splixson"
+        "t1": "animation.alienevo.splixson.taunt.t1",
+        "t2": "animation.alienevo.splixson.burrow.t2",
+        "t3": "animation.alienevo.splixson.reburrow.t3",
+        "t4": "animation.alienevo.splixson.unburrow.t4",
+        "t5": "animation.alienevo.splixson.deburrow.t5",
+        "t6": "animation.alienevo.splixson.uppercut.t6",
+        "t7": "animation.alienevo.splixson.thinking.t7",
+        "t8": "animation.alienevo.splixson.unthinking.t8",
+        "t9": "animation.alienevo.splixson.flip.t9"
       }
     }
   }

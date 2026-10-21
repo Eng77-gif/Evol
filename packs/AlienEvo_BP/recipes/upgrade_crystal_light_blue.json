@@ -20,6 +20,11 @@
     "result": {
       "item": "alienevo:upgrade_crystal_light_blue",
       "count": 1
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }

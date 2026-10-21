@@ -15,6 +15,11 @@
     "result": {
       "item": "alienevo:upgrade_shards_yellow",
       "count": 9
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }

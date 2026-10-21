@@ -28,7 +28,8 @@
           "texture": "alienevo_diamond_block_up",
           "render_method": "opaque"
         }
-      }
+      },
+      "minecraft:geometry": "minecraft:geometry.full_block"
     }
   }
 }

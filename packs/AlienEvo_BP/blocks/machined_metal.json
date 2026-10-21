@@ -19,7 +19,8 @@
           "texture": "alienevo_machined_metal",
           "render_method": "opaque"
         }
-      }
+      },
+      "minecraft:geometry": "minecraft:geometry.full_block"
     }
   }
 }

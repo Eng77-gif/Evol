@@ -20,10 +20,29 @@
       },
       "scripts": {
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "pre_animation": [
+          "v.alienevo_fp = c.is_first_person;"
+        ],
         "animate": [
           "loop0",
-          "triggers",
-          "movement"
+          {
+            "t1": "q.property('alienevo:anim') == 1"
+          },
+          {
+            "t2": "q.property('alienevo:anim') == 2"
+          },
+          {
+            "t3": "q.property('alienevo:anim') == 3"
+          },
+          {
+            "t4": "q.property('alienevo:anim') == 4"
+          },
+          {
+            "t5": "q.property('alienevo:anim') == 5"
+          },
+          {
+            "move_swim": "(q.is_swimming)"
+          }
         ]
       },
       "render_controllers": [
@@ -34,14 +53,12 @@
       ],
       "animations": {
         "loop0": "animation.alienevo.ickthyperambuloid.idle",
-        "t1": "animation.alienevo.ickthyperambuloid.flip",
-        "t2": "animation.alienevo.ickthyperambuloid.tail_brush",
-        "t3": "animation.alienevo.ickthyperambuloid.end_tail_brush",
-        "t4": "animation.alienevo.ickthyperambuloid.slide",
-        "t5": "animation.alienevo.ickthyperambuloid.end_slide",
-        "triggers": "controller.animation.alienevo.ickthyperambuloid",
-        "move_swim": "animation.alienevo.ickthyperambuloid.tail_swim",
-        "movement": "controller.animation.alienevo.ickthyperambuloid.movement"
+        "t1": "animation.alienevo.ickthyperambuloid.flip.t1",
+        "t2": "animation.alienevo.ickthyperambuloid.tail_brush.t2",
+        "t3": "animation.alienevo.ickthyperambuloid.end_tail_brush.t3",
+        "t4": "animation.alienevo.ickthyperambuloid.slide.t4",
+        "t5": "animation.alienevo.ickthyperambuloid.end_slide.t5",
+        "move_swim": "animation.alienevo.ickthyperambuloid.tail_swim"
       }
     }
   }

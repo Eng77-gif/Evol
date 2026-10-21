@@ -20,8 +20,37 @@
       },
       "scripts": {
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "pre_animation": [
+          "v.alienevo_fp = c.is_first_person;"
+        ],
         "animate": [
-          "triggers"
+          {
+            "t1": "q.property('alienevo:anim') == 1"
+          },
+          {
+            "t2": "q.property('alienevo:anim') == 2"
+          },
+          {
+            "t3": "q.property('alienevo:anim') == 3"
+          },
+          {
+            "t4": "q.property('alienevo:anim') == 4"
+          },
+          {
+            "t5": "q.property('alienevo:anim') == 5"
+          },
+          {
+            "t6": "q.property('alienevo:anim') == 6"
+          },
+          {
+            "t7": "q.property('alienevo:anim') == 7"
+          },
+          {
+            "t8": "q.property('alienevo:anim') == 8"
+          },
+          {
+            "t9": "q.property('alienevo:anim') == 9"
+          }
         ]
       },
       "render_controllers": [
@@ -31,16 +60,15 @@
         "controller.render.alienevo.nosedeenian_1_glow"
       ],
       "animations": {
-        "t1": "animation.alienevo.nosedeenian.blink",
-        "t2": "animation.alienevo.nosedeenian.happy",
-        "t3": "animation.alienevo.nosedeenian.tired",
-        "t4": "animation.alienevo.nosedeenian.mischievous",
-        "t5": "animation.alienevo.nosedeenian.recharge",
-        "t6": "animation.alienevo.nosedeenian.pointsandlaughs",
-        "t7": "animation.alienevo.nosedeenian.bigpew",
-        "t8": "animation.alienevo.nosedeenian.conductivity",
-        "t9": "animation.alienevo.nosedeenian.thinkahhblud",
-        "triggers": "controller.animation.alienevo.nosedeenian"
+        "t1": "animation.alienevo.nosedeenian.blink.t1",
+        "t2": "animation.alienevo.nosedeenian.happy.t2",
+        "t3": "animation.alienevo.nosedeenian.tired.t3",
+        "t4": "animation.alienevo.nosedeenian.mischievous.t4",
+        "t5": "animation.alienevo.nosedeenian.recharge.t5",
+        "t6": "animation.alienevo.nosedeenian.pointsandlaughs.t6",
+        "t7": "animation.alienevo.nosedeenian.bigpew.t7",
+        "t8": "animation.alienevo.nosedeenian.conductivity.t8",
+        "t9": "animation.alienevo.nosedeenian.thinkahhblud.t9"
       }
     }
   }

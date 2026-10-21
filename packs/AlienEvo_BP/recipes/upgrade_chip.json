@@ -29,6 +29,11 @@
     "result": {
       "item": "alienevo:upgrade_chip",
       "count": 1
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }

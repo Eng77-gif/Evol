@@ -6,7 +6,7 @@ import { EquipmentSlot, ItemLockMode, ItemStack, system, world } from "@minecraf
 import { ActionFormData } from "@minecraft/server-ui";
 import { ABILITIES, clearToggles, toggles } from "./abilities.js";
 import { ALIEN_BY_ID, ALIENS, MAX_TIMER, OMNITRIX_TIERS, RECHARGE_TIMER } from "./aliens.js";
-import { ANIM_TRIGGERS } from "./anim_data.js";
+import { ANIM_TICKS, ANIM_TRIGGERS } from "./anim_data.js";
 import { closeWorldDial, confirmWorldDial, isDialOpen, openCodeMode, openWorldDial, showOnDial } from "./dial.js";
 import {
     getPoints, isSkillUnlocked, setPoints, unlockSkill,
@@ -141,6 +141,7 @@ export function transform(p, alien) {
         clearToggles(p);
     }
     stashArmor(p);
+    clearAnim(p);
     equipForm(p, alien);
     setAlien(p, alien.id);
     setSelected(p, alien.id);
@@ -173,6 +174,7 @@ export function transform(p, alien) {
 export function detransform(p, reason) {
     const alien = currentAlien(p);
     removeForm(p);
+    clearAnim(p);
     if (alien) removeEffects(p, alien);
     clearToggles(p);
     if (flying.delete(p.id)) setFlightAnim(p, false);
@@ -359,19 +361,51 @@ async function codex(p, tier) {
  * (tools/animations.py) and cleared again a moment later.
  * @param {Player} p @param {number} index
  */
-function signal(p, index) {
+function signal(p, index, ticks = 8) {
+    let current = 0;
     try {
-        p.setProperty("alienevo:anim", index);
+        current = /** @type {number} */ (p.getProperty("alienevo:anim") ?? 0);
     } catch {
         return;
     }
-    system.runTimeout(() => {
+    // Same index again: clear it for a tick so the animation restarts.
+    const start = () => {
         try {
-            if (p.isValid && p.getProperty("alienevo:anim") === index) p.setProperty("alienevo:anim", 0);
+            if (!p.isValid) return;
+            p.setProperty("alienevo:anim", index);
         } catch {
-            // Player left.
+            return;
         }
-    }, 6);
+        if (ticks < 0) return;
+        system.runTimeout(() => {
+            try {
+                if (p.isValid && p.getProperty("alienevo:anim") === index) p.setProperty("alienevo:anim", 0);
+            } catch {
+                // Player left.
+            }
+        }, ticks);
+    };
+    if (current === index) {
+        p.setProperty("alienevo:anim", 0);
+        system.runTimeout(start, 1);
+    } else {
+        start();
+    }
+}
+
+/** Stops any held trigger animation (e.g. the open watch before a transformation). @param {Player} p */
+export function clearAnim(p) {
+    try {
+        p.setProperty("alienevo:anim", 0);
+    } catch {
+        // Player left.
+    }
+}
+
+/** @param {string} key @param {number} index */
+function ticksFor(key, index) {
+    const t = /** @type {any} */ (ANIM_TICKS)[key]?.[String(index)];
+    return typeof t === "number" ? t : 8;
 }
 
 /**
@@ -382,13 +416,13 @@ export function playTrigger(p, alien, trigger) {
     /** @type {Record<string, number> | undefined} */
     const table = /** @type {any} */ (ANIM_TRIGGERS)[alien.key];
     const index = table?.[trigger];
-    if (index) signal(p, index);
+    if (index) signal(p, index, ticksFor(alien.key, index));
 }
 
 /** Animation of the Omnitrix watch on the wrist. @param {Player} p @param {string} trigger */
 export function playWatch(p, trigger) {
     const index = /** @type {any} */ (ANIM_TRIGGERS).omnitrix?.[trigger];
-    if (index) signal(p, index);
+    if (index) signal(p, index, ticksFor(wearsRecal(p) ? "omnitrix_recal" : "omnitrix_prototype", index));
 }
 
 /** Tells the alien model whether the player flies. @param {Player} p @param {boolean} on */

@@ -23,6 +23,11 @@
     "result": {
       "item": "alienevo:machined_panel",
       "count": 16
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }

@@ -217,7 +217,7 @@ for path in glob.glob(os.path.join(BP, "blocks", "*.json")):
         if mi["texture"] not in terrain:
             err(f"{path}: texture {mi['texture']} not in terrain_texture.json")
     geo = blk["components"].get("minecraft:geometry")
-    if geo and geo not in geometries:
+    if geo and geo not in geometries and not geo.startswith("minecraft:geometry."):
         err(f"{path}: geometry {geo} missing")
     if f"tile.{ident}.name" not in lang:
         err(f"{path}: no name in en_US.lang")
@@ -318,6 +318,29 @@ for path in glob.glob(os.path.join(RP, "render_controllers", "*.json")):
         for pv in rc.get("part_visibility", []):
             if any("->" in str(x) for x in pv.values()):
                 err(f"{name}: '->' in part_visibility")
+for path in glob.glob(os.path.join(RP, "**", "*.json"), recursive=True):
+    with open(path, encoding="utf-8") as f:
+        text = f.read()
+    if "c.owning_entity" in text or "context.owning_entity" in text:
+        err(f"{path}: c.owning_entity is unknown in attachables")
+for path in glob.glob(os.path.join(RP, "render_controllers", "*.json")):
+    with open(path, encoding="utf-8") as f:
+        if re.search(r"\bc\.(is_first_person|item_slot)", f.read()):
+            err(f"{path}: context variables are unknown in render controllers")
+for path in glob.glob(os.path.join(RP, "attachables", "**", "*.json"), recursive=True):
+    desc = (load(path) or {}).get("minecraft:attachable", {}).get("description", {})
+    for full in desc.get("animations", {}).values():
+        if full.startswith("controller."):
+            err(f"{path}: attachable uses animation controller {full} (looked up on the wearer)")
+for path in glob.glob(os.path.join(BP, "recipes", "*.json")):
+    d = load(path) or {}
+    for key in ("minecraft:recipe_shaped", "minecraft:recipe_shapeless"):
+        if key in d and "unlock" not in d[key]:
+            err(f"{path}: recipe without unlock")
+for path in glob.glob(os.path.join(BP, "blocks", "*.json")):
+    comps = (load(path) or {}).get("minecraft:block", {}).get("components", {})
+    if ("minecraft:material_instances" in comps) != ("minecraft:geometry" in comps):
+        err(f"{path}: block needs both geometry and material_instances")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sanitize  # noqa: E402
 for user, bone in sanitize.skeleton_problems(RP):

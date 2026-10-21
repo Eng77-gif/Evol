@@ -20,9 +20,26 @@
       },
       "scripts": {
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "pre_animation": [
+          "v.alienevo_fp = c.is_first_person;"
+        ],
         "animate": [
           "loop0",
-          "triggers"
+          {
+            "t1": "q.property('alienevo:anim') == 1"
+          },
+          {
+            "t2": "q.property('alienevo:anim') == 2"
+          },
+          {
+            "t3": "q.property('alienevo:anim') == 3"
+          },
+          {
+            "t4": "q.property('alienevo:anim') == 4"
+          },
+          {
+            "t5": "q.property('alienevo:anim') == 5"
+          }
         ]
       },
       "render_controllers": [
@@ -33,12 +50,11 @@
       ],
       "animations": {
         "loop0": "animation.alienevo.opticoid.eye_blink",
-        "t1": "animation.alienevo.opticoid.newbeam",
-        "t2": "animation.alienevo.opticoid.newbeamdown",
-        "t3": "animation.alienevo.opticoid.supabeam",
-        "t4": "animation.alienevo.opticoid.supabeamdown",
-        "t5": "animation.alienevo.opticoid.10k_blink",
-        "triggers": "controller.animation.alienevo.opticoid"
+        "t1": "animation.alienevo.opticoid.newbeam.t1",
+        "t2": "animation.alienevo.opticoid.newbeamdown.t2",
+        "t3": "animation.alienevo.opticoid.supabeam.t3",
+        "t4": "animation.alienevo.opticoid.supabeamdown.t4",
+        "t5": "animation.alienevo.opticoid.10k_blink.t5"
       }
     }
   }

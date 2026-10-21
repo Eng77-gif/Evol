@@ -13,6 +13,7 @@ recipes, language files).  Hand written files (scripts, manifests, the player
 client entity, loot tables, features) are left untouched.  Finally it zips both
 packs into dist/AlienEvo.mcaddon.
 """
+import glob
 import io
 import json
 import math
@@ -25,7 +26,7 @@ import zipfile
 from PIL import Image
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from animations import build_alien_animations
+from animations import TRIGGER_TICKS, build_alien_animations
 from icons import render_icon
 from layers import VFS, resolve
 import sanitize
@@ -306,7 +307,27 @@ def java_block_model_to_geo(model, identifier, tex_size):
 
 # In first person only the alien's arms are drawn (they replace the player's
 # own first person arm, see build_player_entity).
-FIRST_PERSON_ARMS = [{"*": "!c.is_first_person"}, {"rightArm": "1.0"}]
+FIRST_PERSON_ARMS = [{"*": "!v.alienevo_fp"}, {"rightArm": "1.0"}]
+
+# Render controllers of an attachable cannot use context variables
+# (c.is_first_person, c.owning_entity), so the attachable copies what it
+# needs into its own variables first; queries there ask the wearer.
+FORM_VARS = ["v.alienevo_fp = c.is_first_person;"]
+
+
+def watch_vars():
+    omni = ", ".join(f"'alienevo:{i[0]}'" for i in OMNITRIX_ITEMS)
+    out = FORM_VARS + [
+        "v.alienevo_alien = q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form');",
+        f"v.alienevo_offhand = q.is_item_name_any('slot.weapon.offhand', 0, {omni});",
+        "v.alienevo_wv = q.property('alienevo:wv');",
+        "v.alienevo_sel = q.property('alienevo:sel');",
+        "v.alienevo_glow = q.property('alienevo:glow');",
+    ]
+    return out + [f"v.alienevo_col{i} = q.property('alienevo:col{i}');" for i in range(len(WATCH_SLOTS))]
+
+
+WATCH_COND = "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien"
 
 
 def is_translucent(img):
@@ -396,7 +417,8 @@ def build_aliens(vfs, lang):
             "materials": materials,
             "textures": textures,
             "geometry": geometry,
-            "scripts": {"parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"},
+            "scripts": {"parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+                        "pre_animation": list(FORM_VARS)},
             "render_controllers": rcs,
         }
         if animations:
@@ -467,7 +489,7 @@ def build_omnitrix(vfs, triggers_out):
                 part["sil"] = img.size
         textures, geometry, rcs, renames = {}, {}, [], {}
         # Hidden in first person, except while looking at the watch (dial / code entry).
-        cond = "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
+        cond = WATCH_COND
         slot_dir = os.path.join(tex_dir, "slots")
         if variant == "prototype":
             write_watch_slot_textures(vfs, slot_dir)
@@ -496,8 +518,8 @@ def build_omnitrix(vfs, triggers_out):
                 rc = f"controller.render.alienevo.{pid}"
                 controllers[rc] = {"geometry": f"Geometry.part{i}", "materials": [{"*": "Material.default"}],
                                    "arrays": {"textures": {"Array.sils": names}},
-                                   "textures": ["Array.sils[c.owning_entity->q.property('alienevo:sel')]"]}
-                rcs.append({rc: f"{cond} && c.owning_entity->q.property('alienevo:sel') >= 0"})
+                                   "textures": ["Array.sils[v.alienevo_sel]"]}
+                rcs.append({rc: f"{cond} && v.alienevo_sel >= 0"})
                 continue
             for kind, mat in (("base", "default"), ("glow", "glow")):
                 if not part[kind]:
@@ -516,7 +538,7 @@ def build_omnitrix(vfs, triggers_out):
                         textures[f"part{i}{suffix}_{ci}"] = f"textures/entity/omnitrix/{pid}{suffix}_{ci}"
                         names.append(f"Texture.part{i}{suffix}_{ci}")
                     controllers[rc]["arrays"] = {"textures": {"Array.glow": names}}
-                    controllers[rc]["textures"] = ["Array.glow[c.owning_entity->q.property('alienevo:glow') + 1]"]
+                    controllers[rc]["textures"] = ["Array.glow[v.alienevo_glow + 1]"]
                 rcs.append({rc: cond})
             if i == 0:
                 # Colour modules: the watch drawn again, slightly inflated, with
@@ -534,8 +556,8 @@ def build_omnitrix(vfs, triggers_out):
                     rc = f"controller.render.alienevo.omnitrix_{variant}_{slot}"
                     controllers[rc] = {"geometry": "Geometry.overlay", "materials": [{"*": "Material.default"}],
                                        "arrays": {"textures": {"Array.colors": names}},
-                                       "textures": [f"Array.colors[c.owning_entity->q.property('alienevo:col{si}') + 1]"]}
-                    rcs.append({rc: f"{cond} && c.owning_entity->q.property('alienevo:col{si}') >= 0"})
+                                       "textures": [f"Array.colors[v.alienevo_col{si} + 1]"]}
+                    rcs.append({rc: f"{cond} && v.alienevo_col{si} >= 0"})
         animations, animate, _ = build_alien_animations(vfs, f"omnitrix_{variant}", layers, anim_dir, ctrl_dir, renames, fixed)
         items = [i[0] for i in OMNITRIX_ITEMS if (i[3] == 3) == (variant == "10k") and i[0] != "recal_omnitrix"]
         for item in items:
@@ -546,9 +568,10 @@ def build_omnitrix(vfs, triggers_out):
                 "geometry": geometry,
                 "render_controllers": rcs,
             }
+            desc["scripts"] = {"pre_animation": watch_vars()}
             if animations:
                 desc["animations"] = animations
-                desc["scripts"] = {"animate": animate}
+                desc["scripts"]["animate"] = animate
             write_json(os.path.join(att_dir, f"{item}.json"), {"format_version": "1.10.0", "minecraft:attachable": {"description": desc}})
     print("recal holograms:", build_recal(vfs, controllers, fixed))
     write_json(os.path.join(RP, "render_controllers", "alienevo.omnitrix.render_controllers.json"),
@@ -572,7 +595,7 @@ def build_recal(vfs, controllers, fixed):
     layers = resolve(vfs, RECAL_LAYER)
     for layer in layers:
         layer["loops"] = [n for n in layer["loops"] if n not in RECAL_SKIP_LOOPS]
-    cond = "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
+    cond = WATCH_COND
     textures, geometry, rcs, renames = {}, {}, [], {}
     watch = [l for l in layers if "/holograms/" not in l["geo"]]
     gid = "geometry.alienevo.omnitrix_recal"
@@ -620,12 +643,12 @@ def build_recal(vfs, controllers, fixed):
         textures[f"holo_{alien['key']}"] = f"textures/entity/omnitrix/recal_holo_{alien['key']}"
         geos.append(f"Geometry.holo_{alien['key']}")
         texs.append(f"Texture.holo_{alien['key']}")
-    sel = "c.owning_entity->q.property('alienevo:sel')"
+    sel = "v.alienevo_sel"
     rc = "controller.render.alienevo.omnitrix_recal_hologram"
     controllers[rc] = {"arrays": {"geometries": {"Array.holo": geos}, "textures": {"Array.holo_tex": texs}},
                        "geometry": f"Array.holo[{sel}]", "materials": [{"*": "Material.hologram"}],
                        "textures": [f"Array.holo_tex[{sel}]"], "ignore_lighting": True}
-    rcs.append({rc: f"c.owning_entity->q.property('alienevo:wv') && {sel} >= 0 && !c.owning_entity->v.alienevo_is_alien"})
+    rcs.append({rc: f"v.alienevo_wv && {sel} >= 0 && !v.alienevo_alien"})
     animations, animate, _ = build_alien_animations(vfs, "omnitrix_recal", layers, anim_dir, ctrl_dir, renames, fixed)
     desc = {
         "identifier": "alienevo:recal_omnitrix",
@@ -634,9 +657,10 @@ def build_recal(vfs, controllers, fixed):
         "geometry": geometry,
         "render_controllers": rcs,
     }
+    desc["scripts"] = {"pre_animation": watch_vars()}
     if animations:
         desc["animations"] = animations
-        desc["scripts"] = {"animate": animate}
+        desc["scripts"]["animate"] = animate
     write_json(os.path.join(RP, "attachables", "omnitrix", "recal_omnitrix.json"),
                {"format_version": "1.10.0", "minecraft:attachable": {"description": desc}})
     return found
@@ -1381,6 +1405,10 @@ def write_anim_data(triggers):
         f.write("export const ANIM_TRIGGERS = ")
         json.dump(triggers, f, indent=4, sort_keys=True)
         f.write(";\n")
+        f.write("// Ticks to keep alienevo:anim set for each index (-1 = until the next trigger).\n")
+        f.write("export const ANIM_TICKS = ")
+        json.dump({k: {str(i): t for i, t in v.items()} for k, v in TRIGGER_TICKS.items()}, f, indent=4, sort_keys=True)
+        f.write(";\n")
 
 
 WATCH_SLOTS = ["base_primary", "base_secondary", "base_tertiary", "buttons", "core_side", "core_top",
@@ -1516,6 +1544,17 @@ def untapped_items_bp():
         if item_id == "primus_link_circuit":
             comps["minecraft:rarity"] = "rare"
         write_json(os.path.join(BP, "items", f"{item_id}.json"), item_json(f"alienevo:{item_id}", comps))
+
+
+def unlock_recipes():
+    """1.20+ recipes need unlock data or the game rejects them."""
+    for path in glob.glob(os.path.join(BP, "recipes", "*.json")):
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+        for key, body in data.items():
+            if key in ("minecraft:recipe_shaped", "minecraft:recipe_shapeless") and "unlock" not in body:
+                body["unlock"] = [{"context": "AlwaysUnlocked"}]
+        write_json(path, data)
 
 
 def untapped_recipes():
@@ -1699,6 +1738,9 @@ def block_json(identifier, components, permutations=None, traits=None, states=No
         desc["traits"] = traits
     if states:
         desc["states"] = states
+    if "minecraft:material_instances" in components and "minecraft:geometry" not in components:
+        # 1.21.90 blocks need both components ("Block definition parsing failed").
+        components = dict(components, **{"minecraft:geometry": "minecraft:geometry.full_block"})
     data = {"description": desc, "components": components}
     if permutations:
         data["permutations"] = permutations
@@ -1963,6 +2005,7 @@ def main():
     build_wheel_ui(vfs)
     build_recipes(jar)
     untapped_recipes()
+    unlock_recipes()
     for line in structures.build(vfs):
         print("structure", line)
     write_lang(lang)

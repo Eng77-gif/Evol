@@ -23,6 +23,11 @@
     "result": {
       "item": "alienevo:machined_metal",
       "count": 16
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }

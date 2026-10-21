@@ -52,7 +52,8 @@
           "render_method": "opaque"
         }
       },
-      "alienevo:galvan_pod": {}
+      "alienevo:galvan_pod": {},
+      "minecraft:geometry": "minecraft:geometry.full_block"
     },
     "permutations": [
       {

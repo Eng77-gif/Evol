@@ -18,6 +18,11 @@
     "result": {
       "item": "alienevo:code_tablet",
       "count": 2
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }

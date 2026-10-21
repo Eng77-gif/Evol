@@ -26,6 +26,11 @@
     "result": {
       "item": "alienevo:galvan_pod",
       "count": 1
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }

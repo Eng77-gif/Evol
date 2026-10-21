@@ -20,9 +20,14 @@
       },
       "scripts": {
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "pre_animation": [
+          "v.alienevo_fp = c.is_first_person;"
+        ],
         "animate": [
           "loop0",
-          "movement"
+          {
+            "move_fly": "(q.property('alienevo:fly'))"
+          }
         ]
       },
       "render_controllers": [
@@ -33,8 +38,7 @@
       ],
       "animations": {
         "loop0": "animation.alienevo.necrofriggian_ov.bigchill.cloak_on",
-        "move_fly": "animation.alienevo.necrofriggian_ov.bigchill.flight",
-        "movement": "controller.animation.alienevo.necrofriggian_ov.movement"
+        "move_fly": "animation.alienevo.necrofriggian_ov.bigchill.flight"
       }
     }
   }

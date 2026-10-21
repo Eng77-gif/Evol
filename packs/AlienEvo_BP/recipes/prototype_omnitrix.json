@@ -26,6 +26,11 @@
     "result": {
       "item": "alienevo:prototype_omnitrix",
       "count": 1
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }

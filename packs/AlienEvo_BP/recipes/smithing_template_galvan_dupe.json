@@ -26,6 +26,11 @@
     "result": {
       "item": "alienevo:smithing_template_galvan",
       "count": 2
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }

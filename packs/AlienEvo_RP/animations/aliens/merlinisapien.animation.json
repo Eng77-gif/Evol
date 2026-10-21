@@ -412,6 +412,76 @@
           }
         }
       }
+    },
+    "animation.alienevo.merlinisapien.stinger.t1": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.76,
+      "override_previous_animation": true,
+      "bones": {
+        "stinger": {
+          "position": {
+            "0.0": [
+              0,
+              8,
+              0
+            ],
+            "0.75": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "full_body": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.25": {
+              "post": [
+                0,
+                240,
+                0
+              ],
+              "lerp_mode": "catmullrom"
+            },
+            "0.75": {
+              "post": [
+                0,
+                0,
+                0
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          },
+          "position": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.25": {
+              "post": [
+                0,
+                0,
+                0
+              ],
+              "lerp_mode": "catmullrom"
+            },
+            "0.75": {
+              "post": [
+                0,
+                0,
+                0
+              ],
+              "lerp_mode": "catmullrom"
+            }
+          }
+        }
+      },
+      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

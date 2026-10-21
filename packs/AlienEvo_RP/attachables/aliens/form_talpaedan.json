@@ -20,10 +20,51 @@
       },
       "scripts": {
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "pre_animation": [
+          "v.alienevo_fp = c.is_first_person;"
+        ],
         "animate": [
           "loop0",
           "loop1",
-          "triggers"
+          {
+            "t1": "q.property('alienevo:anim') == 1"
+          },
+          {
+            "t2": "q.property('alienevo:anim') == 2"
+          },
+          {
+            "t3": "q.property('alienevo:anim') == 3"
+          },
+          {
+            "t4": "q.property('alienevo:anim') == 4"
+          },
+          {
+            "t5": "q.property('alienevo:anim') == 5"
+          },
+          {
+            "t6": "q.property('alienevo:anim') == 6"
+          },
+          {
+            "t7": "q.property('alienevo:anim') == 7"
+          },
+          {
+            "t8": "q.property('alienevo:anim') == 8"
+          },
+          {
+            "t9": "q.property('alienevo:anim') == 9"
+          },
+          {
+            "t10": "q.property('alienevo:anim') == 10"
+          },
+          {
+            "t11": "q.property('alienevo:anim') == 11"
+          },
+          {
+            "t12": "q.property('alienevo:anim') == 12"
+          },
+          {
+            "t13": "q.property('alienevo:anim') == 13"
+          }
         ]
       },
       "render_controllers": [
@@ -35,20 +76,19 @@
       "animations": {
         "loop0": "animation.alienevo.talpaedan.tail",
         "loop1": "animation.alienevo.talpaedan.idle_hands",
-        "t1": "animation.alienevo.talpaedan.drill_on_single",
-        "t2": "animation.alienevo.talpaedan.drill_off_single",
-        "t3": "animation.alienevo.talpaedan.spin_start_single",
-        "t4": "animation.alienevo.talpaedan.spin_end_single",
-        "t5": "animation.alienevo.talpaedan.drill_on_both",
-        "t6": "animation.alienevo.talpaedan.drill_off_both",
-        "t7": "animation.alienevo.talpaedan.spin_start_both",
-        "t8": "animation.alienevo.talpaedan.spin_end_both",
-        "t9": "animation.alienevo.talpaedan.aim_rot_right",
-        "t10": "animation.alienevo.talpaedan.charge_piston",
-        "t11": "animation.alienevo.talpaedan.rot_reset",
-        "t12": "animation.alienevo.talpaedan.spin_attack",
-        "t13": "animation.alienevo.talpaedan.ground_piston",
-        "triggers": "controller.animation.alienevo.talpaedan"
+        "t1": "animation.alienevo.talpaedan.drill_on_single.t1",
+        "t2": "animation.alienevo.talpaedan.drill_off_single.t2",
+        "t3": "animation.alienevo.talpaedan.spin_start_single.t3",
+        "t4": "animation.alienevo.talpaedan.spin_end_single.t4",
+        "t5": "animation.alienevo.talpaedan.drill_on_both.t5",
+        "t6": "animation.alienevo.talpaedan.drill_off_both.t6",
+        "t7": "animation.alienevo.talpaedan.spin_start_both.t7",
+        "t8": "animation.alienevo.talpaedan.spin_end_both.t8",
+        "t9": "animation.alienevo.talpaedan.aim_rot_right.t9",
+        "t10": "animation.alienevo.talpaedan.charge_piston.t10",
+        "t11": "animation.alienevo.talpaedan.rot_reset.t11",
+        "t12": "animation.alienevo.talpaedan.spin_attack.t12",
+        "t13": "animation.alienevo.talpaedan.ground_piston.t13"
       }
     }
   }

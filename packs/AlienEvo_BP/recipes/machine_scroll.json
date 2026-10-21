@@ -21,6 +21,11 @@
     "result": {
       "item": "alienevo:machine_scroll",
       "count": 1
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }

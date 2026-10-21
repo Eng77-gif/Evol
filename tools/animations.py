@@ -8,6 +8,7 @@
   c.owning_entity->q.property('alienevo:anim').
 """
 import json
+import math
 import os
 import re
 
@@ -22,7 +23,13 @@ BONE_MAP = {
 
 LERP = {"linear": "linear", "step": "step"}
 # Synced player property set by the server script (see BP entities/player.json).
-OWNER_VAR = "c.owning_entity->q.property('alienevo:anim')"
+# Queries in an attachable are answered by the entity wearing it
+# (c.owning_entity is not available there).
+OWNER_VAR = "q.property('alienevo:anim')"
+
+# Ticks each trigger keeps alienevo:anim set (-1 = held until the next
+# trigger), per model key; written to anim_data.js for the scripts.
+TRIGGER_TICKS = {}
 
 
 def write_json(path, data):
@@ -115,10 +122,10 @@ def convert_animation(anim, renames=None):
 # Movement animations found by name in the alien's animation files.
 # (state, regex on the short animation name, owner condition)
 MOVEMENT = [
-    ("fly", r"(^|_)(flight|fly|flying|hover)(_on)?$", "c.owning_entity->q.property('alienevo:fly')"),
-    ("swim", r"(swim_fast|tail_swim|swim)$", "c.owning_entity->q.is_swimming"),
-    ("sprint", r"^sprint\d*$", "c.owning_entity->q.is_sprinting && c.owning_entity->q.is_on_ground"),
-    ("walk", r"^walk$", "c.owning_entity->q.modified_move_speed > 0.1 && c.owning_entity->q.is_on_ground"),
+    ("fly", r"(^|_)(flight|fly|flying|hover)(_on)?$", "q.property('alienevo:fly')"),
+    ("swim", r"(swim_fast|tail_swim|swim)$", "q.is_swimming"),
+    ("sprint", r"^sprint\d*$", "q.is_sprinting && q.is_on_ground"),
+    ("walk", r"^walk$", "q.modified_move_speed > 0.1 && q.is_on_ground"),
 ]
 
 
@@ -271,42 +278,45 @@ def build_alien_animations(vfs, key, layers, anim_dir, ctrl_dir, renames=None, f
             ((renames or {}).get(b) or BONE_MAP.get(b, b)): {"scale": 0} for b in sorted(rest_bones)}}
         write_json(os.path.join(anim_dir, f"{key}.animation.json"), {"format_version": "1.8.0", "animations": converted})
         animations["rest"] = rest
+    # Attachables cannot use animation controllers (the game looks their
+    # animations up on the wearer), so everything is a conditional entry of
+    # scripts.animate and trigger animations restart through anim_time_update.
+    if rest_bones:
+        animate.append({"rest": f"{OWNER_VAR} == 0"})
     if triggers:
-        states = {"default": {"transitions": []}}
-        if rest_bones:
-            states["default"]["animations"] = ["rest"]
         if fixed_index:
             index = {t: fixed_index[t] for t in triggers if t in fixed_index}
         else:
             index = {t: i for i, t in enumerate(triggers, start=1)}
+        ticks = TRIGGER_TICKS.setdefault(key, {})
         for trig, (name, mode) in triggers.items():
             if trig not in index:
                 continue
             i = index[trig]
-            animations[f"t{i}"] = names[name]
-            states["default"]["transitions"].append({f"t{i}": f"{OWNER_VAR} == {i}"})
-            hold = mode in ("then_play_and_hold", "then_loop") or sources[name].get("loop") in (True, "hold_on_last_frame")
-            transitions = [{f"t{j}": f"{OWNER_VAR} == {j}"} for j in index.values() if j != i]
-            if not hold:
-                transitions.append({"default": f"q.all_animations_finished && {OWNER_VAR} != {i}"})
-            states[f"t{i}"] = {"animations": [f"t{i}"], "transitions": transitions, "blend_transition": 0.15}
-        ctrl = f"controller.animation.alienevo.{key}"
-        controllers[ctrl] = {"initial_state": "default", "states": states}
-        animations["triggers"] = ctrl
-        animate.append("triggers")
+            src = converted[names[name]]
+            anim = json.loads(json.dumps(src))
+            hold = mode in ("then_play_and_hold", "then_loop") or src.get("loop") in (True, "hold_on_last_frame")
+            if mode == "then_loop" or src.get("loop") is True:
+                anim["loop"] = True
+            elif hold:
+                anim["loop"] = "hold_on_last_frame"
+            anim["anim_time_update"] = f"({OWNER_VAR} == {i}) ? (q.anim_time + q.delta_time) : 0.0"
+            tname = f"{names[name]}.t{i}"
+            converted[tname] = anim
+            animations[f"t{i}"] = tname
+            animate.append({f"t{i}": f"{OWNER_VAR} == {i}"})
+            length = float(src.get("animation_length", 1.0) or 1.0)
+            ticks[i] = -1 if hold else int(math.ceil(length * 20)) + 2
+        write_json(os.path.join(anim_dir, f"{key}.animation.json"), {"format_version": "1.8.0", "animations": converted})
 
     if movement:
-        states = {"default": {"transitions": [{state: cond} for state, (_, cond) in movement.items()]}}
+        earlier = []
         for state, (name, cond) in movement.items():
             animations[f"move_{state}"] = names[name]
-            # Higher priority states (earlier in MOVEMENT) can interrupt lower ones.
-            others = [{s: c} for s, (_, c) in movement.items() if s != state]
-            states[state] = {"animations": [f"move_{state}"], "blend_transition": 0.2,
-                             "transitions": [{"default": f"!({cond})"}] + others}
-        ctrl = f"controller.animation.alienevo.{key}.movement"
-        controllers[ctrl] = {"initial_state": "default", "states": states}
-        animations["movement"] = ctrl
-        animate.append("movement")
+            # Higher priority states (earlier in MOVEMENT) win.
+            full = " && ".join([f"({cond})"] + [f"!({c})" for c in earlier])
+            animate.append({f"move_{state}": full})
+            earlier.append(cond)
 
     if controllers:
         write_json(os.path.join(ctrl_dir, f"{key}.controller.json"),

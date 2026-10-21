@@ -20,6 +20,11 @@
     "result": {
       "item": "alienevo:upgrade_crystal_red",
       "count": 1
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }

@@ -29,6 +29,11 @@
     "result": {
       "item": "alienevo:omnitrix_workbench",
       "count": 1
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }

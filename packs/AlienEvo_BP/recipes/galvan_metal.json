@@ -23,6 +23,11 @@
     "result": {
       "item": "alienevo:galvan_metal",
       "count": 1
-    }
+    },
+    "unlock": [
+      {
+        "context": "AlwaysUnlocked"
+      }
+    ]
   }
 }
