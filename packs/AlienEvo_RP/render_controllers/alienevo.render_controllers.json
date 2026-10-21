@@ -17,9 +17,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -39,9 +36,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ],
       "arrays": {
@@ -75,9 +69,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -97,9 +88,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -119,9 +107,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -141,9 +126,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -163,9 +145,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -185,9 +164,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -207,9 +183,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -229,9 +202,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -251,9 +221,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -273,9 +240,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -295,9 +259,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -317,9 +278,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -339,9 +297,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -361,9 +316,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -383,9 +335,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -405,9 +354,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -427,9 +373,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -449,9 +392,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -471,9 +411,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -493,9 +430,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -515,9 +449,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -537,9 +468,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -559,9 +487,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -581,9 +506,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -603,9 +525,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -625,9 +544,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -647,9 +563,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -669,9 +582,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -691,9 +601,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -713,9 +620,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -735,9 +639,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -757,9 +658,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -779,9 +677,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -801,9 +696,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -823,9 +715,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -845,9 +734,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -867,9 +753,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -889,9 +772,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -911,9 +791,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -933,9 +810,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -955,9 +829,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -977,9 +848,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -999,9 +867,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1021,9 +886,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1043,9 +905,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1065,9 +924,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1087,9 +943,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1109,9 +962,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1131,9 +981,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1153,9 +1000,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1175,9 +1019,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1197,9 +1038,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1219,9 +1057,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1241,9 +1076,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1263,9 +1095,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1285,9 +1114,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1307,9 +1133,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1329,9 +1152,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1351,9 +1171,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1373,9 +1190,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1395,9 +1209,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1417,9 +1228,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1439,9 +1247,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1461,9 +1266,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1483,9 +1285,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1505,9 +1304,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1527,9 +1323,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1549,9 +1342,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1571,9 +1361,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1593,9 +1380,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1615,9 +1399,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1637,9 +1418,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1659,9 +1437,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1681,9 +1456,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1703,9 +1475,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1725,9 +1494,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1747,9 +1513,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1769,9 +1532,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1791,9 +1551,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1813,9 +1570,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1835,9 +1589,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1857,9 +1608,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1879,9 +1627,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1901,9 +1646,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1923,9 +1665,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1945,9 +1684,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1967,9 +1703,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -1989,9 +1722,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2011,9 +1741,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2033,9 +1760,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2055,9 +1779,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2077,9 +1798,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2099,9 +1817,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2121,9 +1836,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2143,9 +1855,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2165,9 +1874,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2187,9 +1893,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2209,9 +1912,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2231,9 +1931,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2253,9 +1950,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2275,9 +1969,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2297,9 +1988,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2319,9 +2007,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2341,9 +2026,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2363,9 +2045,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2385,9 +2064,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2407,9 +2083,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2429,9 +2102,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2451,9 +2121,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2473,9 +2140,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2495,9 +2159,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2517,9 +2178,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2539,9 +2197,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2561,9 +2216,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2583,9 +2235,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2605,9 +2254,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2627,9 +2273,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2649,9 +2292,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2671,9 +2311,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2693,9 +2330,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     },
@@ -2715,9 +2349,6 @@
         },
         {
           "rightArm": "1.0"
-        },
-        {
-          "leftArm": "c.owning_entity->q.property('alienevo:wv')"
         }
       ]
     }

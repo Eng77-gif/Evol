@@ -494,6 +494,7 @@ async function abilityMenu(p, alien) {
 
 /** Omnitrix item used. @param {Player} p @param {number} tier */
 export function useOmnitrix(p, tier) {
+    wearOmnitrix(p);
     if (isDialOpen(p)) {
         confirmWorldDial(p);
         return;
@@ -631,7 +632,31 @@ function hud(p, alien) {
     actionbar(p, `${alien.color}${alien.name} §8| ${ab} §8| ${timer}${extra}`);
 }
 
+/**
+ * The Omnitrix is worn on the left wrist like the Curios slot of the Java
+ * mod: one held in the main hand moves to an empty offhand.
+ * @param {Player} p
+ */
+export function wearOmnitrix(p) {
+    const eq = p.getComponent("minecraft:equippable");
+    const held = eq?.getEquipment(EquipmentSlot.Mainhand);
+    if (!eq || omnitrixTier(held) < 0 || eq.getEquipment(EquipmentSlot.Offhand)) return;
+    eq.setEquipment(EquipmentSlot.Offhand, held);
+    eq.setEquipment(EquipmentSlot.Mainhand, undefined);
+    sound(p, "alienevo.prototype_core_place", 0.6);
+    actionbar(p, "§aOmnitrix strapped to your wrist §7(double tap sneak: alien wheel, use: dial)");
+}
+
 export function initOmnitrix() {
+    world.afterEvents.playerHotbarSelectedSlotChange.subscribe((ev) => {
+        if (omnitrixTier(ev.itemStack) >= 0) system.run(() => ev.player.isValid && wearOmnitrix(ev.player));
+    });
+    world.afterEvents.playerInventoryItemChange.subscribe((ev) => {
+        if (ev.inventoryType === "Hotbar" && ev.slot === ev.player.selectedSlotIndex && omnitrixTier(ev.itemStack) >= 0) {
+            system.run(() => ev.player.isValid && wearOmnitrix(ev.player));
+        }
+    });
+
     system.runInterval(() => {
         for (const p of world.getAllPlayers()) {
             const alien = currentAlien(p);
