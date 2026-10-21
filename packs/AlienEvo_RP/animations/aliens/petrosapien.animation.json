@@ -4,7 +4,6 @@
     "animation.alienevo.petrosapien.diamondhead.sword_on": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.75,
-      "override_previous_animation": true,
       "bones": {
         "body_rotate": {
           "rotation": {
@@ -408,7 +407,6 @@
     "animation.alienevo.petrosapien.diamondhead.sword_off": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.75,
-      "override_previous_animation": true,
       "bones": {
         "body_rotate": {
           "rotation": {
@@ -796,7 +794,6 @@
     "animation.alienevo.petrosapien.diamondhead.shield_spin": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.2083,
-      "override_previous_animation": true,
       "bones": {
         "SWORD": {
           "rotation": [
@@ -966,7 +963,6 @@
     "animation.alienevo.petrosapien.diamondhead.shield_off": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.25,
-      "override_previous_animation": true,
       "bones": {
         "SWORD": {
           "rotation": [
@@ -1140,7 +1136,6 @@
     "animation.alienevo.petrosapien.diamondhead.shards_off": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.25,
-      "override_previous_animation": true,
       "bones": {
         "right_hand": {
           "rotation": {
@@ -1327,7 +1322,6 @@
     "animation.alienevo.petrosapien.diamondhead.shards_on": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.25,
-      "override_previous_animation": true,
       "bones": {
         "right_thumb": {
           "position": {
@@ -1490,7 +1484,6 @@
     "animation.alienevo.petrosapien.diamondhead.sword_on_left": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.75,
-      "override_previous_animation": true,
       "bones": {
         "body_rotate": {
           "rotation": {
@@ -1894,7 +1887,6 @@
     "animation.alienevo.petrosapien.diamondhead.sword_off_left": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.75,
-      "override_previous_animation": true,
       "bones": {
         "body_rotate": {
           "rotation": {
@@ -2281,7 +2273,6 @@
     },
     "animation.alienevo.petrosapien.diamondhead.shield_spin_left": {
       "loop": "hold_on_last_frame",
-      "override_previous_animation": true,
       "bones": {
         "body_rotate": {
           "rotation": [
@@ -2413,7 +2404,6 @@
     },
     "animation.alienevo.petrosapien.diamondhead.shield_off_left": {
       "loop": "hold_on_last_frame",
-      "override_previous_animation": true,
       "bones": {
         "body_rotate": {
           "rotation": [
@@ -2570,7 +2560,6 @@
     "animation.alienevo.petrosapien.diamondhead.sword_on.t1": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.75,
-      "override_previous_animation": true,
       "bones": {
         "body_rotate": {
           "rotation": {
@@ -2970,12 +2959,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.sword_off.t2": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.75,
-      "override_previous_animation": true,
       "bones": {
         "body_rotate": {
           "rotation": {
@@ -3359,12 +3347,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.shield_spin.t3": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.2083,
-      "override_previous_animation": true,
       "bones": {
         "SWORD": {
           "rotation": [
@@ -3530,12 +3517,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 3) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.shield_off.t4": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.25,
-      "override_previous_animation": true,
       "bones": {
         "SWORD": {
           "rotation": [
@@ -3705,12 +3691,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 4) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 4) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.shards_off.t5": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.25,
-      "override_previous_animation": true,
       "bones": {
         "right_hand": {
           "rotation": {
@@ -3893,12 +3878,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 5) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 5) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.shards_on.t6": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.25,
-      "override_previous_animation": true,
       "bones": {
         "right_thumb": {
           "position": {
@@ -4057,12 +4041,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 6) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 6) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.sword_on_left.t7": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.75,
-      "override_previous_animation": true,
       "bones": {
         "body_rotate": {
           "rotation": {
@@ -4462,12 +4445,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 7) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 7) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.sword_off_left.t8": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.75,
-      "override_previous_animation": true,
       "bones": {
         "body_rotate": {
           "rotation": {
@@ -4851,11 +4833,10 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 8) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 8) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.shield_spin_left.t9": {
       "loop": "hold_on_last_frame",
-      "override_previous_animation": true,
       "bones": {
         "body_rotate": {
           "rotation": [
@@ -4984,11 +4965,10 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 9) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 9) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.shield_off_left.t10": {
       "loop": "hold_on_last_frame",
-      "override_previous_animation": true,
       "bones": {
         "body_rotate": {
           "rotation": [
@@ -5112,7 +5092,7 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 10) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 10) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

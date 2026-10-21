@@ -8832,7 +8832,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.florauna.burrow.t2": {
       "loop": "hold_on_last_frame",
@@ -10417,7 +10417,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.florauna.burrow2.t3": {
       "loop": "hold_on_last_frame",
@@ -11323,7 +11323,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 3) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.florauna.burrow2.t4": {
       "loop": "hold_on_last_frame",
@@ -12229,7 +12229,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 4) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 4) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.florauna.fruit.t5": {
       "loop": "hold_on_last_frame",
@@ -12607,7 +12607,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 5) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 5) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.florauna.spin.t6": {
       "loop": "hold_on_last_frame",
@@ -16590,7 +16590,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 6) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 6) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.florauna.crouch.t7": {
       "animation_length": 0.5,
@@ -16615,7 +16615,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 7) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 7) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.florauna.leap.t8": {
       "loop": "hold_on_last_frame",
@@ -17034,7 +17034,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 8) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 8) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.florauna.fruit.t9": {
       "loop": "hold_on_last_frame",
@@ -17412,7 +17412,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 9) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 9) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

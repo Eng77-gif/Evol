@@ -3,7 +3,6 @@
   "animations": {
     "animation.alienevo.dragonoid.drago.idle": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "tail1": {
           "rotation": [
@@ -145,7 +144,6 @@
     "animation.alienevo.dragonoid.drago.flight_on": {
       "loop": "hold_on_last_frame",
       "animation_length": 10000,
-      "override_previous_animation": true,
       "bones": {
         "tail1": {
           "rotation": {
@@ -612,7 +610,6 @@
     "animation.alienevo.dragonoid.drago.flight_off": {
       "loop": "hold_on_last_frame",
       "animation_length": 10000,
-      "override_previous_animation": true,
       "bones": {
         "tail1": {
           "rotation": {

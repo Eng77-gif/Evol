@@ -101,9 +101,6 @@
     "alienevo:galvan_scrap": {
       "textures": "textures/items/galvan_scrap"
     },
-    "alienevo:galvan_metal": {
-      "textures": "textures/items/galvan_metal"
-    },
     "alienevo:upgrade_chip": {
       "textures": "textures/items/upgrade_chip"
     },
@@ -112,6 +109,9 @@
     },
     "alienevo:machine_urn": {
       "textures": "textures/items/machine_urn"
+    },
+    "alienevo:galvan_metal": {
+      "textures": "textures/items/galvan_metal"
     },
     "alienevo:plumber_badge": {
       "textures": "textures/items/plumber_badge"

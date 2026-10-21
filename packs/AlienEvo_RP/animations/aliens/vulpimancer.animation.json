@@ -3,7 +3,6 @@
   "animations": {
     "animation.alienevo.vulpimancer.wildmutt.10k_idle": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "tail2": {
           "rotation": [
@@ -359,7 +358,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

@@ -163,7 +163,7 @@ function show(p, dial) {
     if (dial.mode === "code") {
         // Same display as the Java mod: "0 0 §e0§r 0 0 0".
         const digits = dial.digits.map((d, i) => (i === dial.pos ? `§e${d}§r` : `${d}`)).join(" ");
-        actionbar(p, `${digits}\n§7Turn: digit  Jump/Use: next  Sneak: close`);
+        actionbar(p, `${digits}\n§7Turn: digit  Jump: next  Sneak: close`);
         return;
     }
     const alien = dial.list[dial.index];
@@ -178,7 +178,7 @@ function show(p, dial) {
     } catch {
         // Player left.
     }
-    actionbar(p, `§8${prev.name} §7◄  ${alien.color}§l${alien.name}§r  §7► §8${next.name}\n§7Turn: spin  §a● Use/Jump: transform  §7Sneak: close`);
+    actionbar(p, `§8${prev.name} §7◄  ${alien.color}§l${alien.name}§r  §7► §8${next.name}\n§7Turn: spin  §a● Jump: transform  §7Sneak: close`);
     showOnDial(p, alien.key);
     const i = HOLO_KEYS.indexOf(alien.key);
     try {

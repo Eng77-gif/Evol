@@ -125,14 +125,17 @@ def simple_items():
     for c in COLORS:
         items.append((f"upgrade_crystal{crystal_suffix(c)}", f"upgrade_crystal{crystal_suffix(c)}", 64, {"tags": ["alienevo:upgrade_crystals"]}))
         items.append((f"upgrade_shards{crystal_suffix(c)}", f"upgrade_shards{crystal_suffix(c)}", 64, {"tags": ["alienevo:upgrade_shards"]}))
-    for name in ["galvan_scrap", "galvan_metal", "upgrade_chip", "machine_key", "machine_urn"]:
+    for name in ["galvan_scrap", "upgrade_chip", "machine_key", "machine_urn"]:
         items.append((name, name, 64, {}))
+    # Smithing: the addition and template need the vanilla smithing tags.
+    items.append(("galvan_metal", "galvan_metal", 64, {"tags": ["minecraft:transform_materials"]}))
     items += [
         ("plumber_badge", "plumber_badge", 1, {}),
         ("machine_scroll", "machine_scroll", 1, {}),
-        ("code_tablet", "code_tablet", 1, {"custom": "alienevo:code_tablet"}),
-        ("code_tablet_selfdestruct", "code_tablet_selfdestruct", 1, {"custom": "alienevo:code_tablet"}),
-        ("smithing_template_galvan", "smithing_template_galvan", 64, {}),
+        # Stackable: dupe_code_tablet crafts two (read tablets keep their own lore).
+        ("code_tablet", "code_tablet", 16, {"custom": "alienevo:code_tablet"}),
+        ("code_tablet_selfdestruct", "code_tablet_selfdestruct", 16, {"custom": "alienevo:code_tablet"}),
+        ("smithing_template_galvan", "smithing_template_galvan", 64, {"tags": ["minecraft:transform_templates"]}),
         ("prototype_core", "prototype_core", 1, {"glint": True}),
     ]
     return items
@@ -307,27 +310,12 @@ def java_block_model_to_geo(model, identifier, tex_size):
 
 # In first person only the alien's arms are drawn (they replace the player's
 # own first person arm, see build_player_entity).
-FIRST_PERSON_ARMS = [{"*": "!v.alienevo_fp"}, {"rightArm": "1.0"}]
+FIRST_PERSON_ARMS = [{"*": "!v.is_first_person"}, {"rightArm": "1.0"}]
 
-# Render controllers of an attachable cannot use context variables
-# (c.is_first_person, c.owning_entity), so the attachable copies what it
-# needs into its own variables first; queries there ask the wearer.
-FORM_VARS = ["v.alienevo_fp = c.is_first_person;"]
-
-
-def watch_vars():
-    omni = ", ".join(f"'alienevo:{i[0]}'" for i in OMNITRIX_ITEMS)
-    out = FORM_VARS + [
-        "v.alienevo_alien = q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form');",
-        f"v.alienevo_offhand = q.is_item_name_any('slot.weapon.offhand', 0, {omni});",
-        "v.alienevo_wv = q.property('alienevo:wv');",
-        "v.alienevo_sel = q.property('alienevo:sel');",
-        "v.alienevo_glow = q.property('alienevo:glow');",
-    ]
-    return out + [f"v.alienevo_col{i} = q.property('alienevo:col{i}');" for i in range(len(WATCH_SLOTS))]
-
-
-WATCH_COND = "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien"
+# Attachables cannot use context variables (c.is_first_person,
+# c.owning_entity) in render controllers; they read the wearer's public
+# variables instead (see build_player_entity).
+WATCH_COND = "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien"
 
 
 def is_translucent(img):
@@ -417,8 +405,7 @@ def build_aliens(vfs, lang):
             "materials": materials,
             "textures": textures,
             "geometry": geometry,
-            "scripts": {"parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
-                        "pre_animation": list(FORM_VARS)},
+            "scripts": {"parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"},
             "render_controllers": rcs,
         }
         if animations:
@@ -568,10 +555,9 @@ def build_omnitrix(vfs, triggers_out):
                 "geometry": geometry,
                 "render_controllers": rcs,
             }
-            desc["scripts"] = {"pre_animation": watch_vars()}
             if animations:
                 desc["animations"] = animations
-                desc["scripts"]["animate"] = animate
+                desc["scripts"] = {"animate": animate}
             write_json(os.path.join(att_dir, f"{item}.json"), {"format_version": "1.10.0", "minecraft:attachable": {"description": desc}})
     print("recal holograms:", build_recal(vfs, controllers, fixed))
     write_json(os.path.join(RP, "render_controllers", "alienevo.omnitrix.render_controllers.json"),
@@ -648,7 +634,7 @@ def build_recal(vfs, controllers, fixed):
     controllers[rc] = {"arrays": {"geometries": {"Array.holo": geos}, "textures": {"Array.holo_tex": texs}},
                        "geometry": f"Array.holo[{sel}]", "materials": [{"*": "Material.hologram"}],
                        "textures": [f"Array.holo_tex[{sel}]"], "ignore_lighting": True}
-    rcs.append({rc: f"v.alienevo_wv && {sel} >= 0 && !v.alienevo_alien"})
+    rcs.append({rc: f"v.alienevo_wv && {sel} >= 0 && !v.alienevo_is_alien"})
     animations, animate, _ = build_alien_animations(vfs, "omnitrix_recal", layers, anim_dir, ctrl_dir, renames, fixed)
     desc = {
         "identifier": "alienevo:recal_omnitrix",
@@ -657,10 +643,9 @@ def build_recal(vfs, controllers, fixed):
         "geometry": geometry,
         "render_controllers": rcs,
     }
-    desc["scripts"] = {"pre_animation": watch_vars()}
     if animations:
         desc["animations"] = animations
-        desc["scripts"]["animate"] = animate
+        desc["scripts"] = {"animate": animate}
     write_json(os.path.join(RP, "attachables", "omnitrix", "recal_omnitrix.json"),
                {"format_version": "1.10.0", "minecraft:attachable": {"description": desc}})
     return found
@@ -1336,7 +1321,9 @@ def build_player_scale_animation():
                 "bones": {"leftarm": {
                     "position": ["-14.50 + variable.is_horizontal_splitscreen * 2.0 + variable.is_vertical_splitscreen * 8.7",
                                  "-8.250 + variable.short_arm_offset_left", "11.50 + variable.is_horizontal_splitscreen * 0.5"],
-                    "rotation": [195.0, 182.5, 2.5],
+                    # Vanilla off-hand map pose turned half a turn around the arm so
+                    # the watch face (outer side of the wrist) looks at the camera.
+                    "rotation": [195.0, 2.5, 2.5],
                     "scale": [0.75, 0.75, 0.75],
                 }},
             },
@@ -1353,7 +1340,9 @@ def build_player_scale_animation():
                 "loop": True,
                 "bones": {"leftarm": {
                     "position": [-11.5, "-6.5 + variable.short_arm_offset_left + math.sin(q.life_time * 60) * 0.15", 11.0],
-                    "rotation": [195.0, 182.5, 2.5],
+                    # Vanilla off-hand map pose turned half a turn around the arm so
+                    # the watch face (outer side of the wrist) looks at the camera.
+                    "rotation": [195.0, 2.5, 2.5],
                     "scale": [0.9, 0.9, 0.9],
                 }},
             },
@@ -1456,6 +1445,26 @@ def build_player_entity(scale_expr):
     desc["scripts"]["animate"].append({"alienevo_scale": "!v.is_first_person && v.alienevo_is_alien"})
     # Looking at the watch in first person: the left arm is raised in front of
     # the camera (pose based on the vanilla off-hand map pose) and drawn.
+    # State shared with the attachables (alien forms, watches): they can
+    # read public variables of the wearer, nothing else of it.
+    shared = {
+        "is_first_person": None,
+        "alienevo_anim": "q.property('alienevo:anim')",
+        "alienevo_fly": "q.property('alienevo:fly')",
+        "alienevo_wv": "q.property('alienevo:wv')",
+        "alienevo_sel": "q.property('alienevo:sel')",
+        "alienevo_glow": "q.property('alienevo:glow')",
+        "alienevo_speed": "q.modified_move_speed",
+        "alienevo_ground": "q.is_on_ground",
+        "alienevo_sprint": "q.is_sprinting",
+        "alienevo_swim": "q.is_swimming",
+    }
+    for i in range(len(WATCH_SLOTS)):
+        shared[f"alienevo_col{i}"] = f"q.property('alienevo:col{i}')"
+    for name, expr in shared.items():
+        desc["scripts"]["variables"][f"variable.{name}"] = "public"
+        if expr:
+            desc["scripts"]["pre_animation"].append(f"v.{name} = {expr};")
     omni = ", ".join(f"'alienevo:{i[0]}'" for i in OMNITRIX_ITEMS)
     desc["scripts"]["variables"]["variable.alienevo_off"] = "public"
     desc["scripts"]["variables"]["variable.alienevo_main"] = "public"

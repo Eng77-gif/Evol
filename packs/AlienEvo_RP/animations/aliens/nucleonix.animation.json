@@ -3,7 +3,6 @@
   "animations": {
     "animation.alienevo.nucleonix.atomix.idle": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "cg5": {
           "position": [

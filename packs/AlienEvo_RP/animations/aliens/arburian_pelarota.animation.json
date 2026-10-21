@@ -4,7 +4,6 @@
     "animation.alienevo.arburian_pelarota.cannonbolt.ball_in": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.75,
-      "override_previous_animation": true,
       "bones": {
         "CANNONBOLT": {
           "position": {
@@ -575,7 +574,6 @@
     "animation.alienevo.arburian_pelarota.cannonbolt.ball_out": {
       "loop": "hold_on_last_frame",
       "animation_length": 3.5,
-      "override_previous_animation": true,
       "bones": {
         "CANNONBOLT": {
           "position": {
@@ -1154,7 +1152,6 @@
     "animation.alienevo.arburian_pelarota.cannonbolt.ball_in.t1": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.75,
-      "override_previous_animation": true,
       "bones": {
         "CANNONBOLT": {
           "position": {
@@ -1721,12 +1718,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.arburian_pelarota.cannonbolt.ball_out.t2": {
       "loop": "hold_on_last_frame",
       "animation_length": 3.5,
-      "override_previous_animation": true,
       "bones": {
         "CANNONBOLT": {
           "position": {
@@ -2290,7 +2286,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

@@ -4,7 +4,6 @@
     "animation.alienevo.oryctini.eat": {
       "loop": "hold_on_last_frame",
       "animation_length": 2,
-      "override_previous_animation": true,
       "bones": {
         "upperJaw": {
           "rotation": {
@@ -234,7 +233,6 @@
     },
     "animation.alienevo.oryctini.arms_locked": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "lowerRightArm": {
           "rotation": [
@@ -264,7 +262,6 @@
     },
     "animation.alienevo.oryctini.default": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "alienevo_none": {
           "rotation": [
@@ -367,7 +364,6 @@
     "animation.alienevo.oryctini.bear_trap": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.5,
-      "override_previous_animation": true,
       "bones": {
         "upperJaw": {
           "rotation": {
@@ -438,7 +434,6 @@
     "animation.alienevo.oryctini.eat.t1": {
       "loop": "hold_on_last_frame",
       "animation_length": 2,
-      "override_previous_animation": true,
       "bones": {
         "upperJaw": {
           "rotation": {
@@ -665,11 +660,10 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.oryctini.arms_locked.t2": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "lowerRightArm": {
           "rotation": [
@@ -696,11 +690,10 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.oryctini.default.t3": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "alienevo_none": {
           "rotation": [
@@ -710,7 +703,7 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 3) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.oryctini.looks_good.t4": {
       "animation_length": 2,
@@ -800,12 +793,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 4) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 4) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.oryctini.bear_trap.t5": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.5,
-      "override_previous_animation": true,
       "bones": {
         "upperJaw": {
           "rotation": {
@@ -872,7 +864,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 5) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 5) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

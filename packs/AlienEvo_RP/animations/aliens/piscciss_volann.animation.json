@@ -3,7 +3,6 @@
   "animations": {
     "animation.alienevo.piscciss_volann.ripjaws.swim_slow": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "tail_1": {
           "rotation": [
@@ -59,7 +58,6 @@
     "animation.alienevo.piscciss_volann.ripjaws.bite": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.4167,
-      "override_previous_animation": true,
       "bones": {
         "jaw": {
           "rotation": {
@@ -228,7 +226,6 @@
     "animation.alienevo.piscciss_volann.ripjaws.swipe": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.9167,
-      "override_previous_animation": true,
       "bones": {
         "tail_1": {
           "rotation": {
@@ -430,7 +427,6 @@
     },
     "animation.alienevo.piscciss_volann.ripjaws.swim_fast": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "tail_1": {
           "rotation": [
@@ -472,7 +468,6 @@
     "animation.alienevo.piscciss_volann.ripjaws.bite.t1": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.4167,
-      "override_previous_animation": true,
       "bones": {
         "jaw": {
           "rotation": {
@@ -637,12 +632,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.piscciss_volann.ripjaws.swipe.t2": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.9167,
-      "override_previous_animation": true,
       "bones": {
         "tail_1": {
           "rotation": {
@@ -841,7 +835,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

@@ -4,7 +4,6 @@
     "animation.alienevo.merlinisapien.tail_standing": {
       "loop": true,
       "animation_length": 3,
-      "override_previous_animation": true,
       "bones": {
         "tail_seg_1": {
           "rotation": {
@@ -347,7 +346,6 @@
     "animation.alienevo.merlinisapien.stinger": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.76,
-      "override_previous_animation": true,
       "bones": {
         "stinger": {
           "position": {
@@ -416,7 +414,6 @@
     "animation.alienevo.merlinisapien.stinger.t1": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.76,
-      "override_previous_animation": true,
       "bones": {
         "stinger": {
           "position": {
@@ -481,7 +478,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

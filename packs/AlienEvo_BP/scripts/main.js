@@ -15,6 +15,7 @@ import {
     setPoints, setRecharge, setXp,
 } from "./state.js";
 import { STRUCTURES } from "./structure_data.js";
+import { initWorldgen, placeStructure } from "./worldgen.js";
 import { sound } from "./util.js";
 import { openWorkbench } from "./workbench.js";
 
@@ -133,15 +134,8 @@ system.beforeEvents.startup.subscribe((ev) => {
     }, (origin, name) => {
         const src = origin.sourceEntity;
         if (!src) return { status: CustomCommandStatus.Failure, message: "Run this as a player." };
-        system.run(() => {
-            try {
-                const loc = src.location;
-                world.structureManager.place(`alienevo:${name}`, src.dimension, { x: Math.floor(loc.x), y: Math.floor(loc.y), z: Math.floor(loc.z) });
-            } catch (e) {
-                console.warn(`[AlienEvo] could not place ${name}: ${e}`);
-            }
-        });
-        return { status: CustomCommandStatus.Success, message: `Placing ${name}.` };
+        system.run(() => placeStructure(src, String(name)));
+        return { status: CustomCommandStatus.Success, message: `Placing ${name}...` };
     });
 
     reg.registerCommand({
@@ -229,6 +223,7 @@ initProjectiles();
 initAbilityTicks();
 initOmnitrix();
 initWorldDial();
+initWorldgen();
 
 world.afterEvents.playerSpawn.subscribe((ev) => {
     if (!ev.initialSpawn) return;

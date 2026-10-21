@@ -3,7 +3,6 @@
   "animations": {
     "animation.alienevo.astrobot.astrobot.idle": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "armorHead_r": {
           "rotation": [
@@ -78,7 +77,6 @@
     "animation.alienevo.astrobot.astrobot.lasers_on": {
       "loop": "hold_on_last_frame",
       "animation_length": 10000,
-      "override_previous_animation": true,
       "bones": {
         "right_laser": {
           "position": {
@@ -181,7 +179,6 @@
     "animation.alienevo.astrobot.astrobot.lasers_off": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.0833,
-      "override_previous_animation": true,
       "bones": {
         "right_laser": {
           "position": {
@@ -296,7 +293,6 @@
     "animation.alienevo.astrobot.astrobot.floss": {
       "loop": true,
       "animation_length": 1,
-      "override_previous_animation": true,
       "bones": {
         "armorHead_r": {
           "position": {
@@ -844,7 +840,6 @@
     },
     "animation.alienevo.astrobot.astrobot.punch_left": {
       "animation_length": 8000,
-      "override_previous_animation": true,
       "bones": {
         "armorHead_r": {
           "rotation": {
@@ -1567,7 +1562,6 @@
     },
     "animation.alienevo.astrobot.astrobot.punch_right": {
       "animation_length": 8000,
-      "override_previous_animation": true,
       "bones": {
         "armorHead_r": {
           "rotation": {
@@ -2290,7 +2284,6 @@
     },
     "animation.alienevo.astrobot.astrobot.spin_attack": {
       "animation_length": 10000,
-      "override_previous_animation": true,
       "bones": {
         "armorLeftArm_r": {
           "rotation": {
@@ -2715,7 +2708,6 @@
     "animation.alienevo.astrobot.astrobot.lasers_on.t1": {
       "loop": "hold_on_last_frame",
       "animation_length": 10000,
-      "override_previous_animation": true,
       "bones": {
         "right_laser": {
           "position": {
@@ -2814,12 +2806,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.astrobot.astrobot.lasers_off.t2": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.0833,
-      "override_previous_animation": true,
       "bones": {
         "right_laser": {
           "position": {
@@ -2930,12 +2921,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.astrobot.astrobot.floss.t3": {
       "loop": true,
       "animation_length": 1,
-      "override_previous_animation": true,
       "bones": {
         "armorHead_r": {
           "position": {
@@ -3480,11 +3470,10 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 3) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.astrobot.astrobot.idle.t4": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "armorHead_r": {
           "rotation": [
@@ -3555,11 +3544,10 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 4) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 4) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.astrobot.astrobot.punch_left.t5": {
       "animation_length": 8000,
-      "override_previous_animation": true,
       "bones": {
         "armorHead_r": {
           "rotation": {
@@ -4280,11 +4268,10 @@
         }
       },
       "loop": "hold_on_last_frame",
-      "anim_time_update": "(q.property('alienevo:anim') == 5) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 5) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.astrobot.astrobot.punch_right.t6": {
       "animation_length": 8000,
-      "override_previous_animation": true,
       "bones": {
         "armorHead_r": {
           "rotation": {
@@ -5005,11 +4992,10 @@
         }
       },
       "loop": "hold_on_last_frame",
-      "anim_time_update": "(q.property('alienevo:anim') == 6) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 6) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.astrobot.astrobot.spin_attack.t7": {
       "animation_length": 10000,
-      "override_previous_animation": true,
       "bones": {
         "armorLeftArm_r": {
           "rotation": {
@@ -5431,7 +5417,7 @@
         }
       },
       "loop": "hold_on_last_frame",
-      "anim_time_update": "(q.property('alienevo:anim') == 7) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 7) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

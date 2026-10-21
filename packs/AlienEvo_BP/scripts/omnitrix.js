@@ -28,6 +28,12 @@ export function omnitrixTier(item) {
     return OMNITRIX_TIERS.findIndex((t) => t.item === item.typeId);
 }
 
+/** Tier of the Omnitrix worn on the wrist or held (-1 = none). @param {Player} p */
+export function wornTier(p) {
+    const eq = p.getComponent("minecraft:equippable");
+    return Math.max(omnitrixTier(eq?.getEquipment(EquipmentSlot.Offhand)), omnitrixTier(eq?.getEquipment(EquipmentSlot.Mainhand)));
+}
+
 /** Recalibrated Omnitrix: same powers as the Evolved one, hologram dial and its own sounds. */
 export const RECAL = "alienevo:recal_omnitrix";
 
@@ -491,7 +497,7 @@ async function abilityMenu(p, alien) {
     const points = getPoints(p, alien.key);
     const form = new ActionFormData()
         .title(`${alien.color}${alien.name}`)
-        .body(`§7Choose an ability. Using the Omnitrix casts the selected ability.\n§7Skill points: §e${points}§7 (earned by levelling ${alien.name})`);
+        .body(`§7Choose an ability. Double tap sneak casts the selected ability.\n§7Skill points: §e${points}§7 (earned by levelling ${alien.name})`);
     alien.abilities.forEach((id, i) => {
         const a = ABILITIES[id];
         const left = cooldownLeft(p, id);
@@ -502,8 +508,14 @@ async function abilityMenu(p, alien) {
         form.button(`${i === sel ? "§2> " : ""}§0${a.name}${left > 0 ? ` §c(${(left / 20).toFixed(0)}s)` : ""}\n§8${a.desc}`);
     });
     form.button("§cDetransform", "textures/ui/cancel");
+    const quick = hasMasterControl(p);
+    if (quick) form.button("§aQuick change", "textures/ui/alienevo/wheel");
     const res = await form.show(p);
     if (res.canceled || res.selection === undefined) return;
+    if (res.selection === alien.abilities.length + 1 && quick) {
+        await openWheel(p, Math.max(0, wornTier(p)));
+        return;
+    }
     if (res.selection >= alien.abilities.length) {
         system.run(() => detransform(p, "manual"));
         return;
@@ -678,7 +690,7 @@ export function wearOmnitrix(p) {
     eq.setEquipment(EquipmentSlot.Offhand, held);
     eq.setEquipment(EquipmentSlot.Mainhand, undefined);
     sound(p, "alienevo.prototype_core_place", 0.6);
-    actionbar(p, "§aOmnitrix strapped to your wrist §7(double tap sneak: alien wheel, use: dial)");
+    actionbar(p, "§aOmnitrix strapped to your wrist §7(double tap sneak: dial, sneak + jump: menu)");
 }
 
 export function initOmnitrix() {
@@ -761,15 +773,36 @@ export function initOmnitrix() {
         lastSneak.set(p.id, now);
         if (now - last > 8) return;
         lastSneak.delete(p.id);
-        const eq = p.getComponent("minecraft:equippable");
-        const tier = Math.max(omnitrixTier(eq?.getEquipment(EquipmentSlot.Offhand)), omnitrixTier(eq?.getEquipment(EquipmentSlot.Mainhand)));
+        const tier = wornTier(p);
         if (tier < 0) return;
-        if (!currentAlien(p) && getRecharge(p) > 0) {
+        const alien = currentAlien(p);
+        if (alien) {
+            // Transformed: double tap sneak casts the selected ability.
+            castAbility(p, alien);
+            return;
+        }
+        if (getRecharge(p) > 0) {
             sound(p, "alienevo.prototype_failsafe");
             actionbar(p, `§cRecharging... §f${formatTime(getRecharge(p))}`);
             return;
         }
-        openWheel(p, tier);
+        // The quick change wheel needs Master Control (quick_change power of
+        // the Java mod); otherwise the dial with the hologram opens.
+        if (hasMasterControl(p)) openWheel(p, tier);
+        else openWorldDial(p, tier);
+    });
+
+    // Jump while sneaking: the menus (ability menu when transformed, the
+    // Omnitrix menu with playlist, codex and codes when human).
+    world.afterEvents.playerButtonInput.subscribe((ev) => {
+        if (ev.button !== "Jump" || ev.newButtonState !== "Pressed" || !ev.player.isSneaking) return;
+        const p = ev.player;
+        if (isDialOpen(p)) return;
+        const tier = wornTier(p);
+        if (tier < 0) return;
+        const alien = currentAlien(p);
+        if (alien) abilityMenu(p, alien);
+        else openDial(p, tier);
     });
 
     world.afterEvents.playerButtonInput.subscribe((ev) => {

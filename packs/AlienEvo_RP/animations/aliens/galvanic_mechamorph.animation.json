@@ -4,7 +4,6 @@
     "animation.alienevo.galvanic_mechamorph.upgrade.fists_on": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.5,
-      "override_previous_animation": true,
       "bones": {
         "forearm": {
           "scale": {
@@ -211,7 +210,6 @@
     "animation.alienevo.galvanic_mechamorph.upgrade.fists_off": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.5,
-      "override_previous_animation": true,
       "bones": {
         "forearm": {
           "scale": {
@@ -391,7 +389,6 @@
     "animation.alienevo.galvanic_mechamorph.upgrade.liquid": {
       "loop": true,
       "animation_length": 1.2667,
-      "override_previous_animation": true,
       "bones": {
         "1": {
           "scale": {
@@ -731,7 +728,6 @@
     },
     "animation.alienevo.galvanic_mechamorph.upgrade.liquid_off": {
       "loop": "hold_on_last_frame",
-      "override_previous_animation": true,
       "bones": {
         "1": {
           "scale": [
@@ -874,7 +870,6 @@
     "animation.alienevo.galvanic_mechamorph.upgrade.fists_on.t1": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.5,
-      "override_previous_animation": true,
       "bones": {
         "forearm": {
           "scale": {
@@ -1077,12 +1072,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.galvanic_mechamorph.upgrade.fists_off.t2": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.5,
-      "override_previous_animation": true,
       "bones": {
         "forearm": {
           "scale": {
@@ -1258,12 +1252,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.galvanic_mechamorph.upgrade.liquid.t3": {
       "loop": true,
       "animation_length": 1.2667,
-      "override_previous_animation": true,
       "bones": {
         "1": {
           "scale": {
@@ -1600,11 +1593,10 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 3) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.galvanic_mechamorph.upgrade.liquid_off.t4": {
       "loop": "hold_on_last_frame",
-      "override_previous_animation": true,
       "bones": {
         "1": {
           "scale": [
@@ -1717,7 +1709,7 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 4) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 4) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

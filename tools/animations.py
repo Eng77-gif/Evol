@@ -23,9 +23,9 @@ BONE_MAP = {
 
 LERP = {"linear": "linear", "step": "step"}
 # Synced player property set by the server script (see BP entities/player.json).
-# Queries in an attachable are answered by the entity wearing it
-# (c.owning_entity is not available there).
-OWNER_VAR = "q.property('alienevo:anim')"
+# An attachable reads the wearer's state through public variables of the
+# player client entity (build_player_entity), like vanilla v.attack_time.
+OWNER_VAR = "v.alienevo_anim"
 
 # Ticks each trigger keeps alienevo:anim set (-1 = held until the next
 # trigger), per model key; written to anim_data.js for the scripts.
@@ -103,7 +103,9 @@ def convert_keyframe(kf):
 
 def convert_animation(anim, renames=None):
     out = {}
-    for k in ("loop", "animation_length", "override_previous_animation", "blend_weight", "anim_time_update"):
+    # override_previous_animation is dropped: on Bedrock it would also wipe
+    # the motion the bones inherit from the wearer (walking, punching).
+    for k in ("loop", "animation_length", "blend_weight", "anim_time_update"):
         if k in anim:
             out[k] = anim[k]
     bones = {}
@@ -122,10 +124,10 @@ def convert_animation(anim, renames=None):
 # Movement animations found by name in the alien's animation files.
 # (state, regex on the short animation name, owner condition)
 MOVEMENT = [
-    ("fly", r"(^|_)(flight|fly|flying|hover)(_on)?$", "q.property('alienevo:fly')"),
-    ("swim", r"(swim_fast|tail_swim|swim)$", "q.is_swimming"),
-    ("sprint", r"^sprint\d*$", "q.is_sprinting && q.is_on_ground"),
-    ("walk", r"^walk$", "q.modified_move_speed > 0.1 && q.is_on_ground"),
+    ("fly", r"(^|_)(flight|fly|flying|hover)(_on)?$", "v.alienevo_fly"),
+    ("swim", r"(swim_fast|tail_swim|swim)$", "v.alienevo_swim"),
+    ("sprint", r"^sprint\d*$", "v.alienevo_sprint && v.alienevo_ground"),
+    ("walk", r"^walk$", "v.alienevo_speed > 0.1 && v.alienevo_ground"),
 ]
 
 

@@ -3,7 +3,6 @@
   "animations": {
     "animation.alienevo.ectonurite.ghostfreak.idle": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "body_01": {
           "rotation": [
@@ -87,7 +86,6 @@
     "animation.alienevo.ectonurite.ghostfreak.eye": {
       "loop": true,
       "animation_length": 16.0417,
-      "override_previous_animation": true,
       "bones": {
         "eye": {
           "position": {
@@ -362,7 +360,6 @@
     "animation.alienevo.ectonurite.ghostfreak.scare": {
       "loop": "hold_on_last_frame",
       "animation_length": 3.5833,
-      "override_previous_animation": true,
       "bones": {
         "leftupperarm": {
           "rotation": {
@@ -1735,7 +1732,6 @@
     "animation.alienevo.ectonurite.ghostfreak.strike": {
       "loop": "hold_on_last_frame",
       "animation_length": 1.5833,
-      "override_previous_animation": true,
       "bones": {
         "leftupperarm": {
           "rotation": {
@@ -2917,7 +2913,6 @@
     "animation.alienevo.ectonurite.ghostfreak.scare.t1": {
       "loop": "hold_on_last_frame",
       "animation_length": 3.5833,
-      "override_previous_animation": true,
       "bones": {
         "leftupperarm": {
           "rotation": {
@@ -4286,12 +4281,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.ectonurite.ghostfreak.strike.t2": {
       "loop": "hold_on_last_frame",
       "animation_length": 1.5833,
-      "override_previous_animation": true,
       "bones": {
         "leftupperarm": {
           "rotation": {
@@ -5469,7 +5463,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

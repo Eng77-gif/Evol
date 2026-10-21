@@ -2860,7 +2860,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.loboan.loboan.lpunch.t2": {
       "animation_length": 0.8333,
@@ -2994,7 +2994,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.loboan.loboan.mouth.t3": {
       "loop": "hold_on_last_frame",
@@ -3480,7 +3480,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 3) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.loboan.loboan.mouthnt.t4": {
       "loop": "hold_on_last_frame",
@@ -3939,7 +3939,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 4) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 4) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.loboan.loboan.megamouth.t5": {
       "loop": "hold_on_last_frame",
@@ -4544,7 +4544,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 5) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 5) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.loboan.loboan.bite.t6": {
       "loop": "hold_on_last_frame",
@@ -4657,7 +4657,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 6) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 6) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

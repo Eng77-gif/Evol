@@ -3,7 +3,6 @@
   "animations": {
     "animation.alienevo.lepidopterran.stinkfly.idle": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "eye_01": {
           "rotation": [
@@ -106,7 +105,6 @@
     "animation.alienevo.lepidopterran.stinkfly.sonar": {
       "loop": "hold_on_last_frame",
       "animation_length": 10000,
-      "override_previous_animation": true,
       "bones": {
         "tail1": {
           "rotation": {
@@ -212,7 +210,6 @@
     "animation.alienevo.lepidopterran.stinkfly.wet_on": {
       "loop": "hold_on_last_frame",
       "animation_length": 10000,
-      "override_previous_animation": true,
       "blend_weight": 0.5,
       "bones": {
         "wing_right": {
@@ -282,7 +279,6 @@
     "animation.alienevo.lepidopterran.stinkfly.wet_off": {
       "loop": "hold_on_last_frame",
       "animation_length": 10000,
-      "override_previous_animation": true,
       "blend_weight": 0.5,
       "bones": {
         "wing_right": {
@@ -351,7 +347,6 @@
     },
     "animation.alienevo.lepidopterran.stinkfly.flight": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "wing_right": {
           "rotation": [
@@ -372,7 +367,6 @@
     "animation.alienevo.lepidopterran.stinkfly.sonar.t1": {
       "loop": "hold_on_last_frame",
       "animation_length": 10000,
-      "override_previous_animation": true,
       "bones": {
         "tail1": {
           "rotation": {
@@ -474,12 +468,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.lepidopterran.stinkfly.wet_on.t2": {
       "loop": "hold_on_last_frame",
       "animation_length": 10000,
-      "override_previous_animation": true,
       "blend_weight": 0.5,
       "bones": {
         "wing_right": {
@@ -545,12 +538,11 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.lepidopterran.stinkfly.wet_off.t3": {
       "loop": "hold_on_last_frame",
       "animation_length": 10000,
-      "override_previous_animation": true,
       "blend_weight": 0.5,
       "bones": {
         "wing_right": {
@@ -616,7 +608,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 3) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

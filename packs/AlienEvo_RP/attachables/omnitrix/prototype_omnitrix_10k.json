@@ -215,99 +215,42 @@
       },
       "render_controllers": [
         {
-          "controller.render.alienevo.omnitrix_10k_0": "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien"
+          "controller.render.alienevo.omnitrix_10k_0": "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_0_glow": "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien"
+          "controller.render.alienevo.omnitrix_10k_0_glow": "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_base_primary": "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien && v.alienevo_col0 >= 0"
+          "controller.render.alienevo.omnitrix_10k_base_primary": "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien && v.alienevo_col0 >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_base_secondary": "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien && v.alienevo_col1 >= 0"
+          "controller.render.alienevo.omnitrix_10k_base_secondary": "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien && v.alienevo_col1 >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_base_tertiary": "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien && v.alienevo_col2 >= 0"
+          "controller.render.alienevo.omnitrix_10k_base_tertiary": "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien && v.alienevo_col2 >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_buttons": "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien && v.alienevo_col3 >= 0"
+          "controller.render.alienevo.omnitrix_10k_buttons": "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien && v.alienevo_col3 >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_core_side": "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien && v.alienevo_col4 >= 0"
+          "controller.render.alienevo.omnitrix_10k_core_side": "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien && v.alienevo_col4 >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_core_top": "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien && v.alienevo_col5 >= 0"
+          "controller.render.alienevo.omnitrix_10k_core_top": "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien && v.alienevo_col5 >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_dial_inner": "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien && v.alienevo_col6 >= 0"
+          "controller.render.alienevo.omnitrix_10k_dial_inner": "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien && v.alienevo_col6 >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_dial_outer": "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien && v.alienevo_col7 >= 0"
+          "controller.render.alienevo.omnitrix_10k_dial_outer": "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien && v.alienevo_col7 >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_tubes": "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien && v.alienevo_col8 >= 0"
+          "controller.render.alienevo.omnitrix_10k_tubes": "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien && v.alienevo_col8 >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_10k_1": "(!v.alienevo_fp || v.alienevo_offhand || v.alienevo_wv) && !v.alienevo_alien && v.alienevo_sel >= 0"
+          "controller.render.alienevo.omnitrix_10k_1": "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien && v.alienevo_sel >= 0"
         }
       ],
-      "scripts": {
-        "pre_animation": [
-          "v.alienevo_fp = c.is_first_person;",
-          "v.alienevo_alien = q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form');",
-          "v.alienevo_offhand = q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix');",
-          "v.alienevo_wv = q.property('alienevo:wv');",
-          "v.alienevo_sel = q.property('alienevo:sel');",
-          "v.alienevo_glow = q.property('alienevo:glow');",
-          "v.alienevo_col0 = q.property('alienevo:col0');",
-          "v.alienevo_col1 = q.property('alienevo:col1');",
-          "v.alienevo_col2 = q.property('alienevo:col2');",
-          "v.alienevo_col3 = q.property('alienevo:col3');",
-          "v.alienevo_col4 = q.property('alienevo:col4');",
-          "v.alienevo_col5 = q.property('alienevo:col5');",
-          "v.alienevo_col6 = q.property('alienevo:col6');",
-          "v.alienevo_col7 = q.property('alienevo:col7');",
-          "v.alienevo_col8 = q.property('alienevo:col8');"
-        ],
-        "animate": [
-          {
-            "t1": "q.property('alienevo:anim') == 1"
-          },
-          {
-            "t2": "q.property('alienevo:anim') == 2"
-          },
-          {
-            "t3": "q.property('alienevo:anim') == 3"
-          },
-          {
-            "t4": "q.property('alienevo:anim') == 4"
-          },
-          {
-            "t5": "q.property('alienevo:anim') == 5"
-          },
-          {
-            "t6": "q.property('alienevo:anim') == 6"
-          },
-          {
-            "t7": "q.property('alienevo:anim') == 7"
-          },
-          {
-            "t10": "q.property('alienevo:anim') == 10"
-          },
-          {
-            "t11": "q.property('alienevo:anim') == 11"
-          },
-          {
-            "t8": "q.property('alienevo:anim') == 8"
-          },
-          {
-            "t9": "q.property('alienevo:anim') == 9"
-          },
-          {
-            "t12": "q.property('alienevo:anim') == 12"
-          }
-        ]
-      },
       "animations": {
         "t1": "animation.alienevo.omnitrix_10k.prototype.spinleft.t1",
         "t2": "animation.alienevo.omnitrix_10k.prototype.spinright.t2",
@@ -321,6 +264,46 @@
         "t8": "animation.alienevo.omnitrix_10k.prototype.alt_spinright.t8",
         "t9": "animation.alienevo.omnitrix_10k.prototype.alt_spinleft.t9",
         "t12": "animation.alienevo.omnitrix_10k.prototype.unlock_master.t12"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "t1": "v.alienevo_anim == 1"
+          },
+          {
+            "t2": "v.alienevo_anim == 2"
+          },
+          {
+            "t3": "v.alienevo_anim == 3"
+          },
+          {
+            "t4": "v.alienevo_anim == 4"
+          },
+          {
+            "t5": "v.alienevo_anim == 5"
+          },
+          {
+            "t6": "v.alienevo_anim == 6"
+          },
+          {
+            "t7": "v.alienevo_anim == 7"
+          },
+          {
+            "t10": "v.alienevo_anim == 10"
+          },
+          {
+            "t11": "v.alienevo_anim == 11"
+          },
+          {
+            "t8": "v.alienevo_anim == 8"
+          },
+          {
+            "t9": "v.alienevo_anim == 9"
+          },
+          {
+            "t12": "v.alienevo_anim == 12"
+          }
+        ]
       }
     }
   }

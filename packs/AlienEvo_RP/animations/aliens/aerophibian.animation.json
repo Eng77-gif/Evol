@@ -3,7 +3,6 @@
   "animations": {
     "animation.alienevo.aerophibian.jetray.idle": {
       "loop": true,
-      "override_previous_animation": true,
       "bones": {
         "tailbase": {
           "rotation": [
@@ -31,7 +30,6 @@
     "animation.alienevo.aerophibian.jetray.flight_on": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.5833,
-      "override_previous_animation": true,
       "bones": {
         "leftArm": {
           "rotation": {

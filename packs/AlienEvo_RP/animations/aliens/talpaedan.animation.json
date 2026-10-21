@@ -3034,7 +3034,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.talpaedan.drill_off_single.t2": {
       "loop": "hold_on_last_frame",
@@ -3298,7 +3298,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.talpaedan.spin_start_single.t3": {
       "loop": true,
@@ -3435,7 +3435,7 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 3) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.talpaedan.spin_end_single.t4": {
       "loop": "hold_on_last_frame",
@@ -3521,7 +3521,7 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 4) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 4) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.talpaedan.drill_on_both.t5": {
       "loop": "hold_on_last_frame",
@@ -3857,7 +3857,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 5) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 5) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.talpaedan.drill_off_both.t6": {
       "loop": "hold_on_last_frame",
@@ -4193,7 +4193,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 6) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 6) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.talpaedan.spin_start_both.t7": {
       "loop": true,
@@ -4460,7 +4460,7 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 7) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 7) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.talpaedan.spin_end_both.t8": {
       "loop": "hold_on_last_frame",
@@ -4611,7 +4611,7 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 8) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 8) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.talpaedan.aim_rot_right.t9": {
       "loop": "hold_on_last_frame",
@@ -4625,7 +4625,7 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 9) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 9) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.talpaedan.charge_piston.t10": {
       "loop": "hold_on_last_frame",
@@ -4665,7 +4665,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 10) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 10) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.talpaedan.rot_reset.t11": {
       "loop": "hold_on_last_frame",
@@ -4799,7 +4799,7 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 11) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 11) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.talpaedan.spin_attack.t12": {
       "loop": "hold_on_last_frame",
@@ -4929,7 +4929,7 @@
           ]
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 12) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 12) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.talpaedan.ground_piston.t13": {
       "loop": "hold_on_last_frame",
@@ -5034,7 +5034,7 @@
           }
         }
       },
-      "anim_time_update": "(q.property('alienevo:anim') == 13) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "(v.alienevo_anim == 13) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }
