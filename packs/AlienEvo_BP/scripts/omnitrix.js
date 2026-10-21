@@ -463,19 +463,24 @@ function animateAbility(p, alien, abilityId) {
 const cooldowns = new Map();
 
 /** @param {Player} p @param {string} abilityId */
-function cooldownLeft(p, abilityId) {
+export function cooldownLeft(p, abilityId) {
     return Math.max(0, (cooldowns.get(`${p.id}:${abilityId}`) ?? 0) - system.currentTick);
 }
 
 /** @param {Player} p @param {Alien} alien @param {number} [index] */
 export function castAbility(p, alien, index) {
     let i = index ?? getAbilityIndex(p, alien.key);
+    // The last slot of the ability bar is the Omnitrix itself: its menu.
+    if (i === alien.abilities.length) {
+        abilityMenu(p, alien);
+        return;
+    }
     if (!alien.abilities[i]) i = 0;
     const id = alien.abilities[i];
     const ability = ABILITIES[id];
     if (!ability) return;
     if (!isSkillUnlocked(p, alien.key, i)) {
-        actionbar(p, `§c${ability.name} is locked §7- open the ability menu (sneak + use) to unlock it`);
+        actionbar(p, `§c${ability.name} is locked §7- select the Omnitrix slot of the ability bar and tap to unlock it`);
         return;
     }
     const left = cooldownLeft(p, id);
@@ -497,7 +502,7 @@ async function abilityMenu(p, alien) {
     const points = getPoints(p, alien.key);
     const form = new ActionFormData()
         .title(`${alien.color}${alien.name}`)
-        .body(`§7Choose an ability. Tapping the air casts the selected ability.\n§7Skill points: §e${points}§7 (earned by levelling ${alien.name})`);
+        .body(`§7Choose an ability. Tapping the air casts the selected ability, sneak + tap selects the next one.\n§7Skill points: §e${points}§7 (earned by levelling ${alien.name})`);
     alien.abilities.forEach((id, i) => {
         const a = ABILITIES[id];
         const left = cooldownLeft(p, id);
@@ -538,6 +543,18 @@ async function abilityMenu(p, alien) {
     system.run(() => castAbility(p, alien, index));
 }
 
+/**
+ * Selects the next slot of the ability bar (the abilities, then the Omnitrix
+ * slot that opens the menu).
+ * @param {Player} p @param {Alien} alien
+ */
+export function nextAbility(p, alien) {
+    const count = alien.abilities.length + 1;
+    const i = (Math.min(getAbilityIndex(p, alien.key), count - 1) + 1) % count;
+    setAbilityIndex(p, alien.key, i);
+    sound(p, wearsRecal(p) ? "alienevo.recal_cycle" : "alienevo.prototype_cycle_1", 0.7);
+}
+
 /** Omnitrix item used. @param {Player} p @param {number} tier */
 export function useOmnitrix(p, tier) {
     wearOmnitrix(p);
@@ -547,7 +564,7 @@ export function useOmnitrix(p, tier) {
     }
     const alien = currentAlien(p);
     if (alien) {
-        if (p.isSneaking) abilityMenu(p, alien);
+        if (p.isSneaking) nextAbility(p, alien);
         else castAbility(p, alien);
         return;
     }
@@ -595,7 +612,7 @@ export function interact(p) {
     }
     const alien = currentAlien(p);
     if (p.isSneaking) {
-        if (alien) abilityMenu(p, alien);
+        if (alien) nextAbility(p, alien);
         else openDial(p, tier);
         return;
     }
@@ -706,16 +723,6 @@ function passiveTick(p, alien) {
 
 // ------------------------------------------------------------------ main loop
 
-/** @param {Player} p @param {Alien} alien */
-function hud(p, alien) {
-    const ability = ABILITIES[alien.abilities[getAbilityIndex(p, alien.key)] ?? alien.abilities[0]];
-    const left = cooldownLeft(p, alien.abilities[getAbilityIndex(p, alien.key)] ?? alien.abilities[0]);
-    const timer = hasMasterControl(p) ? "§a∞" : (getTimer(p) < 200 ? "§c" : "§a") + formatTime(getTimer(p));
-    const ab = left > 0 ? `§7${ability.name} §c${(left / 20).toFixed(1)}s` : `§e${ability.name}`;
-    const extra = flying.has(p.id) ? " §b[Flying]" : "";
-    actionbar(p, `${alien.color}${alien.name} §8| ${ab} §8| ${timer}${extra}`);
-}
-
 /**
  * The Omnitrix is worn on the left wrist like the Curios slot of the Java
  * mod: one held in the main hand moves to an empty offhand.
@@ -732,7 +739,7 @@ export function wearOmnitrix(p) {
     eq.setEquipment(EquipmentSlot.Offhand, held);
     eq.setEquipment(EquipmentSlot.Mainhand, undefined);
     sound(p, "alienevo.prototype_core_place", 0.6);
-    actionbar(p, "§aOmnitrix on your wrist §7- tap the air: Omnitrix, sneak + tap: menu");
+    actionbar(p, "§aOmnitrix on your wrist §7- tap the air: Omnitrix, sneak + tap: Omnitrix menu");
 }
 
 export function initOmnitrix() {
@@ -781,7 +788,6 @@ export function initOmnitrix() {
                 }
             }
             passiveTick(p, alien);
-            if (system.currentTick % 10 === 0) hud(p, alien);
         }
     }, 2);
 

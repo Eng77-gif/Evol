@@ -1,6 +1,6 @@
 // Alien abilities.  The Java mod drives these with Palladium abilities bound to
 // keys; here the selected ability is cast by using the Omnitrix while
-// transformed (sneak + use opens the ability menu).
+// transformed (sneak + tap cycles the ability bar).
 
 import { BlockPermutation, system } from "@minecraft/server";
 import { shoot } from "./projectiles.js";

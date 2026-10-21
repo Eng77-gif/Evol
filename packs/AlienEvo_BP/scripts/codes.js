@@ -8,7 +8,7 @@ import { ALIEN_BY_KEY, ALIENS } from "./aliens.js";
 import { showOnDial } from "./dial.js";
 import { playWatch } from "./omnitrix.js";
 import { getAlien, getExtraDna, hasMasterControl, setExtraDna, setMasterControl, setSelected } from "./state.js";
-import { sound } from "./util.js";
+import { showTitle, sound } from "./util.js";
 
 /** @typedef {import("@minecraft/server").Player} Player */
 
@@ -171,7 +171,7 @@ export function checkCode(p, code) {
         setMasterControl(p, true);
         sound(p, "alienevo.prototype_master_control");
         playWatch(p, "master_control");
-        p.onScreenDisplay.setTitle("§a§lMaster Control", { fadeInDuration: 5, stayDuration: 40, fadeOutDuration: 10 });
+        showTitle(p, "§a§lMaster Control", { fadeInDuration: 5, stayDuration: 40, fadeOutDuration: 10 });
         p.sendMessage("§a§lMaster Control unlocked! §r§7The Omnitrix will no longer time out.");
         return true;
     }
@@ -195,7 +195,7 @@ export function checkCode(p, code) {
         setSelected(p, alien.id);
         showOnDial(p, alien.key);
         sound(p, "alienevo.prototype_core_place");
-        p.onScreenDisplay.setTitle(`${alien.color}§l${alien.name}`, { fadeInDuration: 5, stayDuration: 40, fadeOutDuration: 10, subtitle: "§aDNA unlocked" });
+        showTitle(p, `${alien.color}§l${alien.name}`, { fadeInDuration: 5, stayDuration: 40, fadeOutDuration: 10, subtitle: "§aDNA unlocked" });
         p.sendMessage(`${alien.color}${alien.name}§a DNA added to the Omnitrix!`);
     }
     playWatch(p, "close_trigger");
@@ -232,7 +232,7 @@ function selfDestruct(p) {
     const id = system.runInterval(() => {
         if (!p.isValid) return system.clearRun(id);
         if (n > 0) {
-            p.onScreenDisplay.setTitle(`§4${n}`, { fadeInDuration: 0, stayDuration: 20, fadeOutDuration: 0 });
+            showTitle(p, `§4${n}`, { fadeInDuration: 0, stayDuration: 20, fadeOutDuration: 0 });
             sound(p, "alienevo.prototype_sdm_blink");
             n--;
             return;

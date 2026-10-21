@@ -1,0 +1,28 @@
+{
+  "namespace": "hud",
+  "hud_title_text": {
+    "bindings": [
+      {
+        "binding_name": "#hud_title_text_string"
+      },
+      {
+        "binding_type": "view",
+        "target_property_name": "#visible",
+        "source_property_name": "((#hud_title_text_string - 'aev:') = #hud_title_text_string)"
+      }
+    ]
+  },
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "alienevo_hud@alienevo_hud.root": {}
+          }
+        ]
+      }
+    ]
+  }
+}

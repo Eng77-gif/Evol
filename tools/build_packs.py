@@ -31,6 +31,7 @@ from icons import render_icon
 from layers import VFS, resolve
 import sanitize
 import structures
+import hud
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RP = os.path.join(ROOT, "packs", "AlienEvo_RP")
@@ -2044,6 +2045,7 @@ def main():
     print("holograms:", build_hologram(lang))
     build_glyphs()
     build_wheel_ui(vfs)
+    print("hud:", hud.build(vfs, RP, BP))
     build_recipes(jar)
     untapped_recipes()
     unlock_recipes()

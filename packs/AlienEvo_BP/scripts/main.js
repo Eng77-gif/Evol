@@ -15,6 +15,7 @@ import {
     setPoints, setRecharge, setXp,
 } from "./state.js";
 import { STRUCTURES } from "./structure_data.js";
+import { initHud } from "./hud.js";
 import { initWorldgen, placeStructure } from "./worldgen.js";
 import { sound } from "./util.js";
 import { openWorkbench } from "./workbench.js";
@@ -224,6 +225,7 @@ initAbilityTicks();
 initOmnitrix();
 initWorldDial();
 initWorldgen();
+initHud();
 
 world.afterEvents.playerSpawn.subscribe((ev) => {
     if (!ev.initialSpawn) return;
@@ -232,7 +234,7 @@ world.afterEvents.playerSpawn.subscribe((ev) => {
     p.setDynamicProperty("alienevo:welcome", true);
     system.runTimeout(() => {
         if (!p.isValid) return;
-        p.sendMessage("§a[AlienEvo] §7Find §fGalvan Pods§7 around the world to collect Galvan Scrap, Omni Shards and the §aPrototype Omnitrix Core§7.\n§7Craft the §aPrototype Omnitrix§7 and use it to pick an alien. Use it again while transformed to cast abilities, sneak + use for the ability menu.");
+        p.sendMessage("§a[AlienEvo] §7Find §fGalvan Pods§7 around the world to collect Galvan Scrap, Omni Shards and the §aPrototype Omnitrix Core§7.\n§7Craft the §aPrototype Omnitrix§7 and use it to pick an alien. Tap the air with the Omnitrix on your wrist to open it. While transformed: tap = selected ability, sneak + tap = next ability (the Omnitrix slot opens the menu).");
     }, 100);
 });
 

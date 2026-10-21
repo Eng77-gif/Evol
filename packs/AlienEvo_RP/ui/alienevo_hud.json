@@ -1,0 +1,5231 @@
+{
+  "namespace": "alienevo_hud",
+  "data": {
+    "type": "panel",
+    "size": [
+      0,
+      0
+    ],
+    "property_bag": {
+      "#preserved_text": ""
+    },
+    "bindings": [
+      {
+        "binding_name": "#hud_title_text_string"
+      },
+      {
+        "binding_name": "#hud_title_text_string",
+        "binding_name_override": "#preserved_text",
+        "binding_condition": "visibility_changed"
+      },
+      {
+        "binding_type": "view",
+        "target_property_name": "#visible",
+        "source_property_name": "(not (#hud_title_text_string = #preserved_text) and not ((#hud_title_text_string - 'aev:') = #hud_title_text_string))"
+      }
+    ]
+  },
+  "root": {
+    "type": "panel",
+    "size": [
+      "100%",
+      "100%"
+    ],
+    "layer": 30,
+    "controls": [
+      {
+        "alienevo_hud_data@alienevo_hud.data": {}
+      },
+      {
+        "plate": {
+          "type": "panel",
+          "size": [
+            120,
+            50
+          ],
+          "offset": [
+            2,
+            2
+          ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "alienevo_hud_data",
+              "source_property_name": "((not (#preserved_text = '')) and ((#preserved_text - '[m0]') = #preserved_text))",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "bg": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/panel",
+                "size": [
+                  120,
+                  36
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left"
+              }
+            },
+            {
+              "health_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  4,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h01]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  4,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e01]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  4,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e01]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_2": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  7,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h02]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_2": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  7,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e02]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_2": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  7,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e02]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_3": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  11,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h03]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_3": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  11,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e03]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_3": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  11,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e03]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_4": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  15,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h04]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_4": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  15,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e04]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_4": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  15,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e04]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_5": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  18,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h05]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_5": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  18,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e05]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_5": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  18,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e05]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_6": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  22,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h06]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_6": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  22,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e06]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_6": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  22,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e06]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_7": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  26,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h07]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_7": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  26,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e07]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_7": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  26,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e07]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_8": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  30,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h08]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_8": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  30,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e08]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_8": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  30,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e08]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_9": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  33,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h09]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_9": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  33,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e09]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_9": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  33,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e09]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_10": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  37,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h10]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_10": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  37,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e10]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_10": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  37,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e10]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_11": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  41,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h11]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_11": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  41,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e11]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_11": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  41,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e11]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_12": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  44,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h12]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_12": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  44,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e12]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_12": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  44,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e12]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_13": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  48,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h13]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_13": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  48,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e13]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_13": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  48,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e13]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_14": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  52,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h14]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_14": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  52,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e14]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_14": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  52,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e14]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_15": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  56,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h15]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_15": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  56,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e15]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_15": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  56,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e15]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_16": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  59,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h16]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_16": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  59,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e16]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_16": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  59,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e16]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_17": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  63,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h17]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_17": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  63,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e17]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_17": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  63,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e17]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_18": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  67,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h18]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_18": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  67,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e18]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_18": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  67,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e18]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_19": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  70,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h19]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_19": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  70,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e19]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_19": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  70,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e19]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "health_20": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/health",
+                "size": [
+                  74,
+                  5
+                ],
+                "offset": [
+                  36,
+                  11
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[h20]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "energy_20": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/energy",
+                "size": [
+                  74,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e20]') = #preserved_text)) and ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "recharge_20": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/recharge",
+                "size": [
+                  74,
+                  5
+                ],
+                "offset": [
+                  36,
+                  20
+                ],
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[e20]') = #preserved_text)) and (not ((#preserved_text - '[m2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "badge_ready": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/badge_ready",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[b....................]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "badge_recharge": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/badge_recharge",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[m2]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_pyronite": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_pyronite",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bpyronite............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_pyronite": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_pyronite",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bpyronite............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_vulpimancer": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_vulpimancer",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bvulpimancer.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_vulpimancer": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_vulpimancer",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bvulpimancer.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_petrosapien": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_petrosapien",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bpetrosapien.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_petrosapien": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_petrosapien",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bpetrosapien.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_kineceleran": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_kineceleran",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bkineceleran.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_kineceleran": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_kineceleran",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bkineceleran.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_galvan": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_galvan",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bgalvan..............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_galvan": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_galvan",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bgalvan..............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_tetramand": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_tetramand",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[btetramand...........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_tetramand": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_tetramand",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[btetramand...........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_lepidopterran": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_lepidopterran",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[blepidopterran.......]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_lepidopterran": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_lepidopterran",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[blepidopterran.......]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_piscciss_volann": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_piscciss_volann",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bpiscciss_volann.....]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_piscciss_volann": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_piscciss_volann",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bpiscciss_volann.....]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_galvanic_mechamorph": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_galvanic_mechamorph",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bgalvanic_mechamorph.]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_galvanic_mechamorph": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_galvanic_mechamorph",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bgalvanic_mechamorph.]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_ectonurite": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_ectonurite",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bectonurite..........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_ectonurite": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_ectonurite",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bectonurite..........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_arburian_pelarota": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_arburian_pelarota",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[barburian_pelarota...]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_arburian_pelarota": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_arburian_pelarota",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[barburian_pelarota...]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_methanosian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_methanosian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bmethanosian.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_methanosian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_methanosian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bmethanosian.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_sonorosian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_sonorosian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bsonorosian..........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_sonorosian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_sonorosian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bsonorosian..........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_vaxasaurian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_vaxasaurian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bvaxasaurian.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_vaxasaurian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_vaxasaurian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bvaxasaurian.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_aerophibian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_aerophibian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[baerophibian.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_aerophibian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_aerophibian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[baerophibian.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_necrofriggian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_necrofriggian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bnecrofriggian.......]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_necrofriggian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_necrofriggian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bnecrofriggian.......]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_crystalsapien": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_crystalsapien",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bcrystalsapien.......]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_crystalsapien": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_crystalsapien",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bcrystalsapien.......]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_nucleonix": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_nucleonix",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bnucleonix...........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_nucleonix": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_nucleonix",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bnucleonix...........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_dragonoid": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_dragonoid",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bdragonoid...........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_dragonoid": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_dragonoid",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bdragonoid...........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_astrobot": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_astrobot",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bastrobot............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_astrobot": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_astrobot",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bastrobot............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_opticoid": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_opticoid",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bopticoid............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_opticoid": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_opticoid",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bopticoid............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_perkgourmand": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_perkgourmand",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bperkgourmand........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_perkgourmand": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_perkgourmand",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bperkgourmand........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_murkgourmand": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_murkgourmand",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bmurkgourmand........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_murkgourmand": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_murkgourmand",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bmurkgourmand........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_talpaedan": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_talpaedan",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[btalpaedan...........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_talpaedan": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_talpaedan",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[btalpaedan...........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_orishan": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_orishan",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[borishan.............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_orishan": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_orishan",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[borishan.............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_amperi": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_amperi",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bamperi..............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_amperi": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_amperi",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bamperi..............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_nosedeenian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_nosedeenian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bnosedeenian.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_nosedeenian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_nosedeenian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bnosedeenian.........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_loboan": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_loboan",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bloboan..............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_loboan": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_loboan",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bloboan..............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_transylian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_transylian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[btransylian..........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_transylian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_transylian",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[btransylian..........]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_florauna": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_florauna",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bflorauna............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_florauna": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_florauna",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bflorauna............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_merlinisapien": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_merlinisapien",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bmerlinisapien.......]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_merlinisapien": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_merlinisapien",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bmerlinisapien.......]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_ickthyperambuloid": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_ickthyperambuloid",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bickthyperambuloid...]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_ickthyperambuloid": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_ickthyperambuloid",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bickthyperambuloid...]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_splixson": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_splixson",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bsplixson............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_splixson": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_splixson",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bsplixson............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_oryctini": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_oryctini",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[boryctini............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_oryctini": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_oryctini",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[boryctini............]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_sonorosian_ov": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_sonorosian_ov",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bsonorosian_ov.......]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_sonorosian_ov": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_sonorosian_ov",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bsonorosian_ov.......]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "ready_necrofriggian_ov": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/ready_necrofriggian_ov",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m1]') = #preserved_text)) and (not ((#preserved_text - '[bnecrofriggian_ov....]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "alien_necrofriggian_ov": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/alien_necrofriggian_ov",
+                "size": [
+                  26,
+                  26
+                ],
+                "offset": [
+                  5,
+                  5
+                ],
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[m3]') = #preserved_text)) and (not ((#preserved_text - '[bnecrofriggian_ov....]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "name": {
+                "type": "label",
+                "text": "#text",
+                "layer": 5,
+                "shadow": true,
+                "color": [
+                  1,
+                  1,
+                  1
+                ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  4,
+                  38
+                ],
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(#preserved_text - ('%.69s' * #preserved_text))",
+                    "target_property_name": "#text"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "bar": {
+          "type": "panel",
+          "size": [
+            24,
+            115
+          ],
+          "offset": [
+            -3,
+            0
+          ],
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "alienevo_hud_data",
+              "source_property_name": "(not ((#preserved_text - '[m3]') = #preserved_text))",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "bar_pyronite": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_pyronite",
+                "size": [
+                  24,
+                  115
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bpyronite............]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_vulpimancer": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_vulpimancer",
+                "size": [
+                  24,
+                  115
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bvulpimancer.........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_petrosapien": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_petrosapien",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bpetrosapien.........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_kineceleran": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_kineceleran",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bkineceleran.........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_galvan": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_galvan",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bgalvan..............]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_tetramand": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_tetramand",
+                "size": [
+                  24,
+                  115
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[btetramand...........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_lepidopterran": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_lepidopterran",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[blepidopterran.......]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_piscciss_volann": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_piscciss_volann",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bpiscciss_volann.....]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_galvanic_mechamorph": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_galvanic_mechamorph",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bgalvanic_mechamorph.]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_ectonurite": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_ectonurite",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bectonurite..........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_arburian_pelarota": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_arburian_pelarota",
+                "size": [
+                  24,
+                  71
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[barburian_pelarota...]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_methanosian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_methanosian",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bmethanosian.........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_sonorosian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_sonorosian",
+                "size": [
+                  24,
+                  71
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bsonorosian..........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_vaxasaurian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_vaxasaurian",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bvaxasaurian.........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_aerophibian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_aerophibian",
+                "size": [
+                  24,
+                  71
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[baerophibian.........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_necrofriggian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_necrofriggian",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bnecrofriggian.......]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_crystalsapien": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_crystalsapien",
+                "size": [
+                  24,
+                  71
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bcrystalsapien.......]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_nucleonix": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_nucleonix",
+                "size": [
+                  24,
+                  71
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bnucleonix...........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_dragonoid": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_dragonoid",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bdragonoid...........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_astrobot": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_astrobot",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bastrobot............]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_opticoid": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_opticoid",
+                "size": [
+                  24,
+                  115
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bopticoid............]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_perkgourmand": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_perkgourmand",
+                "size": [
+                  24,
+                  115
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bperkgourmand........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_murkgourmand": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_murkgourmand",
+                "size": [
+                  24,
+                  115
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bmurkgourmand........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_talpaedan": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_talpaedan",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[btalpaedan...........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_orishan": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_orishan",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[borishan.............]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_amperi": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_amperi",
+                "size": [
+                  24,
+                  71
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bamperi..............]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_nosedeenian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_nosedeenian",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bnosedeenian.........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_loboan": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_loboan",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bloboan..............]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_transylian": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_transylian",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[btransylian..........]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_florauna": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_florauna",
+                "size": [
+                  24,
+                  115
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bflorauna............]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_merlinisapien": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_merlinisapien",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bmerlinisapien.......]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_ickthyperambuloid": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_ickthyperambuloid",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bickthyperambuloid...]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_splixson": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_splixson",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bsplixson............]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_oryctini": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_oryctini",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[boryctini............]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_sonorosian_ov": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_sonorosian_ov",
+                "size": [
+                  24,
+                  71
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bsonorosian_ov.......]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "bar_necrofriggian_ov": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/bar_necrofriggian_ov",
+                "size": [
+                  24,
+                  93
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "(not ((#preserved_text - '[bnecrofriggian_ov....]') = #preserved_text))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_1_0": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  2
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k0]') = #preserved_text)) and (not ((#preserved_text - '[n1]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "lock_1_0": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/lock",
+                "size": [
+                  12,
+                  16
+                ],
+                "offset": [
+                  6,
+                  4
+                ],
+                "layer": 7,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[0c2]') = #preserved_text)) and (not ((#preserved_text - '[n1]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "cd_1_0": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/cooldown",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  4,
+                  4
+                ],
+                "layer": 5,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[0c1]') = #preserved_text)) and (not ((#preserved_text - '[n1]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_1_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  27
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k4]') = #preserved_text)) and (not ((#preserved_text - '[n1]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_2_0": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  2
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k0]') = #preserved_text)) and (not ((#preserved_text - '[n2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "lock_2_0": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/lock",
+                "size": [
+                  12,
+                  16
+                ],
+                "offset": [
+                  6,
+                  4
+                ],
+                "layer": 7,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[0c2]') = #preserved_text)) and (not ((#preserved_text - '[n2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "cd_2_0": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/cooldown",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  4,
+                  4
+                ],
+                "layer": 5,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[0c1]') = #preserved_text)) and (not ((#preserved_text - '[n2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_2_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  24
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k1]') = #preserved_text)) and (not ((#preserved_text - '[n2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "lock_2_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/lock",
+                "size": [
+                  12,
+                  16
+                ],
+                "offset": [
+                  6,
+                  26
+                ],
+                "layer": 7,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[1c2]') = #preserved_text)) and (not ((#preserved_text - '[n2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "cd_2_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/cooldown",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  4,
+                  26
+                ],
+                "layer": 5,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[1c1]') = #preserved_text)) and (not ((#preserved_text - '[n2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_2_2": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  49
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k4]') = #preserved_text)) and (not ((#preserved_text - '[n2]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_3_0": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  2
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k0]') = #preserved_text)) and (not ((#preserved_text - '[n3]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "lock_3_0": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/lock",
+                "size": [
+                  12,
+                  16
+                ],
+                "offset": [
+                  6,
+                  4
+                ],
+                "layer": 7,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[0c2]') = #preserved_text)) and (not ((#preserved_text - '[n3]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "cd_3_0": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/cooldown",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  4,
+                  4
+                ],
+                "layer": 5,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[0c1]') = #preserved_text)) and (not ((#preserved_text - '[n3]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_3_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  24
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k1]') = #preserved_text)) and (not ((#preserved_text - '[n3]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "lock_3_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/lock",
+                "size": [
+                  12,
+                  16
+                ],
+                "offset": [
+                  6,
+                  26
+                ],
+                "layer": 7,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[1c2]') = #preserved_text)) and (not ((#preserved_text - '[n3]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "cd_3_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/cooldown",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  4,
+                  26
+                ],
+                "layer": 5,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[1c1]') = #preserved_text)) and (not ((#preserved_text - '[n3]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_3_2": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  46
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k2]') = #preserved_text)) and (not ((#preserved_text - '[n3]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "lock_3_2": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/lock",
+                "size": [
+                  12,
+                  16
+                ],
+                "offset": [
+                  6,
+                  48
+                ],
+                "layer": 7,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[2c2]') = #preserved_text)) and (not ((#preserved_text - '[n3]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "cd_3_2": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/cooldown",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  4,
+                  48
+                ],
+                "layer": 5,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[2c1]') = #preserved_text)) and (not ((#preserved_text - '[n3]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_3_3": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  71
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k4]') = #preserved_text)) and (not ((#preserved_text - '[n3]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_4_0": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  2
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k0]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "lock_4_0": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/lock",
+                "size": [
+                  12,
+                  16
+                ],
+                "offset": [
+                  6,
+                  4
+                ],
+                "layer": 7,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[0c2]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "cd_4_0": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/cooldown",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  4,
+                  4
+                ],
+                "layer": 5,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[0c1]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_4_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  24
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k1]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "lock_4_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/lock",
+                "size": [
+                  12,
+                  16
+                ],
+                "offset": [
+                  6,
+                  26
+                ],
+                "layer": 7,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[1c2]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "cd_4_1": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/cooldown",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  4,
+                  26
+                ],
+                "layer": 5,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[1c1]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_4_2": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  46
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k2]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "lock_4_2": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/lock",
+                "size": [
+                  12,
+                  16
+                ],
+                "offset": [
+                  6,
+                  48
+                ],
+                "layer": 7,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[2c2]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "cd_4_2": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/cooldown",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  4,
+                  48
+                ],
+                "layer": 5,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[2c1]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_4_3": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  68
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k3]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "lock_4_3": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/lock",
+                "size": [
+                  12,
+                  16
+                ],
+                "offset": [
+                  6,
+                  70
+                ],
+                "layer": 7,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[3c2]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "cd_4_3": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/cooldown",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  4,
+                  70
+                ],
+                "layer": 5,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[3c1]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sel_4_4": {
+                "type": "image",
+                "texture": "textures/ui/alienevo/hud/selected",
+                "size": [
+                  20,
+                  20
+                ],
+                "offset": [
+                  2,
+                  93
+                ],
+                "layer": 6,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "alienevo_hud_data",
+                    "source_property_name": "((not ((#preserved_text - '[k4]') = #preserved_text)) and (not ((#preserved_text - '[n4]') = #preserved_text)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

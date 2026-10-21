@@ -1,5 +1,6 @@
 {
   "ui_defs": [
-    "ui/alienevo_wheel.json"
+    "ui/alienevo_wheel.json",
+    "ui/alienevo_hud.json"
   ]
 }

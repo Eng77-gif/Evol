@@ -63,6 +63,23 @@ export function actionbar(p, msg) {
     }
 }
 
+/** Tick until which a visible title owns the title channel (the HUD data rides on titles). */
+export const titleHolds = new Map();
+
+/**
+ * Shows a title and keeps the Omnitrix HUD (hud.js) from replacing it until it faded.
+ * @param {Player} p @param {string} text
+ * @param {{ fadeInDuration: number, stayDuration: number, fadeOutDuration: number, subtitle?: string }} opts
+ */
+export function showTitle(p, text, opts) {
+    try {
+        p.onScreenDisplay.setTitle(text, opts);
+        titleHolds.set(p.id, system.currentTick + opts.fadeInDuration + opts.stayDuration + opts.fadeOutDuration);
+    } catch {
+        // Player left.
+    }
+}
+
 /**
  * Sets the velocity of a player (applyImpulse does not work on players).
  * @param {Entity} e @param {Vector3} v
