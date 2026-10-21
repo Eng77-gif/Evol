@@ -179,6 +179,19 @@ def clean_channel(ch):
             out[t] = kf
         if not out:
             return None
+        # Bedrock only knows linear and catmullrom.  A GeckoLib "step" keyframe
+        # holds the previous value until its time: {"pre": previous, "post": value}.
+        prev = None
+        for t in sorted(out, key=float):
+            kf = out[t]
+            value = _keyframe_value(kf)
+            if isinstance(kf, dict) and kf.get("lerp_mode") not in (None, "linear", "catmullrom"):
+                step = kf.get("lerp_mode") == "step"
+                kf = {k: v for k, v in kf.items() if k != "lerp_mode"}
+                if step and prev is not None and "pre" not in kf:
+                    kf = {"pre": prev, "post": kf.get("post", value)}
+                out[t] = kf if set(kf) != {"post"} else kf["post"]
+            prev = value
         # Bedrock precomputes catmullrom curves: every keyframe must be constant.
         values = [_keyframe_value(kf) for kf in out.values()]
         flat = [x for v in values for x in (v if isinstance(v, list) else [v])]
