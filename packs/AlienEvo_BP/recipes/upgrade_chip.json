@@ -32,7 +32,7 @@
     },
     "unlock": [
       {
-        "context": "AlwaysUnlocked"
+        "item": "alienevo:galvan_metal"
       }
     ]
   }

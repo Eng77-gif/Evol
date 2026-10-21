@@ -2,9 +2,9 @@
   "format_version": "1.13.0",
   "minecraft:structure_template_feature": {
     "description": {
-      "identifier": "alienevo:pod_feature"
+      "identifier": "alienevo:structure_crash_site_feature"
     },
-    "structure_name": "alienevo:pod",
+    "structure_name": "alienevo:crash_site",
     "adjustment_radius": 8,
     "facing_direction": "random",
     "constraints": {}

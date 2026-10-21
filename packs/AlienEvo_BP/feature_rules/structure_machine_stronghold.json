@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "alienevo:machine_stronghold_rule",
-      "places_feature": "alienevo:machine_stronghold_feature"
+      "identifier": "alienevo:structure_machine_stronghold",
+      "places_feature": "alienevo:structure_machine_stronghold_feature"
     },
     "conditions": {
       "placement_pass": "underground_pass",

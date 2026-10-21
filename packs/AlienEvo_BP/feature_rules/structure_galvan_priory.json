@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "alienevo:galvan_priory_rule",
-      "places_feature": "alienevo:galvan_priory_feature"
+      "identifier": "alienevo:structure_galvan_priory",
+      "places_feature": "alienevo:structure_galvan_priory_feature"
     },
     "conditions": {
       "placement_pass": "surface_pass",

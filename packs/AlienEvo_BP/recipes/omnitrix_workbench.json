@@ -32,7 +32,7 @@
     },
     "unlock": [
       {
-        "context": "AlwaysUnlocked"
+        "item": "minecraft:iron_block"
       }
     ]
   }

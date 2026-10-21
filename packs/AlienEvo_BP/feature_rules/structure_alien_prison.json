@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "alienevo:alien_prison_rule",
-      "places_feature": "alienevo:alien_prison_feature"
+      "identifier": "alienevo:structure_alien_prison",
+      "places_feature": "alienevo:structure_alien_prison_feature"
     },
     "conditions": {
       "placement_pass": "surface_pass",

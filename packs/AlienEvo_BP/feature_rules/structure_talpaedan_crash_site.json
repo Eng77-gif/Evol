@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "alienevo:talpaedan_crash_site_rule",
-      "places_feature": "alienevo:talpaedan_crash_site_feature"
+      "identifier": "alienevo:structure_talpaedan_crash_site",
+      "places_feature": "alienevo:structure_talpaedan_crash_site_feature"
     },
     "conditions": {
       "placement_pass": "surface_pass",

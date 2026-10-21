@@ -337,6 +337,18 @@ for path in glob.glob(os.path.join(BP, "recipes", "*.json")):
     for key in ("minecraft:recipe_shaped", "minecraft:recipe_shapeless"):
         if key in d and "unlock" not in d[key]:
             err(f"{path}: recipe without unlock")
+for kind in ("features", "feature_rules"):
+    for path in glob.glob(os.path.join(BP, kind, "*.json")):
+        d = load(path) or {}
+        body = next((v for k, v in d.items() if k != "format_version"), {})
+        ident = body.get("description", {}).get("identifier", "")
+        if ident.split(":")[-1] != os.path.basename(path)[:-5]:
+            err(f"{path}: identifier {ident} does not match the file name (ignored by the game)")
+for path in glob.glob(os.path.join(BP, "recipes", "*.json")):
+    for key, body in (load(path) or {}).items():
+        for u in body.get("unlock", []) if isinstance(body, dict) else []:
+            if "item" not in u:
+                err(f"{path}: unlock entry {u} is not an item")
 for path in glob.glob(os.path.join(BP, "blocks", "*.json")):
     comps = (load(path) or {}).get("minecraft:block", {}).get("components", {})
     if ("minecraft:material_instances" in comps) != ("minecraft:geometry" in comps):

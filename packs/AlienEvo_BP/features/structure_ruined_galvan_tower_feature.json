@@ -2,11 +2,13 @@
   "format_version": "1.13.0",
   "minecraft:structure_template_feature": {
     "description": {
-      "identifier": "alienevo:machine_well_feature"
+      "identifier": "alienevo:structure_ruined_galvan_tower_feature"
     },
-    "structure_name": "alienevo:machine_well",
+    "structure_name": "alienevo:ruined_galvan_tower",
     "adjustment_radius": 8,
     "facing_direction": "random",
-    "constraints": {}
+    "constraints": {
+      "grounded": {}
+    }
   }
 }

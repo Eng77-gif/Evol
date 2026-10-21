@@ -9,6 +9,7 @@
   tables are converted to Bedrock loot tables.
 * A feature + feature rule per structure places it during world generation.
 """
+import glob
 import json
 import os
 import random
@@ -438,13 +439,14 @@ def write_json(path, data):
 
 def write_feature(spec):
     name = spec["name"]
-    ident = f"alienevo:{name}_feature"
+    # Identifiers must match the file names or the game ignores the files.
+    ident = f"alienevo:structure_{name}_feature"
     constraints = {}
     if spec["place"] == "underground":
         constraints = {"block_intersection": {"block_allowlist": UNDERGROUND_ALLOW}}
     elif spec["y"] >= 0:
         constraints = {"grounded": {}}
-    write_json(os.path.join(BP, "features", f"structure_{name}.json"), {
+    write_json(os.path.join(BP, "features", f"structure_{name}_feature.json"), {
         "format_version": "1.13.0",
         "minecraft:structure_template_feature": {
             "description": {"identifier": ident},
@@ -468,7 +470,8 @@ def write_feature(spec):
     write_json(os.path.join(BP, "feature_rules", f"structure_{name}.json"), {
         "format_version": "1.13.0",
         "minecraft:feature_rules": {
-            "description": {"identifier": f"alienevo:{name}_rule", "places_feature": ident},
+            # The identifier must match the file name or the rule is ignored.
+            "description": {"identifier": f"alienevo:structure_{name}", "places_feature": ident},
             "conditions": {"placement_pass": pass_name, "minecraft:biome_filter": biome_filter},
             "distribution": {
                 "iterations": 1,
@@ -483,6 +486,8 @@ def write_feature(spec):
 
 
 def build(vfs, full_table=None):
+    for old in glob.glob(os.path.join(BP, "features", "structure_*.json")) + glob.glob(os.path.join(BP, "feature_rules", "structure_*.json")):
+        os.remove(old)
     mapper = Mapper(full_table)
     out_dir = os.path.join(BP, "structures", "alienevo")
     if os.path.isdir(out_dir):

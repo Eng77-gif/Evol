@@ -2,13 +2,11 @@
   "format_version": "1.13.0",
   "minecraft:structure_template_feature": {
     "description": {
-      "identifier": "alienevo:talpaedan_crash_site_feature"
+      "identifier": "alienevo:structure_pod_feature"
     },
-    "structure_name": "alienevo:talpaedan_crash_site",
+    "structure_name": "alienevo:pod",
     "adjustment_radius": 8,
     "facing_direction": "random",
-    "constraints": {
-      "grounded": {}
-    }
+    "constraints": {}
   }
 }

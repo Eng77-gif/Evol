@@ -9,7 +9,7 @@
       "min_sides_must_attach": 1,
       "bottom": [
         "minecraft:grass_block", "minecraft:dirt", "minecraft:coarse_dirt", "minecraft:podzol", "minecraft:sand",
-        "minecraft:red_sand", "minecraft:stone", "minecraft:gravel", "minecraft:snow", "minecraft:terracotta",
+        "minecraft:red_sand", "minecraft:stone", "minecraft:gravel", "minecraft:snow", "minecraft:hardened_clay",
         "minecraft:mycelium", "minecraft:mud", "minecraft:moss_block"
       ]
     },

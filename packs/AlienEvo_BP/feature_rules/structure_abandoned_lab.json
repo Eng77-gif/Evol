@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "alienevo:abandoned_lab_rule",
-      "places_feature": "alienevo:abandoned_lab_feature"
+      "identifier": "alienevo:structure_abandoned_lab",
+      "places_feature": "alienevo:structure_abandoned_lab_feature"
     },
     "conditions": {
       "placement_pass": "underground_pass",

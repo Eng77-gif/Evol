@@ -23,7 +23,7 @@
     },
     "unlock": [
       {
-        "context": "AlwaysUnlocked"
+        "item": "alienevo:upgrade_shards_cyan"
       }
     ]
   }

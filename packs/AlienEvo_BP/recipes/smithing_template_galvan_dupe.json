@@ -29,7 +29,7 @@
     },
     "unlock": [
       {
-        "context": "AlwaysUnlocked"
+        "item": "minecraft:diamond"
       }
     ]
   }

@@ -2,9 +2,9 @@
   "format_version": "1.13.0",
   "minecraft:structure_template_feature": {
     "description": {
-      "identifier": "alienevo:machine_stronghold_feature"
+      "identifier": "alienevo:structure_abandoned_lab_feature"
     },
-    "structure_name": "alienevo:machine_stronghold",
+    "structure_name": "alienevo:abandoned_lab",
     "adjustment_radius": 8,
     "facing_direction": "random",
     "constraints": {

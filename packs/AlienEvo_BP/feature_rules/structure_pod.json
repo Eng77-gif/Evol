@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "alienevo:pod_rule",
-      "places_feature": "alienevo:pod_feature"
+      "identifier": "alienevo:structure_pod",
+      "places_feature": "alienevo:structure_pod_feature"
     },
     "conditions": {
       "placement_pass": "surface_pass",

@@ -1547,13 +1547,22 @@ def untapped_items_bp():
 
 
 def unlock_recipes():
-    """1.20+ recipes need unlock data or the game rejects them."""
+    """1.20+ recipes need unlock data: unlocked by owning one of the
+    ingredients (the "AlwaysUnlocked" context was read as an invalid
+    ingredient by the game)."""
     for path in glob.glob(os.path.join(BP, "recipes", "*.json")):
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
         for key, body in data.items():
-            if key in ("minecraft:recipe_shaped", "minecraft:recipe_shapeless") and "unlock" not in body:
-                body["unlock"] = [{"context": "AlwaysUnlocked"}]
+            if key not in ("minecraft:recipe_shaped", "minecraft:recipe_shapeless"):
+                continue
+            ings = list(body.get("key", {}).values()) if key.endswith("shaped") else body.get("ingredients", [])
+            items = [i["item"] if isinstance(i, dict) else i for i in ings
+                     if isinstance(i, str) or (isinstance(i, dict) and "item" in i)]
+            if items:
+                body["unlock"] = [{"item": items[0]}]
+            else:
+                body.pop("unlock", None)
         write_json(path, data)
 
 

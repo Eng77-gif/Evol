@@ -18,7 +18,7 @@
     },
     "unlock": [
       {
-        "context": "AlwaysUnlocked"
+        "item": "alienevo:upgrade_crystal_cyan"
       }
     ]
   }

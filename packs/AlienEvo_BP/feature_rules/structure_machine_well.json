@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "alienevo:machine_well_rule",
-      "places_feature": "alienevo:machine_well_feature"
+      "identifier": "alienevo:structure_machine_well",
+      "places_feature": "alienevo:structure_machine_well_feature"
     },
     "conditions": {
       "placement_pass": "surface_pass",

@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "alienevo:galvan_mine_rule",
-      "places_feature": "alienevo:galvan_mine_feature"
+      "identifier": "alienevo:structure_galvan_mine",
+      "places_feature": "alienevo:structure_galvan_mine_feature"
     },
     "conditions": {
       "placement_pass": "surface_pass",

@@ -2,11 +2,13 @@
   "format_version": "1.13.0",
   "minecraft:structure_template_feature": {
     "description": {
-      "identifier": "alienevo:alien_prison_feature"
+      "identifier": "alienevo:structure_loboan_skull_feature"
     },
-    "structure_name": "alienevo:alien_prison",
+    "structure_name": "alienevo:loboan_skull",
     "adjustment_radius": 8,
     "facing_direction": "random",
-    "constraints": {}
+    "constraints": {
+      "grounded": {}
+    }
   }
 }

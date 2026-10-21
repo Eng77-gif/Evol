@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "alienevo:xylene_crashsite_rule",
-      "places_feature": "alienevo:xylene_crashsite_feature"
+      "identifier": "alienevo:structure_xylene_crashsite",
+      "places_feature": "alienevo:structure_xylene_crashsite_feature"
     },
     "conditions": {
       "placement_pass": "surface_pass",

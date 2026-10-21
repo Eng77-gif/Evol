@@ -21,7 +21,7 @@
     },
     "unlock": [
       {
-        "context": "AlwaysUnlocked"
+        "item": "alienevo:code_tablet_selfdestruct"
       }
     ]
   }

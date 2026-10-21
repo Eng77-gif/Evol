@@ -24,7 +24,7 @@
     },
     "unlock": [
       {
-        "context": "AlwaysUnlocked"
+        "item": "alienevo:machine_key"
       }
     ]
   }

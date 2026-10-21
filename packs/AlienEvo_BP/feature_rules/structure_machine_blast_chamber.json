@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "alienevo:machine_blast_chamber_rule",
-      "places_feature": "alienevo:machine_blast_chamber_feature"
+      "identifier": "alienevo:structure_machine_blast_chamber",
+      "places_feature": "alienevo:structure_machine_blast_chamber_feature"
     },
     "conditions": {
       "placement_pass": "underground_pass",

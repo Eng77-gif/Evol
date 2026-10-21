@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "alienevo:machine_tower_rule",
-      "places_feature": "alienevo:machine_tower_feature"
+      "identifier": "alienevo:structure_machine_tower",
+      "places_feature": "alienevo:structure_machine_tower_feature"
     },
     "conditions": {
       "placement_pass": "surface_pass",

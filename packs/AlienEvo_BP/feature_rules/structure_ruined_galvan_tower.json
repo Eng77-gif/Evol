@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "alienevo:ruined_galvan_tower_rule",
-      "places_feature": "alienevo:ruined_galvan_tower_feature"
+      "identifier": "alienevo:structure_ruined_galvan_tower",
+      "places_feature": "alienevo:structure_ruined_galvan_tower_feature"
     },
     "conditions": {
       "placement_pass": "surface_pass",
