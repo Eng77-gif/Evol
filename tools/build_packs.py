@@ -459,7 +459,7 @@ def build_omnitrix(vfs, triggers_out):
                 part["sil"] = img.size
         textures, geometry, rcs, renames = {}, {}, [], {}
         # Hidden in first person, except while looking at the watch (dial / code entry).
-        cond = "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
+        cond = "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
         slot_dir = os.path.join(tex_dir, "slots")
         if variant == "prototype":
             write_watch_slot_textures(vfs, slot_dir)
@@ -564,7 +564,7 @@ def build_recal(vfs, controllers, fixed):
     layers = resolve(vfs, RECAL_LAYER)
     for layer in layers:
         layer["loops"] = [n for n in layer["loops"] if n not in RECAL_SKIP_LOOPS]
-    cond = "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
+    cond = "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
     textures, geometry, rcs, renames = {}, {}, [], {}
     watch = [l for l in layers if "/holograms/" not in l["geo"]]
     gid = "geometry.alienevo.omnitrix_recal"
@@ -1136,14 +1136,16 @@ def build_wheel_ui(vfs):
         to_center = [round(WHEEL_SIZE / 2 - cx, 2), round(WHEEL_SIZE / 2 - cy, 2)]
         highlight = {"type": "image", "texture": f"textures/ui/alienevo/wheel_sel_{i + 1}", "size": [WHEEL_SIZE, WHEEL_SIZE],
                      "layer": 3, "offset": to_center}
-        name = {"name@alienevo_wheel.name_label": {"offset": [to_center[0], to_center[1] + WHEEL_SIZE / 2 + 10]}}
-        state = lambda hover: {"type": "panel", "size": ["100%", "100%"], "controls": (
-            [{"highlight": highlight}, name] if hover else []) + [{"icon@alienevo_wheel.icon": {}}]}
+        # Every control that reads the form_buttons collection carries the slot
+        # index itself; it is not inherited from the parent panel.
+        name = {"name@alienevo_wheel.name_label": {"offset": [to_center[0], to_center[1] + WHEEL_SIZE / 2 + 10], "collection_index": i}}
+        state = lambda hover, i=i, highlight=highlight, name=name: {"type": "panel", "size": ["100%", "100%"], "controls": (
+            [{"highlight": highlight}, name] if hover else []) + [{"icon@alienevo_wheel.icon": {"collection_index": i}}]}
         ring.append({f"slot_{i}": {
             "type": "panel", "size": [30, 30], "anchor_from": "top_left", "anchor_to": "center",
             "offset": [round(cx, 2), round(cy, 2)], "collection_index": i, "bindings": has_text,
             "controls": [{"button@common.button": {
-                "size": ["100%", "100%"], "$pressed_button_name": "button.form_button_click",
+                "size": ["100%", "100%"], "$pressed_button_name": "button.form_button_click", "collection_index": i,
                 "bindings": [{"binding_type": "collection_details", "binding_collection_name": "form_buttons"}],
                 "controls": [{"default": state(False)}, {"hover": state(True)}, {"pressed": state(True)}],
             }}],
@@ -1152,7 +1154,7 @@ def build_wheel_ui(vfs):
         ring.append({f"text_button_{i}": {
             "type": "panel", "size": [88, 20], "offset": offset, "collection_index": i, "bindings": has_text,
             "controls": [{"button@common_buttons.light_text_button": {
-                "size": ["100%", "100%"], "$pressed_button_name": "button.form_button_click",
+                "size": ["100%", "100%"], "$pressed_button_name": "button.form_button_click", "collection_index": i,
                 "$button_text": "#form_button_text", "$button_text_binding_type": "collection",
                 "$button_text_grid_collection_name": "form_buttons", "$button_text_max_size": ["100%", 20],
                 "bindings": [{"binding_type": "collection_details", "binding_collection_name": "form_buttons"}],
@@ -1272,6 +1274,26 @@ def build_player_scale_animation():
                 "loop": True,
                 "bones": {"root": {"scale": "v.alienevo_scale"}},
             },
+            # Omnitrix worn in the offhand: the left arm with the watch rests in the
+            # lower left corner (vanilla off-hand map pose).
+            "animation.alienevo.player.watch_rest": {
+                "loop": True,
+                "bones": {"leftarm": {
+                    "position": ["-14.50 + variable.is_horizontal_splitscreen * 2.0 + variable.is_vertical_splitscreen * 8.7",
+                                 "-8.250 + variable.short_arm_offset_left", "11.50 + variable.is_horizontal_splitscreen * 0.5"],
+                    "rotation": [195.0, 182.5, 2.5],
+                    "scale": [0.75, 0.75, 0.75],
+                }},
+            },
+            # Omnitrix held in the main hand: the hand is drawn empty (vanilla
+            # empty hand pose) instead of disappearing.
+            "animation.alienevo.player.held_hand": {
+                "loop": True,
+                "bones": {"rightarm": {
+                    "position": [13.5, -10.0, 12.0],
+                    "rotation": ["95.0 + variable.is_using_vr * 7.5", "-45.0 + variable.is_using_vr * 7.5", "115.0 + variable.is_using_vr * -2.5"],
+                }},
+            },
             "animation.alienevo.player.watch_view": {
                 "loop": True,
                 "bones": {"leftarm": {
@@ -1288,7 +1310,10 @@ def build_player_scale_animation():
             "geometry": "Geometry.default",
             "materials": [{"*": "Material.default"}],
             "textures": ["Texture.default"],
-            "part_visibility": [{"*": False}, {"leftArm": True}, {"leftSleeve": True}],
+            "part_visibility": [{"*": False},
+                                {"leftArm": "v.alienevo_off || q.property('alienevo:wv')"},
+                                {"leftSleeve": "v.alienevo_off || q.property('alienevo:wv')"},
+                                {"rightArm": "v.alienevo_main"}, {"rightSleeve": "v.alienevo_main"}],
         }},
     })
     return expr
@@ -1372,9 +1397,18 @@ def build_player_entity(scale_expr):
     desc["scripts"]["animate"].append({"alienevo_scale": "!v.is_first_person && v.alienevo_is_alien"})
     # Looking at the watch in first person: the left arm is raised in front of
     # the camera (pose based on the vanilla off-hand map pose) and drawn.
+    omni = ", ".join(f"'alienevo:{i[0]}'" for i in OMNITRIX_ITEMS)
+    desc["scripts"]["variables"]["variable.alienevo_off"] = "public"
+    desc["scripts"]["variables"]["variable.alienevo_main"] = "public"
+    desc["scripts"]["pre_animation"].append(f"v.alienevo_off = q.is_item_name_any('slot.weapon.offhand', 0, {omni});")
+    desc["scripts"]["pre_animation"].append(f"v.alienevo_main = q.is_item_name_any('slot.weapon.mainhand', 0, {omni});")
     desc["animations"]["alienevo_watch_view"] = "animation.alienevo.player.watch_view"
+    desc["animations"]["alienevo_watch_rest"] = "animation.alienevo.player.watch_rest"
+    desc["animations"]["alienevo_held_hand"] = "animation.alienevo.player.held_hand"
     desc["scripts"]["animate"].append({"alienevo_watch_view": "v.is_first_person && q.property('alienevo:wv')"})
-    rcs = [{"controller.render.alienevo.player.watch_arm": "v.is_first_person && !query.is_spectator && !v.alienevo_is_alien && q.property('alienevo:wv')"}]
+    desc["scripts"]["animate"].append({"alienevo_watch_rest": "v.is_first_person && v.alienevo_off && !q.property('alienevo:wv')"})
+    desc["scripts"]["animate"].append({"alienevo_held_hand": "v.is_first_person && v.alienevo_main"})
+    rcs = [{"controller.render.alienevo.player.watch_arm": "v.is_first_person && !query.is_spectator && !v.alienevo_is_alien && (v.alienevo_off || v.alienevo_main || q.property('alienevo:wv'))"}]
     for rc in desc["render_controllers"]:
         if isinstance(rc, dict) and "controller.render.player.first_person" in rc:
             rc = {"controller.render.player.first_person": rc["controller.render.player.first_person"] + " && !v.alienevo_is_alien"}
@@ -1402,7 +1436,21 @@ def build_items_rp(jar, lang, item_textures):
         save_png(img, os.path.join(tex_dir, f"{item_id}.png"))
         item_textures[f"alienevo:{item_id}"] = {"textures": f"textures/items/{item_id}"}
     for item_id, _, _ in TOOLS:
-        save_png(jar.image(f"{src}/{item_id}.png"), os.path.join(tex_dir, f"{item_id}.png"))
+        img = jar.image(f"{src}/{item_id}.png")
+        model_path = f"{AE}/models/item/{item_id}.json"
+        if jar.exists(model_path) and "elements" in jar.json(model_path):
+            # 3D Blockbench item (Ancient Staff): its texture is a UV sheet,
+            # so the icon is rendered from the model.
+            from render import render
+            model = jar.json(model_path)
+            geo = java_block_model_to_geo(model, "geometry.icon", model.get("texture_size", [16, 16]))
+            icon = render([(geo, img)], 256, "three_quarter")
+            icon = icon.crop(icon.getbbox()) if icon.getbbox() else icon
+            side = max(icon.size)
+            square = Image.new("RGBA", (side, side))
+            square.alpha_composite(icon, ((side - icon.size[0]) // 2, (side - icon.size[1]) // 2))
+            img = square.resize((32, 32), Image.LANCZOS)
+        save_png(img, os.path.join(tex_dir, f"{item_id}.png"))
         item_textures[f"alienevo:{item_id}"] = {"textures": f"textures/items/{item_id}"}
     # Alien form items reuse the selection icons.
     for alien in ALIENS:

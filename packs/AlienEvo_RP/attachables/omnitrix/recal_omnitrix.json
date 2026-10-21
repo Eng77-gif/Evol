@@ -73,10 +73,10 @@
       },
       "render_controllers": [
         {
-          "controller.render.alienevo.omnitrix_recal_base": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
+          "controller.render.alienevo.omnitrix_recal_base": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
         },
         {
-          "controller.render.alienevo.omnitrix_recal_glow": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
+          "controller.render.alienevo.omnitrix_recal_glow": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
         },
         {
           "controller.render.alienevo.omnitrix_recal_hologram": "c.owning_entity->q.property('alienevo:wv') && c.owning_entity->q.property('alienevo:sel') >= 0 && !c.owning_entity->v.alienevo_is_alien"

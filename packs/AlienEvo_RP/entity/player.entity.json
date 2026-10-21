@@ -38,7 +38,9 @@
           "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;",
           "variable.riding_y_offset = query.is_riding_any_entity_of_type('minecraft:minecart', 'minecraft:boat', 'minecraft:chest_boat', 'minecraft:strider') ? -3.0 : 0.0;",
           "v.alienevo_is_alien = q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form');",
-          "v.alienevo_scale = q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_sonorosian_ov') ? 0.5 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_oryctini') ? 1.6 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_splixson') ? 0.9 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_ickthyperambuloid') ? 0.63 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_florauna') ? 1.4 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_loboan') ? 1.3 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_nosedeenian') ? 0.65 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_orishan') ? 1.25 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_talpaedan') ? 2.3 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_murkgourmand') ? 0.63 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_perkgourmand') ? 0.63 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_opticoid') ? 1.65 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_astrobot') ? 0.55 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_dragonoid') ? 3.0 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_nucleonix') ? 3.0 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_crystalsapien') ? 1.45 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_vaxasaurian') ? 2.8 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_sonorosian') ? 0.5 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_methanosian') ? 1.7 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_arburian_pelarota') ? 1.33 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_ectonurite') ? 1.3 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_galvanic_mechamorph') ? 1.4 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_piscciss_volann') ? 1.17 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_tetramand') ? 2.0 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_galvan') ? 0.25 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_kineceleran') ? 1.1 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_petrosapien') ? 1.35 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_pyronite') ? 1.1 : (1.0))))))))))))))))))))))))))));"
+          "v.alienevo_scale = q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_sonorosian_ov') ? 0.5 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_oryctini') ? 1.6 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_splixson') ? 0.9 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_ickthyperambuloid') ? 0.63 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_florauna') ? 1.4 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_loboan') ? 1.3 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_nosedeenian') ? 0.65 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_orishan') ? 1.25 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_talpaedan') ? 2.3 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_murkgourmand') ? 0.63 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_perkgourmand') ? 0.63 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_opticoid') ? 1.65 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_astrobot') ? 0.55 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_dragonoid') ? 3.0 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_nucleonix') ? 3.0 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_crystalsapien') ? 1.45 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_vaxasaurian') ? 2.8 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_sonorosian') ? 0.5 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_methanosian') ? 1.7 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_arburian_pelarota') ? 1.33 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_ectonurite') ? 1.3 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_galvanic_mechamorph') ? 1.4 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_piscciss_volann') ? 1.17 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_tetramand') ? 2.0 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_galvan') ? 0.25 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_kineceleran') ? 1.1 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_petrosapien') ? 1.35 : (q.is_item_name_any('slot.armor.chest', 0, 'alienevo:form_pyronite') ? 1.1 : (1.0))))))))))))))))))))))))))));",
+          "v.alienevo_off = q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix');",
+          "v.alienevo_main = q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix');"
         ],
         "animate": [
           "root",
@@ -47,6 +49,12 @@
           },
           {
             "alienevo_watch_view": "v.is_first_person && q.property('alienevo:wv')"
+          },
+          {
+            "alienevo_watch_rest": "v.is_first_person && v.alienevo_off && !q.property('alienevo:wv')"
+          },
+          {
+            "alienevo_held_hand": "v.is_first_person && v.alienevo_main"
           }
         ],
         "variables": {
@@ -56,7 +64,9 @@
           "variable.tp_melee_spear_attack_attachable_position_z": "public",
           "variable.attack_time": "public",
           "variable.item_use_normalized": "public",
-          "variable.alienevo_is_alien": "public"
+          "variable.alienevo_is_alien": "public",
+          "variable.alienevo_off": "public",
+          "variable.alienevo_main": "public"
         },
         "should_update_effects_offscreen": "1.0"
       },
@@ -134,11 +144,13 @@
         "third_person_melee_spear_attack": "animation.player.melee_spear_attack",
         "third_person_melee_spear_controller": "controller.animation.player.melee_spear",
         "alienevo_scale": "animation.alienevo.player.scale",
-        "alienevo_watch_view": "animation.alienevo.player.watch_view"
+        "alienevo_watch_view": "animation.alienevo.player.watch_view",
+        "alienevo_watch_rest": "animation.alienevo.player.watch_rest",
+        "alienevo_held_hand": "animation.alienevo.player.held_hand"
       },
       "render_controllers": [
         {
-          "controller.render.alienevo.player.watch_arm": "v.is_first_person && !query.is_spectator && !v.alienevo_is_alien && q.property('alienevo:wv')"
+          "controller.render.alienevo.player.watch_arm": "v.is_first_person && !query.is_spectator && !v.alienevo_is_alien && (v.alienevo_off || v.alienevo_main || q.property('alienevo:wv'))"
         },
         {
           "controller.render.player.first_person_spectator": "variable.is_first_person && query.is_spectator"

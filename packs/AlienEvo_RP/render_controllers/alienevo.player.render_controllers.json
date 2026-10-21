@@ -16,10 +16,16 @@
           "*": false
         },
         {
-          "leftArm": true
+          "leftArm": "v.alienevo_off || q.property('alienevo:wv')"
         },
         {
-          "leftSleeve": true
+          "leftSleeve": "v.alienevo_off || q.property('alienevo:wv')"
+        },
+        {
+          "rightArm": "v.alienevo_main"
+        },
+        {
+          "rightSleeve": "v.alienevo_main"
         }
       ]
     }

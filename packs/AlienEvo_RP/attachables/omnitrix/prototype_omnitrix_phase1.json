@@ -215,40 +215,40 @@
       },
       "render_controllers": [
         {
-          "controller.render.alienevo.omnitrix_prototype_0": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
+          "controller.render.alienevo.omnitrix_prototype_0": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_0_glow": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
+          "controller.render.alienevo.omnitrix_prototype_0_glow": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_base_primary": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col0') >= 0"
+          "controller.render.alienevo.omnitrix_prototype_base_primary": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col0') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_base_secondary": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col1') >= 0"
+          "controller.render.alienevo.omnitrix_prototype_base_secondary": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col1') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_base_tertiary": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col2') >= 0"
+          "controller.render.alienevo.omnitrix_prototype_base_tertiary": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col2') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_buttons": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col3') >= 0"
+          "controller.render.alienevo.omnitrix_prototype_buttons": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col3') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_core_side": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col4') >= 0"
+          "controller.render.alienevo.omnitrix_prototype_core_side": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col4') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_core_top": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col5') >= 0"
+          "controller.render.alienevo.omnitrix_prototype_core_top": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col5') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_dial_inner": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col6') >= 0"
+          "controller.render.alienevo.omnitrix_prototype_dial_inner": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col6') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_dial_outer": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col7') >= 0"
+          "controller.render.alienevo.omnitrix_prototype_dial_outer": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col7') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_tubes": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col8') >= 0"
+          "controller.render.alienevo.omnitrix_prototype_tubes": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:col8') >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_1": "(!c.is_first_person || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:sel') >= 0"
+          "controller.render.alienevo.omnitrix_prototype_1": "(!c.is_first_person || c.item_slot == 'off_hand' || c.owning_entity->q.property('alienevo:wv')) && !c.owning_entity->v.alienevo_is_alien && c.owning_entity->q.property('alienevo:sel') >= 0"
         }
       ],
       "animations": {

@@ -9,6 +9,45 @@
         }
       }
     },
+    "animation.alienevo.player.watch_rest": {
+      "loop": true,
+      "bones": {
+        "leftarm": {
+          "position": [
+            "-14.50 + variable.is_horizontal_splitscreen * 2.0 + variable.is_vertical_splitscreen * 8.7",
+            "-8.250 + variable.short_arm_offset_left",
+            "11.50 + variable.is_horizontal_splitscreen * 0.5"
+          ],
+          "rotation": [
+            195.0,
+            182.5,
+            2.5
+          ],
+          "scale": [
+            0.75,
+            0.75,
+            0.75
+          ]
+        }
+      }
+    },
+    "animation.alienevo.player.held_hand": {
+      "loop": true,
+      "bones": {
+        "rightarm": {
+          "position": [
+            13.5,
+            -10.0,
+            12.0
+          ],
+          "rotation": [
+            "95.0 + variable.is_using_vr * 7.5",
+            "-45.0 + variable.is_using_vr * 7.5",
+            "115.0 + variable.is_using_vr * -2.5"
+          ]
+        }
+      }
+    },
     "animation.alienevo.player.watch_view": {
       "loop": true,
       "bones": {
