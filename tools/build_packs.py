@@ -1312,11 +1312,12 @@ def build_particles(vfs):
 # The game lowers the left arm in first person while the off hand holds no
 # item it draws there (animation.player.first_person.swap_item); undone here.
 OFFHAND_LIFT = "10.0 * (1.0 - context.player_offhand_arm_height)"
-# First person: the left forearm across the bottom of the screen, watch face
-# up toward the eyes (pose of the reference add-on; found offline with a
-# first person render of the arm and the watch, tools/render.py).
-WATCH_FP_ROT = [-180.0, -60.0, 75.0]
-WATCH_FP_POS = [-4.21, -3.91, 9.25]
+# First person: the vanilla off-hand map pose (map_hold_off_hand), the one
+# pose of the left arm the game is known to show on every device; the watch
+# face (outer side of the wrist) then looks at the camera.
+WATCH_FP_ROT = [195.0, 182.5, 2.5]
+WATCH_FP_POS = [-14.5, -8.25, 11.5]
+WATCH_FP_SCALE = 0.85
 
 
 def build_player_scale_animation():
@@ -1340,6 +1341,7 @@ def build_player_scale_animation():
                 "bones": {"leftarm": {
                     "position": [WATCH_FP_POS[0], f"{WATCH_FP_POS[1]} + {OFFHAND_LIFT}", WATCH_FP_POS[2]],
                     "rotation": WATCH_FP_ROT,
+                    "scale": [WATCH_FP_SCALE] * 3,
                 }},
             },
             # Omnitrix held in the main hand: the hand is drawn empty (vanilla
@@ -1366,8 +1368,9 @@ def build_player_scale_animation():
             "animation.alienevo.player.watch_view": {
                 "loop": True,
                 "bones": {"leftarm": {
-                    "position": [WATCH_FP_POS[0], f"{WATCH_FP_POS[1] + 1.5} + math.sin(q.life_time * 60) * 0.15 + {OFFHAND_LIFT}", WATCH_FP_POS[2] - 0.5],
+                    "position": [WATCH_FP_POS[0] + 2.0, f"{WATCH_FP_POS[1] + 2.0} + math.sin(q.life_time * 60) * 0.15 + {OFFHAND_LIFT}", WATCH_FP_POS[2] - 1.0],
                     "rotation": WATCH_FP_ROT,
+                    "scale": [WATCH_FP_SCALE + 0.1] * 3,
                 }},
             },
         },
