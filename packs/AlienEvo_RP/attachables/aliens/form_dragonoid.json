@@ -17,10 +17,13 @@
       },
       "scripts": {
         "parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+        "pre_animation": [
+          "v.alienevo_fp = c.is_first_person;"
+        ],
         "animate": [
           "loop0",
           {
-            "move_fly": "(v.alienevo_fly)"
+            "move_fly": "((v.alienevo_fly ?? 0))"
           }
         ]
       },

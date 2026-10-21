@@ -1072,7 +1072,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.galvanic_mechamorph.upgrade.fists_off.t2": {
       "loop": "hold_on_last_frame",
@@ -1252,7 +1252,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.galvanic_mechamorph.upgrade.liquid.t3": {
       "loop": true,
@@ -1593,7 +1593,7 @@
           ]
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 3) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.galvanic_mechamorph.upgrade.liquid_off.t4": {
       "loop": "hold_on_last_frame",
@@ -1709,7 +1709,7 @@
           ]
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 4) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 4) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

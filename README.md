@@ -35,10 +35,10 @@ model GeckoLib → attachable của Bedrock, Palladium/KubeJS → Script API (`@
 |---|---|
 | Tìm nguyên liệu | Tìm **Galvan Pod** (khối kim loại) trên mặt đất hoặc chôn dưới đá. Bấm vào pod để mở: rơi ra Galvan Scrap, Omni Shards/Crystals, Galvan Circuit. Hiếm hơn có **Prototype Omnitrix Core**, Code Tablet, đôi khi có luôn Omnitrix. |
 | Chế tạo Omnitrix | `Galvan Circuit` ở 4 góc, `Galvan Plate` ở 4 cạnh, `Prototype Omnitrix Core` ở giữa (công thức gốc). |
-| Đeo Omnitrix | Chọn Omnitrix trên thanh đồ là nó tự đeo vào **cổ tay trái** (như ô Curios của bản Java). |
-| Chọn alien (vòng xoay như phim) | **Ngồi hai lần liên tiếp**: đồng hồ mở, **hologram 3D** của alien hiện lên trước mặt. Quay góc nhìn (hoặc nút trái/phải) để xoay, **nhảy** để biến hình, **ngồi** để đóng. |
-| Vòng chọn tròn (Quick Change) | Chỉ khi đã mở **Master Control** (như bản gốc): ngồi hai lần mở vòng 10 ô thay cho vòng xoay. Khi đang là alien: nút *Quick change* trong menu kỹ năng để đổi thẳng sang alien khác. |
-| Dùng kỹ năng | Khi đang là alien: **ngồi hai lần** để tung kỹ năng đang chọn; **ngồi + nhảy** mở menu kỹ năng (chọn kỹ năng, *Detransform*, *Quick change*). Khi là người, **ngồi + nhảy** mở menu Omnitrix (Playlist, Codex, nhập mã). |
+| Đeo Omnitrix | Chọn Omnitrix trên thanh đồ là nó tự đeo vào **cổ tay trái** (ô tay trái), **khoá** tại đó và **không mất khi chết**, như ô Curios của bản Java. Tháo ra ở Bàn chế tạo Omnitrix (*Take off*). |
+| Tương tác với Omnitrix | **Chạm vào không trung bằng tay không** (giống video tham chiếu). Khi là người: nhân vật giơ đồng hồ lên, vòng xoay mở và **hologram 3D** hiện ra; quay góc nhìn hoặc nút trái/phải để chọn, **chạm lần nữa** để biến hình, **ngồi** để đóng. Chạm trúng mob hay khối thì vẫn là đánh bình thường. |
+| Vòng chọn tròn (Quick Change) | Chỉ khi đã mở **Master Control** (như bản gốc): chạm vào không trung mở vòng 10 ô thay cho vòng xoay. Khi là alien: nút *Quick change* trong menu kỹ năng. |
+| Dùng kỹ năng | Khi là alien: **chạm vào không trung** để tung kỹ năng đang chọn. **Ngồi + chạm** mở menu (khi là alien: chọn kỹ năng, *Detransform*, *Quick change*; khi là người: Playlist, Codex, nhập mã). |
 | Bay | Alien biết bay (Stinkfly, Ghostfreak, Jetray, Big Chill, Atomix, Dragonoid): **nhấn nhảy hai lần** khi đang ở trên không. Nhảy = lên, ngồi = xuống, đi tới = bay theo hướng nhìn. |
 | Leo tường | Wildmutt, Grey Matter: đi thẳng vào tường. |
 | Hẹn giờ | Mỗi lần biến hình kéo dài 5 phút (như bản gốc). Hết giờ thì Omnitrix sạc lại 2 phút 30 giây. **Master Control** bỏ giới hạn thời gian. |

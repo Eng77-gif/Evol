@@ -27,8 +27,8 @@
           "name": "rightLeg",
           "parent": "full_body",
           "pivot": [
-            -1.75,
-            4,
+            -3.9,
+            12,
             0
           ]
         },
@@ -37,8 +37,8 @@
           "parent": "full_body",
           "pivot": [
             0,
-            12,
-            0
+            32,
+            -4
           ]
         },
         {
@@ -46,17 +46,17 @@
           "parent": "full_body",
           "pivot": [
             0,
-            12,
-            0
+            30,
+            -4
           ]
         },
         {
           "name": "leftArm",
           "parent": "full_body",
           "pivot": [
-            4.5281,
-            25.548,
-            -0.1961
+            4.52812,
+            25.54796,
+            -0.19612
           ],
           "cubes": [
             {
@@ -149,17 +149,17 @@
           "name": "rightArm",
           "parent": "full_body",
           "pivot": [
-            -3,
-            11.75,
-            0
+            -4.73591,
+            25.84822,
+            -0.19612
           ]
         },
         {
           "name": "leftLeg",
           "parent": "full_body",
           "pivot": [
-            1.75,
-            4,
+            4.1,
+            12,
             0
           ]
         }

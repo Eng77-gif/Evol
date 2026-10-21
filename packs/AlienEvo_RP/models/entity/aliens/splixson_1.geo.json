@@ -131,17 +131,17 @@
           "name": "body",
           "parent": "full_body",
           "pivot": [
-            -0.8006,
-            2.599,
-            2.2001
+            0,
+            23,
+            0
           ]
         },
         {
           "name": "rightLeg",
           "parent": "full_body",
           "pivot": [
-            -1.75,
-            4,
+            -2.5,
+            5,
             0
           ]
         },
@@ -149,8 +149,8 @@
           "name": "leftArm",
           "parent": "full_body",
           "pivot": [
-            3,
-            11.75,
+            4,
+            18,
             0
           ]
         },
@@ -158,8 +158,8 @@
           "name": "rightArm",
           "parent": "full_body",
           "pivot": [
-            -3,
-            11.75,
+            -4,
+            18,
             0
           ]
         },
@@ -167,8 +167,8 @@
           "name": "leftLeg",
           "parent": "full_body",
           "pivot": [
-            1.75,
-            4,
+            2.5,
+            5,
             0
           ]
         }

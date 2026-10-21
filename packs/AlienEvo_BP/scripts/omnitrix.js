@@ -497,7 +497,7 @@ async function abilityMenu(p, alien) {
     const points = getPoints(p, alien.key);
     const form = new ActionFormData()
         .title(`${alien.color}${alien.name}`)
-        .body(`§7Choose an ability. Double tap sneak casts the selected ability.\n§7Skill points: §e${points}§7 (earned by levelling ${alien.name})`);
+        .body(`§7Choose an ability. Tapping the air casts the selected ability.\n§7Skill points: §e${points}§7 (earned by levelling ${alien.name})`);
     alien.abilities.forEach((id, i) => {
         const a = ABILITIES[id];
         const left = cooldownLeft(p, id);
@@ -574,7 +574,45 @@ export const flying = new Map();
 /** @type {Map<string, number>} */
 const lastJump = new Map();
 /** @type {Map<string, number>} */
-const lastSneak = new Map();
+const lastHit = new Map();
+/** @type {Map<string, number>} */
+const lastInteract = new Map();
+
+/**
+ * Tap with the Omnitrix worn: dial or wheel when human, cast the selected
+ * ability when transformed; while sneaking it opens the menus instead.
+ * @param {Player} p
+ */
+export function interact(p) {
+    const tier = wornTier(p);
+    if (tier < 0) return;
+    const now = system.currentTick;
+    if (now - (lastInteract.get(p.id) ?? -100) < 5) return;
+    lastInteract.set(p.id, now);
+    if (isDialOpen(p)) {
+        confirmWorldDial(p);
+        return;
+    }
+    const alien = currentAlien(p);
+    if (p.isSneaking) {
+        if (alien) abilityMenu(p, alien);
+        else openDial(p, tier);
+        return;
+    }
+    if (alien) {
+        castAbility(p, alien);
+        return;
+    }
+    if (getRecharge(p) > 0) {
+        sound(p, "alienevo.prototype_failsafe");
+        actionbar(p, `§cRecharging... §f${formatTime(getRecharge(p))}`);
+        return;
+    }
+    // The quick change wheel needs Master Control (quick_change power of the
+    // Java mod); otherwise the dial with the hologram opens.
+    if (hasMasterControl(p)) openWheel(p, tier);
+    else openWorldDial(p, tier);
+}
 
 /** @param {Player} p @param {Alien} alien */
 function flightTick(p, alien) {
@@ -686,11 +724,15 @@ function hud(p, alien) {
 export function wearOmnitrix(p) {
     const eq = p.getComponent("minecraft:equippable");
     const held = eq?.getEquipment(EquipmentSlot.Mainhand);
-    if (!eq || omnitrixTier(held) < 0 || eq.getEquipment(EquipmentSlot.Offhand)) return;
+    if (!eq || !held || omnitrixTier(held) < 0 || eq.getEquipment(EquipmentSlot.Offhand)) return;
+    // Like the Java Curios slot: it stays on the wrist and is kept on death
+    // (taken off at the Omnitrix Workbench).
+    held.lockMode = ItemLockMode.slot;
+    held.keepOnDeath = true;
     eq.setEquipment(EquipmentSlot.Offhand, held);
     eq.setEquipment(EquipmentSlot.Mainhand, undefined);
     sound(p, "alienevo.prototype_core_place", 0.6);
-    actionbar(p, "§aOmnitrix strapped to your wrist §7(double tap sneak: dial, sneak + jump: menu)");
+    actionbar(p, "§aOmnitrix on your wrist §7- tap the air: Omnitrix, sneak + tap: menu");
 }
 
 export function initOmnitrix() {
@@ -757,52 +799,27 @@ export function initOmnitrix() {
         }
     }, 1);
 
-    // Double tap sneak = use the Omnitrix worn in the offhand (or held):
-    // the quick change wheel (transform / switch alien).
-    world.afterEvents.playerButtonInput.subscribe((ev) => {
-        if (ev.button !== "Sneak" || ev.newButtonState !== "Pressed") return;
+    // "Interact with the Omnitrix" (like the Java keybind): tapping the air
+    // with an empty hand.  A tap that hits a mob or a block is a normal hit.
+    world.afterEvents.playerSwingStart.subscribe((ev) => {
+        if (ev.swingSource !== "Attack" && ev.swingSource !== "Interact") return;
+        if (ev.heldItemStack && omnitrixTier(ev.heldItemStack) < 0) return;
         const p = ev.player;
-        if (isDialOpen(p)) {
-            // Sneak closes the in-world dial (and must not count as a double tap).
-            closeWorldDial(p);
-            lastSneak.delete(p.id);
-            return;
-        }
-        const now = system.currentTick;
-        const last = lastSneak.get(p.id) ?? -100;
-        lastSneak.set(p.id, now);
-        if (now - last > 8) return;
-        lastSneak.delete(p.id);
-        const tier = wornTier(p);
-        if (tier < 0) return;
-        const alien = currentAlien(p);
-        if (alien) {
-            // Transformed: double tap sneak casts the selected ability.
-            castAbility(p, alien);
-            return;
-        }
-        if (getRecharge(p) > 0) {
-            sound(p, "alienevo.prototype_failsafe");
-            actionbar(p, `§cRecharging... §f${formatTime(getRecharge(p))}`);
-            return;
-        }
-        // The quick change wheel needs Master Control (quick_change power of
-        // the Java mod); otherwise the dial with the hologram opens.
-        if (hasMasterControl(p)) openWheel(p, tier);
-        else openWorldDial(p, tier);
+        const tick = system.currentTick;
+        system.runTimeout(() => {
+            if (!p.isValid || (lastHit.get(p.id) ?? -10) >= tick - 1) return;
+            interact(p);
+        }, 2);
     });
-
-    // Jump while sneaking: the menus (ability menu when transformed, the
-    // Omnitrix menu with playlist, codex and codes when human).
+    world.afterEvents.entityHitEntity.subscribe((ev) => {
+        if (ev.damagingEntity.typeId === "minecraft:player") lastHit.set(ev.damagingEntity.id, system.currentTick);
+    });
+    world.afterEvents.entityHitBlock.subscribe((ev) => {
+        if (ev.damagingEntity.typeId === "minecraft:player") lastHit.set(ev.damagingEntity.id, system.currentTick);
+    });
     world.afterEvents.playerButtonInput.subscribe((ev) => {
-        if (ev.button !== "Jump" || ev.newButtonState !== "Pressed" || !ev.player.isSneaking) return;
-        const p = ev.player;
-        if (isDialOpen(p)) return;
-        const tier = wornTier(p);
-        if (tier < 0) return;
-        const alien = currentAlien(p);
-        if (alien) abilityMenu(p, alien);
-        else openDial(p, tier);
+        // Sneak closes the in-world dial.
+        if (ev.button === "Sneak" && ev.newButtonState === "Pressed" && isDialOpen(ev.player)) closeWorldDial(ev.player);
     });
 
     world.afterEvents.playerButtonInput.subscribe((ev) => {

@@ -73,6 +73,24 @@ def fix_skeleton(geos):
     return renamed
 
 
+PLAYER_BONES = {"head", "body", "leftarm", "rightarm", "leftleg", "rightleg"}
+
+
+def align_pivots(geos):
+    """The game derives locators such as armor_offset.default_neck from the
+    player bones of each geometry; give every geometry of one attachable or
+    entity the pivots of the first one so they agree."""
+    first = {}
+    for geo in geos:
+        for b in geo.get("bones", []):
+            low = b["name"].lower()
+            if low in PLAYER_BONES and "pivot" in b:
+                if low in first:
+                    b["pivot"] = list(first[low])
+                else:
+                    first[low] = list(b["pivot"])
+
+
 def fix_geometries(rp):
     files = {}
     by_id = {}
@@ -91,6 +109,7 @@ def fix_geometries(rp):
         ids = [g for g in desc.get("geometry", {}).values() if g in by_id]
         geos = [by_id[g][1] for g in ids]
         renamed += fix_skeleton(geos)
+        align_pivots(geos)
         touched |= {by_id[g][0] for g in ids}
     for path in touched:
         _save(path, files[path])

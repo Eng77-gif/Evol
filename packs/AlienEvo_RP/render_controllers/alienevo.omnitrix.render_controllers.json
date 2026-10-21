@@ -20,7 +20,7 @@
         }
       ],
       "textures": [
-        "Array.glow[v.alienevo_glow + 1]"
+        "Array.glow[(v.alienevo_glow ?? -1) + 1]"
       ],
       "arrays": {
         "textures": {
@@ -77,7 +77,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col0 + 1]"
+        "Array.colors[(v.alienevo_col0 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_prototype_base_secondary": {
@@ -111,7 +111,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col1 + 1]"
+        "Array.colors[(v.alienevo_col1 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_prototype_base_tertiary": {
@@ -145,7 +145,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col2 + 1]"
+        "Array.colors[(v.alienevo_col2 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_prototype_buttons": {
@@ -179,7 +179,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col3 + 1]"
+        "Array.colors[(v.alienevo_col3 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_prototype_core_side": {
@@ -213,7 +213,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col4 + 1]"
+        "Array.colors[(v.alienevo_col4 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_prototype_core_top": {
@@ -247,7 +247,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col5 + 1]"
+        "Array.colors[(v.alienevo_col5 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_prototype_dial_inner": {
@@ -281,7 +281,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col6 + 1]"
+        "Array.colors[(v.alienevo_col6 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_prototype_dial_outer": {
@@ -315,7 +315,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col7 + 1]"
+        "Array.colors[(v.alienevo_col7 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_prototype_tubes": {
@@ -349,7 +349,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col8 + 1]"
+        "Array.colors[(v.alienevo_col8 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_prototype_1": {
@@ -402,7 +402,7 @@
         }
       },
       "textures": [
-        "Array.sils[v.alienevo_sel]"
+        "Array.sils[math.max(0, v.alienevo_sel ?? 0)]"
       ]
     },
     "controller.render.alienevo.omnitrix_10k_0": {
@@ -424,7 +424,7 @@
         }
       ],
       "textures": [
-        "Array.glow[v.alienevo_glow + 1]"
+        "Array.glow[(v.alienevo_glow ?? -1) + 1]"
       ],
       "arrays": {
         "textures": {
@@ -481,7 +481,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col0 + 1]"
+        "Array.colors[(v.alienevo_col0 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_10k_base_secondary": {
@@ -515,7 +515,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col1 + 1]"
+        "Array.colors[(v.alienevo_col1 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_10k_base_tertiary": {
@@ -549,7 +549,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col2 + 1]"
+        "Array.colors[(v.alienevo_col2 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_10k_buttons": {
@@ -583,7 +583,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col3 + 1]"
+        "Array.colors[(v.alienevo_col3 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_10k_core_side": {
@@ -617,7 +617,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col4 + 1]"
+        "Array.colors[(v.alienevo_col4 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_10k_core_top": {
@@ -651,7 +651,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col5 + 1]"
+        "Array.colors[(v.alienevo_col5 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_10k_dial_inner": {
@@ -685,7 +685,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col6 + 1]"
+        "Array.colors[(v.alienevo_col6 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_10k_dial_outer": {
@@ -719,7 +719,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col7 + 1]"
+        "Array.colors[(v.alienevo_col7 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_10k_tubes": {
@@ -753,7 +753,7 @@
         }
       },
       "textures": [
-        "Array.colors[v.alienevo_col8 + 1]"
+        "Array.colors[(v.alienevo_col8 ?? -1) + 1]"
       ]
     },
     "controller.render.alienevo.omnitrix_10k_1": {
@@ -806,7 +806,7 @@
         }
       },
       "textures": [
-        "Array.sils[v.alienevo_sel]"
+        "Array.sils[math.max(0, v.alienevo_sel ?? 0)]"
       ]
     },
     "controller.render.alienevo.omnitrix_recal_base": {
@@ -914,14 +914,14 @@
           ]
         }
       },
-      "geometry": "Array.holo[v.alienevo_sel]",
+      "geometry": "Array.holo[math.max(0, v.alienevo_sel ?? 0)]",
       "materials": [
         {
           "*": "Material.hologram"
         }
       ],
       "textures": [
-        "Array.holo_tex[v.alienevo_sel]"
+        "Array.holo_tex[math.max(0, v.alienevo_sel ?? 0)]"
       ],
       "ignore_lighting": true
     }

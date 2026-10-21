@@ -2714,7 +2714,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.murkgourmand.shoot.t2": {
       "loop": "hold_on_last_frame",
@@ -2869,7 +2869,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.murkgourmand.open_mouth.t3": {
       "loop": "hold_on_last_frame",
@@ -3438,7 +3438,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 3) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.murkgourmand.spin2.t4": {
       "loop": "hold_on_last_frame",
@@ -4237,7 +4237,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 4) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 4) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.murkgourmand.tummyache.t5": {
       "loop": "hold_on_last_frame",
@@ -4398,7 +4398,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 5) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 5) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.murkgourmand.untummyache.t6": {
       "loop": "hold_on_last_frame",
@@ -4563,7 +4563,7 @@
           ]
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 6) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 6) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.murkgourmand.kaboom.t7": {
       "animation_length": 3.5833,
@@ -5122,7 +5122,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 7) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 7) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.murkgourmand.idle.t8": {
       "loop": "hold_on_last_frame",
@@ -5170,7 +5170,7 @@
           ]
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 8) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 8) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

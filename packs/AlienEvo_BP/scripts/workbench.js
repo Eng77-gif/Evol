@@ -1,7 +1,7 @@
 // Omnitrix Workbench (workbench.js of the Java mod): upgrades the Prototype
 // Omnitrix through its evolution phases and shows its status.
 
-import { EquipmentSlot, ItemStack, system } from "@minecraft/server";
+import { EquipmentSlot, ItemLockMode, ItemStack, system } from "@minecraft/server";
 import { ActionFormData } from "@minecraft/server-ui";
 import { ALIENS, OMNITRIX_TIERS } from "./aliens.js";
 import { omnitrixTier, RECAL } from "./omnitrix.js";
@@ -57,10 +57,21 @@ function take(p, req) {
 /** @param {Player} p @param {import("@minecraft/server").Block} block */
 export async function openWorkbench(p, block) {
     const eq = p.getComponent("minecraft:equippable");
-    const held = eq?.getEquipment(EquipmentSlot.Mainhand);
+    // The Omnitrix worn on the wrist (offhand) or held.
+    const slot = omnitrixTier(eq?.getEquipment(EquipmentSlot.Offhand)) >= 0 ? EquipmentSlot.Offhand : EquipmentSlot.Mainhand;
+    const held = eq?.getEquipment(slot);
     const tier = omnitrixTier(held);
+    /** @param {string} id */
+    const fresh = (id) => {
+        const item = new ItemStack(id, 1);
+        if (slot === EquipmentSlot.Offhand) {
+            item.lockMode = ItemLockMode.slot;
+            item.keepOnDeath = true;
+        }
+        return item;
+    };
     if (tier < 0) {
-        p.sendMessage("§7Hold an §aOmnitrix§7 in your main hand to work on it.");
+        p.sendMessage("§7Wear or hold an §aOmnitrix§7 to work on it.");
         sound(p, "alienevo.prototype_failsafe");
         return;
     }
@@ -79,22 +90,49 @@ export async function openWorkbench(p, block) {
         body += "§aThis Omnitrix is fully evolved.";
     }
     const form = new ActionFormData().title("§2Omnitrix Workbench").body(body);
-    if (next) form.button("§2Upgrade", "textures/ui/smithing_icon");
+    /** @type {string[]} */
+    const actions = [];
+    if (next) {
+        form.button("§2Upgrade", "textures/ui/smithing_icon");
+        actions.push("upgrade");
+    }
     form.button("§5Customize colours", "textures/items/upgrade_crystal_magenta");
+    actions.push("colours");
     // The fully evolved watch can be recalibrated into the Recalibrated Omnitrix
     // (hologram dial) and back; the Recalibrated model costs Galvan Circuits.
     const recal = held?.typeId === RECAL;
-    if (tier === 3) form.button(recal ? "§aRestore Evolved Omnitrix" : `§aRecalibrate\n§8${RECAL_COST}x Galvan Circuit`, "textures/items/recal_omnitrix");
+    if (tier === 3) {
+        form.button(recal ? "§aRestore Evolved Omnitrix" : `§aRecalibrate\n§8${RECAL_COST}x Galvan Circuit`, "textures/items/recal_omnitrix");
+        actions.push("recal");
+    }
+    if (slot === EquipmentSlot.Offhand) {
+        form.button("§6Take off the Omnitrix", "textures/ui/cancel");
+        actions.push("takeoff");
+    }
     form.button("§7Close");
     const res = await form.show(p);
     if (res.canceled || res.selection === undefined) return;
-    if (res.selection === (next ? 1 : 0)) {
+    const action = actions[res.selection];
+    if (action === "colours") {
         await customizeMenu(p);
         return;
     }
-    if (tier === 3 && res.selection === 1) {
+    if (action === "takeoff") {
         system.run(() => {
-            const current = eq?.getEquipment(EquipmentSlot.Mainhand);
+            const worn = eq?.getEquipment(EquipmentSlot.Offhand);
+            if (!worn || omnitrixTier(worn) < 0) return;
+            worn.lockMode = ItemLockMode.none;
+            worn.keepOnDeath = false;
+            eq?.setEquipment(EquipmentSlot.Offhand, undefined);
+            const left = p.getComponent("minecraft:inventory")?.container?.addItem(worn);
+            if (left) p.dimension.spawnItem(left, p.location);
+            sound(p, "alienevo.prototype_detransform");
+        });
+        return;
+    }
+    if (action === "recal") {
+        system.run(() => {
+            const current = eq?.getEquipment(slot);
             if (omnitrixTier(current) !== 3) return;
             const req = { id: "alienevo:upgrade_chip", count: RECAL_COST };
             if (!recal && countOf(p, req) < RECAL_COST) {
@@ -103,14 +141,14 @@ export async function openWorkbench(p, block) {
                 return;
             }
             if (!recal) take(p, req);
-            eq?.setEquipment(EquipmentSlot.Mainhand, new ItemStack(recal ? OMNITRIX_TIERS[3].item : RECAL, 1));
+            eq?.setEquipment(slot, fresh(recal ? OMNITRIX_TIERS[3].item : RECAL));
             sound(p, recal ? "alienevo.prototype_core_place" : "alienevo.recal_activation");
             particle(p, "minecraft:totem_particle", block.center());
             p.sendMessage(recal ? "§aThe Omnitrix is back to its Evolved form." : "§aThe Omnitrix has been §2recalibrated§a!");
         });
         return;
     }
-    if (res.selection !== 0 || !next || !cost) return;
+    if (action !== "upgrade" || !next || !cost) return;
 
     if (!cost.every((req) => countOf(p, req) >= req.count)) {
         p.sendMessage("§cYou are missing materials for this upgrade.");
@@ -118,10 +156,10 @@ export async function openWorkbench(p, block) {
         return;
     }
     system.run(() => {
-        const current = eq?.getEquipment(EquipmentSlot.Mainhand);
+        const current = eq?.getEquipment(slot);
         if (omnitrixTier(current) !== tier) return;
         for (const req of cost) take(p, req);
-        eq?.setEquipment(EquipmentSlot.Mainhand, new ItemStack(next.item, 1));
+        eq?.setEquipment(slot, fresh(next.item));
         if (tier + 1 === 3) setMasterControl(p, true);
         sound(p, "alienevo.prototype_core_place");
         sound(p, "random.levelup", 0.6, 1.2);

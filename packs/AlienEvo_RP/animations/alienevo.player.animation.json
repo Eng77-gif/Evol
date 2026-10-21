@@ -48,6 +48,25 @@
         }
       }
     },
+    "animation.alienevo.player.watch_third_person": {
+      "loop": true,
+      "bones": {
+        "leftarm": {
+          "rotation": [
+            -125.0,
+            -5.0,
+            130.0
+          ]
+        },
+        "rightarm": {
+          "rotation": [
+            -80.0,
+            45.0,
+            0.0
+          ]
+        }
+      }
+    },
     "animation.alienevo.player.watch_view": {
       "loop": true,
       "bones": {

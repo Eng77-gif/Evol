@@ -310,12 +310,17 @@ def java_block_model_to_geo(model, identifier, tex_size):
 
 # In first person only the alien's arms are drawn (they replace the player's
 # own first person arm, see build_player_entity).
-FIRST_PERSON_ARMS = [{"*": "!v.is_first_person"}, {"rightArm": "1.0"}]
+FIRST_PERSON_ARMS = [{"*": "!v.alienevo_fp"}, {"rightArm": "1.0"}]
 
 # Attachables cannot use context variables (c.is_first_person,
-# c.owning_entity) in render controllers; they read the wearer's public
-# variables instead (see build_player_entity).
-WATCH_COND = "(!v.is_first_person || v.alienevo_off || v.alienevo_wv) && !v.alienevo_is_alien"
+# c.owning_entity) in render controllers: c.is_first_person is copied into an
+# attachable variable by its scripts, the rest is read from the wearer's
+# public variables (build_player_entity), with "?? 0" for the inventory paper
+# doll where those do not exist.
+ATTACH_SCRIPTS = ["v.alienevo_fp = c.is_first_person;"]
+
+
+WATCH_COND = "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
 
 
 def is_translucent(img):
@@ -405,7 +410,8 @@ def build_aliens(vfs, lang):
             "materials": materials,
             "textures": textures,
             "geometry": geometry,
-            "scripts": {"parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;"},
+            "scripts": {"parent_setup": "v.chest_layer_visible = 0.0; v.helmet_layer_visible = 0.0; v.leg_layer_visible = 0.0; v.boot_layer_visible = 0.0;",
+                        "pre_animation": list(ATTACH_SCRIPTS)},
             "render_controllers": rcs,
         }
         if animations:
@@ -505,8 +511,8 @@ def build_omnitrix(vfs, triggers_out):
                 rc = f"controller.render.alienevo.{pid}"
                 controllers[rc] = {"geometry": f"Geometry.part{i}", "materials": [{"*": "Material.default"}],
                                    "arrays": {"textures": {"Array.sils": names}},
-                                   "textures": ["Array.sils[v.alienevo_sel]"]}
-                rcs.append({rc: f"{cond} && v.alienevo_sel >= 0"})
+                                   "textures": ["Array.sils[math.max(0, v.alienevo_sel ?? 0)]"]}
+                rcs.append({rc: f"{cond} && (v.alienevo_sel ?? -1) >= 0"})
                 continue
             for kind, mat in (("base", "default"), ("glow", "glow")):
                 if not part[kind]:
@@ -525,7 +531,7 @@ def build_omnitrix(vfs, triggers_out):
                         textures[f"part{i}{suffix}_{ci}"] = f"textures/entity/omnitrix/{pid}{suffix}_{ci}"
                         names.append(f"Texture.part{i}{suffix}_{ci}")
                     controllers[rc]["arrays"] = {"textures": {"Array.glow": names}}
-                    controllers[rc]["textures"] = ["Array.glow[v.alienevo_glow + 1]"]
+                    controllers[rc]["textures"] = ["Array.glow[(v.alienevo_glow ?? -1) + 1]"]
                 rcs.append({rc: cond})
             if i == 0:
                 # Colour modules: the watch drawn again, slightly inflated, with
@@ -543,8 +549,8 @@ def build_omnitrix(vfs, triggers_out):
                     rc = f"controller.render.alienevo.omnitrix_{variant}_{slot}"
                     controllers[rc] = {"geometry": "Geometry.overlay", "materials": [{"*": "Material.default"}],
                                        "arrays": {"textures": {"Array.colors": names}},
-                                       "textures": [f"Array.colors[v.alienevo_col{si} + 1]"]}
-                    rcs.append({rc: f"{cond} && v.alienevo_col{si} >= 0"})
+                                       "textures": [f"Array.colors[(v.alienevo_col{si} ?? -1) + 1]"]}
+                    rcs.append({rc: f"{cond} && (v.alienevo_col{si} ?? -1) >= 0"})
         animations, animate, _ = build_alien_animations(vfs, f"omnitrix_{variant}", layers, anim_dir, ctrl_dir, renames, fixed)
         items = [i[0] for i in OMNITRIX_ITEMS if (i[3] == 3) == (variant == "10k") and i[0] != "recal_omnitrix"]
         for item in items:
@@ -555,9 +561,10 @@ def build_omnitrix(vfs, triggers_out):
                 "geometry": geometry,
                 "render_controllers": rcs,
             }
+            desc["scripts"] = {"pre_animation": list(ATTACH_SCRIPTS)}
             if animations:
                 desc["animations"] = animations
-                desc["scripts"] = {"animate": animate}
+                desc["scripts"]["animate"] = animate
             write_json(os.path.join(att_dir, f"{item}.json"), {"format_version": "1.10.0", "minecraft:attachable": {"description": desc}})
     print("recal holograms:", build_recal(vfs, controllers, fixed))
     write_json(os.path.join(RP, "render_controllers", "alienevo.omnitrix.render_controllers.json"),
@@ -629,12 +636,12 @@ def build_recal(vfs, controllers, fixed):
         textures[f"holo_{alien['key']}"] = f"textures/entity/omnitrix/recal_holo_{alien['key']}"
         geos.append(f"Geometry.holo_{alien['key']}")
         texs.append(f"Texture.holo_{alien['key']}")
-    sel = "v.alienevo_sel"
+    sel = "math.max(0, v.alienevo_sel ?? 0)"
     rc = "controller.render.alienevo.omnitrix_recal_hologram"
     controllers[rc] = {"arrays": {"geometries": {"Array.holo": geos}, "textures": {"Array.holo_tex": texs}},
                        "geometry": f"Array.holo[{sel}]", "materials": [{"*": "Material.hologram"}],
                        "textures": [f"Array.holo_tex[{sel}]"], "ignore_lighting": True}
-    rcs.append({rc: f"v.alienevo_wv && {sel} >= 0 && !v.alienevo_is_alien"})
+    rcs.append({rc: "(v.alienevo_wv ?? 0) && (v.alienevo_sel ?? -1) >= 0 && !(v.alienevo_is_alien ?? 0)"})
     animations, animate, _ = build_alien_animations(vfs, "omnitrix_recal", layers, anim_dir, ctrl_dir, renames, fixed)
     desc = {
         "identifier": "alienevo:recal_omnitrix",
@@ -643,9 +650,10 @@ def build_recal(vfs, controllers, fixed):
         "geometry": geometry,
         "render_controllers": rcs,
     }
+    desc["scripts"] = {"pre_animation": list(ATTACH_SCRIPTS)}
     if animations:
         desc["animations"] = animations
-        desc["scripts"] = {"animate": animate}
+        desc["scripts"]["animate"] = animate
     write_json(os.path.join(RP, "attachables", "omnitrix", "recal_omnitrix.json"),
                {"format_version": "1.10.0", "minecraft:attachable": {"description": desc}})
     return found
@@ -1336,6 +1344,17 @@ def build_player_scale_animation():
                     "rotation": ["95.0 + variable.is_using_vr * 7.5", "-45.0 + variable.is_using_vr * 7.5", "115.0 + variable.is_using_vr * -2.5"],
                 }},
             },
+            # Third person while the dial is open: the left forearm in front of
+            # the chest, watch face up to the eyes, right hand on the dial (pose
+            # found offline with tools/render.py; like the activation pose of
+            # the Java mod's recal_anim.js).
+            "animation.alienevo.player.watch_third_person": {
+                "loop": True,
+                "bones": {
+                    "leftarm": {"rotation": [-125.0, -5.0, 130.0]},
+                    "rightarm": {"rotation": [-80.0, 45.0, 0.0]},
+                },
+            },
             "animation.alienevo.player.watch_view": {
                 "loop": True,
                 "bones": {"leftarm": {
@@ -1448,7 +1467,6 @@ def build_player_entity(scale_expr):
     # State shared with the attachables (alien forms, watches): they can
     # read public variables of the wearer, nothing else of it.
     shared = {
-        "is_first_person": None,
         "alienevo_anim": "q.property('alienevo:anim')",
         "alienevo_fly": "q.property('alienevo:fly')",
         "alienevo_wv": "q.property('alienevo:wv')",
@@ -1473,6 +1491,11 @@ def build_player_entity(scale_expr):
     desc["animations"]["alienevo_watch_view"] = "animation.alienevo.player.watch_view"
     desc["animations"]["alienevo_watch_rest"] = "animation.alienevo.player.watch_rest"
     desc["animations"]["alienevo_held_hand"] = "animation.alienevo.player.held_hand"
+    desc["animations"]["alienevo_watch_third_person"] = "animation.alienevo.player.watch_third_person"
+    desc["scripts"]["animate"].append({"alienevo_watch_third_person": "!v.is_first_person && q.property('alienevo:wv')"})
+    # Set by the game's own (newer) player file, missing from the published one.
+    spears = ", ".join(f"'minecraft:{m}_spear'" for m in ("wooden", "stone", "copper", "iron", "golden", "diamond", "netherite"))
+    desc["scripts"]["pre_animation"].insert(0, f"variable.melee_spear_equipped = q.is_item_name_any('slot.weapon.mainhand', 0, {spears});")
     desc["scripts"]["animate"].append({"alienevo_watch_view": "v.is_first_person && q.property('alienevo:wv')"})
     desc["scripts"]["animate"].append({"alienevo_watch_rest": "v.is_first_person && v.alienevo_off && !q.property('alienevo:wv')"})
     desc["scripts"]["animate"].append({"alienevo_held_hand": "v.is_first_person && v.alienevo_main"})

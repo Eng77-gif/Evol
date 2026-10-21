@@ -26,6 +26,7 @@
           "variable.hand_bob = 0.0;"
         ],
         "pre_animation": [
+          "variable.melee_spear_equipped = q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:wooden_spear', 'minecraft:stone_spear', 'minecraft:copper_spear', 'minecraft:iron_spear', 'minecraft:golden_spear', 'minecraft:diamond_spear', 'minecraft:netherite_spear');",
           "variable.helmet_layer_visible = !query.has_head_gear;",
           "variable.leg_layer_visible = 1.0;",
           "variable.boot_layer_visible = 1.0;",
@@ -66,6 +67,9 @@
             "alienevo_scale": "!v.is_first_person && v.alienevo_is_alien"
           },
           {
+            "alienevo_watch_third_person": "!v.is_first_person && q.property('alienevo:wv')"
+          },
+          {
             "alienevo_watch_view": "v.is_first_person && q.property('alienevo:wv')"
           },
           {
@@ -83,7 +87,6 @@
           "variable.attack_time": "public",
           "variable.item_use_normalized": "public",
           "variable.alienevo_is_alien": "public",
-          "variable.is_first_person": "public",
           "variable.alienevo_anim": "public",
           "variable.alienevo_fly": "public",
           "variable.alienevo_wv": "public",
@@ -183,7 +186,8 @@
         "alienevo_scale": "animation.alienevo.player.scale",
         "alienevo_watch_view": "animation.alienevo.player.watch_view",
         "alienevo_watch_rest": "animation.alienevo.player.watch_rest",
-        "alienevo_held_hand": "animation.alienevo.player.held_hand"
+        "alienevo_held_hand": "animation.alienevo.player.held_hand",
+        "alienevo_watch_third_person": "animation.alienevo.player.watch_third_person"
       },
       "render_controllers": [
         {

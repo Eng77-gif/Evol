@@ -2178,7 +2178,7 @@
         }
       },
       "loop": "hold_on_last_frame",
-      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.omnitrix_10k.prototype.spinright.t2": {
       "animation_length": 0.3333,
@@ -2249,7 +2249,7 @@
         }
       },
       "loop": "hold_on_last_frame",
-      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.omnitrix_10k.prototype.open.t3": {
       "loop": "hold_on_last_frame",
@@ -2547,7 +2547,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 3) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.omnitrix_10k.prototype.close.t4": {
       "loop": "hold_on_last_frame",
@@ -2845,7 +2845,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 4) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 4) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.omnitrix_10k.prototype.settings_open.t5": {
       "loop": "hold_on_last_frame",
@@ -3130,7 +3130,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 5) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 5) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.omnitrix_10k.prototype.settings_close.t6": {
       "loop": "hold_on_last_frame",
@@ -3415,7 +3415,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 6) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 6) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.omnitrix_10k.prototype.settings_spinright.t7": {
       "loop": "hold_on_last_frame",
@@ -3474,7 +3474,7 @@
           ]
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 7) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 7) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.omnitrix_10k.prototype.settings_spinleft.t10": {
       "loop": "hold_on_last_frame",
@@ -3533,7 +3533,7 @@
           ]
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 10) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 10) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.omnitrix_10k.prototype.playlistchange.t11": {
       "animation_length": 0.4167,
@@ -3604,7 +3604,7 @@
         }
       },
       "loop": "hold_on_last_frame",
-      "anim_time_update": "(v.alienevo_anim == 11) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 11) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.omnitrix_10k.prototype.alt_spinright.t8": {
       "loop": "hold_on_last_frame",
@@ -3635,7 +3635,7 @@
           ]
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 8) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 8) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.omnitrix_10k.prototype.alt_spinleft.t9": {
       "loop": "hold_on_last_frame",
@@ -3666,7 +3666,7 @@
           ]
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 9) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 9) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.omnitrix_10k.prototype.unlock_master.t12": {
       "loop": "hold_on_last_frame",
@@ -4230,7 +4230,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 12) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 12) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

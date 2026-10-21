@@ -2959,7 +2959,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.sword_off.t2": {
       "loop": "hold_on_last_frame",
@@ -3347,7 +3347,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.shield_spin.t3": {
       "loop": "hold_on_last_frame",
@@ -3517,7 +3517,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 3) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.shield_off.t4": {
       "loop": "hold_on_last_frame",
@@ -3691,7 +3691,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 4) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 4) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.shards_off.t5": {
       "loop": "hold_on_last_frame",
@@ -3878,7 +3878,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 5) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 5) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.shards_on.t6": {
       "loop": "hold_on_last_frame",
@@ -4041,7 +4041,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 6) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 6) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.sword_on_left.t7": {
       "loop": "hold_on_last_frame",
@@ -4445,7 +4445,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 7) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 7) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.sword_off_left.t8": {
       "loop": "hold_on_last_frame",
@@ -4833,7 +4833,7 @@
           }
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 8) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 8) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.shield_spin_left.t9": {
       "loop": "hold_on_last_frame",
@@ -4965,7 +4965,7 @@
           ]
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 9) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 9) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.petrosapien.diamondhead.shield_off_left.t10": {
       "loop": "hold_on_last_frame",
@@ -5092,7 +5092,7 @@
           ]
         }
       },
-      "anim_time_update": "(v.alienevo_anim == 10) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? 0) == 10) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

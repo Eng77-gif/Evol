@@ -25,7 +25,9 @@ LERP = {"linear": "linear", "step": "step"}
 # Synced player property set by the server script (see BP entities/player.json).
 # An attachable reads the wearer's state through public variables of the
 # player client entity (build_player_entity), like vanilla v.attack_time.
-OWNER_VAR = "v.alienevo_anim"
+# "?? 0": the variables do not exist where the game draws the model without
+# its wearer's scripts (inventory paper doll).
+OWNER_VAR = "(v.alienevo_anim ?? 0)"
 
 # Ticks each trigger keeps alienevo:anim set (-1 = held until the next
 # trigger), per model key; written to anim_data.js for the scripts.
@@ -124,10 +126,10 @@ def convert_animation(anim, renames=None):
 # Movement animations found by name in the alien's animation files.
 # (state, regex on the short animation name, owner condition)
 MOVEMENT = [
-    ("fly", r"(^|_)(flight|fly|flying|hover)(_on)?$", "v.alienevo_fly"),
-    ("swim", r"(swim_fast|tail_swim|swim)$", "v.alienevo_swim"),
-    ("sprint", r"^sprint\d*$", "v.alienevo_sprint && v.alienevo_ground"),
-    ("walk", r"^walk$", "v.alienevo_speed > 0.1 && v.alienevo_ground"),
+    ("fly", r"(^|_)(flight|fly|flying|hover)(_on)?$", "(v.alienevo_fly ?? 0)"),
+    ("swim", r"(swim_fast|tail_swim|swim)$", "(v.alienevo_swim ?? 0)"),
+    ("sprint", r"^sprint\d*$", "(v.alienevo_sprint ?? 0) && (v.alienevo_ground ?? 0)"),
+    ("walk", r"^walk$", "(v.alienevo_speed ?? 0) > 0.1 && (v.alienevo_ground ?? 0)"),
 ]
 
 
