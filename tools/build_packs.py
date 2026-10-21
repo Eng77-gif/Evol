@@ -1805,7 +1805,10 @@ def stamp_manifests():
     whose UUID and version are already installed and keeps the old one."""
     import datetime
     now = datetime.datetime.now(datetime.timezone.utc)
-    version = [2, int(now.strftime("%y%m%d")), int(now.strftime("%H%M"))]
+    # Bedrock stores each version part as a 16 bit number (max 65535), so use
+    # days since 2026-01-01 and the minute of the day.
+    days = (now.date() - datetime.date(2026, 1, 1)).days
+    version = [2, days, now.hour * 60 + now.minute]
     label = f"{version[0]}.{version[1]}.{version[2]}"
     uuids = set()
     for pack in (BP, RP):
