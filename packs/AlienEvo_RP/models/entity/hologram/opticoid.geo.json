@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "opticoid__head",
           "pivot": [
             -0.10434,
             26.85197,
@@ -440,7 +440,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "opticoid__body",
           "pivot": [
             0.00835,
             25.54773,
@@ -810,8 +810,8 @@
           ]
         },
         {
-          "name": "Eye",
-          "parent": "body",
+          "name": "opticoid__Eye",
+          "parent": "opticoid__body",
           "pivot": [
             4.08251,
             24.58778,
@@ -1186,8 +1186,8 @@
           ]
         },
         {
-          "name": "Eye6",
-          "parent": "body",
+          "name": "opticoid__Eye6",
+          "parent": "opticoid__body",
           "pivot": [
             -4.02499,
             24.61268,
@@ -1562,8 +1562,8 @@
           ]
         },
         {
-          "name": "Eye7",
-          "parent": "body",
+          "name": "opticoid__Eye7",
+          "parent": "opticoid__body",
           "pivot": [
             3.3949,
             22.02428,
@@ -1938,8 +1938,8 @@
           ]
         },
         {
-          "name": "Eye8",
-          "parent": "body",
+          "name": "opticoid__Eye8",
+          "parent": "opticoid__body",
           "pivot": [
             -3.50803,
             22.29398,
@@ -2314,8 +2314,8 @@
           ]
         },
         {
-          "name": "Eye9",
-          "parent": "body",
+          "name": "opticoid__Eye9",
+          "parent": "opticoid__body",
           "pivot": [
             0.22841,
             19.773,
@@ -2690,8 +2690,8 @@
           ]
         },
         {
-          "name": "Eye10",
-          "parent": "body",
+          "name": "opticoid__Eye10",
+          "parent": "opticoid__body",
           "pivot": [
             -3.86977,
             19.29345,
@@ -3066,8 +3066,8 @@
           ]
         },
         {
-          "name": "Eye15",
-          "parent": "body",
+          "name": "opticoid__Eye15",
+          "parent": "opticoid__body",
           "pivot": [
             -0.2457,
             20.27827,
@@ -3556,8 +3556,8 @@
           ]
         },
         {
-          "name": "String",
-          "parent": "Eye15",
+          "name": "opticoid__String",
+          "parent": "opticoid__Eye15",
           "pivot": [
             -2.10876,
             25.6486,
@@ -3863,8 +3863,8 @@
           ]
         },
         {
-          "name": "StringMain",
-          "parent": "String",
+          "name": "opticoid__StringMain",
+          "parent": "opticoid__String",
           "pivot": [
             -0.57885,
             28.96372,
@@ -4170,7 +4170,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "opticoid__leftArm",
           "pivot": [
             5.63981,
             22.0583,
@@ -4183,8 +4183,8 @@
           ]
         },
         {
-          "name": "UpperArm2",
-          "parent": "leftArm",
+          "name": "opticoid__UpperArm2",
+          "parent": "opticoid__leftArm",
           "pivot": [
             6.89886,
             23.93057,
@@ -4367,8 +4367,8 @@
           ]
         },
         {
-          "name": "HalfArm2",
-          "parent": "UpperArm2",
+          "name": "opticoid__HalfArm2",
+          "parent": "opticoid__UpperArm2",
           "pivot": [
             8.85661,
             13.5218,
@@ -4635,8 +4635,8 @@
           ]
         },
         {
-          "name": "Eye5",
-          "parent": "HalfArm2",
+          "name": "opticoid__Eye5",
+          "parent": "opticoid__HalfArm2",
           "pivot": [
             10.84809,
             10.13167,
@@ -5021,8 +5021,8 @@
           ]
         },
         {
-          "name": "Eye2",
-          "parent": "UpperArm2",
+          "name": "opticoid__Eye2",
+          "parent": "opticoid__UpperArm2",
           "pivot": [
             8.13022,
             22.66774,
@@ -5407,8 +5407,8 @@
           ]
         },
         {
-          "name": "Eye3",
-          "parent": "UpperArm2",
+          "name": "opticoid__Eye3",
+          "parent": "opticoid__UpperArm2",
           "pivot": [
             9.38367,
             18.12622,
@@ -5793,8 +5793,8 @@
           ]
         },
         {
-          "name": "Eye4",
-          "parent": "UpperArm2",
+          "name": "opticoid__Eye4",
+          "parent": "opticoid__UpperArm2",
           "pivot": [
             9.56761,
             15.34904,
@@ -6179,7 +6179,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "opticoid__rightArm",
           "pivot": [
             -5.3731,
             22.0583,
@@ -6192,8 +6192,8 @@
           ]
         },
         {
-          "name": "UpperArm3",
-          "parent": "rightArm",
+          "name": "opticoid__UpperArm3",
+          "parent": "opticoid__rightArm",
           "pivot": [
             -5.87837,
             23.88732,
@@ -6376,8 +6376,8 @@
           ]
         },
         {
-          "name": "Eye11",
-          "parent": "UpperArm3",
+          "name": "opticoid__Eye11",
+          "parent": "opticoid__UpperArm3",
           "pivot": [
             -8.18783,
             22.60723,
@@ -6752,8 +6752,8 @@
           ]
         },
         {
-          "name": "Eye12",
-          "parent": "UpperArm3",
+          "name": "opticoid__Eye12",
+          "parent": "opticoid__UpperArm3",
           "pivot": [
             -9.33832,
             18.0819,
@@ -7128,8 +7128,8 @@
           ]
         },
         {
-          "name": "Eye13",
-          "parent": "UpperArm3",
+          "name": "opticoid__Eye13",
+          "parent": "opticoid__UpperArm3",
           "pivot": [
             -9.42345,
             15.30319,
@@ -7504,8 +7504,8 @@
           ]
         },
         {
-          "name": "HalfArm3",
-          "parent": "UpperArm3",
+          "name": "opticoid__HalfArm3",
+          "parent": "opticoid__UpperArm3",
           "pivot": [
             -8.13611,
             13.27855,
@@ -7772,8 +7772,8 @@
           ]
         },
         {
-          "name": "Eye14",
-          "parent": "HalfArm3",
+          "name": "opticoid__Eye14",
+          "parent": "opticoid__HalfArm3",
           "pivot": [
             -10.11844,
             9.88843,
@@ -8148,7 +8148,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "opticoid__leftLeg",
           "pivot": [
             2.2097,
             12.1884,
@@ -8156,8 +8156,8 @@
           ]
         },
         {
-          "name": "LLeg",
-          "parent": "leftLeg",
+          "name": "opticoid__LLeg",
+          "parent": "opticoid__leftLeg",
           "pivot": [
             2.3891,
             12.6259,
@@ -8592,7 +8592,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "opticoid__rightLeg",
           "pivot": [
             -2.2097,
             12.1884,
@@ -8600,8 +8600,8 @@
           ]
         },
         {
-          "name": "RLeg",
-          "parent": "rightLeg",
+          "name": "opticoid__RLeg",
+          "parent": "opticoid__rightLeg",
           "pivot": [
             -2.3891,
             12.6259,

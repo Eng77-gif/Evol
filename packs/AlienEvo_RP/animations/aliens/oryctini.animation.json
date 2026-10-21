@@ -265,7 +265,15 @@
     "animation.alienevo.oryctini.default": {
       "loop": true,
       "override_previous_animation": true,
-      "bones": {}
+      "bones": {
+        "alienevo_none": {
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
     },
     "animation.alienevo.oryctini.looks_good": {
       "animation_length": 2,

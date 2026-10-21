@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_armorHead3",
+          "name": "perkgourmand__armorHead3",
           "parent": "hologram",
           "pivot": [
             11.27375,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_armorHead2",
-          "parent": "holo_armorHead3",
+          "name": "perkgourmand__armorHead2",
+          "parent": "perkgourmand__armorHead3",
           "pivot": [
             11.275,
             15.24323,
@@ -79,8 +79,8 @@
           ]
         },
         {
-          "name": "holo_head2",
-          "parent": "holo_armorHead2",
+          "name": "perkgourmand__head2",
+          "parent": "perkgourmand__armorHead2",
           "pivot": [
             11.28906,
             15.47495,
@@ -1078,8 +1078,8 @@
           ]
         },
         {
-          "name": "holo_LEFT_EYE2",
-          "parent": "holo_head2",
+          "name": "perkgourmand__LEFT_EYE2",
+          "parent": "perkgourmand__head2",
           "pivot": [
             11.58734,
             15.9627,
@@ -1087,8 +1087,8 @@
           ]
         },
         {
-          "name": "holo_PUPIL3",
-          "parent": "holo_LEFT_EYE2",
+          "name": "perkgourmand__PUPIL3",
+          "parent": "perkgourmand__LEFT_EYE2",
           "pivot": [
             11.58452,
             16.04756,
@@ -1096,8 +1096,8 @@
           ]
         },
         {
-          "name": "holo_RIGHT_EYE2",
-          "parent": "holo_head2",
+          "name": "perkgourmand__RIGHT_EYE2",
+          "parent": "perkgourmand__head2",
           "pivot": [
             10.97822,
             15.96108,
@@ -1105,8 +1105,8 @@
           ]
         },
         {
-          "name": "holo_PUPIL4",
-          "parent": "holo_RIGHT_EYE2",
+          "name": "perkgourmand__PUPIL4",
+          "parent": "perkgourmand__RIGHT_EYE2",
           "pivot": [
             10.99643,
             16.01661,
@@ -1114,8 +1114,8 @@
           ]
         },
         {
-          "name": "holo_Jaw2",
-          "parent": "holo_head2",
+          "name": "perkgourmand__Jaw2",
+          "parent": "perkgourmand__head2",
           "pivot": [
             11.24018,
             15.44399,
@@ -1283,8 +1283,8 @@
           ]
         },
         {
-          "name": "holo_TONGE_BASE4",
-          "parent": "holo_Jaw2",
+          "name": "perkgourmand__TONGE_BASE4",
+          "parent": "perkgourmand__Jaw2",
           "pivot": [
             11.29048,
             15.42582,
@@ -1368,8 +1368,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_LOWMID4",
-          "parent": "holo_TONGE_BASE4",
+          "name": "perkgourmand__TONGUE_LOWMID4",
+          "parent": "perkgourmand__TONGE_BASE4",
           "pivot": [
             11.29048,
             15.42582,
@@ -1453,8 +1453,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGHMID4",
-          "parent": "holo_TONGUE_LOWMID4",
+          "name": "perkgourmand__TONGUE_HIGHMID4",
+          "parent": "perkgourmand__TONGUE_LOWMID4",
           "pivot": [
             11.29048,
             15.42582,
@@ -1538,8 +1538,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGH4",
-          "parent": "holo_TONGUE_HIGHMID4",
+          "name": "perkgourmand__TONGUE_HIGH4",
+          "parent": "perkgourmand__TONGUE_HIGHMID4",
           "pivot": [
             11.29048,
             15.42582,
@@ -1628,8 +1628,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGHER4",
-          "parent": "holo_TONGUE_HIGH4",
+          "name": "perkgourmand__TONGUE_HIGHER4",
+          "parent": "perkgourmand__TONGUE_HIGH4",
           "pivot": [
             11.29048,
             15.42582,
@@ -1713,8 +1713,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGHEST4",
-          "parent": "holo_TONGUE_HIGHER4",
+          "name": "perkgourmand__TONGUE_HIGHEST4",
+          "parent": "perkgourmand__TONGUE_HIGHER4",
           "pivot": [
             11.29048,
             15.42582,
@@ -1798,8 +1798,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_FINAL4",
-          "parent": "holo_TONGUE_HIGHEST4",
+          "name": "perkgourmand__TONGUE_FINAL4",
+          "parent": "perkgourmand__TONGUE_HIGHEST4",
           "pivot": [
             11.29048,
             15.42582,
@@ -1883,8 +1883,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_FINALIST4",
-          "parent": "holo_TONGUE_FINAL4",
+          "name": "perkgourmand__TONGUE_FINALIST4",
+          "parent": "perkgourmand__TONGUE_FINAL4",
           "pivot": [
             11.29048,
             15.42582,
@@ -1968,8 +1968,8 @@
           ]
         },
         {
-          "name": "holo_TONGE_BASE5",
-          "parent": "holo_Jaw2",
+          "name": "perkgourmand__TONGE_BASE5",
+          "parent": "perkgourmand__Jaw2",
           "pivot": [
             10.95,
             15.42582,
@@ -2053,8 +2053,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_LOWMID5",
-          "parent": "holo_TONGE_BASE5",
+          "name": "perkgourmand__TONGUE_LOWMID5",
+          "parent": "perkgourmand__TONGE_BASE5",
           "pivot": [
             10.95,
             15.42582,
@@ -2138,8 +2138,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGHMID5",
-          "parent": "holo_TONGUE_LOWMID5",
+          "name": "perkgourmand__TONGUE_HIGHMID5",
+          "parent": "perkgourmand__TONGUE_LOWMID5",
           "pivot": [
             10.95,
             15.42582,
@@ -2223,8 +2223,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGH5",
-          "parent": "holo_TONGUE_HIGHMID5",
+          "name": "perkgourmand__TONGUE_HIGH5",
+          "parent": "perkgourmand__TONGUE_HIGHMID5",
           "pivot": [
             10.95,
             15.42582,
@@ -2313,8 +2313,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGHER5",
-          "parent": "holo_TONGUE_HIGH5",
+          "name": "perkgourmand__TONGUE_HIGHER5",
+          "parent": "perkgourmand__TONGUE_HIGH5",
           "pivot": [
             10.95,
             15.42582,
@@ -2398,8 +2398,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGHEST5",
-          "parent": "holo_TONGUE_HIGHER5",
+          "name": "perkgourmand__TONGUE_HIGHEST5",
+          "parent": "perkgourmand__TONGUE_HIGHER5",
           "pivot": [
             10.95,
             15.42582,
@@ -2483,8 +2483,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_FINAL5",
-          "parent": "holo_TONGUE_HIGHEST5",
+          "name": "perkgourmand__TONGUE_FINAL5",
+          "parent": "perkgourmand__TONGUE_HIGHEST5",
           "pivot": [
             10.95,
             15.42582,
@@ -2568,8 +2568,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_FINALIST5",
-          "parent": "holo_TONGUE_FINAL5",
+          "name": "perkgourmand__TONGUE_FINALIST5",
+          "parent": "perkgourmand__TONGUE_FINAL5",
           "pivot": [
             10.95,
             15.42582,
@@ -2653,8 +2653,8 @@
           ]
         },
         {
-          "name": "holo_TONGE_BASE6",
-          "parent": "holo_Jaw2",
+          "name": "perkgourmand__TONGE_BASE6",
+          "parent": "perkgourmand__Jaw2",
           "pivot": [
             11.61547,
             15.42582,
@@ -2738,8 +2738,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_LOWMID6",
-          "parent": "holo_TONGE_BASE6",
+          "name": "perkgourmand__TONGUE_LOWMID6",
+          "parent": "perkgourmand__TONGE_BASE6",
           "pivot": [
             11.61547,
             15.42582,
@@ -2823,8 +2823,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGHMID6",
-          "parent": "holo_TONGUE_LOWMID6",
+          "name": "perkgourmand__TONGUE_HIGHMID6",
+          "parent": "perkgourmand__TONGUE_LOWMID6",
           "pivot": [
             11.61547,
             15.42582,
@@ -2908,8 +2908,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGH6",
-          "parent": "holo_TONGUE_HIGHMID6",
+          "name": "perkgourmand__TONGUE_HIGH6",
+          "parent": "perkgourmand__TONGUE_HIGHMID6",
           "pivot": [
             11.61547,
             15.42582,
@@ -2998,8 +2998,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGHER6",
-          "parent": "holo_TONGUE_HIGH6",
+          "name": "perkgourmand__TONGUE_HIGHER6",
+          "parent": "perkgourmand__TONGUE_HIGH6",
           "pivot": [
             11.61547,
             15.42582,
@@ -3083,8 +3083,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGHEST6",
-          "parent": "holo_TONGUE_HIGHER6",
+          "name": "perkgourmand__TONGUE_HIGHEST6",
+          "parent": "perkgourmand__TONGUE_HIGHER6",
           "pivot": [
             11.61547,
             15.42582,
@@ -3168,8 +3168,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_FINAL6",
-          "parent": "holo_TONGUE_HIGHEST6",
+          "name": "perkgourmand__TONGUE_FINAL6",
+          "parent": "perkgourmand__TONGUE_HIGHEST6",
           "pivot": [
             11.61547,
             15.42582,
@@ -3253,8 +3253,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_FINALIST6",
-          "parent": "holo_TONGUE_FINAL6",
+          "name": "perkgourmand__TONGUE_FINALIST6",
+          "parent": "perkgourmand__TONGUE_FINAL6",
           "pivot": [
             11.61547,
             15.42582,
@@ -3338,8 +3338,8 @@
           ]
         },
         {
-          "name": "holo_armorRightLeg2",
-          "parent": "holo_armorHead2",
+          "name": "perkgourmand__armorRightLeg2",
+          "parent": "perkgourmand__armorHead2",
           "pivot": [
             10.92467,
             13.84846,
@@ -3347,8 +3347,8 @@
           ]
         },
         {
-          "name": "holo_RightLeg2",
-          "parent": "holo_armorRightLeg2",
+          "name": "perkgourmand__RightLeg2",
+          "parent": "perkgourmand__armorRightLeg2",
           "pivot": [
             10.89514,
             13.74733,
@@ -3442,8 +3442,8 @@
           ]
         },
         {
-          "name": "holo_armorBody2",
-          "parent": "holo_armorHead2",
+          "name": "perkgourmand__armorBody2",
+          "parent": "perkgourmand__armorHead2",
           "pivot": [
             11.275,
             14.50778,
@@ -3537,8 +3537,8 @@
           ]
         },
         {
-          "name": "holo_TORSO2",
-          "parent": "holo_armorBody2",
+          "name": "perkgourmand__TORSO2",
+          "parent": "perkgourmand__armorBody2",
           "pivot": [
             11.275,
             14.50778,
@@ -3632,8 +3632,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_BASE2",
-          "parent": "holo_armorBody2",
+          "name": "perkgourmand__TAIL_BASE2",
+          "parent": "perkgourmand__armorBody2",
           "pivot": [
             11.275,
             13.91969,
@@ -3717,8 +3717,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_LOWMID2",
-          "parent": "holo_TAIL_BASE2",
+          "name": "perkgourmand__TAIL_LOWMID2",
+          "parent": "perkgourmand__TAIL_BASE2",
           "pivot": [
             11.275,
             13.91969,
@@ -3802,8 +3802,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_HIGHMID2",
-          "parent": "holo_TAIL_LOWMID2",
+          "name": "perkgourmand__TAIL_HIGHMID2",
+          "parent": "perkgourmand__TAIL_LOWMID2",
           "pivot": [
             11.275,
             13.91969,
@@ -3887,8 +3887,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftArm2",
-          "parent": "holo_armorHead2",
+          "name": "perkgourmand__armorLeftArm2",
+          "parent": "perkgourmand__armorHead2",
           "pivot": [
             12.07,
             14.96305,
@@ -3896,8 +3896,8 @@
           ]
         },
         {
-          "name": "holo_LeftArm2",
-          "parent": "holo_armorLeftArm2",
+          "name": "perkgourmand__LeftArm2",
+          "parent": "perkgourmand__armorLeftArm2",
           "pivot": [
             12.05234,
             14.93942,
@@ -4070,8 +4070,8 @@
           ]
         },
         {
-          "name": "holo_armorRightArm2",
-          "parent": "holo_armorHead2",
+          "name": "perkgourmand__armorRightArm2",
+          "parent": "perkgourmand__armorHead2",
           "pivot": [
             10.69094,
             14.89574,
@@ -4079,8 +4079,8 @@
           ]
         },
         {
-          "name": "holo_RightArm2",
-          "parent": "holo_armorRightArm2",
+          "name": "perkgourmand__RightArm2",
+          "parent": "perkgourmand__armorRightArm2",
           "pivot": [
             10.76266,
             14.88907,
@@ -4253,8 +4253,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftLeg2",
-          "parent": "holo_armorHead2",
+          "name": "perkgourmand__armorLeftLeg2",
+          "parent": "perkgourmand__armorHead2",
           "pivot": [
             11.67038,
             13.84846,
@@ -4262,8 +4262,8 @@
           ]
         },
         {
-          "name": "holo_LeftLeg2",
-          "parent": "holo_armorLeftLeg2",
+          "name": "perkgourmand__LeftLeg2",
+          "parent": "perkgourmand__armorLeftLeg2",
           "pivot": [
             11.65486,
             13.74733,

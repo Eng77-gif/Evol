@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_full_body",
+          "name": "merlinisapien__full_body",
           "parent": "hologram",
           "pivot": [
             9.75,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_armorBody2",
-          "parent": "holo_full_body",
+          "name": "merlinisapien__armorBody2",
+          "parent": "merlinisapien__full_body",
           "pivot": [
             9.75,
             17.45,
@@ -300,8 +300,8 @@
           ]
         },
         {
-          "name": "holo_tail",
-          "parent": "holo_armorBody2",
+          "name": "merlinisapien__tail",
+          "parent": "merlinisapien__armorBody2",
           "pivot": [
             9.75,
             15.48267,
@@ -309,8 +309,8 @@
           ]
         },
         {
-          "name": "holo_tail_seg_1",
-          "parent": "holo_tail",
+          "name": "merlinisapien__tail_seg_1",
+          "parent": "merlinisapien__tail",
           "pivot": [
             9.75,
             15.66267,
@@ -490,8 +490,8 @@
           ]
         },
         {
-          "name": "holo_tail_seg_2",
-          "parent": "holo_tail",
+          "name": "merlinisapien__tail_seg_2",
+          "parent": "merlinisapien__tail",
           "pivot": [
             9.75,
             15.21267,
@@ -670,8 +670,8 @@
           ]
         },
         {
-          "name": "holo_tail_seg_3",
-          "parent": "holo_tail",
+          "name": "merlinisapien__tail_seg_3",
+          "parent": "merlinisapien__tail",
           "pivot": [
             9.75,
             15.12267,
@@ -851,8 +851,8 @@
           ]
         },
         {
-          "name": "holo_tail_seg_4",
-          "parent": "holo_tail",
+          "name": "merlinisapien__tail_seg_4",
+          "parent": "merlinisapien__tail",
           "pivot": [
             9.75,
             15.39267,
@@ -1031,8 +1031,8 @@
           ]
         },
         {
-          "name": "holo_tail_seg_5",
-          "parent": "holo_tail",
+          "name": "merlinisapien__tail_seg_5",
+          "parent": "merlinisapien__tail",
           "pivot": [
             9.75,
             15.75267,
@@ -1212,8 +1212,8 @@
           ]
         },
         {
-          "name": "holo_stinger",
-          "parent": "holo_tail_seg_5",
+          "name": "merlinisapien__stinger",
+          "parent": "merlinisapien__tail_seg_5",
           "pivot": [
             9.75,
             17.45,
@@ -1297,8 +1297,8 @@
           ]
         },
         {
-          "name": "holo_neck",
-          "parent": "holo_armorBody2",
+          "name": "merlinisapien__neck",
+          "parent": "merlinisapien__armorBody2",
           "pivot": [
             9.75,
             17.45,
@@ -1477,8 +1477,8 @@
           ]
         },
         {
-          "name": "holo_lower_body",
-          "parent": "holo_armorBody2",
+          "name": "merlinisapien__lower_body",
+          "parent": "merlinisapien__armorBody2",
           "pivot": [
             9.75,
             17,
@@ -1657,8 +1657,8 @@
           ]
         },
         {
-          "name": "holo_armorHead2",
-          "parent": "holo_full_body",
+          "name": "merlinisapien__armorHead2",
+          "parent": "merlinisapien__full_body",
           "pivot": [
             9.75,
             17.63,
@@ -1828,8 +1828,8 @@
           ]
         },
         {
-          "name": "holo_mouth",
-          "parent": "holo_armorHead2",
+          "name": "merlinisapien__mouth",
+          "parent": "merlinisapien__armorHead2",
           "pivot": [
             9.75,
             17.53738,
@@ -2009,8 +2009,8 @@
           ]
         },
         {
-          "name": "holo_fin",
-          "parent": "holo_armorHead2",
+          "name": "merlinisapien__fin",
+          "parent": "merlinisapien__armorHead2",
           "pivot": [
             9.75,
             17.36,
@@ -2105,8 +2105,8 @@
           ]
         },
         {
-          "name": "holo_red_eye",
-          "parent": "holo_armorHead2",
+          "name": "merlinisapien__red_eye",
+          "parent": "merlinisapien__armorHead2",
           "pivot": [
             9.75,
             17.36,
@@ -2201,8 +2201,8 @@
           ]
         },
         {
-          "name": "holo_blue_eye",
-          "parent": "holo_armorHead2",
+          "name": "merlinisapien__blue_eye",
+          "parent": "merlinisapien__armorHead2",
           "pivot": [
             9.92853,
             17.61372,
@@ -2297,8 +2297,8 @@
           ]
         },
         {
-          "name": "holo_overlay",
-          "parent": "holo_armorHead2",
+          "name": "merlinisapien__overlay",
+          "parent": "merlinisapien__armorHead2",
           "pivot": [
             9.75,
             17.36,
@@ -2468,8 +2468,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftArm2",
-          "parent": "holo_full_body",
+          "name": "merlinisapien__armorLeftArm2",
+          "parent": "merlinisapien__full_body",
           "pivot": [
             10.15753,
             17.04932,
@@ -2732,8 +2732,8 @@
           ]
         },
         {
-          "name": "holo_overlay3",
-          "parent": "holo_armorLeftArm2",
+          "name": "merlinisapien__overlay3",
+          "parent": "merlinisapien__armorLeftArm2",
           "pivot": [
             10.24753,
             16.14932,
@@ -2913,8 +2913,8 @@
           ]
         },
         {
-          "name": "holo_armorRightArm2",
-          "parent": "holo_full_body",
+          "name": "merlinisapien__armorRightArm2",
+          "parent": "merlinisapien__full_body",
           "pivot": [
             9.32377,
             17.07634,
@@ -3177,8 +3177,8 @@
           ]
         },
         {
-          "name": "holo_overlay4",
-          "parent": "holo_armorRightArm2",
+          "name": "merlinisapien__overlay4",
+          "parent": "merlinisapien__armorRightArm2",
           "pivot": [
             9.23377,
             16.17634,
@@ -3358,8 +3358,8 @@
           ]
         },
         {
-          "name": "holo_armorRightLeg2",
-          "parent": "holo_full_body",
+          "name": "merlinisapien__armorRightLeg2",
+          "parent": "merlinisapien__full_body",
           "pivot": [
             9.399,
             15.83,
@@ -3687,8 +3687,8 @@
           ]
         },
         {
-          "name": "holo_overlay5",
-          "parent": "holo_armorRightLeg2",
+          "name": "merlinisapien__overlay5",
+          "parent": "merlinisapien__armorRightLeg2",
           "pivot": [
             9.489,
             15.83,
@@ -3943,8 +3943,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftLeg2",
-          "parent": "holo_full_body",
+          "name": "merlinisapien__armorLeftLeg2",
+          "parent": "merlinisapien__full_body",
           "pivot": [
             10.119,
             15.83,
@@ -4272,8 +4272,8 @@
           ]
         },
         {
-          "name": "holo_overlay6",
-          "parent": "holo_armorLeftLeg2",
+          "name": "merlinisapien__overlay6",
+          "parent": "merlinisapien__armorLeftLeg2",
           "pivot": [
             10.569,
             15.83,

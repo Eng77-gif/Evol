@@ -29,7 +29,7 @@
           ]
         },
         {
-          "name": "Head",
+          "name": "Head_inner",
           "parent": "head",
           "pivot": [
             -2.25962,
@@ -125,7 +125,7 @@
         },
         {
           "name": "Jaw",
-          "parent": "Head",
+          "parent": "Head_inner",
           "pivot": [
             -0.07473,
             20.87509,
@@ -220,7 +220,7 @@
         },
         {
           "name": "Eye",
-          "parent": "Head",
+          "parent": "Head_inner",
           "pivot": [
             2.15962,
             25.33594,
@@ -399,7 +399,7 @@
         },
         {
           "name": "Eye2",
-          "parent": "Head",
+          "parent": "Head_inner",
           "pivot": [
             -2.15962,
             25.33594,

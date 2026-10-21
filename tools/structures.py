@@ -161,8 +161,13 @@ class Mapper:
         if name in MOD_BLOCKS:
             target, facing_key = MOD_BLOCKS[name]
             states = {}
-            if facing_key and facing_key in props and target.startswith("alienevo:"):
-                states["minecraft:cardinal_direction"] = props[facing_key]
+            # Every state the block defines must be in the palette, or the
+            # game cannot resolve it ("Unknown block during Deferred
+            # BlockDescriptor resolution").
+            if facing_key and target.startswith("alienevo:"):
+                states["minecraft:cardinal_direction"] = props.get(facing_key, "north")
+            if target == "alienevo:galvan_pod":
+                states["alienevo:opened"] = "false"
             return target, states
         if name == "minecraft:void_air" or name == "minecraft:cave_air":
             name = "minecraft:air"

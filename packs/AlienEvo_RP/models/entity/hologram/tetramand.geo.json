@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "rightLeg",
+          "name": "tetramand__rightLeg",
           "pivot": [
             -1.8025,
             13.4925,
@@ -111,8 +111,8 @@
           ]
         },
         {
-          "name": "ll_r2",
-          "parent": "rightLeg",
+          "name": "tetramand__ll_r2",
+          "parent": "tetramand__rightLeg",
           "pivot": [
             -1.5225,
             13.4925,
@@ -125,8 +125,8 @@
           ]
         },
         {
-          "name": "calf2",
-          "parent": "ll_r2",
+          "name": "tetramand__calf2",
+          "parent": "tetramand__ll_r2",
           "pivot": [
             -1.77566,
             7.73113,
@@ -196,8 +196,8 @@
           ]
         },
         {
-          "name": "thigh3",
-          "parent": "ll_r2",
+          "name": "tetramand__thigh3",
+          "parent": "tetramand__ll_r2",
           "pivot": [
             -1.5225,
             13.4925,
@@ -287,7 +287,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "tetramand__leftLeg",
           "pivot": [
             1.8025,
             13.4925,
@@ -382,8 +382,8 @@
           ]
         },
         {
-          "name": "ll_r",
-          "parent": "leftLeg",
+          "name": "tetramand__ll_r",
+          "parent": "tetramand__leftLeg",
           "pivot": [
             1.5225,
             13.4925,
@@ -396,8 +396,8 @@
           ]
         },
         {
-          "name": "calf",
-          "parent": "ll_r",
+          "name": "tetramand__calf",
+          "parent": "tetramand__ll_r",
           "pivot": [
             1.77566,
             7.73113,
@@ -467,8 +467,8 @@
           ]
         },
         {
-          "name": "thigh2",
-          "parent": "ll_r",
+          "name": "tetramand__thigh2",
+          "parent": "tetramand__ll_r",
           "pivot": [
             1.5225,
             13.4925,
@@ -558,7 +558,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "tetramand__rightArm",
           "pivot": [
             -5.525,
             24.775,
@@ -728,8 +728,8 @@
           ]
         },
         {
-          "name": "forearm3",
-          "parent": "rightArm",
+          "name": "tetramand__forearm3",
+          "parent": "tetramand__rightArm",
           "pivot": [
             -7.34684,
             20.97521,
@@ -876,8 +876,8 @@
           ]
         },
         {
-          "name": "hand3",
-          "parent": "forearm3",
+          "name": "tetramand__hand3",
+          "parent": "tetramand__forearm3",
           "pivot": [
             -7.87265,
             15.40323,
@@ -967,8 +967,8 @@
           ]
         },
         {
-          "name": "thumb3",
-          "parent": "hand3",
+          "name": "tetramand__thumb3",
+          "parent": "tetramand__hand3",
           "pivot": [
             -6.72662,
             14.94673,
@@ -1063,7 +1063,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "tetramand__leftArm",
           "pivot": [
             5.525,
             24.775,
@@ -1233,8 +1233,8 @@
           ]
         },
         {
-          "name": "forearm2",
-          "parent": "leftArm",
+          "name": "tetramand__forearm2",
+          "parent": "tetramand__leftArm",
           "pivot": [
             7.34684,
             20.97521,
@@ -1381,8 +1381,8 @@
           ]
         },
         {
-          "name": "hand2",
-          "parent": "forearm2",
+          "name": "tetramand__hand2",
+          "parent": "tetramand__forearm2",
           "pivot": [
             7.87265,
             15.40323,
@@ -1472,8 +1472,8 @@
           ]
         },
         {
-          "name": "thumb2",
-          "parent": "hand2",
+          "name": "tetramand__thumb2",
+          "parent": "tetramand__hand2",
           "pivot": [
             6.72662,
             14.94673,
@@ -1568,7 +1568,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "tetramand__body",
           "pivot": [
             0,
             28.245,
@@ -1706,8 +1706,8 @@
           ]
         },
         {
-          "name": "chest",
-          "parent": "body",
+          "name": "tetramand__chest",
+          "parent": "tetramand__body",
           "pivot": [
             0,
             23.1,
@@ -1806,7 +1806,7 @@
           ]
         },
         {
-          "name": "head",
+          "name": "tetramand__head",
           "pivot": [
             0,
             28.245,
@@ -1955,8 +1955,8 @@
           ]
         },
         {
-          "name": "eyes_l",
-          "parent": "head",
+          "name": "tetramand__eyes_l",
+          "parent": "tetramand__head",
           "pivot": [
             0,
             29.65084,
@@ -2107,8 +2107,8 @@
           ]
         },
         {
-          "name": "eyes_r",
-          "parent": "head",
+          "name": "tetramand__eyes_r",
+          "parent": "tetramand__head",
           "pivot": [
             0,
             29.65084,

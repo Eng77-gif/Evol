@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_fullBody",
+          "name": "ickthyperambuloid__fullBody",
           "parent": "hologram",
           "pivot": [
             9.8,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_armorBody2",
-          "parent": "holo_fullBody",
+          "name": "ickthyperambuloid__armorBody2",
+          "parent": "ickthyperambuloid__fullBody",
           "pivot": [
             9.8,
             15.54076,
@@ -244,8 +244,8 @@
           ]
         },
         {
-          "name": "holo_headFin",
-          "parent": "holo_armorBody2",
+          "name": "ickthyperambuloid__headFin",
+          "parent": "ickthyperambuloid__armorBody2",
           "pivot": [
             9.8,
             15.24316,
@@ -423,8 +423,8 @@
           ]
         },
         {
-          "name": "holo_eyes",
-          "parent": "holo_armorBody2",
+          "name": "ickthyperambuloid__eyes",
+          "parent": "ickthyperambuloid__armorBody2",
           "pivot": [
             9.8,
             15.572,
@@ -432,8 +432,8 @@
           ]
         },
         {
-          "name": "holo_right",
-          "parent": "holo_eyes",
+          "name": "ickthyperambuloid__right",
+          "parent": "ickthyperambuloid__eyes",
           "pivot": [
             9.8,
             15.572,
@@ -527,8 +527,8 @@
           ]
         },
         {
-          "name": "holo_left",
-          "parent": "holo_eyes",
+          "name": "ickthyperambuloid__left",
+          "parent": "ickthyperambuloid__eyes",
           "pivot": [
             9.8,
             15.572,
@@ -622,8 +622,8 @@
           ]
         },
         {
-          "name": "holo_mouth",
-          "parent": "holo_armorBody2",
+          "name": "ickthyperambuloid__mouth",
+          "parent": "ickthyperambuloid__armorBody2",
           "pivot": [
             9.8,
             15.572,
@@ -885,8 +885,8 @@
           ]
         },
         {
-          "name": "holo_overlay2",
-          "parent": "holo_mouth",
+          "name": "ickthyperambuloid__overlay2",
+          "parent": "ickthyperambuloid__mouth",
           "pivot": [
             9.8,
             15.572,
@@ -981,8 +981,8 @@
           ]
         },
         {
-          "name": "holo_overlay",
-          "parent": "holo_armorBody2",
+          "name": "ickthyperambuloid__overlay",
+          "parent": "ickthyperambuloid__armorBody2",
           "pivot": [
             9.8,
             15.572,
@@ -1162,8 +1162,8 @@
           ]
         },
         {
-          "name": "head",
-          "parent": "holo_armorBody2",
+          "name": "head_p26",
+          "parent": "ickthyperambuloid__armorBody2",
           "pivot": [
             9.8,
             15.572,
@@ -1171,8 +1171,8 @@
           ]
         },
         {
-          "name": "holo_back_fin",
-          "parent": "head",
+          "name": "ickthyperambuloid__back_fin",
+          "parent": "head_p26",
           "pivot": [
             9.8,
             15.572,
@@ -1266,8 +1266,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftArm2",
-          "parent": "holo_fullBody",
+          "name": "ickthyperambuloid__armorLeftArm2",
+          "parent": "ickthyperambuloid__fullBody",
           "pivot": [
             10.12884,
             15.40758,
@@ -1445,8 +1445,8 @@
           ]
         },
         {
-          "name": "holo_armorRightArm2",
-          "parent": "holo_fullBody",
+          "name": "ickthyperambuloid__armorRightArm2",
+          "parent": "ickthyperambuloid__fullBody",
           "pivot": [
             9.47116,
             15.40758,
@@ -1624,8 +1624,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftLeg2",
-          "parent": "holo_fullBody",
+          "name": "ickthyperambuloid__armorLeftLeg2",
+          "parent": "ickthyperambuloid__fullBody",
           "pivot": [
             10.29326,
             15.07874,
@@ -1803,8 +1803,8 @@
           ]
         },
         {
-          "name": "holo_armorRightLeg2",
-          "parent": "holo_fullBody",
+          "name": "ickthyperambuloid__armorRightLeg2",
+          "parent": "ickthyperambuloid__fullBody",
           "pivot": [
             9.30674,
             15.07874,
@@ -2014,7 +2014,7 @@
           ]
         },
         {
-          "name": "holo_armorHead2",
+          "name": "ickthyperambuloid__armorHead2",
           "pivot": [
             0,
             0,

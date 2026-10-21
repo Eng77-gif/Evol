@@ -681,14 +681,11 @@
       "override_previous_animation": true,
       "bones": {
         "1": {
-          "scale": {
-            "post": [
-              1,
-              1,
-              1
-            ],
-            "lerp_mode": "step"
-          }
+          "scale": [
+            1,
+            1,
+            1
+          ]
         },
         "2": {
           "scale": [

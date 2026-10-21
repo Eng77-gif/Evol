@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_fourarms",
+          "name": "tetramand__fourarms",
           "parent": "hologram",
           "pivot": [
             9.75,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_Head2",
-          "parent": "holo_fourarms",
+          "name": "tetramand__Head2",
+          "parent": "tetramand__fourarms",
           "pivot": [
             9.75,
             17.99818,
@@ -345,8 +345,8 @@
           ]
         },
         {
-          "name": "holo_eyes_l",
-          "parent": "holo_Head2",
+          "name": "tetramand__eyes_l",
+          "parent": "tetramand__Head2",
           "pivot": [
             9.75,
             18.13087,
@@ -497,8 +497,8 @@
           ]
         },
         {
-          "name": "holo_eyes_r",
-          "parent": "holo_Head2",
+          "name": "tetramand__eyes_r",
+          "parent": "tetramand__Head2",
           "pivot": [
             9.75,
             18.13087,
@@ -649,8 +649,8 @@
           ]
         },
         {
-          "name": "holo_Body2",
-          "parent": "holo_fourarms",
+          "name": "tetramand__Body2",
+          "parent": "tetramand__fourarms",
           "pivot": [
             9.75,
             17.99818,
@@ -843,8 +843,8 @@
           ]
         },
         {
-          "name": "holo_chest2",
-          "parent": "holo_Body2",
+          "name": "tetramand__chest2",
+          "parent": "tetramand__Body2",
           "pivot": [
             9.75,
             17.4065,
@@ -1028,8 +1028,8 @@
           ]
         },
         {
-          "name": "holo_LeftArm2",
-          "parent": "holo_fourarms",
+          "name": "tetramand__LeftArm2",
+          "parent": "tetramand__fourarms",
           "pivot": [
             10.37388,
             17.62787,
@@ -1199,8 +1199,8 @@
           ]
         },
         {
-          "name": "holo_forearm3",
-          "parent": "holo_LeftArm2",
+          "name": "tetramand__forearm3",
+          "parent": "tetramand__LeftArm2",
           "pivot": [
             10.58339,
             17.10465,
@@ -1369,8 +1369,8 @@
           ]
         },
         {
-          "name": "holo_hand3",
-          "parent": "holo_forearm3",
+          "name": "tetramand__hand3",
+          "parent": "tetramand__forearm3",
           "pivot": [
             10.64385,
             16.46387,
@@ -1460,8 +1460,8 @@
           ]
         },
         {
-          "name": "holo_thumb3",
-          "parent": "holo_hand3",
+          "name": "tetramand__thumb3",
+          "parent": "tetramand__hand3",
           "pivot": [
             10.51206,
             16.41137,
@@ -1556,8 +1556,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftArm2",
-          "parent": "holo_LeftArm2",
+          "name": "tetramand__armorLeftArm2",
+          "parent": "tetramand__LeftArm2",
           "pivot": [
             10.25227,
             17.11279,
@@ -1565,8 +1565,8 @@
           ]
         },
         {
-          "name": "holo_l_r2",
-          "parent": "holo_armorLeftArm2",
+          "name": "tetramand__l_r2",
+          "parent": "tetramand__armorLeftArm2",
           "pivot": [
             9.92181,
             17.54029,
@@ -1655,8 +1655,8 @@
           ]
         },
         {
-          "name": "holo_forearm4",
-          "parent": "holo_l_r2",
+          "name": "tetramand__forearm4",
+          "parent": "tetramand__l_r2",
           "pivot": [
             9.99583,
             16.71982,
@@ -1825,8 +1825,8 @@
           ]
         },
         {
-          "name": "holo_hand4",
-          "parent": "holo_forearm4",
+          "name": "tetramand__hand4",
+          "parent": "tetramand__forearm4",
           "pivot": [
             10.0563,
             16.07904,
@@ -1916,8 +1916,8 @@
           ]
         },
         {
-          "name": "holo_thumb4",
-          "parent": "holo_hand4",
+          "name": "tetramand__thumb4",
+          "parent": "tetramand__hand4",
           "pivot": [
             9.9245,
             16.02654,
@@ -2012,8 +2012,8 @@
           ]
         },
         {
-          "name": "holo_RightArm2",
-          "parent": "holo_fourarms",
+          "name": "tetramand__RightArm2",
+          "parent": "tetramand__fourarms",
           "pivot": [
             9.12613,
             17.62787,
@@ -2183,8 +2183,8 @@
           ]
         },
         {
-          "name": "holo_forearm5",
-          "parent": "holo_RightArm2",
+          "name": "tetramand__forearm5",
+          "parent": "tetramand__RightArm2",
           "pivot": [
             8.91661,
             17.10465,
@@ -2353,8 +2353,8 @@
           ]
         },
         {
-          "name": "holo_hand5",
-          "parent": "holo_forearm5",
+          "name": "tetramand__hand5",
+          "parent": "tetramand__forearm5",
           "pivot": [
             8.85615,
             16.46387,
@@ -2444,8 +2444,8 @@
           ]
         },
         {
-          "name": "holo_thumb5",
-          "parent": "holo_hand5",
+          "name": "tetramand__thumb5",
+          "parent": "tetramand__hand5",
           "pivot": [
             8.98794,
             16.41137,
@@ -2540,8 +2540,8 @@
           ]
         },
         {
-          "name": "holo_armorRightArm2",
-          "parent": "holo_RightArm2",
+          "name": "tetramand__armorRightArm2",
+          "parent": "tetramand__RightArm2",
           "pivot": [
             9.24773,
             17.11279,
@@ -2549,8 +2549,8 @@
           ]
         },
         {
-          "name": "holo_l_r3",
-          "parent": "holo_armorRightArm2",
+          "name": "tetramand__l_r3",
+          "parent": "tetramand__armorRightArm2",
           "pivot": [
             9.57819,
             17.54029,
@@ -2639,8 +2639,8 @@
           ]
         },
         {
-          "name": "holo_forearm6",
-          "parent": "holo_l_r3",
+          "name": "tetramand__forearm6",
+          "parent": "tetramand__l_r3",
           "pivot": [
             9.50417,
             16.71982,
@@ -2809,8 +2809,8 @@
           ]
         },
         {
-          "name": "holo_hand6",
-          "parent": "holo_forearm6",
+          "name": "tetramand__hand6",
+          "parent": "tetramand__forearm6",
           "pivot": [
             9.4437,
             16.07904,
@@ -2900,8 +2900,8 @@
           ]
         },
         {
-          "name": "holo_thumb6",
-          "parent": "holo_hand6",
+          "name": "tetramand__thumb6",
+          "parent": "tetramand__hand6",
           "pivot": [
             9.5755,
             16.02654,
@@ -2996,8 +2996,8 @@
           ]
         },
         {
-          "name": "holo_LeftLeg2",
-          "parent": "holo_fourarms",
+          "name": "tetramand__LeftLeg2",
+          "parent": "tetramand__fourarms",
           "pivot": [
             9.95729,
             16.30164,
@@ -3092,8 +3092,8 @@
           ]
         },
         {
-          "name": "holo_ll_r2",
-          "parent": "holo_LeftLeg2",
+          "name": "tetramand__ll_r2",
+          "parent": "tetramand__LeftLeg2",
           "pivot": [
             9.92509,
             16.30164,
@@ -3106,8 +3106,8 @@
           ]
         },
         {
-          "name": "holo_calf3",
-          "parent": "holo_ll_r2",
+          "name": "tetramand__calf3",
+          "parent": "tetramand__ll_r2",
           "pivot": [
             9.9542,
             15.63908,
@@ -3232,8 +3232,8 @@
           ]
         },
         {
-          "name": "holo_thigh3",
-          "parent": "holo_ll_r2",
+          "name": "tetramand__thigh3",
+          "parent": "tetramand__ll_r2",
           "pivot": [
             9.92509,
             16.30164,
@@ -3323,8 +3323,8 @@
           ]
         },
         {
-          "name": "holo_RightLeg2",
-          "parent": "holo_fourarms",
+          "name": "tetramand__RightLeg2",
+          "parent": "tetramand__fourarms",
           "pivot": [
             9.54271,
             16.30164,
@@ -3419,8 +3419,8 @@
           ]
         },
         {
-          "name": "holo_ll_r3",
-          "parent": "holo_RightLeg2",
+          "name": "tetramand__ll_r3",
+          "parent": "tetramand__RightLeg2",
           "pivot": [
             9.57491,
             16.30164,
@@ -3433,8 +3433,8 @@
           ]
         },
         {
-          "name": "holo_calf4",
-          "parent": "holo_ll_r3",
+          "name": "tetramand__calf4",
+          "parent": "tetramand__ll_r3",
           "pivot": [
             9.5458,
             15.63908,
@@ -3559,8 +3559,8 @@
           ]
         },
         {
-          "name": "holo_thigh4",
-          "parent": "holo_ll_r3",
+          "name": "tetramand__thigh4",
+          "parent": "tetramand__ll_r3",
           "pivot": [
             9.57491,
             16.30164,

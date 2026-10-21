@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "ectonurite__head",
           "pivot": [
             0,
             27,
@@ -117,8 +117,8 @@
           ]
         },
         {
-          "name": "eye",
-          "parent": "head",
+          "name": "ectonurite__eye",
+          "parent": "ectonurite__head",
           "pivot": [
             1,
             30,
@@ -126,8 +126,8 @@
           ]
         },
         {
-          "name": "eye_black",
-          "parent": "eye",
+          "name": "ectonurite__eye_black",
+          "parent": "ectonurite__eye",
           "pivot": [
             1,
             30,
@@ -161,8 +161,8 @@
           ]
         },
         {
-          "name": "eye_purple",
-          "parent": "eye",
+          "name": "ectonurite__eye_purple",
+          "parent": "ectonurite__eye",
           "pivot": [
             1,
             30,
@@ -196,7 +196,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "ectonurite__body",
           "pivot": [
             0,
             27,
@@ -204,8 +204,8 @@
           ]
         },
         {
-          "name": "body_01",
-          "parent": "body",
+          "name": "ectonurite__body_01",
+          "parent": "ectonurite__body",
           "pivot": [
             0,
             27,
@@ -290,8 +290,8 @@
           ]
         },
         {
-          "name": "body_02",
-          "parent": "body_01",
+          "name": "ectonurite__body_02",
+          "parent": "ectonurite__body_01",
           "pivot": [
             0,
             19,
@@ -450,8 +450,8 @@
           ]
         },
         {
-          "name": "body_03",
-          "parent": "body_02",
+          "name": "ectonurite__body_03",
+          "parent": "ectonurite__body_02",
           "pivot": [
             0,
             13,
@@ -552,8 +552,8 @@
           ]
         },
         {
-          "name": "body_04",
-          "parent": "body_03",
+          "name": "ectonurite__body_04",
+          "parent": "ectonurite__body_03",
           "pivot": [
             0,
             8,
@@ -596,8 +596,8 @@
           ]
         },
         {
-          "name": "body_05",
-          "parent": "body_04",
+          "name": "ectonurite__body_05",
+          "parent": "ectonurite__body_04",
           "pivot": [
             0,
             4,
@@ -640,8 +640,8 @@
           ]
         },
         {
-          "name": "flaplleft",
-          "parent": "body_02",
+          "name": "ectonurite__flaplleft",
+          "parent": "ectonurite__body_02",
           "pivot": [
             -3,
             16,
@@ -685,8 +685,8 @@
           ]
         },
         {
-          "name": "flaplright",
-          "parent": "body_02",
+          "name": "ectonurite__flaplright",
+          "parent": "ectonurite__body_02",
           "pivot": [
             3,
             16,
@@ -730,8 +730,8 @@
           ]
         },
         {
-          "name": "skin",
-          "parent": "body_01",
+          "name": "ectonurite__skin",
+          "parent": "ectonurite__body_01",
           "pivot": [
             0,
             23,
@@ -805,8 +805,8 @@
           ]
         },
         {
-          "name": "flapleft",
-          "parent": "body_01",
+          "name": "ectonurite__flapleft",
+          "parent": "ectonurite__body_01",
           "pivot": [
             -4,
             23,
@@ -840,8 +840,8 @@
           ]
         },
         {
-          "name": "flapright",
-          "parent": "body_01",
+          "name": "ectonurite__flapright",
+          "parent": "ectonurite__body_01",
           "pivot": [
             4,
             23,
@@ -875,8 +875,8 @@
           ]
         },
         {
-          "name": "FLAPSright",
-          "parent": "body_01",
+          "name": "ectonurite__FLAPSright",
+          "parent": "ectonurite__body_01",
           "pivot": [
             2,
             21.5,
@@ -920,8 +920,8 @@
           ]
         },
         {
-          "name": "FLAPSleft",
-          "parent": "body_01",
+          "name": "ectonurite__FLAPSleft",
+          "parent": "ectonurite__body_01",
           "pivot": [
             -2,
             21.5,
@@ -965,8 +965,8 @@
           ]
         },
         {
-          "name": "tentacles",
-          "parent": "body_01",
+          "name": "ectonurite__tentacles",
+          "parent": "ectonurite__body_01",
           "pivot": [
             1.5,
             24.75,
@@ -979,8 +979,8 @@
           ]
         },
         {
-          "name": "t_topleft_1",
-          "parent": "tentacles",
+          "name": "ectonurite__t_topleft_1",
+          "parent": "ectonurite__tentacles",
           "pivot": [
             0,
             24.75,
@@ -1065,8 +1065,8 @@
           ]
         },
         {
-          "name": "t_topleft_2",
-          "parent": "t_topleft_1",
+          "name": "ectonurite__t_topleft_2",
+          "parent": "ectonurite__t_topleft_1",
           "pivot": [
             0,
             24.75,
@@ -1151,8 +1151,8 @@
           ]
         },
         {
-          "name": "t_topleft_3",
-          "parent": "t_topleft_2",
+          "name": "ectonurite__t_topleft_3",
+          "parent": "ectonurite__t_topleft_2",
           "pivot": [
             0,
             24.75,
@@ -1237,8 +1237,8 @@
           ]
         },
         {
-          "name": "t_topright_1",
-          "parent": "tentacles",
+          "name": "ectonurite__t_topright_1",
+          "parent": "ectonurite__tentacles",
           "pivot": [
             0,
             24.75,
@@ -1323,8 +1323,8 @@
           ]
         },
         {
-          "name": "t_topright_2",
-          "parent": "t_topright_1",
+          "name": "ectonurite__t_topright_2",
+          "parent": "ectonurite__t_topright_1",
           "pivot": [
             0,
             24.75,
@@ -1409,8 +1409,8 @@
           ]
         },
         {
-          "name": "t_topright_3",
-          "parent": "t_topright_2",
+          "name": "ectonurite__t_topright_3",
+          "parent": "ectonurite__t_topright_2",
           "pivot": [
             0,
             24.75,
@@ -1495,8 +1495,8 @@
           ]
         },
         {
-          "name": "t_botleft_1",
-          "parent": "tentacles",
+          "name": "ectonurite__t_botleft_1",
+          "parent": "ectonurite__tentacles",
           "pivot": [
             0,
             24.75,
@@ -1581,8 +1581,8 @@
           ]
         },
         {
-          "name": "t_botleft_2",
-          "parent": "t_botleft_1",
+          "name": "ectonurite__t_botleft_2",
+          "parent": "ectonurite__t_botleft_1",
           "pivot": [
             0,
             24.75,
@@ -1667,8 +1667,8 @@
           ]
         },
         {
-          "name": "t_botleft_3",
-          "parent": "t_botleft_2",
+          "name": "ectonurite__t_botleft_3",
+          "parent": "ectonurite__t_botleft_2",
           "pivot": [
             0,
             24.75,
@@ -1753,8 +1753,8 @@
           ]
         },
         {
-          "name": "t_botright_1",
-          "parent": "tentacles",
+          "name": "ectonurite__t_botright_1",
+          "parent": "ectonurite__tentacles",
           "pivot": [
             0,
             24.75,
@@ -1839,8 +1839,8 @@
           ]
         },
         {
-          "name": "t_botright_2",
-          "parent": "t_botright_1",
+          "name": "ectonurite__t_botright_2",
+          "parent": "ectonurite__t_botright_1",
           "pivot": [
             0,
             24.75,
@@ -1925,8 +1925,8 @@
           ]
         },
         {
-          "name": "t_botright_3",
-          "parent": "t_botright_2",
+          "name": "ectonurite__t_botright_3",
+          "parent": "ectonurite__t_botright_2",
           "pivot": [
             0,
             24.75,
@@ -2011,8 +2011,8 @@
           ]
         },
         {
-          "name": "t_mid_1",
-          "parent": "tentacles",
+          "name": "ectonurite__t_mid_1",
+          "parent": "ectonurite__tentacles",
           "pivot": [
             0,
             24.75,
@@ -2097,8 +2097,8 @@
           ]
         },
         {
-          "name": "t_mid_2",
-          "parent": "t_mid_1",
+          "name": "ectonurite__t_mid_2",
+          "parent": "ectonurite__t_mid_1",
           "pivot": [
             0,
             24.75,
@@ -2183,8 +2183,8 @@
           ]
         },
         {
-          "name": "t_mid_3",
-          "parent": "t_mid_2",
+          "name": "ectonurite__t_mid_3",
+          "parent": "ectonurite__t_mid_2",
           "pivot": [
             0,
             24.75,
@@ -2269,7 +2269,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "ectonurite__leftArm",
           "pivot": [
             4,
             25.5,
@@ -2277,8 +2277,8 @@
           ]
         },
         {
-          "name": "leftrotate",
-          "parent": "leftArm",
+          "name": "ectonurite__leftrotate",
+          "parent": "ectonurite__leftArm",
           "pivot": [
             4,
             25.5,
@@ -2291,8 +2291,8 @@
           ]
         },
         {
-          "name": "leftupperarm",
-          "parent": "leftrotate",
+          "name": "ectonurite__leftupperarm",
+          "parent": "ectonurite__leftrotate",
           "pivot": [
             4,
             25,
@@ -2399,8 +2399,8 @@
           ]
         },
         {
-          "name": "leftlowerarm",
-          "parent": "leftupperarm",
+          "name": "ectonurite__leftlowerarm",
+          "parent": "ectonurite__leftupperarm",
           "pivot": [
             5,
             19.75,
@@ -2492,8 +2492,8 @@
           ]
         },
         {
-          "name": "lefthand",
-          "parent": "leftlowerarm",
+          "name": "ectonurite__lefthand",
+          "parent": "ectonurite__leftlowerarm",
           "pivot": [
             5,
             14.25,
@@ -2576,7 +2576,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "ectonurite__rightArm",
           "pivot": [
             -4,
             25.5,
@@ -2584,8 +2584,8 @@
           ]
         },
         {
-          "name": "rightrotate",
-          "parent": "rightArm",
+          "name": "ectonurite__rightrotate",
+          "parent": "ectonurite__rightArm",
           "pivot": [
             -4,
             25.5,
@@ -2598,8 +2598,8 @@
           ]
         },
         {
-          "name": "rightupperarm",
-          "parent": "rightrotate",
+          "name": "ectonurite__rightupperarm",
+          "parent": "ectonurite__rightrotate",
           "pivot": [
             -4,
             25,
@@ -2707,8 +2707,8 @@
           ]
         },
         {
-          "name": "rightlowerarm",
-          "parent": "rightupperarm",
+          "name": "ectonurite__rightlowerarm",
+          "parent": "ectonurite__rightupperarm",
           "pivot": [
             -5,
             19.75,
@@ -2802,8 +2802,8 @@
           ]
         },
         {
-          "name": "righthand",
-          "parent": "rightlowerarm",
+          "name": "ectonurite__righthand",
+          "parent": "ectonurite__rightlowerarm",
           "pivot": [
             -5,
             14.25,
@@ -2886,7 +2886,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "ectonurite__rightLeg",
           "pivot": [
             0,
             0,
@@ -2894,7 +2894,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "ectonurite__leftLeg",
           "pivot": [
             0,
             0,

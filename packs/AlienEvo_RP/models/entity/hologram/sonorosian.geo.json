@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "sonorosian__head",
           "pivot": [
             0,
             23.5,
@@ -397,8 +397,8 @@
           ]
         },
         {
-          "name": "eyes",
-          "parent": "head",
+          "name": "sonorosian__eyes",
+          "parent": "sonorosian__head",
           "pivot": [
             -4.5,
             29.3,
@@ -546,8 +546,8 @@
           ]
         },
         {
-          "name": "scream",
-          "parent": "head",
+          "name": "sonorosian__scream",
+          "parent": "sonorosian__head",
           "pivot": [
             0,
             23.5,
@@ -582,8 +582,8 @@
           ]
         },
         {
-          "name": "bone",
-          "parent": "scream",
+          "name": "sonorosian__bone",
+          "parent": "sonorosian__scream",
           "pivot": [
             4.5,
             32,
@@ -731,8 +731,8 @@
           ]
         },
         {
-          "name": "cables",
-          "parent": "head",
+          "name": "sonorosian__cables",
+          "parent": "sonorosian__head",
           "pivot": [
             0,
             31,
@@ -1033,7 +1033,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "sonorosian__body",
           "pivot": [
             0,
             24,
@@ -1348,7 +1348,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "sonorosian__rightArm",
           "pivot": [
             -3,
             20,
@@ -1356,8 +1356,8 @@
           ]
         },
         {
-          "name": "arm",
-          "parent": "rightArm",
+          "name": "sonorosian__arm",
+          "parent": "sonorosian__rightArm",
           "pivot": [
             -5.3,
             23.65,
@@ -1856,7 +1856,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "sonorosian__leftArm",
           "pivot": [
             3,
             20,
@@ -1864,8 +1864,8 @@
           ]
         },
         {
-          "name": "arm2",
-          "parent": "leftArm",
+          "name": "sonorosian__arm2",
+          "parent": "sonorosian__leftArm",
           "pivot": [
             5.3,
             23.65,
@@ -2364,7 +2364,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "sonorosian__rightLeg",
           "pivot": [
             -1.8,
             11.5,
@@ -2372,8 +2372,8 @@
           ]
         },
         {
-          "name": "leg",
-          "parent": "rightLeg",
+          "name": "sonorosian__leg",
+          "parent": "sonorosian__rightLeg",
           "pivot": [
             -1.65,
             14,
@@ -2687,7 +2687,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "sonorosian__leftLeg",
           "pivot": [
             1.8,
             11.5,
@@ -2695,8 +2695,8 @@
           ]
         },
         {
-          "name": "leg2",
-          "parent": "leftLeg",
+          "name": "sonorosian__leg2",
+          "parent": "sonorosian__leftLeg",
           "pivot": [
             1.65,
             14,
@@ -3010,22 +3010,22 @@
           ]
         },
         {
-          "name": "armorLeftBoot",
+          "name": "sonorosian__armorLeftBoot",
           "pivot": [
             0,
             0,
             0
           ],
-          "parent": "leftLeg"
+          "parent": "sonorosian__leftLeg"
         },
         {
-          "name": "armorRightBoot",
+          "name": "sonorosian__armorRightBoot",
           "pivot": [
             0,
             0,
             0
           ],
-          "parent": "rightLeg"
+          "parent": "sonorosian__rightLeg"
         }
       ]
     }

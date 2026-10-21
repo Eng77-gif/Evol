@@ -5,54 +5,6 @@
       "loop": true,
       "animation_length": 2,
       "bones": {
-        "bottom": {
-          "rotation": [
-            "easeInOutBack",
-            "easeInOutBack",
-            "easeInOutBack"
-          ],
-          "position": [
-            "easeInOutBack",
-            "easeInOutBack",
-            "easeInOutBack"
-          ]
-        },
-        "top": {
-          "rotation": [
-            "easeInOutBack",
-            "easeInOutBack",
-            "easeInOutBack"
-          ],
-          "position": [
-            "easeInOutBack",
-            "easeInOutBack",
-            "easeInOutBack"
-          ]
-        },
-        "top2": {
-          "rotation": [
-            "easeInOutBack",
-            "easeInOutBack",
-            "easeInOutBack"
-          ],
-          "position": [
-            "easeInOutBack",
-            "easeInOutBack",
-            "easeInOutBack"
-          ]
-        },
-        "bottom2": {
-          "rotation": [
-            "easeInOutBack",
-            "easeInOutBack",
-            "easeInOutBack"
-          ],
-          "position": [
-            "easeInOutBack",
-            "easeInOutBack",
-            "easeInOutBack"
-          ]
-        },
         "top3": {
           "rotation": {
             "0.0": [

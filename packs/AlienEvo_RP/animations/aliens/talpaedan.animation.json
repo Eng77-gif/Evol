@@ -1253,14 +1253,11 @@
           ]
         },
         "right_bottom": {
-          "rotation": {
-            "post": [
-              -17.5,
-              0,
-              0
-            ],
-            "lerp_mode": "catmullrom"
-          }
+          "rotation": [
+            -17.5,
+            0,
+            0
+          ]
         },
         "right_piston": {
           "position": [

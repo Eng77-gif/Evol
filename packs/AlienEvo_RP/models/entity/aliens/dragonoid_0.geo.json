@@ -124,7 +124,7 @@
           ]
         },
         {
-          "name": "leftleg",
+          "name": "leftleg_inner",
           "parent": "leftleg_r",
           "pivot": [
             3.2761,
@@ -220,7 +220,7 @@
         },
         {
           "name": "leftfoot",
-          "parent": "leftleg",
+          "parent": "leftleg_inner",
           "pivot": [
             4.3561,
             2.44063,
@@ -1168,7 +1168,7 @@
           ]
         },
         {
-          "name": "rightleg",
+          "name": "rightleg_inner",
           "parent": "rightleg_r",
           "pivot": [
             -3.2761,
@@ -1264,7 +1264,7 @@
         },
         {
           "name": "rightfoot",
-          "parent": "rightleg",
+          "parent": "rightleg_inner",
           "pivot": [
             -4.3561,
             2.44063,

@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "florauna__head",
           "pivot": [
             0,
             25.12356,
@@ -139,8 +139,8 @@
           ]
         },
         {
-          "name": "jaw",
-          "parent": "head",
+          "name": "florauna__jaw",
+          "parent": "florauna__head",
           "pivot": [
             0.24,
             25.60308,
@@ -214,8 +214,8 @@
           ]
         },
         {
-          "name": "eye",
-          "parent": "head",
+          "name": "florauna__eye",
+          "parent": "florauna__head",
           "pivot": [
             0,
             0.4287,
@@ -393,7 +393,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "florauna__body",
           "pivot": [
             -0.0133,
             25.05713,
@@ -932,8 +932,8 @@
           ]
         },
         {
-          "name": "FRUITS",
-          "parent": "body",
+          "name": "florauna__FRUITS",
+          "parent": "florauna__body",
           "pivot": [
             0,
             19,
@@ -1900,8 +1900,8 @@
           ]
         },
         {
-          "name": "Fruits2",
-          "parent": "FRUITS",
+          "name": "florauna__Fruits2",
+          "parent": "florauna__FRUITS",
           "pivot": [
             0,
             -1,
@@ -1909,8 +1909,8 @@
           ]
         },
         {
-          "name": "fruit1",
-          "parent": "Fruits2",
+          "name": "florauna__fruit1",
+          "parent": "florauna__Fruits2",
           "pivot": [
             -0.02818,
             19.6402,
@@ -1918,8 +1918,8 @@
           ]
         },
         {
-          "name": "fruit1-r",
-          "parent": "fruit1",
+          "name": "florauna__fruit1-r",
+          "parent": "florauna__fruit1",
           "pivot": [
             -1.12,
             21.52541,
@@ -2013,8 +2013,8 @@
           ]
         },
         {
-          "name": "fruit2-r",
-          "parent": "fruit1",
+          "name": "florauna__fruit2-r",
+          "parent": "florauna__fruit1",
           "pivot": [
             -0.62,
             19.32729,
@@ -2108,8 +2108,8 @@
           ]
         },
         {
-          "name": "fruit1-l",
-          "parent": "fruit1",
+          "name": "florauna__fruit1-l",
+          "parent": "florauna__fruit1",
           "pivot": [
             0.88,
             21.83854,
@@ -2203,8 +2203,8 @@
           ]
         },
         {
-          "name": "fruit2-l",
-          "parent": "fruit1",
+          "name": "florauna__fruit2-l",
+          "parent": "florauna__fruit1",
           "pivot": [
             0.88,
             19.39256,
@@ -2298,8 +2298,8 @@
           ]
         },
         {
-          "name": "fruit3-l",
-          "parent": "fruit1",
+          "name": "florauna__fruit3-l",
+          "parent": "florauna__fruit1",
           "pivot": [
             0.88,
             17.90539,
@@ -2393,8 +2393,8 @@
           ]
         },
         {
-          "name": "fruit4-l",
-          "parent": "fruit1",
+          "name": "florauna__fruit4-l",
+          "parent": "florauna__fruit1",
           "pivot": [
             0.63,
             16.02039,
@@ -2488,8 +2488,8 @@
           ]
         },
         {
-          "name": "fruit3-r",
-          "parent": "fruit1",
+          "name": "florauna__fruit3-r",
+          "parent": "florauna__fruit1",
           "pivot": [
             -0.87,
             17.65753,
@@ -2583,8 +2583,8 @@
           ]
         },
         {
-          "name": "fruit4-r",
-          "parent": "fruit1",
+          "name": "florauna__fruit4-r",
+          "parent": "florauna__fruit1",
           "pivot": [
             -0.62,
             15.9225,
@@ -2678,8 +2678,8 @@
           ]
         },
         {
-          "name": "neck",
-          "parent": "body",
+          "name": "florauna__neck",
+          "parent": "florauna__body",
           "pivot": [
             0,
             24.728,
@@ -2774,8 +2774,8 @@
           ]
         },
         {
-          "name": "closedflytrap",
-          "parent": "neck",
+          "name": "florauna__closedflytrap",
+          "parent": "florauna__neck",
           "pivot": [
             0,
             23.25,
@@ -2869,8 +2869,8 @@
           ]
         },
         {
-          "name": "closedflytrap2",
-          "parent": "neck",
+          "name": "florauna__closedflytrap2",
+          "parent": "florauna__neck",
           "pivot": [
             0,
             23.25,
@@ -2964,8 +2964,8 @@
           ]
         },
         {
-          "name": "FLYTRAP1",
-          "parent": "body",
+          "name": "florauna__FLYTRAP1",
+          "parent": "florauna__body",
           "pivot": [
             0.6296,
             22.068,
@@ -2978,8 +2978,8 @@
           ]
         },
         {
-          "name": "AnchorBack",
-          "parent": "FLYTRAP1",
+          "name": "florauna__AnchorBack",
+          "parent": "florauna__FLYTRAP1",
           "pivot": [
             0.7,
             22.13821,
@@ -3074,8 +3074,8 @@
           ]
         },
         {
-          "name": "Anchor",
-          "parent": "FLYTRAP1",
+          "name": "florauna__Anchor",
+          "parent": "florauna__FLYTRAP1",
           "pivot": [
             0.6296,
             22.12905,
@@ -3170,8 +3170,8 @@
           ]
         },
         {
-          "name": "LeftFlyLower",
-          "parent": "FLYTRAP1",
+          "name": "florauna__LeftFlyLower",
+          "parent": "florauna__FLYTRAP1",
           "pivot": [
             0.90145,
             22.03821,
@@ -3336,8 +3336,8 @@
           ]
         },
         {
-          "name": "LeftFlyUpper",
-          "parent": "LeftFlyLower",
+          "name": "florauna__LeftFlyUpper",
+          "parent": "florauna__LeftFlyLower",
           "pivot": [
             0.67785,
             27.34851,
@@ -3492,8 +3492,8 @@
           ]
         },
         {
-          "name": "TeethLeft",
-          "parent": "FLYTRAP1",
+          "name": "florauna__TeethLeft",
+          "parent": "florauna__FLYTRAP1",
           "pivot": [
             0,
             21.87021,
@@ -3848,8 +3848,8 @@
           ]
         },
         {
-          "name": "FLYTRAP2",
-          "parent": "body",
+          "name": "florauna__FLYTRAP2",
+          "parent": "florauna__body",
           "pivot": [
             -0.6796,
             22.068,
@@ -3862,8 +3862,8 @@
           ]
         },
         {
-          "name": "RightFlyLower3",
-          "parent": "FLYTRAP2",
+          "name": "florauna__RightFlyLower3",
+          "parent": "florauna__FLYTRAP2",
           "pivot": [
             -0.70145,
             22.08937,
@@ -4018,8 +4018,8 @@
           ]
         },
         {
-          "name": "RightFlyUpper2",
-          "parent": "RightFlyLower3",
+          "name": "florauna__RightFlyUpper2",
+          "parent": "florauna__RightFlyLower3",
           "pivot": [
             -0.70145,
             27.40137,
@@ -4174,8 +4174,8 @@
           ]
         },
         {
-          "name": "TeethRight",
-          "parent": "FLYTRAP2",
+          "name": "florauna__TeethRight",
+          "parent": "florauna__FLYTRAP2",
           "pivot": [
             0,
             22.82137,
@@ -4535,8 +4535,8 @@
           ]
         },
         {
-          "name": "bone10",
-          "parent": "body",
+          "name": "florauna__bone10",
+          "parent": "florauna__body",
           "pivot": [
             -0.96,
             17.368,
@@ -4682,8 +4682,8 @@
           ]
         },
         {
-          "name": "HOODBACK",
-          "parent": "body",
+          "name": "florauna__HOODBACK",
+          "parent": "florauna__body",
           "pivot": [
             0.04,
             24.99078,
@@ -4843,8 +4843,8 @@
           ]
         },
         {
-          "name": "BURROWFLYTRAPRIGHT",
-          "parent": "body",
+          "name": "florauna__BURROWFLYTRAPRIGHT",
+          "parent": "florauna__body",
           "pivot": [
             -0.00068,
             22.24631,
@@ -4939,8 +4939,8 @@
           ]
         },
         {
-          "name": "BURROWFLYTRAPLEFT",
-          "parent": "body",
+          "name": "florauna__BURROWFLYTRAPLEFT",
+          "parent": "florauna__body",
           "pivot": [
             0.00068,
             22.24631,
@@ -5025,8 +5025,8 @@
           ]
         },
         {
-          "name": "Legs7",
-          "parent": "body",
+          "name": "florauna__Legs7",
+          "parent": "florauna__body",
           "pivot": [
             0.08745,
             14.29943,
@@ -5034,8 +5034,8 @@
           ]
         },
         {
-          "name": "Upper",
-          "parent": "Legs7",
+          "name": "florauna__Upper",
+          "parent": "florauna__Legs7",
           "pivot": [
             0,
             13,
@@ -5281,8 +5281,8 @@
           ]
         },
         {
-          "name": "lower",
-          "parent": "Legs7",
+          "name": "florauna__lower",
+          "parent": "florauna__Legs7",
           "pivot": [
             0,
             7.9,
@@ -5410,8 +5410,8 @@
           ]
         },
         {
-          "name": "bone6",
-          "parent": "lower",
+          "name": "florauna__bone6",
+          "parent": "florauna__lower",
           "pivot": [
             0.05971,
             0.45716,
@@ -5455,8 +5455,8 @@
           ]
         },
         {
-          "name": "THORNS",
-          "parent": "body",
+          "name": "florauna__THORNS",
+          "parent": "florauna__body",
           "pivot": [
             0,
             21,
@@ -5464,8 +5464,8 @@
           ]
         },
         {
-          "name": "Thorn2",
-          "parent": "THORNS",
+          "name": "florauna__Thorn2",
+          "parent": "florauna__THORNS",
           "pivot": [
             -0.66301,
             17.03357,
@@ -5776,8 +5776,8 @@
           ]
         },
         {
-          "name": "Thorn14",
-          "parent": "THORNS",
+          "name": "florauna__Thorn14",
+          "parent": "florauna__THORNS",
           "pivot": [
             -4.66301,
             21.53357,
@@ -6088,8 +6088,8 @@
           ]
         },
         {
-          "name": "Thorn19",
-          "parent": "THORNS",
+          "name": "florauna__Thorn19",
+          "parent": "florauna__THORNS",
           "pivot": [
             -2.41301,
             26.53357,
@@ -6400,8 +6400,8 @@
           ]
         },
         {
-          "name": "Thorn3",
-          "parent": "THORNS",
+          "name": "florauna__Thorn3",
+          "parent": "florauna__THORNS",
           "pivot": [
             0.58699,
             17.28357,
@@ -6712,8 +6712,8 @@
           ]
         },
         {
-          "name": "Thorn12",
-          "parent": "THORNS",
+          "name": "florauna__Thorn12",
+          "parent": "florauna__THORNS",
           "pivot": [
             0.58699,
             19.28357,
@@ -7024,8 +7024,8 @@
           ]
         },
         {
-          "name": "Thorn15",
-          "parent": "THORNS",
+          "name": "florauna__Thorn15",
+          "parent": "florauna__THORNS",
           "pivot": [
             0.58699,
             16.28357,
@@ -7336,8 +7336,8 @@
           ]
         },
         {
-          "name": "Thorn4",
-          "parent": "THORNS",
+          "name": "florauna__Thorn4",
+          "parent": "florauna__THORNS",
           "pivot": [
             0.33699,
             20.03357,
@@ -7648,8 +7648,8 @@
           ]
         },
         {
-          "name": "Thorn5",
-          "parent": "THORNS",
+          "name": "florauna__Thorn5",
+          "parent": "florauna__THORNS",
           "pivot": [
             3.08699,
             9.28357,
@@ -7960,8 +7960,8 @@
           ]
         },
         {
-          "name": "Thorn6",
-          "parent": "THORNS",
+          "name": "florauna__Thorn6",
+          "parent": "florauna__THORNS",
           "pivot": [
             1.08699,
             14.28357,
@@ -8272,8 +8272,8 @@
           ]
         },
         {
-          "name": "Thorn18",
-          "parent": "THORNS",
+          "name": "florauna__Thorn18",
+          "parent": "florauna__THORNS",
           "pivot": [
             1.08699,
             14.28357,
@@ -8584,8 +8584,8 @@
           ]
         },
         {
-          "name": "Thorn7",
-          "parent": "THORNS",
+          "name": "florauna__Thorn7",
+          "parent": "florauna__THORNS",
           "pivot": [
             3.08699,
             22.78357,
@@ -8896,8 +8896,8 @@
           ]
         },
         {
-          "name": "Thorn17",
-          "parent": "THORNS",
+          "name": "florauna__Thorn17",
+          "parent": "florauna__THORNS",
           "pivot": [
             3.58699,
             23.03357,
@@ -9208,8 +9208,8 @@
           ]
         },
         {
-          "name": "Thorn16",
-          "parent": "THORNS",
+          "name": "florauna__Thorn16",
+          "parent": "florauna__THORNS",
           "pivot": [
             -0.91301,
             23.78357,
@@ -9520,8 +9520,8 @@
           ]
         },
         {
-          "name": "Thorn8",
-          "parent": "THORNS",
+          "name": "florauna__Thorn8",
+          "parent": "florauna__THORNS",
           "pivot": [
             0.08699,
             10.28357,
@@ -9832,8 +9832,8 @@
           ]
         },
         {
-          "name": "Thorn9",
-          "parent": "THORNS",
+          "name": "florauna__Thorn9",
+          "parent": "florauna__THORNS",
           "pivot": [
             -0.91301,
             14.28357,
@@ -10144,8 +10144,8 @@
           ]
         },
         {
-          "name": "Thorn10",
-          "parent": "THORNS",
+          "name": "florauna__Thorn10",
+          "parent": "florauna__THORNS",
           "pivot": [
             -0.91301,
             19.28357,
@@ -10456,8 +10456,8 @@
           ]
         },
         {
-          "name": "Thorn11",
-          "parent": "THORNS",
+          "name": "florauna__Thorn11",
+          "parent": "florauna__THORNS",
           "pivot": [
             0.33699,
             13.28357,
@@ -10768,8 +10768,8 @@
           ]
         },
         {
-          "name": "Thorn13",
-          "parent": "THORNS",
+          "name": "florauna__Thorn13",
+          "parent": "florauna__THORNS",
           "pivot": [
             -1.66301,
             11.78357,
@@ -11080,7 +11080,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "florauna__rightArm",
           "pivot": [
             -1.11966,
             23.66541,
@@ -11093,8 +11093,8 @@
           ]
         },
         {
-          "name": "bone13",
-          "parent": "rightArm",
+          "name": "florauna__bone13",
+          "parent": "florauna__rightArm",
           "pivot": [
             -0.65642,
             22.67307,
@@ -11430,8 +11430,8 @@
           ]
         },
         {
-          "name": "middlearm",
-          "parent": "bone13",
+          "name": "florauna__middlearm",
+          "parent": "florauna__bone13",
           "pivot": [
             -3.97146,
             22.81468,
@@ -11609,8 +11609,8 @@
           ]
         },
         {
-          "name": "bone3",
-          "parent": "middlearm",
+          "name": "florauna__bone3",
+          "parent": "florauna__middlearm",
           "pivot": [
             -4.80609,
             19.94448,
@@ -12448,8 +12448,8 @@
           ]
         },
         {
-          "name": "bone4",
-          "parent": "bone3",
+          "name": "florauna__bone4",
+          "parent": "florauna__bone3",
           "pivot": [
             -3.36609,
             10.47448,
@@ -12632,8 +12632,8 @@
           ]
         },
         {
-          "name": "bone5",
-          "parent": "bone3",
+          "name": "florauna__bone5",
+          "parent": "florauna__bone3",
           "pivot": [
             -6.40609,
             14.19448,
@@ -12784,7 +12784,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "florauna__leftArm",
           "pivot": [
             1.06966,
             23.66541,
@@ -12797,8 +12797,8 @@
           ]
         },
         {
-          "name": "bone14",
-          "parent": "leftArm",
+          "name": "florauna__bone14",
+          "parent": "florauna__leftArm",
           "pivot": [
             0.61879,
             22.60055,
@@ -13134,8 +13134,8 @@
           ]
         },
         {
-          "name": "bone",
-          "parent": "bone14",
+          "name": "florauna__bone",
+          "parent": "florauna__bone14",
           "pivot": [
             3.93383,
             22.83216,
@@ -13313,8 +13313,8 @@
           ]
         },
         {
-          "name": "bone7",
-          "parent": "bone",
+          "name": "florauna__bone7",
+          "parent": "florauna__bone",
           "pivot": [
             4.76846,
             19.96196,
@@ -13984,8 +13984,8 @@
           ]
         },
         {
-          "name": "bone8",
-          "parent": "bone7",
+          "name": "florauna__bone8",
+          "parent": "florauna__bone7",
           "pivot": [
             3.32846,
             10.49196,
@@ -14168,8 +14168,8 @@
           ]
         },
         {
-          "name": "bone9",
-          "parent": "bone7",
+          "name": "florauna__bone9",
+          "parent": "florauna__bone7",
           "pivot": [
             6.36846,
             15.11196,
@@ -14315,7 +14315,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "florauna__leftLeg",
           "pivot": [
             0,
             12.888,
@@ -14323,8 +14323,8 @@
           ]
         },
         {
-          "name": "Legs5",
-          "parent": "leftLeg",
+          "name": "florauna__Legs5",
+          "parent": "florauna__leftLeg",
           "pivot": [
             0.84485,
             13.55543,
@@ -14337,8 +14337,8 @@
           ]
         },
         {
-          "name": "upper5",
-          "parent": "Legs5",
+          "name": "florauna__upper5",
+          "parent": "florauna__Legs5",
           "pivot": [
             0.66694,
             12.96147,
@@ -14432,8 +14432,8 @@
           ]
         },
         {
-          "name": "bone12",
-          "parent": "upper5",
+          "name": "florauna__bone12",
+          "parent": "florauna__upper5",
           "pivot": [
             -1.20821,
             9.2669,
@@ -14629,8 +14629,8 @@
           ]
         },
         {
-          "name": "lower5",
-          "parent": "bone12",
+          "name": "florauna__lower5",
+          "parent": "florauna__bone12",
           "pivot": [
             -2.85306,
             6.32147,
@@ -14724,8 +14724,8 @@
           ]
         },
         {
-          "name": "bone2",
-          "parent": "lower5",
+          "name": "florauna__bone2",
+          "parent": "florauna__lower5",
           "pivot": [
             -5.2383,
             -1.43684,
@@ -14769,8 +14769,8 @@
           ]
         },
         {
-          "name": "Legs2",
-          "parent": "leftLeg",
+          "name": "florauna__Legs2",
+          "parent": "florauna__leftLeg",
           "pivot": [
             0.91515,
             12.65943,
@@ -14783,8 +14783,8 @@
           ]
         },
         {
-          "name": "upper2",
-          "parent": "Legs2",
+          "name": "florauna__upper2",
+          "parent": "florauna__Legs2",
           "pivot": [
             0.9591,
             12.19262,
@@ -14946,8 +14946,8 @@
           ]
         },
         {
-          "name": "middle2",
-          "parent": "Legs2",
+          "name": "florauna__middle2",
+          "parent": "florauna__Legs2",
           "pivot": [
             3.1991,
             9.31262,
@@ -15041,8 +15041,8 @@
           ]
         },
         {
-          "name": "lower6",
-          "parent": "middle2",
+          "name": "florauna__lower6",
+          "parent": "florauna__middle2",
           "pivot": [
             5.23982,
             2.69206,
@@ -15170,8 +15170,8 @@
           ]
         },
         {
-          "name": "bone15",
-          "parent": "lower6",
+          "name": "florauna__bone15",
+          "parent": "florauna__lower6",
           "pivot": [
             5.43497,
             -0.60226,
@@ -15215,7 +15215,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "florauna__rightLeg",
           "pivot": [
             0,
             12.888,
@@ -15223,8 +15223,8 @@
           ]
         },
         {
-          "name": "Legs3",
-          "parent": "rightLeg",
+          "name": "florauna__Legs3",
+          "parent": "florauna__rightLeg",
           "pivot": [
             -0.84485,
             13.55543,
@@ -15237,8 +15237,8 @@
           ]
         },
         {
-          "name": "upper3",
-          "parent": "Legs3",
+          "name": "florauna__upper3",
+          "parent": "florauna__Legs3",
           "pivot": [
             -0.66694,
             12.96147,
@@ -15332,8 +15332,8 @@
           ]
         },
         {
-          "name": "bone11",
-          "parent": "upper3",
+          "name": "florauna__bone11",
+          "parent": "florauna__upper3",
           "pivot": [
             1.84,
             9.208,
@@ -15529,8 +15529,8 @@
           ]
         },
         {
-          "name": "lower3",
-          "parent": "bone11",
+          "name": "florauna__lower3",
+          "parent": "florauna__bone11",
           "pivot": [
             2.85306,
             6.32147,
@@ -15624,8 +15624,8 @@
           ]
         },
         {
-          "name": "foot2",
-          "parent": "lower3",
+          "name": "florauna__foot2",
+          "parent": "florauna__lower3",
           "pivot": [
             5.2383,
             -1.43684,
@@ -15669,8 +15669,8 @@
           ]
         },
         {
-          "name": "Legs6",
-          "parent": "rightLeg",
+          "name": "florauna__Legs6",
+          "parent": "florauna__rightLeg",
           "pivot": [
             -0.91515,
             12.65943,
@@ -15683,8 +15683,8 @@
           ]
         },
         {
-          "name": "upper6",
-          "parent": "Legs6",
+          "name": "florauna__upper6",
+          "parent": "florauna__Legs6",
           "pivot": [
             -0.9591,
             12.19262,
@@ -15846,8 +15846,8 @@
           ]
         },
         {
-          "name": "middle4",
-          "parent": "Legs6",
+          "name": "florauna__middle4",
+          "parent": "florauna__Legs6",
           "pivot": [
             -3.1991,
             9.31262,
@@ -15975,8 +15975,8 @@
           ]
         },
         {
-          "name": "lower8",
-          "parent": "middle4",
+          "name": "florauna__lower8",
+          "parent": "florauna__middle4",
           "pivot": [
             -5.23982,
             2.69206,
@@ -16070,8 +16070,8 @@
           ]
         },
         {
-          "name": "foot1",
-          "parent": "lower8",
+          "name": "florauna__foot1",
+          "parent": "florauna__lower8",
           "pivot": [
             -5.23982,
             -0.10794,

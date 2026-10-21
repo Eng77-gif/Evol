@@ -1139,14 +1139,11 @@
           ]
         },
         "settings": {
-          "position": {
-            "post": [
-              0.225,
-              0,
-              0
-            ],
-            "lerp_mode": "step"
-          }
+          "position": [
+            0.225,
+            0,
+            0
+          ]
         },
         "core_10k": {
           "rotation": [
@@ -1180,14 +1177,11 @@
           }
         },
         "modules": {
-          "position": {
-            "post": [
-              0.125,
-              0,
-              0
-            ],
-            "lerp_mode": "step"
-          }
+          "position": [
+            0.125,
+            0,
+            0
+          ]
         }
       }
     },
@@ -1214,14 +1208,11 @@
           }
         },
         "modules": {
-          "position": {
-            "post": [
-              0.125,
-              0,
-              0
-            ],
-            "lerp_mode": "step"
-          }
+          "position": [
+            0.125,
+            0,
+            0
+          ]
         }
       }
     },
@@ -1269,14 +1260,11 @@
           ]
         },
         "settings": {
-          "position": {
-            "post": [
-              0.225,
-              0,
-              0
-            ],
-            "lerp_mode": "step"
-          }
+          "position": [
+            0.225,
+            0,
+            0
+          ]
         },
         "core_10k": {
           "rotation": [
@@ -1746,14 +1734,11 @@
               0,
               0
             ],
-            "7.2083": {
-              "post": [
-                0,
-                0,
-                0
-              ],
-              "lerp_mode": "catmullrom"
-            }
+            "7.2083": [
+              0,
+              0,
+              0
+            ]
           }
         },
         "core_10k": {

@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "piscciss_volann__head",
           "pivot": [
             0,
             29.27313,
@@ -24,8 +24,8 @@
           ]
         },
         {
-          "name": "head_s",
-          "parent": "head",
+          "name": "piscciss_volann__head_s",
+          "parent": "piscciss_volann__head",
           "pivot": [
             0,
             29.27313,
@@ -33,8 +33,8 @@
           ]
         },
         {
-          "name": "head_r",
-          "parent": "head_s",
+          "name": "piscciss_volann__head_r",
+          "parent": "piscciss_volann__head_s",
           "pivot": [
             0,
             30.77313,
@@ -138,8 +138,8 @@
           ]
         },
         {
-          "name": "lamp",
-          "parent": "head_r",
+          "name": "piscciss_volann__lamp",
+          "parent": "piscciss_volann__head_r",
           "pivot": [
             0,
             32.40835,
@@ -215,8 +215,8 @@
           ]
         },
         {
-          "name": "jaw",
-          "parent": "head_r",
+          "name": "piscciss_volann__jaw",
+          "parent": "piscciss_volann__head_r",
           "pivot": [
             0,
             29.27313,
@@ -410,8 +410,8 @@
           ]
         },
         {
-          "name": "eye_left",
-          "parent": "head_r",
+          "name": "piscciss_volann__eye_left",
+          "parent": "piscciss_volann__head_r",
           "pivot": [
             0,
             32.03822,
@@ -511,8 +511,8 @@
           ]
         },
         {
-          "name": "eye_right",
-          "parent": "head_r",
+          "name": "piscciss_volann__eye_right",
+          "parent": "piscciss_volann__head_r",
           "pivot": [
             0,
             32.03822,
@@ -612,8 +612,8 @@
           ]
         },
         {
-          "name": "base",
-          "parent": "head_r",
+          "name": "piscciss_volann__base",
+          "parent": "piscciss_volann__head_r",
           "pivot": [
             0,
             27.75,
@@ -702,8 +702,8 @@
           ]
         },
         {
-          "name": "head_inner",
-          "parent": "base",
+          "name": "piscciss_volann__head_inner",
+          "parent": "piscciss_volann__base",
           "pivot": [
             0,
             26.25,
@@ -777,7 +777,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "piscciss_volann__leftArm",
           "pivot": [
             5,
             27,
@@ -785,8 +785,8 @@
           ]
         },
         {
-          "name": "shoulder3",
-          "parent": "leftArm",
+          "name": "piscciss_volann__shoulder3",
+          "parent": "piscciss_volann__leftArm",
           "pivot": [
             4.75,
             28.83716,
@@ -794,8 +794,8 @@
           ]
         },
         {
-          "name": "upperarm",
-          "parent": "shoulder3",
+          "name": "piscciss_volann__upperarm",
+          "parent": "piscciss_volann__shoulder3",
           "pivot": [
             6.75642,
             25.1999,
@@ -885,8 +885,8 @@
           ]
         },
         {
-          "name": "forearm",
-          "parent": "upperarm",
+          "name": "piscciss_volann__forearm",
+          "parent": "piscciss_volann__upperarm",
           "pivot": [
             8.03533,
             19.47114,
@@ -1000,8 +1000,8 @@
           ]
         },
         {
-          "name": "hand",
-          "parent": "forearm",
+          "name": "piscciss_volann__hand",
+          "parent": "piscciss_volann__forearm",
           "pivot": [
             8.39399,
             11.53833,
@@ -1128,8 +1128,8 @@
           ]
         },
         {
-          "name": "shoulder",
-          "parent": "shoulder3",
+          "name": "piscciss_volann__shoulder",
+          "parent": "piscciss_volann__shoulder3",
           "pivot": [
             4.75,
             28.83716,
@@ -1229,7 +1229,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "piscciss_volann__rightArm",
           "pivot": [
             -5,
             27,
@@ -1237,8 +1237,8 @@
           ]
         },
         {
-          "name": "shoulder2",
-          "parent": "rightArm",
+          "name": "piscciss_volann__shoulder2",
+          "parent": "piscciss_volann__rightArm",
           "pivot": [
             -4.75,
             28.83716,
@@ -1246,8 +1246,8 @@
           ]
         },
         {
-          "name": "upperarm2",
-          "parent": "shoulder2",
+          "name": "piscciss_volann__upperarm2",
+          "parent": "piscciss_volann__shoulder2",
           "pivot": [
             -6.75642,
             25.1999,
@@ -1337,8 +1337,8 @@
           ]
         },
         {
-          "name": "forearm2",
-          "parent": "upperarm2",
+          "name": "piscciss_volann__forearm2",
+          "parent": "piscciss_volann__upperarm2",
           "pivot": [
             -8.03533,
             19.47114,
@@ -1452,8 +1452,8 @@
           ]
         },
         {
-          "name": "hand2",
-          "parent": "forearm2",
+          "name": "piscciss_volann__hand2",
+          "parent": "piscciss_volann__forearm2",
           "pivot": [
             -8.39399,
             11.53833,
@@ -1581,8 +1581,8 @@
           ]
         },
         {
-          "name": "shoulder4",
-          "parent": "shoulder2",
+          "name": "piscciss_volann__shoulder4",
+          "parent": "piscciss_volann__shoulder2",
           "pivot": [
             -4.75,
             28.83716,
@@ -1682,7 +1682,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "piscciss_volann__body",
           "pivot": [
             0,
             29.2731,
@@ -1962,8 +1962,8 @@
           ]
         },
         {
-          "name": "skirt_front",
-          "parent": "body",
+          "name": "piscciss_volann__skirt_front",
+          "parent": "piscciss_volann__body",
           "pivot": [
             0,
             16.4,
@@ -2031,8 +2031,8 @@
           ]
         },
         {
-          "name": "skirt_back",
-          "parent": "body",
+          "name": "piscciss_volann__skirt_back",
+          "parent": "piscciss_volann__body",
           "pivot": [
             0,
             16.4,
@@ -2100,8 +2100,8 @@
           ]
         },
         {
-          "name": "tail_1",
-          "parent": "body",
+          "name": "piscciss_volann__tail_1",
+          "parent": "piscciss_volann__body",
           "pivot": [
             0,
             16.5,
@@ -2185,8 +2185,8 @@
           ]
         },
         {
-          "name": "tail_2",
-          "parent": "tail_1",
+          "name": "piscciss_volann__tail_2",
+          "parent": "piscciss_volann__tail_1",
           "pivot": [
             0,
             13.5,
@@ -2270,8 +2270,8 @@
           ]
         },
         {
-          "name": "tail_3",
-          "parent": "tail_2",
+          "name": "piscciss_volann__tail_3",
+          "parent": "piscciss_volann__tail_2",
           "pivot": [
             0,
             7.5,
@@ -2355,8 +2355,8 @@
           ]
         },
         {
-          "name": "tail_4",
-          "parent": "tail_3",
+          "name": "piscciss_volann__tail_4",
+          "parent": "piscciss_volann__tail_3",
           "pivot": [
             0,
             0.5,
@@ -2440,8 +2440,8 @@
           ]
         },
         {
-          "name": "tail_5",
-          "parent": "tail_4",
+          "name": "piscciss_volann__tail_5",
+          "parent": "piscciss_volann__tail_4",
           "pivot": [
             0,
             -4,
@@ -2475,7 +2475,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "piscciss_volann__leftLeg",
           "pivot": [
             2.05,
             15.75,
@@ -2570,8 +2570,8 @@
           ]
         },
         {
-          "name": "left_legr",
-          "parent": "leftLeg",
+          "name": "piscciss_volann__left_legr",
+          "parent": "piscciss_volann__leftLeg",
           "pivot": [
             2.4,
             15,
@@ -2613,8 +2613,8 @@
           ]
         },
         {
-          "name": "calf",
-          "parent": "left_legr",
+          "name": "piscciss_volann__calf",
+          "parent": "piscciss_volann__left_legr",
           "pivot": [
             2.88957,
             6.4011,
@@ -2694,7 +2694,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "piscciss_volann__rightLeg",
           "pivot": [
             -2.05,
             15.75,
@@ -2789,8 +2789,8 @@
           ]
         },
         {
-          "name": "right_legr",
-          "parent": "rightLeg",
+          "name": "piscciss_volann__right_legr",
+          "parent": "piscciss_volann__rightLeg",
           "pivot": [
             -2.4,
             15,
@@ -2833,8 +2833,8 @@
           ]
         },
         {
-          "name": "calf2",
-          "parent": "right_legr",
+          "name": "piscciss_volann__calf2",
+          "parent": "piscciss_volann__right_legr",
           "pivot": [
             -2.88957,
             6.4011,

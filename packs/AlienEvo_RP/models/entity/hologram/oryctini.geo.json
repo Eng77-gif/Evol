@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "body",
+          "name": "oryctini__body",
           "pivot": [
             -0.80055,
             2.59903,
@@ -258,8 +258,8 @@
           ]
         },
         {
-          "name": "lowerJaw",
-          "parent": "body",
+          "name": "oryctini__lowerJaw",
+          "parent": "oryctini__body",
           "pivot": [
             -0.80055,
             25.25227,
@@ -438,8 +438,8 @@
           ]
         },
         {
-          "name": "upperJaw",
-          "parent": "body",
+          "name": "oryctini__upperJaw",
+          "parent": "oryctini__body",
           "pivot": [
             -0.80055,
             28.03768,
@@ -618,8 +618,8 @@
           ]
         },
         {
-          "name": "head",
-          "parent": "upperJaw",
+          "name": "oryctini__head",
+          "parent": "oryctini__upperJaw",
           "pivot": [
             -0.80201,
             36.31739,
@@ -627,8 +627,8 @@
           ]
         },
         {
-          "name": "head_inner",
-          "parent": "head",
+          "name": "oryctini__head_inner",
+          "parent": "oryctini__head",
           "pivot": [
             -0.80201,
             36.31739,
@@ -1145,8 +1145,8 @@
           ]
         },
         {
-          "name": "overlay",
-          "parent": "body",
+          "name": "oryctini__overlay",
+          "parent": "oryctini__body",
           "pivot": [
             -0.80055,
             2.59903,
@@ -1391,7 +1391,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "oryctini__rightArm",
           "pivot": [
             -8.79556,
             26.58404,
@@ -1569,8 +1569,8 @@
           ]
         },
         {
-          "name": "lowerRightArm",
-          "parent": "rightArm",
+          "name": "oryctini__lowerRightArm",
+          "parent": "oryctini__rightArm",
           "pivot": [
             -5.88955,
             25.81841,
@@ -1912,8 +1912,8 @@
           ]
         },
         {
-          "name": "spikes",
-          "parent": "lowerRightArm",
+          "name": "oryctini__spikes",
+          "parent": "oryctini__lowerRightArm",
           "pivot": [
             -5.88955,
             25.81841,
@@ -2093,8 +2093,8 @@
           ]
         },
         {
-          "name": "overlay5",
-          "parent": "lowerRightArm",
+          "name": "oryctini__overlay5",
+          "parent": "oryctini__lowerRightArm",
           "pivot": [
             -5.88955,
             25.81841,
@@ -2264,8 +2264,8 @@
           ]
         },
         {
-          "name": "overlay4",
-          "parent": "rightArm",
+          "name": "oryctini__overlay4",
+          "parent": "oryctini__rightArm",
           "pivot": [
             -5.2442,
             29.56891,
@@ -2430,7 +2430,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "oryctini__leftArm",
           "pivot": [
             7.19445,
             26.58404,
@@ -2608,8 +2608,8 @@
           ]
         },
         {
-          "name": "lowerLeftArm",
-          "parent": "leftArm",
+          "name": "oryctini__lowerLeftArm",
+          "parent": "oryctini__leftArm",
           "pivot": [
             5.07554,
             26.08922,
@@ -2951,8 +2951,8 @@
           ]
         },
         {
-          "name": "spikes2",
-          "parent": "lowerLeftArm",
+          "name": "oryctini__spikes2",
+          "parent": "oryctini__lowerLeftArm",
           "pivot": [
             5.07554,
             26.08922,
@@ -3132,8 +3132,8 @@
           ]
         },
         {
-          "name": "overlay7",
-          "parent": "lowerLeftArm",
+          "name": "oryctini__overlay7",
+          "parent": "oryctini__lowerLeftArm",
           "pivot": [
             5.07554,
             26.08922,
@@ -3303,8 +3303,8 @@
           ]
         },
         {
-          "name": "overlay6",
-          "parent": "leftArm",
+          "name": "oryctini__overlay6",
+          "parent": "oryctini__leftArm",
           "pivot": [
             3.64309,
             29.56891,
@@ -3469,7 +3469,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "oryctini__leftLeg",
           "pivot": [
             3.10672,
             10.68676,
@@ -3811,8 +3811,8 @@
           ]
         },
         {
-          "name": "overlay2",
-          "parent": "leftLeg",
+          "name": "oryctini__overlay2",
+          "parent": "oryctini__leftLeg",
           "pivot": [
             1.97681,
             7.73323,
@@ -3982,7 +3982,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "oryctini__rightLeg",
           "pivot": [
             -4.98101,
             10.68676,
@@ -4324,8 +4324,8 @@
           ]
         },
         {
-          "name": "overlay3",
-          "parent": "rightLeg",
+          "name": "oryctini__overlay3",
+          "parent": "oryctini__rightLeg",
           "pivot": [
             -2.85206,
             7.77685,

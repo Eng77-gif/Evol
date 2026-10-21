@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_swampfire",
+          "name": "methanosian__swampfire",
           "parent": "hologram",
           "pivot": [
             9.75,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_RightLeg",
-          "parent": "holo_swampfire",
+          "name": "methanosian__RightLeg",
+          "parent": "methanosian__swampfire",
           "pivot": [
             9.538,
             16.53,
@@ -74,8 +74,8 @@
           ]
         },
         {
-          "name": "holo_upper2",
-          "parent": "holo_RightLeg",
+          "name": "methanosian__upper2",
+          "parent": "methanosian__RightLeg",
           "pivot": [
             9.57,
             16.41,
@@ -199,8 +199,8 @@
           ]
         },
         {
-          "name": "holo_lower2",
-          "parent": "holo_upper2",
+          "name": "methanosian__lower2",
+          "parent": "methanosian__upper2",
           "pivot": [
             9.56772,
             15.7264,
@@ -324,8 +324,8 @@
           ]
         },
         {
-          "name": "holo_foot2",
-          "parent": "holo_lower2",
+          "name": "methanosian__foot2",
+          "parent": "methanosian__lower2",
           "pivot": [
             9.55889,
             14.92958,
@@ -510,8 +510,8 @@
           ]
         },
         {
-          "name": "holo_LeftLeg",
-          "parent": "holo_swampfire",
+          "name": "methanosian__LeftLeg",
+          "parent": "methanosian__swampfire",
           "pivot": [
             9.962,
             16.53,
@@ -519,8 +519,8 @@
           ]
         },
         {
-          "name": "holo_upper",
-          "parent": "holo_LeftLeg",
+          "name": "methanosian__upper",
+          "parent": "methanosian__LeftLeg",
           "pivot": [
             9.93,
             16.41,
@@ -644,8 +644,8 @@
           ]
         },
         {
-          "name": "holo_lower",
-          "parent": "holo_upper",
+          "name": "methanosian__lower",
+          "parent": "methanosian__upper",
           "pivot": [
             9.93228,
             15.7264,
@@ -769,8 +769,8 @@
           ]
         },
         {
-          "name": "holo_foot",
-          "parent": "holo_lower",
+          "name": "methanosian__foot",
+          "parent": "methanosian__lower",
           "pivot": [
             9.94111,
             14.92958,
@@ -955,8 +955,8 @@
           ]
         },
         {
-          "name": "holo_RightArm",
-          "parent": "holo_swampfire",
+          "name": "methanosian__RightArm",
+          "parent": "methanosian__swampfire",
           "pivot": [
             9.23,
             17.49,
@@ -964,8 +964,8 @@
           ]
         },
         {
-          "name": "holo_rightarm_r",
-          "parent": "holo_RightArm",
+          "name": "methanosian__rightarm_r",
+          "parent": "methanosian__RightArm",
           "pivot": [
             9.08296,
             17.33205,
@@ -1133,8 +1133,8 @@
           ]
         },
         {
-          "name": "holo_rightupperarm",
-          "parent": "holo_rightarm_r",
+          "name": "methanosian__rightupperarm",
+          "parent": "methanosian__rightarm_r",
           "pivot": [
             9.08296,
             17.17205,
@@ -1238,8 +1238,8 @@
           ]
         },
         {
-          "name": "holo_right_lowerarm",
-          "parent": "holo_rightupperarm",
+          "name": "methanosian__right_lowerarm",
+          "parent": "methanosian__rightupperarm",
           "pivot": [
             9.10963,
             16.65205,
@@ -1523,8 +1523,8 @@
           ]
         },
         {
-          "name": "holo_LeftArm",
-          "parent": "holo_swampfire",
+          "name": "methanosian__LeftArm",
+          "parent": "methanosian__swampfire",
           "pivot": [
             10.27,
             17.49,
@@ -1532,8 +1532,8 @@
           ]
         },
         {
-          "name": "holo_leftarm_r",
-          "parent": "holo_LeftArm",
+          "name": "methanosian__leftarm_r",
+          "parent": "methanosian__LeftArm",
           "pivot": [
             10.41704,
             17.33205,
@@ -1701,8 +1701,8 @@
           ]
         },
         {
-          "name": "holo_leftupperarm",
-          "parent": "holo_leftarm_r",
+          "name": "methanosian__leftupperarm",
+          "parent": "methanosian__leftarm_r",
           "pivot": [
             10.41704,
             17.17205,
@@ -1806,8 +1806,8 @@
           ]
         },
         {
-          "name": "holo_left_lowerarm",
-          "parent": "holo_leftupperarm",
+          "name": "methanosian__left_lowerarm",
+          "parent": "methanosian__leftupperarm",
           "pivot": [
             10.39037,
             16.65205,
@@ -2091,8 +2091,8 @@
           ]
         },
         {
-          "name": "holo_Body",
-          "parent": "holo_swampfire",
+          "name": "methanosian__Body",
+          "parent": "methanosian__swampfire",
           "pivot": [
             9.75,
             17.95,
@@ -2443,8 +2443,8 @@
           ]
         },
         {
-          "name": "holo_Head",
-          "parent": "holo_swampfire",
+          "name": "methanosian__Head",
+          "parent": "methanosian__swampfire",
           "pivot": [
             9.75,
             18.05758,
@@ -2452,8 +2452,8 @@
           ]
         },
         {
-          "name": "holo_head_r",
-          "parent": "holo_Head",
+          "name": "methanosian__head_r",
+          "parent": "methanosian__Head",
           "pivot": [
             9.75,
             18.25167,
@@ -2652,8 +2652,8 @@
           ]
         },
         {
-          "name": "holo_seed",
-          "parent": "holo_Head",
+          "name": "methanosian__seed",
+          "parent": "methanosian__Head",
           "pivot": [
             9.75,
             18.49167,

@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_Head",
+          "name": "orishan__Head",
           "parent": "hologram",
           "pivot": [
             13.02154,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_armorHead2",
-          "parent": "holo_Head",
+          "name": "orishan__armorHead2",
+          "parent": "orishan__Head",
           "pivot": [
             13.05,
             14.90848,
@@ -79,8 +79,8 @@
           ]
         },
         {
-          "name": "holo_head3",
-          "parent": "holo_armorHead2",
+          "name": "orishan__head3",
+          "parent": "orishan__armorHead2",
           "pivot": [
             13.05,
             13.76986,
@@ -88,8 +88,8 @@
           ]
         },
         {
-          "name": "holo_BaseHead",
-          "parent": "holo_head3",
+          "name": "orishan__BaseHead",
+          "parent": "orishan__head3",
           "pivot": [
             13.14109,
             13.55732,
@@ -751,8 +751,8 @@
           ]
         },
         {
-          "name": "holo_LEFT_EYE",
-          "parent": "holo_BaseHead",
+          "name": "orishan__LEFT_EYE",
+          "parent": "orishan__BaseHead",
           "pivot": [
             13.3564,
             14.13687,
@@ -796,8 +796,8 @@
           ]
         },
         {
-          "name": "holo_PUPIL",
-          "parent": "holo_LEFT_EYE",
+          "name": "orishan__PUPIL",
+          "parent": "orishan__LEFT_EYE",
           "pivot": [
             13.35363,
             14.22012,
@@ -841,8 +841,8 @@
           ]
         },
         {
-          "name": "holo_RIGHT_EYE",
-          "parent": "holo_BaseHead",
+          "name": "orishan__RIGHT_EYE",
+          "parent": "orishan__BaseHead",
           "pivot": [
             12.75887,
             14.13529,
@@ -886,8 +886,8 @@
           ]
         },
         {
-          "name": "holo_PUPIL2",
-          "parent": "holo_RIGHT_EYE",
+          "name": "orishan__PUPIL2",
+          "parent": "orishan__RIGHT_EYE",
           "pivot": [
             12.77673,
             14.18976,
@@ -931,8 +931,8 @@
           ]
         },
         {
-          "name": "holo_Jaw",
-          "parent": "holo_head3",
+          "name": "orishan__Jaw",
+          "parent": "orishan__head3",
           "pivot": [
             13.01584,
             13.49215,
@@ -1100,8 +1100,8 @@
           ]
         },
         {
-          "name": "holo_TONGE_BASE",
-          "parent": "holo_Jaw",
+          "name": "orishan__TONGE_BASE",
+          "parent": "orishan__Jaw",
           "pivot": [
             13.06518,
             13.4484,
@@ -1185,8 +1185,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_LOWMID",
-          "parent": "holo_TONGE_BASE",
+          "name": "orishan__TONGUE_LOWMID",
+          "parent": "orishan__TONGE_BASE",
           "pivot": [
             13.06518,
             13.4484,
@@ -1270,8 +1270,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGHMID",
-          "parent": "holo_TONGUE_LOWMID",
+          "name": "orishan__TONGUE_HIGHMID",
+          "parent": "orishan__TONGUE_LOWMID",
           "pivot": [
             13.06518,
             13.4484,
@@ -1355,8 +1355,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGH",
-          "parent": "holo_TONGUE_HIGHMID",
+          "name": "orishan__TONGUE_HIGH",
+          "parent": "orishan__TONGUE_HIGHMID",
           "pivot": [
             13.06518,
             13.4484,
@@ -1445,8 +1445,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGHER",
-          "parent": "holo_TONGUE_HIGH",
+          "name": "orishan__TONGUE_HIGHER",
+          "parent": "orishan__TONGUE_HIGH",
           "pivot": [
             13.06518,
             13.4484,
@@ -1530,8 +1530,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_HIGHEST",
-          "parent": "holo_TONGUE_HIGHER",
+          "name": "orishan__TONGUE_HIGHEST",
+          "parent": "orishan__TONGUE_HIGHER",
           "pivot": [
             13.06518,
             13.4484,
@@ -1615,8 +1615,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_FINAL",
-          "parent": "holo_TONGUE_HIGHEST",
+          "name": "orishan__TONGUE_FINAL",
+          "parent": "orishan__TONGUE_HIGHEST",
           "pivot": [
             13.06518,
             13.4484,
@@ -1700,8 +1700,8 @@
           ]
         },
         {
-          "name": "holo_TONGUE_FINALIST",
-          "parent": "holo_TONGUE_FINAL",
+          "name": "orishan__TONGUE_FINALIST",
+          "parent": "orishan__TONGUE_FINAL",
           "pivot": [
             13.06518,
             13.4484,
@@ -1785,8 +1785,8 @@
           ]
         },
         {
-          "name": "holo_armorBody2",
-          "parent": "holo_Head",
+          "name": "orishan__armorBody2",
+          "parent": "orishan__Head",
           "pivot": [
             13.05,
             12.70716,
@@ -1880,8 +1880,8 @@
           ]
         },
         {
-          "name": "holo_TORSO",
-          "parent": "holo_armorBody2",
+          "name": "orishan__TORSO",
+          "parent": "orishan__armorBody2",
           "pivot": [
             13.05,
             12.70716,
@@ -1975,8 +1975,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_BASE",
-          "parent": "holo_armorBody2",
+          "name": "orishan__TAIL_BASE",
+          "parent": "orishan__armorBody2",
           "pivot": [
             13.05,
             12.13026,
@@ -2060,8 +2060,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_LOWMID",
-          "parent": "holo_TAIL_BASE",
+          "name": "orishan__TAIL_LOWMID",
+          "parent": "orishan__TAIL_BASE",
           "pivot": [
             13.05,
             12.13026,
@@ -2145,8 +2145,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_HIGHMID",
-          "parent": "holo_TAIL_LOWMID",
+          "name": "orishan__TAIL_HIGHMID",
+          "parent": "orishan__TAIL_LOWMID",
           "pivot": [
             13.05,
             12.13026,
@@ -2230,8 +2230,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftArm2",
-          "parent": "holo_Head",
+          "name": "orishan__armorLeftArm2",
+          "parent": "orishan__Head",
           "pivot": [
             13.8,
             13.12013,
@@ -2239,8 +2239,8 @@
           ]
         },
         {
-          "name": "holo_LeftArm2",
-          "parent": "holo_armorLeftArm2",
+          "name": "orishan__LeftArm2",
+          "parent": "orishan__armorLeftArm2",
           "pivot": [
             13.78334,
             13.09784,
@@ -2329,8 +2329,8 @@
           ]
         },
         {
-          "name": "holo_armorRightArm2",
-          "parent": "holo_Head",
+          "name": "orishan__armorRightArm2",
+          "parent": "orishan__Head",
           "pivot": [
             12.499,
             13.05663,
@@ -2338,8 +2338,8 @@
           ]
         },
         {
-          "name": "holo_RightArm2",
-          "parent": "holo_armorRightArm2",
+          "name": "orishan__RightArm2",
+          "parent": "orishan__armorRightArm2",
           "pivot": [
             12.56666,
             13.05034,
@@ -2428,8 +2428,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftLeg2",
-          "parent": "holo_Head",
+          "name": "orishan__armorLeftLeg2",
+          "parent": "orishan__Head",
           "pivot": [
             13.12591,
             11.64445,
@@ -2437,8 +2437,8 @@
           ]
         },
         {
-          "name": "holo_LeftLeg2",
-          "parent": "holo_armorLeftLeg2",
+          "name": "orishan__LeftLeg2",
+          "parent": "orishan__armorLeftLeg2",
           "pivot": [
             13.42263,
             11.96118,
@@ -2616,8 +2616,8 @@
           ]
         },
         {
-          "name": "holo_armorRightLeg2",
-          "parent": "holo_Head",
+          "name": "orishan__armorRightLeg2",
+          "parent": "orishan__Head",
           "pivot": [
             12.97409,
             11.64445,
@@ -2625,8 +2625,8 @@
           ]
         },
         {
-          "name": "holo_RightLeg2",
-          "parent": "holo_armorRightLeg2",
+          "name": "orishan__RightLeg2",
+          "parent": "orishan__armorRightLeg2",
           "pivot": [
             12.67737,
             11.96118,

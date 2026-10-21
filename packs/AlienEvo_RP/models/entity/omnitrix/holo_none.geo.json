@@ -9,7 +9,7 @@
       },
       "bones": [
         {
-          "name": "hologram",
+          "name": "holo_none",
           "pivot": [
             0,
             0,

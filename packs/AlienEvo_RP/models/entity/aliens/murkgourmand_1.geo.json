@@ -29,7 +29,7 @@
           ]
         },
         {
-          "name": "BaseHead",
+          "name": "BaseHead_p1",
           "parent": "head",
           "pivot": [
             9.54177,
@@ -38,7 +38,7 @@
           ]
         },
         {
-          "name": "Jaw",
+          "name": "Jaw_p1",
           "parent": "head",
           "pivot": [
             -3.7095,
@@ -90,7 +90,7 @@
           ]
         },
         {
-          "name": "LeftArm",
+          "name": "LeftArm_inner",
           "parent": "leftArm",
           "pivot": [
             7.3334,
@@ -112,7 +112,7 @@
           ]
         },
         {
-          "name": "RightArm",
+          "name": "RightArm_inner",
           "parent": "rightArm",
           "pivot": [
             -4.8334,

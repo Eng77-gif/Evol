@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "full_body",
+          "name": "splixson__full_body",
           "pivot": [
             0,
             0.33333,
@@ -24,8 +24,8 @@
           ]
         },
         {
-          "name": "head",
-          "parent": "full_body",
+          "name": "splixson__head",
+          "parent": "splixson__full_body",
           "pivot": [
             0,
             23,
@@ -33,8 +33,8 @@
           ]
         },
         {
-          "name": "head_inner",
-          "parent": "head",
+          "name": "splixson__head_inner",
+          "parent": "splixson__head",
           "pivot": [
             0,
             23,
@@ -97,8 +97,8 @@
           ]
         },
         {
-          "name": "headfins",
-          "parent": "head_inner",
+          "name": "splixson__headfins",
+          "parent": "splixson__head_inner",
           "pivot": [
             0,
             28.7283,
@@ -271,8 +271,8 @@
           ]
         },
         {
-          "name": "whiskers",
-          "parent": "head_inner",
+          "name": "splixson__whiskers",
+          "parent": "splixson__head_inner",
           "pivot": [
             0,
             24.2446,
@@ -395,8 +395,8 @@
           ]
         },
         {
-          "name": "eyes",
-          "parent": "head_inner",
+          "name": "splixson__eyes",
+          "parent": "splixson__head_inner",
           "pivot": [
             0,
             25.71285,
@@ -409,8 +409,8 @@
           ]
         },
         {
-          "name": "right",
-          "parent": "eyes",
+          "name": "splixson__right",
+          "parent": "splixson__eyes",
           "pivot": [
             -2.46985,
             25.71285,
@@ -475,8 +475,8 @@
           ]
         },
         {
-          "name": "left",
-          "parent": "eyes",
+          "name": "splixson__left",
+          "parent": "splixson__eyes",
           "pivot": [
             2.46985,
             25.71285,
@@ -540,8 +540,8 @@
           ]
         },
         {
-          "name": "body",
-          "parent": "full_body",
+          "name": "splixson__body",
+          "parent": "splixson__full_body",
           "pivot": [
             0,
             23,
@@ -549,8 +549,8 @@
           ]
         },
         {
-          "name": "body_inner",
-          "parent": "body",
+          "name": "splixson__body_inner",
+          "parent": "splixson__body",
           "pivot": [
             0,
             23,
@@ -558,8 +558,8 @@
           ]
         },
         {
-          "name": "neck",
-          "parent": "body_inner",
+          "name": "splixson__neck",
+          "parent": "splixson__body_inner",
           "pivot": [
             0,
             20,
@@ -602,8 +602,8 @@
           ]
         },
         {
-          "name": "top",
-          "parent": "body_inner",
+          "name": "splixson__top",
+          "parent": "splixson__body_inner",
           "pivot": [
             0,
             13,
@@ -646,8 +646,8 @@
           ]
         },
         {
-          "name": "bottom",
-          "parent": "body_inner",
+          "name": "splixson__bottom",
+          "parent": "splixson__body_inner",
           "pivot": [
             0.01005,
             4.51127,
@@ -768,8 +768,8 @@
           ]
         },
         {
-          "name": "leftArm",
-          "parent": "full_body",
+          "name": "splixson__leftArm",
+          "parent": "splixson__full_body",
           "pivot": [
             4,
             18,
@@ -777,8 +777,8 @@
           ]
         },
         {
-          "name": "Left_Arm",
-          "parent": "leftArm",
+          "name": "splixson__Left_Arm",
+          "parent": "splixson__leftArm",
           "pivot": [
             4,
             18,
@@ -786,8 +786,8 @@
           ]
         },
         {
-          "name": "L_arm",
-          "parent": "Left_Arm",
+          "name": "splixson__L_arm",
+          "parent": "splixson__Left_Arm",
           "pivot": [
             4,
             18,
@@ -876,8 +876,8 @@
           ]
         },
         {
-          "name": "L_arm2",
-          "parent": "Left_Arm",
+          "name": "splixson__L_arm2",
+          "parent": "splixson__Left_Arm",
           "pivot": [
             6,
             14,
@@ -966,8 +966,8 @@
           ]
         },
         {
-          "name": "L_finger",
-          "parent": "L_arm2",
+          "name": "splixson__L_finger",
+          "parent": "splixson__L_arm2",
           "pivot": [
             6,
             14,
@@ -1004,8 +1004,8 @@
           ]
         },
         {
-          "name": "L_thumb",
-          "parent": "L_arm2",
+          "name": "splixson__L_thumb",
+          "parent": "splixson__L_arm2",
           "pivot": [
             6,
             14,
@@ -1031,8 +1031,8 @@
           ]
         },
         {
-          "name": "rightArm",
-          "parent": "full_body",
+          "name": "splixson__rightArm",
+          "parent": "splixson__full_body",
           "pivot": [
             -4,
             18,
@@ -1040,8 +1040,8 @@
           ]
         },
         {
-          "name": "Right_Arm",
-          "parent": "rightArm",
+          "name": "splixson__Right_Arm",
+          "parent": "splixson__rightArm",
           "pivot": [
             -4,
             18,
@@ -1049,8 +1049,8 @@
           ]
         },
         {
-          "name": "R_arm",
-          "parent": "Right_Arm",
+          "name": "splixson__R_arm",
+          "parent": "splixson__Right_Arm",
           "pivot": [
             -4,
             18,
@@ -1139,8 +1139,8 @@
           ]
         },
         {
-          "name": "R_arm2",
-          "parent": "Right_Arm",
+          "name": "splixson__R_arm2",
+          "parent": "splixson__Right_Arm",
           "pivot": [
             -6,
             14,
@@ -1229,8 +1229,8 @@
           ]
         },
         {
-          "name": "R_finger",
-          "parent": "R_arm2",
+          "name": "splixson__R_finger",
+          "parent": "splixson__R_arm2",
           "pivot": [
             -6,
             14,
@@ -1267,8 +1267,8 @@
           ]
         },
         {
-          "name": "R_thumb",
-          "parent": "R_arm2",
+          "name": "splixson__R_thumb",
+          "parent": "splixson__R_arm2",
           "pivot": [
             -7.93236,
             4.51323,
@@ -1294,8 +1294,8 @@
           ]
         },
         {
-          "name": "leftLeg",
-          "parent": "full_body",
+          "name": "splixson__leftLeg",
+          "parent": "splixson__full_body",
           "pivot": [
             2.5,
             5,
@@ -1303,8 +1303,8 @@
           ]
         },
         {
-          "name": "L_leg",
-          "parent": "leftLeg",
+          "name": "splixson__L_leg",
+          "parent": "splixson__leftLeg",
           "pivot": [
             2.5,
             5,
@@ -1346,8 +1346,8 @@
           ]
         },
         {
-          "name": "rightLeg",
-          "parent": "full_body",
+          "name": "splixson__rightLeg",
+          "parent": "splixson__full_body",
           "pivot": [
             -2.5,
             5,
@@ -1355,8 +1355,8 @@
           ]
         },
         {
-          "name": "R_leg",
-          "parent": "rightLeg",
+          "name": "splixson__R_leg",
+          "parent": "splixson__rightLeg",
           "pivot": [
             -2.5,
             5,

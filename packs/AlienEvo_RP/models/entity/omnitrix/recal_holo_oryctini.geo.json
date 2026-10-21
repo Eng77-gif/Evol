@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_armorBody3",
+          "name": "oryctini__armorBody3",
           "parent": "hologram",
           "pivot": [
             11.47445,
@@ -383,8 +383,8 @@
           ]
         },
         {
-          "name": "holo_we",
-          "parent": "holo_armorBody3",
+          "name": "oryctini__we",
+          "parent": "oryctini__armorBody3",
           "pivot": [
             12.89779,
             16.81711,
@@ -563,8 +563,8 @@
           ]
         },
         {
-          "name": "holo_qwer",
-          "parent": "holo_armorBody3",
+          "name": "oryctini__qwer",
+          "parent": "oryctini__armorBody3",
           "pivot": [
             12.89779,
             17.07058,
@@ -743,8 +743,8 @@
           ]
         },
         {
-          "name": "holo_armorHead2",
-          "parent": "holo_qwer",
+          "name": "oryctini__armorHead2",
+          "parent": "oryctini__qwer",
           "pivot": [
             12.89766,
             17.82404,
@@ -752,8 +752,8 @@
           ]
         },
         {
-          "name": "holo_head3",
-          "parent": "holo_armorHead2",
+          "name": "oryctini__head3",
+          "parent": "oryctini__armorHead2",
           "pivot": [
             12.89766,
             17.82404,
@@ -1270,8 +1270,8 @@
           ]
         },
         {
-          "name": "holo_weq",
-          "parent": "holo_armorBody3",
+          "name": "oryctini__weq",
+          "parent": "oryctini__armorBody3",
           "pivot": [
             12.89779,
             14.75566,
@@ -1516,8 +1516,8 @@
           ]
         },
         {
-          "name": "holo_wr",
-          "parent": "holo_armorBody3",
+          "name": "oryctini__wr",
+          "parent": "oryctini__armorBody3",
           "pivot": [
             12.51737,
             15.49165,
@@ -1859,8 +1859,8 @@
           ]
         },
         {
-          "name": "holo_overlay3",
-          "parent": "holo_wr",
+          "name": "oryctini__overlay3",
+          "parent": "oryctini__wr",
           "pivot": [
             12.7111,
             15.22685,
@@ -2030,8 +2030,8 @@
           ]
         },
         {
-          "name": "holo_werq",
-          "parent": "holo_armorBody3",
+          "name": "oryctini__werq",
+          "parent": "oryctini__armorBody3",
           "pivot": [
             13.25335,
             15.49165,
@@ -2373,8 +2373,8 @@
           ]
         },
         {
-          "name": "holo_overlay2",
-          "parent": "holo_werq",
+          "name": "oryctini__overlay2",
+          "parent": "oryctini__werq",
           "pivot": [
             13.15053,
             15.22288,
@@ -2544,8 +2544,8 @@
           ]
         },
         {
-          "name": "holo_fgwse",
-          "parent": "holo_armorBody3",
+          "name": "oryctini__fgwse",
+          "parent": "oryctini__armorBody3",
           "pivot": [
             13.62533,
             16.9383,
@@ -2723,8 +2723,8 @@
           ]
         },
         {
-          "name": "holo_lowerLeftArm",
-          "parent": "holo_fgwse",
+          "name": "oryctini__lowerLeftArm",
+          "parent": "oryctini__fgwse",
           "pivot": [
             13.43251,
             16.89327,
@@ -3066,8 +3066,8 @@
           ]
         },
         {
-          "name": "holo_spikes2",
-          "parent": "holo_lowerLeftArm",
+          "name": "oryctini__spikes2",
+          "parent": "oryctini__lowerLeftArm",
           "pivot": [
             13.43251,
             16.89327,
@@ -3247,8 +3247,8 @@
           ]
         },
         {
-          "name": "holo_overlay7",
-          "parent": "holo_lowerLeftArm",
+          "name": "oryctini__overlay7",
+          "parent": "oryctini__lowerLeftArm",
           "pivot": [
             13.43251,
             16.89327,
@@ -3418,8 +3418,8 @@
           ]
         },
         {
-          "name": "holo_overlay6",
-          "parent": "holo_fgwse",
+          "name": "oryctini__overlay6",
+          "parent": "oryctini__fgwse",
           "pivot": [
             13.30216,
             17.20993,
@@ -3584,8 +3584,8 @@
           ]
         },
         {
-          "name": "holo_qwe",
-          "parent": "holo_armorBody3",
+          "name": "oryctini__qwe",
+          "parent": "oryctini__armorBody3",
           "pivot": [
             12.17024,
             16.9383,
@@ -3763,8 +3763,8 @@
           ]
         },
         {
-          "name": "holo_lowerRightArm",
-          "parent": "holo_qwe",
+          "name": "oryctini__lowerRightArm",
+          "parent": "oryctini__qwe",
           "pivot": [
             12.43469,
             16.86863,
@@ -4106,8 +4106,8 @@
           ]
         },
         {
-          "name": "holo_spikes",
-          "parent": "holo_lowerRightArm",
+          "name": "oryctini__spikes",
+          "parent": "oryctini__lowerRightArm",
           "pivot": [
             12.43469,
             16.86863,
@@ -4287,8 +4287,8 @@
           ]
         },
         {
-          "name": "holo_overlay5",
-          "parent": "holo_lowerRightArm",
+          "name": "oryctini__overlay5",
+          "parent": "oryctini__lowerRightArm",
           "pivot": [
             12.43469,
             16.86863,
@@ -4458,8 +4458,8 @@
           ]
         },
         {
-          "name": "holo_overlay4",
-          "parent": "holo_qwe",
+          "name": "oryctini__overlay4",
+          "parent": "oryctini__qwe",
           "pivot": [
             12.49342,
             17.20993,

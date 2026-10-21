@@ -6,7 +6,7 @@
       "materials": { "default": "entity_alphatest" },
       "textures": { "default": "textures/entity/boulder" },
       "geometry": { "default": "geometry.alienevo.boulder" },
-      "render_controllers": [],
+      "render_controllers": ["controller.render.alienevo.boulder"],
       "scripts": { "scale": "0.0" }
     }
   }

@@ -28,6 +28,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from animations import build_alien_animations
 from icons import render_icon
 from layers import VFS, resolve
+import sanitize
 import structures
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -231,11 +232,18 @@ def convert_geo(src, identifier, renames=None):
     desc["identifier"] = identifier
     names = {b["name"] for b in geo.get("bones", [])}
     rename = dict(BONE_MAP)
+    # Bedrock bone names are case-insensitive: GeckoLib "Head" collides with
+    # the armour bone renamed to "head".
+    lower = {n.lower() for n in names}
     for old in list(names):
-        if old in BONE_MAP.values() and any(k in names for k, v in BONE_MAP.items() if v == old):
+        if old in BONE_MAP:
+            continue
+        target = next((v for k, v in BONE_MAP.items() if v.lower() == old.lower() and k in names), None)
+        if target is not None:
             new = old + "_inner"
-            while new in names:
+            while new.lower() in lower:
                 new += "_"
+            lower.add(new.lower())
             rename[old] = new
     if renames is not None:
         renames.update({k: v for k, v in rename.items() if k not in BONE_MAP})
@@ -581,7 +589,7 @@ def build_recal(vfs, controllers, fixed):
         rcs.append({rc: cond})
     # One hologram geometry per alien (index = HOLO_KEYS order, like alienevo:sel).
     empty = {"format_version": "1.12.0", "minecraft:geometry": [{"description": {
-        "identifier": "geometry.alienevo.holo_none", "texture_width": 16, "texture_height": 16}, "bones": [{"name": "hologram", "pivot": [0, 0, 0]}]}]}
+        "identifier": "geometry.alienevo.holo_none", "texture_width": 16, "texture_height": 16}, "bones": [{"name": "holo_none", "pivot": [0, 0, 0]}]}]}
     write_json(os.path.join(geo_dir, "holo_none.geo.json"), empty)
     geometry["holo_none"] = "geometry.alienevo.holo_none"
     textures["holo_none"] = "textures/entity/omnitrix/slots/blank"
@@ -600,10 +608,11 @@ def build_recal(vfs, controllers, fixed):
         # player's bones (Bedrock matches attachable bones by name).
         keep = set(BONE_MAP) | {"recal_omnitrix", "core", "hologram"}
         for b in geo["minecraft:geometry"][0]["bones"]:
+            b.pop("locators", None)
             if b["name"] not in keep:
-                b["name"] = "holo_" + b["name"]
+                b["name"] = f"{alien['key']}__{b['name']}"
             if b.get("parent") and b["parent"] not in keep:
-                b["parent"] = "holo_" + b["parent"]
+                b["parent"] = f"{alien['key']}__{b['parent']}"
         hid = f"geometry.alienevo.recal_holo_{alien['key']}"
         write_json(os.path.join(geo_dir, f"recal_holo_{alien['key']}.geo.json"), convert_geo(geo, hid))
         save_png(vfs.image(tex), os.path.join(tex_dir, f"recal_holo_{alien['key']}.png"))
@@ -1014,6 +1023,12 @@ def build_hologram(lang):
         for b in g["bones"]:
             if b["name"] in hidden:
                 b.pop("cubes", None)
+        # One skeleton per alien: the client entity merges all its geometries.
+        for b in g["bones"]:
+            b.pop("locators", None)
+            b["name"] = f"{akey}__{b['name']}"
+            if b.get("parent"):
+                b["parent"] = f"{akey}__{b['parent']}"
         gid = f"geometry.alienevo.holo_{akey}"
         g["description"]["identifier"] = gid
         write_json(os.path.join(geo_dir, f"{akey}.geo.json"), geo)
@@ -1951,6 +1966,7 @@ def main():
     for line in structures.build(vfs):
         print("structure", line)
     write_lang(lang)
+    print("sanitize: renamed bones", sanitize.fix_geometries(RP), "| fixed animation files", sanitize.fix_animations(RP))
     package()
 
 

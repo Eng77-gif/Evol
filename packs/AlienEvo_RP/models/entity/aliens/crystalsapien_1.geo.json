@@ -32,7 +32,7 @@
           ]
         },
         {
-          "name": "Body",
+          "name": "Body_inner",
           "parent": "body",
           "pivot": [
             0,

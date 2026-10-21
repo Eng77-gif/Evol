@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "sonorosian_ov__head",
           "pivot": [
             0,
             23.5,
@@ -397,8 +397,8 @@
           ]
         },
         {
-          "name": "eyes",
-          "parent": "head",
+          "name": "sonorosian_ov__eyes",
+          "parent": "sonorosian_ov__head",
           "pivot": [
             -4.5,
             29.3,
@@ -544,8 +544,8 @@
           ]
         },
         {
-          "name": "scream",
-          "parent": "head",
+          "name": "sonorosian_ov__scream",
+          "parent": "sonorosian_ov__head",
           "pivot": [
             0,
             23.5,
@@ -579,8 +579,8 @@
           ]
         },
         {
-          "name": "bone",
-          "parent": "scream",
+          "name": "sonorosian_ov__bone",
+          "parent": "sonorosian_ov__scream",
           "pivot": [
             4.5,
             32,
@@ -726,8 +726,8 @@
           ]
         },
         {
-          "name": "cables",
-          "parent": "head",
+          "name": "sonorosian_ov__cables",
+          "parent": "sonorosian_ov__head",
           "pivot": [
             0,
             31,
@@ -1028,7 +1028,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "sonorosian_ov__body",
           "pivot": [
             0,
             24,
@@ -1343,7 +1343,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "sonorosian_ov__rightArm",
           "pivot": [
             -3,
             20,
@@ -1351,8 +1351,8 @@
           ]
         },
         {
-          "name": "arm",
-          "parent": "rightArm",
+          "name": "sonorosian_ov__arm",
+          "parent": "sonorosian_ov__rightArm",
           "pivot": [
             -5.3,
             23.65,
@@ -1850,7 +1850,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "sonorosian_ov__leftArm",
           "pivot": [
             3,
             20,
@@ -1858,8 +1858,8 @@
           ]
         },
         {
-          "name": "arm2",
-          "parent": "leftArm",
+          "name": "sonorosian_ov__arm2",
+          "parent": "sonorosian_ov__leftArm",
           "pivot": [
             5.3,
             23.65,
@@ -2357,7 +2357,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "sonorosian_ov__rightLeg",
           "pivot": [
             -1.8,
             11.5,
@@ -2365,8 +2365,8 @@
           ]
         },
         {
-          "name": "leg",
-          "parent": "rightLeg",
+          "name": "sonorosian_ov__leg",
+          "parent": "sonorosian_ov__rightLeg",
           "pivot": [
             -1.65,
             14,
@@ -2680,7 +2680,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "sonorosian_ov__leftLeg",
           "pivot": [
             1.8,
             11.5,
@@ -2688,8 +2688,8 @@
           ]
         },
         {
-          "name": "leg2",
-          "parent": "leftLeg",
+          "name": "sonorosian_ov__leg2",
+          "parent": "sonorosian_ov__leftLeg",
           "pivot": [
             1.65,
             14,
@@ -3003,22 +3003,22 @@
           ]
         },
         {
-          "name": "armorLeftBoot",
+          "name": "sonorosian_ov__armorLeftBoot",
           "pivot": [
             0,
             0,
             0
           ],
-          "parent": "leftLeg"
+          "parent": "sonorosian_ov__leftLeg"
         },
         {
-          "name": "armorRightBoot",
+          "name": "sonorosian_ov__armorRightBoot",
           "pivot": [
             0,
             0,
             0
           ],
-          "parent": "rightLeg"
+          "parent": "sonorosian_ov__rightLeg"
         }
       ]
     }

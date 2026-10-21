@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "pyronite__head",
           "pivot": [
             0,
             29.25,
@@ -24,8 +24,8 @@
           ]
         },
         {
-          "name": "flames",
-          "parent": "head",
+          "name": "pyronite__flames",
+          "parent": "pyronite__head",
           "pivot": [
             0,
             32.66092,
@@ -74,8 +74,8 @@
           ]
         },
         {
-          "name": "fireleft",
-          "parent": "flames",
+          "name": "pyronite__fireleft",
+          "parent": "pyronite__flames",
           "pivot": [
             0,
             33.11983,
@@ -158,8 +158,8 @@
           ]
         },
         {
-          "name": "fireright",
-          "parent": "flames",
+          "name": "pyronite__fireright",
+          "parent": "pyronite__flames",
           "pivot": [
             0,
             33.11983,
@@ -242,8 +242,8 @@
           ]
         },
         {
-          "name": "head_inner",
-          "parent": "head",
+          "name": "pyronite__head_inner",
+          "parent": "pyronite__head",
           "pivot": [
             0,
             31.12187,
@@ -417,8 +417,8 @@
           ]
         },
         {
-          "name": "mask",
-          "parent": "head_inner",
+          "name": "pyronite__mask",
+          "parent": "pyronite__head_inner",
           "pivot": [
             0,
             32.32628,
@@ -566,8 +566,8 @@
           ]
         },
         {
-          "name": "jaw",
-          "parent": "mask",
+          "name": "pyronite__jaw",
+          "parent": "pyronite__mask",
           "pivot": [
             0,
             29.5096,
@@ -645,7 +645,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "pyronite__body",
           "pivot": [
             0,
             27,
@@ -785,8 +785,8 @@
           ]
         },
         {
-          "name": "armorBodyHat",
-          "parent": "body",
+          "name": "pyronite__armorBodyHat",
+          "parent": "pyronite__body",
           "pivot": [
             0,
             27,
@@ -896,8 +896,8 @@
           ]
         },
         {
-          "name": "chest2",
-          "parent": "armorBodyHat",
+          "name": "pyronite__chest2",
+          "parent": "pyronite__armorBodyHat",
           "pivot": [
             0,
             25.00437,
@@ -987,8 +987,8 @@
           ]
         },
         {
-          "name": "neck2",
-          "parent": "armorBodyHat",
+          "name": "pyronite__neck2",
+          "parent": "pyronite__armorBodyHat",
           "pivot": [
             0.135,
             26.88602,
@@ -1077,8 +1077,8 @@
           ]
         },
         {
-          "name": "chest",
-          "parent": "body",
+          "name": "pyronite__chest",
+          "parent": "pyronite__body",
           "pivot": [
             0,
             25.00437,
@@ -1168,8 +1168,8 @@
           ]
         },
         {
-          "name": "neck",
-          "parent": "body",
+          "name": "pyronite__neck",
+          "parent": "pyronite__body",
           "pivot": [
             0.135,
             27.18,
@@ -1259,7 +1259,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "pyronite__leftArm",
           "pivot": [
             4.05,
             24.975,
@@ -1267,8 +1267,8 @@
           ]
         },
         {
-          "name": "leftarm_r",
-          "parent": "leftArm",
+          "name": "pyronite__leftarm_r",
+          "parent": "pyronite__leftArm",
           "pivot": [
             3.825,
             25.875,
@@ -1281,8 +1281,8 @@
           ]
         },
         {
-          "name": "leftarm_upper",
-          "parent": "leftarm_r",
+          "name": "pyronite__leftarm_upper",
+          "parent": "pyronite__leftarm_r",
           "pivot": [
             3.6,
             25.875,
@@ -1447,8 +1447,8 @@
           ]
         },
         {
-          "name": "leftarm_lower",
-          "parent": "leftarm_upper",
+          "name": "pyronite__leftarm_lower",
+          "parent": "pyronite__leftarm_upper",
           "pivot": [
             4.3555,
             18.30375,
@@ -1603,8 +1603,8 @@
           ]
         },
         {
-          "name": "leftarm_hand",
-          "parent": "leftarm_lower",
+          "name": "pyronite__leftarm_hand",
+          "parent": "pyronite__leftarm_lower",
           "pivot": [
             4.49153,
             12.51229,
@@ -1834,7 +1834,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "pyronite__rightArm",
           "pivot": [
             -4.05,
             24.975,
@@ -1842,8 +1842,8 @@
           ]
         },
         {
-          "name": "rightarm_r",
-          "parent": "rightArm",
+          "name": "pyronite__rightarm_r",
+          "parent": "pyronite__rightArm",
           "pivot": [
             -3.825,
             25.875,
@@ -1856,8 +1856,8 @@
           ]
         },
         {
-          "name": "rightarm_upper",
-          "parent": "rightarm_r",
+          "name": "pyronite__rightarm_upper",
+          "parent": "pyronite__rightarm_r",
           "pivot": [
             -3.6,
             25.875,
@@ -2022,8 +2022,8 @@
           ]
         },
         {
-          "name": "rightarm_lower",
-          "parent": "rightarm_upper",
+          "name": "pyronite__rightarm_lower",
+          "parent": "pyronite__rightarm_upper",
           "pivot": [
             -4.3555,
             18.30375,
@@ -2178,8 +2178,8 @@
           ]
         },
         {
-          "name": "rightarm_hand",
-          "parent": "rightarm_lower",
+          "name": "pyronite__rightarm_hand",
+          "parent": "pyronite__rightarm_lower",
           "pivot": [
             -4.49153,
             12.51229,
@@ -2409,7 +2409,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "pyronite__leftLeg",
           "pivot": [
             1.035,
             14.85,
@@ -2577,8 +2577,8 @@
           ]
         },
         {
-          "name": "leftleg_r",
-          "parent": "leftLeg",
+          "name": "pyronite__leftleg_r",
+          "parent": "pyronite__leftLeg",
           "pivot": [
             1.125,
             18.675,
@@ -2591,8 +2591,8 @@
           ]
         },
         {
-          "name": "leftleg_upper",
-          "parent": "leftleg_r",
+          "name": "pyronite__leftleg_upper",
+          "parent": "pyronite__leftleg_r",
           "pivot": [
             1.125,
             18.675,
@@ -2736,8 +2736,8 @@
           ]
         },
         {
-          "name": "leftleg_lower",
-          "parent": "leftleg_r",
+          "name": "pyronite__leftleg_lower",
+          "parent": "pyronite__leftleg_r",
           "pivot": [
             1.45049,
             11.26753,
@@ -2951,7 +2951,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "pyronite__rightLeg",
           "pivot": [
             -1.035,
             14.85,
@@ -3119,8 +3119,8 @@
           ]
         },
         {
-          "name": "rightleg_r",
-          "parent": "rightLeg",
+          "name": "pyronite__rightleg_r",
+          "parent": "pyronite__rightLeg",
           "pivot": [
             -1.125,
             18.675,
@@ -3133,8 +3133,8 @@
           ]
         },
         {
-          "name": "rightleg_upper",
-          "parent": "rightleg_r",
+          "name": "pyronite__rightleg_upper",
+          "parent": "pyronite__rightleg_r",
           "pivot": [
             -1.125,
             18.675,
@@ -3288,8 +3288,8 @@
           ]
         },
         {
-          "name": "rightleg_lower",
-          "parent": "rightleg_r",
+          "name": "pyronite__rightleg_lower",
+          "parent": "pyronite__rightleg_r",
           "pivot": [
             -1.45048,
             11.26753,

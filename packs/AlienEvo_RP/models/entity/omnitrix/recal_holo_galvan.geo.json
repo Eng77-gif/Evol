@@ -91,7 +91,7 @@
           ]
         },
         {
-          "name": "holo_greymatter",
+          "name": "galvan__greymatter",
           "parent": "hologram",
           "pivot": [
             9.75,
@@ -105,8 +105,8 @@
           ]
         },
         {
-          "name": "holo_Head2",
-          "parent": "holo_greymatter",
+          "name": "galvan__Head2",
+          "parent": "galvan__greymatter",
           "pivot": [
             9.75,
             16.70075,
@@ -191,8 +191,8 @@
           ]
         },
         {
-          "name": "holo_eye4",
-          "parent": "holo_Head2",
+          "name": "galvan__eye4",
+          "parent": "galvan__Head2",
           "pivot": [
             10.05887,
             17.13425,
@@ -380,8 +380,8 @@
           ]
         },
         {
-          "name": "holo_eye2",
-          "parent": "holo_Head2",
+          "name": "galvan__eye2",
+          "parent": "galvan__Head2",
           "pivot": [
             9.44114,
             17.13425,
@@ -569,8 +569,8 @@
           ]
         },
         {
-          "name": "holo_RightArm2",
-          "parent": "holo_greymatter",
+          "name": "galvan__RightArm2",
+          "parent": "galvan__greymatter",
           "pivot": [
             9.42488,
             16.484,
@@ -814,8 +814,8 @@
           ]
         },
         {
-          "name": "holo_LeftArm2",
-          "parent": "holo_greymatter",
+          "name": "galvan__LeftArm2",
+          "parent": "galvan__greymatter",
           "pivot": [
             10.07513,
             16.484,
@@ -1059,8 +1059,8 @@
           ]
         },
         {
-          "name": "holo_RightLeg2",
-          "parent": "holo_greymatter",
+          "name": "galvan__RightLeg2",
+          "parent": "galvan__greymatter",
           "pivot": [
             9.59828,
             15.7308,
@@ -1230,8 +1230,8 @@
           ]
         },
         {
-          "name": "holo_LeftLeg2",
-          "parent": "holo_greymatter",
+          "name": "galvan__LeftLeg2",
+          "parent": "galvan__greymatter",
           "pivot": [
             9.90172,
             15.7308,
@@ -1401,8 +1401,8 @@
           ]
         },
         {
-          "name": "holo_Body2",
-          "parent": "holo_greymatter",
+          "name": "galvan__Body2",
+          "parent": "galvan__greymatter",
           "pivot": [
             9.75,
             16.70075,

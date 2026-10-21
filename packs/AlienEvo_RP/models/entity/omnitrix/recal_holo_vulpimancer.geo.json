@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_wildmutt",
+          "name": "vulpimancer__wildmutt",
           "parent": "hologram",
           "pivot": [
             10.15,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_RightArm",
-          "parent": "holo_wildmutt",
+          "name": "vulpimancer__RightArm",
+          "parent": "vulpimancer__wildmutt",
           "pivot": [
             9.73862,
             15.88546,
@@ -495,8 +495,8 @@
           ]
         },
         {
-          "name": "holo_Head",
-          "parent": "holo_wildmutt",
+          "name": "vulpimancer__Head",
+          "parent": "vulpimancer__wildmutt",
           "pivot": [
             10.15,
             15.83648,
@@ -504,8 +504,8 @@
           ]
         },
         {
-          "name": "holo_HeadAnim",
-          "parent": "holo_Head",
+          "name": "vulpimancer__HeadAnim",
+          "parent": "vulpimancer__Head",
           "pivot": [
             10.15,
             15.83648,
@@ -599,8 +599,8 @@
           ]
         },
         {
-          "name": "holo_Jaw",
-          "parent": "holo_HeadAnim",
+          "name": "vulpimancer__Jaw",
+          "parent": "vulpimancer__HeadAnim",
           "pivot": [
             10.15,
             15.41081,
@@ -811,8 +811,8 @@
           ]
         },
         {
-          "name": "holo_TopJaw",
-          "parent": "holo_HeadAnim",
+          "name": "vulpimancer__TopJaw",
+          "parent": "vulpimancer__HeadAnim",
           "pivot": [
             10.15,
             15.95817,
@@ -940,8 +940,8 @@
           ]
         },
         {
-          "name": "holo_Body",
-          "parent": "holo_wildmutt",
+          "name": "vulpimancer__Body",
+          "parent": "vulpimancer__wildmutt",
           "pivot": [
             10.15,
             15.83648,
@@ -1354,8 +1354,8 @@
           ]
         },
         {
-          "name": "holo_LeftLeg",
-          "parent": "holo_wildmutt",
+          "name": "vulpimancer__LeftLeg",
+          "parent": "vulpimancer__wildmutt",
           "pivot": [
             10.51432,
             15.6608,
@@ -1671,8 +1671,8 @@
           ]
         },
         {
-          "name": "holo_RightLeg",
-          "parent": "holo_wildmutt",
+          "name": "vulpimancer__RightLeg",
+          "parent": "vulpimancer__wildmutt",
           "pivot": [
             9.78568,
             15.6608,
@@ -1988,8 +1988,8 @@
           ]
         },
         {
-          "name": "holo_LeftArm",
-          "parent": "holo_wildmutt",
+          "name": "vulpimancer__LeftArm",
+          "parent": "vulpimancer__wildmutt",
           "pivot": [
             10.56138,
             15.88546,

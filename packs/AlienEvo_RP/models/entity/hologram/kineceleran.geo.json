@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "kineceleran__head",
           "pivot": [
             0,
             24.75,
@@ -94,8 +94,8 @@
           ]
         },
         {
-          "name": "head_scale",
-          "parent": "head",
+          "name": "kineceleran__head_scale",
+          "parent": "kineceleran__head",
           "pivot": [
             0,
             27.01185,
@@ -497,8 +497,8 @@
           ]
         },
         {
-          "name": "MASK",
-          "parent": "head_scale",
+          "name": "kineceleran__MASK",
+          "parent": "kineceleran__head_scale",
           "pivot": [
             0,
             28.51185,
@@ -576,8 +576,8 @@
           ]
         },
         {
-          "name": "eyes_middle",
-          "parent": "MASK",
+          "name": "kineceleran__eyes_middle",
+          "parent": "kineceleran__MASK",
           "pivot": [
             -0.65831,
             28.01185,
@@ -611,8 +611,8 @@
           ]
         },
         {
-          "name": "eye_right",
-          "parent": "eyes_middle",
+          "name": "kineceleran__eye_right",
+          "parent": "kineceleran__eyes_middle",
           "pivot": [
             -1.07394,
             27.59896,
@@ -724,8 +724,8 @@
           ]
         },
         {
-          "name": "eye_left",
-          "parent": "eyes_middle",
+          "name": "kineceleran__eye_left",
+          "parent": "kineceleran__eyes_middle",
           "pivot": [
             1.07394,
             27.59896,
@@ -837,8 +837,8 @@
           ]
         },
         {
-          "name": "face",
-          "parent": "head",
+          "name": "kineceleran__face",
+          "parent": "kineceleran__head",
           "pivot": [
             0,
             26.25,
@@ -940,8 +940,8 @@
           ]
         },
         {
-          "name": "eye",
-          "parent": "face",
+          "name": "kineceleran__eye",
+          "parent": "kineceleran__face",
           "pivot": [
             1,
             26.5,
@@ -1019,8 +1019,8 @@
           ]
         },
         {
-          "name": "eye2",
-          "parent": "face",
+          "name": "kineceleran__eye2",
+          "parent": "kineceleran__face",
           "pivot": [
             -1,
             26.5,
@@ -1098,7 +1098,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "kineceleran__body",
           "pivot": [
             0,
             24.75,
@@ -1425,8 +1425,8 @@
           ]
         },
         {
-          "name": "TAIL_BASE",
-          "parent": "body",
+          "name": "kineceleran__TAIL_BASE",
+          "parent": "kineceleran__body",
           "pivot": [
             0,
             15.81706,
@@ -1520,8 +1520,8 @@
           ]
         },
         {
-          "name": "TAIL_LOWMID",
-          "parent": "TAIL_BASE",
+          "name": "kineceleran__TAIL_LOWMID",
+          "parent": "kineceleran__TAIL_BASE",
           "pivot": [
             0,
             15.98793,
@@ -1616,8 +1616,8 @@
           ]
         },
         {
-          "name": "TAIL_HIGHMID",
-          "parent": "TAIL_LOWMID",
+          "name": "kineceleran__TAIL_HIGHMID",
+          "parent": "kineceleran__TAIL_LOWMID",
           "pivot": [
             0,
             16.12827,
@@ -1712,8 +1712,8 @@
           ]
         },
         {
-          "name": "TAIL_HIGH",
-          "parent": "TAIL_HIGHMID",
+          "name": "kineceleran__TAIL_HIGH",
+          "parent": "kineceleran__TAIL_HIGHMID",
           "pivot": [
             0,
             15.85117,
@@ -1808,7 +1808,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "kineceleran__rightArm",
           "pivot": [
             -3.5,
             21.5,
@@ -1816,8 +1816,8 @@
           ]
         },
         {
-          "name": "armrotate3",
-          "parent": "rightArm",
+          "name": "kineceleran__armrotate3",
+          "parent": "kineceleran__rightArm",
           "pivot": [
             -4.75,
             21.5,
@@ -1917,8 +1917,8 @@
           ]
         },
         {
-          "name": "armrotate4",
-          "parent": "armrotate3",
+          "name": "kineceleran__armrotate4",
+          "parent": "kineceleran__armrotate3",
           "pivot": [
             -6.3809,
             15.17526,
@@ -2339,7 +2339,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "kineceleran__leftArm",
           "pivot": [
             3.5,
             21.5,
@@ -2347,8 +2347,8 @@
           ]
         },
         {
-          "name": "armrotate2",
-          "parent": "leftArm",
+          "name": "kineceleran__armrotate2",
+          "parent": "kineceleran__leftArm",
           "pivot": [
             4.75,
             21.5,
@@ -2448,8 +2448,8 @@
           ]
         },
         {
-          "name": "armrotate5",
-          "parent": "armrotate2",
+          "name": "kineceleran__armrotate5",
+          "parent": "kineceleran__armrotate2",
           "pivot": [
             6.3809,
             15.17526,
@@ -2785,8 +2785,8 @@
           ]
         },
         {
-          "name": "LeftArm",
-          "parent": "armrotate5",
+          "name": "kineceleran__LeftArm_inner",
+          "parent": "kineceleran__armrotate5",
           "pivot": [
             6.17819,
             13.53028,
@@ -2881,7 +2881,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "kineceleran__rightLeg",
           "pivot": [
             -2.15,
             14.25,
@@ -2976,8 +2976,8 @@
           ]
         },
         {
-          "name": "right_leg2",
-          "parent": "rightLeg",
+          "name": "kineceleran__right_leg2",
+          "parent": "kineceleran__rightLeg",
           "pivot": [
             -0.87809,
             14.24832,
@@ -3403,7 +3403,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "kineceleran__leftLeg",
           "pivot": [
             2.15,
             14.25,
@@ -3498,8 +3498,8 @@
           ]
         },
         {
-          "name": "left_leg2",
-          "parent": "leftLeg",
+          "name": "kineceleran__left_leg2",
+          "parent": "kineceleran__leftLeg",
           "pivot": [
             0.87809,
             14.24832,

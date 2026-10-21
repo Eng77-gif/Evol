@@ -2785,7 +2785,7 @@
           ]
         },
         {
-          "name": "LeftArm",
+          "name": "LeftArm_inner",
           "parent": "armrotate5",
           "pivot": [
             6.17819,

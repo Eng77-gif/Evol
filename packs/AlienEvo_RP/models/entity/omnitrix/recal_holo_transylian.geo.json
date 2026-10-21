@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_Head",
+          "name": "transylian__Head",
           "parent": "hologram",
           "pivot": [
             11.77231,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_armorRightArm2",
-          "parent": "holo_Head",
+          "name": "transylian__armorRightArm2",
+          "parent": "transylian__Head",
           "pivot": [
             11.17926,
             15.85561,
@@ -1017,8 +1017,8 @@
           ]
         },
         {
-          "name": "holo_armorHead2",
-          "parent": "holo_Head",
+          "name": "transylian__armorHead2",
+          "parent": "transylian__Head",
           "pivot": [
             11.78187,
             16.15705,
@@ -2087,8 +2087,8 @@
           ]
         },
         {
-          "name": "holo_armorBody2",
-          "parent": "holo_Head",
+          "name": "transylian__armorBody2",
+          "parent": "transylian__Head",
           "pivot": [
             11.78241,
             14.83031,
@@ -2301,8 +2301,8 @@
           ]
         },
         {
-          "name": "holo_chest",
-          "parent": "holo_armorBody2",
+          "name": "transylian__chest",
+          "parent": "transylian__armorBody2",
           "pivot": [
             11.73883,
             15.75255,
@@ -5210,8 +5210,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftArm2",
-          "parent": "holo_Head",
+          "name": "transylian__armorLeftArm2",
+          "parent": "transylian__Head",
           "pivot": [
             12.3884,
             15.85561,
@@ -6076,8 +6076,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftLeg2",
-          "parent": "holo_Head",
+          "name": "transylian__armorLeftLeg2",
+          "parent": "transylian__Head",
           "pivot": [
             11.86714,
             14.80565,
@@ -6257,8 +6257,8 @@
           ]
         },
         {
-          "name": "holo_ll_r",
-          "parent": "holo_armorLeftLeg2",
+          "name": "transylian__ll_r",
+          "parent": "transylian__armorLeftLeg2",
           "pivot": [
             11.95633,
             14.77005,
@@ -6271,8 +6271,8 @@
           ]
         },
         {
-          "name": "holo_calf",
-          "parent": "holo_ll_r",
+          "name": "transylian__calf",
+          "parent": "transylian__ll_r",
           "pivot": [
             11.9925,
             13.947,
@@ -6372,8 +6372,8 @@
           ]
         },
         {
-          "name": "holo_thigh2",
-          "parent": "holo_ll_r",
+          "name": "transylian__thigh2",
+          "parent": "transylian__ll_r",
           "pivot": [
             11.95633,
             14.77005,
@@ -6473,8 +6473,8 @@
           ]
         },
         {
-          "name": "holo_armorRightLeg2",
-          "parent": "holo_Head",
+          "name": "transylian__armorRightLeg2",
+          "parent": "transylian__Head",
           "pivot": [
             11.70053,
             14.80565,
@@ -6654,8 +6654,8 @@
           ]
         },
         {
-          "name": "holo_rl_r",
-          "parent": "holo_armorRightLeg2",
+          "name": "transylian__rl_r",
+          "parent": "transylian__armorRightLeg2",
           "pivot": [
             11.52133,
             14.77005,
@@ -6668,8 +6668,8 @@
           ]
         },
         {
-          "name": "holo_calf2",
-          "parent": "holo_rl_r",
+          "name": "transylian__calf2",
+          "parent": "transylian__rl_r",
           "pivot": [
             11.48517,
             13.947,
@@ -6769,8 +6769,8 @@
           ]
         },
         {
-          "name": "holo_thigh",
-          "parent": "holo_rl_r",
+          "name": "transylian__thigh",
+          "parent": "transylian__rl_r",
           "pivot": [
             11.52133,
             14.77005,

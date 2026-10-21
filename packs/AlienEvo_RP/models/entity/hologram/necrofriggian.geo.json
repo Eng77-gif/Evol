@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "necrofriggian__head",
           "pivot": [
             0,
             32.25,
@@ -249,8 +249,8 @@
           ]
         },
         {
-          "name": "head_CLOAK_shadow",
-          "parent": "head",
+          "name": "necrofriggian__head_CLOAK_shadow",
+          "parent": "necrofriggian__head",
           "pivot": [
             0,
             37.25,
@@ -285,8 +285,8 @@
           ]
         },
         {
-          "name": "head_CLOAK",
-          "parent": "head",
+          "name": "necrofriggian__head_CLOAK",
+          "parent": "necrofriggian__head",
           "pivot": [
             0,
             29.58333,
@@ -368,8 +368,8 @@
           ]
         },
         {
-          "name": "eye1",
-          "parent": "head",
+          "name": "necrofriggian__eye1",
+          "parent": "necrofriggian__head",
           "pivot": [
             -2,
             34.525,
@@ -469,7 +469,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "necrofriggian__body",
           "pivot": [
             0,
             28,
@@ -477,8 +477,8 @@
           ]
         },
         {
-          "name": "body_CLOAK",
-          "parent": "body",
+          "name": "necrofriggian__body_CLOAK",
+          "parent": "necrofriggian__body",
           "pivot": [
             0,
             22.10569,
@@ -692,8 +692,8 @@
           ]
         },
         {
-          "name": "antennae_right",
-          "parent": "body",
+          "name": "necrofriggian__antennae_right",
+          "parent": "necrofriggian__body",
           "pivot": [
             -1,
             28,
@@ -756,8 +756,8 @@
           ]
         },
         {
-          "name": "antennae_mid",
-          "parent": "antennae_right",
+          "name": "necrofriggian__antennae_mid",
+          "parent": "necrofriggian__antennae_right",
           "pivot": [
             -2.00882,
             34.98946,
@@ -820,8 +820,8 @@
           ]
         },
         {
-          "name": "antennae_tip",
-          "parent": "antennae_mid",
+          "name": "necrofriggian__antennae_tip",
+          "parent": "necrofriggian__antennae_mid",
           "pivot": [
             -3.50882,
             42.98946,
@@ -884,8 +884,8 @@
           ]
         },
         {
-          "name": "antennae_left",
-          "parent": "body",
+          "name": "necrofriggian__antennae_left",
+          "parent": "necrofriggian__body",
           "pivot": [
             1,
             28,
@@ -948,8 +948,8 @@
           ]
         },
         {
-          "name": "antennae_mid2",
-          "parent": "antennae_left",
+          "name": "necrofriggian__antennae_mid2",
+          "parent": "necrofriggian__antennae_left",
           "pivot": [
             2.00882,
             34.98946,
@@ -1012,8 +1012,8 @@
           ]
         },
         {
-          "name": "antennae_tip2",
-          "parent": "antennae_mid2",
+          "name": "necrofriggian__antennae_tip2",
+          "parent": "necrofriggian__antennae_mid2",
           "pivot": [
             3.50882,
             42.98946,
@@ -1076,8 +1076,8 @@
           ]
         },
         {
-          "name": "antennae_bridge",
-          "parent": "body",
+          "name": "necrofriggian__antennae_bridge",
+          "parent": "necrofriggian__body",
           "pivot": [
             0,
             23,
@@ -1111,8 +1111,8 @@
           ]
         },
         {
-          "name": "wing_upper_right",
-          "parent": "body",
+          "name": "necrofriggian__wing_upper_right",
+          "parent": "necrofriggian__body",
           "pivot": [
             0,
             25,
@@ -1175,8 +1175,8 @@
           ]
         },
         {
-          "name": "w1_right",
-          "parent": "wing_upper_right",
+          "name": "necrofriggian__w1_right",
+          "parent": "necrofriggian__wing_upper_right",
           "pivot": [
             -6,
             24,
@@ -1234,8 +1234,8 @@
           ]
         },
         {
-          "name": "w2_right",
-          "parent": "w1_right",
+          "name": "necrofriggian__w2_right",
+          "parent": "necrofriggian__w1_right",
           "pivot": [
             -12,
             26,
@@ -1298,8 +1298,8 @@
           ]
         },
         {
-          "name": "w3_right",
-          "parent": "w2_right",
+          "name": "necrofriggian__w3_right",
+          "parent": "necrofriggian__w2_right",
           "pivot": [
             -20,
             30,
@@ -1357,8 +1357,8 @@
           ]
         },
         {
-          "name": "w4_right",
-          "parent": "w3_right",
+          "name": "necrofriggian__w4_right",
+          "parent": "necrofriggian__w3_right",
           "pivot": [
             -28,
             32,
@@ -1421,8 +1421,8 @@
           ]
         },
         {
-          "name": "w5_right",
-          "parent": "w4_right",
+          "name": "necrofriggian__w5_right",
+          "parent": "necrofriggian__w4_right",
           "pivot": [
             -36,
             32.5,
@@ -1480,8 +1480,8 @@
           ]
         },
         {
-          "name": "w6_right",
-          "parent": "w5_right",
+          "name": "necrofriggian__w6_right",
+          "parent": "necrofriggian__w5_right",
           "pivot": [
             -44,
             30,
@@ -1544,8 +1544,8 @@
           ]
         },
         {
-          "name": "w7_right",
-          "parent": "w6_right",
+          "name": "necrofriggian__w7_right",
+          "parent": "necrofriggian__w6_right",
           "pivot": [
             -51,
             32.5,
@@ -1603,8 +1603,8 @@
           ]
         },
         {
-          "name": "wing_upper_left",
-          "parent": "body",
+          "name": "necrofriggian__wing_upper_left",
+          "parent": "necrofriggian__body",
           "pivot": [
             0,
             25,
@@ -1667,8 +1667,8 @@
           ]
         },
         {
-          "name": "w1_left",
-          "parent": "wing_upper_left",
+          "name": "necrofriggian__w1_left",
+          "parent": "necrofriggian__wing_upper_left",
           "pivot": [
             6,
             24,
@@ -1726,8 +1726,8 @@
           ]
         },
         {
-          "name": "w2_left",
-          "parent": "w1_left",
+          "name": "necrofriggian__w2_left",
+          "parent": "necrofriggian__w1_left",
           "pivot": [
             12,
             26,
@@ -1790,8 +1790,8 @@
           ]
         },
         {
-          "name": "w3_left",
-          "parent": "w2_left",
+          "name": "necrofriggian__w3_left",
+          "parent": "necrofriggian__w2_left",
           "pivot": [
             20,
             30,
@@ -1849,8 +1849,8 @@
           ]
         },
         {
-          "name": "w4_left",
-          "parent": "w3_left",
+          "name": "necrofriggian__w4_left",
+          "parent": "necrofriggian__w3_left",
           "pivot": [
             28,
             32,
@@ -1913,8 +1913,8 @@
           ]
         },
         {
-          "name": "w5_left",
-          "parent": "w4_left",
+          "name": "necrofriggian__w5_left",
+          "parent": "necrofriggian__w4_left",
           "pivot": [
             36,
             32.5,
@@ -1972,8 +1972,8 @@
           ]
         },
         {
-          "name": "w6_left",
-          "parent": "w5_left",
+          "name": "necrofriggian__w6_left",
+          "parent": "necrofriggian__w5_left",
           "pivot": [
             44,
             30,
@@ -2036,8 +2036,8 @@
           ]
         },
         {
-          "name": "w7_left",
-          "parent": "w6_left",
+          "name": "necrofriggian__w7_left",
+          "parent": "necrofriggian__w6_left",
           "pivot": [
             51,
             32.5,
@@ -2095,8 +2095,8 @@
           ]
         },
         {
-          "name": "wing_lower_right",
-          "parent": "body",
+          "name": "necrofriggian__wing_lower_right",
+          "parent": "necrofriggian__body",
           "pivot": [
             0,
             16,
@@ -2159,8 +2159,8 @@
           ]
         },
         {
-          "name": "wl1_right",
-          "parent": "wing_lower_right",
+          "name": "necrofriggian__wl1_right",
+          "parent": "necrofriggian__wing_lower_right",
           "pivot": [
             -5.69929,
             15.5,
@@ -2218,8 +2218,8 @@
           ]
         },
         {
-          "name": "wl2_right",
-          "parent": "wl1_right",
+          "name": "necrofriggian__wl2_right",
+          "parent": "necrofriggian__wl1_right",
           "pivot": [
             -10.75,
             16,
@@ -2282,8 +2282,8 @@
           ]
         },
         {
-          "name": "wl3_right",
-          "parent": "wl2_right",
+          "name": "necrofriggian__wl3_right",
+          "parent": "necrofriggian__wl2_right",
           "pivot": [
             -15.68652,
             12.5,
@@ -2341,8 +2341,8 @@
           ]
         },
         {
-          "name": "wl4_right",
-          "parent": "wl3_right",
+          "name": "necrofriggian__wl4_right",
+          "parent": "necrofriggian__wl3_right",
           "pivot": [
             -20.6429,
             9.5,
@@ -2405,8 +2405,8 @@
           ]
         },
         {
-          "name": "wing_lower_left",
-          "parent": "body",
+          "name": "necrofriggian__wing_lower_left",
+          "parent": "necrofriggian__body",
           "pivot": [
             0,
             16,
@@ -2469,8 +2469,8 @@
           ]
         },
         {
-          "name": "wl1_left",
-          "parent": "wing_lower_left",
+          "name": "necrofriggian__wl1_left",
+          "parent": "necrofriggian__wing_lower_left",
           "pivot": [
             5.69929,
             15.5,
@@ -2528,8 +2528,8 @@
           ]
         },
         {
-          "name": "wl2_left",
-          "parent": "wl1_left",
+          "name": "necrofriggian__wl2_left",
+          "parent": "necrofriggian__wl1_left",
           "pivot": [
             10.75,
             16,
@@ -2592,8 +2592,8 @@
           ]
         },
         {
-          "name": "wl3_left",
-          "parent": "wl2_left",
+          "name": "necrofriggian__wl3_left",
+          "parent": "necrofriggian__wl2_left",
           "pivot": [
             15.68652,
             12.5,
@@ -2651,8 +2651,8 @@
           ]
         },
         {
-          "name": "wl4_left",
-          "parent": "wl3_left",
+          "name": "necrofriggian__wl4_left",
+          "parent": "necrofriggian__wl3_left",
           "pivot": [
             20.6429,
             9.5,
@@ -2715,8 +2715,8 @@
           ]
         },
         {
-          "name": "misc",
-          "parent": "body",
+          "name": "necrofriggian__misc",
+          "parent": "necrofriggian__body",
           "pivot": [
             0,
             28,
@@ -2724,8 +2724,8 @@
           ]
         },
         {
-          "name": "upper",
-          "parent": "misc",
+          "name": "necrofriggian__upper",
+          "parent": "necrofriggian__misc",
           "pivot": [
             0,
             24.5,
@@ -2889,8 +2889,8 @@
           ]
         },
         {
-          "name": "ab",
-          "parent": "misc",
+          "name": "necrofriggian__ab",
+          "parent": "necrofriggian__misc",
           "pivot": [
             0,
             18.5,
@@ -3053,8 +3053,8 @@
           ]
         },
         {
-          "name": "neck",
-          "parent": "misc",
+          "name": "necrofriggian__neck",
+          "parent": "necrofriggian__misc",
           "pivot": [
             0,
             28,
@@ -3218,7 +3218,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "necrofriggian__leftArm",
           "pivot": [
             5,
             26.5,
@@ -3226,8 +3226,8 @@
           ]
         },
         {
-          "name": "l_arm",
-          "parent": "leftArm",
+          "name": "necrofriggian__l_arm",
+          "parent": "necrofriggian__leftArm",
           "pivot": [
             5,
             24.5,
@@ -3391,8 +3391,8 @@
           ]
         },
         {
-          "name": "bone25",
-          "parent": "l_arm",
+          "name": "necrofriggian__bone25",
+          "parent": "necrofriggian__l_arm",
           "pivot": [
             6.5,
             15.5,
@@ -3481,8 +3481,8 @@
           ]
         },
         {
-          "name": "bone26",
-          "parent": "bone25",
+          "name": "necrofriggian__bone26",
+          "parent": "necrofriggian__bone25",
           "pivot": [
             7,
             10,
@@ -3572,8 +3572,8 @@
           ]
         },
         {
-          "name": "bone28",
-          "parent": "bone26",
+          "name": "necrofriggian__bone28",
+          "parent": "necrofriggian__bone26",
           "pivot": [
             5.25,
             9.75,
@@ -3663,8 +3663,8 @@
           ]
         },
         {
-          "name": "bone27",
-          "parent": "bone26",
+          "name": "necrofriggian__bone27",
+          "parent": "necrofriggian__bone26",
           "pivot": [
             8,
             6,
@@ -3677,8 +3677,8 @@
           ]
         },
         {
-          "name": "leftarm_CLOAK",
-          "parent": "leftArm",
+          "name": "necrofriggian__leftarm_CLOAK",
+          "parent": "necrofriggian__leftArm",
           "pivot": [
             6.83569,
             24.60042,
@@ -3828,7 +3828,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "necrofriggian__rightArm",
           "pivot": [
             -5,
             26.5,
@@ -3836,8 +3836,8 @@
           ]
         },
         {
-          "name": "r_arm",
-          "parent": "rightArm",
+          "name": "necrofriggian__r_arm",
+          "parent": "necrofriggian__rightArm",
           "pivot": [
             -5,
             24.5,
@@ -4001,8 +4001,8 @@
           ]
         },
         {
-          "name": "bone2",
-          "parent": "r_arm",
+          "name": "necrofriggian__bone2",
+          "parent": "necrofriggian__r_arm",
           "pivot": [
             -6.5,
             15.5,
@@ -4091,8 +4091,8 @@
           ]
         },
         {
-          "name": "bone3",
-          "parent": "bone2",
+          "name": "necrofriggian__bone3",
+          "parent": "necrofriggian__bone2",
           "pivot": [
             -7,
             10,
@@ -4182,8 +4182,8 @@
           ]
         },
         {
-          "name": "bone4",
-          "parent": "bone3",
+          "name": "necrofriggian__bone4",
+          "parent": "necrofriggian__bone3",
           "pivot": [
             -5.25,
             9.75,
@@ -4273,8 +4273,8 @@
           ]
         },
         {
-          "name": "bone5",
-          "parent": "bone3",
+          "name": "necrofriggian__bone5",
+          "parent": "necrofriggian__bone3",
           "pivot": [
             -8,
             6,
@@ -4287,8 +4287,8 @@
           ]
         },
         {
-          "name": "rightarm_CLOAK",
-          "parent": "rightArm",
+          "name": "necrofriggian__rightarm_CLOAK",
+          "parent": "necrofriggian__rightArm",
           "pivot": [
             -6.83569,
             24.60042,
@@ -4438,7 +4438,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "necrofriggian__leftLeg",
           "pivot": [
             1.75,
             15.25,
@@ -4446,8 +4446,8 @@
           ]
         },
         {
-          "name": "l_leg",
-          "parent": "leftLeg",
+          "name": "necrofriggian__l_leg",
+          "parent": "necrofriggian__leftLeg",
           "pivot": [
             1.75,
             15.25,
@@ -4536,8 +4536,8 @@
           ]
         },
         {
-          "name": "lower4",
-          "parent": "l_leg",
+          "name": "necrofriggian__lower4",
+          "parent": "necrofriggian__l_leg",
           "pivot": [
             1.75,
             9.25,
@@ -4702,8 +4702,8 @@
           ]
         },
         {
-          "name": "foot4",
-          "parent": "lower4",
+          "name": "necrofriggian__foot4",
+          "parent": "necrofriggian__lower4",
           "pivot": [
             1.9,
             2.25,
@@ -4792,8 +4792,8 @@
           ]
         },
         {
-          "name": "bone41",
-          "parent": "foot4",
+          "name": "necrofriggian__bone41",
+          "parent": "necrofriggian__foot4",
           "pivot": [
             1.89863,
             0.52498,
@@ -4882,8 +4882,8 @@
           ]
         },
         {
-          "name": "bone32",
-          "parent": "foot4",
+          "name": "necrofriggian__bone32",
+          "parent": "necrofriggian__foot4",
           "pivot": [
             1.9,
             1.5,
@@ -4972,8 +4972,8 @@
           ]
         },
         {
-          "name": "leftleg_CLOAK",
-          "parent": "leftLeg",
+          "name": "necrofriggian__leftleg_CLOAK",
+          "parent": "necrofriggian__leftLeg",
           "pivot": [
             2.5,
             10.5,
@@ -5047,7 +5047,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "necrofriggian__rightLeg",
           "pivot": [
             -1.75,
             15.25,
@@ -5055,8 +5055,8 @@
           ]
         },
         {
-          "name": "r_leg",
-          "parent": "rightLeg",
+          "name": "necrofriggian__r_leg",
+          "parent": "necrofriggian__rightLeg",
           "pivot": [
             -1.75,
             15.25,
@@ -5145,8 +5145,8 @@
           ]
         },
         {
-          "name": "lower2",
-          "parent": "r_leg",
+          "name": "necrofriggian__lower2",
+          "parent": "necrofriggian__r_leg",
           "pivot": [
             -1.75,
             9.25,
@@ -5311,8 +5311,8 @@
           ]
         },
         {
-          "name": "foot2",
-          "parent": "lower2",
+          "name": "necrofriggian__foot2",
+          "parent": "necrofriggian__lower2",
           "pivot": [
             -1.9,
             2.25,
@@ -5401,8 +5401,8 @@
           ]
         },
         {
-          "name": "bone15",
-          "parent": "foot2",
+          "name": "necrofriggian__bone15",
+          "parent": "necrofriggian__foot2",
           "pivot": [
             -1.89863,
             0.52498,
@@ -5501,8 +5501,8 @@
           ]
         },
         {
-          "name": "bone16",
-          "parent": "foot2",
+          "name": "necrofriggian__bone16",
+          "parent": "necrofriggian__foot2",
           "pivot": [
             -1.9,
             1.5,
@@ -5601,8 +5601,8 @@
           ]
         },
         {
-          "name": "rightleg_CLOAK",
-          "parent": "rightLeg",
+          "name": "necrofriggian__rightleg_CLOAK",
+          "parent": "necrofriggian__rightLeg",
           "pivot": [
             -2.5,
             10.5,

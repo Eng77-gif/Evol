@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "arburian_pelarota__head",
           "pivot": [
             0,
             0,
@@ -24,7 +24,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "arburian_pelarota__body",
           "pivot": [
             0,
             28,
@@ -32,8 +32,8 @@
           ]
         },
         {
-          "name": "chest_upper",
-          "parent": "body",
+          "name": "arburian_pelarota__chest_upper",
+          "parent": "arburian_pelarota__body",
           "pivot": [
             0,
             15,
@@ -172,8 +172,8 @@
           ]
         },
         {
-          "name": "BALL",
-          "parent": "chest_upper",
+          "name": "arburian_pelarota__BALL",
+          "parent": "arburian_pelarota__chest_upper",
           "pivot": [
             0,
             12.5,
@@ -186,8 +186,8 @@
           ]
         },
         {
-          "name": "ball_shell_front",
-          "parent": "BALL",
+          "name": "arburian_pelarota__ball_shell_front",
+          "parent": "arburian_pelarota__BALL",
           "pivot": [
             0,
             12.5,
@@ -195,8 +195,8 @@
           ]
         },
         {
-          "name": "shell_1",
-          "parent": "ball_shell_front",
+          "name": "arburian_pelarota__shell_1",
+          "parent": "arburian_pelarota__ball_shell_front",
           "pivot": [
             0,
             13.5,
@@ -261,8 +261,8 @@
           ]
         },
         {
-          "name": "shell_2",
-          "parent": "ball_shell_front",
+          "name": "arburian_pelarota__shell_2",
+          "parent": "arburian_pelarota__ball_shell_front",
           "pivot": [
             0,
             12.8,
@@ -317,8 +317,8 @@
           ]
         },
         {
-          "name": "shell_3",
-          "parent": "ball_shell_front",
+          "name": "arburian_pelarota__shell_3",
+          "parent": "arburian_pelarota__ball_shell_front",
           "pivot": [
             0,
             11.75,
@@ -326,8 +326,8 @@
           ]
         },
         {
-          "name": "ball_shell_back",
-          "parent": "BALL",
+          "name": "arburian_pelarota__ball_shell_back",
+          "parent": "arburian_pelarota__BALL",
           "pivot": [
             0,
             12.5,
@@ -340,8 +340,8 @@
           ]
         },
         {
-          "name": "shell_4",
-          "parent": "ball_shell_back",
+          "name": "arburian_pelarota__shell_4",
+          "parent": "arburian_pelarota__ball_shell_back",
           "pivot": [
             0,
             13.5,
@@ -349,8 +349,8 @@
           ]
         },
         {
-          "name": "shell_5",
-          "parent": "ball_shell_back",
+          "name": "arburian_pelarota__shell_5",
+          "parent": "arburian_pelarota__ball_shell_back",
           "pivot": [
             0,
             12.8,
@@ -405,8 +405,8 @@
           ]
         },
         {
-          "name": "shell_6",
-          "parent": "ball_shell_back",
+          "name": "arburian_pelarota__shell_6",
+          "parent": "arburian_pelarota__ball_shell_back",
           "pivot": [
             0,
             11.75,
@@ -471,8 +471,8 @@
           ]
         },
         {
-          "name": "shell_cap_left",
-          "parent": "BALL",
+          "name": "arburian_pelarota__shell_cap_left",
+          "parent": "arburian_pelarota__BALL",
           "pivot": [
             1.1625,
             12.5,
@@ -507,8 +507,8 @@
           ]
         },
         {
-          "name": "shell_cap_right",
-          "parent": "BALL",
+          "name": "arburian_pelarota__shell_cap_right",
+          "parent": "arburian_pelarota__BALL",
           "pivot": [
             -1.1625,
             12.5,
@@ -543,8 +543,8 @@
           ]
         },
         {
-          "name": "shell_inner",
-          "parent": "BALL",
+          "name": "arburian_pelarota__shell_inner",
+          "parent": "arburian_pelarota__BALL",
           "pivot": [
             0,
             13.75,
@@ -629,8 +629,8 @@
           ]
         },
         {
-          "name": "eye_left",
-          "parent": "chest_upper",
+          "name": "arburian_pelarota__eye_left",
+          "parent": "arburian_pelarota__chest_upper",
           "pivot": [
             5.3,
             25.63008,
@@ -708,8 +708,8 @@
           ]
         },
         {
-          "name": "eye_right",
-          "parent": "chest_upper",
+          "name": "arburian_pelarota__eye_right",
+          "parent": "arburian_pelarota__chest_upper",
           "pivot": [
             -5.3,
             25.63008,
@@ -787,8 +787,8 @@
           ]
         },
         {
-          "name": "pauldron_left",
-          "parent": "chest_upper",
+          "name": "arburian_pelarota__pauldron_left",
+          "parent": "arburian_pelarota__chest_upper",
           "pivot": [
             11.72795,
             30.31672,
@@ -932,8 +932,8 @@
           ]
         },
         {
-          "name": "pauldron_right",
-          "parent": "chest_upper",
+          "name": "arburian_pelarota__pauldron_right",
+          "parent": "arburian_pelarota__chest_upper",
           "pivot": [
             -11.72795,
             30.31672,
@@ -1077,8 +1077,8 @@
           ]
         },
         {
-          "name": "back_armor_upper",
-          "parent": "chest_upper",
+          "name": "arburian_pelarota__back_armor_upper",
+          "parent": "arburian_pelarota__chest_upper",
           "pivot": [
             0,
             24.80534,
@@ -1112,8 +1112,8 @@
           ]
         },
         {
-          "name": "chest_lower",
-          "parent": "body",
+          "name": "arburian_pelarota__chest_lower",
+          "parent": "arburian_pelarota__body",
           "pivot": [
             0,
             14,
@@ -1197,8 +1197,8 @@
           ]
         },
         {
-          "name": "back_armor_lower",
-          "parent": "chest_lower",
+          "name": "arburian_pelarota__back_armor_lower",
+          "parent": "arburian_pelarota__chest_lower",
           "pivot": [
             0,
             13.85003,
@@ -1237,7 +1237,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "arburian_pelarota__leftArm",
           "pivot": [
             11.5,
             24,
@@ -1245,8 +1245,8 @@
           ]
         },
         {
-          "name": "left_arm_anim",
-          "parent": "leftArm",
+          "name": "arburian_pelarota__left_arm_anim",
+          "parent": "arburian_pelarota__leftArm",
           "pivot": [
             11.5,
             24,
@@ -1254,8 +1254,8 @@
           ]
         },
         {
-          "name": "left_arm_rotate",
-          "parent": "left_arm_anim",
+          "name": "arburian_pelarota__left_arm_rotate",
+          "parent": "arburian_pelarota__left_arm_anim",
           "pivot": [
             11.5,
             27,
@@ -1345,8 +1345,8 @@
           ]
         },
         {
-          "name": "left_arm_lower",
-          "parent": "left_arm_rotate",
+          "name": "arburian_pelarota__left_arm_lower",
+          "parent": "arburian_pelarota__left_arm_rotate",
           "pivot": [
             11.02053,
             18.75037,
@@ -1661,7 +1661,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "arburian_pelarota__rightArm",
           "pivot": [
             -11.5,
             24,
@@ -1669,8 +1669,8 @@
           ]
         },
         {
-          "name": "right_arm_anim",
-          "parent": "rightArm",
+          "name": "arburian_pelarota__right_arm_anim",
+          "parent": "arburian_pelarota__rightArm",
           "pivot": [
             -11.5,
             24,
@@ -1678,8 +1678,8 @@
           ]
         },
         {
-          "name": "right_arm_rotate",
-          "parent": "right_arm_anim",
+          "name": "arburian_pelarota__right_arm_rotate",
+          "parent": "arburian_pelarota__right_arm_anim",
           "pivot": [
             -11.5,
             27,
@@ -1769,8 +1769,8 @@
           ]
         },
         {
-          "name": "right_arm_lower",
-          "parent": "right_arm_rotate",
+          "name": "arburian_pelarota__right_arm_lower",
+          "parent": "arburian_pelarota__right_arm_rotate",
           "pivot": [
             -11.02053,
             18.75037,
@@ -2085,7 +2085,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "arburian_pelarota__leftLeg",
           "pivot": [
             5,
             8.5,
@@ -2093,8 +2093,8 @@
           ]
         },
         {
-          "name": "left_leg_anim",
-          "parent": "leftLeg",
+          "name": "arburian_pelarota__left_leg_anim",
+          "parent": "arburian_pelarota__leftLeg",
           "pivot": [
             5,
             8.5,
@@ -2102,8 +2102,8 @@
           ]
         },
         {
-          "name": "left_leg_rotate",
-          "parent": "left_leg_anim",
+          "name": "arburian_pelarota__left_leg_rotate",
+          "parent": "arburian_pelarota__left_leg_anim",
           "pivot": [
             0,
             -1,
@@ -2367,7 +2367,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "arburian_pelarota__rightLeg",
           "pivot": [
             -5,
             8.5,
@@ -2375,8 +2375,8 @@
           ]
         },
         {
-          "name": "right_leg_anim",
-          "parent": "rightLeg",
+          "name": "arburian_pelarota__right_leg_anim",
+          "parent": "arburian_pelarota__rightLeg",
           "pivot": [
             -5,
             8.5,
@@ -2384,8 +2384,8 @@
           ]
         },
         {
-          "name": "right_leg_rotate",
-          "parent": "right_leg_anim",
+          "name": "arburian_pelarota__right_leg_rotate",
+          "parent": "arburian_pelarota__right_leg_anim",
           "pivot": [
             0,
             -1,

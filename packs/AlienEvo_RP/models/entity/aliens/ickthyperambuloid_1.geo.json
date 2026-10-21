@@ -164,7 +164,7 @@
           ]
         },
         {
-          "name": "head",
+          "name": "head_p1",
           "parent": "full_body",
           "pivot": [
             1.75,

@@ -115,30 +115,21 @@
               0,
               0
             ],
-            "0.4167": {
-              "post": [
-                "7.5+(math.sin(q.anim_time*75)*2.5)",
-                0,
-                0
-              ],
-              "lerp_mode": "catmullrom"
-            },
-            "1.0417": {
-              "post": [
-                "7.5+(math.sin(q.anim_time*75)*2.5)",
-                0,
-                0
-              ],
-              "lerp_mode": "catmullrom"
-            },
-            "1.5417": {
-              "post": [
-                "-2.5+(math.sin(q.anim_time*75)*2.5)",
-                0,
-                0
-              ],
-              "lerp_mode": "catmullrom"
-            }
+            "0.4167": [
+              "7.5+(math.sin(q.anim_time*75)*2.5)",
+              0,
+              0
+            ],
+            "1.0417": [
+              "7.5+(math.sin(q.anim_time*75)*2.5)",
+              0,
+              0
+            ],
+            "1.5417": [
+              "-2.5+(math.sin(q.anim_time*75)*2.5)",
+              0,
+              0
+            ]
           }
         },
         "tail2": {
@@ -148,30 +139,21 @@
               0,
               0
             ],
-            "0.625": {
-              "post": [
-                "10-(math.sin(q.anim_time*75-25)*2.5)",
-                0,
-                0
-              ],
-              "lerp_mode": "catmullrom"
-            },
-            "1.125": {
-              "post": [
-                "10-(math.sin(q.anim_time*75-25)*2.5)",
-                0,
-                0
-              ],
-              "lerp_mode": "catmullrom"
-            },
-            "1.7083": {
-              "post": [
-                "-2.5-(math.sin(q.anim_time*75-25)*2.5)",
-                0,
-                0
-              ],
-              "lerp_mode": "catmullrom"
-            }
+            "0.625": [
+              "10-(math.sin(q.anim_time*75-25)*2.5)",
+              0,
+              0
+            ],
+            "1.125": [
+              "10-(math.sin(q.anim_time*75-25)*2.5)",
+              0,
+              0
+            ],
+            "1.7083": [
+              "-2.5-(math.sin(q.anim_time*75-25)*2.5)",
+              0,
+              0
+            ]
           }
         },
         "stinger": {
@@ -240,14 +222,11 @@
               "15+(math.sin(q.anim_time*75)*7.5)",
               "15+(math.sin(q.anim_time*75)*7.5)"
             ],
-            "0.75": {
-              "post": [
-                "2.5+(math.sin(q.anim_time*75)*2.5)",
-                "25+(math.sin(q.anim_time*75)*3.5)",
-                "30+(math.sin(q.anim_time*75)*3.5)"
-              ],
-              "lerp_mode": "catmullrom"
-            }
+            "0.75": [
+              "2.5+(math.sin(q.anim_time*75)*2.5)",
+              "25+(math.sin(q.anim_time*75)*3.5)",
+              "30+(math.sin(q.anim_time*75)*3.5)"
+            ]
           }
         },
         "wing_left": {
@@ -257,14 +236,11 @@
               "-15-(math.sin(q.anim_time*75)*7.5)",
               "-15-(math.sin(q.anim_time*75)*7.5)"
             ],
-            "0.75": {
-              "post": [
-                "2.5+(math.sin(q.anim_time*75)*2.5)",
-                "-25-(math.sin(q.anim_time*75)*3.5)",
-                "-30-(math.sin(q.anim_time*75)*3.5)"
-              ],
-              "lerp_mode": "catmullrom"
-            }
+            "0.75": [
+              "2.5+(math.sin(q.anim_time*75)*2.5)",
+              "-25-(math.sin(q.anim_time*75)*3.5)",
+              "-30-(math.sin(q.anim_time*75)*3.5)"
+            ]
           }
         },
         "wing_right_inner": {
@@ -316,14 +292,11 @@
               "25+(math.sin(q.anim_time*75)*3.5)",
               "30+(math.sin(q.anim_time*75)*3.5)"
             ],
-            "1.0": {
-              "post": [
-                "5+(math.sin(q.anim_time*75)*2.5)",
-                "15+(math.sin(q.anim_time*75)*7.5)",
-                "15+(math.sin(q.anim_time*75)*7.5)"
-              ],
-              "lerp_mode": "catmullrom"
-            }
+            "1.0": [
+              "5+(math.sin(q.anim_time*75)*2.5)",
+              "15+(math.sin(q.anim_time*75)*7.5)",
+              "15+(math.sin(q.anim_time*75)*7.5)"
+            ]
           }
         },
         "wing_left": {
@@ -333,14 +306,11 @@
               "-25-(math.sin(q.anim_time*75)*3.5)",
               "-30-(math.sin(q.anim_time*75)*3.5)"
             ],
-            "1.0": {
-              "post": [
-                "5+(math.sin(q.anim_time*75)*2.5)",
-                "-15-(math.sin(q.anim_time*75)*7.5)",
-                "-15-(math.sin(q.anim_time*75)*7.5)"
-              ],
-              "lerp_mode": "catmullrom"
-            }
+            "1.0": [
+              "5+(math.sin(q.anim_time*75)*2.5)",
+              "-15-(math.sin(q.anim_time*75)*7.5)",
+              "-15-(math.sin(q.anim_time*75)*7.5)"
+            ]
           }
         },
         "wing_right_inner": {

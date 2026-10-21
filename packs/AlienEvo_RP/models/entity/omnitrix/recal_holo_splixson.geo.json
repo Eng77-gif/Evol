@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_full_body",
+          "name": "splixson__full_body",
           "parent": "hologram",
           "pivot": [
             10.3,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_armorHead3",
-          "parent": "holo_full_body",
+          "name": "splixson__armorHead3",
+          "parent": "splixson__full_body",
           "pivot": [
             10.38422,
             16.25681,
@@ -245,8 +245,8 @@
           ]
         },
         {
-          "name": "holo_HEADFINS",
-          "parent": "holo_armorHead3",
+          "name": "splixson__HEADFINS",
+          "parent": "splixson__armorHead3",
           "pivot": [
             10.38422,
             14.31973,
@@ -503,8 +503,8 @@
           ]
         },
         {
-          "name": "holo_WHISKERS",
-          "parent": "holo_armorHead3",
+          "name": "splixson__WHISKERS",
+          "parent": "splixson__armorHead3",
           "pivot": [
             10.38422,
             14.31973,
@@ -855,8 +855,8 @@
           ]
         },
         {
-          "name": "holo_EYES",
-          "parent": "holo_armorHead3",
+          "name": "splixson__EYES",
+          "parent": "splixson__armorHead3",
           "pivot": [
             10.38422,
             14.23551,
@@ -869,8 +869,8 @@
           ]
         },
         {
-          "name": "holo_right",
-          "parent": "holo_EYES",
+          "name": "splixson__right",
+          "parent": "splixson__EYES",
           "pivot": [
             10.38422,
             14.23551,
@@ -1048,8 +1048,8 @@
           ]
         },
         {
-          "name": "holo_left",
-          "parent": "holo_EYES",
+          "name": "splixson__left",
+          "parent": "splixson__EYES",
           "pivot": [
             10.38422,
             14.23551,
@@ -1227,8 +1227,8 @@
           ]
         },
         {
-          "name": "holo_armorBody3",
-          "parent": "holo_full_body",
+          "name": "splixson__armorBody3",
+          "parent": "splixson__full_body",
           "pivot": [
             10.38422,
             16.25681,
@@ -1786,8 +1786,8 @@
           ]
         },
         {
-          "name": "holo_overlay",
-          "parent": "holo_armorBody3",
+          "name": "splixson__overlay",
+          "parent": "splixson__armorBody3",
           "pivot": [
             10.38422,
             14.31966,
@@ -2022,8 +2022,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftArm3",
-          "parent": "holo_full_body",
+          "name": "splixson__armorLeftArm3",
+          "parent": "splixson__full_body",
           "pivot": [
             10.72112,
             15.83569,
@@ -2528,8 +2528,8 @@
           ]
         },
         {
-          "name": "holo_overlay8",
-          "parent": "holo_armorLeftArm3",
+          "name": "splixson__overlay8",
+          "parent": "splixson__armorLeftArm3",
           "pivot": [
             10.6369,
             15.83569,
@@ -2709,8 +2709,8 @@
           ]
         },
         {
-          "name": "holo_armorRightArm3",
-          "parent": "holo_full_body",
+          "name": "splixson__armorRightArm3",
+          "parent": "splixson__full_body",
           "pivot": [
             10.04733,
             15.83569,
@@ -3215,8 +3215,8 @@
           ]
         },
         {
-          "name": "holo_overlay9",
-          "parent": "holo_armorRightArm3",
+          "name": "splixson__overlay9",
+          "parent": "splixson__armorRightArm3",
           "pivot": [
             10.13155,
             15.83569,
@@ -3396,8 +3396,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftLeg3",
-          "parent": "holo_full_body",
+          "name": "splixson__armorLeftLeg3",
+          "parent": "splixson__full_body",
           "pivot": [
             10.59478,
             14.74078,
@@ -3555,8 +3555,8 @@
           ]
         },
         {
-          "name": "holo_armorRightLeg3",
-          "parent": "holo_full_body",
+          "name": "splixson__armorRightLeg3",
+          "parent": "splixson__full_body",
           "pivot": [
             10.17366,
             14.74078,

@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_jetray",
+          "name": "aerophibian__jetray",
           "parent": "hologram",
           "pivot": [
             10,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_Head",
-          "parent": "holo_jetray",
+          "name": "aerophibian__Head",
+          "parent": "aerophibian__jetray",
           "pivot": [
             10,
             16.96,
@@ -185,8 +185,8 @@
           ]
         },
         {
-          "name": "holo_eyes",
-          "parent": "holo_Head",
+          "name": "aerophibian__eyes",
+          "parent": "aerophibian__Head",
           "pivot": [
             9.83,
             17.24317,
@@ -264,8 +264,8 @@
           ]
         },
         {
-          "name": "holo_mouth",
-          "parent": "holo_Head",
+          "name": "aerophibian__mouth",
+          "parent": "aerophibian__Head",
           "pivot": [
             10,
             17.34737,
@@ -300,8 +300,8 @@
           ]
         },
         {
-          "name": "holo_RightLeg",
-          "parent": "holo_jetray",
+          "name": "aerophibian__RightLeg",
+          "parent": "aerophibian__jetray",
           "pivot": [
             9.7025,
             15.77,
@@ -309,8 +309,8 @@
           ]
         },
         {
-          "name": "holo_rightlegrot",
-          "parent": "holo_RightLeg",
+          "name": "aerophibian__rightlegrot",
+          "parent": "aerophibian__RightLeg",
           "pivot": [
             9.7025,
             15.77,
@@ -409,8 +409,8 @@
           ]
         },
         {
-          "name": "holo_lowerleg2",
-          "parent": "holo_rightlegrot",
+          "name": "aerophibian__lowerleg2",
+          "parent": "aerophibian__rightlegrot",
           "pivot": [
             9.7025,
             15.26,
@@ -513,8 +513,8 @@
           ]
         },
         {
-          "name": "holo_right_foot",
-          "parent": "holo_lowerleg2",
+          "name": "aerophibian__right_foot",
+          "parent": "aerophibian__lowerleg2",
           "pivot": [
             9.7025,
             14.648,
@@ -693,8 +693,8 @@
           ]
         },
         {
-          "name": "holo_LeftLeg",
-          "parent": "holo_jetray",
+          "name": "aerophibian__LeftLeg",
+          "parent": "aerophibian__jetray",
           "pivot": [
             10.2975,
             15.77,
@@ -702,8 +702,8 @@
           ]
         },
         {
-          "name": "holo_leftlegrot",
-          "parent": "holo_LeftLeg",
+          "name": "aerophibian__leftlegrot",
+          "parent": "aerophibian__LeftLeg",
           "pivot": [
             10.2975,
             15.77,
@@ -802,8 +802,8 @@
           ]
         },
         {
-          "name": "holo_lowerleg",
-          "parent": "holo_leftlegrot",
+          "name": "aerophibian__lowerleg",
+          "parent": "aerophibian__leftlegrot",
           "pivot": [
             10.2975,
             15.26,
@@ -906,8 +906,8 @@
           ]
         },
         {
-          "name": "holo_left_foot",
-          "parent": "holo_lowerleg",
+          "name": "aerophibian__left_foot",
+          "parent": "aerophibian__lowerleg",
           "pivot": [
             10.2975,
             14.648,
@@ -1086,8 +1086,8 @@
           ]
         },
         {
-          "name": "holo_RightArm",
-          "parent": "holo_jetray",
+          "name": "aerophibian__RightArm",
+          "parent": "aerophibian__jetray",
           "pivot": [
             9.66,
             16.79,
@@ -1095,8 +1095,8 @@
           ]
         },
         {
-          "name": "holo_armtop_right",
-          "parent": "holo_RightArm",
+          "name": "aerophibian__armtop_right",
+          "parent": "aerophibian__RightArm",
           "pivot": [
             9.66,
             16.79,
@@ -1185,8 +1185,8 @@
           ]
         },
         {
-          "name": "holo_armup_right",
-          "parent": "holo_armtop_right",
+          "name": "aerophibian__armup_right",
+          "parent": "aerophibian__armtop_right",
           "pivot": [
             9.49,
             16.59875,
@@ -1265,8 +1265,8 @@
           ]
         },
         {
-          "name": "holo_armlow_right",
-          "parent": "holo_armup_right",
+          "name": "aerophibian__armlow_right",
+          "parent": "aerophibian__armup_right",
           "pivot": [
             9.49,
             16.11,
@@ -1355,8 +1355,8 @@
           ]
         },
         {
-          "name": "holo_armwing_right2",
-          "parent": "holo_armlow_right",
+          "name": "aerophibian__armwing_right2",
+          "parent": "aerophibian__armlow_right",
           "pivot": [
             9.52466,
             16.11693,
@@ -1369,8 +1369,8 @@
           ]
         },
         {
-          "name": "holo_armwing_right",
-          "parent": "holo_armwing_right2",
+          "name": "aerophibian__armwing_right",
+          "parent": "aerophibian__armwing_right2",
           "pivot": [
             9.52466,
             16.11693,
@@ -1419,8 +1419,8 @@
           ]
         },
         {
-          "name": "holo_hand_right",
-          "parent": "holo_armlow_right",
+          "name": "aerophibian__hand_right",
+          "parent": "aerophibian__armlow_right",
           "pivot": [
             9.38391,
             15.25623,
@@ -1544,8 +1544,8 @@
           ]
         },
         {
-          "name": "holo_LeftArm",
-          "parent": "holo_jetray",
+          "name": "aerophibian__LeftArm",
+          "parent": "aerophibian__jetray",
           "pivot": [
             10.34,
             16.79,
@@ -1553,8 +1553,8 @@
           ]
         },
         {
-          "name": "holo_armtop_left",
-          "parent": "holo_LeftArm",
+          "name": "aerophibian__armtop_left",
+          "parent": "aerophibian__LeftArm",
           "pivot": [
             10.34,
             16.79,
@@ -1643,8 +1643,8 @@
           ]
         },
         {
-          "name": "holo_armup_left",
-          "parent": "holo_armtop_left",
+          "name": "aerophibian__armup_left",
+          "parent": "aerophibian__armtop_left",
           "pivot": [
             10.51,
             16.59875,
@@ -1723,8 +1723,8 @@
           ]
         },
         {
-          "name": "holo_armlow_left",
-          "parent": "holo_armup_left",
+          "name": "aerophibian__armlow_left",
+          "parent": "aerophibian__armup_left",
           "pivot": [
             10.51,
             16.11,
@@ -1813,8 +1813,8 @@
           ]
         },
         {
-          "name": "holo_armwing_left2",
-          "parent": "holo_armlow_left",
+          "name": "aerophibian__armwing_left2",
+          "parent": "aerophibian__armlow_left",
           "pivot": [
             10.47534,
             16.11693,
@@ -1827,8 +1827,8 @@
           ]
         },
         {
-          "name": "holo_armwing_left",
-          "parent": "holo_armwing_left2",
+          "name": "aerophibian__armwing_left",
+          "parent": "aerophibian__armwing_left2",
           "pivot": [
             10.47534,
             16.11693,
@@ -1877,8 +1877,8 @@
           ]
         },
         {
-          "name": "holo_hand_left",
-          "parent": "holo_armlow_left",
+          "name": "aerophibian__hand_left",
+          "parent": "aerophibian__armlow_left",
           "pivot": [
             10.61609,
             15.25623,
@@ -2002,8 +2002,8 @@
           ]
         },
         {
-          "name": "holo_Body",
-          "parent": "holo_jetray",
+          "name": "aerophibian__Body",
+          "parent": "aerophibian__jetray",
           "pivot": [
             10,
             15.77,
@@ -2216,8 +2216,8 @@
           ]
         },
         {
-          "name": "holo_tailbase",
-          "parent": "holo_Body",
+          "name": "aerophibian__tailbase",
+          "parent": "aerophibian__Body",
           "pivot": [
             10,
             15.91148,
@@ -2306,8 +2306,8 @@
           ]
         },
         {
-          "name": "holo_tailmid",
-          "parent": "holo_tailbase",
+          "name": "aerophibian__tailmid",
+          "parent": "aerophibian__tailbase",
           "pivot": [
             10,
             15.27142,
@@ -2396,8 +2396,8 @@
           ]
         },
         {
-          "name": "holo_tailtip",
-          "parent": "holo_tailmid",
+          "name": "aerophibian__tailtip",
+          "parent": "aerophibian__tailmid",
           "pivot": [
             10,
             14.69767,
@@ -2486,8 +2486,8 @@
           ]
         },
         {
-          "name": "holo_cape_closed",
-          "parent": "holo_Body",
+          "name": "aerophibian__cape_closed",
+          "parent": "aerophibian__Body",
           "pivot": [
             10,
             16.12876,
@@ -2500,8 +2500,8 @@
           ]
         },
         {
-          "name": "holo_cape_closed_right",
-          "parent": "holo_cape_closed",
+          "name": "aerophibian__cape_closed_right",
+          "parent": "aerophibian__cape_closed",
           "pivot": [
             9.87139,
             16.12876,
@@ -2550,8 +2550,8 @@
           ]
         },
         {
-          "name": "holo_cape_closed_left",
-          "parent": "holo_cape_closed",
+          "name": "aerophibian__cape_closed_left",
+          "parent": "aerophibian__cape_closed",
           "pivot": [
             10.12861,
             16.12876,
@@ -2600,8 +2600,8 @@
           ]
         },
         {
-          "name": "holo_cape_open",
-          "parent": "holo_Body",
+          "name": "aerophibian__cape_open",
+          "parent": "aerophibian__Body",
           "pivot": [
             10,
             16.00363,
@@ -2614,8 +2614,8 @@
           ]
         },
         {
-          "name": "holo_cape_open_right",
-          "parent": "holo_cape_open",
+          "name": "aerophibian__cape_open_right",
+          "parent": "aerophibian__cape_open",
           "pivot": [
             9.92551,
             16.01844,
@@ -2664,8 +2664,8 @@
           ]
         },
         {
-          "name": "holo_cape_open_left",
-          "parent": "holo_cape_open",
+          "name": "aerophibian__cape_open_left",
+          "parent": "aerophibian__cape_open",
           "pivot": [
             10.07449,
             16.01844,
@@ -2714,8 +2714,8 @@
           ]
         },
         {
-          "name": "holo_upper",
-          "parent": "holo_Body",
+          "name": "aerophibian__upper",
+          "parent": "aerophibian__Body",
           "pivot": [
             10,
             16.38578,

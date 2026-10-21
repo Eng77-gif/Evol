@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_xlr8",
+          "name": "kineceleran__xlr8",
           "parent": "hologram",
           "pivot": [
             9.75,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_LeftLeg",
-          "parent": "holo_xlr8",
+          "name": "kineceleran__LeftLeg",
+          "parent": "kineceleran__xlr8",
           "pivot": [
             9.97575,
             16.24625,
@@ -161,8 +161,8 @@
           ]
         },
         {
-          "name": "holo_left_leg2",
-          "parent": "holo_LeftLeg",
+          "name": "kineceleran__left_leg2",
+          "parent": "kineceleran__LeftLeg",
           "pivot": [
             9.8422,
             16.24607,
@@ -504,8 +504,8 @@
           ]
         },
         {
-          "name": "holo_Head",
-          "parent": "holo_xlr8",
+          "name": "kineceleran__Head",
+          "parent": "kineceleran__xlr8",
           "pivot": [
             9.75,
             17.34875,
@@ -583,8 +583,8 @@
           ]
         },
         {
-          "name": "holo_head_scale",
-          "parent": "holo_Head",
+          "name": "kineceleran__head_scale",
+          "parent": "kineceleran__Head",
           "pivot": [
             9.75,
             17.58625,
@@ -986,8 +986,8 @@
           ]
         },
         {
-          "name": "holo_MASK",
-          "parent": "holo_head_scale",
+          "name": "kineceleran__MASK",
+          "parent": "kineceleran__head_scale",
           "pivot": [
             9.75,
             17.74375,
@@ -1065,8 +1065,8 @@
           ]
         },
         {
-          "name": "holo_eyes_middle",
-          "parent": "holo_MASK",
+          "name": "kineceleran__eyes_middle",
+          "parent": "kineceleran__MASK",
           "pivot": [
             9.68088,
             17.69125,
@@ -1100,8 +1100,8 @@
           ]
         },
         {
-          "name": "holo_eye_right",
-          "parent": "holo_eyes_middle",
+          "name": "kineceleran__eye_right",
+          "parent": "kineceleran__eyes_middle",
           "pivot": [
             9.63724,
             17.64789,
@@ -1213,8 +1213,8 @@
           ]
         },
         {
-          "name": "holo_eye_left",
-          "parent": "holo_eyes_middle",
+          "name": "kineceleran__eye_left",
+          "parent": "kineceleran__eyes_middle",
           "pivot": [
             9.86276,
             17.64789,
@@ -1326,8 +1326,8 @@
           ]
         },
         {
-          "name": "holo_face",
-          "parent": "holo_Head",
+          "name": "kineceleran__face",
+          "parent": "kineceleran__Head",
           "pivot": [
             9.75,
             17.50625,
@@ -1429,8 +1429,8 @@
           ]
         },
         {
-          "name": "holo_eye",
-          "parent": "holo_face",
+          "name": "kineceleran__eye",
+          "parent": "kineceleran__face",
           "pivot": [
             9.855,
             17.5325,
@@ -1508,8 +1508,8 @@
           ]
         },
         {
-          "name": "holo_eye2",
-          "parent": "holo_face",
+          "name": "kineceleran__eye2",
+          "parent": "kineceleran__face",
           "pivot": [
             9.645,
             17.5325,
@@ -1587,8 +1587,8 @@
           ]
         },
         {
-          "name": "holo_Body",
-          "parent": "holo_xlr8",
+          "name": "kineceleran__Body",
+          "parent": "kineceleran__xlr8",
           "pivot": [
             9.75,
             17.34875,
@@ -1915,8 +1915,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_BASE",
-          "parent": "holo_Body",
+          "name": "kineceleran__TAIL_BASE",
+          "parent": "kineceleran__Body",
           "pivot": [
             9.75,
             16.4108,
@@ -2010,8 +2010,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_LOWMID",
-          "parent": "holo_TAIL_BASE",
+          "name": "kineceleran__TAIL_LOWMID",
+          "parent": "kineceleran__TAIL_BASE",
           "pivot": [
             9.75,
             16.42873,
@@ -2106,8 +2106,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_HIGHMID",
-          "parent": "holo_TAIL_LOWMID",
+          "name": "kineceleran__TAIL_HIGHMID",
+          "parent": "kineceleran__TAIL_LOWMID",
           "pivot": [
             9.75,
             16.44347,
@@ -2202,8 +2202,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_HIGH",
-          "parent": "holo_TAIL_HIGHMID",
+          "name": "kineceleran__TAIL_HIGH",
+          "parent": "kineceleran__TAIL_HIGHMID",
           "pivot": [
             9.75,
             16.41438,
@@ -2298,8 +2298,8 @@
           ]
         },
         {
-          "name": "holo_RightArm",
-          "parent": "holo_xlr8",
+          "name": "kineceleran__RightArm",
+          "parent": "kineceleran__xlr8",
           "pivot": [
             9.3825,
             17.0075,
@@ -2307,8 +2307,8 @@
           ]
         },
         {
-          "name": "holo_armrotate3",
-          "parent": "holo_RightArm",
+          "name": "kineceleran__armrotate3",
+          "parent": "kineceleran__RightArm",
           "pivot": [
             9.25125,
             17.0075,
@@ -2408,8 +2408,8 @@
           ]
         },
         {
-          "name": "holo_armrotate4",
-          "parent": "holo_armrotate3",
+          "name": "kineceleran__armrotate4",
+          "parent": "kineceleran__armrotate3",
           "pivot": [
             9.08001,
             16.34341,
@@ -2701,8 +2701,8 @@
           ]
         },
         {
-          "name": "holo_LeftArm2",
-          "parent": "holo_xlr8",
+          "name": "kineceleran__LeftArm2",
+          "parent": "kineceleran__xlr8",
           "pivot": [
             10.1175,
             17.0075,
@@ -2710,8 +2710,8 @@
           ]
         },
         {
-          "name": "holo_armrotate2",
-          "parent": "holo_LeftArm2",
+          "name": "kineceleran__armrotate2",
+          "parent": "kineceleran__LeftArm2",
           "pivot": [
             10.24875,
             17.0075,
@@ -2811,8 +2811,8 @@
           ]
         },
         {
-          "name": "holo_armrotate5",
-          "parent": "holo_armrotate2",
+          "name": "kineceleran__armrotate5",
+          "parent": "kineceleran__armrotate2",
           "pivot": [
             10.41999,
             16.34341,
@@ -3104,8 +3104,8 @@
           ]
         },
         {
-          "name": "holo_RightLeg",
-          "parent": "holo_xlr8",
+          "name": "kineceleran__RightLeg",
+          "parent": "kineceleran__xlr8",
           "pivot": [
             9.52425,
             16.24625,
@@ -3200,8 +3200,8 @@
           ]
         },
         {
-          "name": "holo_right_leg2",
-          "parent": "holo_RightLeg",
+          "name": "kineceleran__right_leg2",
+          "parent": "kineceleran__RightLeg",
           "pivot": [
             9.6578,
             16.24607,

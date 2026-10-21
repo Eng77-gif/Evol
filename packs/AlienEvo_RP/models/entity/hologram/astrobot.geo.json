@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "astrobot__head",
           "pivot": [
             0,
             20.125,
@@ -24,8 +24,8 @@
           ]
         },
         {
-          "name": "armorHead_r",
-          "parent": "head",
+          "name": "astrobot__armorHead_r",
+          "parent": "astrobot__head",
           "pivot": [
             0,
             20.125,
@@ -110,8 +110,8 @@
           ]
         },
         {
-          "name": "eyes_open",
-          "parent": "armorHead_r",
+          "name": "astrobot__eyes_open",
+          "parent": "astrobot__armorHead_r",
           "pivot": [
             2.45,
             22.26875,
@@ -119,8 +119,8 @@
           ]
         },
         {
-          "name": "eye_open_left",
-          "parent": "eyes_open",
+          "name": "astrobot__eye_open_left",
+          "parent": "astrobot__eyes_open",
           "pivot": [
             2.45,
             22.26875,
@@ -154,8 +154,8 @@
           ]
         },
         {
-          "name": "eye_open_right",
-          "parent": "eyes_open",
+          "name": "astrobot__eye_open_right",
+          "parent": "astrobot__eyes_open",
           "pivot": [
             -2.45,
             22.26875,
@@ -189,8 +189,8 @@
           ]
         },
         {
-          "name": "eyes_squint",
-          "parent": "armorHead_r",
+          "name": "astrobot__eyes_squint",
+          "parent": "astrobot__armorHead_r",
           "pivot": [
             -1.79375,
             23.31875,
@@ -248,8 +248,8 @@
           ]
         },
         {
-          "name": "eyes_heart",
-          "parent": "armorHead_r",
+          "name": "astrobot__eyes_heart",
+          "parent": "astrobot__armorHead_r",
           "pivot": [
             -1.79375,
             22.88125,
@@ -307,8 +307,8 @@
           ]
         },
         {
-          "name": "ant",
-          "parent": "armorHead_r",
+          "name": "astrobot__ant",
+          "parent": "astrobot__armorHead_r",
           "pivot": [
             0,
             30.0125,
@@ -362,7 +362,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "astrobot__body",
           "pivot": [
             0,
             17.9375,
@@ -370,8 +370,8 @@
           ]
         },
         {
-          "name": "armorBody_r",
-          "parent": "body",
+          "name": "astrobot__armorBody_r",
+          "parent": "astrobot__body",
           "pivot": [
             0,
             17.9375,
@@ -606,8 +606,8 @@
           ]
         },
         {
-          "name": "right_laser",
-          "parent": "armorBody_r",
+          "name": "astrobot__right_laser",
+          "parent": "astrobot__armorBody_r",
           "pivot": [
             -3.38993,
             11.18356,
@@ -615,8 +615,8 @@
           ]
         },
         {
-          "name": "right_laser_outer",
-          "parent": "right_laser",
+          "name": "astrobot__right_laser_outer",
+          "parent": "astrobot__right_laser",
           "pivot": [
             -3.38993,
             11.18356,
@@ -706,8 +706,8 @@
           ]
         },
         {
-          "name": "right_laser_inner",
-          "parent": "right_laser",
+          "name": "astrobot__right_laser_inner",
+          "parent": "astrobot__right_laser",
           "pivot": [
             -3.38993,
             10.83356,
@@ -791,8 +791,8 @@
           ]
         },
         {
-          "name": "left_laser",
-          "parent": "armorBody_r",
+          "name": "astrobot__left_laser",
+          "parent": "astrobot__armorBody_r",
           "pivot": [
             3.38993,
             11.18356,
@@ -800,8 +800,8 @@
           ]
         },
         {
-          "name": "left_laser_outer",
-          "parent": "left_laser",
+          "name": "astrobot__left_laser_outer",
+          "parent": "astrobot__left_laser",
           "pivot": [
             3.38993,
             11.18356,
@@ -891,8 +891,8 @@
           ]
         },
         {
-          "name": "left_laser_inner",
-          "parent": "left_laser",
+          "name": "astrobot__left_laser_inner",
+          "parent": "astrobot__left_laser",
           "pivot": [
             3.38993,
             10.83356,
@@ -976,8 +976,8 @@
           ]
         },
         {
-          "name": "cape",
-          "parent": "armorBody_r",
+          "name": "astrobot__cape",
+          "parent": "astrobot__armorBody_r",
           "pivot": [
             0,
             18.025,
@@ -1016,7 +1016,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "astrobot__leftArm",
           "pivot": [
             4.9875,
             16.1875,
@@ -1024,8 +1024,8 @@
           ]
         },
         {
-          "name": "armorLeftArm_r",
-          "parent": "leftArm",
+          "name": "astrobot__armorLeftArm_r",
+          "parent": "astrobot__leftArm",
           "pivot": [
             4.9875,
             16.1875,
@@ -1033,8 +1033,8 @@
           ]
         },
         {
-          "name": "arm2",
-          "parent": "armorLeftArm_r",
+          "name": "astrobot__arm2",
+          "parent": "astrobot__armorLeftArm_r",
           "pivot": [
             4.6375,
             16.56875,
@@ -1124,8 +1124,8 @@
           ]
         },
         {
-          "name": "left_hand",
-          "parent": "arm2",
+          "name": "astrobot__left_hand",
+          "parent": "astrobot__arm2",
           "pivot": [
             3.60365,
             12.8455,
@@ -1215,8 +1215,8 @@
           ]
         },
         {
-          "name": "leftarm_inner",
-          "parent": "left_hand",
+          "name": "astrobot__leftarm_inner",
+          "parent": "astrobot__left_hand",
           "pivot": [
             4.47415,
             11.79911,
@@ -1301,8 +1301,8 @@
           ]
         },
         {
-          "name": "left_punch",
-          "parent": "left_hand",
+          "name": "astrobot__left_punch",
+          "parent": "astrobot__left_hand",
           "pivot": [
             3.60365,
             12.8455,
@@ -1442,7 +1442,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "astrobot__rightArm",
           "pivot": [
             -4.9875,
             16.1875,
@@ -1450,8 +1450,8 @@
           ]
         },
         {
-          "name": "armorRightArm_r",
-          "parent": "rightArm",
+          "name": "astrobot__armorRightArm_r",
+          "parent": "astrobot__rightArm",
           "pivot": [
             -4.9875,
             16.1875,
@@ -1459,8 +1459,8 @@
           ]
         },
         {
-          "name": "arm4",
-          "parent": "armorRightArm_r",
+          "name": "astrobot__arm4",
+          "parent": "astrobot__armorRightArm_r",
           "pivot": [
             -4.6375,
             16.56875,
@@ -1550,8 +1550,8 @@
           ]
         },
         {
-          "name": "right_hand",
-          "parent": "arm4",
+          "name": "astrobot__right_hand",
+          "parent": "astrobot__arm4",
           "pivot": [
             -3.60365,
             12.8455,
@@ -1641,8 +1641,8 @@
           ]
         },
         {
-          "name": "rightarm_inner",
-          "parent": "right_hand",
+          "name": "astrobot__rightarm_inner",
+          "parent": "astrobot__right_hand",
           "pivot": [
             -4.47415,
             11.79911,
@@ -1727,8 +1727,8 @@
           ]
         },
         {
-          "name": "right_punch",
-          "parent": "right_hand",
+          "name": "astrobot__right_punch",
+          "parent": "astrobot__right_hand",
           "pivot": [
             -3.60365,
             12.8455,
@@ -1868,7 +1868,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "astrobot__leftLeg",
           "pivot": [
             4.375,
             8.75,
@@ -1876,8 +1876,8 @@
           ]
         },
         {
-          "name": "armorLeftLeg_r",
-          "parent": "leftLeg",
+          "name": "astrobot__armorLeftLeg_r",
+          "parent": "astrobot__leftLeg",
           "pivot": [
             4.375,
             8.75,
@@ -1885,8 +1885,8 @@
           ]
         },
         {
-          "name": "arm5",
-          "parent": "armorLeftLeg_r",
+          "name": "astrobot__arm5",
+          "parent": "astrobot__armorLeftLeg_r",
           "pivot": [
             5.47718,
             -2.40052,
@@ -2136,7 +2136,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "astrobot__rightLeg",
           "pivot": [
             -4.375,
             8.75,
@@ -2144,8 +2144,8 @@
           ]
         },
         {
-          "name": "armorRightLeg_r",
-          "parent": "rightLeg",
+          "name": "astrobot__armorRightLeg_r",
+          "parent": "astrobot__rightLeg",
           "pivot": [
             -4.375,
             8.75,
@@ -2153,8 +2153,8 @@
           ]
         },
         {
-          "name": "arm3",
-          "parent": "armorRightLeg_r",
+          "name": "astrobot__arm3",
+          "parent": "astrobot__armorRightLeg_r",
           "pivot": [
             -5.47718,
             -2.40052,

@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "nucleonix__head",
           "pivot": [
             0,
             24.09,
@@ -571,8 +571,8 @@
           ]
         },
         {
-          "name": "hg1",
-          "parent": "head",
+          "name": "nucleonix__hg1",
+          "parent": "nucleonix__head",
           "pivot": [
             -0.0825,
             28.24748,
@@ -666,8 +666,8 @@
           ]
         },
         {
-          "name": "hg2",
-          "parent": "head",
+          "name": "nucleonix__hg2",
+          "parent": "nucleonix__head",
           "pivot": [
             0.2475,
             27.53788,
@@ -761,8 +761,8 @@
           ]
         },
         {
-          "name": "hg3",
-          "parent": "head",
+          "name": "nucleonix__hg3",
+          "parent": "nucleonix__head",
           "pivot": [
             -0.4125,
             27.84287,
@@ -856,8 +856,8 @@
           ]
         },
         {
-          "name": "hg4",
-          "parent": "head",
+          "name": "nucleonix__hg4",
+          "parent": "nucleonix__head",
           "pivot": [
             0.0825,
             26.83725,
@@ -941,7 +941,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "nucleonix__body",
           "pivot": [
             0,
             24.09,
@@ -1154,8 +1154,8 @@
           ]
         },
         {
-          "name": "upper_chest",
-          "parent": "body",
+          "name": "nucleonix__upper_chest",
+          "parent": "nucleonix__body",
           "pivot": [
             -4.62,
             19.8,
@@ -1549,8 +1549,8 @@
           ]
         },
         {
-          "name": "chestGoop",
-          "parent": "upper_chest",
+          "name": "nucleonix__chestGoop",
+          "parent": "nucleonix__upper_chest",
           "pivot": [
             -4.95,
             20.625,
@@ -1558,8 +1558,8 @@
           ]
         },
         {
-          "name": "cg5",
-          "parent": "chestGoop",
+          "name": "nucleonix__cg5",
+          "parent": "nucleonix__chestGoop",
           "pivot": [
             -0.99,
             17.75535,
@@ -1653,8 +1653,8 @@
           ]
         },
         {
-          "name": "cg4",
-          "parent": "chestGoop",
+          "name": "nucleonix__cg4",
+          "parent": "nucleonix__chestGoop",
           "pivot": [
             1.65,
             17.75535,
@@ -1748,8 +1748,8 @@
           ]
         },
         {
-          "name": "cg3",
-          "parent": "chestGoop",
+          "name": "nucleonix__cg3",
+          "parent": "nucleonix__chestGoop",
           "pivot": [
             -0.99,
             19.73535,
@@ -1843,8 +1843,8 @@
           ]
         },
         {
-          "name": "cg2",
-          "parent": "chestGoop",
+          "name": "nucleonix__cg2",
+          "parent": "nucleonix__chestGoop",
           "pivot": [
             0,
             18.41535,
@@ -1938,8 +1938,8 @@
           ]
         },
         {
-          "name": "cg1",
-          "parent": "chestGoop",
+          "name": "nucleonix__cg1",
+          "parent": "nucleonix__chestGoop",
           "pivot": [
             0.66,
             19.73535,
@@ -2033,7 +2033,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "nucleonix__leftArm",
           "pivot": [
             5.28,
             20.79,
@@ -2041,8 +2041,8 @@
           ]
         },
         {
-          "name": "leftarmrotate",
-          "parent": "leftArm",
+          "name": "nucleonix__leftarmrotate",
+          "parent": "nucleonix__leftArm",
           "pivot": [
             2.805,
             19.14,
@@ -2205,8 +2205,8 @@
           ]
         },
         {
-          "name": "leftarmupper",
-          "parent": "leftarmrotate",
+          "name": "nucleonix__leftarmupper",
+          "parent": "nucleonix__leftarmrotate",
           "pivot": [
             2.1498,
             16.34202,
@@ -2275,8 +2275,8 @@
           ]
         },
         {
-          "name": "leftarmlower",
-          "parent": "leftarmupper",
+          "name": "nucleonix__leftarmlower",
+          "parent": "nucleonix__leftarmupper",
           "pivot": [
             2.31,
             11.88,
@@ -2493,8 +2493,8 @@
           ]
         },
         {
-          "name": "lefthand",
-          "parent": "leftarmlower",
+          "name": "nucleonix__lefthand",
+          "parent": "nucleonix__leftarmlower",
           "pivot": [
             1.485,
             7.095,
@@ -2732,8 +2732,8 @@
           ]
         },
         {
-          "name": "leftGOOP",
-          "parent": "leftarmlower",
+          "name": "nucleonix__leftGOOP",
+          "parent": "nucleonix__leftarmlower",
           "pivot": [
             1.82368,
             12.18794,
@@ -2741,8 +2741,8 @@
           ]
         },
         {
-          "name": "left_g1",
-          "parent": "leftGOOP",
+          "name": "nucleonix__left_g1",
+          "parent": "nucleonix__leftGOOP",
           "pivot": [
             6.20304,
             12.23887,
@@ -2826,8 +2826,8 @@
           ]
         },
         {
-          "name": "left_g2",
-          "parent": "leftGOOP",
+          "name": "nucleonix__left_g2",
+          "parent": "nucleonix__leftGOOP",
           "pivot": [
             7.52304,
             10.91887,
@@ -2911,8 +2911,8 @@
           ]
         },
         {
-          "name": "left_g3",
-          "parent": "leftGOOP",
+          "name": "nucleonix__left_g3",
+          "parent": "nucleonix__leftGOOP",
           "pivot": [
             6.20304,
             10.09387,
@@ -2996,8 +2996,8 @@
           ]
         },
         {
-          "name": "left_g4",
-          "parent": "leftGOOP",
+          "name": "nucleonix__left_g4",
+          "parent": "nucleonix__leftGOOP",
           "pivot": [
             8.18304,
             12.40387,
@@ -3081,8 +3081,8 @@
           ]
         },
         {
-          "name": "bone",
-          "parent": "leftarmrotate",
+          "name": "nucleonix__bone",
+          "parent": "nucleonix__leftarmrotate",
           "pivot": [
             9.0008,
             19.98128,
@@ -3166,8 +3166,8 @@
           ]
         },
         {
-          "name": "bone2",
-          "parent": "leftarmrotate",
+          "name": "nucleonix__bone2",
+          "parent": "nucleonix__leftarmrotate",
           "pivot": [
             8.3408,
             19.32128,
@@ -3251,8 +3251,8 @@
           ]
         },
         {
-          "name": "bone3",
-          "parent": "leftarmrotate",
+          "name": "nucleonix__bone3",
+          "parent": "nucleonix__leftarmrotate",
           "pivot": [
             8.6708,
             18.66128,
@@ -3336,8 +3336,8 @@
           ]
         },
         {
-          "name": "bone4",
-          "parent": "leftarmrotate",
+          "name": "nucleonix__bone4",
+          "parent": "nucleonix__leftarmrotate",
           "pivot": [
             8.6708,
             18.33128,
@@ -3421,8 +3421,8 @@
           ]
         },
         {
-          "name": "bone5",
-          "parent": "leftarmrotate",
+          "name": "nucleonix__bone5",
+          "parent": "nucleonix__leftarmrotate",
           "pivot": [
             9.0008,
             20.31128,
@@ -3506,7 +3506,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "nucleonix__rightArm",
           "pivot": [
             -5.28,
             20.79,
@@ -3514,8 +3514,8 @@
           ]
         },
         {
-          "name": "rightarmrotate",
-          "parent": "rightArm",
+          "name": "nucleonix__rightarmrotate",
+          "parent": "nucleonix__rightArm",
           "pivot": [
             -2.805,
             19.14,
@@ -3678,8 +3678,8 @@
           ]
         },
         {
-          "name": "rightarmupper",
-          "parent": "rightarmrotate",
+          "name": "nucleonix__rightarmupper",
+          "parent": "nucleonix__rightarmrotate",
           "pivot": [
             -2.1498,
             16.34202,
@@ -3748,8 +3748,8 @@
           ]
         },
         {
-          "name": "rightarmlower",
-          "parent": "rightarmupper",
+          "name": "nucleonix__rightarmlower",
+          "parent": "nucleonix__rightarmupper",
           "pivot": [
             -2.31,
             11.88,
@@ -3966,8 +3966,8 @@
           ]
         },
         {
-          "name": "righthand",
-          "parent": "rightarmlower",
+          "name": "nucleonix__righthand",
+          "parent": "nucleonix__rightarmlower",
           "pivot": [
             -1.485,
             7.095,
@@ -4205,8 +4205,8 @@
           ]
         },
         {
-          "name": "rightGOOP",
-          "parent": "rightarmlower",
+          "name": "nucleonix__rightGOOP",
+          "parent": "nucleonix__rightarmlower",
           "pivot": [
             -1.82368,
             12.18794,
@@ -4214,8 +4214,8 @@
           ]
         },
         {
-          "name": "right_g1",
-          "parent": "rightGOOP",
+          "name": "nucleonix__right_g1",
+          "parent": "nucleonix__rightGOOP",
           "pivot": [
             -6.20304,
             12.23887,
@@ -4299,8 +4299,8 @@
           ]
         },
         {
-          "name": "right_g2",
-          "parent": "rightGOOP",
+          "name": "nucleonix__right_g2",
+          "parent": "nucleonix__rightGOOP",
           "pivot": [
             -7.52304,
             10.91887,
@@ -4384,8 +4384,8 @@
           ]
         },
         {
-          "name": "right_g3",
-          "parent": "rightGOOP",
+          "name": "nucleonix__right_g3",
+          "parent": "nucleonix__rightGOOP",
           "pivot": [
             -6.20304,
             10.09387,
@@ -4469,8 +4469,8 @@
           ]
         },
         {
-          "name": "right_g4",
-          "parent": "rightGOOP",
+          "name": "nucleonix__right_g4",
+          "parent": "nucleonix__rightGOOP",
           "pivot": [
             -8.18304,
             12.40387,
@@ -4554,8 +4554,8 @@
           ]
         },
         {
-          "name": "bone6",
-          "parent": "rightarmrotate",
+          "name": "nucleonix__bone6",
+          "parent": "nucleonix__rightarmrotate",
           "pivot": [
             -9.0008,
             19.98128,
@@ -4639,8 +4639,8 @@
           ]
         },
         {
-          "name": "bone7",
-          "parent": "rightarmrotate",
+          "name": "nucleonix__bone7",
+          "parent": "nucleonix__rightarmrotate",
           "pivot": [
             -8.3408,
             19.32128,
@@ -4724,8 +4724,8 @@
           ]
         },
         {
-          "name": "bone8",
-          "parent": "rightarmrotate",
+          "name": "nucleonix__bone8",
+          "parent": "nucleonix__rightarmrotate",
           "pivot": [
             -8.6708,
             18.66128,
@@ -4809,8 +4809,8 @@
           ]
         },
         {
-          "name": "bone9",
-          "parent": "rightarmrotate",
+          "name": "nucleonix__bone9",
+          "parent": "nucleonix__rightarmrotate",
           "pivot": [
             -8.6708,
             18.33128,
@@ -4894,8 +4894,8 @@
           ]
         },
         {
-          "name": "bone10",
-          "parent": "rightarmrotate",
+          "name": "nucleonix__bone10",
+          "parent": "nucleonix__rightarmrotate",
           "pivot": [
             -9.0008,
             20.31128,
@@ -4979,7 +4979,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "nucleonix__leftLeg",
           "pivot": [
             2.145,
             11.7975,
@@ -4987,8 +4987,8 @@
           ]
         },
         {
-          "name": "leftleg",
-          "parent": "leftLeg",
+          "name": "nucleonix__leftleg_inner",
+          "parent": "nucleonix__leftLeg",
           "pivot": [
             -2.31,
             6.5175,
@@ -5077,8 +5077,8 @@
           ]
         },
         {
-          "name": "leftleglower",
-          "parent": "leftleg",
+          "name": "nucleonix__leftleglower",
+          "parent": "nucleonix__leftleg_inner",
           "pivot": [
             -2.47792,
             2.78779,
@@ -5241,8 +5241,8 @@
           ]
         },
         {
-          "name": "leftfoot",
-          "parent": "leftleglower",
+          "name": "nucleonix__leftfoot",
+          "parent": "nucleonix__leftleglower",
           "pivot": [
             -2.23042,
             0.14779,
@@ -5396,7 +5396,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "nucleonix__rightLeg",
           "pivot": [
             -2.145,
             11.7975,
@@ -5404,8 +5404,8 @@
           ]
         },
         {
-          "name": "rightleg",
-          "parent": "rightLeg",
+          "name": "nucleonix__rightleg_inner",
+          "parent": "nucleonix__rightLeg",
           "pivot": [
             2.31,
             6.5175,
@@ -5494,8 +5494,8 @@
           ]
         },
         {
-          "name": "rightleglower",
-          "parent": "rightleg",
+          "name": "nucleonix__rightleglower",
+          "parent": "nucleonix__rightleg_inner",
           "pivot": [
             2.47792,
             2.78779,
@@ -5658,8 +5658,8 @@
           ]
         },
         {
-          "name": "rightfoot",
-          "parent": "rightleglower",
+          "name": "nucleonix__rightfoot",
+          "parent": "nucleonix__rightleglower",
           "pivot": [
             2.23042,
             0.14779,

@@ -3757,7 +3757,7 @@
           ]
         },
         {
-          "name": "LeftArm",
+          "name": "LeftArm_inner",
           "parent": "leftArm",
           "pivot": [
             7.3334,
@@ -3855,7 +3855,7 @@
           ]
         },
         {
-          "name": "RightArm",
+          "name": "RightArm_inner",
           "parent": "rightArm",
           "pivot": [
             -4.8334,
@@ -3953,7 +3953,7 @@
           ]
         },
         {
-          "name": "LeftLeg",
+          "name": "LeftLeg_inner",
           "parent": "leftLeg",
           "pivot": [
             3.58354,
@@ -4056,7 +4056,7 @@
           ]
         },
         {
-          "name": "RightLeg",
+          "name": "RightLeg_inner",
           "parent": "rightLeg",
           "pivot": [
             -3.58354,

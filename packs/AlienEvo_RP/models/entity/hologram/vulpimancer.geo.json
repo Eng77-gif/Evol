@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "vulpimancer__head",
           "pivot": [
             0,
             17.89328,
@@ -24,8 +24,8 @@
           ]
         },
         {
-          "name": "HeadAnim",
-          "parent": "head",
+          "name": "vulpimancer__HeadAnim",
+          "parent": "vulpimancer__head",
           "pivot": [
             0,
             17.89328,
@@ -119,8 +119,8 @@
           ]
         },
         {
-          "name": "Jaw",
-          "parent": "HeadAnim",
+          "name": "vulpimancer__Jaw",
+          "parent": "vulpimancer__HeadAnim",
           "pivot": [
             0,
             10.8829,
@@ -331,8 +331,8 @@
           ]
         },
         {
-          "name": "TopJaw",
-          "parent": "HeadAnim",
+          "name": "vulpimancer__TopJaw",
+          "parent": "vulpimancer__HeadAnim",
           "pivot": [
             0,
             19.8974,
@@ -460,7 +460,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "vulpimancer__body",
           "pivot": [
             0,
             17.8933,
@@ -875,7 +875,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "vulpimancer__leftLeg",
           "pivot": [
             6,
             15,
@@ -1075,7 +1075,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "vulpimancer__rightLeg",
           "pivot": [
             -6,
             15,
@@ -1277,7 +1277,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "vulpimancer__leftArm",
           "pivot": [
             6.775,
             18.7,
@@ -1720,7 +1720,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "vulpimancer__rightArm",
           "pivot": [
             -6.775,
             18.7,

@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "vaxasaurian__head",
           "pivot": [
             0,
             30.36,
@@ -500,8 +500,8 @@
           ]
         },
         {
-          "name": "armor3",
-          "parent": "head",
+          "name": "vaxasaurian__armor3",
+          "parent": "vaxasaurian__head",
           "pivot": [
             -1.32,
             32.40378,
@@ -509,8 +509,8 @@
           ]
         },
         {
-          "name": "bone10",
-          "parent": "armor3",
+          "name": "vaxasaurian__bone10",
+          "parent": "vaxasaurian__armor3",
           "pivot": [
             0,
             32.78,
@@ -594,8 +594,8 @@
           ]
         },
         {
-          "name": "bone11",
-          "parent": "armor3",
+          "name": "vaxasaurian__bone11",
+          "parent": "vaxasaurian__armor3",
           "pivot": [
             1.32,
             32.40378,
@@ -753,7 +753,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "vaxasaurian__body",
           "pivot": [
             0,
             29.48,
@@ -965,8 +965,8 @@
           ]
         },
         {
-          "name": "upper_chest",
-          "parent": "body",
+          "name": "vaxasaurian__upper_chest",
+          "parent": "vaxasaurian__body",
           "pivot": [
             0,
             26.4,
@@ -1282,8 +1282,8 @@
           ]
         },
         {
-          "name": "armor4",
-          "parent": "upper_chest",
+          "name": "vaxasaurian__armor4",
+          "parent": "vaxasaurian__upper_chest",
           "pivot": [
             0,
             21.09832,
@@ -1291,8 +1291,8 @@
           ]
         },
         {
-          "name": "bone",
-          "parent": "armor4",
+          "name": "vaxasaurian__bone",
+          "parent": "vaxasaurian__armor4",
           "pivot": [
             0,
             32.1851,
@@ -1387,8 +1387,8 @@
           ]
         },
         {
-          "name": "bone6",
-          "parent": "armor4",
+          "name": "vaxasaurian__bone6",
+          "parent": "vaxasaurian__armor4",
           "pivot": [
             0,
             29.79254,
@@ -1472,8 +1472,8 @@
           ]
         },
         {
-          "name": "bone7",
-          "parent": "armor4",
+          "name": "vaxasaurian__bone7",
+          "parent": "vaxasaurian__armor4",
           "pivot": [
             0,
             25.58473,
@@ -1557,8 +1557,8 @@
           ]
         },
         {
-          "name": "bone8",
-          "parent": "armor4",
+          "name": "vaxasaurian__bone8",
+          "parent": "vaxasaurian__armor4",
           "pivot": [
             0,
             20.75453,
@@ -1642,8 +1642,8 @@
           ]
         },
         {
-          "name": "bone9",
-          "parent": "armor4",
+          "name": "vaxasaurian__bone9",
+          "parent": "vaxasaurian__armor4",
           "pivot": [
             0,
             15.32902,
@@ -1727,8 +1727,8 @@
           ]
         },
         {
-          "name": "tail_top",
-          "parent": "body",
+          "name": "vaxasaurian__tail_top",
+          "parent": "vaxasaurian__body",
           "pivot": [
             0,
             11.49191,
@@ -1736,8 +1736,8 @@
           ]
         },
         {
-          "name": "tail",
-          "parent": "tail_top",
+          "name": "vaxasaurian__tail",
+          "parent": "vaxasaurian__tail_top",
           "pivot": [
             0,
             11.49191,
@@ -1896,8 +1896,8 @@
           ]
         },
         {
-          "name": "tail1",
-          "parent": "tail",
+          "name": "vaxasaurian__tail1",
+          "parent": "vaxasaurian__tail",
           "pivot": [
             0,
             11.28267,
@@ -1991,8 +1991,8 @@
           ]
         },
         {
-          "name": "tail2",
-          "parent": "tail1",
+          "name": "vaxasaurian__tail2",
+          "parent": "vaxasaurian__tail1",
           "pivot": [
             0,
             11.28267,
@@ -2086,8 +2086,8 @@
           ]
         },
         {
-          "name": "bone21",
-          "parent": "tail2",
+          "name": "vaxasaurian__bone21",
+          "parent": "vaxasaurian__tail2",
           "pivot": [
             0,
             11.50267,
@@ -2267,8 +2267,8 @@
           ]
         },
         {
-          "name": "tail3",
-          "parent": "tail2",
+          "name": "vaxasaurian__tail3",
+          "parent": "vaxasaurian__tail2",
           "pivot": [
             0,
             11.28267,
@@ -2362,8 +2362,8 @@
           ]
         },
         {
-          "name": "bone22",
-          "parent": "tail3",
+          "name": "vaxasaurian__bone22",
+          "parent": "vaxasaurian__tail3",
           "pivot": [
             0,
             11.50267,
@@ -2541,7 +2541,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "vaxasaurian__rightLeg",
           "pivot": [
             -3.52,
             10.56,
@@ -2549,8 +2549,8 @@
           ]
         },
         {
-          "name": "leg2",
-          "parent": "rightLeg",
+          "name": "vaxasaurian__leg2",
+          "parent": "vaxasaurian__rightLeg",
           "pivot": [
             -3.52,
             9.24,
@@ -2714,8 +2714,8 @@
           ]
         },
         {
-          "name": "lower_leg2",
-          "parent": "leg2",
+          "name": "vaxasaurian__lower_leg2",
+          "parent": "vaxasaurian__leg2",
           "pivot": [
             -3.52,
             3.96,
@@ -2858,8 +2858,8 @@
           ]
         },
         {
-          "name": "bone3",
-          "parent": "lower_leg2",
+          "name": "vaxasaurian__bone3",
+          "parent": "vaxasaurian__lower_leg2",
           "pivot": [
             -3.52,
             0.44,
@@ -3163,7 +3163,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "vaxasaurian__leftLeg",
           "pivot": [
             3.52,
             10.56,
@@ -3171,8 +3171,8 @@
           ]
         },
         {
-          "name": "leg3",
-          "parent": "leftLeg",
+          "name": "vaxasaurian__leg3",
+          "parent": "vaxasaurian__leftLeg",
           "pivot": [
             3.52,
             9.24,
@@ -3336,8 +3336,8 @@
           ]
         },
         {
-          "name": "lower_leg3",
-          "parent": "leg3",
+          "name": "vaxasaurian__lower_leg3",
+          "parent": "vaxasaurian__leg3",
           "pivot": [
             3.52,
             3.96,
@@ -3480,8 +3480,8 @@
           ]
         },
         {
-          "name": "bone4",
-          "parent": "lower_leg3",
+          "name": "vaxasaurian__bone4",
+          "parent": "vaxasaurian__lower_leg3",
           "pivot": [
             3.52,
             0.44,
@@ -3785,7 +3785,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "vaxasaurian__leftArm",
           "pivot": [
             7.7,
             24.64,
@@ -3793,8 +3793,8 @@
           ]
         },
         {
-          "name": "arm3",
-          "parent": "leftArm",
+          "name": "vaxasaurian__arm3",
+          "parent": "vaxasaurian__leftArm",
           "pivot": [
             10.34,
             25.52,
@@ -3883,8 +3883,8 @@
           ]
         },
         {
-          "name": "lower_arm3",
-          "parent": "arm3",
+          "name": "vaxasaurian__lower_arm3",
+          "parent": "vaxasaurian__arm3",
           "pivot": [
             9.4664,
             21.78936,
@@ -3963,8 +3963,8 @@
           ]
         },
         {
-          "name": "forearm3",
-          "parent": "lower_arm3",
+          "name": "vaxasaurian__forearm3",
+          "parent": "vaxasaurian__lower_arm3",
           "pivot": [
             9.68,
             15.84,
@@ -4117,8 +4117,8 @@
           ]
         },
         {
-          "name": "armor2",
-          "parent": "forearm3",
+          "name": "vaxasaurian__armor2",
+          "parent": "vaxasaurian__forearm3",
           "pivot": [
             11.88,
             8.36,
@@ -4126,8 +4126,8 @@
           ]
         },
         {
-          "name": "bone15",
-          "parent": "armor2",
+          "name": "vaxasaurian__bone15",
+          "parent": "vaxasaurian__armor2",
           "pivot": [
             12.6754,
             15.27139,
@@ -4202,8 +4202,8 @@
           ]
         },
         {
-          "name": "bone14",
-          "parent": "armor2",
+          "name": "vaxasaurian__bone14",
+          "parent": "vaxasaurian__armor2",
           "pivot": [
             12.33037,
             13.49034,
@@ -4278,8 +4278,8 @@
           ]
         },
         {
-          "name": "bone13",
-          "parent": "armor2",
+          "name": "vaxasaurian__bone13",
+          "parent": "vaxasaurian__armor2",
           "pivot": [
             12.07831,
             11.90867,
@@ -4354,8 +4354,8 @@
           ]
         },
         {
-          "name": "bone12",
-          "parent": "armor2",
+          "name": "vaxasaurian__bone12",
+          "parent": "vaxasaurian__armor2",
           "pivot": [
             11.64031,
             9.92823,
@@ -4430,8 +4430,8 @@
           ]
         },
         {
-          "name": "thumb3",
-          "parent": "forearm3",
+          "name": "vaxasaurian__thumb3",
+          "parent": "vaxasaurian__forearm3",
           "pivot": [
             8.58,
             9.24,
@@ -4520,8 +4520,8 @@
           ]
         },
         {
-          "name": "hand3",
-          "parent": "forearm3",
+          "name": "vaxasaurian__hand3",
+          "parent": "vaxasaurian__forearm3",
           "pivot": [
             11.44,
             8.36,
@@ -4601,8 +4601,8 @@
           ]
         },
         {
-          "name": "bone2",
-          "parent": "hand3",
+          "name": "vaxasaurian__bone2",
+          "parent": "vaxasaurian__hand3",
           "pivot": [
             11.88,
             5.28,
@@ -4745,8 +4745,8 @@
           ]
         },
         {
-          "name": "armor7",
-          "parent": "arm3",
+          "name": "vaxasaurian__armor7",
+          "parent": "vaxasaurian__arm3",
           "pivot": [
             12.54,
             26.84,
@@ -4754,8 +4754,8 @@
           ]
         },
         {
-          "name": "bone20",
-          "parent": "armor7",
+          "name": "vaxasaurian__bone20",
+          "parent": "vaxasaurian__armor7",
           "pivot": [
             9.22632,
             27.0521,
@@ -4763,8 +4763,8 @@
           ]
         },
         {
-          "name": "bone18",
-          "parent": "bone20",
+          "name": "vaxasaurian__bone18",
+          "parent": "vaxasaurian__bone20",
           "pivot": [
             12.70105,
             26.23895,
@@ -4849,8 +4849,8 @@
           ]
         },
         {
-          "name": "bone19",
-          "parent": "bone20",
+          "name": "vaxasaurian__bone19",
+          "parent": "vaxasaurian__bone20",
           "pivot": [
             9.22632,
             27.0521,
@@ -4924,8 +4924,8 @@
           ]
         },
         {
-          "name": "bone17",
-          "parent": "armor7",
+          "name": "vaxasaurian__bone17",
+          "parent": "vaxasaurian__armor7",
           "pivot": [
             11.68373,
             25.00131,
@@ -5010,8 +5010,8 @@
           ]
         },
         {
-          "name": "bone16",
-          "parent": "armor7",
+          "name": "vaxasaurian__bone16",
+          "parent": "vaxasaurian__armor7",
           "pivot": [
             10.58733,
             24.17064,
@@ -5096,7 +5096,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "vaxasaurian__rightArm",
           "pivot": [
             -7.7,
             24.64,
@@ -5104,8 +5104,8 @@
           ]
         },
         {
-          "name": "arm2",
-          "parent": "rightArm",
+          "name": "vaxasaurian__arm2",
+          "parent": "vaxasaurian__rightArm",
           "pivot": [
             -10.34,
             25.52,
@@ -5194,8 +5194,8 @@
           ]
         },
         {
-          "name": "lower_arm2",
-          "parent": "arm2",
+          "name": "vaxasaurian__lower_arm2",
+          "parent": "vaxasaurian__arm2",
           "pivot": [
             -9.4664,
             21.78936,
@@ -5274,8 +5274,8 @@
           ]
         },
         {
-          "name": "forearm2",
-          "parent": "lower_arm2",
+          "name": "vaxasaurian__forearm2",
+          "parent": "vaxasaurian__lower_arm2",
           "pivot": [
             -9.68,
             15.84,
@@ -5428,8 +5428,8 @@
           ]
         },
         {
-          "name": "armor5",
-          "parent": "forearm2",
+          "name": "vaxasaurian__armor5",
+          "parent": "vaxasaurian__forearm2",
           "pivot": [
             -11.88,
             8.36,
@@ -5437,8 +5437,8 @@
           ]
         },
         {
-          "name": "bone5",
-          "parent": "armor5",
+          "name": "vaxasaurian__bone5",
+          "parent": "vaxasaurian__armor5",
           "pivot": [
             -12.6754,
             15.27139,
@@ -5513,8 +5513,8 @@
           ]
         },
         {
-          "name": "bone23",
-          "parent": "armor5",
+          "name": "vaxasaurian__bone23",
+          "parent": "vaxasaurian__armor5",
           "pivot": [
             -12.33037,
             13.49034,
@@ -5589,8 +5589,8 @@
           ]
         },
         {
-          "name": "bone24",
-          "parent": "armor5",
+          "name": "vaxasaurian__bone24",
+          "parent": "vaxasaurian__armor5",
           "pivot": [
             -12.07831,
             11.90867,
@@ -5665,8 +5665,8 @@
           ]
         },
         {
-          "name": "bone25",
-          "parent": "armor5",
+          "name": "vaxasaurian__bone25",
+          "parent": "vaxasaurian__armor5",
           "pivot": [
             -11.64031,
             9.92823,
@@ -5741,8 +5741,8 @@
           ]
         },
         {
-          "name": "thumb2",
-          "parent": "forearm2",
+          "name": "vaxasaurian__thumb2",
+          "parent": "vaxasaurian__forearm2",
           "pivot": [
             -8.58,
             9.24,
@@ -5831,8 +5831,8 @@
           ]
         },
         {
-          "name": "hand2",
-          "parent": "forearm2",
+          "name": "vaxasaurian__hand2",
+          "parent": "vaxasaurian__forearm2",
           "pivot": [
             -11.44,
             8.36,
@@ -5912,8 +5912,8 @@
           ]
         },
         {
-          "name": "bone26",
-          "parent": "hand2",
+          "name": "vaxasaurian__bone26",
+          "parent": "vaxasaurian__hand2",
           "pivot": [
             -11.88,
             5.28,
@@ -6056,8 +6056,8 @@
           ]
         },
         {
-          "name": "armor6",
-          "parent": "arm2",
+          "name": "vaxasaurian__armor6",
+          "parent": "vaxasaurian__arm2",
           "pivot": [
             -12.54,
             26.84,
@@ -6065,8 +6065,8 @@
           ]
         },
         {
-          "name": "bone27",
-          "parent": "armor6",
+          "name": "vaxasaurian__bone27",
+          "parent": "vaxasaurian__armor6",
           "pivot": [
             -9.22632,
             27.0521,
@@ -6074,8 +6074,8 @@
           ]
         },
         {
-          "name": "bone28",
-          "parent": "bone27",
+          "name": "vaxasaurian__bone28",
+          "parent": "vaxasaurian__bone27",
           "pivot": [
             -12.70105,
             26.23895,
@@ -6160,8 +6160,8 @@
           ]
         },
         {
-          "name": "bone29",
-          "parent": "bone27",
+          "name": "vaxasaurian__bone29",
+          "parent": "vaxasaurian__bone27",
           "pivot": [
             -9.22632,
             27.0521,
@@ -6235,8 +6235,8 @@
           ]
         },
         {
-          "name": "bone30",
-          "parent": "armor6",
+          "name": "vaxasaurian__bone30",
+          "parent": "vaxasaurian__armor6",
           "pivot": [
             -11.68373,
             25.00131,
@@ -6321,8 +6321,8 @@
           ]
         },
         {
-          "name": "bone31",
-          "parent": "armor6",
+          "name": "vaxasaurian__bone31",
+          "parent": "vaxasaurian__armor6",
           "pivot": [
             -10.58733,
             24.17064,
@@ -6407,22 +6407,22 @@
           ]
         },
         {
-          "name": "armorLeftBoot",
+          "name": "vaxasaurian__armorLeftBoot",
           "pivot": [
             0,
             0,
             0
           ],
-          "parent": "leftLeg"
+          "parent": "vaxasaurian__leftLeg"
         },
         {
-          "name": "armorRightBoot",
+          "name": "vaxasaurian__armorRightBoot",
           "pivot": [
             0,
             0,
             0
           ],
-          "parent": "rightLeg"
+          "parent": "vaxasaurian__rightLeg"
         }
       ]
     }

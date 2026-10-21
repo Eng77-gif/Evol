@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "Head",
+          "name": "loboan__Head",
           "pivot": [
             -0.05,
             26.50587,
@@ -24,8 +24,8 @@
           ]
         },
         {
-          "name": "headier",
-          "parent": "Head",
+          "name": "loboan__headier",
+          "parent": "loboan__Head",
           "pivot": [
             -0.05,
             30.57685,
@@ -541,8 +541,8 @@
           ]
         },
         {
-          "name": "head1",
-          "parent": "headier",
+          "name": "loboan__head1",
+          "parent": "loboan__headier",
           "pivot": [
             -0.05,
             30.57685,
@@ -636,8 +636,8 @@
           ]
         },
         {
-          "name": "gead2",
-          "parent": "head1",
+          "name": "loboan__gead2",
+          "parent": "loboan__head1",
           "pivot": [
             -0.05,
             28.57685,
@@ -799,8 +799,8 @@
           ]
         },
         {
-          "name": "eye_right",
-          "parent": "headier",
+          "name": "loboan__eye_right",
+          "parent": "loboan__headier",
           "pivot": [
             0.05,
             26.50587,
@@ -968,8 +968,8 @@
           ]
         },
         {
-          "name": "eye_left",
-          "parent": "headier",
+          "name": "loboan__eye_left",
+          "parent": "loboan__headier",
           "pivot": [
             -0.05,
             26.50587,
@@ -1137,8 +1137,8 @@
           ]
         },
         {
-          "name": "UpperJaw",
-          "parent": "headier",
+          "name": "loboan__UpperJaw",
+          "parent": "loboan__headier",
           "pivot": [
             -0.05,
             28.41588,
@@ -1146,8 +1146,8 @@
           ]
         },
         {
-          "name": "leftUpperJaw",
-          "parent": "UpperJaw",
+          "name": "loboan__leftUpperJaw",
+          "parent": "loboan__UpperJaw",
           "pivot": [
             0.1625,
             28.42588,
@@ -1279,8 +1279,8 @@
           ]
         },
         {
-          "name": "rightUpperJaw",
-          "parent": "UpperJaw",
+          "name": "loboan__rightUpperJaw",
+          "parent": "loboan__UpperJaw",
           "pivot": [
             -0.1625,
             28.42588,
@@ -1412,8 +1412,8 @@
           ]
         },
         {
-          "name": "LowerJaw",
-          "parent": "headier",
+          "name": "loboan__LowerJaw",
+          "parent": "loboan__headier",
           "pivot": [
             -0.05,
             28.41588,
@@ -1421,8 +1421,8 @@
           ]
         },
         {
-          "name": "rightLowerJaw",
-          "parent": "LowerJaw",
+          "name": "loboan__rightLowerJaw",
+          "parent": "loboan__LowerJaw",
           "pivot": [
             -0.29,
             27.93988,
@@ -1555,8 +1555,8 @@
           ]
         },
         {
-          "name": "leftLowerJaw",
-          "parent": "LowerJaw",
+          "name": "loboan__leftLowerJaw",
+          "parent": "loboan__LowerJaw",
           "pivot": [
             0.29,
             27.93988,
@@ -1689,7 +1689,7 @@
           ]
         },
         {
-          "name": "Body",
+          "name": "loboan__Body",
           "pivot": [
             0,
             26.5059,
@@ -1697,8 +1697,8 @@
           ]
         },
         {
-          "name": "bodywody",
-          "parent": "Body",
+          "name": "loboan__bodywody",
+          "parent": "loboan__Body",
           "pivot": [
             0,
             19.90588,
@@ -2340,8 +2340,8 @@
           ]
         },
         {
-          "name": "tail",
-          "parent": "bodywody",
+          "name": "loboan__tail",
+          "parent": "loboan__bodywody",
           "pivot": [
             -0.10966,
             13.7432,
@@ -2349,8 +2349,8 @@
           ]
         },
         {
-          "name": "tail1",
-          "parent": "tail",
+          "name": "loboan__tail1",
+          "parent": "loboan__tail",
           "pivot": [
             -0.05,
             13.93588,
@@ -2446,8 +2446,8 @@
           ]
         },
         {
-          "name": "tail2",
-          "parent": "tail1",
+          "name": "loboan__tail2",
+          "parent": "loboan__tail1",
           "pivot": [
             -0.05,
             13.00205,
@@ -2541,8 +2541,8 @@
           ]
         },
         {
-          "name": "tail3",
-          "parent": "tail2",
+          "name": "loboan__tail3",
+          "parent": "loboan__tail2",
           "pivot": [
             -0.05,
             16.00205,
@@ -2636,8 +2636,8 @@
           ]
         },
         {
-          "name": "tail4",
-          "parent": "tail3",
+          "name": "loboan__tail4",
+          "parent": "loboan__tail3",
           "pivot": [
             -2.44534,
             18.8832,
@@ -2721,8 +2721,8 @@
           ]
         },
         {
-          "name": "bonersquad",
-          "parent": "tail3",
+          "name": "loboan__bonersquad",
+          "parent": "loboan__tail3",
           "pivot": [
             -0.05,
             10.94545,
@@ -2816,8 +2816,8 @@
           ]
         },
         {
-          "name": "tail5",
-          "parent": "tail3",
+          "name": "loboan__tail5",
+          "parent": "loboan__tail3",
           "pivot": [
             -0.27034,
             14.0332,
@@ -2825,8 +2825,8 @@
           ]
         },
         {
-          "name": "tail6",
-          "parent": "tail3",
+          "name": "loboan__tail6",
+          "parent": "loboan__tail3",
           "pivot": [
             2.34534,
             18.8832,
@@ -2910,8 +2910,8 @@
           ]
         },
         {
-          "name": "tail7",
-          "parent": "tail3",
+          "name": "loboan__tail7",
+          "parent": "loboan__tail3",
           "pivot": [
             -0.05,
             17.75205,
@@ -2919,8 +2919,8 @@
           ]
         },
         {
-          "name": "tail8",
-          "parent": "tail3",
+          "name": "loboan__tail8",
+          "parent": "loboan__tail3",
           "pivot": [
             0.72966,
             21.5332,
@@ -2964,8 +2964,8 @@
           ]
         },
         {
-          "name": "upper",
-          "parent": "bodywody",
+          "name": "loboan__upper",
+          "parent": "loboan__bodywody",
           "pivot": [
             0,
             19.90588,
@@ -3059,7 +3059,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "loboan__leftLeg",
           "pivot": [
             2.108,
             15.14588,
@@ -3067,8 +3067,8 @@
           ]
         },
         {
-          "name": "leggy",
-          "parent": "leftLeg",
+          "name": "loboan__leggy",
+          "parent": "loboan__leftLeg",
           "pivot": [
             3.68389,
             8.24785,
@@ -3750,7 +3750,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "loboan__rightLeg",
           "pivot": [
             -2.158,
             15.14588,
@@ -3758,8 +3758,8 @@
           ]
         },
         {
-          "name": "weggy",
-          "parent": "rightLeg",
+          "name": "loboan__weggy",
+          "parent": "loboan__rightLeg",
           "pivot": [
             -2.158,
             15.14588,
@@ -3853,8 +3853,8 @@
           ]
         },
         {
-          "name": "foot",
-          "parent": "weggy",
+          "name": "loboan__foot",
+          "parent": "loboan__weggy",
           "pivot": [
             -2.33739,
             8.59813,
@@ -4116,8 +4116,8 @@
           ]
         },
         {
-          "name": "footier",
-          "parent": "foot",
+          "name": "loboan__footier",
+          "parent": "loboan__foot",
           "pivot": [
             -2.33739,
             2.59813,
@@ -4463,7 +4463,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "loboan__leftArm",
           "pivot": [
             4.44,
             23.98588,
@@ -4476,8 +4476,8 @@
           ]
         },
         {
-          "name": "lArm",
-          "parent": "leftArm",
+          "name": "loboan__lArm",
+          "parent": "loboan__leftArm",
           "pivot": [
             5.84856,
             24.13458,
@@ -4813,8 +4813,8 @@
           ]
         },
         {
-          "name": "larn2",
-          "parent": "lArm",
+          "name": "loboan__larn2",
+          "parent": "loboan__lArm",
           "pivot": [
             10.84856,
             14.13458,
@@ -4982,8 +4982,8 @@
           ]
         },
         {
-          "name": "hahaboner",
-          "parent": "larn2",
+          "name": "loboan__hahaboner",
+          "parent": "loboan__larn2",
           "pivot": [
             10.84856,
             14.13458,
@@ -5077,8 +5077,8 @@
           ]
         },
         {
-          "name": "bone16",
-          "parent": "hahaboner",
+          "name": "loboan__bone16",
+          "parent": "loboan__hahaboner",
           "pivot": [
             12.42713,
             8.83555,
@@ -5086,8 +5086,8 @@
           ]
         },
         {
-          "name": "armsy",
-          "parent": "hahaboner",
+          "name": "loboan__armsy",
+          "parent": "loboan__hahaboner",
           "pivot": [
             13.47858,
             7.14907,
@@ -5186,8 +5186,8 @@
           ]
         },
         {
-          "name": "bone17",
-          "parent": "armsy",
+          "name": "loboan__bone17",
+          "parent": "loboan__armsy",
           "pivot": [
             10.27642,
             6.74968,
@@ -5195,8 +5195,8 @@
           ]
         },
         {
-          "name": "finger1l",
-          "parent": "armsy",
+          "name": "loboan__finger1l",
+          "parent": "loboan__armsy",
           "pivot": [
             11.2389,
             5.62929,
@@ -5290,8 +5290,8 @@
           ]
         },
         {
-          "name": "bone19",
-          "parent": "armsy",
+          "name": "loboan__bone19",
+          "parent": "loboan__armsy",
           "pivot": [
             13.08051,
             5.06841,
@@ -5299,8 +5299,8 @@
           ]
         },
         {
-          "name": "bone13",
-          "parent": "armsy",
+          "name": "loboan__bone13",
+          "parent": "loboan__armsy",
           "pivot": [
             10.57642,
             6.74968,
@@ -5394,8 +5394,8 @@
           ]
         },
         {
-          "name": "finger2l",
-          "parent": "armsy",
+          "name": "loboan__finger2l",
+          "parent": "loboan__armsy",
           "pivot": [
             10.95628,
             5.67945,
@@ -5489,8 +5489,8 @@
           ]
         },
         {
-          "name": "bone15",
-          "parent": "hahaboner",
+          "name": "loboan__bone15",
+          "parent": "loboan__hahaboner",
           "pivot": [
             11.943,
             8.82405,
@@ -5503,7 +5503,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "loboan__rightArm",
           "pivot": [
             -4.44,
             23.98588,
@@ -5516,8 +5516,8 @@
           ]
         },
         {
-          "name": "rArm",
-          "parent": "rightArm",
+          "name": "loboan__rArm",
+          "parent": "loboan__rightArm",
           "pivot": [
             -5.84856,
             24.13458,
@@ -5853,8 +5853,8 @@
           ]
         },
         {
-          "name": "rarm2",
-          "parent": "rArm",
+          "name": "loboan__rarm2",
+          "parent": "loboan__rArm",
           "pivot": [
             -10.84856,
             14.13458,
@@ -6022,8 +6022,8 @@
           ]
         },
         {
-          "name": "bonerhaha",
-          "parent": "rarm2",
+          "name": "loboan__bonerhaha",
+          "parent": "loboan__rarm2",
           "pivot": [
             -10.84856,
             14.13458,
@@ -6117,8 +6117,8 @@
           ]
         },
         {
-          "name": "bone10",
-          "parent": "bonerhaha",
+          "name": "loboan__bone10",
+          "parent": "loboan__bonerhaha",
           "pivot": [
             -12.47713,
             8.83555,
@@ -6126,8 +6126,8 @@
           ]
         },
         {
-          "name": "armsy2",
-          "parent": "bonerhaha",
+          "name": "loboan__armsy2",
+          "parent": "loboan__bonerhaha",
           "pivot": [
             -13.47858,
             7.14907,
@@ -6226,8 +6226,8 @@
           ]
         },
         {
-          "name": "finger1r",
-          "parent": "armsy2",
+          "name": "loboan__finger1r",
+          "parent": "loboan__armsy2",
           "pivot": [
             -11.2389,
             5.62929,
@@ -6321,8 +6321,8 @@
           ]
         },
         {
-          "name": "finger2r",
-          "parent": "armsy2",
+          "name": "loboan__finger2r",
+          "parent": "loboan__armsy2",
           "pivot": [
             -10.95628,
             5.67945,
@@ -6416,8 +6416,8 @@
           ]
         },
         {
-          "name": "bone11",
-          "parent": "armsy2",
+          "name": "loboan__bone11",
+          "parent": "loboan__armsy2",
           "pivot": [
             -10.57642,
             6.74968,
@@ -6511,8 +6511,8 @@
           ]
         },
         {
-          "name": "bone12",
-          "parent": "bonerhaha",
+          "name": "loboan__bone12",
+          "parent": "loboan__bonerhaha",
           "pivot": [
             -11.993,
             8.82405,

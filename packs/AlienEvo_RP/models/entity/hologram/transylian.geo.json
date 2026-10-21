@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "transylian__head",
           "pivot": [
             -0.01961,
             26.14503,
@@ -1085,7 +1085,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "transylian__body",
           "pivot": [
             -0.0155,
             26.9358,
@@ -1298,8 +1298,8 @@
           ]
         },
         {
-          "name": "chest",
-          "parent": "body",
+          "name": "transylian__chest",
+          "parent": "transylian__body",
           "pivot": [
             -0.3508,
             23.03238,
@@ -4207,7 +4207,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "transylian__leftLeg",
           "pivot": [
             1.63649,
             15.74596,
@@ -4387,8 +4387,8 @@
           ]
         },
         {
-          "name": "ll_r",
-          "parent": "leftLeg",
+          "name": "transylian__ll_r",
+          "parent": "transylian__leftLeg",
           "pivot": [
             1.32287,
             15.47204,
@@ -4401,8 +4401,8 @@
           ]
         },
         {
-          "name": "calf",
-          "parent": "ll_r",
+          "name": "transylian__calf",
+          "parent": "transylian__ll_r",
           "pivot": [
             1.60116,
             9.13866,
@@ -4502,8 +4502,8 @@
           ]
         },
         {
-          "name": "thigh2",
-          "parent": "ll_r",
+          "name": "transylian__thigh2",
+          "parent": "transylian__ll_r",
           "pivot": [
             1.32287,
             15.47204,
@@ -4603,7 +4603,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "transylian__rightLeg",
           "pivot": [
             -1.64551,
             15.74598,
@@ -4783,8 +4783,8 @@
           ]
         },
         {
-          "name": "rl_r",
-          "parent": "rightLeg",
+          "name": "transylian__rl_r",
+          "parent": "transylian__rightLeg",
           "pivot": [
             -2.02446,
             15.47204,
@@ -4797,8 +4797,8 @@
           ]
         },
         {
-          "name": "calf2",
-          "parent": "rl_r",
+          "name": "transylian__calf2",
+          "parent": "transylian__rl_r",
           "pivot": [
             -2.30275,
             9.13866,
@@ -4898,8 +4898,8 @@
           ]
         },
         {
-          "name": "thigh",
-          "parent": "rl_r",
+          "name": "transylian__thigh",
+          "parent": "transylian__rl_r",
           "pivot": [
             -2.02446,
             15.47204,
@@ -4999,7 +4999,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "transylian__leftArm",
           "pivot": [
             6.15672,
             23.32543,
@@ -5950,7 +5950,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "transylian__rightArm",
           "pivot": [
             -6.15672,
             23.32543,

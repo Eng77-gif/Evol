@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_Head",
+          "name": "talpaedan__Head",
           "parent": "hologram",
           "pivot": [
             13.02154,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftLeg3",
-          "parent": "holo_Head",
+          "name": "talpaedan__armorLeftLeg3",
+          "parent": "talpaedan__Head",
           "pivot": [
             13.21388,
             12.18306,
@@ -74,8 +74,8 @@
           ]
         },
         {
-          "name": "holo_left_thigh",
-          "parent": "holo_armorLeftLeg3",
+          "name": "talpaedan__left_thigh",
+          "parent": "talpaedan__armorLeftLeg3",
           "pivot": [
             13.40468,
             11.65836,
@@ -164,8 +164,8 @@
           ]
         },
         {
-          "name": "holo_left_knee",
-          "parent": "holo_armorLeftLeg3",
+          "name": "talpaedan__left_knee",
+          "parent": "talpaedan__armorLeftLeg3",
           "pivot": [
             13.40468,
             11.65836,
@@ -254,8 +254,8 @@
           ]
         },
         {
-          "name": "holo_left_lower",
-          "parent": "holo_armorLeftLeg3",
+          "name": "talpaedan__left_lower",
+          "parent": "talpaedan__armorLeftLeg3",
           "pivot": [
             13.40468,
             11.65836,
@@ -344,8 +344,8 @@
           ]
         },
         {
-          "name": "holo_left_foot",
-          "parent": "holo_armorLeftLeg3",
+          "name": "talpaedan__left_foot",
+          "parent": "talpaedan__armorLeftLeg3",
           "pivot": [
             13.40468,
             11.65836,
@@ -508,8 +508,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftArm3",
-          "parent": "holo_Head",
+          "name": "talpaedan__armorLeftArm3",
+          "parent": "talpaedan__Head",
           "pivot": [
             13.82683,
             13.46266,
@@ -517,8 +517,8 @@
           ]
         },
         {
-          "name": "holo_leftarm_rot",
-          "parent": "holo_armorLeftArm3",
+          "name": "talpaedan__leftarm_rot",
+          "parent": "talpaedan__armorLeftArm3",
           "pivot": [
             13.9806,
             13.44755,
@@ -526,8 +526,8 @@
           ]
         },
         {
-          "name": "holo_left_shoulder2",
-          "parent": "holo_leftarm_rot",
+          "name": "talpaedan__left_shoulder2",
+          "parent": "talpaedan__leftarm_rot",
           "pivot": [
             13.9806,
             13.44755,
@@ -616,8 +616,8 @@
           ]
         },
         {
-          "name": "holo_left_upper",
-          "parent": "holo_leftarm_rot",
+          "name": "talpaedan__left_upper",
+          "parent": "talpaedan__leftarm_rot",
           "pivot": [
             14.41665,
             12.4387,
@@ -706,8 +706,8 @@
           ]
         },
         {
-          "name": "holo_left_bottom",
-          "parent": "holo_leftarm_rot",
+          "name": "talpaedan__left_bottom",
+          "parent": "talpaedan__leftarm_rot",
           "pivot": [
             14.25779,
             12.1473,
@@ -1008,8 +1008,8 @@
           ]
         },
         {
-          "name": "holo_left_piston",
-          "parent": "holo_left_bottom",
+          "name": "talpaedan__left_piston",
+          "parent": "talpaedan__left_bottom",
           "pivot": [
             14.34065,
             12.94588,
@@ -1167,8 +1167,8 @@
           ]
         },
         {
-          "name": "holo_left_fingers",
-          "parent": "holo_left_bottom",
+          "name": "talpaedan__left_fingers",
+          "parent": "talpaedan__left_bottom",
           "pivot": [
             14.39131,
             11.02912,
@@ -1181,8 +1181,8 @@
           ]
         },
         {
-          "name": "holo_left_index",
-          "parent": "holo_left_fingers",
+          "name": "talpaedan__left_index",
+          "parent": "talpaedan__left_fingers",
           "pivot": [
             14.38599,
             11.19424,
@@ -1251,8 +1251,8 @@
           ]
         },
         {
-          "name": "holo_left_middle",
-          "parent": "holo_left_fingers",
+          "name": "talpaedan__left_middle",
+          "parent": "talpaedan__left_fingers",
           "pivot": [
             14.47764,
             11.06222,
@@ -1321,8 +1321,8 @@
           ]
         },
         {
-          "name": "holo_left_thumb",
-          "parent": "holo_left_fingers",
+          "name": "talpaedan__left_thumb",
+          "parent": "talpaedan__left_fingers",
           "pivot": [
             14.0647,
             11.10821,
@@ -1391,8 +1391,8 @@
           ]
         },
         {
-          "name": "holo_left_pinky",
-          "parent": "holo_left_fingers",
+          "name": "talpaedan__left_pinky",
+          "parent": "talpaedan__left_fingers",
           "pivot": [
             14.55117,
             10.81183,
@@ -1461,8 +1461,8 @@
           ]
         },
         {
-          "name": "holo_drill2",
-          "parent": "holo_left_bottom",
+          "name": "talpaedan__drill2",
+          "parent": "talpaedan__left_bottom",
           "pivot": [
             14.37728,
             11.97266,
@@ -1732,8 +1732,8 @@
           ]
         },
         {
-          "name": "holo_armorHead3",
-          "parent": "holo_Head",
+          "name": "talpaedan__armorHead3",
+          "parent": "talpaedan__Head",
           "pivot": [
             12.98174,
             13.5638,
@@ -1746,8 +1746,8 @@
           ]
         },
         {
-          "name": "holo_actualhead",
-          "parent": "holo_armorHead3",
+          "name": "talpaedan__actualhead",
+          "parent": "talpaedan__armorHead3",
           "pivot": [
             12.95028,
             13.32255,
@@ -1912,8 +1912,8 @@
           ]
         },
         {
-          "name": "holo_left_ear",
-          "parent": "holo_armorHead3",
+          "name": "talpaedan__left_ear",
+          "parent": "talpaedan__armorHead3",
           "pivot": [
             12.99798,
             13.2987,
@@ -2002,8 +2002,8 @@
           ]
         },
         {
-          "name": "holo_right_ear",
-          "parent": "holo_armorHead3",
+          "name": "talpaedan__right_ear",
+          "parent": "talpaedan__armorHead3",
           "pivot": [
             12.9312,
             13.2987,
@@ -2092,8 +2092,8 @@
           ]
         },
         {
-          "name": "holo_right_eye2",
-          "parent": "holo_armorHead3",
+          "name": "talpaedan__right_eye2",
+          "parent": "talpaedan__armorHead3",
           "pivot": [
             12.9096,
             13.91507,
@@ -2258,8 +2258,8 @@
           ]
         },
         {
-          "name": "holo_left_eye2",
-          "parent": "holo_armorHead3",
+          "name": "talpaedan__left_eye2",
+          "parent": "talpaedan__armorHead3",
           "pivot": [
             13.0513,
             13.91327,
@@ -2424,8 +2424,8 @@
           ]
         },
         {
-          "name": "holo_armorBody3",
-          "parent": "holo_Head",
+          "name": "talpaedan__armorBody3",
+          "parent": "talpaedan__Head",
           "pivot": [
             12.96541,
             12.77774,
@@ -2433,8 +2433,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_BASE2",
-          "parent": "holo_armorBody3",
+          "name": "talpaedan__TAIL_BASE2",
+          "parent": "talpaedan__armorBody3",
           "pivot": [
             12.98747,
             12.17023,
@@ -2529,8 +2529,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_LOWMID2",
-          "parent": "holo_TAIL_BASE2",
+          "name": "talpaedan__TAIL_LOWMID2",
+          "parent": "talpaedan__TAIL_BASE2",
           "pivot": [
             12.9467,
             12.23231,
@@ -2624,8 +2624,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_HIGHMID2",
-          "parent": "holo_TAIL_LOWMID2",
+          "name": "talpaedan__TAIL_HIGHMID2",
+          "parent": "talpaedan__TAIL_LOWMID2",
           "pivot": [
             12.9467,
             12.14884,
@@ -2719,8 +2719,8 @@
           ]
         },
         {
-          "name": "holo_TAIL_HIGH",
-          "parent": "holo_TAIL_HIGHMID2",
+          "name": "talpaedan__TAIL_HIGH",
+          "parent": "talpaedan__TAIL_HIGHMID2",
           "pivot": [
             12.95982,
             12.16076,
@@ -2815,8 +2815,8 @@
           ]
         },
         {
-          "name": "holo_left_shoulder",
-          "parent": "holo_armorBody3",
+          "name": "talpaedan__left_shoulder",
+          "parent": "talpaedan__armorBody3",
           "pivot": [
             12.97413,
             13.10762,
@@ -2905,8 +2905,8 @@
           ]
         },
         {
-          "name": "holo_right_shoulder",
-          "parent": "holo_armorBody3",
+          "name": "talpaedan__right_shoulder",
+          "parent": "talpaedan__armorBody3",
           "pivot": [
             12.97413,
             13.10762,
@@ -2995,8 +2995,8 @@
           ]
         },
         {
-          "name": "holo_torso2",
-          "parent": "holo_armorBody3",
+          "name": "talpaedan__torso2",
+          "parent": "talpaedan__armorBody3",
           "pivot": [
             12.97413,
             13.10762,
@@ -3307,8 +3307,8 @@
           ]
         },
         {
-          "name": "holo_lower_torso",
-          "parent": "holo_armorBody3",
+          "name": "talpaedan__lower_torso",
+          "parent": "talpaedan__armorBody3",
           "pivot": [
             12.97413,
             12.5174,
@@ -3402,8 +3402,8 @@
           ]
         },
         {
-          "name": "holo_forward_neck",
-          "parent": "holo_armorBody3",
+          "name": "talpaedan__forward_neck",
+          "parent": "talpaedan__armorBody3",
           "pivot": [
             12.97413,
             13.10762,
@@ -3492,8 +3492,8 @@
           ]
         },
         {
-          "name": "holo_behind_neck",
-          "parent": "holo_armorBody3",
+          "name": "talpaedan__behind_neck",
+          "parent": "talpaedan__armorBody3",
           "pivot": [
             12.97413,
             13.10762,
@@ -3582,8 +3582,8 @@
           ]
         },
         {
-          "name": "holo_lower_torso2",
-          "parent": "holo_armorBody3",
+          "name": "talpaedan__lower_torso2",
+          "parent": "talpaedan__armorBody3",
           "pivot": [
             12.97413,
             12.28099,
@@ -3800,8 +3800,8 @@
           ]
         },
         {
-          "name": "holo_armorRightLeg3",
-          "parent": "holo_Head",
+          "name": "talpaedan__armorRightLeg3",
+          "parent": "talpaedan__Head",
           "pivot": [
             12.73438,
             12.18306,
@@ -3809,8 +3809,8 @@
           ]
         },
         {
-          "name": "holo_right_thigh",
-          "parent": "holo_armorRightLeg3",
+          "name": "talpaedan__right_thigh",
+          "parent": "talpaedan__armorRightLeg3",
           "pivot": [
             12.54358,
             11.65836,
@@ -3899,8 +3899,8 @@
           ]
         },
         {
-          "name": "holo_right_knee",
-          "parent": "holo_armorRightLeg3",
+          "name": "talpaedan__right_knee",
+          "parent": "talpaedan__armorRightLeg3",
           "pivot": [
             12.54358,
             11.65836,
@@ -3989,8 +3989,8 @@
           ]
         },
         {
-          "name": "holo_right_lower",
-          "parent": "holo_armorRightLeg3",
+          "name": "talpaedan__right_lower",
+          "parent": "talpaedan__armorRightLeg3",
           "pivot": [
             12.54358,
             11.65836,
@@ -4079,8 +4079,8 @@
           ]
         },
         {
-          "name": "holo_right_foot",
-          "parent": "holo_armorRightLeg3",
+          "name": "talpaedan__right_foot",
+          "parent": "talpaedan__armorRightLeg3",
           "pivot": [
             12.54358,
             11.65836,
@@ -4243,8 +4243,8 @@
           ]
         },
         {
-          "name": "holo_armorRightArm3",
-          "parent": "holo_Head",
+          "name": "talpaedan__armorRightArm3",
+          "parent": "talpaedan__Head",
           "pivot": [
             12.12143,
             13.46266,
@@ -4252,8 +4252,8 @@
           ]
         },
         {
-          "name": "holo_rightarm_rot",
-          "parent": "holo_armorRightArm3",
+          "name": "talpaedan__rightarm_rot",
+          "parent": "talpaedan__armorRightArm3",
           "pivot": [
             11.96766,
             13.44755,
@@ -4261,8 +4261,8 @@
           ]
         },
         {
-          "name": "holo_right_shoulder2",
-          "parent": "holo_rightarm_rot",
+          "name": "talpaedan__right_shoulder2",
+          "parent": "talpaedan__rightarm_rot",
           "pivot": [
             11.96766,
             13.44755,
@@ -4351,8 +4351,8 @@
           ]
         },
         {
-          "name": "holo_right_upper",
-          "parent": "holo_rightarm_rot",
+          "name": "talpaedan__right_upper",
+          "parent": "talpaedan__rightarm_rot",
           "pivot": [
             11.53161,
             12.4387,
@@ -4441,8 +4441,8 @@
           ]
         },
         {
-          "name": "holo_right_bottom",
-          "parent": "holo_rightarm_rot",
+          "name": "talpaedan__right_bottom",
+          "parent": "talpaedan__rightarm_rot",
           "pivot": [
             11.69048,
             12.1473,
@@ -4743,8 +4743,8 @@
           ]
         },
         {
-          "name": "holo_right_piston",
-          "parent": "holo_right_bottom",
+          "name": "talpaedan__right_piston",
+          "parent": "talpaedan__right_bottom",
           "pivot": [
             11.60761,
             12.94588,
@@ -4902,8 +4902,8 @@
           ]
         },
         {
-          "name": "holo_right_fingers",
-          "parent": "holo_right_bottom",
+          "name": "talpaedan__right_fingers",
+          "parent": "talpaedan__right_bottom",
           "pivot": [
             11.55695,
             11.02912,
@@ -4916,8 +4916,8 @@
           ]
         },
         {
-          "name": "holo_right_index",
-          "parent": "holo_right_fingers",
+          "name": "talpaedan__right_index",
+          "parent": "talpaedan__right_fingers",
           "pivot": [
             11.56227,
             11.19424,
@@ -4986,8 +4986,8 @@
           ]
         },
         {
-          "name": "holo_right_middle",
-          "parent": "holo_right_fingers",
+          "name": "talpaedan__right_middle",
+          "parent": "talpaedan__right_fingers",
           "pivot": [
             11.47063,
             11.06222,
@@ -5056,8 +5056,8 @@
           ]
         },
         {
-          "name": "holo_right_thumb",
-          "parent": "holo_right_fingers",
+          "name": "talpaedan__right_thumb",
+          "parent": "talpaedan__right_fingers",
           "pivot": [
             11.88356,
             11.10821,
@@ -5126,8 +5126,8 @@
           ]
         },
         {
-          "name": "holo_right_pinky",
-          "parent": "holo_right_fingers",
+          "name": "talpaedan__right_pinky",
+          "parent": "talpaedan__right_fingers",
           "pivot": [
             11.3971,
             10.81183,
@@ -5196,8 +5196,8 @@
           ]
         },
         {
-          "name": "holo_drill",
-          "parent": "holo_right_bottom",
+          "name": "talpaedan__drill",
+          "parent": "talpaedan__right_bottom",
           "pivot": [
             11.57098,
             11.97266,

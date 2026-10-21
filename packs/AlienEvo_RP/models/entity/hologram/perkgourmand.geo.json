@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "perkgourmand__head",
           "pivot": [
             0,
             18.61823,
@@ -29,8 +29,8 @@
           ]
         },
         {
-          "name": "head_inner",
-          "parent": "head",
+          "name": "perkgourmand__head_inner",
+          "parent": "perkgourmand__head",
           "pivot": [
             0,
             21.97223,
@@ -38,8 +38,8 @@
           ]
         },
         {
-          "name": "BaseHead",
-          "parent": "head_inner",
+          "name": "perkgourmand__BaseHead",
+          "parent": "perkgourmand__head_inner",
           "pivot": [
             0.13266,
             20.80423,
@@ -701,8 +701,8 @@
           ]
         },
         {
-          "name": "LEFT_EYE",
-          "parent": "BaseHead",
+          "name": "perkgourmand__LEFT_EYE",
+          "parent": "perkgourmand__BaseHead",
           "pivot": [
             2.9466,
             25.40567,
@@ -796,8 +796,8 @@
           ]
         },
         {
-          "name": "PUPIL",
-          "parent": "LEFT_EYE",
+          "name": "perkgourmand__PUPIL",
+          "parent": "perkgourmand__LEFT_EYE",
           "pivot": [
             2.92,
             26.20623,
@@ -891,8 +891,8 @@
           ]
         },
         {
-          "name": "RIGHT_EYE",
-          "parent": "BaseHead",
+          "name": "perkgourmand__RIGHT_EYE",
+          "parent": "perkgourmand__BaseHead",
           "pivot": [
             -2.7998,
             25.3904,
@@ -986,8 +986,8 @@
           ]
         },
         {
-          "name": "PUPIL2",
-          "parent": "RIGHT_EYE",
+          "name": "perkgourmand__PUPIL2",
+          "parent": "perkgourmand__RIGHT_EYE",
           "pivot": [
             -2.628,
             25.91423,
@@ -1081,8 +1081,8 @@
           ]
         },
         {
-          "name": "Jaw",
-          "parent": "head_inner",
+          "name": "perkgourmand__Jaw",
+          "parent": "perkgourmand__head_inner",
           "pivot": [
             -0.3285,
             20.51223,
@@ -1250,8 +1250,8 @@
           ]
         },
         {
-          "name": "TONGE_BASE",
-          "parent": "Jaw",
+          "name": "perkgourmand__TONGE_BASE",
+          "parent": "perkgourmand__Jaw",
           "pivot": [
             0.146,
             20.34076,
@@ -1335,8 +1335,8 @@
           ]
         },
         {
-          "name": "TONGUE_LOWMID",
-          "parent": "TONGE_BASE",
+          "name": "perkgourmand__TONGUE_LOWMID",
+          "parent": "perkgourmand__TONGE_BASE",
           "pivot": [
             0.146,
             20.34076,
@@ -1420,8 +1420,8 @@
           ]
         },
         {
-          "name": "TONGUE_HIGHMID",
-          "parent": "TONGUE_LOWMID",
+          "name": "perkgourmand__TONGUE_HIGHMID",
+          "parent": "perkgourmand__TONGUE_LOWMID",
           "pivot": [
             0.146,
             20.34076,
@@ -1505,8 +1505,8 @@
           ]
         },
         {
-          "name": "TONGUE_HIGH",
-          "parent": "TONGUE_HIGHMID",
+          "name": "perkgourmand__TONGUE_HIGH",
+          "parent": "perkgourmand__TONGUE_HIGHMID",
           "pivot": [
             0.146,
             20.34076,
@@ -1595,8 +1595,8 @@
           ]
         },
         {
-          "name": "TONGUE_HIGHER",
-          "parent": "TONGUE_HIGH",
+          "name": "perkgourmand__TONGUE_HIGHER",
+          "parent": "perkgourmand__TONGUE_HIGH",
           "pivot": [
             0.146,
             20.34076,
@@ -1680,8 +1680,8 @@
           ]
         },
         {
-          "name": "TONGUE_HIGHEST",
-          "parent": "TONGUE_HIGHER",
+          "name": "perkgourmand__TONGUE_HIGHEST",
+          "parent": "perkgourmand__TONGUE_HIGHER",
           "pivot": [
             0.146,
             20.34076,
@@ -1765,8 +1765,8 @@
           ]
         },
         {
-          "name": "TONGUE_FINAL",
-          "parent": "TONGUE_HIGHEST",
+          "name": "perkgourmand__TONGUE_FINAL",
+          "parent": "perkgourmand__TONGUE_HIGHEST",
           "pivot": [
             0.146,
             20.34076,
@@ -1850,8 +1850,8 @@
           ]
         },
         {
-          "name": "TONGUE_FINALIST",
-          "parent": "TONGUE_FINAL",
+          "name": "perkgourmand__TONGUE_FINALIST",
+          "parent": "perkgourmand__TONGUE_FINAL",
           "pivot": [
             0.146,
             20.34076,
@@ -1935,8 +1935,8 @@
           ]
         },
         {
-          "name": "TONGE_BASE2",
-          "parent": "Jaw",
+          "name": "perkgourmand__TONGE_BASE2",
+          "parent": "perkgourmand__Jaw",
           "pivot": [
             -3.066,
             20.34076,
@@ -2020,8 +2020,8 @@
           ]
         },
         {
-          "name": "TONGUE_LOWMID2",
-          "parent": "TONGE_BASE2",
+          "name": "perkgourmand__TONGUE_LOWMID2",
+          "parent": "perkgourmand__TONGE_BASE2",
           "pivot": [
             -3.066,
             20.34076,
@@ -2105,8 +2105,8 @@
           ]
         },
         {
-          "name": "TONGUE_HIGHMID2",
-          "parent": "TONGUE_LOWMID2",
+          "name": "perkgourmand__TONGUE_HIGHMID2",
+          "parent": "perkgourmand__TONGUE_LOWMID2",
           "pivot": [
             -3.066,
             20.34076,
@@ -2190,8 +2190,8 @@
           ]
         },
         {
-          "name": "TONGUE_HIGH2",
-          "parent": "TONGUE_HIGHMID2",
+          "name": "perkgourmand__TONGUE_HIGH2",
+          "parent": "perkgourmand__TONGUE_HIGHMID2",
           "pivot": [
             -3.066,
             20.34076,
@@ -2280,8 +2280,8 @@
           ]
         },
         {
-          "name": "TONGUE_HIGHER2",
-          "parent": "TONGUE_HIGH2",
+          "name": "perkgourmand__TONGUE_HIGHER2",
+          "parent": "perkgourmand__TONGUE_HIGH2",
           "pivot": [
             -3.066,
             20.34076,
@@ -2365,8 +2365,8 @@
           ]
         },
         {
-          "name": "TONGUE_HIGHEST2",
-          "parent": "TONGUE_HIGHER2",
+          "name": "perkgourmand__TONGUE_HIGHEST2",
+          "parent": "perkgourmand__TONGUE_HIGHER2",
           "pivot": [
             -3.066,
             20.34076,
@@ -2450,8 +2450,8 @@
           ]
         },
         {
-          "name": "TONGUE_FINAL2",
-          "parent": "TONGUE_HIGHEST2",
+          "name": "perkgourmand__TONGUE_FINAL2",
+          "parent": "perkgourmand__TONGUE_HIGHEST2",
           "pivot": [
             -3.066,
             20.34076,
@@ -2535,8 +2535,8 @@
           ]
         },
         {
-          "name": "TONGUE_FINALIST2",
-          "parent": "TONGUE_FINAL2",
+          "name": "perkgourmand__TONGUE_FINALIST2",
+          "parent": "perkgourmand__TONGUE_FINAL2",
           "pivot": [
             -3.066,
             20.34076,
@@ -2620,8 +2620,8 @@
           ]
         },
         {
-          "name": "TONGE_BASE3",
-          "parent": "Jaw",
+          "name": "perkgourmand__TONGE_BASE3",
+          "parent": "perkgourmand__Jaw",
           "pivot": [
             3.212,
             20.34076,
@@ -2705,8 +2705,8 @@
           ]
         },
         {
-          "name": "TONGUE_LOWMID3",
-          "parent": "TONGE_BASE3",
+          "name": "perkgourmand__TONGUE_LOWMID3",
+          "parent": "perkgourmand__TONGE_BASE3",
           "pivot": [
             3.212,
             20.34076,
@@ -2790,8 +2790,8 @@
           ]
         },
         {
-          "name": "TONGUE_HIGHMID3",
-          "parent": "TONGUE_LOWMID3",
+          "name": "perkgourmand__TONGUE_HIGHMID3",
+          "parent": "perkgourmand__TONGUE_LOWMID3",
           "pivot": [
             3.212,
             20.34076,
@@ -2875,8 +2875,8 @@
           ]
         },
         {
-          "name": "TONGUE_HIGH3",
-          "parent": "TONGUE_HIGHMID3",
+          "name": "perkgourmand__TONGUE_HIGH3",
+          "parent": "perkgourmand__TONGUE_HIGHMID3",
           "pivot": [
             3.212,
             20.34076,
@@ -2965,8 +2965,8 @@
           ]
         },
         {
-          "name": "TONGUE_HIGHER3",
-          "parent": "TONGUE_HIGH3",
+          "name": "perkgourmand__TONGUE_HIGHER3",
+          "parent": "perkgourmand__TONGUE_HIGH3",
           "pivot": [
             3.212,
             20.34076,
@@ -3050,8 +3050,8 @@
           ]
         },
         {
-          "name": "TONGUE_HIGHEST3",
-          "parent": "TONGUE_HIGHER3",
+          "name": "perkgourmand__TONGUE_HIGHEST3",
+          "parent": "perkgourmand__TONGUE_HIGHER3",
           "pivot": [
             3.212,
             20.34076,
@@ -3135,8 +3135,8 @@
           ]
         },
         {
-          "name": "TONGUE_FINAL3",
-          "parent": "TONGUE_HIGHEST3",
+          "name": "perkgourmand__TONGUE_FINAL3",
+          "parent": "perkgourmand__TONGUE_HIGHEST3",
           "pivot": [
             3.212,
             20.34076,
@@ -3220,8 +3220,8 @@
           ]
         },
         {
-          "name": "TONGUE_FINALIST3",
-          "parent": "TONGUE_FINAL3",
+          "name": "perkgourmand__TONGUE_FINALIST3",
+          "parent": "perkgourmand__TONGUE_FINAL3",
           "pivot": [
             3.212,
             20.34076,
@@ -3305,7 +3305,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "perkgourmand__body",
           "pivot": [
             0,
             11.68,
@@ -3399,8 +3399,8 @@
           ]
         },
         {
-          "name": "TORSO",
-          "parent": "body",
+          "name": "perkgourmand__TORSO",
+          "parent": "perkgourmand__body",
           "pivot": [
             0,
             11.68,
@@ -3494,8 +3494,8 @@
           ]
         },
         {
-          "name": "TAIL_BASE",
-          "parent": "body",
+          "name": "perkgourmand__TAIL_BASE",
+          "parent": "perkgourmand__body",
           "pivot": [
             0,
             6.132,
@@ -3579,8 +3579,8 @@
           ]
         },
         {
-          "name": "TAIL_LOWMID",
-          "parent": "TAIL_BASE",
+          "name": "perkgourmand__TAIL_LOWMID",
+          "parent": "perkgourmand__TAIL_BASE",
           "pivot": [
             0,
             6.132,
@@ -3664,8 +3664,8 @@
           ]
         },
         {
-          "name": "TAIL_HIGHMID",
-          "parent": "TAIL_LOWMID",
+          "name": "perkgourmand__TAIL_HIGHMID",
+          "parent": "perkgourmand__TAIL_LOWMID",
           "pivot": [
             0,
             6.132,
@@ -3749,7 +3749,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "perkgourmand__leftArm",
           "pivot": [
             7.5,
             15.975,
@@ -3757,8 +3757,8 @@
           ]
         },
         {
-          "name": "LeftArm",
-          "parent": "leftArm",
+          "name": "perkgourmand__LeftArm_inner",
+          "parent": "perkgourmand__leftArm",
           "pivot": [
             7.3334,
             15.75208,
@@ -3847,7 +3847,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "perkgourmand__rightArm",
           "pivot": [
             -5.51,
             15.34,
@@ -3855,8 +3855,8 @@
           ]
         },
         {
-          "name": "RightArm",
-          "parent": "rightArm",
+          "name": "perkgourmand__RightArm_inner",
+          "parent": "perkgourmand__rightArm",
           "pivot": [
             -4.8334,
             15.27708,
@@ -3945,7 +3945,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "perkgourmand__leftLeg",
           "pivot": [
             3.73,
             5.46,
@@ -3953,8 +3953,8 @@
           ]
         },
         {
-          "name": "LeftLeg",
-          "parent": "leftLeg",
+          "name": "perkgourmand__LeftLeg_inner",
+          "parent": "perkgourmand__leftLeg",
           "pivot": [
             3.58354,
             4.50598,
@@ -4048,7 +4048,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "perkgourmand__rightLeg",
           "pivot": [
             -3.305,
             5.46,
@@ -4056,8 +4056,8 @@
           ]
         },
         {
-          "name": "RightLeg",
-          "parent": "rightLeg",
+          "name": "perkgourmand__RightLeg_inner",
+          "parent": "perkgourmand__rightLeg",
           "pivot": [
             -3.58354,
             4.50598,

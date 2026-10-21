@@ -24,7 +24,7 @@
           ]
         },
         {
-          "name": "Head",
+          "name": "Head_inner",
           "parent": "head",
           "pivot": [
             0,
@@ -34,7 +34,7 @@
         },
         {
           "name": "bone11",
-          "parent": "Head",
+          "parent": "Head_inner",
           "pivot": [
             0,
             37.79474,
@@ -135,7 +135,7 @@
         },
         {
           "name": "bone7",
-          "parent": "Head",
+          "parent": "Head_inner",
           "pivot": [
             0.15,
             34.95,
@@ -353,7 +353,7 @@
         },
         {
           "name": "bone24",
-          "parent": "Head",
+          "parent": "Head_inner",
           "pivot": [
             0,
             33.25,
@@ -369,7 +369,7 @@
           ]
         },
         {
-          "name": "Body",
+          "name": "Body_inner",
           "parent": "body",
           "pivot": [
             0,
@@ -603,7 +603,7 @@
         },
         {
           "name": "neck",
-          "parent": "Body",
+          "parent": "Body_inner",
           "pivot": [
             0.15,
             30.95,
@@ -738,7 +738,7 @@
         },
         {
           "name": "belt",
-          "parent": "Body",
+          "parent": "Body_inner",
           "pivot": [
             0,
             22.9,
@@ -859,7 +859,7 @@
         },
         {
           "name": "chest",
-          "parent": "Body",
+          "parent": "Body_inner",
           "pivot": [
             0,
             28.75,
@@ -949,7 +949,7 @@
         },
         {
           "name": "front_spikes",
-          "parent": "Body",
+          "parent": "Body_inner",
           "pivot": [
             3.5,
             29.75,
@@ -1140,7 +1140,7 @@
         },
         {
           "name": "back_spikes",
-          "parent": "Body",
+          "parent": "Body_inner",
           "pivot": [
             4,
             31.75,

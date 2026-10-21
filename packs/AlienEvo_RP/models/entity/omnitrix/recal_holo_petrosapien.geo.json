@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_diamondhead",
+          "name": "petrosapien__diamondhead",
           "parent": "hologram",
           "pivot": [
             9.75,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_RightLeg",
-          "parent": "holo_diamondhead",
+          "name": "petrosapien__RightLeg",
+          "parent": "petrosapien__diamondhead",
           "pivot": [
             9.48828,
             16.30256,
@@ -161,8 +161,8 @@
           ]
         },
         {
-          "name": "holo_rl_r",
-          "parent": "holo_RightLeg",
+          "name": "petrosapien__rl_r",
+          "parent": "petrosapien__RightLeg",
           "pivot": [
             9.52893,
             16.70912,
@@ -175,8 +175,8 @@
           ]
         },
         {
-          "name": "holo_calf2",
-          "parent": "holo_rl_r",
+          "name": "petrosapien__calf2",
+          "parent": "petrosapien__rl_r",
           "pivot": [
             9.49218,
             15.87256,
@@ -246,8 +246,8 @@
           ]
         },
         {
-          "name": "holo_thigh",
-          "parent": "holo_rl_r",
+          "name": "petrosapien__thigh",
+          "parent": "petrosapien__rl_r",
           "pivot": [
             9.52893,
             16.70912,
@@ -337,8 +337,8 @@
           ]
         },
         {
-          "name": "holo_Head",
-          "parent": "holo_diamondhead",
+          "name": "petrosapien__Head",
+          "parent": "petrosapien__diamondhead",
           "pivot": [
             9.75,
             17.83477,
@@ -346,8 +346,8 @@
           ]
         },
         {
-          "name": "holo_root",
-          "parent": "holo_Head",
+          "name": "petrosapien__root",
+          "parent": "petrosapien__Head",
           "pivot": [
             9.76525,
             18.03297,
@@ -557,8 +557,8 @@
           ]
         },
         {
-          "name": "holo_top",
-          "parent": "holo_root",
+          "name": "petrosapien__top",
+          "parent": "petrosapien__root",
           "pivot": [
             9.75036,
             18.16002,
@@ -648,8 +648,8 @@
           ]
         },
         {
-          "name": "holo_eyes",
-          "parent": "holo_root",
+          "name": "petrosapien__eyes",
+          "parent": "petrosapien__root",
           "pivot": [
             9.61129,
             18.05668,
@@ -795,8 +795,8 @@
           ]
         },
         {
-          "name": "holo_Body",
-          "parent": "holo_diamondhead",
+          "name": "petrosapien__Body",
+          "parent": "petrosapien__diamondhead",
           "pivot": [
             9.75,
             17.83477,
@@ -934,8 +934,8 @@
           ]
         },
         {
-          "name": "holo_chest",
-          "parent": "holo_Body",
+          "name": "petrosapien__chest",
+          "parent": "petrosapien__Body",
           "pivot": [
             9.75,
             17.49428,
@@ -1024,8 +1024,8 @@
           ]
         },
         {
-          "name": "holo_front_spikes",
-          "parent": "holo_Body",
+          "name": "petrosapien__front_spikes",
+          "parent": "petrosapien__Body",
           "pivot": [
             9.54672,
             15.15656,
@@ -1038,8 +1038,8 @@
           ]
         },
         {
-          "name": "holo_lower3",
-          "parent": "holo_front_spikes",
+          "name": "petrosapien__lower3",
+          "parent": "petrosapien__front_spikes",
           "pivot": [
             9.75,
             17.44346,
@@ -1119,8 +1119,8 @@
           ]
         },
         {
-          "name": "holo_front_spikes2",
-          "parent": "holo_Body",
+          "name": "petrosapien__front_spikes2",
+          "parent": "petrosapien__Body",
           "pivot": [
             9.95328,
             15.15656,
@@ -1133,8 +1133,8 @@
           ]
         },
         {
-          "name": "holo_lower4",
-          "parent": "holo_front_spikes2",
+          "name": "petrosapien__lower4",
+          "parent": "petrosapien__front_spikes2",
           "pivot": [
             9.75,
             17.44346,
@@ -1214,8 +1214,8 @@
           ]
         },
         {
-          "name": "holo_back_spikes_r",
-          "parent": "holo_Body",
+          "name": "petrosapien__back_spikes_r",
+          "parent": "petrosapien__Body",
           "pivot": [
             9.75,
             14.75,
@@ -1223,8 +1223,8 @@
           ]
         },
         {
-          "name": "holo_lower2",
-          "parent": "holo_back_spikes_r",
+          "name": "petrosapien__lower2",
+          "parent": "petrosapien__back_spikes_r",
           "pivot": [
             9.54672,
             17.13854,
@@ -1303,8 +1303,8 @@
           ]
         },
         {
-          "name": "holo_lower5",
-          "parent": "holo_back_spikes_r",
+          "name": "petrosapien__lower5",
+          "parent": "petrosapien__back_spikes_r",
           "pivot": [
             9.54672,
             16.73198,
@@ -1384,8 +1384,8 @@
           ]
         },
         {
-          "name": "holo_upper2",
-          "parent": "holo_back_spikes_r",
+          "name": "petrosapien__upper2",
+          "parent": "petrosapien__back_spikes_r",
           "pivot": [
             9.29262,
             17.72297,
@@ -1518,8 +1518,8 @@
           ]
         },
         {
-          "name": "holo_back_spikes_l",
-          "parent": "holo_Body",
+          "name": "petrosapien__back_spikes_l",
+          "parent": "petrosapien__Body",
           "pivot": [
             9.75,
             14.75,
@@ -1527,8 +1527,8 @@
           ]
         },
         {
-          "name": "holo_lower6",
-          "parent": "holo_back_spikes_l",
+          "name": "petrosapien__lower6",
+          "parent": "petrosapien__back_spikes_l",
           "pivot": [
             9.95328,
             17.13854,
@@ -1607,8 +1607,8 @@
           ]
         },
         {
-          "name": "holo_lower7",
-          "parent": "holo_back_spikes_l",
+          "name": "petrosapien__lower7",
+          "parent": "petrosapien__back_spikes_l",
           "pivot": [
             9.95328,
             16.73198,
@@ -1688,8 +1688,8 @@
           ]
         },
         {
-          "name": "holo_upper3",
-          "parent": "holo_back_spikes_l",
+          "name": "petrosapien__upper3",
+          "parent": "petrosapien__back_spikes_l",
           "pivot": [
             10.20738,
             17.72297,
@@ -1822,8 +1822,8 @@
           ]
         },
         {
-          "name": "holo_neck",
-          "parent": "holo_Body",
+          "name": "petrosapien__neck",
+          "parent": "petrosapien__Body",
           "pivot": [
             9.76525,
             17.64166,
@@ -1836,8 +1836,8 @@
           ]
         },
         {
-          "name": "holo_bone3",
-          "parent": "holo_neck",
+          "name": "petrosapien__bone3",
+          "parent": "petrosapien__neck",
           "pivot": [
             9.75036,
             17.75601,
@@ -1927,8 +1927,8 @@
           ]
         },
         {
-          "name": "holo_LeftArm",
-          "parent": "holo_diamondhead",
+          "name": "petrosapien__LeftArm",
+          "parent": "petrosapien__diamondhead",
           "pivot": [
             10.41066,
             17.39264,
@@ -1936,8 +1936,8 @@
           ]
         },
         {
-          "name": "holo_l_arm",
-          "parent": "holo_LeftArm",
+          "name": "petrosapien__l_arm",
+          "parent": "petrosapien__LeftArm",
           "pivot": [
             10.2582,
             17.59592,
@@ -1950,8 +1950,8 @@
           ]
         },
         {
-          "name": "holo_l_r",
-          "parent": "holo_l_arm",
+          "name": "petrosapien__l_r",
+          "parent": "petrosapien__l_arm",
           "pivot": [
             10.23279,
             17.59592,
@@ -2180,8 +2180,8 @@
           ]
         },
         {
-          "name": "holo_forearm",
-          "parent": "holo_l_r",
+          "name": "petrosapien__forearm",
+          "parent": "petrosapien__l_r",
           "pivot": [
             10.32974,
             16.64013,
@@ -2326,8 +2326,8 @@
           ]
         },
         {
-          "name": "holo_shield",
-          "parent": "holo_forearm",
+          "name": "petrosapien__shield",
+          "parent": "petrosapien__forearm",
           "pivot": [
             10.74361,
             16.07108,
@@ -2335,8 +2335,8 @@
           ]
         },
         {
-          "name": "holo_shieldcore",
-          "parent": "holo_shield",
+          "name": "petrosapien__shieldcore",
+          "parent": "petrosapien__shield",
           "pivot": [
             10.76902,
             16.07108,
@@ -2380,8 +2380,8 @@
           ]
         },
         {
-          "name": "holo_shieldspin",
-          "parent": "holo_shield",
+          "name": "petrosapien__shieldspin",
+          "parent": "petrosapien__shield",
           "pivot": [
             10.74361,
             16.07108,
@@ -2415,8 +2415,8 @@
           ]
         },
         {
-          "name": "holo_hand",
-          "parent": "holo_forearm",
+          "name": "petrosapien__hand",
+          "parent": "petrosapien__forearm",
           "pivot": [
             10.40609,
             15.83107,
@@ -2506,8 +2506,8 @@
           ]
         },
         {
-          "name": "holo_thumb",
-          "parent": "holo_hand",
+          "name": "petrosapien__thumb",
+          "parent": "petrosapien__hand",
           "pivot": [
             10.23969,
             15.76479,
@@ -2601,8 +2601,8 @@
           ]
         },
         {
-          "name": "holo_shards",
-          "parent": "holo_hand",
+          "name": "petrosapien__shards",
+          "parent": "petrosapien__hand",
           "pivot": [
             10.48569,
             15.54947,
@@ -2687,8 +2687,8 @@
           ]
         },
         {
-          "name": "holo_RightArm",
-          "parent": "holo_diamondhead",
+          "name": "petrosapien__RightArm",
+          "parent": "petrosapien__diamondhead",
           "pivot": [
             9.08934,
             17.39264,
@@ -2696,8 +2696,8 @@
           ]
         },
         {
-          "name": "holo_r_arm",
-          "parent": "holo_RightArm",
+          "name": "petrosapien__r_arm",
+          "parent": "petrosapien__RightArm",
           "pivot": [
             9.2418,
             17.59592,
@@ -2710,8 +2710,8 @@
           ]
         },
         {
-          "name": "holo_r_r",
-          "parent": "holo_r_arm",
+          "name": "petrosapien__r_r",
+          "parent": "petrosapien__r_arm",
           "pivot": [
             9.26721,
             17.59592,
@@ -2940,8 +2940,8 @@
           ]
         },
         {
-          "name": "holo_forearm2",
-          "parent": "holo_r_r",
+          "name": "petrosapien__forearm2",
+          "parent": "petrosapien__r_r",
           "pivot": [
             9.17026,
             16.64013,
@@ -3086,8 +3086,8 @@
           ]
         },
         {
-          "name": "holo_sword",
-          "parent": "holo_forearm2",
+          "name": "petrosapien__sword",
+          "parent": "petrosapien__forearm2",
           "pivot": [
             9.01049,
             15.29861,
@@ -3160,8 +3160,8 @@
           ]
         },
         {
-          "name": "holo_hand2",
-          "parent": "holo_forearm2",
+          "name": "petrosapien__hand2",
+          "parent": "petrosapien__forearm2",
           "pivot": [
             9.09391,
             15.83107,
@@ -3251,8 +3251,8 @@
           ]
         },
         {
-          "name": "holo_thumb2",
-          "parent": "holo_hand2",
+          "name": "petrosapien__thumb2",
+          "parent": "petrosapien__hand2",
           "pivot": [
             9.26031,
             15.76479,
@@ -3346,8 +3346,8 @@
           ]
         },
         {
-          "name": "holo_shards2",
-          "parent": "holo_hand2",
+          "name": "petrosapien__shards2",
+          "parent": "petrosapien__hand2",
           "pivot": [
             9.01431,
             15.54947,
@@ -3432,8 +3432,8 @@
           ]
         },
         {
-          "name": "holo_LeftLeg",
-          "parent": "holo_diamondhead",
+          "name": "petrosapien__LeftLeg",
+          "parent": "petrosapien__diamondhead",
           "pivot": [
             10.01173,
             16.30256,
@@ -3528,8 +3528,8 @@
           ]
         },
         {
-          "name": "holo_ll_r",
-          "parent": "holo_LeftLeg",
+          "name": "petrosapien__ll_r",
+          "parent": "petrosapien__LeftLeg",
           "pivot": [
             9.97107,
             16.70912,
@@ -3542,8 +3542,8 @@
           ]
         },
         {
-          "name": "holo_calf",
-          "parent": "holo_ll_r",
+          "name": "petrosapien__calf",
+          "parent": "petrosapien__ll_r",
           "pivot": [
             10.00782,
             15.87256,
@@ -3613,8 +3613,8 @@
           ]
         },
         {
-          "name": "holo_thigh2",
-          "parent": "holo_ll_r",
+          "name": "petrosapien__thigh2",
+          "parent": "petrosapien__ll_r",
           "pivot": [
             9.97107,
             16.70912,

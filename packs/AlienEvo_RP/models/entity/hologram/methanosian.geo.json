@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "leftLeg",
+          "name": "methanosian__leftLeg",
           "pivot": [
             1.59,
             13.35,
@@ -24,8 +24,8 @@
           ]
         },
         {
-          "name": "upper",
-          "parent": "leftLeg",
+          "name": "methanosian__upper",
+          "parent": "methanosian__leftLeg",
           "pivot": [
             1.35,
             12.45,
@@ -149,8 +149,8 @@
           ]
         },
         {
-          "name": "lower",
-          "parent": "upper",
+          "name": "methanosian__lower",
+          "parent": "methanosian__upper",
           "pivot": [
             1.36707,
             7.323,
@@ -275,8 +275,8 @@
           ]
         },
         {
-          "name": "foot",
-          "parent": "lower",
+          "name": "methanosian__foot",
+          "parent": "methanosian__lower",
           "pivot": [
             1.43332,
             1.34683,
@@ -461,7 +461,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "methanosian__rightArm",
           "pivot": [
             -3.9,
             20.55,
@@ -469,8 +469,8 @@
           ]
         },
         {
-          "name": "rightarm_r",
-          "parent": "rightArm",
+          "name": "methanosian__rightarm_r",
+          "parent": "methanosian__rightArm",
           "pivot": [
             -5.00277,
             19.36539,
@@ -638,8 +638,8 @@
           ]
         },
         {
-          "name": "rightupperarm",
-          "parent": "rightarm_r",
+          "name": "methanosian__rightupperarm",
+          "parent": "methanosian__rightarm_r",
           "pivot": [
             -5.00277,
             18.16539,
@@ -743,8 +743,8 @@
           ]
         },
         {
-          "name": "right_lowerarm",
-          "parent": "rightupperarm",
+          "name": "methanosian__right_lowerarm",
+          "parent": "methanosian__rightupperarm",
           "pivot": [
             -4.80277,
             14.26539,
@@ -1029,7 +1029,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "methanosian__leftArm",
           "pivot": [
             3.9,
             20.55,
@@ -1037,8 +1037,8 @@
           ]
         },
         {
-          "name": "leftarm_r",
-          "parent": "leftArm",
+          "name": "methanosian__leftarm_r",
+          "parent": "methanosian__leftArm",
           "pivot": [
             5.00277,
             19.36539,
@@ -1206,8 +1206,8 @@
           ]
         },
         {
-          "name": "leftupperarm",
-          "parent": "leftarm_r",
+          "name": "methanosian__leftupperarm",
+          "parent": "methanosian__leftarm_r",
           "pivot": [
             5.00277,
             18.16539,
@@ -1311,8 +1311,8 @@
           ]
         },
         {
-          "name": "left_lowerarm",
-          "parent": "leftupperarm",
+          "name": "methanosian__left_lowerarm",
+          "parent": "methanosian__leftupperarm",
           "pivot": [
             4.80277,
             14.26539,
@@ -1597,7 +1597,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "methanosian__body",
           "pivot": [
             0,
             24,
@@ -1948,7 +1948,7 @@
           ]
         },
         {
-          "name": "head",
+          "name": "methanosian__head",
           "pivot": [
             0,
             24.80688,
@@ -1956,8 +1956,8 @@
           ]
         },
         {
-          "name": "head_r",
-          "parent": "head",
+          "name": "methanosian__head_r",
+          "parent": "methanosian__head",
           "pivot": [
             0,
             26.26251,
@@ -2156,8 +2156,8 @@
           ]
         },
         {
-          "name": "seed",
-          "parent": "head",
+          "name": "methanosian__seed",
+          "parent": "methanosian__head",
           "pivot": [
             0,
             28.06251,
@@ -2296,7 +2296,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "methanosian__rightLeg",
           "pivot": [
             -1.59,
             13.35,
@@ -2304,8 +2304,8 @@
           ]
         },
         {
-          "name": "upper2",
-          "parent": "rightLeg",
+          "name": "methanosian__upper2",
+          "parent": "methanosian__rightLeg",
           "pivot": [
             -1.35,
             12.45,
@@ -2429,8 +2429,8 @@
           ]
         },
         {
-          "name": "lower2",
-          "parent": "upper2",
+          "name": "methanosian__lower2",
+          "parent": "methanosian__upper2",
           "pivot": [
             -1.36707,
             7.323,
@@ -2555,8 +2555,8 @@
           ]
         },
         {
-          "name": "foot2",
-          "parent": "lower2",
+          "name": "methanosian__foot2",
+          "parent": "methanosian__lower2",
           "pivot": [
             -1.43332,
             1.34683,

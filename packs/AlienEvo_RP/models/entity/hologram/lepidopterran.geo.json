@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "lepidopterran__head",
           "pivot": [
             0,
             25.5,
@@ -174,8 +174,8 @@
           ]
         },
         {
-          "name": "eyes_l",
-          "parent": "head",
+          "name": "lepidopterran__eyes_l",
+          "parent": "lepidopterran__head",
           "pivot": [
             2.75,
             29,
@@ -183,8 +183,8 @@
           ]
         },
         {
-          "name": "eye_01",
-          "parent": "eyes_l",
+          "name": "lepidopterran__eye_01",
+          "parent": "lepidopterran__eyes_l",
           "pivot": [
             2.75,
             29,
@@ -269,8 +269,8 @@
           ]
         },
         {
-          "name": "eye_01_tip",
-          "parent": "eye_01",
+          "name": "lepidopterran__eye_01_tip",
+          "parent": "lepidopterran__eye_01",
           "pivot": [
             6.35,
             29,
@@ -383,8 +383,8 @@
           ]
         },
         {
-          "name": "eye_02",
-          "parent": "eyes_l",
+          "name": "lepidopterran__eye_02",
+          "parent": "lepidopterran__eyes_l",
           "pivot": [
             2.75,
             27,
@@ -469,8 +469,8 @@
           ]
         },
         {
-          "name": "eye_02_tip",
-          "parent": "eye_02",
+          "name": "lepidopterran__eye_02_tip",
+          "parent": "lepidopterran__eye_02",
           "pivot": [
             6.35,
             27,
@@ -583,8 +583,8 @@
           ]
         },
         {
-          "name": "eyes_r",
-          "parent": "head",
+          "name": "lepidopterran__eyes_r",
+          "parent": "lepidopterran__head",
           "pivot": [
             -2.75,
             29,
@@ -592,8 +592,8 @@
           ]
         },
         {
-          "name": "eye_03",
-          "parent": "eyes_r",
+          "name": "lepidopterran__eye_03",
+          "parent": "lepidopterran__eyes_r",
           "pivot": [
             -2.75,
             29,
@@ -678,8 +678,8 @@
           ]
         },
         {
-          "name": "eye_03_tip",
-          "parent": "eye_03",
+          "name": "lepidopterran__eye_03_tip",
+          "parent": "lepidopterran__eye_03",
           "pivot": [
             -6.35,
             29,
@@ -792,8 +792,8 @@
           ]
         },
         {
-          "name": "eye_04",
-          "parent": "eyes_r",
+          "name": "lepidopterran__eye_04",
+          "parent": "lepidopterran__eyes_r",
           "pivot": [
             -2.75,
             27,
@@ -878,8 +878,8 @@
           ]
         },
         {
-          "name": "eye_04_tip",
-          "parent": "eye_04",
+          "name": "lepidopterran__eye_04_tip",
+          "parent": "lepidopterran__eye_04",
           "pivot": [
             -6.35,
             27,
@@ -992,8 +992,8 @@
           ]
         },
         {
-          "name": "jaw",
-          "parent": "head",
+          "name": "lepidopterran__jaw",
+          "parent": "lepidopterran__head",
           "pivot": [
             0,
             24.5,
@@ -1067,7 +1067,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "lepidopterran__body",
           "pivot": [
             0,
             25.5,
@@ -1075,8 +1075,8 @@
           ]
         },
         {
-          "name": "upper_chest",
-          "parent": "body",
+          "name": "lepidopterran__upper_chest",
+          "parent": "lepidopterran__body",
           "pivot": [
             0,
             16.08579,
@@ -1244,8 +1244,8 @@
           ]
         },
         {
-          "name": "bits",
-          "parent": "upper_chest",
+          "name": "lepidopterran__bits",
+          "parent": "lepidopterran__upper_chest",
           "pivot": [
             0,
             14.48651,
@@ -1467,8 +1467,8 @@
           ]
         },
         {
-          "name": "bits2",
-          "parent": "upper_chest",
+          "name": "lepidopterran__bits2",
+          "parent": "lepidopterran__upper_chest",
           "pivot": [
             0,
             14.48651,
@@ -1690,8 +1690,8 @@
           ]
         },
         {
-          "name": "tail1",
-          "parent": "body",
+          "name": "lepidopterran__tail1",
+          "parent": "lepidopterran__body",
           "pivot": [
             0,
             10.57144,
@@ -1770,8 +1770,8 @@
           ]
         },
         {
-          "name": "tail2",
-          "parent": "tail1",
+          "name": "lepidopterran__tail2",
+          "parent": "lepidopterran__tail1",
           "pivot": [
             0,
             1.57144,
@@ -1850,8 +1850,8 @@
           ]
         },
         {
-          "name": "stinger",
-          "parent": "tail2",
+          "name": "lepidopterran__stinger",
+          "parent": "lepidopterran__tail2",
           "pivot": [
             0,
             -10.17856,
@@ -1859,8 +1859,8 @@
           ]
         },
         {
-          "name": "st_l",
-          "parent": "stinger",
+          "name": "lepidopterran__st_l",
+          "parent": "lepidopterran__stinger",
           "pivot": [
             0,
             -10.17856,
@@ -1899,8 +1899,8 @@
           ]
         },
         {
-          "name": "st_r",
-          "parent": "stinger",
+          "name": "lepidopterran__st_r",
+          "parent": "lepidopterran__stinger",
           "pivot": [
             0,
             -10.17856,
@@ -1939,8 +1939,8 @@
           ]
         },
         {
-          "name": "stinger2",
-          "parent": "stinger",
+          "name": "lepidopterran__stinger2",
+          "parent": "lepidopterran__stinger",
           "pivot": [
             0,
             -10.12856,
@@ -1948,8 +1948,8 @@
           ]
         },
         {
-          "name": "st_l2",
-          "parent": "stinger2",
+          "name": "lepidopterran__st_l2",
+          "parent": "lepidopterran__stinger2",
           "pivot": [
             0,
             -10.12856,
@@ -1988,8 +1988,8 @@
           ]
         },
         {
-          "name": "st_r2",
-          "parent": "stinger2",
+          "name": "lepidopterran__st_r2",
+          "parent": "lepidopterran__stinger2",
           "pivot": [
             0,
             -10.12856,
@@ -2028,7 +2028,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "lepidopterran__leftLeg",
           "pivot": [
             4,
             15.25,
@@ -2036,8 +2036,8 @@
           ]
         },
         {
-          "name": "leg_01_upper",
-          "parent": "leftLeg",
+          "name": "lepidopterran__leg_01_upper",
+          "parent": "lepidopterran__leftLeg",
           "pivot": [
             4,
             15.25,
@@ -2117,8 +2117,8 @@
           ]
         },
         {
-          "name": "leg_01_mid",
-          "parent": "leg_01_upper",
+          "name": "lepidopterran__leg_01_mid",
+          "parent": "lepidopterran__leg_01_upper",
           "pivot": [
             9.69552,
             13.71927,
@@ -2231,8 +2231,8 @@
           ]
         },
         {
-          "name": "leg_01_lower",
-          "parent": "leg_01_mid",
+          "name": "lepidopterran__leg_01_lower",
+          "parent": "lepidopterran__leg_01_mid",
           "pivot": [
             13.73623,
             12.87976,
@@ -2301,7 +2301,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "lepidopterran__rightLeg",
           "pivot": [
             -4,
             15.25,
@@ -2309,8 +2309,8 @@
           ]
         },
         {
-          "name": "leg_01_upper4",
-          "parent": "rightLeg",
+          "name": "lepidopterran__leg_01_upper4",
+          "parent": "lepidopterran__rightLeg",
           "pivot": [
             -4,
             15.25,
@@ -2390,8 +2390,8 @@
           ]
         },
         {
-          "name": "leg_01_mid4",
-          "parent": "leg_01_upper4",
+          "name": "lepidopterran__leg_01_mid4",
+          "parent": "lepidopterran__leg_01_upper4",
           "pivot": [
             -9.69552,
             13.71927,
@@ -2504,8 +2504,8 @@
           ]
         },
         {
-          "name": "leg_01_lower4",
-          "parent": "leg_01_mid4",
+          "name": "lepidopterran__leg_01_lower4",
+          "parent": "lepidopterran__leg_01_mid4",
           "pivot": [
             -13.73623,
             12.87976,
@@ -2574,7 +2574,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "lepidopterran__leftArm",
           "pivot": [
             5.25,
             23.25,
@@ -2582,8 +2582,8 @@
           ]
         },
         {
-          "name": "leftarmrot",
-          "parent": "leftArm",
+          "name": "lepidopterran__leftarmrot",
+          "parent": "lepidopterran__leftArm",
           "pivot": [
             5.25,
             23.25,
@@ -2596,8 +2596,8 @@
           ]
         },
         {
-          "name": "leg_01_upper3",
-          "parent": "leftarmrot",
+          "name": "lepidopterran__leg_01_upper3",
+          "parent": "lepidopterran__leftarmrot",
           "pivot": [
             5.25,
             24,
@@ -2677,8 +2677,8 @@
           ]
         },
         {
-          "name": "leg_01_mid3",
-          "parent": "leg_01_upper3",
+          "name": "lepidopterran__leg_01_mid3",
+          "parent": "lepidopterran__leg_01_upper3",
           "pivot": [
             11.26874,
             23.98867,
@@ -2791,8 +2791,8 @@
           ]
         },
         {
-          "name": "leg_01_lower3",
-          "parent": "leg_01_mid3",
+          "name": "lepidopterran__leg_01_lower3",
+          "parent": "lepidopterran__leg_01_mid3",
           "pivot": [
             14.16445,
             23.90458,
@@ -2966,7 +2966,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "lepidopterran__rightArm",
           "pivot": [
             -5.25,
             23.25,
@@ -2974,8 +2974,8 @@
           ]
         },
         {
-          "name": "rightarmrot",
-          "parent": "rightArm",
+          "name": "lepidopterran__rightarmrot",
+          "parent": "lepidopterran__rightArm",
           "pivot": [
             -5.25,
             23.25,
@@ -2988,8 +2988,8 @@
           ]
         },
         {
-          "name": "leg_01_upper6",
-          "parent": "rightarmrot",
+          "name": "lepidopterran__leg_01_upper6",
+          "parent": "lepidopterran__rightarmrot",
           "pivot": [
             -5.25,
             24,
@@ -3069,8 +3069,8 @@
           ]
         },
         {
-          "name": "leg_01_mid6",
-          "parent": "leg_01_upper6",
+          "name": "lepidopterran__leg_01_mid6",
+          "parent": "lepidopterran__leg_01_upper6",
           "pivot": [
             -11.26874,
             23.98867,
@@ -3183,8 +3183,8 @@
           ]
         },
         {
-          "name": "leg_01_lower6",
-          "parent": "leg_01_mid6",
+          "name": "lepidopterran__leg_01_lower6",
+          "parent": "lepidopterran__leg_01_mid6",
           "pivot": [
             -14.16445,
             23.90458,

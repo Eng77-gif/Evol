@@ -1216,7 +1216,7 @@
             ]
           }
         },
-        "Head": {
+        "Head_inner": {
           "rotation": {
             "0.0": [
               0,
@@ -1614,7 +1614,7 @@
             }
           }
         },
-        "Head": {
+        "Head_inner": {
           "rotation": [
             0,
             0,

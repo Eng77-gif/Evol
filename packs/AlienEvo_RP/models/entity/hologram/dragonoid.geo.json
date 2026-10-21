@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "leftLeg",
+          "name": "dragonoid__leftLeg",
           "pivot": [
             3.0561,
             8.96257,
@@ -24,8 +24,8 @@
           ]
         },
         {
-          "name": "leftleg_r",
-          "parent": "leftLeg",
+          "name": "dragonoid__leftleg_r",
+          "parent": "dragonoid__leftLeg",
           "pivot": [
             1.4561,
             4.76257,
@@ -124,8 +124,8 @@
           ]
         },
         {
-          "name": "leftleg",
-          "parent": "leftleg_r",
+          "name": "dragonoid__leftleg_inner",
+          "parent": "dragonoid__leftleg_r",
           "pivot": [
             3.2761,
             4.36257,
@@ -219,8 +219,8 @@
           ]
         },
         {
-          "name": "leftfoot",
-          "parent": "leftleg",
+          "name": "dragonoid__leftfoot",
+          "parent": "dragonoid__leftleg_inner",
           "pivot": [
             4.3561,
             2.44063,
@@ -1060,7 +1060,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "dragonoid__rightLeg",
           "pivot": [
             -3.0561,
             8.96257,
@@ -1068,8 +1068,8 @@
           ]
         },
         {
-          "name": "rightleg_r",
-          "parent": "rightLeg",
+          "name": "dragonoid__rightleg_r",
+          "parent": "dragonoid__rightLeg",
           "pivot": [
             -1.4561,
             4.76257,
@@ -1168,8 +1168,8 @@
           ]
         },
         {
-          "name": "rightleg",
-          "parent": "rightleg_r",
+          "name": "dragonoid__rightleg_inner",
+          "parent": "dragonoid__rightleg_r",
           "pivot": [
             -3.2761,
             4.36257,
@@ -1263,8 +1263,8 @@
           ]
         },
         {
-          "name": "rightfoot",
-          "parent": "rightleg",
+          "name": "dragonoid__rightfoot",
+          "parent": "dragonoid__rightleg_inner",
           "pivot": [
             -4.3561,
             2.44063,
@@ -2104,7 +2104,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "dragonoid__leftArm",
           "pivot": [
             1.75,
             15.22224,
@@ -2112,8 +2112,8 @@
           ]
         },
         {
-          "name": "leftarm_r",
-          "parent": "leftArm",
+          "name": "dragonoid__leftarm_r",
+          "parent": "dragonoid__leftArm",
           "pivot": [
             1.75,
             15.22224,
@@ -2377,8 +2377,8 @@
           ]
         },
         {
-          "name": "hand_left",
-          "parent": "leftarm_r",
+          "name": "dragonoid__hand_left",
+          "parent": "dragonoid__leftarm_r",
           "pivot": [
             4.54013,
             20.49934,
@@ -2725,8 +2725,8 @@
           ]
         },
         {
-          "name": "wing4_left",
-          "parent": "hand_left",
+          "name": "dragonoid__wing4_left",
+          "parent": "dragonoid__hand_left",
           "pivot": [
             4.58362,
             22.29013,
@@ -2904,8 +2904,8 @@
           ]
         },
         {
-          "name": "wing3_left",
-          "parent": "hand_left",
+          "name": "dragonoid__wing3_left",
+          "parent": "dragonoid__hand_left",
           "pivot": [
             5.02605,
             21.22836,
@@ -3083,8 +3083,8 @@
           ]
         },
         {
-          "name": "wing2_left",
-          "parent": "hand_left",
+          "name": "dragonoid__wing2_left",
+          "parent": "dragonoid__hand_left",
           "pivot": [
             5.02605,
             21.22836,
@@ -3262,8 +3262,8 @@
           ]
         },
         {
-          "name": "wing1_left",
-          "parent": "hand_left",
+          "name": "dragonoid__wing1_left",
+          "parent": "dragonoid__hand_left",
           "pivot": [
             5.02605,
             21.22836,
@@ -3441,8 +3441,8 @@
           ]
         },
         {
-          "name": "fingers_left",
-          "parent": "hand_left",
+          "name": "dragonoid__fingers_left",
+          "parent": "dragonoid__hand_left",
           "pivot": [
             4.69013,
             20.49934,
@@ -3956,7 +3956,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "dragonoid__rightArm",
           "pivot": [
             -1.75,
             15.22224,
@@ -3964,8 +3964,8 @@
           ]
         },
         {
-          "name": "rightarm_r",
-          "parent": "rightArm",
+          "name": "dragonoid__rightarm_r",
+          "parent": "dragonoid__rightArm",
           "pivot": [
             -1.75,
             15.22224,
@@ -4229,8 +4229,8 @@
           ]
         },
         {
-          "name": "hand_right",
-          "parent": "rightarm_r",
+          "name": "dragonoid__hand_right",
+          "parent": "dragonoid__rightarm_r",
           "pivot": [
             -4.54013,
             20.49934,
@@ -4577,8 +4577,8 @@
           ]
         },
         {
-          "name": "wing4_right",
-          "parent": "hand_right",
+          "name": "dragonoid__wing4_right",
+          "parent": "dragonoid__hand_right",
           "pivot": [
             -4.58362,
             22.29013,
@@ -4756,8 +4756,8 @@
           ]
         },
         {
-          "name": "wing3_right",
-          "parent": "hand_right",
+          "name": "dragonoid__wing3_right",
+          "parent": "dragonoid__hand_right",
           "pivot": [
             -5.02605,
             21.22836,
@@ -4935,8 +4935,8 @@
           ]
         },
         {
-          "name": "wing2_right",
-          "parent": "hand_right",
+          "name": "dragonoid__wing2_right",
+          "parent": "dragonoid__hand_right",
           "pivot": [
             -5.02605,
             21.22836,
@@ -5114,8 +5114,8 @@
           ]
         },
         {
-          "name": "wing1_right",
-          "parent": "hand_right",
+          "name": "dragonoid__wing1_right",
+          "parent": "dragonoid__hand_right",
           "pivot": [
             -5.02605,
             21.22836,
@@ -5293,8 +5293,8 @@
           ]
         },
         {
-          "name": "fingers_right",
-          "parent": "hand_right",
+          "name": "dragonoid__fingers_right",
+          "parent": "dragonoid__hand_right",
           "pivot": [
             -4.69013,
             20.49934,
@@ -5808,7 +5808,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "dragonoid__body",
           "pivot": [
             0,
             24,
@@ -6574,8 +6574,8 @@
           ]
         },
         {
-          "name": "horns",
-          "parent": "body",
+          "name": "dragonoid__horns",
+          "parent": "dragonoid__body",
           "pivot": [
             0,
             19.1,
@@ -7005,8 +7005,8 @@
           ]
         },
         {
-          "name": "tail1",
-          "parent": "body",
+          "name": "dragonoid__tail1",
+          "parent": "dragonoid__body",
           "pivot": [
             0,
             5.79096,
@@ -7184,8 +7184,8 @@
           ]
         },
         {
-          "name": "tail2",
-          "parent": "tail1",
+          "name": "dragonoid__tail2",
+          "parent": "dragonoid__tail1",
           "pivot": [
             0,
             3.05711,
@@ -7363,8 +7363,8 @@
           ]
         },
         {
-          "name": "tail3",
-          "parent": "tail2",
+          "name": "dragonoid__tail3",
+          "parent": "dragonoid__tail2",
           "pivot": [
             0,
             1.60958,
@@ -7626,8 +7626,8 @@
           ]
         },
         {
-          "name": "tail4",
-          "parent": "tail3",
+          "name": "dragonoid__tail4",
+          "parent": "dragonoid__tail3",
           "pivot": [
             0,
             1.59245,
@@ -7805,8 +7805,8 @@
           ]
         },
         {
-          "name": "tail5",
-          "parent": "tail4",
+          "name": "dragonoid__tail5",
+          "parent": "dragonoid__tail4",
           "pivot": [
             0,
             1.59245,
@@ -8068,8 +8068,8 @@
           ]
         },
         {
-          "name": "tail6",
-          "parent": "tail5",
+          "name": "dragonoid__tail6",
+          "parent": "dragonoid__tail5",
           "pivot": [
             0,
             1.59245,
@@ -8163,8 +8163,8 @@
           ]
         },
         {
-          "name": "tail7",
-          "parent": "tail6",
+          "name": "dragonoid__tail7",
+          "parent": "dragonoid__tail6",
           "pivot": [
             0,
             1.69245,
@@ -8258,7 +8258,7 @@
           ]
         },
         {
-          "name": "head",
+          "name": "dragonoid__head",
           "pivot": [
             0,
             24,
@@ -8266,8 +8266,8 @@
           ]
         },
         {
-          "name": "head_r",
-          "parent": "head",
+          "name": "dragonoid__head_r",
+          "parent": "dragonoid__head",
           "pivot": [
             0,
             22.60415,
@@ -8852,8 +8852,8 @@
           ]
         },
         {
-          "name": "spikes",
-          "parent": "head_r",
+          "name": "dragonoid__spikes",
+          "parent": "dragonoid__head_r",
           "pivot": [
             0.58516,
             25.0918,
@@ -9367,8 +9367,8 @@
           ]
         },
         {
-          "name": "mouth",
-          "parent": "head_r",
+          "name": "dragonoid__mouth",
+          "parent": "dragonoid__head_r",
           "pivot": [
             0,
             23.34986,
@@ -9635,8 +9635,8 @@
           ]
         },
         {
-          "name": "mouth_spikes",
-          "parent": "mouth",
+          "name": "dragonoid__mouth_spikes",
+          "parent": "dragonoid__mouth",
           "pivot": [
             0,
             22.3945,

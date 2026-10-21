@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "nosedeenian__head",
           "pivot": [
             -0.2596,
             20.8806,
@@ -29,8 +29,8 @@
           ]
         },
         {
-          "name": "Head",
-          "parent": "head",
+          "name": "nosedeenian__Head_inner",
+          "parent": "nosedeenian__head",
           "pivot": [
             -2.25962,
             18.9556,
@@ -124,8 +124,8 @@
           ]
         },
         {
-          "name": "Jaw",
-          "parent": "Head",
+          "name": "nosedeenian__Jaw",
+          "parent": "nosedeenian__Head_inner",
           "pivot": [
             -0.07473,
             20.87509,
@@ -219,8 +219,8 @@
           ]
         },
         {
-          "name": "Eye",
-          "parent": "Head",
+          "name": "nosedeenian__Eye",
+          "parent": "nosedeenian__Head_inner",
           "pivot": [
             2.15962,
             25.33594,
@@ -398,8 +398,8 @@
           ]
         },
         {
-          "name": "Eye2",
-          "parent": "Head",
+          "name": "nosedeenian__Eye2",
+          "parent": "nosedeenian__Head_inner",
           "pivot": [
             -2.15962,
             25.33594,
@@ -577,7 +577,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "nosedeenian__body",
           "pivot": [
             6e-05,
             14.22586,
@@ -590,8 +590,8 @@
           ]
         },
         {
-          "name": "Torso",
-          "parent": "body",
+          "name": "nosedeenian__Torso",
+          "parent": "nosedeenian__body",
           "pivot": [
             6e-05,
             19.67586,
@@ -599,8 +599,8 @@
           ]
         },
         {
-          "name": "UpperTorso",
-          "parent": "Torso",
+          "name": "nosedeenian__UpperTorso",
+          "parent": "nosedeenian__Torso",
           "pivot": [
             6e-05,
             16.67586,
@@ -694,8 +694,8 @@
           ]
         },
         {
-          "name": "LowerTorso",
-          "parent": "UpperTorso",
+          "name": "nosedeenian__LowerTorso",
+          "parent": "nosedeenian__UpperTorso",
           "pivot": [
             0,
             13.925,
@@ -794,7 +794,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "nosedeenian__leftArm",
           "pivot": [
             4.93973,
             16.17088,
@@ -807,8 +807,8 @@
           ]
         },
         {
-          "name": "UpperArm2",
-          "parent": "leftArm",
+          "name": "nosedeenian__UpperArm2",
+          "parent": "nosedeenian__leftArm",
           "pivot": [
             5.76853,
             17.53254,
@@ -1072,8 +1072,8 @@
           ]
         },
         {
-          "name": "LowerArm2",
-          "parent": "UpperArm2",
+          "name": "nosedeenian__LowerArm2",
+          "parent": "nosedeenian__UpperArm2",
           "pivot": [
             6.58973,
             13.87088,
@@ -1505,7 +1505,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "nosedeenian__rightArm",
           "pivot": [
             -4.93973,
             16.17088,
@@ -1518,8 +1518,8 @@
           ]
         },
         {
-          "name": "UpperArm",
-          "parent": "rightArm",
+          "name": "nosedeenian__UpperArm",
+          "parent": "nosedeenian__rightArm",
           "pivot": [
             -5.76853,
             17.53254,
@@ -1783,8 +1783,8 @@
           ]
         },
         {
-          "name": "LowerArm",
-          "parent": "UpperArm",
+          "name": "nosedeenian__LowerArm",
+          "parent": "nosedeenian__UpperArm",
           "pivot": [
             -6.58973,
             13.87088,
@@ -2216,7 +2216,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "nosedeenian__leftLeg",
           "pivot": [
             3.2251,
             7.57586,
@@ -2224,8 +2224,8 @@
           ]
         },
         {
-          "name": "Leg",
-          "parent": "leftLeg",
+          "name": "nosedeenian__Leg",
+          "parent": "nosedeenian__leftLeg",
           "pivot": [
             3.22506,
             7.57586,
@@ -2403,7 +2403,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "nosedeenian__rightLeg",
           "pivot": [
             -3.22506,
             7.57586,
@@ -2411,8 +2411,8 @@
           ]
         },
         {
-          "name": "Leg2",
-          "parent": "rightLeg",
+          "name": "nosedeenian__Leg2",
+          "parent": "nosedeenian__rightLeg",
           "pivot": [
             -3.22506,
             7.57586,

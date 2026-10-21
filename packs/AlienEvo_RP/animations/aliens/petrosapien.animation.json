@@ -79,7 +79,7 @@
             }
           }
         },
-        "rightarm": {
+        "rightarm_inner": {
           "rotation": {
             "0.0": [
               0,
@@ -293,7 +293,7 @@
             }
           }
         },
-        "leftarm": {
+        "leftarm_inner": {
           "rotation": {
             "0.0": [
               0,
@@ -483,7 +483,7 @@
             }
           }
         },
-        "rightarm": {
+        "rightarm_inner": {
           "rotation": {
             "0.0": [
               27.5,
@@ -697,7 +697,7 @@
             }
           }
         },
-        "leftarm": {
+        "leftarm_inner": {
           "rotation": {
             "0.0833": [
               11.5,
@@ -829,7 +829,7 @@
             0
           ]
         },
-        "rightarm": {
+        "rightarm_inner": {
           "rotation": [
             27.5,
             12.5,
@@ -879,7 +879,7 @@
             0
           ]
         },
-        "leftarm": {
+        "leftarm_inner": {
           "rotation": [
             11.5,
             -1,
@@ -987,7 +987,7 @@
             0
           ]
         },
-        "rightarm": {
+        "rightarm_inner": {
           "rotation": [
             27.5,
             12.5,
@@ -1049,7 +1049,7 @@
             0
           ]
         },
-        "leftarm": {
+        "leftarm_inner": {
           "rotation": [
             11.5,
             -1,
@@ -1534,7 +1534,7 @@
             }
           }
         },
-        "rightarm": {
+        "rightarm_inner": {
           "rotation": {
             "0.0": [
               0,
@@ -1615,7 +1615,7 @@
             }
           }
         },
-        "leftarm": {
+        "leftarm_inner": {
           "rotation": {
             "0.0": [
               0,
@@ -1938,7 +1938,7 @@
             }
           }
         },
-        "rightarm": {
+        "rightarm_inner": {
           "rotation": {
             "0.0833": [
               11.5,
@@ -2003,7 +2003,7 @@
             }
           }
         },
-        "leftarm": {
+        "leftarm_inner": {
           "rotation": {
             "0.0": [
               27.5,
@@ -2297,7 +2297,7 @@
             -17
           ]
         },
-        "rightarm": {
+        "rightarm_inner": {
           "rotation": [
             11.5,
             1,
@@ -2316,7 +2316,7 @@
             0
           ]
         },
-        "leftarm": {
+        "leftarm_inner": {
           "rotation": [
             27.5,
             -12.5,
@@ -2429,7 +2429,7 @@
             -17
           ]
         },
-        "rightarm": {
+        "rightarm_inner": {
           "rotation": [
             11.5,
             1,
@@ -2448,7 +2448,7 @@
             0
           ]
         },
-        "leftarm": {
+        "leftarm_inner": {
           "rotation": [
             27.5,
             -12.5,

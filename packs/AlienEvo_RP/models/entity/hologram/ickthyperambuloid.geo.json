@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "full_body",
+          "name": "ickthyperambuloid__full_body",
           "pivot": [
             0,
             9.21134,
@@ -24,8 +24,8 @@
           ]
         },
         {
-          "name": "body",
-          "parent": "full_body",
+          "name": "ickthyperambuloid__body",
+          "parent": "ickthyperambuloid__full_body",
           "pivot": [
             0,
             13.17937,
@@ -33,8 +33,8 @@
           ]
         },
         {
-          "name": "body_inner",
-          "parent": "body",
+          "name": "ickthyperambuloid__body_inner",
+          "parent": "ickthyperambuloid__body",
           "pivot": [
             0,
             13.17937,
@@ -212,8 +212,8 @@
           ]
         },
         {
-          "name": "head",
-          "parent": "body_inner",
+          "name": "ickthyperambuloid__head",
+          "parent": "ickthyperambuloid__body_inner",
           "pivot": [
             0,
             13.7,
@@ -221,8 +221,8 @@
           ]
         },
         {
-          "name": "back_fin",
-          "parent": "head",
+          "name": "ickthyperambuloid__back_fin",
+          "parent": "ickthyperambuloid__head",
           "pivot": [
             0,
             13.7,
@@ -316,8 +316,8 @@
           ]
         },
         {
-          "name": "overlay",
-          "parent": "body_inner",
+          "name": "ickthyperambuloid__overlay",
+          "parent": "ickthyperambuloid__body_inner",
           "pivot": [
             0,
             13.7,
@@ -497,8 +497,8 @@
           ]
         },
         {
-          "name": "mouth",
-          "parent": "body_inner",
+          "name": "ickthyperambuloid__mouth",
+          "parent": "ickthyperambuloid__body_inner",
           "pivot": [
             0,
             13.7,
@@ -676,8 +676,8 @@
           ]
         },
         {
-          "name": "overlay2",
-          "parent": "mouth",
+          "name": "ickthyperambuloid__overlay2",
+          "parent": "ickthyperambuloid__mouth",
           "pivot": [
             0,
             13.7,
@@ -772,8 +772,8 @@
           ]
         },
         {
-          "name": "eyes",
-          "parent": "body_inner",
+          "name": "ickthyperambuloid__eyes",
+          "parent": "ickthyperambuloid__body_inner",
           "pivot": [
             0,
             13.7,
@@ -781,8 +781,8 @@
           ]
         },
         {
-          "name": "right",
-          "parent": "eyes",
+          "name": "ickthyperambuloid__right",
+          "parent": "ickthyperambuloid__eyes",
           "pivot": [
             0,
             13.7,
@@ -876,8 +876,8 @@
           ]
         },
         {
-          "name": "left",
-          "parent": "eyes",
+          "name": "ickthyperambuloid__left",
+          "parent": "ickthyperambuloid__eyes",
           "pivot": [
             0,
             13.7,
@@ -971,8 +971,8 @@
           ]
         },
         {
-          "name": "headFin",
-          "parent": "body_inner",
+          "name": "ickthyperambuloid__headFin",
+          "parent": "ickthyperambuloid__body_inner",
           "pivot": [
             0,
             8.21934,
@@ -1150,8 +1150,8 @@
           ]
         },
         {
-          "name": "leftArm",
-          "parent": "full_body",
+          "name": "ickthyperambuloid__leftArm",
+          "parent": "ickthyperambuloid__full_body",
           "pivot": [
             5.48066,
             10.95967,
@@ -1159,8 +1159,8 @@
           ]
         },
         {
-          "name": "left_fin",
-          "parent": "leftArm",
+          "name": "ickthyperambuloid__left_fin",
+          "parent": "ickthyperambuloid__leftArm",
           "pivot": [
             5.48066,
             10.95967,
@@ -1338,8 +1338,8 @@
           ]
         },
         {
-          "name": "rightArm",
-          "parent": "full_body",
+          "name": "ickthyperambuloid__rightArm",
+          "parent": "ickthyperambuloid__full_body",
           "pivot": [
             -5.48066,
             10.95967,
@@ -1347,8 +1347,8 @@
           ]
         },
         {
-          "name": "right_fin",
-          "parent": "rightArm",
+          "name": "ickthyperambuloid__right_fin",
+          "parent": "ickthyperambuloid__rightArm",
           "pivot": [
             -5.48066,
             10.95967,
@@ -1526,8 +1526,8 @@
           ]
         },
         {
-          "name": "leftLeg",
-          "parent": "full_body",
+          "name": "ickthyperambuloid__leftLeg",
+          "parent": "ickthyperambuloid__full_body",
           "pivot": [
             8.221,
             5.479,
@@ -1535,8 +1535,8 @@
           ]
         },
         {
-          "name": "left_leg",
-          "parent": "leftLeg",
+          "name": "ickthyperambuloid__left_leg",
+          "parent": "ickthyperambuloid__leftLeg",
           "pivot": [
             8.221,
             5.479,
@@ -1714,8 +1714,8 @@
           ]
         },
         {
-          "name": "rightLeg",
-          "parent": "full_body",
+          "name": "ickthyperambuloid__rightLeg",
+          "parent": "ickthyperambuloid__full_body",
           "pivot": [
             -8.221,
             5.479,
@@ -1723,8 +1723,8 @@
           ]
         },
         {
-          "name": "right_leg",
-          "parent": "rightLeg",
+          "name": "ickthyperambuloid__right_leg",
+          "parent": "ickthyperambuloid__rightLeg",
           "pivot": [
             -8.221,
             5.479,

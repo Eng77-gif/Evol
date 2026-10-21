@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "rightArm",
+          "name": "galvan__rightArm",
           "pivot": [
             -4.5,
             24,
@@ -260,7 +260,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "galvan__leftArm",
           "pivot": [
             4.5,
             24,
@@ -504,7 +504,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "galvan__rightLeg",
           "pivot": [
             -2.1,
             13.575,
@@ -674,7 +674,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "galvan__leftLeg",
           "pivot": [
             2.1,
             13.575,
@@ -844,7 +844,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "galvan__body",
           "pivot": [
             0,
             27,
@@ -1077,7 +1077,7 @@
           ]
         },
         {
-          "name": "head",
+          "name": "galvan__head",
           "pivot": [
             0,
             27,
@@ -1162,8 +1162,8 @@
           ]
         },
         {
-          "name": "eye4",
-          "parent": "head",
+          "name": "galvan__eye4",
+          "parent": "galvan__head",
           "pivot": [
             4.275,
             33,
@@ -1351,8 +1351,8 @@
           ]
         },
         {
-          "name": "eye2",
-          "parent": "head",
+          "name": "galvan__eye2",
+          "parent": "galvan__head",
           "pivot": [
             -4.275,
             33,
@@ -1540,8 +1540,8 @@
           ]
         },
         {
-          "name": "tongue1",
-          "parent": "head",
+          "name": "galvan__tongue1",
+          "parent": "galvan__head",
           "pivot": [
             0,
             28.5,
@@ -1575,8 +1575,8 @@
           ]
         },
         {
-          "name": "tongue2",
-          "parent": "tongue1",
+          "name": "galvan__tongue2",
+          "parent": "galvan__tongue1",
           "pivot": [
             0,
             28.5,
@@ -1610,8 +1610,8 @@
           ]
         },
         {
-          "name": "tongue3",
-          "parent": "tongue2",
+          "name": "galvan__tongue3",
+          "parent": "galvan__tongue2",
           "pivot": [
             0,
             28.5,
@@ -1650,8 +1650,8 @@
           ]
         },
         {
-          "name": "mouth",
-          "parent": "head",
+          "name": "galvan__mouth",
+          "parent": "galvan__head",
           "pivot": [
             0,
             29.025,

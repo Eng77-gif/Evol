@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "orishan__head",
           "pivot": [
             0,
             33.78946,
@@ -876,7 +876,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "orishan__body",
           "pivot": [
             0,
             27.03595,
@@ -1950,7 +1950,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "orishan__leftArm",
           "pivot": [
             7,
             28.9,
@@ -3732,7 +3732,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "orishan__rightArm",
           "pivot": [
             -6.75,
             28.9,
@@ -5515,7 +5515,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "orishan__leftLeg",
           "pivot": [
             1.4,
             17.73595,
@@ -6023,7 +6023,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "orishan__rightLeg",
           "pivot": [
             -2.4,
             17.48595,

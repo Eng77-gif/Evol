@@ -51,7 +51,7 @@
           ]
         },
         {
-          "name": "holo_armorHead2",
+          "name": "florauna__armorHead2",
           "parent": "hologram",
           "pivot": [
             9.79692,
@@ -65,8 +65,8 @@
           ]
         },
         {
-          "name": "holo_armorRightLeg2",
-          "parent": "holo_armorHead2",
+          "name": "florauna__armorRightLeg2",
+          "parent": "florauna__armorHead2",
           "pivot": [
             9.75,
             16.138,
@@ -74,8 +74,8 @@
           ]
         },
         {
-          "name": "holo_Legs8",
-          "parent": "holo_armorRightLeg2",
+          "name": "florauna__Legs8",
+          "parent": "florauna__armorRightLeg2",
           "pivot": [
             9.64862,
             16.21809,
@@ -88,8 +88,8 @@
           ]
         },
         {
-          "name": "holo_upper3",
-          "parent": "holo_Legs8",
+          "name": "florauna__upper3",
+          "parent": "florauna__Legs8",
           "pivot": [
             9.66997,
             16.14682,
@@ -369,8 +369,8 @@
           ]
         },
         {
-          "name": "holo_lower3",
-          "parent": "holo_Legs8",
+          "name": "florauna__lower3",
+          "parent": "florauna__Legs8",
           "pivot": [
             10.09237,
             15.35002,
@@ -498,8 +498,8 @@
           ]
         },
         {
-          "name": "holo_Legs9",
-          "parent": "holo_armorRightLeg2",
+          "name": "florauna__Legs9",
+          "parent": "florauna__armorRightLeg2",
           "pivot": [
             9.64019,
             16.11057,
@@ -512,8 +512,8 @@
           ]
         },
         {
-          "name": "holo_upper2",
-          "parent": "holo_Legs9",
+          "name": "florauna__upper2",
+          "parent": "florauna__Legs9",
           "pivot": [
             9.63491,
             16.05455,
@@ -675,8 +675,8 @@
           ]
         },
         {
-          "name": "holo_middle5",
-          "parent": "holo_Legs9",
+          "name": "florauna__middle5",
+          "parent": "florauna__Legs9",
           "pivot": [
             9.36611,
             15.70895,
@@ -804,8 +804,8 @@
           ]
         },
         {
-          "name": "holo_lower2",
-          "parent": "holo_middle5",
+          "name": "florauna__lower2",
+          "parent": "florauna__middle5",
           "pivot": [
             9.12122,
             14.91449,
@@ -933,8 +933,8 @@
           ]
         },
         {
-          "name": "holo_armorHead4",
-          "parent": "holo_armorHead2",
+          "name": "florauna__armorHead4",
+          "parent": "florauna__armorHead2",
           "pivot": [
             9.75,
             17.60627,
@@ -1057,8 +1057,8 @@
           ]
         },
         {
-          "name": "holo_jaw2",
-          "parent": "holo_armorHead4",
+          "name": "florauna__jaw2",
+          "parent": "florauna__armorHead4",
           "pivot": [
             9.7788,
             17.66381,
@@ -1132,8 +1132,8 @@
           ]
         },
         {
-          "name": "holo_eye",
-          "parent": "holo_armorHead4",
+          "name": "florauna__eye",
+          "parent": "florauna__armorHead4",
           "pivot": [
             9.75,
             14.64288,
@@ -1311,8 +1311,8 @@
           ]
         },
         {
-          "name": "holo_armorBody2",
-          "parent": "holo_armorHead2",
+          "name": "florauna__armorBody2",
+          "parent": "florauna__armorHead2",
           "pivot": [
             9.7484,
             17.59829,
@@ -1851,8 +1851,8 @@
           ]
         },
         {
-          "name": "holo_FRUITS2",
-          "parent": "holo_armorBody2",
+          "name": "florauna__FRUITS2",
+          "parent": "florauna__armorBody2",
           "pivot": [
             9.75,
             16.87144,
@@ -2819,8 +2819,8 @@
           ]
         },
         {
-          "name": "holo_Fruitsall2",
-          "parent": "holo_FRUITS2",
+          "name": "florauna__Fruitsall2",
+          "parent": "florauna__FRUITS2",
           "pivot": [
             9.75,
             14.47144,
@@ -2828,8 +2828,8 @@
           ]
         },
         {
-          "name": "holo_Fruit3",
-          "parent": "holo_Fruitsall2",
+          "name": "florauna__Fruit3",
+          "parent": "florauna__Fruitsall2",
           "pivot": [
             9.75,
             14.47144,
@@ -2837,8 +2837,8 @@
           ]
         },
         {
-          "name": "holo_fruit4",
-          "parent": "holo_Fruitsall2",
+          "name": "florauna__fruit4",
+          "parent": "florauna__Fruitsall2",
           "pivot": [
             9.74662,
             16.94826,
@@ -3520,8 +3520,8 @@
           ]
         },
         {
-          "name": "holo_neck2",
-          "parent": "holo_armorBody2",
+          "name": "florauna__neck2",
+          "parent": "florauna__armorBody2",
           "pivot": [
             9.75,
             17.5588,
@@ -3616,8 +3616,8 @@
           ]
         },
         {
-          "name": "holo_FLYTRAP1",
-          "parent": "holo_armorBody2",
+          "name": "florauna__FLYTRAP1",
+          "parent": "florauna__armorBody2",
           "pivot": [
             9.82555,
             17.2396,
@@ -3630,8 +3630,8 @@
           ]
         },
         {
-          "name": "holo_AnchorBack",
-          "parent": "holo_FLYTRAP1",
+          "name": "florauna__AnchorBack",
+          "parent": "florauna__FLYTRAP1",
           "pivot": [
             9.834,
             17.24802,
@@ -3726,8 +3726,8 @@
           ]
         },
         {
-          "name": "holo_Anchor",
-          "parent": "holo_FLYTRAP1",
+          "name": "florauna__Anchor",
+          "parent": "florauna__FLYTRAP1",
           "pivot": [
             9.82555,
             17.24693,
@@ -3822,8 +3822,8 @@
           ]
         },
         {
-          "name": "holo_LeftFlyLower2",
-          "parent": "holo_FLYTRAP1",
+          "name": "florauna__LeftFlyLower2",
+          "parent": "florauna__FLYTRAP1",
           "pivot": [
             9.85818,
             17.23602,
@@ -3988,8 +3988,8 @@
           ]
         },
         {
-          "name": "holo_LeftFlyUpper2",
-          "parent": "holo_LeftFlyLower2",
+          "name": "florauna__LeftFlyUpper2",
+          "parent": "florauna__LeftFlyLower2",
           "pivot": [
             9.83135,
             17.87326,
@@ -4144,8 +4144,8 @@
           ]
         },
         {
-          "name": "holo_TeethLeft2",
-          "parent": "holo_FLYTRAP1",
+          "name": "florauna__TeethLeft2",
+          "parent": "florauna__FLYTRAP1",
           "pivot": [
             9.75,
             17.21586,
@@ -4500,8 +4500,8 @@
           ]
         },
         {
-          "name": "holo_FLYTRAP2",
-          "parent": "holo_armorBody2",
+          "name": "florauna__FLYTRAP2",
+          "parent": "florauna__armorBody2",
           "pivot": [
             9.66845,
             17.2396,
@@ -4514,8 +4514,8 @@
           ]
         },
         {
-          "name": "holo_RightFlyLower2",
-          "parent": "holo_FLYTRAP2",
+          "name": "florauna__RightFlyLower2",
+          "parent": "florauna__FLYTRAP2",
           "pivot": [
             9.66583,
             17.24217,
@@ -4670,8 +4670,8 @@
           ]
         },
         {
-          "name": "holo_RightFlyUpper3",
-          "parent": "holo_RightFlyLower2",
+          "name": "florauna__RightFlyUpper3",
+          "parent": "florauna__RightFlyLower2",
           "pivot": [
             9.66583,
             17.87961,
@@ -4826,8 +4826,8 @@
           ]
         },
         {
-          "name": "holo_TeethRight2",
-          "parent": "holo_FLYTRAP2",
+          "name": "florauna__TeethRight2",
+          "parent": "florauna__FLYTRAP2",
           "pivot": [
             9.75,
             17.33001,
@@ -5187,8 +5187,8 @@
           ]
         },
         {
-          "name": "holo_bone11",
-          "parent": "holo_armorBody2",
+          "name": "florauna__bone11",
+          "parent": "florauna__armorBody2",
           "pivot": [
             9.6348,
             16.6756,
@@ -5334,8 +5334,8 @@
           ]
         },
         {
-          "name": "holo_HOODBACK",
-          "parent": "holo_armorBody2",
+          "name": "florauna__HOODBACK",
+          "parent": "florauna__armorBody2",
           "pivot": [
             9.7548,
             17.59034,
@@ -5495,8 +5495,8 @@
           ]
         },
         {
-          "name": "holo_BURROWFLYTRAPRIGHT",
-          "parent": "holo_armorBody2",
+          "name": "florauna__BURROWFLYTRAPRIGHT",
+          "parent": "florauna__armorBody2",
           "pivot": [
             9.74992,
             17.261,
@@ -5591,8 +5591,8 @@
           ]
         },
         {
-          "name": "holo_BURROWFLYTRAPLEFT",
-          "parent": "holo_armorBody2",
+          "name": "florauna__BURROWFLYTRAPLEFT",
+          "parent": "florauna__armorBody2",
           "pivot": [
             9.75008,
             17.261,
@@ -5677,8 +5677,8 @@
           ]
         },
         {
-          "name": "holo_armorRightArm2",
-          "parent": "holo_armorHead2",
+          "name": "florauna__armorRightArm2",
+          "parent": "florauna__armorHead2",
           "pivot": [
             9.59764,
             17.41929,
@@ -5691,8 +5691,8 @@
           ]
         },
         {
-          "name": "holo_bone12",
-          "parent": "holo_armorRightArm2",
+          "name": "florauna__bone12",
+          "parent": "florauna__armorRightArm2",
           "pivot": [
             9.47922,
             17.32314,
@@ -6206,8 +6206,8 @@
           ]
         },
         {
-          "name": "holo_bone13",
-          "parent": "holo_armorRightArm2",
+          "name": "florauna__bone13",
+          "parent": "florauna__armorRightArm2",
           "pivot": [
             9.17686,
             16.98851,
@@ -6877,8 +6877,8 @@
           ]
         },
         {
-          "name": "holo_bone14",
-          "parent": "holo_bone13",
+          "name": "florauna__bone14",
+          "parent": "florauna__bone13",
           "pivot": [
             9.34966,
             15.85211,
@@ -7061,8 +7061,8 @@
           ]
         },
         {
-          "name": "holo_bone15",
-          "parent": "holo_bone13",
+          "name": "florauna__bone15",
+          "parent": "florauna__bone13",
           "pivot": [
             9.17686,
             16.65851,
@@ -7208,8 +7208,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftArm2",
-          "parent": "holo_armorHead2",
+          "name": "florauna__armorLeftArm2",
+          "parent": "florauna__armorHead2",
           "pivot": [
             9.90236,
             17.41929,
@@ -7222,8 +7222,8 @@
           ]
         },
         {
-          "name": "holo_bone16",
-          "parent": "holo_armorLeftArm2",
+          "name": "florauna__bone16",
+          "parent": "florauna__armorLeftArm2",
           "pivot": [
             10.02078,
             17.32314,
@@ -7737,8 +7737,8 @@
           ]
         },
         {
-          "name": "holo_bone17",
-          "parent": "holo_armorLeftArm2",
+          "name": "florauna__bone17",
+          "parent": "florauna__armorLeftArm2",
           "pivot": [
             10.32314,
             16.98851,
@@ -8408,8 +8408,8 @@
           ]
         },
         {
-          "name": "holo_bone18",
-          "parent": "holo_bone17",
+          "name": "florauna__bone18",
+          "parent": "florauna__bone17",
           "pivot": [
             10.15034,
             15.85211,
@@ -8592,8 +8592,8 @@
           ]
         },
         {
-          "name": "holo_bone19",
-          "parent": "holo_bone17",
+          "name": "florauna__bone19",
+          "parent": "florauna__bone17",
           "pivot": [
             10.32314,
             16.65851,
@@ -8739,8 +8739,8 @@
           ]
         },
         {
-          "name": "holo_Legs10",
-          "parent": "holo_armorHead2",
+          "name": "florauna__Legs10",
+          "parent": "florauna__armorHead2",
           "pivot": [
             9.7605,
             16.30737,
@@ -8748,8 +8748,8 @@
           ]
         },
         {
-          "name": "holo_Upper9",
-          "parent": "holo_Legs10",
+          "name": "florauna__Upper9",
+          "parent": "florauna__Legs10",
           "pivot": [
             9.75,
             16.15144,
@@ -8995,8 +8995,8 @@
           ]
         },
         {
-          "name": "holo_lower9",
-          "parent": "holo_Legs10",
+          "name": "florauna__lower9",
+          "parent": "florauna__Legs10",
           "pivot": [
             9.75,
             15.05944,
@@ -9158,8 +9158,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftLeg2",
-          "parent": "holo_armorHead2",
+          "name": "florauna__armorLeftLeg2",
+          "parent": "florauna__armorHead2",
           "pivot": [
             9.75,
             16.138,
@@ -9167,8 +9167,8 @@
           ]
         },
         {
-          "name": "holo_Legs11",
-          "parent": "holo_armorLeftLeg2",
+          "name": "florauna__Legs11",
+          "parent": "florauna__armorLeftLeg2",
           "pivot": [
             9.85139,
             16.21809,
@@ -9181,8 +9181,8 @@
           ]
         },
         {
-          "name": "holo_upper10",
-          "parent": "holo_Legs11",
+          "name": "florauna__upper10",
+          "parent": "florauna__Legs11",
           "pivot": [
             9.83003,
             16.14682,
@@ -9462,8 +9462,8 @@
           ]
         },
         {
-          "name": "holo_lower10",
-          "parent": "holo_Legs11",
+          "name": "florauna__lower10",
+          "parent": "florauna__Legs11",
           "pivot": [
             9.40763,
             15.35002,
@@ -9591,8 +9591,8 @@
           ]
         },
         {
-          "name": "holo_Legs12",
-          "parent": "holo_armorLeftLeg2",
+          "name": "florauna__Legs12",
+          "parent": "florauna__armorLeftLeg2",
           "pivot": [
             9.85982,
             16.11057,
@@ -9605,8 +9605,8 @@
           ]
         },
         {
-          "name": "holo_upper11",
-          "parent": "holo_Legs12",
+          "name": "florauna__upper11",
+          "parent": "florauna__Legs12",
           "pivot": [
             9.86509,
             16.05455,
@@ -9768,8 +9768,8 @@
           ]
         },
         {
-          "name": "holo_middle6",
-          "parent": "holo_Legs12",
+          "name": "florauna__middle6",
+          "parent": "florauna__Legs12",
           "pivot": [
             10.13389,
             15.70895,
@@ -9863,8 +9863,8 @@
           ]
         },
         {
-          "name": "holo_lower11",
-          "parent": "holo_middle6",
+          "name": "florauna__lower11",
+          "parent": "florauna__middle6",
           "pivot": [
             10.37878,
             14.91449,

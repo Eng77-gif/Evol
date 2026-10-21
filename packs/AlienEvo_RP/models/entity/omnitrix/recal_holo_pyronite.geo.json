@@ -91,7 +91,7 @@
           ]
         },
         {
-          "name": "holo_heatblast",
+          "name": "pyronite__heatblast",
           "parent": "hologram",
           "pivot": [
             11.0146,
@@ -105,8 +105,8 @@
           ]
         },
         {
-          "name": "holo_RightLeg",
-          "parent": "holo_heatblast",
+          "name": "pyronite__RightLeg",
+          "parent": "pyronite__heatblast",
           "pivot": [
             11.0146,
             14.871,
@@ -274,8 +274,8 @@
           ]
         },
         {
-          "name": "holo_armorRightLegHat",
-          "parent": "holo_RightLeg",
+          "name": "pyronite__armorRightLegHat",
+          "parent": "pyronite__RightLeg",
           "pivot": [
             11.005,
             15.279,
@@ -288,8 +288,8 @@
           ]
         },
         {
-          "name": "holo_calf3",
-          "parent": "holo_armorRightLegHat",
+          "name": "pyronite__calf3",
+          "parent": "pyronite__armorRightLegHat",
           "pivot": [
             10.97028,
             14.48887,
@@ -424,8 +424,8 @@
           ]
         },
         {
-          "name": "holo_bone13",
-          "parent": "holo_armorRightLegHat",
+          "name": "pyronite__bone13",
+          "parent": "pyronite__armorRightLegHat",
           "pivot": [
             11.005,
             15.279,
@@ -505,8 +505,8 @@
           ]
         },
         {
-          "name": "holo_l_leg2",
-          "parent": "holo_RightLeg",
+          "name": "pyronite__l_leg2",
+          "parent": "pyronite__RightLeg",
           "pivot": [
             11.005,
             15.279,
@@ -519,8 +519,8 @@
           ]
         },
         {
-          "name": "holo_calf4",
-          "parent": "holo_l_leg2",
+          "name": "pyronite__calf4",
+          "parent": "pyronite__l_leg2",
           "pivot": [
             10.97028,
             14.48887,
@@ -654,8 +654,8 @@
           ]
         },
         {
-          "name": "holo_bone14",
-          "parent": "holo_l_leg2",
+          "name": "pyronite__bone14",
+          "parent": "pyronite__l_leg2",
           "pivot": [
             11.005,
             15.279,
@@ -744,8 +744,8 @@
           ]
         },
         {
-          "name": "holo_Head",
-          "parent": "holo_heatblast",
+          "name": "pyronite__Head",
+          "parent": "pyronite__heatblast",
           "pivot": [
             11.125,
             16.431,
@@ -753,8 +753,8 @@
           ]
         },
         {
-          "name": "holo_flames",
-          "parent": "holo_Head",
+          "name": "pyronite__flames",
+          "parent": "pyronite__Head",
           "pivot": [
             11.125,
             16.79574,
@@ -803,8 +803,8 @@
           ]
         },
         {
-          "name": "holo_fireleft",
-          "parent": "holo_flames",
+          "name": "pyronite__fireleft",
+          "parent": "pyronite__flames",
           "pivot": [
             11.125,
             16.84482,
@@ -887,8 +887,8 @@
           ]
         },
         {
-          "name": "holo_fireright",
-          "parent": "holo_flames",
+          "name": "pyronite__fireright",
+          "parent": "pyronite__flames",
           "pivot": [
             11.125,
             16.84482,
@@ -971,8 +971,8 @@
           ]
         },
         {
-          "name": "holo_mask",
-          "parent": "holo_Head",
+          "name": "pyronite__mask",
+          "parent": "pyronite__Head",
           "pivot": [
             11.125,
             16.63117,
@@ -1156,8 +1156,8 @@
           ]
         },
         {
-          "name": "holo_jaw",
-          "parent": "holo_mask",
+          "name": "pyronite__jaw",
+          "parent": "pyronite__mask",
           "pivot": [
             11.125,
             16.45158,
@@ -1235,8 +1235,8 @@
           ]
         },
         {
-          "name": "holo_bone",
-          "parent": "holo_mask",
+          "name": "pyronite__bone",
+          "parent": "pyronite__mask",
           "pivot": [
             11.125,
             16.76533,
@@ -1384,8 +1384,8 @@
           ]
         },
         {
-          "name": "holo_Body",
-          "parent": "holo_heatblast",
+          "name": "pyronite__Body",
+          "parent": "pyronite__heatblast",
           "pivot": [
             11.125,
             16.167,
@@ -1525,8 +1525,8 @@
           ]
         },
         {
-          "name": "holo_armorBodyHat",
-          "parent": "holo_Body",
+          "name": "pyronite__armorBodyHat",
+          "parent": "pyronite__Body",
           "pivot": [
             11.125,
             16.167,
@@ -1636,8 +1636,8 @@
           ]
         },
         {
-          "name": "holo_chest2",
-          "parent": "holo_armorBodyHat",
+          "name": "pyronite__chest2",
+          "parent": "pyronite__armorBodyHat",
           "pivot": [
             11.125,
             15.95413,
@@ -1727,8 +1727,8 @@
           ]
         },
         {
-          "name": "holo_neck2",
-          "parent": "holo_armorBodyHat",
+          "name": "pyronite__neck2",
+          "parent": "pyronite__armorBodyHat",
           "pivot": [
             11.1394,
             16.1862,
@@ -1817,8 +1817,8 @@
           ]
         },
         {
-          "name": "holo_chest",
-          "parent": "holo_Body",
+          "name": "pyronite__chest",
+          "parent": "pyronite__Body",
           "pivot": [
             11.125,
             15.95413,
@@ -1908,8 +1908,8 @@
           ]
         },
         {
-          "name": "holo_neck",
-          "parent": "holo_Body",
+          "name": "pyronite__neck",
+          "parent": "pyronite__Body",
           "pivot": [
             11.1394,
             16.1862,
@@ -1999,8 +1999,8 @@
           ]
         },
         {
-          "name": "holo_LeftArm",
-          "parent": "holo_heatblast",
+          "name": "pyronite__LeftArm",
+          "parent": "pyronite__heatblast",
           "pivot": [
             11.557,
             15.951,
@@ -2008,8 +2008,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftArmHat",
-          "parent": "holo_LeftArm",
+          "name": "pyronite__armorLeftArmHat",
+          "parent": "pyronite__LeftArm",
           "pivot": [
             11.557,
             15.951,
@@ -2017,8 +2017,8 @@
           ]
         },
         {
-          "name": "holo_l_arm2",
-          "parent": "holo_armorLeftArmHat",
+          "name": "pyronite__l_arm2",
+          "parent": "pyronite__armorLeftArmHat",
           "pivot": [
             11.533,
             16.047,
@@ -2031,8 +2031,8 @@
           ]
         },
         {
-          "name": "holo_bone2",
-          "parent": "holo_l_arm2",
+          "name": "pyronite__bone2",
+          "parent": "pyronite__l_arm2",
           "pivot": [
             11.509,
             16.047,
@@ -2122,8 +2122,8 @@
           ]
         },
         {
-          "name": "holo_forearm2",
-          "parent": "holo_bone2",
+          "name": "pyronite__forearm2",
+          "parent": "pyronite__bone2",
           "pivot": [
             11.58858,
             15.21624,
@@ -2203,8 +2203,8 @@
           ]
         },
         {
-          "name": "holo_bone3",
-          "parent": "holo_forearm2",
+          "name": "pyronite__bone3",
+          "parent": "pyronite__forearm2",
           "pivot": [
             11.60309,
             14.59848,
@@ -2274,8 +2274,8 @@
           ]
         },
         {
-          "name": "holo_l_arm",
-          "parent": "holo_LeftArm",
+          "name": "pyronite__l_arm",
+          "parent": "pyronite__LeftArm",
           "pivot": [
             11.533,
             16.047,
@@ -2288,8 +2288,8 @@
           ]
         },
         {
-          "name": "holo_bone6",
-          "parent": "holo_l_arm",
+          "name": "pyronite__bone6",
+          "parent": "pyronite__l_arm",
           "pivot": [
             11.509,
             16.047,
@@ -2379,8 +2379,8 @@
           ]
         },
         {
-          "name": "holo_forearm",
-          "parent": "holo_bone6",
+          "name": "pyronite__forearm",
+          "parent": "pyronite__bone6",
           "pivot": [
             11.58858,
             15.21624,
@@ -2470,8 +2470,8 @@
           ]
         },
         {
-          "name": "holo_bone12",
-          "parent": "holo_forearm",
+          "name": "pyronite__bone12",
+          "parent": "pyronite__forearm",
           "pivot": [
             11.60309,
             14.59848,
@@ -2646,8 +2646,8 @@
           ]
         },
         {
-          "name": "holo_RightArm",
-          "parent": "holo_heatblast",
+          "name": "pyronite__RightArm",
+          "parent": "pyronite__heatblast",
           "pivot": [
             10.693,
             15.951,
@@ -2655,8 +2655,8 @@
           ]
         },
         {
-          "name": "holo_armorRightArmHat",
-          "parent": "holo_RightArm",
+          "name": "pyronite__armorRightArmHat",
+          "parent": "pyronite__RightArm",
           "pivot": [
             10.693,
             15.951,
@@ -2664,8 +2664,8 @@
           ]
         },
         {
-          "name": "holo_l_arm3",
-          "parent": "holo_armorRightArmHat",
+          "name": "pyronite__l_arm3",
+          "parent": "pyronite__armorRightArmHat",
           "pivot": [
             10.717,
             16.047,
@@ -2678,8 +2678,8 @@
           ]
         },
         {
-          "name": "holo_bone4",
-          "parent": "holo_l_arm3",
+          "name": "pyronite__bone4",
+          "parent": "pyronite__l_arm3",
           "pivot": [
             10.741,
             16.047,
@@ -2769,8 +2769,8 @@
           ]
         },
         {
-          "name": "holo_forearm3",
-          "parent": "holo_bone4",
+          "name": "pyronite__forearm3",
+          "parent": "pyronite__bone4",
           "pivot": [
             10.66142,
             15.21624,
@@ -2850,8 +2850,8 @@
           ]
         },
         {
-          "name": "holo_bone8",
-          "parent": "holo_forearm3",
+          "name": "pyronite__bone8",
+          "parent": "pyronite__forearm3",
           "pivot": [
             10.64691,
             14.59848,
@@ -2921,8 +2921,8 @@
           ]
         },
         {
-          "name": "holo_l_arm4",
-          "parent": "holo_RightArm",
+          "name": "pyronite__l_arm4",
+          "parent": "pyronite__RightArm",
           "pivot": [
             10.717,
             16.047,
@@ -2935,8 +2935,8 @@
           ]
         },
         {
-          "name": "holo_bone9",
-          "parent": "holo_l_arm4",
+          "name": "pyronite__bone9",
+          "parent": "pyronite__l_arm4",
           "pivot": [
             10.741,
             16.047,
@@ -3026,8 +3026,8 @@
           ]
         },
         {
-          "name": "holo_forearm4",
-          "parent": "holo_bone9",
+          "name": "pyronite__forearm4",
+          "parent": "pyronite__bone9",
           "pivot": [
             10.66142,
             15.21624,
@@ -3117,8 +3117,8 @@
           ]
         },
         {
-          "name": "holo_bone10",
-          "parent": "holo_forearm4",
+          "name": "pyronite__bone10",
+          "parent": "pyronite__forearm4",
           "pivot": [
             10.64691,
             14.59848,
@@ -3293,8 +3293,8 @@
           ]
         },
         {
-          "name": "holo_LeftLeg",
-          "parent": "holo_heatblast",
+          "name": "pyronite__LeftLeg",
+          "parent": "pyronite__heatblast",
           "pivot": [
             11.2354,
             14.871,
@@ -3462,8 +3462,8 @@
           ]
         },
         {
-          "name": "holo_armorLeftLegHat",
-          "parent": "holo_LeftLeg",
+          "name": "pyronite__armorLeftLegHat",
+          "parent": "pyronite__LeftLeg",
           "pivot": [
             11.245,
             15.279,
@@ -3476,8 +3476,8 @@
           ]
         },
         {
-          "name": "holo_calf2",
-          "parent": "holo_armorLeftLegHat",
+          "name": "pyronite__calf2",
+          "parent": "pyronite__armorLeftLegHat",
           "pivot": [
             11.27972,
             14.48887,
@@ -3592,8 +3592,8 @@
           ]
         },
         {
-          "name": "holo_bone11",
-          "parent": "holo_armorLeftLegHat",
+          "name": "pyronite__bone11",
+          "parent": "pyronite__armorLeftLegHat",
           "pivot": [
             11.245,
             15.279,
@@ -3663,8 +3663,8 @@
           ]
         },
         {
-          "name": "holo_l_leg",
-          "parent": "holo_LeftLeg",
+          "name": "pyronite__l_leg",
+          "parent": "pyronite__LeftLeg",
           "pivot": [
             11.245,
             15.279,
@@ -3677,8 +3677,8 @@
           ]
         },
         {
-          "name": "holo_calf",
-          "parent": "holo_l_leg",
+          "name": "pyronite__calf",
+          "parent": "pyronite__l_leg",
           "pivot": [
             11.27972,
             14.48887,
@@ -3812,8 +3812,8 @@
           ]
         },
         {
-          "name": "holo_bone5",
-          "parent": "holo_l_leg",
+          "name": "pyronite__bone5",
+          "parent": "pyronite__l_leg",
           "pivot": [
             11.245,
             15.279,

@@ -1278,7 +1278,7 @@
           ]
         },
         {
-          "name": "rightarm",
+          "name": "rightarm_inner",
           "parent": "rightArm",
           "pivot": [
             -6.5,
@@ -1293,7 +1293,7 @@
         },
         {
           "name": "rightarm_rotate",
-          "parent": "rightarm",
+          "parent": "rightarm_inner",
           "pivot": [
             -6.08177,
             26.20591,
@@ -2455,7 +2455,7 @@
           ]
         },
         {
-          "name": "leftarm",
+          "name": "leftarm_inner",
           "parent": "leftArm",
           "pivot": [
             6.5,
@@ -2470,7 +2470,7 @@
         },
         {
           "name": "leftarm_rotate",
-          "parent": "leftarm",
+          "parent": "leftarm_inner",
           "pivot": [
             6.08177,
             26.20591,

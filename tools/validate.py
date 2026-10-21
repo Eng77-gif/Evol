@@ -300,6 +300,31 @@ for pack in (BP, RP):
     if m.get("header", {}).get("min_engine_version") != [1, 26, 50]:
         err(f"{pack}: min_engine_version is not 1.26.50")
 
+# ------------------------------------------------------------- content log checks
+# Problems Bedrock reported in the content log of a real game.
+for pack in (BP, RP):
+    m = load(os.path.join(pack, "manifest.json")) or {}
+    versions = [m.get("header", {}).get("version", [])] + [x.get("version", []) for x in m.get("modules", [])]
+    versions += [d.get("version") for d in m.get("dependencies", []) if isinstance(d.get("version"), list)]
+    for v in versions:
+        if any(not isinstance(x, int) or x < 0 or x > 65535 for x in v):
+            err(f"{pack}: version {v} has a part above 65535 (pack import fails)")
+for path in glob.glob(os.path.join(RP, "entity", "*.json")):
+    desc = (load(path) or {}).get("minecraft:client_entity", {}).get("description", {})
+    if not desc.get("render_controllers"):
+        err(f"{path}: no render controllers")
+for path in glob.glob(os.path.join(RP, "render_controllers", "*.json")):
+    for name, rc in ((load(path) or {}).get("render_controllers") or {}).items():
+        for pv in rc.get("part_visibility", []):
+            if any("->" in str(x) for x in pv.values()):
+                err(f"{name}: '->' in part_visibility")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sanitize  # noqa: E402
+for user, bone in sanitize.skeleton_problems(RP):
+    err(f"{user}: skeleton clash on {bone}")
+for fname, anim in sanitize.animation_problems(RP):
+    err(f"{fname}: {anim} has keyframes Bedrock rejects")
+
 if errors:
     print("\n".join(errors))
     print(f"{len(errors)} error(s)")

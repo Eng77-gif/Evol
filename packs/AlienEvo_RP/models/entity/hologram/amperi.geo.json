@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "amperi__head",
           "pivot": [
             0,
             16.3461,
@@ -24,7 +24,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "amperi__body",
           "pivot": [
             0,
             9,
@@ -774,8 +774,8 @@
           ]
         },
         {
-          "name": "flap",
-          "parent": "body",
+          "name": "amperi__flap",
+          "parent": "amperi__body",
           "pivot": [
             3.27489,
             24.25329,
@@ -839,8 +839,8 @@
           ]
         },
         {
-          "name": "flap2",
-          "parent": "body",
+          "name": "amperi__flap2",
+          "parent": "amperi__body",
           "pivot": [
             -3.27489,
             24.25329,
@@ -904,8 +904,8 @@
           ]
         },
         {
-          "name": "flap3",
-          "parent": "body",
+          "name": "amperi__flap3",
+          "parent": "amperi__body",
           "pivot": [
             2.47594,
             29.40977,
@@ -969,8 +969,8 @@
           ]
         },
         {
-          "name": "flap4",
-          "parent": "body",
+          "name": "amperi__flap4",
+          "parent": "amperi__body",
           "pivot": [
             -2.32294,
             29.40977,
@@ -1034,8 +1034,8 @@
           ]
         },
         {
-          "name": "head_inner",
-          "parent": "body",
+          "name": "amperi__head_inner",
+          "parent": "amperi__body",
           "pivot": [
             0.8783,
             34.26831,
@@ -1109,7 +1109,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "amperi__leftArm",
           "pivot": [
             6.3,
             25.6,
@@ -1122,8 +1122,8 @@
           ]
         },
         {
-          "name": "TENTACLE_1",
-          "parent": "leftArm",
+          "name": "amperi__TENTACLE_1",
+          "parent": "amperi__leftArm",
           "pivot": [
             5.6717,
             26.27831,
@@ -1162,8 +1162,8 @@
           ]
         },
         {
-          "name": "TENTACLE_2",
-          "parent": "TENTACLE_1",
+          "name": "amperi__TENTACLE_2",
+          "parent": "amperi__TENTACLE_1",
           "pivot": [
             5.6717,
             24.72831,
@@ -1202,8 +1202,8 @@
           ]
         },
         {
-          "name": "TENTACLE_3",
-          "parent": "TENTACLE_2",
+          "name": "amperi__TENTACLE_3",
+          "parent": "amperi__TENTACLE_2",
           "pivot": [
             5.6717,
             23.22831,
@@ -1242,8 +1242,8 @@
           ]
         },
         {
-          "name": "TENTACLE_4",
-          "parent": "TENTACLE_3",
+          "name": "amperi__TENTACLE_4",
+          "parent": "amperi__TENTACLE_3",
           "pivot": [
             5.6717,
             21.72831,
@@ -1282,8 +1282,8 @@
           ]
         },
         {
-          "name": "TENTACLE_5",
-          "parent": "TENTACLE_4",
+          "name": "amperi__TENTACLE_5",
+          "parent": "amperi__TENTACLE_4",
           "pivot": [
             5.6717,
             20.22831,
@@ -1322,8 +1322,8 @@
           ]
         },
         {
-          "name": "TENTACLE_6",
-          "parent": "TENTACLE_5",
+          "name": "amperi__TENTACLE_6",
+          "parent": "amperi__TENTACLE_5",
           "pivot": [
             5.6717,
             18.72831,
@@ -1362,8 +1362,8 @@
           ]
         },
         {
-          "name": "TENTACLE_7",
-          "parent": "TENTACLE_6",
+          "name": "amperi__TENTACLE_7",
+          "parent": "amperi__TENTACLE_6",
           "pivot": [
             5.6717,
             17.22831,
@@ -1402,8 +1402,8 @@
           ]
         },
         {
-          "name": "TENTACLE_8",
-          "parent": "TENTACLE_7",
+          "name": "amperi__TENTACLE_8",
+          "parent": "amperi__TENTACLE_7",
           "pivot": [
             5.6717,
             15.72831,
@@ -1442,8 +1442,8 @@
           ]
         },
         {
-          "name": "TENTACLE_9",
-          "parent": "TENTACLE_8",
+          "name": "amperi__TENTACLE_9",
+          "parent": "amperi__TENTACLE_8",
           "pivot": [
             5.6717,
             14.22831,
@@ -1482,8 +1482,8 @@
           ]
         },
         {
-          "name": "TENTACLE_10",
-          "parent": "TENTACLE_9",
+          "name": "amperi__TENTACLE_10",
+          "parent": "amperi__TENTACLE_9",
           "pivot": [
             5.6717,
             12.72831,
@@ -1522,8 +1522,8 @@
           ]
         },
         {
-          "name": "TENTACLE_11",
-          "parent": "TENTACLE_10",
+          "name": "amperi__TENTACLE_11",
+          "parent": "amperi__TENTACLE_10",
           "pivot": [
             5.6717,
             11.22831,
@@ -1562,8 +1562,8 @@
           ]
         },
         {
-          "name": "TENTACLE_12",
-          "parent": "TENTACLE_11",
+          "name": "amperi__TENTACLE_12",
+          "parent": "amperi__TENTACLE_11",
           "pivot": [
             5.6717,
             9.72831,
@@ -1597,8 +1597,8 @@
           ]
         },
         {
-          "name": "TENTACLE_13",
-          "parent": "TENTACLE_12",
+          "name": "amperi__TENTACLE_13",
+          "parent": "amperi__TENTACLE_12",
           "pivot": [
             5.6717,
             25.02831,
@@ -1632,8 +1632,8 @@
           ]
         },
         {
-          "name": "TENTACLE_14",
-          "parent": "leftArm",
+          "name": "amperi__TENTACLE_14",
+          "parent": "amperi__leftArm",
           "pivot": [
             6.4717,
             26.27831,
@@ -1672,8 +1672,8 @@
           ]
         },
         {
-          "name": "TENTACLE_15",
-          "parent": "TENTACLE_14",
+          "name": "amperi__TENTACLE_15",
+          "parent": "amperi__TENTACLE_14",
           "pivot": [
             6.4717,
             24.72831,
@@ -1712,8 +1712,8 @@
           ]
         },
         {
-          "name": "TENTACLE_16",
-          "parent": "TENTACLE_15",
+          "name": "amperi__TENTACLE_16",
+          "parent": "amperi__TENTACLE_15",
           "pivot": [
             6.4717,
             23.22831,
@@ -1752,8 +1752,8 @@
           ]
         },
         {
-          "name": "TENTACLE_17",
-          "parent": "TENTACLE_16",
+          "name": "amperi__TENTACLE_17",
+          "parent": "amperi__TENTACLE_16",
           "pivot": [
             6.4717,
             21.72831,
@@ -1792,8 +1792,8 @@
           ]
         },
         {
-          "name": "TENTACLE_18",
-          "parent": "TENTACLE_17",
+          "name": "amperi__TENTACLE_18",
+          "parent": "amperi__TENTACLE_17",
           "pivot": [
             6.4717,
             20.22831,
@@ -1832,8 +1832,8 @@
           ]
         },
         {
-          "name": "TENTACLE_19",
-          "parent": "TENTACLE_18",
+          "name": "amperi__TENTACLE_19",
+          "parent": "amperi__TENTACLE_18",
           "pivot": [
             6.4717,
             18.72831,
@@ -1872,8 +1872,8 @@
           ]
         },
         {
-          "name": "TENTACLE_20",
-          "parent": "TENTACLE_19",
+          "name": "amperi__TENTACLE_20",
+          "parent": "amperi__TENTACLE_19",
           "pivot": [
             6.4717,
             17.22831,
@@ -1912,8 +1912,8 @@
           ]
         },
         {
-          "name": "TENTACLE_21",
-          "parent": "TENTACLE_20",
+          "name": "amperi__TENTACLE_21",
+          "parent": "amperi__TENTACLE_20",
           "pivot": [
             6.4717,
             15.72831,
@@ -1952,8 +1952,8 @@
           ]
         },
         {
-          "name": "TENTACLE_22",
-          "parent": "TENTACLE_21",
+          "name": "amperi__TENTACLE_22",
+          "parent": "amperi__TENTACLE_21",
           "pivot": [
             6.4717,
             14.22831,
@@ -1992,8 +1992,8 @@
           ]
         },
         {
-          "name": "TENTACLE_23",
-          "parent": "TENTACLE_22",
+          "name": "amperi__TENTACLE_23",
+          "parent": "amperi__TENTACLE_22",
           "pivot": [
             6.4717,
             12.72831,
@@ -2032,8 +2032,8 @@
           ]
         },
         {
-          "name": "TENTACLE_24",
-          "parent": "TENTACLE_23",
+          "name": "amperi__TENTACLE_24",
+          "parent": "amperi__TENTACLE_23",
           "pivot": [
             6.4717,
             11.22831,
@@ -2072,8 +2072,8 @@
           ]
         },
         {
-          "name": "TENTACLE_25",
-          "parent": "TENTACLE_24",
+          "name": "amperi__TENTACLE_25",
+          "parent": "amperi__TENTACLE_24",
           "pivot": [
             6.4717,
             9.72831,
@@ -2107,8 +2107,8 @@
           ]
         },
         {
-          "name": "TENTACLE_26",
-          "parent": "TENTACLE_25",
+          "name": "amperi__TENTACLE_26",
+          "parent": "amperi__TENTACLE_25",
           "pivot": [
             6.4717,
             25.02831,
@@ -2142,7 +2142,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "amperi__rightArm",
           "pivot": [
             -6.3,
             25.6,
@@ -2155,8 +2155,8 @@
           ]
         },
         {
-          "name": "TENTACLE_27",
-          "parent": "rightArm",
+          "name": "amperi__TENTACLE_27",
+          "parent": "amperi__rightArm",
           "pivot": [
             -5.6717,
             26.27831,
@@ -2195,8 +2195,8 @@
           ]
         },
         {
-          "name": "TENTACLE_28",
-          "parent": "TENTACLE_27",
+          "name": "amperi__TENTACLE_28",
+          "parent": "amperi__TENTACLE_27",
           "pivot": [
             -5.6717,
             24.72831,
@@ -2235,8 +2235,8 @@
           ]
         },
         {
-          "name": "TENTACLE_29",
-          "parent": "TENTACLE_28",
+          "name": "amperi__TENTACLE_29",
+          "parent": "amperi__TENTACLE_28",
           "pivot": [
             -5.6717,
             23.22831,
@@ -2275,8 +2275,8 @@
           ]
         },
         {
-          "name": "TENTACLE_30",
-          "parent": "TENTACLE_29",
+          "name": "amperi__TENTACLE_30",
+          "parent": "amperi__TENTACLE_29",
           "pivot": [
             -5.6717,
             21.72831,
@@ -2315,8 +2315,8 @@
           ]
         },
         {
-          "name": "TENTACLE_31",
-          "parent": "TENTACLE_30",
+          "name": "amperi__TENTACLE_31",
+          "parent": "amperi__TENTACLE_30",
           "pivot": [
             -5.6717,
             20.22831,
@@ -2355,8 +2355,8 @@
           ]
         },
         {
-          "name": "TENTACLE_32",
-          "parent": "TENTACLE_31",
+          "name": "amperi__TENTACLE_32",
+          "parent": "amperi__TENTACLE_31",
           "pivot": [
             -5.6717,
             18.72831,
@@ -2395,8 +2395,8 @@
           ]
         },
         {
-          "name": "TENTACLE_33",
-          "parent": "TENTACLE_32",
+          "name": "amperi__TENTACLE_33",
+          "parent": "amperi__TENTACLE_32",
           "pivot": [
             -5.6717,
             17.22831,
@@ -2435,8 +2435,8 @@
           ]
         },
         {
-          "name": "TENTACLE_34",
-          "parent": "TENTACLE_33",
+          "name": "amperi__TENTACLE_34",
+          "parent": "amperi__TENTACLE_33",
           "pivot": [
             -5.6717,
             15.72831,
@@ -2475,8 +2475,8 @@
           ]
         },
         {
-          "name": "TENTACLE_35",
-          "parent": "TENTACLE_34",
+          "name": "amperi__TENTACLE_35",
+          "parent": "amperi__TENTACLE_34",
           "pivot": [
             -5.6717,
             14.22831,
@@ -2515,8 +2515,8 @@
           ]
         },
         {
-          "name": "TENTACLE_36",
-          "parent": "TENTACLE_35",
+          "name": "amperi__TENTACLE_36",
+          "parent": "amperi__TENTACLE_35",
           "pivot": [
             -5.6717,
             12.72831,
@@ -2555,8 +2555,8 @@
           ]
         },
         {
-          "name": "TENTACLE_37",
-          "parent": "TENTACLE_36",
+          "name": "amperi__TENTACLE_37",
+          "parent": "amperi__TENTACLE_36",
           "pivot": [
             -5.6717,
             11.22831,
@@ -2595,8 +2595,8 @@
           ]
         },
         {
-          "name": "TENTACLE_38",
-          "parent": "TENTACLE_37",
+          "name": "amperi__TENTACLE_38",
+          "parent": "amperi__TENTACLE_37",
           "pivot": [
             -5.6717,
             9.72831,
@@ -2630,8 +2630,8 @@
           ]
         },
         {
-          "name": "TENTACLE_39",
-          "parent": "TENTACLE_38",
+          "name": "amperi__TENTACLE_39",
+          "parent": "amperi__TENTACLE_38",
           "pivot": [
             -5.6717,
             25.02831,
@@ -2665,8 +2665,8 @@
           ]
         },
         {
-          "name": "TENTACLE_40",
-          "parent": "rightArm",
+          "name": "amperi__TENTACLE_40",
+          "parent": "amperi__rightArm",
           "pivot": [
             -6.4717,
             26.27831,
@@ -2705,8 +2705,8 @@
           ]
         },
         {
-          "name": "TENTACLE_41",
-          "parent": "TENTACLE_40",
+          "name": "amperi__TENTACLE_41",
+          "parent": "amperi__TENTACLE_40",
           "pivot": [
             -6.4717,
             24.72831,
@@ -2745,8 +2745,8 @@
           ]
         },
         {
-          "name": "TENTACLE_42",
-          "parent": "TENTACLE_41",
+          "name": "amperi__TENTACLE_42",
+          "parent": "amperi__TENTACLE_41",
           "pivot": [
             -6.4717,
             23.22831,
@@ -2785,8 +2785,8 @@
           ]
         },
         {
-          "name": "TENTACLE_43",
-          "parent": "TENTACLE_42",
+          "name": "amperi__TENTACLE_43",
+          "parent": "amperi__TENTACLE_42",
           "pivot": [
             -6.4717,
             21.72831,
@@ -2825,8 +2825,8 @@
           ]
         },
         {
-          "name": "TENTACLE_44",
-          "parent": "TENTACLE_43",
+          "name": "amperi__TENTACLE_44",
+          "parent": "amperi__TENTACLE_43",
           "pivot": [
             -6.4717,
             20.22831,
@@ -2865,8 +2865,8 @@
           ]
         },
         {
-          "name": "TENTACLE_45",
-          "parent": "TENTACLE_44",
+          "name": "amperi__TENTACLE_45",
+          "parent": "amperi__TENTACLE_44",
           "pivot": [
             -6.4717,
             18.72831,
@@ -2905,8 +2905,8 @@
           ]
         },
         {
-          "name": "TENTACLE_46",
-          "parent": "TENTACLE_45",
+          "name": "amperi__TENTACLE_46",
+          "parent": "amperi__TENTACLE_45",
           "pivot": [
             -6.4717,
             17.22831,
@@ -2945,8 +2945,8 @@
           ]
         },
         {
-          "name": "TENTACLE_47",
-          "parent": "TENTACLE_46",
+          "name": "amperi__TENTACLE_47",
+          "parent": "amperi__TENTACLE_46",
           "pivot": [
             -6.4717,
             15.72831,
@@ -2985,8 +2985,8 @@
           ]
         },
         {
-          "name": "TENTACLE_48",
-          "parent": "TENTACLE_47",
+          "name": "amperi__TENTACLE_48",
+          "parent": "amperi__TENTACLE_47",
           "pivot": [
             -6.4717,
             14.22831,
@@ -3025,8 +3025,8 @@
           ]
         },
         {
-          "name": "TENTACLE_49",
-          "parent": "TENTACLE_48",
+          "name": "amperi__TENTACLE_49",
+          "parent": "amperi__TENTACLE_48",
           "pivot": [
             -6.4717,
             12.72831,
@@ -3065,8 +3065,8 @@
           ]
         },
         {
-          "name": "TENTACLE_50",
-          "parent": "TENTACLE_49",
+          "name": "amperi__TENTACLE_50",
+          "parent": "amperi__TENTACLE_49",
           "pivot": [
             -6.4717,
             11.22831,
@@ -3105,8 +3105,8 @@
           ]
         },
         {
-          "name": "TENTACLE_51",
-          "parent": "TENTACLE_50",
+          "name": "amperi__TENTACLE_51",
+          "parent": "amperi__TENTACLE_50",
           "pivot": [
             -6.4717,
             9.72831,
@@ -3140,8 +3140,8 @@
           ]
         },
         {
-          "name": "TENTACLE_52",
-          "parent": "TENTACLE_51",
+          "name": "amperi__TENTACLE_52",
+          "parent": "amperi__TENTACLE_51",
           "pivot": [
             -6.4717,
             25.02831,
@@ -3175,7 +3175,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "amperi__rightLeg",
           "pivot": [
             -2,
             21.2,
@@ -3460,8 +3460,8 @@
           ]
         },
         {
-          "name": "feet2",
-          "parent": "rightLeg",
+          "name": "amperi__feet2",
+          "parent": "amperi__rightLeg",
           "pivot": [
             -2.4817,
             7.27831,
@@ -3545,7 +3545,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "amperi__leftLeg",
           "pivot": [
             2,
             21.2,
@@ -3830,8 +3830,8 @@
           ]
         },
         {
-          "name": "feet",
-          "parent": "leftLeg",
+          "name": "amperi__feet",
+          "parent": "amperi__leftLeg",
           "pivot": [
             2.4817,
             7.27831,

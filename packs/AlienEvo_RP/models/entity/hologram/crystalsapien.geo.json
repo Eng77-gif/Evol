@@ -16,7 +16,7 @@
       },
       "bones": [
         {
-          "name": "head",
+          "name": "crystalsapien__head",
           "pivot": [
             0,
             33.25,
@@ -24,8 +24,8 @@
           ]
         },
         {
-          "name": "Head",
-          "parent": "head",
+          "name": "crystalsapien__Head_inner",
+          "parent": "crystalsapien__head",
           "pivot": [
             0,
             33.25,
@@ -33,8 +33,8 @@
           ]
         },
         {
-          "name": "bone11",
-          "parent": "Head",
+          "name": "crystalsapien__bone11",
+          "parent": "crystalsapien__Head_inner",
           "pivot": [
             0,
             37.79474,
@@ -134,8 +134,8 @@
           ]
         },
         {
-          "name": "bone7",
-          "parent": "Head",
+          "name": "crystalsapien__bone7",
+          "parent": "crystalsapien__Head_inner",
           "pivot": [
             0.15,
             34.95,
@@ -148,8 +148,8 @@
           ]
         },
         {
-          "name": "bone8",
-          "parent": "bone7",
+          "name": "crystalsapien__bone8",
+          "parent": "crystalsapien__bone7",
           "pivot": [
             0.15,
             34.95,
@@ -271,8 +271,8 @@
           ]
         },
         {
-          "name": "bone10",
-          "parent": "bone8",
+          "name": "crystalsapien__bone10",
+          "parent": "crystalsapien__bone8",
           "pivot": [
             0.00355,
             36.475,
@@ -352,8 +352,8 @@
           ]
         },
         {
-          "name": "bone24",
-          "parent": "Head",
+          "name": "crystalsapien__bone24",
+          "parent": "crystalsapien__Head_inner",
           "pivot": [
             0,
             33.25,
@@ -361,7 +361,7 @@
           ]
         },
         {
-          "name": "body",
+          "name": "crystalsapien__body",
           "pivot": [
             0,
             31,
@@ -369,8 +369,8 @@
           ]
         },
         {
-          "name": "Body",
-          "parent": "body",
+          "name": "crystalsapien__Body_inner",
+          "parent": "crystalsapien__body",
           "pivot": [
             0,
             31,
@@ -602,8 +602,8 @@
           ]
         },
         {
-          "name": "neck",
-          "parent": "Body",
+          "name": "crystalsapien__neck",
+          "parent": "crystalsapien__Body_inner",
           "pivot": [
             0.15,
             30.95,
@@ -616,8 +616,8 @@
           ]
         },
         {
-          "name": "bone",
-          "parent": "neck",
+          "name": "crystalsapien__bone",
+          "parent": "crystalsapien__neck",
           "pivot": [
             0.15,
             30.95,
@@ -737,8 +737,8 @@
           ]
         },
         {
-          "name": "belt",
-          "parent": "Body",
+          "name": "crystalsapien__belt",
+          "parent": "crystalsapien__Body_inner",
           "pivot": [
             0,
             22.9,
@@ -858,8 +858,8 @@
           ]
         },
         {
-          "name": "chest",
-          "parent": "Body",
+          "name": "crystalsapien__chest",
+          "parent": "crystalsapien__Body_inner",
           "pivot": [
             0,
             28.75,
@@ -948,8 +948,8 @@
           ]
         },
         {
-          "name": "front_spikes",
-          "parent": "Body",
+          "name": "crystalsapien__front_spikes",
+          "parent": "crystalsapien__Body_inner",
           "pivot": [
             3.5,
             29.75,
@@ -957,8 +957,8 @@
           ]
         },
         {
-          "name": "bone3",
-          "parent": "front_spikes",
+          "name": "crystalsapien__bone3",
+          "parent": "crystalsapien__front_spikes",
           "pivot": [
             3.5,
             29.75,
@@ -1048,8 +1048,8 @@
           ]
         },
         {
-          "name": "bone23",
-          "parent": "front_spikes",
+          "name": "crystalsapien__bone23",
+          "parent": "crystalsapien__front_spikes",
           "pivot": [
             -3.5,
             29.75,
@@ -1139,8 +1139,8 @@
           ]
         },
         {
-          "name": "back_spikes",
-          "parent": "Body",
+          "name": "crystalsapien__back_spikes",
+          "parent": "crystalsapien__Body_inner",
           "pivot": [
             4,
             31.75,
@@ -1148,8 +1148,8 @@
           ]
         },
         {
-          "name": "bone2",
-          "parent": "back_spikes",
+          "name": "crystalsapien__bone2",
+          "parent": "crystalsapien__back_spikes",
           "pivot": [
             2,
             26.25,
@@ -1157,8 +1157,8 @@
           ]
         },
         {
-          "name": "bone20",
-          "parent": "bone2",
+          "name": "crystalsapien__bone20",
+          "parent": "crystalsapien__bone2",
           "pivot": [
             2,
             26.25,
@@ -1248,8 +1248,8 @@
           ]
         },
         {
-          "name": "bone19",
-          "parent": "bone2",
+          "name": "crystalsapien__bone19",
+          "parent": "crystalsapien__bone2",
           "pivot": [
             3.25,
             28.5,
@@ -1339,8 +1339,8 @@
           ]
         },
         {
-          "name": "bone18",
-          "parent": "bone2",
+          "name": "crystalsapien__bone18",
+          "parent": "crystalsapien__bone2",
           "pivot": [
             4,
             31.75,
@@ -1430,8 +1430,8 @@
           ]
         },
         {
-          "name": "bone4",
-          "parent": "back_spikes",
+          "name": "crystalsapien__bone4",
+          "parent": "crystalsapien__back_spikes",
           "pivot": [
             -2,
             26.25,
@@ -1439,8 +1439,8 @@
           ]
         },
         {
-          "name": "bone9",
-          "parent": "bone4",
+          "name": "crystalsapien__bone9",
+          "parent": "crystalsapien__bone4",
           "pivot": [
             -2,
             26.25,
@@ -1530,8 +1530,8 @@
           ]
         },
         {
-          "name": "bone21",
-          "parent": "bone4",
+          "name": "crystalsapien__bone21",
+          "parent": "crystalsapien__bone4",
           "pivot": [
             -3.25,
             28.5,
@@ -1621,8 +1621,8 @@
           ]
         },
         {
-          "name": "bone22",
-          "parent": "bone4",
+          "name": "crystalsapien__bone22",
+          "parent": "crystalsapien__bone4",
           "pivot": [
             -4,
             31.75,
@@ -1712,7 +1712,7 @@
           ]
         },
         {
-          "name": "leftArm",
+          "name": "crystalsapien__leftArm",
           "pivot": [
             5,
             29,
@@ -1720,8 +1720,8 @@
           ]
         },
         {
-          "name": "l_arm",
-          "parent": "leftArm",
+          "name": "crystalsapien__l_arm",
+          "parent": "crystalsapien__leftArm",
           "pivot": [
             5,
             29,
@@ -1729,8 +1729,8 @@
           ]
         },
         {
-          "name": "Left_arm",
-          "parent": "l_arm",
+          "name": "crystalsapien__Left_arm",
+          "parent": "crystalsapien__l_arm",
           "pivot": [
             4.75,
             29,
@@ -1777,8 +1777,8 @@
           ]
         },
         {
-          "name": "LeftForearm",
-          "parent": "Left_arm",
+          "name": "crystalsapien__LeftForearm",
+          "parent": "crystalsapien__Left_arm",
           "pivot": [
             5.57891,
             19.34625,
@@ -1826,8 +1826,8 @@
           ]
         },
         {
-          "name": "bone12",
-          "parent": "LeftForearm",
+          "name": "crystalsapien__bone12",
+          "parent": "crystalsapien__LeftForearm",
           "pivot": [
             6.33006,
             11.38629,
@@ -1896,7 +1896,7 @@
           ]
         },
         {
-          "name": "rightArm",
+          "name": "crystalsapien__rightArm",
           "pivot": [
             -5,
             29,
@@ -1904,8 +1904,8 @@
           ]
         },
         {
-          "name": "r_arm",
-          "parent": "rightArm",
+          "name": "crystalsapien__r_arm",
+          "parent": "crystalsapien__rightArm",
           "pivot": [
             -5,
             29,
@@ -1913,8 +1913,8 @@
           ]
         },
         {
-          "name": "Right_arm",
-          "parent": "r_arm",
+          "name": "crystalsapien__Right_arm",
+          "parent": "crystalsapien__r_arm",
           "pivot": [
             -4.75,
             29,
@@ -1963,8 +1963,8 @@
           ]
         },
         {
-          "name": "RightForearm",
-          "parent": "Right_arm",
+          "name": "crystalsapien__RightForearm",
+          "parent": "crystalsapien__Right_arm",
           "pivot": [
             -5.57891,
             19.34625,
@@ -2014,8 +2014,8 @@
           ]
         },
         {
-          "name": "bone6",
-          "parent": "RightForearm",
+          "name": "crystalsapien__bone6",
+          "parent": "crystalsapien__RightForearm",
           "pivot": [
             -6.33006,
             11.38629,
@@ -2086,7 +2086,7 @@
           ]
         },
         {
-          "name": "leftLeg",
+          "name": "crystalsapien__leftLeg",
           "pivot": [
             1.9,
             18.5,
@@ -2094,8 +2094,8 @@
           ]
         },
         {
-          "name": "bone13",
-          "parent": "leftLeg",
+          "name": "crystalsapien__bone13",
+          "parent": "crystalsapien__leftLeg",
           "pivot": [
             2,
             17.75,
@@ -2108,8 +2108,8 @@
           ]
         },
         {
-          "name": "bone5",
-          "parent": "bone13",
+          "name": "crystalsapien__bone5",
+          "parent": "crystalsapien__bone13",
           "pivot": [
             2,
             17.75,
@@ -2274,8 +2274,8 @@
           ]
         },
         {
-          "name": "calf",
-          "parent": "bone5",
+          "name": "crystalsapien__calf",
+          "parent": "crystalsapien__bone5",
           "pivot": [
             1.61165,
             9.51948,
@@ -2440,8 +2440,8 @@
           ]
         },
         {
-          "name": "LeftFoot",
-          "parent": "calf",
+          "name": "crystalsapien__LeftFoot",
+          "parent": "crystalsapien__calf",
           "pivot": [
             1.86327,
             2.00381,
@@ -2535,7 +2535,7 @@
           ]
         },
         {
-          "name": "rightLeg",
+          "name": "crystalsapien__rightLeg",
           "pivot": [
             -1.9,
             18.5,
@@ -2543,8 +2543,8 @@
           ]
         },
         {
-          "name": "bone14",
-          "parent": "rightLeg",
+          "name": "crystalsapien__bone14",
+          "parent": "crystalsapien__rightLeg",
           "pivot": [
             -2,
             17.75,
@@ -2557,8 +2557,8 @@
           ]
         },
         {
-          "name": "bone15",
-          "parent": "bone14",
+          "name": "crystalsapien__bone15",
+          "parent": "crystalsapien__bone14",
           "pivot": [
             -2,
             17.75,
@@ -2723,8 +2723,8 @@
           ]
         },
         {
-          "name": "calf2",
-          "parent": "bone15",
+          "name": "crystalsapien__calf2",
+          "parent": "crystalsapien__bone15",
           "pivot": [
             -1.61165,
             9.51948,
@@ -2889,8 +2889,8 @@
           ]
         },
         {
-          "name": "RightFoot",
-          "parent": "calf2",
+          "name": "crystalsapien__RightFoot",
+          "parent": "crystalsapien__calf2",
           "pivot": [
             -1.86327,
             2.00381,
