@@ -1800,7 +1800,34 @@ def write_lang(lang):
     write_json(os.path.join(text_dir, "languages.json"), ["en_US", "vi_VN"])
 
 
+def stamp_manifests():
+    """Every build gets a new pack version: Bedrock ignores an imported pack
+    whose UUID and version are already installed and keeps the old one."""
+    import datetime
+    now = datetime.datetime.now(datetime.timezone.utc)
+    version = [2, int(now.strftime("%y%m%d")), int(now.strftime("%H%M"))]
+    label = f"{version[0]}.{version[1]}.{version[2]}"
+    uuids = set()
+    for pack in (BP, RP):
+        with open(os.path.join(pack, "manifest.json"), encoding="utf-8") as f:
+            uuids.add(json.load(f)["header"]["uuid"])
+    for pack in (BP, RP):
+        path = os.path.join(pack, "manifest.json")
+        with open(path, encoding="utf-8") as f:
+            m = json.load(f)
+        m["header"]["version"] = version
+        m["header"]["description"] = re.sub(r" \(build [0-9.]+\)$", "", m["header"]["description"]) + f" (build {label})"
+        for mod in m.get("modules", []):
+            mod["version"] = version
+        for dep in m.get("dependencies", []):
+            if dep.get("uuid") in uuids:
+                dep["version"] = version
+        write_json(path, m)
+    print("pack version", label)
+
+
 def package():
+    stamp_manifests()
     os.makedirs(DIST, exist_ok=True)
     out = os.path.join(DIST, "AlienEvo.mcaddon")
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:

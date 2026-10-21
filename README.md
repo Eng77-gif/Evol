@@ -21,6 +21,10 @@ model GeckoLib → attachable của Bedrock, Palladium/KubeJS → Script API (`@
 1. Tải [`dist/AlienEvo.mcaddon`](dist/AlienEvo.mcaddon) về máy và mở file (hoặc giải nén vào thư mục `games/com.mojang`).
 2. Khi tạo thế giới (hoặc trong cài đặt thế giới), bật **cả hai** pack: `AlienEvo BP` và `AlienEvo RP`.
 3. Không cần bật thử nghiệm (Experiments): add-on chỉ dùng API ổn định của bản 26.50.
+4. **Cập nhật từ bản cũ**: mỗi bản build có số phiên bản riêng (ghi trong mô tả gói, ví dụ `build 2.261021.1539`).
+   Các bản trước 2.x đều mang phiên bản `1.1.3` nên Minecraft giữ bản cũ khi nhập bản mới. Hãy xoá AlienEvo cũ trong
+   **Cài đặt → Bộ nhớ (Storage)** (cả Resource Pack lẫn Behavior Pack), nhập lại file `.mcaddon`, rồi trong thế giới gỡ gói cũ và
+   bật gói mới. Công trình chỉ sinh ở vùng đất mới, nên thử trên thế giới mới là chắc nhất.
 
 > Resource Pack ghi đè `player.entity.json` để ẩn thân người chơi khi đã biến hình. Nếu dùng chung với add-on khác cũng sửa
 > người chơi, hãy đặt AlienEvo RP lên trên cùng.
