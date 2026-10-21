@@ -15,7 +15,7 @@
 import { system, world } from "@minecraft/server";
 import { ABILITIES } from "./abilities.js";
 import { ALIEN_BY_ID, MAX_TIMER, RECHARGE_TIMER } from "./aliens.js";
-import { isDialOpen } from "./dial.js";
+import { dialAlien } from "./dial.js";
 import { cooldownLeft, currentAlien, wornTier } from "./omnitrix.js";
 import { getAbilityIndex, getRecharge, getSelected, getTimer, hasMasterControl, isSkillUnlocked } from "./state.js";
 import { formatTime, titleHolds } from "./util.js";
@@ -68,7 +68,7 @@ export function hudString(p) {
         energy = twenty(RECHARGE_TIMER - recharge, RECHARGE_TIMER);
         text = `§cRecharging §f${formatTime(recharge)}`;
     } else {
-        const next = ALIEN_BY_ID.get(getSelected(p));
+        const next = dialAlien(p) ?? ALIEN_BY_ID.get(getSelected(p));
         key = next?.key ?? "";
         text = next ? `${next.color}${next.name}` : "";
     }
@@ -77,7 +77,7 @@ export function hudString(p) {
 
 /** @param {Player} p */
 function update(p) {
-    if (isDialOpen(p) || (titleHolds.get(p.id) ?? 0) > system.currentTick) return;
+    if ((titleHolds.get(p.id) ?? 0) > system.currentTick) return;
     const s = hudString(p);
     // Resend now and then: the UI forgets the data when the world reloads.
     if (lastSent.get(p.id) === s && system.currentTick % 200 >= 5) return;

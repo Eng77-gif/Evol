@@ -2,8 +2,9 @@
 // arm is raised in front of the camera (player property alienevo:wv) and the
 // dial is turned by turning your view (or left/right):
 //
-//  - alien dial: a hologram of the selected alien rises from the core, use
-//    the Omnitrix again or jump to slam the core down, sneak to close.
+//  - alien dial: the silhouette of the selected alien shows on the watch face
+//    (and on the HUD badge), use the Omnitrix again or jump to slam the core
+//    down, sneak to close.
 //  - code entry (settings mode, codes.js): each turn of the dial changes the
 //    highlighted digit, jump moves to the next digit, sneak closes.  The code
 //    is checked every time it changes, like the display_code ability.
@@ -20,6 +21,7 @@ import { actionbar, sound } from "./util.js";
 /** @typedef {import("@minecraft/server").Entity} Entity */
 /** @typedef {import("./aliens.js").Alien} Alien */
 
+/** Floating hologram of older versions; leftovers are removed. */
 const HOLOGRAM = "alienevo:omnitrix_hologram";
 /** Degrees of view rotation per dial step. */
 const STEP = 28;
@@ -35,6 +37,12 @@ const dials = new Map();
 /** @param {Player} p */
 export const isDialOpen = (p) => dials.has(p.id);
 
+/** Alien under the dial while the selection dial is open. @param {Player} p */
+export function dialAlien(p) {
+    const dial = dials.get(p.id);
+    return dial?.mode === "dial" ? dial.list[dial.index] : undefined;
+}
+
 /** Shows an alien's silhouette on the watch face. @param {Player} p @param {string | undefined} key */
 export function showOnDial(p, key) {
     try {
@@ -44,8 +52,6 @@ export function showOnDial(p, key) {
     }
 }
 
-/** Icon of an alien as a text glyph. @param {string} key */
-const glyph = (key) => String.fromCharCode(0xe100 + Math.max(0, HOLO_KEYS.indexOf(key)));
 
 /** @param {Player} p @param {boolean} on */
 function watchView(p, on) {
@@ -78,11 +84,7 @@ export function openWorldDial(p, tier) {
     const dial = open(p, "dial", list);
     sound(p, wearsRecal(p) ? "alienevo.recal_activation" : "alienevo.prototype_activate");
     playWatch(p, "open_trigger");
-    try {
-        dial.holo = p.dimension.spawnEntity(HOLOGRAM, holoPos(p, 0));
-    } catch {
-        dial.holo = undefined;
-    }
+    actionbar(p, "§7Swipe / turn: spin  §a● Tap or jump: transform  §7Sneak: close");
     show(p, dial);
 }
 
@@ -105,11 +107,6 @@ export function closeWorldDial(p, playClose = true) {
     if (!p.isValid) return;
     const sel = ALIEN_BY_ID.get(getSelected(p));
     showOnDial(p, sel?.key);
-    try {
-        p.onScreenDisplay.setTitle(" ", { fadeInDuration: 0, stayDuration: 0, fadeOutDuration: 0 });
-    } catch {
-        // Ignore.
-    }
     if (playClose) {
         playWatch(p, dial.mode === "code" ? "settings_trigger_close" : "close_trigger");
         actionbar(p, " ");
@@ -150,14 +147,6 @@ function removeHolo(dial) {
     dial.holo = undefined;
 }
 
-/** In front of the eyes, above the raised watch. @param {Player} p @param {number} t */
-function holoPos(p, t) {
-    const eye = p.getHeadLocation();
-    const yaw = (p.getRotation().y * Math.PI) / 180;
-    const fx = -Math.sin(yaw), fz = Math.cos(yaw);
-    return { x: eye.x + fx * 1.6, y: eye.y - 0.5 + Math.sin(t / 8) * 0.04, z: eye.z + fz * 1.6 };
-}
-
 /** @param {Player} p @param {Dial} dial */
 function show(p, dial) {
     if (dial.mode === "code") {
@@ -166,26 +155,10 @@ function show(p, dial) {
         actionbar(p, `${digits}\n§7Turn: digit  Jump: next  Sneak: close`);
         return;
     }
+    // Like the Omnitrix of the show: only the watch face changes (the HUD
+    // badge and name follow it, hud.js).
     const alien = dial.list[dial.index];
-    const prev = dial.list[(dial.index - 1 + dial.list.length) % dial.list.length];
-    const next = dial.list[(dial.index + 1) % dial.list.length];
-    // Alien strip (icon glyphs, font/glyph_E1.png) like the selection wheel.
-    const n = dial.list.length;
-    const at = (/** @type {number} */ k) => glyph(dial.list[(dial.index + k + n * 3) % n].key);
-    const strip = n >= 5 ? `§8${at(-2)} §7${at(-1)}  §f${at(0)}  §7${at(1)} §8${at(2)}` : dial.list.map((a, i) => (i === dial.index ? `§f${glyph(a.key)}` : `§8${glyph(a.key)}`)).join(" ");
-    try {
-        p.onScreenDisplay.setTitle(strip, { subtitle: `${alien.color}${alien.name}`, fadeInDuration: 0, stayDuration: 200, fadeOutDuration: 4 });
-    } catch {
-        // Player left.
-    }
-    actionbar(p, `§8${prev.name} §7◄  ${alien.color}§l${alien.name}§r  §7► §8${next.name}\n§7Turn: spin  §a● Jump: transform  §7Sneak: close`);
     showOnDial(p, alien.key);
-    const i = HOLO_KEYS.indexOf(alien.key);
-    try {
-        if (dial.holo?.isValid && i >= 0) dial.holo.setProperty("alienevo:alien", i);
-    } catch {
-        // Ignore.
-    }
 }
 
 /** @param {Player} p @param {Dial} dial @param {number} dir */
@@ -243,21 +216,6 @@ export function initWorldDial() {
             if (dial.mode === "code") {
                 if (system.currentTick % 20 === 0 && !dial.closing) show(p, dial);
                 continue;
-            }
-
-            dial.spin = (dial.spin + 4) % 360;
-            if (!dial.holo?.isValid) {
-                try {
-                    dial.holo = p.dimension.spawnEntity(HOLOGRAM, holoPos(p, dial.idle));
-                    show(p, dial);
-                } catch {
-                    continue;
-                }
-            }
-            try {
-                dial.holo?.teleport(holoPos(p, system.currentTick), { rotation: { x: 0, y: dial.spin } });
-            } catch {
-                // Ignore.
             }
         }
     }, 1);

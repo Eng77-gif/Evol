@@ -1312,6 +1312,11 @@ def build_particles(vfs):
 # The game lowers the left arm in first person while the off hand holds no
 # item it draws there (animation.player.first_person.swap_item); undone here.
 OFFHAND_LIFT = "10.0 * (1.0 - context.player_offhand_arm_height)"
+# First person: the left forearm across the bottom of the screen, watch face
+# up toward the eyes (pose of the reference add-on; found offline with a
+# first person render of the arm and the watch, tools/render.py).
+WATCH_FP_ROT = [-180.0, -60.0, 75.0]
+WATCH_FP_POS = [-4.21, -3.91, 9.25]
 
 
 def build_player_scale_animation():
@@ -1333,12 +1338,8 @@ def build_player_scale_animation():
             "animation.alienevo.player.watch_rest": {
                 "loop": True,
                 "bones": {"leftarm": {
-                    "position": ["-14.50 + variable.is_horizontal_splitscreen * 2.0 + variable.is_vertical_splitscreen * 8.7",
-                                 f"-8.250 + variable.short_arm_offset_left + {OFFHAND_LIFT}", "11.50 + variable.is_horizontal_splitscreen * 0.5"],
-                    # Vanilla off-hand map pose turned half a turn around the arm so
-                    # the watch face (outer side of the wrist) looks at the camera.
-                    "rotation": [195.0, 2.5, 2.5],
-                    "scale": [0.75, 0.75, 0.75],
+                    "position": [WATCH_FP_POS[0], f"{WATCH_FP_POS[1]} + {OFFHAND_LIFT}", WATCH_FP_POS[2]],
+                    "rotation": WATCH_FP_ROT,
                 }},
             },
             # Omnitrix held in the main hand: the hand is drawn empty (vanilla
@@ -1361,14 +1362,12 @@ def build_player_scale_animation():
                     "rightarm": {"rotation": [-80.0, 45.0, 0.0]},
                 },
             },
+            # Dial open: the same pose lifted a little, the watch face toward the eyes.
             "animation.alienevo.player.watch_view": {
                 "loop": True,
                 "bones": {"leftarm": {
-                    "position": [-11.5, f"-6.5 + variable.short_arm_offset_left + math.sin(q.life_time * 60) * 0.15 + {OFFHAND_LIFT}", 11.0],
-                    # Vanilla off-hand map pose turned half a turn around the arm so
-                    # the watch face (outer side of the wrist) looks at the camera.
-                    "rotation": [195.0, 2.5, 2.5],
-                    "scale": [0.9, 0.9, 0.9],
+                    "position": [WATCH_FP_POS[0], f"{WATCH_FP_POS[1] + 1.5} + math.sin(q.life_time * 60) * 0.15 + {OFFHAND_LIFT}", WATCH_FP_POS[2] - 0.5],
+                    "rotation": WATCH_FP_ROT,
                 }},
             },
         },

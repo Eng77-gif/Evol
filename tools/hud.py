@@ -332,3 +332,4 @@ def build(vfs, rp, bp):
     with open(defs_path, "w", encoding="utf-8") as f:
         write(defs, f, indent=2)
     return len(aliens), sorted(missing)
+

@@ -14,19 +14,14 @@
       "bones": {
         "leftarm": {
           "position": [
-            "-14.50 + variable.is_horizontal_splitscreen * 2.0 + variable.is_vertical_splitscreen * 8.7",
-            "-8.250 + variable.short_arm_offset_left + 10.0 * (1.0 - context.player_offhand_arm_height)",
-            "11.50 + variable.is_horizontal_splitscreen * 0.5"
+            -4.21,
+            "-3.91 + 10.0 * (1.0 - context.player_offhand_arm_height)",
+            9.25
           ],
           "rotation": [
-            195.0,
-            2.5,
-            2.5
-          ],
-          "scale": [
-            0.75,
-            0.75,
-            0.75
+            -180.0,
+            -60.0,
+            75.0
           ]
         }
       }
@@ -72,19 +67,14 @@
       "bones": {
         "leftarm": {
           "position": [
-            -11.5,
-            "-6.5 + variable.short_arm_offset_left + math.sin(q.life_time * 60) * 0.15 + 10.0 * (1.0 - context.player_offhand_arm_height)",
-            11.0
+            -4.21,
+            "-2.41 + math.sin(q.life_time * 60) * 0.15 + 10.0 * (1.0 - context.player_offhand_arm_height)",
+            8.75
           ],
           "rotation": [
-            195.0,
-            2.5,
-            2.5
-          ],
-          "scale": [
-            0.9,
-            0.9,
-            0.9
+            -180.0,
+            -60.0,
+            75.0
           ]
         }
       }
