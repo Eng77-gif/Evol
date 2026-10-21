@@ -17,6 +17,10 @@
       "minecraft:allow_off_hand": {
         "value": true
       },
+      "minecraft:cooldown": {
+        "category": "alienevo:omnitrix",
+        "duration": 0.2
+      },
       "minecraft:tags": {
         "tags": [
           "alienevo:omnitrix",

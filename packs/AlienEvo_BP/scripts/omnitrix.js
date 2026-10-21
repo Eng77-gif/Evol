@@ -28,10 +28,13 @@ export function omnitrixTier(item) {
     return OMNITRIX_TIERS.findIndex((t) => t.item === item.typeId);
 }
 
-/** Tier of the Omnitrix worn on the wrist or held (-1 = none). @param {Player} p */
+/** Tier of the Omnitrix in the hotbar or a hand (-1 = none). @param {Player} p */
 export function wornTier(p) {
     const eq = p.getComponent("minecraft:equippable");
-    return Math.max(omnitrixTier(eq?.getEquipment(EquipmentSlot.Offhand)), omnitrixTier(eq?.getEquipment(EquipmentSlot.Mainhand)));
+    let best = Math.max(omnitrixTier(eq?.getEquipment(EquipmentSlot.Offhand)), omnitrixTier(eq?.getEquipment(EquipmentSlot.Mainhand)));
+    const inv = p.getComponent("minecraft:inventory")?.container;
+    if (inv) for (let i = 0; i < 9; i++) best = Math.max(best, omnitrixTier(inv.getItem(i)));
+    return best;
 }
 
 /** Recalibrated Omnitrix: same powers as the Evolved one, hologram dial and its own sounds. */
@@ -557,31 +560,9 @@ export function nextAbility(p, alien) {
 
 /** Omnitrix item used. @param {Player} p @param {number} tier */
 export function useOmnitrix(p, tier) {
+    p.setDynamicProperty(TAKEN_OFF, undefined);
     wearOmnitrix(p);
-    if (isDialOpen(p)) {
-        confirmWorldDial(p);
-        return;
-    }
-    const alien = currentAlien(p);
-    if (alien) {
-        if (p.isSneaking) nextAbility(p, alien);
-        else castAbility(p, alien);
-        return;
-    }
-    const recharge = getRecharge(p);
-    if (recharge > 0) {
-        sound(p, "alienevo.prototype_failsafe");
-        actionbar(p, `§cRecharging... §f${formatTime(recharge)}`);
-        return;
-    }
-    if (p.isSneaking) {
-        const target = ALIEN_BY_ID.get(getSelected(p));
-        if (target && selectionList(p, tier).includes(target)) {
-            transform(p, target);
-            return;
-        }
-    }
-    openWorldDial(p, tier);
+    interact(p, tier);
 }
 
 // ------------------------------------------------------------------ flight
@@ -596,12 +577,12 @@ const lastHit = new Map();
 const lastInteract = new Map();
 
 /**
- * Tap with the Omnitrix worn: dial or wheel when human, cast the selected
- * ability when transformed; while sneaking it opens the menus instead.
- * @param {Player} p
+ * Tap with the Omnitrix (used from the hotbar, or the air tapped with an
+ * empty hand): dial or wheel when human, the selected ability when
+ * transformed; while sneaking the menu (human) or the next ability (alien).
+ * @param {Player} p @param {number} [tier]
  */
-export function interact(p) {
-    const tier = wornTier(p);
+export function interact(p, tier = wornTier(p)) {
     if (tier < 0) return;
     const now = system.currentTick;
     if (now - (lastInteract.get(p.id) ?? -100) < 5) return;
@@ -723,37 +704,75 @@ function passiveTick(p, alien) {
 
 // ------------------------------------------------------------------ main loop
 
+/** Set by the workbench's "Take off": the Omnitrix is not locked again until used. */
+export const TAKEN_OFF = "alienevo:taken_off";
+
+/** @param {import("@minecraft/server").ItemStack} item */
+function locked(item) {
+    return item.lockMode === ItemLockMode.slot && item.keepOnDeath;
+}
+
 /**
- * The Omnitrix is worn on the left wrist like the Curios slot of the Java
- * mod: one held in the main hand moves to an empty offhand.
+ * The Omnitrix lives in the hotbar like in the reference add-on: select it
+ * and tap (use) to work it, on touch screens too.  It cannot be moved out of
+ * its slot or lost on death (taken off at the Omnitrix Workbench); the watch
+ * is drawn on the left wrist while it is selected.
  * @param {Player} p
  */
 export function wearOmnitrix(p) {
+    if (p.getDynamicProperty(TAKEN_OFF) === true) return;
     const eq = p.getComponent("minecraft:equippable");
-    const held = eq?.getEquipment(EquipmentSlot.Mainhand);
-    if (!eq || !held || omnitrixTier(held) < 0 || eq.getEquipment(EquipmentSlot.Offhand)) return;
-    // Like the Java Curios slot: it stays on the wrist and is kept on death
-    // (taken off at the Omnitrix Workbench).
-    held.lockMode = ItemLockMode.slot;
-    held.keepOnDeath = true;
-    eq.setEquipment(EquipmentSlot.Offhand, held);
-    eq.setEquipment(EquipmentSlot.Mainhand, undefined);
-    sound(p, "alienevo.prototype_core_place", 0.6);
-    actionbar(p, "§aOmnitrix on your wrist §7- tap the air: Omnitrix, sneak + tap: Omnitrix menu");
+    const inv = p.getComponent("minecraft:inventory")?.container;
+    if (!eq || !inv) return;
+    const emptyHotbar = () => {
+        for (let i = 0; i < 9; i++) if (!inv.getItem(i)) return i;
+        return -1;
+    };
+    let inHotbar = -1;
+    for (let i = 0; i < 9; i++) {
+        const it = inv.getItem(i);
+        if (!it || omnitrixTier(it) < 0) continue;
+        if (inHotbar < 0) inHotbar = i;
+        if (!locked(it)) {
+            it.lockMode = ItemLockMode.slot;
+            it.keepOnDeath = true;
+            inv.setItem(i, it);
+            if (i === inHotbar) {
+                sound(p, "alienevo.prototype_core_place", 0.6);
+                actionbar(p, "§aOmnitrix ready §7- select it and tap: Omnitrix, sneak + tap: Omnitrix menu");
+            }
+        }
+    }
+    if (inHotbar >= 0) return;
+    // Worn in the offhand by an older version, or stored in the inventory:
+    // back into the hotbar.
+    const off = eq.getEquipment(EquipmentSlot.Offhand);
+    const slot = emptyHotbar();
+    if (slot < 0) return;
+    if (omnitrixTier(off) >= 0 && off) {
+        off.lockMode = ItemLockMode.none;
+        eq.setEquipment(EquipmentSlot.Offhand, undefined);
+        inv.setItem(slot, off);
+        return;
+    }
+    for (let i = 9; i < inv.size; i++) {
+        const it = inv.getItem(i);
+        if (it && omnitrixTier(it) >= 0) {
+            inv.setItem(i, undefined);
+            inv.setItem(slot, it);
+            return;
+        }
+    }
 }
 
 export function initOmnitrix() {
-    world.afterEvents.playerHotbarSelectedSlotChange.subscribe((ev) => {
-        if (omnitrixTier(ev.itemStack) >= 0) system.run(() => ev.player.isValid && wearOmnitrix(ev.player));
-    });
     world.afterEvents.playerInventoryItemChange.subscribe((ev) => {
-        if (ev.inventoryType === "Hotbar" && ev.slot === ev.player.selectedSlotIndex && omnitrixTier(ev.itemStack) >= 0) {
-            system.run(() => ev.player.isValid && wearOmnitrix(ev.player));
-        }
+        if (omnitrixTier(ev.itemStack) >= 0) system.run(() => ev.player.isValid && wearOmnitrix(ev.player));
     });
 
     system.runInterval(() => {
         for (const p of world.getAllPlayers()) {
+            if (system.currentTick % 40 === 0) wearOmnitrix(p);
             const alien = currentAlien(p);
             if (!alien) {
                 const r = getRecharge(p);

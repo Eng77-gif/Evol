@@ -186,7 +186,9 @@ def view(expr, target="#visible"):
 
 
 def image(texture, size, offset, cond, layer, anchor="top_left", **extra):
-    ctrl = {"type": "image", "texture": texture, "size": size, "offset": offset, "layer": layer,
+    # keep_ratio is on by default: a 1 px wide bar stretched to 74 units would
+    # be drawn 1 unit wide.
+    ctrl = {"type": "image", "texture": texture, "size": size, "offset": offset, "layer": layer, "keep_ratio": False,
             "anchor_from": anchor, "anchor_to": anchor, "bindings": [view(cond)]}
     ctrl.update(extra)
     return ctrl
@@ -232,7 +234,7 @@ def build(vfs, rp, bp):
     worn = f"((not (#preserved_text = '')) and ((#preserved_text - '[m0]') = #preserved_text))"
 
     # -------------------------------------------------- top left plate
-    plate = [{"bg": {"type": "image", "texture": T + "panel", "size": [120, 36], "layer": 1,
+    plate = [{"bg": {"type": "image", "texture": T + "panel", "size": [120, 36], "layer": 1, "keep_ratio": False,
                      "anchor_from": "top_left", "anchor_to": "top_left"}}]
     for k in range(1, 21):
         w = round(74 * k / 20)

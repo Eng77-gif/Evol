@@ -4,7 +4,7 @@
 import { EquipmentSlot, ItemLockMode, ItemStack, system } from "@minecraft/server";
 import { ActionFormData } from "@minecraft/server-ui";
 import { ALIENS, OMNITRIX_TIERS } from "./aliens.js";
-import { omnitrixTier, RECAL } from "./omnitrix.js";
+import { omnitrixTier, RECAL, TAKEN_OFF } from "./omnitrix.js";
 import { hasMasterControl, setMasterControl } from "./state.js";
 import { particle, sound } from "./util.js";
 
@@ -57,21 +57,19 @@ function take(p, req) {
 /** @param {Player} p @param {import("@minecraft/server").Block} block */
 export async function openWorkbench(p, block) {
     const eq = p.getComponent("minecraft:equippable");
-    // The Omnitrix worn on the wrist (offhand) or held.
-    const slot = omnitrixTier(eq?.getEquipment(EquipmentSlot.Offhand)) >= 0 ? EquipmentSlot.Offhand : EquipmentSlot.Mainhand;
+    // The Omnitrix held (selected in the hotbar), or worn in the offhand by an older version.
+    const slot = omnitrixTier(eq?.getEquipment(EquipmentSlot.Mainhand)) >= 0 ? EquipmentSlot.Mainhand : EquipmentSlot.Offhand;
     const held = eq?.getEquipment(slot);
     const tier = omnitrixTier(held);
     /** @param {string} id */
     const fresh = (id) => {
         const item = new ItemStack(id, 1);
-        if (slot === EquipmentSlot.Offhand) {
-            item.lockMode = ItemLockMode.slot;
-            item.keepOnDeath = true;
-        }
+        item.lockMode = ItemLockMode.slot;
+        item.keepOnDeath = true;
         return item;
     };
     if (tier < 0) {
-        p.sendMessage("§7Wear or hold an §aOmnitrix§7 to work on it.");
+        p.sendMessage("§7Hold an §aOmnitrix§7 (select it in the hotbar) to work on it.");
         sound(p, "alienevo.prototype_failsafe");
         return;
     }
@@ -105,10 +103,8 @@ export async function openWorkbench(p, block) {
         form.button(recal ? "§aRestore Evolved Omnitrix" : `§aRecalibrate\n§8${RECAL_COST}x Galvan Circuit`, "textures/items/recal_omnitrix");
         actions.push("recal");
     }
-    if (slot === EquipmentSlot.Offhand) {
-        form.button("§6Take off the Omnitrix", "textures/ui/cancel");
-        actions.push("takeoff");
-    }
+    form.button("§6Take off the Omnitrix", "textures/ui/cancel");
+    actions.push("takeoff");
     form.button("§7Close");
     const res = await form.show(p);
     if (res.canceled || res.selection === undefined) return;
@@ -119,14 +115,15 @@ export async function openWorkbench(p, block) {
     }
     if (action === "takeoff") {
         system.run(() => {
-            const worn = eq?.getEquipment(EquipmentSlot.Offhand);
+            const worn = eq?.getEquipment(slot);
             if (!worn || omnitrixTier(worn) < 0) return;
+            // Free to move or drop until it is used again.
+            p.setDynamicProperty(TAKEN_OFF, true);
             worn.lockMode = ItemLockMode.none;
             worn.keepOnDeath = false;
-            eq?.setEquipment(EquipmentSlot.Offhand, undefined);
-            const left = p.getComponent("minecraft:inventory")?.container?.addItem(worn);
-            if (left) p.dimension.spawnItem(left, p.location);
+            eq?.setEquipment(slot, worn);
             sound(p, "alienevo.prototype_detransform");
+            p.sendMessage("§7The Omnitrix can be moved and dropped now. Use it again to lock it to its slot.");
         });
         return;
     }

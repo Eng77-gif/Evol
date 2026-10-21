@@ -234,7 +234,7 @@ world.afterEvents.playerSpawn.subscribe((ev) => {
     p.setDynamicProperty("alienevo:welcome", true);
     system.runTimeout(() => {
         if (!p.isValid) return;
-        p.sendMessage("§a[AlienEvo] §7Find §fGalvan Pods§7 around the world to collect Galvan Scrap, Omni Shards and the §aPrototype Omnitrix Core§7.\n§7Craft the §aPrototype Omnitrix§7 and use it to pick an alien. Tap the air with the Omnitrix on your wrist to open it. While transformed: tap = selected ability, sneak + tap = next ability (the Omnitrix slot opens the menu).");
+        p.sendMessage("§a[AlienEvo] §7Find §fGalvan Pods§7 around the world to collect Galvan Scrap, Omni Shards and the §aPrototype Omnitrix Core§7.\n§7Craft the §aPrototype Omnitrix§7: select it in the hotbar and tap to open it and pick an alien. While transformed: tap = selected ability, sneak + tap = next ability (the Omnitrix slot opens the menu).");
     }, 100);
 });
 

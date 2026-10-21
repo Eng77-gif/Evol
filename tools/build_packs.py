@@ -321,7 +321,7 @@ FIRST_PERSON_ARMS = [{"*": "!v.alienevo_fp"}, {"rightArm": "1.0"}]
 ATTACH_SCRIPTS = ["v.alienevo_fp = c.is_first_person;"]
 
 
-WATCH_COND = "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
+WATCH_COND = "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
 
 
 def is_translucent(img):
@@ -1309,6 +1309,11 @@ def build_particles(vfs):
     return made
 
 
+# The game lowers the left arm in first person while the off hand holds no
+# item it draws there (animation.player.first_person.swap_item); undone here.
+OFFHAND_LIFT = "10.0 * (1.0 - context.player_offhand_arm_height)"
+
+
 def build_player_scale_animation():
     """Scale the player skeleton (and therefore the attachable) per alien."""
     expr = "1.0"
@@ -1323,13 +1328,13 @@ def build_player_scale_animation():
                 "loop": True,
                 "bones": {"root": {"scale": "v.alienevo_scale"}},
             },
-            # Omnitrix worn in the offhand: the left arm with the watch rests in the
-            # lower left corner (vanilla off-hand map pose).
+            # Omnitrix selected (or worn in the offhand): the left arm with the
+            # watch rests in the lower left corner (vanilla off-hand map pose).
             "animation.alienevo.player.watch_rest": {
                 "loop": True,
                 "bones": {"leftarm": {
                     "position": ["-14.50 + variable.is_horizontal_splitscreen * 2.0 + variable.is_vertical_splitscreen * 8.7",
-                                 "-8.250 + variable.short_arm_offset_left", "11.50 + variable.is_horizontal_splitscreen * 0.5"],
+                                 f"-8.250 + variable.short_arm_offset_left + {OFFHAND_LIFT}", "11.50 + variable.is_horizontal_splitscreen * 0.5"],
                     # Vanilla off-hand map pose turned half a turn around the arm so
                     # the watch face (outer side of the wrist) looks at the camera.
                     "rotation": [195.0, 2.5, 2.5],
@@ -1359,7 +1364,7 @@ def build_player_scale_animation():
             "animation.alienevo.player.watch_view": {
                 "loop": True,
                 "bones": {"leftarm": {
-                    "position": [-11.5, "-6.5 + variable.short_arm_offset_left + math.sin(q.life_time * 60) * 0.15", 11.0],
+                    "position": [-11.5, f"-6.5 + variable.short_arm_offset_left + math.sin(q.life_time * 60) * 0.15 + {OFFHAND_LIFT}", 11.0],
                     # Vanilla off-hand map pose turned half a turn around the arm so
                     # the watch face (outer side of the wrist) looks at the camera.
                     "rotation": [195.0, 2.5, 2.5],
@@ -1368,16 +1373,23 @@ def build_player_scale_animation():
             },
         },
     })
+    # The vanilla first person controller itself draws the arms (a separate
+    # controller does not draw persona skins): the left arm also while the
+    # watch is shown, the right hand empty while the Omnitrix is held.
+    main = "query.get_equipped_item_name(0, 1) == '' || query.get_equipped_item_name(0, 1) == 'filled_map'"
+    left = ("(query.get_equipped_item_name(0, 1) == 'filled_map' && query.get_equipped_item_name('off_hand') != 'shield') || "
+            "(query.get_equipped_item_name('off_hand') == 'filled_map' && !query.item_is_charged) || "
+            "(!query.item_is_charged && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0))")
+    watch = "(v.alienevo_off || v.alienevo_main || q.property('alienevo:wv'))"
     write_json(os.path.join(RP, "render_controllers", "alienevo.player.render_controllers.json"), {
-        "format_version": "1.10.0",
-        "render_controllers": {"controller.render.alienevo.player.watch_arm": {
+        "format_version": "1.8.0",
+        "render_controllers": {"controller.render.player.first_person": {
             "geometry": "Geometry.default",
             "materials": [{"*": "Material.default"}],
             "textures": ["Texture.default"],
             "part_visibility": [{"*": False},
-                                {"leftArm": "v.alienevo_off || q.property('alienevo:wv')"},
-                                {"leftSleeve": "v.alienevo_off || q.property('alienevo:wv')"},
-                                {"rightArm": "v.alienevo_main"}, {"rightSleeve": "v.alienevo_main"}],
+                                {"rightArm": f"{main} || v.alienevo_main"}, {"rightSleeve": f"{main} || v.alienevo_main"},
+                                {"leftArm": f"{left} || {watch}"}, {"leftSleeve": f"{left} || {watch}"}],
         }},
     })
     return expr
@@ -1496,11 +1508,13 @@ def build_player_entity(scale_expr):
     desc["scripts"]["animate"].append({"alienevo_watch_third_person": "!v.is_first_person && q.property('alienevo:wv')"})
     # Set by the game's own (newer) player file, missing from the published one.
     spears = ", ".join(f"'minecraft:{m}_spear'" for m in ("wooden", "stone", "copper", "iron", "golden", "diamond", "netherite"))
+    # Used by the game's first person animations, set by its own player file only.
+    desc["scripts"]["pre_animation"].insert(0, "variable.first_person_item_rotation_factor = 1.0;")
     desc["scripts"]["pre_animation"].insert(0, f"variable.melee_spear_equipped = q.is_item_name_any('slot.weapon.mainhand', 0, {spears});")
     desc["scripts"]["animate"].append({"alienevo_watch_view": "v.is_first_person && q.property('alienevo:wv')"})
-    desc["scripts"]["animate"].append({"alienevo_watch_rest": "v.is_first_person && v.alienevo_off && !q.property('alienevo:wv')"})
+    desc["scripts"]["animate"].append({"alienevo_watch_rest": "v.is_first_person && (v.alienevo_off || v.alienevo_main) && !q.property('alienevo:wv')"})
     desc["scripts"]["animate"].append({"alienevo_held_hand": "v.is_first_person && v.alienevo_main"})
-    rcs = [{"controller.render.alienevo.player.watch_arm": "v.is_first_person && !query.is_spectator && !v.alienevo_is_alien && (v.alienevo_off || v.alienevo_main || q.property('alienevo:wv'))"}]
+    rcs = []
     for rc in desc["render_controllers"]:
         if isinstance(rc, dict) and "controller.render.player.first_person" in rc:
             rc = {"controller.render.player.first_person": rc["controller.render.player.first_person"] + " && !v.alienevo_is_alien"}
@@ -1725,6 +1739,8 @@ def build_items_bp():
             # Worn in the offhand the watch stays on the left wrist, like the
             # Curios slot of the Java mod.
             "minecraft:allow_off_hand": {"value": True},
+            # Tapping with it on touch screens / right click: the Omnitrix is used.
+            "minecraft:cooldown": {"category": "alienevo:omnitrix", "duration": 0.2},
             "minecraft:tags": {"tags": ["alienevo:omnitrix", f"alienevo:omnitrix_tier_{tier}"]},
             "alienevo:omnitrix": {"tier": tier},
         }

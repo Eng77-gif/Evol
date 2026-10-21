@@ -73,10 +73,10 @@
       },
       "render_controllers": [
         {
-          "controller.render.alienevo.omnitrix_recal_base": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
+          "controller.render.alienevo.omnitrix_recal_base": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
         },
         {
-          "controller.render.alienevo.omnitrix_recal_glow": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
+          "controller.render.alienevo.omnitrix_recal_glow": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
         },
         {
           "controller.render.alienevo.omnitrix_recal_hologram": "(v.alienevo_wv ?? 0) && (v.alienevo_sel ?? -1) >= 0 && !(v.alienevo_is_alien ?? 0)"

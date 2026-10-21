@@ -15,7 +15,7 @@
         "leftarm": {
           "position": [
             "-14.50 + variable.is_horizontal_splitscreen * 2.0 + variable.is_vertical_splitscreen * 8.7",
-            "-8.250 + variable.short_arm_offset_left",
+            "-8.250 + variable.short_arm_offset_left + 10.0 * (1.0 - context.player_offhand_arm_height)",
             "11.50 + variable.is_horizontal_splitscreen * 0.5"
           ],
           "rotation": [
@@ -73,7 +73,7 @@
         "leftarm": {
           "position": [
             -11.5,
-            "-6.5 + variable.short_arm_offset_left + math.sin(q.life_time * 60) * 0.15",
+            "-6.5 + variable.short_arm_offset_left + math.sin(q.life_time * 60) * 0.15 + 10.0 * (1.0 - context.player_offhand_arm_height)",
             11.0
           ],
           "rotation": [

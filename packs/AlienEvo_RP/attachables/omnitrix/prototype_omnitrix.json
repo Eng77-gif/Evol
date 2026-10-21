@@ -215,40 +215,40 @@
       },
       "render_controllers": [
         {
-          "controller.render.alienevo.omnitrix_prototype_0": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
+          "controller.render.alienevo.omnitrix_prototype_0": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_0_glow": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
+          "controller.render.alienevo.omnitrix_prototype_0_glow": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_base_primary": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col0 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_base_primary": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col0 ?? -1) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_base_secondary": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col1 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_base_secondary": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col1 ?? -1) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_base_tertiary": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col2 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_base_tertiary": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col2 ?? -1) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_buttons": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col3 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_buttons": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col3 ?? -1) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_core_side": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col4 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_core_side": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col4 ?? -1) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_core_top": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col5 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_core_top": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col5 ?? -1) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_dial_inner": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col6 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_dial_inner": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col6 ?? -1) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_dial_outer": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col7 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_dial_outer": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col7 ?? -1) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_tubes": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col8 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_tubes": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col8 ?? -1) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_1": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_sel ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_1": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_sel ?? -1) >= 0"
         }
       ],
       "scripts": {
