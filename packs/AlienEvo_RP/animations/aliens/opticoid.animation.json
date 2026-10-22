@@ -1441,7 +1441,7 @@
           }
         }
       },
-      "anim_time_update": "((v.alienevo_anim ?? 0) == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? q.property('alienevo:anim')) == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.opticoid.newbeamdown.t2": {
       "loop": "hold_on_last_frame",
@@ -1537,7 +1537,7 @@
           }
         }
       },
-      "anim_time_update": "((v.alienevo_anim ?? 0) == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? q.property('alienevo:anim')) == 2) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.opticoid.supabeam.t3": {
       "loop": "hold_on_last_frame",
@@ -2000,7 +2000,7 @@
           }
         }
       },
-      "anim_time_update": "((v.alienevo_anim ?? 0) == 3) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? q.property('alienevo:anim')) == 3) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.opticoid.supabeamdown.t4": {
       "animation_length": 0.9583,
@@ -2164,7 +2164,7 @@
           }
         }
       },
-      "anim_time_update": "((v.alienevo_anim ?? 0) == 4) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? q.property('alienevo:anim')) == 4) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.opticoid.10k_blink.t5": {
       "loop": true,
@@ -2198,7 +2198,7 @@
           }
         }
       },
-      "anim_time_update": "((v.alienevo_anim ?? 0) == 5) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? q.property('alienevo:anim')) == 5) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

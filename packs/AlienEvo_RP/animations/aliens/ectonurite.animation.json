@@ -4281,7 +4281,7 @@
           }
         }
       },
-      "anim_time_update": "((v.alienevo_anim ?? 0) == 1) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? q.property('alienevo:anim')) == 1) ? (q.anim_time + q.delta_time) : 0.0"
     },
     "animation.alienevo.ectonurite.ghostfreak.strike.t2": {
       "loop": "hold_on_last_frame",
@@ -5463,7 +5463,7 @@
           }
         }
       },
-      "anim_time_update": "((v.alienevo_anim ?? 0) == 2) ? (q.anim_time + q.delta_time) : 0.0"
+      "anim_time_update": "((v.alienevo_anim ?? q.property('alienevo:anim')) == 2) ? (q.anim_time + q.delta_time) : 0.0"
     }
   }
 }

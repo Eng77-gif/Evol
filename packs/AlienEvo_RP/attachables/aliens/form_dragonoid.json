@@ -23,7 +23,7 @@
         "animate": [
           "loop0",
           {
-            "move_fly": "((v.alienevo_fly ?? 0))"
+            "move_fly": "((v.alienevo_fly ?? q.property('alienevo:fly')))"
           }
         ]
       },

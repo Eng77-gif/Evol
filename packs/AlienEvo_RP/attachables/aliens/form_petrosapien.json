@@ -25,37 +25,37 @@
         ],
         "animate": [
           {
-            "rest": "(v.alienevo_anim ?? 0) == 0"
+            "rest": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 0"
           },
           {
-            "t1": "(v.alienevo_anim ?? 0) == 1"
+            "t1": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 1"
           },
           {
-            "t2": "(v.alienevo_anim ?? 0) == 2"
+            "t2": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 2"
           },
           {
-            "t3": "(v.alienevo_anim ?? 0) == 3"
+            "t3": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 3"
           },
           {
-            "t4": "(v.alienevo_anim ?? 0) == 4"
+            "t4": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 4"
           },
           {
-            "t5": "(v.alienevo_anim ?? 0) == 5"
+            "t5": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 5"
           },
           {
-            "t6": "(v.alienevo_anim ?? 0) == 6"
+            "t6": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 6"
           },
           {
-            "t7": "(v.alienevo_anim ?? 0) == 7"
+            "t7": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 7"
           },
           {
-            "t8": "(v.alienevo_anim ?? 0) == 8"
+            "t8": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 8"
           },
           {
-            "t9": "(v.alienevo_anim ?? 0) == 9"
+            "t9": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 9"
           },
           {
-            "t10": "(v.alienevo_anim ?? 0) == 10"
+            "t10": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 10"
           }
         ]
       },

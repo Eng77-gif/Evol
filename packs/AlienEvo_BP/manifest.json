@@ -2,12 +2,12 @@
   "format_version": 2,
   "header": {
     "name": "AlienEvo BP §a[26.50]",
-    "description": "Alien Evolution (Omnitrix) - Bedrock port of AlienEvo 1.1.3 by Habb and Stephen (build 2.293.1408)",
+    "description": "Alien Evolution (Omnitrix) - Bedrock port of AlienEvo 1.1.3 by Habb and Stephen (build 2.294.5)",
     "uuid": "5de5fb8a-2e85-4da2-9975-6217668bf705",
     "version": [
       2,
-      293,
-      1408
+      294,
+      5
     ],
     "min_engine_version": [
       1,
@@ -21,8 +21,8 @@
       "uuid": "a837c3a3-3fb0-4db4-b0e2-82b48a640a4a",
       "version": [
         2,
-        293,
-        1408
+        294,
+        5
       ]
     },
     {
@@ -32,8 +32,8 @@
       "entry": "scripts/main.js",
       "version": [
         2,
-        293,
-        1408
+        294,
+        5
       ]
     }
   ],
@@ -42,8 +42,8 @@
       "uuid": "bcb790ce-a11c-4326-9e8a-f161b4091434",
       "version": [
         2,
-        293,
-        1408
+        294,
+        5
       ]
     },
     {

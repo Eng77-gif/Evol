@@ -1527,6 +1527,43 @@ def build_player_entity(scale_expr):
     write_json(os.path.join(RP, "entity", "player.entity.json"), data)
 
 
+def owner_queries():
+    """Attachables (alien forms, watches) read the wearer's state with the
+    wearer's own queries, like the vanilla attachables do (bow, trident);
+    the public variables of the player stay as the first choice."""
+    omni = ", ".join(f"'alienevo:{i[0]}'" for i in OMNITRIX_ITEMS)
+    direct = {
+        "is_alien": "q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')",
+        "off": f"q.is_item_name_any('slot.weapon.offhand', 0, {omni})",
+        "main": f"q.is_item_name_any('slot.weapon.mainhand', 0, {omni})",
+        "swim": "q.is_swimming", "sprint": "q.is_sprinting", "ground": "q.is_on_ground",
+        "speed": "q.modified_move_speed",
+    }
+    pattern = re.compile(r"v\.alienevo_([a-z0-9_]+) \?\? (-?\d+)")
+
+    def repl(m):
+        name = m.group(1)
+        query = direct.get(name) or f"q.property('alienevo:{name}')"
+        return f"v.alienevo_{name} ?? {query}"
+    files = glob.glob(os.path.join(RP, "attachables", "**", "*.json"), recursive=True)
+    files += glob.glob(os.path.join(RP, "animations", "aliens", "*.json"))
+    files += glob.glob(os.path.join(RP, "animations", "omnitrix", "*.json"))
+    files += [os.path.join(RP, "render_controllers", n) for n in
+              ("alienevo.omnitrix.render_controllers.json", "alienevo.render_controllers.json")]
+    changed = 0
+    for path in files:
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8") as f:
+            text = f.read()
+        new = pattern.sub(repl, text)
+        if new != text:
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(new)
+            changed += 1
+    return changed
+
+
 def build_items_rp(jar, lang, item_textures):
     tex_dir = os.path.join(RP, "textures", "items")
     reset_dir(tex_dir)
@@ -2070,6 +2107,7 @@ def main():
     for line in structures.build(vfs):
         print("structure", line)
     write_lang(lang)
+    print("owner queries in", owner_queries(), "files")
     print("sanitize: renamed bones", sanitize.fix_geometries(RP), "| fixed animation files", sanitize.fix_animations(RP))
     package()
 

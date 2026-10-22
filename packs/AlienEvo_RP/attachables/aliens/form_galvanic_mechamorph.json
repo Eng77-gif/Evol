@@ -25,19 +25,19 @@
         ],
         "animate": [
           {
-            "rest": "(v.alienevo_anim ?? 0) == 0"
+            "rest": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 0"
           },
           {
-            "t1": "(v.alienevo_anim ?? 0) == 1"
+            "t1": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 1"
           },
           {
-            "t2": "(v.alienevo_anim ?? 0) == 2"
+            "t2": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 2"
           },
           {
-            "t3": "(v.alienevo_anim ?? 0) == 3"
+            "t3": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 3"
           },
           {
-            "t4": "(v.alienevo_anim ?? 0) == 4"
+            "t4": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 4"
           }
         ]
       },

@@ -73,13 +73,13 @@
       },
       "render_controllers": [
         {
-          "controller.render.alienevo.omnitrix_recal_base": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
+          "controller.render.alienevo.omnitrix_recal_base": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form'))"
         },
         {
-          "controller.render.alienevo.omnitrix_recal_glow": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
+          "controller.render.alienevo.omnitrix_recal_glow": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form'))"
         },
         {
-          "controller.render.alienevo.omnitrix_recal_hologram": "(v.alienevo_wv ?? 0) && (v.alienevo_sel ?? -1) >= 0 && !(v.alienevo_is_alien ?? 0)"
+          "controller.render.alienevo.omnitrix_recal_hologram": "(v.alienevo_wv ?? q.property('alienevo:wv')) && (v.alienevo_sel ?? q.property('alienevo:sel')) >= 0 && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form'))"
         }
       ],
       "scripts": {
@@ -88,19 +88,19 @@
         ],
         "animate": [
           {
-            "rest": "(v.alienevo_anim ?? 0) == 0"
+            "rest": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 0"
           },
           {
-            "t1": "(v.alienevo_anim ?? 0) == 1"
+            "t1": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 1"
           },
           {
-            "t2": "(v.alienevo_anim ?? 0) == 2"
+            "t2": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 2"
           },
           {
-            "t3": "(v.alienevo_anim ?? 0) == 3"
+            "t3": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 3"
           },
           {
-            "t4": "(v.alienevo_anim ?? 0) == 4"
+            "t4": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 4"
           }
         ]
       },

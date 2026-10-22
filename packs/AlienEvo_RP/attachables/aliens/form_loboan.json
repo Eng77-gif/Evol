@@ -26,25 +26,25 @@
         "animate": [
           "loop0",
           {
-            "t1": "(v.alienevo_anim ?? 0) == 1"
+            "t1": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 1"
           },
           {
-            "t2": "(v.alienevo_anim ?? 0) == 2"
+            "t2": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 2"
           },
           {
-            "t3": "(v.alienevo_anim ?? 0) == 3"
+            "t3": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 3"
           },
           {
-            "t4": "(v.alienevo_anim ?? 0) == 4"
+            "t4": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 4"
           },
           {
-            "t5": "(v.alienevo_anim ?? 0) == 5"
+            "t5": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 5"
           },
           {
-            "t6": "(v.alienevo_anim ?? 0) == 6"
+            "t6": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 6"
           },
           {
-            "move_sprint": "((v.alienevo_sprint ?? 0) && (v.alienevo_ground ?? 0))"
+            "move_sprint": "((v.alienevo_sprint ?? q.is_sprinting) && (v.alienevo_ground ?? q.is_on_ground))"
           }
         ]
       },

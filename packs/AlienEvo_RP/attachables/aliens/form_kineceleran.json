@@ -26,10 +26,10 @@
         "animate": [
           "loop0",
           {
-            "t1": "(v.alienevo_anim ?? 0) == 1"
+            "t1": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 1"
           },
           {
-            "t2": "(v.alienevo_anim ?? 0) == 2"
+            "t2": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 2"
           }
         ]
       },

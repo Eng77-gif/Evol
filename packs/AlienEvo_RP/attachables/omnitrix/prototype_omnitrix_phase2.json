@@ -215,40 +215,40 @@
       },
       "render_controllers": [
         {
-          "controller.render.alienevo.omnitrix_prototype_0": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
+          "controller.render.alienevo.omnitrix_prototype_0": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form'))"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_0_glow": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0)"
+          "controller.render.alienevo.omnitrix_prototype_0_glow": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form'))"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_base_primary": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col0 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_base_primary": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')) && (v.alienevo_col0 ?? q.property('alienevo:col0')) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_base_secondary": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col1 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_base_secondary": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')) && (v.alienevo_col1 ?? q.property('alienevo:col1')) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_base_tertiary": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col2 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_base_tertiary": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')) && (v.alienevo_col2 ?? q.property('alienevo:col2')) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_buttons": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col3 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_buttons": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')) && (v.alienevo_col3 ?? q.property('alienevo:col3')) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_core_side": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col4 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_core_side": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')) && (v.alienevo_col4 ?? q.property('alienevo:col4')) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_core_top": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col5 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_core_top": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')) && (v.alienevo_col5 ?? q.property('alienevo:col5')) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_dial_inner": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col6 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_dial_inner": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')) && (v.alienevo_col6 ?? q.property('alienevo:col6')) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_dial_outer": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col7 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_dial_outer": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')) && (v.alienevo_col7 ?? q.property('alienevo:col7')) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_tubes": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_col8 ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_tubes": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')) && (v.alienevo_col8 ?? q.property('alienevo:col8')) >= 0"
         },
         {
-          "controller.render.alienevo.omnitrix_prototype_1": "(!v.alienevo_fp || (v.alienevo_off ?? 0) || (v.alienevo_main ?? 0) || (v.alienevo_wv ?? 0)) && !(v.alienevo_is_alien ?? 0) && (v.alienevo_sel ?? -1) >= 0"
+          "controller.render.alienevo.omnitrix_prototype_1": "(!v.alienevo_fp || (v.alienevo_off ?? q.is_item_name_any('slot.weapon.offhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_main ?? q.is_item_name_any('slot.weapon.mainhand', 0, 'alienevo:prototype_omnitrix', 'alienevo:prototype_omnitrix_phase1', 'alienevo:prototype_omnitrix_phase2', 'alienevo:prototype_omnitrix_10k', 'alienevo:recal_omnitrix')) || (v.alienevo_wv ?? q.property('alienevo:wv'))) && !(v.alienevo_is_alien ?? q.equipped_item_any_tag('slot.armor.chest', 'alienevo:alien_form')) && (v.alienevo_sel ?? q.property('alienevo:sel')) >= 0"
         }
       ],
       "scripts": {
@@ -257,40 +257,40 @@
         ],
         "animate": [
           {
-            "t1": "(v.alienevo_anim ?? 0) == 1"
+            "t1": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 1"
           },
           {
-            "t2": "(v.alienevo_anim ?? 0) == 2"
+            "t2": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 2"
           },
           {
-            "t3": "(v.alienevo_anim ?? 0) == 3"
+            "t3": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 3"
           },
           {
-            "t4": "(v.alienevo_anim ?? 0) == 4"
+            "t4": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 4"
           },
           {
-            "t5": "(v.alienevo_anim ?? 0) == 5"
+            "t5": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 5"
           },
           {
-            "t6": "(v.alienevo_anim ?? 0) == 6"
+            "t6": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 6"
           },
           {
-            "t7": "(v.alienevo_anim ?? 0) == 7"
+            "t7": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 7"
           },
           {
-            "t8": "(v.alienevo_anim ?? 0) == 8"
+            "t8": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 8"
           },
           {
-            "t9": "(v.alienevo_anim ?? 0) == 9"
+            "t9": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 9"
           },
           {
-            "t10": "(v.alienevo_anim ?? 0) == 10"
+            "t10": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 10"
           },
           {
-            "t11": "(v.alienevo_anim ?? 0) == 11"
+            "t11": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 11"
           },
           {
-            "t12": "(v.alienevo_anim ?? 0) == 12"
+            "t12": "(v.alienevo_anim ?? q.property('alienevo:anim')) == 12"
           }
         ]
       },
