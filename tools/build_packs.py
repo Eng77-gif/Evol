@@ -1317,10 +1317,11 @@ OFFHAND_LIFT = "10.0 * (1.0 - context.player_offhand_arm_height)"
 # off-hand map pose (map_hold_off_hand, [195, 182.5, 2.5] at [-14.5, -8.25,
 # 11.5]): a -90 degree spin around the forearm turns the watch face to the
 # camera (no turn = face to the left edge, half a turn = to the middle, +90 =
-# away), then -80 degrees around the view axis lays the arm down pointing to
-# the middle of the screen, raised so it stays in view.
-WATCH_FP_ROT = [80.0, 75.0, -177.5]
-WATCH_FP_POS = [-15.5, -1.25, 11.5]
+# away), then +80 degrees around the view axis lays the arm down pointing to
+# the middle of the screen (-80 points it off the left edge), raised so it
+# stays in view.
+WATCH_FP_ROT = [80.0, 75.0, -17.5]
+WATCH_FP_POS = [-15.5, -4.25, 11.5]
 WATCH_FP_SCALE = 0.85
 
 
