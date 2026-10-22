@@ -1313,9 +1313,11 @@ def build_particles(vfs):
 # item it draws there (animation.player.first_person.swap_item); undone here.
 OFFHAND_LIFT = "10.0 * (1.0 - context.player_offhand_arm_height)"
 # First person: the vanilla off-hand map pose (map_hold_off_hand), the one
-# pose of the left arm the game is known to show on every device; the watch
-# face (outer side of the wrist) then looks at the camera.
-WATCH_FP_ROT = [195.0, 182.5, 2.5]
+# pose of the left arm the game is known to show on every device, turned half
+# a turn around the forearm so the watch face (outer side of the wrist) looks
+# at the camera instead of the left edge of the screen: [195, 182.5, 2.5]
+# followed by a 180 degree spin around the arm's own axis.
+WATCH_FP_ROT = [-15.0, 177.5, -177.5]
 WATCH_FP_POS = [-14.5, -8.25, 11.5]
 WATCH_FP_SCALE = 0.85
 
