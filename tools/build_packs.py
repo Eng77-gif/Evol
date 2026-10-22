@@ -1317,8 +1317,9 @@ OFFHAND_LIFT = "10.0 * (1.0 - context.player_offhand_arm_height)"
 # reference add-on.  The rotation convention of first person bones was fitted
 # to seven in-game screenshots of test poses (Z*Y*X, signs [+x, -y, -z]
 # against tools/render.py's), then the pose solved for: forearm to the right
-# of the screen, face 55 degrees up from facing the camera.
-WATCH_FP_ROT = [0.0, 55.0, -107.5]
+# of the screen and slightly down (it looks level in perspective), face up
+# toward the eyes.
+WATCH_FP_ROT = [0.0, 52.5, -82.5]
 WATCH_FP_POS = [-15.5, -0.75, 11.5]
 WATCH_FP_SCALE = 0.85
 
