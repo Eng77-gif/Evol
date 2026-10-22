@@ -126,9 +126,10 @@ system.beforeEvents.startup.subscribe((ev) => {
         return { status: CustomCommandStatus.Success, message: `Master Control: ${enabled}` };
     });
 
+    // Not "structure": that alias belongs to the vanilla /structure command.
     reg.registerEnum("alienevo:structure", STRUCTURES);
     reg.registerCommand({
-        name: "alienevo:structure",
+        name: "alienevo:placestructure",
         description: "Place an AlienEvo structure at your position (normally generated in new chunks).",
         permissionLevel: CommandPermissionLevel.GameDirectors,
         mandatoryParameters: [{ name: "alienevo:structure", type: CustomCommandParamType.Enum }],

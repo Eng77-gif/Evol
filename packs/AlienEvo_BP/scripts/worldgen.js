@@ -73,7 +73,7 @@ export function placeAt(dim, name, origin, tell) {
     system.runTimeout(attempt, 10);
 }
 
-/** Places a structure centred on an entity (the /alienevo:structure command). @param {Entity} src @param {string} name */
+/** Places a structure centred on an entity (the /placestructure command). @param {Entity} src @param {string} name */
 export function placeStructure(src, name) {
     const structure = world.structureManager.get(`alienevo:${name}`);
     const size = structure?.size ?? { x: 0, y: 0, z: 0 };

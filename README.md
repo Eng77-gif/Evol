@@ -45,7 +45,7 @@ model GeckoLib → attachable của Bedrock, Palladium/KubeJS → Script API (`@
 | Hẹn giờ | Mỗi lần biến hình kéo dài 5 phút (như bản gốc). Hết giờ thì Omnitrix sạc lại 2 phút 30 giây. **Master Control** bỏ giới hạn thời gian. |
 | Nâng cấp | Đặt **Omnitrix Workbench**, cầm Omnitrix rồi bấm vào bàn: Prototype → Phase 1 → Phase 2 → Evolved (10k). Mỗi cấp mở khóa thêm alien; cấp 10k mở Master Control. |
 | Tùy chỉnh màu đồng hồ | Cầm Omnitrix, bấm vào **Bàn chế tạo Omnitrix** → *Customize colours*. Đổi màu cho 9 bộ phận (đế chính, đế phụ, đế thứ ba, nút, lõi cạnh, lõi trên, vòng trong, vòng ngoài, ống) và màu phát sáng. Mỗi lần đổi tốn 1 Omni Crystal cùng màu; *Default* thì miễn phí. Màu được lưu theo người chơi và người chơi khác cũng thấy. |
-| Công trình | Khi đi khám phá, các công trình của mod tự xuất hiện gần bạn (cả ở thế giới cũ, script đặt chúng khi bạn tới gần vị trí): tàu vũ trụ rơi (có Lõi Omnitrix), Galvan Pod, mỏ Galvan, tu viện Galvan, tháp, giếng, hầm nổ và pháo đài ngầm của Machine, cùng công trình của các addon (sọ Loboan, xác tàu Talpaedan, tàu Xylene, tháp Galvan đổ nát, phòng thí nghiệm bỏ hoang, nhà tù ngoài hành tinh). Có thể đặt thử bằng `/alienevo:structure <tên>`. |
+| Công trình | Khi đi khám phá, các công trình của mod tự xuất hiện gần bạn (cả ở thế giới cũ, script đặt chúng khi bạn tới gần vị trí): tàu vũ trụ rơi (có Lõi Omnitrix), Galvan Pod, mỏ Galvan, tu viện Galvan, tháp, giếng, hầm nổ và pháo đài ngầm của Machine, cùng công trình của các addon (sọ Loboan, xác tàu Talpaedan, tàu Xylene, tháp Galvan đổ nát, phòng thí nghiệm bỏ hoang, nhà tù ngoài hành tinh). Có thể đặt thử bằng `/placestructure <tên>`. |
 | Recalibrated Omnitrix | Ở **Bàn chế tạo Omnitrix**, cầm Omnitrix 10k → *Recalibrate* (4 Galvan Circuit) để đổi sang **Omnitrix Recalibrated** (model, âm thanh gốc của mod). Khi xoay chọn alien, **hologram 3D của alien đứng trên lõi đồng hồ** (27 hologram gốc của mod; alien không có hologram gốc thì chỉ có hologram nổi phía trước). Có thể đổi lại về bản 10k miễn phí. |
 | Hiệu ứng | Khi xoay: **dải biểu tượng alien** (trước/sau) hiện giữa màn hình với tên alien bên dưới. Khi biến hình/trở lại người: **chớp sáng xanh** toàn màn hình (đỏ khi hết giờ). |
 | Giơ đồng hồ (góc nhìn thứ nhất) | Khi mở vòng xoay hoặc nhập mã, **tay trái giơ lên trước mặt** cho thấy đồng hồ như video, mặt đồng hồ xoay theo từng nấc. Mặt đồng hồ hiện **hình bóng (silhouette)** của alien đang chọn / đang biến (ảnh gốc của mod). |
@@ -104,7 +104,7 @@ Xem chi tiết trong **Alien Codex** (nằm trong menu Omnitrix).
 /alienevo:mastercontrol <true|false>       bật/tắt Master Control
 /alienevo:recharge [người chơi]            sạc Omnitrix ngay
 /alienevo:unlockskills <true|false>        mở toàn bộ kỹ năng của mọi alien
-/alienevo:structure <tên>                  đặt một công trình tại chỗ đứng
+/placestructure <tên>                     đặt một công trình tại chỗ đứng
 /alienevo:revealcode [người chơi]          hiện mã Master Control / Self Destruct
 ```
 
