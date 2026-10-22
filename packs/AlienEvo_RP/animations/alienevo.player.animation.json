@@ -15,12 +15,12 @@
         "leftarm": {
           "position": [
             -15.5,
-            "-4.25 + 10.0 * (1.0 - context.player_offhand_arm_height)",
+            "-2.25 + 10.0 * (1.0 - context.player_offhand_arm_height)",
             11.5
           ],
           "rotation": [
-            80.0,
-            75.0,
+            -80.0,
+            -105.0,
             -17.5
           ],
           "scale": [
@@ -73,12 +73,12 @@
         "leftarm": {
           "position": [
             -13.5,
-            "-2.25 + math.sin(q.life_time * 60) * 0.15 + 10.0 * (1.0 - context.player_offhand_arm_height)",
+            "-0.25 + math.sin(q.life_time * 60) * 0.15 + 10.0 * (1.0 - context.player_offhand_arm_height)",
             10.5
           ],
           "rotation": [
-            80.0,
-            75.0,
+            -80.0,
+            -105.0,
             -17.5
           ],
           "scale": [
