@@ -1,0 +1,251 @@
+{
+ "format_version": "1.8.0",
+ "animations": {
+  "animation.dld.wind_wolf.walk": {
+   "loop": true,
+   "bones": {
+    "leg_fl": {
+     "rotation": [
+      "math.cos(query.modified_distance_moved * 38.17) * 50 * query.modified_move_speed",
+      "0",
+      "0"
+     ]
+    },
+    "leg_br": {
+     "rotation": [
+      "math.cos(query.modified_distance_moved * 38.17) * 50 * query.modified_move_speed",
+      "0",
+      "0"
+     ]
+    },
+    "leg_fr": {
+     "rotation": [
+      "-math.cos(query.modified_distance_moved * 38.17) * 50 * query.modified_move_speed",
+      "0",
+      "0"
+     ]
+    },
+    "leg_bl": {
+     "rotation": [
+      "-math.cos(query.modified_distance_moved * 38.17) * 50 * query.modified_move_speed",
+      "0",
+      "0"
+     ]
+    },
+    "tail": {
+     "rotation": [
+      "0",
+      "math.sin(query.anim_time * 300) * 15",
+      "0"
+     ]
+    }
+   }
+  },
+  "animation.dld.wind_wolf.attack": {
+   "animation_length": 0.4,
+   "bones": {
+    "head": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.15": [
+       20,
+       0,
+       0
+      ],
+      "0.40": [
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "animation.dld.wind_wolf.howl": {
+   "animation_length": 1.4,
+   "bones": {
+    "head": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.30": [
+       -60,
+       0,
+       0
+      ],
+      "1.10": [
+       -60,
+       0,
+       0
+      ],
+      "1.40": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "body": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.30": [
+       -15,
+       0,
+       0
+      ],
+      "1.10": [
+       -15,
+       0,
+       0
+      ],
+      "1.40": [
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "animation.dld.wind_wolf.blade": {
+   "animation_length": 0.5,
+   "bones": {
+    "head": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.15": [
+       -20,
+       -30,
+       0
+      ],
+      "0.30": [
+       15,
+       30,
+       0
+      ],
+      "0.50": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_fl": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.20": [
+       -70,
+       0,
+       0
+      ],
+      "0.50": [
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "animation.dld.wind_wolf.dash": {
+   "animation_length": 0.5,
+   "bones": {
+    "leg_fl": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.25": [
+       -60,
+       0,
+       0
+      ],
+      "0.50": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_fr": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.25": [
+       -60,
+       0,
+       0
+      ],
+      "0.50": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_bl": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.25": [
+       60,
+       0,
+       0
+      ],
+      "0.50": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_br": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.25": [
+       60,
+       0,
+       0
+      ],
+      "0.50": [
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   }
+  }
+ }
+}

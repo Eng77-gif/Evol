@@ -1,0 +1,38 @@
+{
+ "format_version": "1.10.0",
+ "minecraft:client_entity": {
+  "description": {
+   "identifier": "dld:wind_wolf",
+   "materials": {
+    "default": "entity_alphatest"
+   },
+   "textures": {
+    "default": "textures/entity/dld/wind_wolf"
+   },
+   "geometry": {
+    "default": "geometry.dld.wind_wolf"
+   },
+   "animations": {
+    "look": "animation.dld.common.look_at_target",
+    "walk": "animation.dld.wind_wolf.walk",
+    "attack": "animation.dld.wind_wolf.attack",
+    "howl": "animation.dld.wind_wolf.howl",
+    "blade": "animation.dld.wind_wolf.blade",
+    "dash": "animation.dld.wind_wolf.dash"
+   },
+   "scripts": {
+    "animate": [
+     "look",
+     "walk"
+    ]
+   },
+   "render_controllers": [
+    "controller.render.default"
+   ],
+   "spawn_egg": {
+    "base_color": "#8cbed7",
+    "overlay_color": "#285096"
+   }
+  }
+ }
+}

@@ -23,6 +23,18 @@ Danh hiệu: Hồn Sĩ → Hồn Sư → Đại Hồn Sư → Hồn Tôn → H�
 
 **Hồn thú**: 30% zombie, skeleton, nhện, sói, gấu, enderman, ravager, hoglin, blaze… xuất hiện thành hồn thú với niên hạn ngẫu nhiên (thuộc tính tăng theo niên hạn; hồn thú ≥ 1.000 năm có vòng hào quang màu). Nhìn vào quái khi cầm Võ Hồn Lệnh để xem niên hạn.
 
+## Hồn thú có model 3D riêng
+Bốn loài hồn thú có model, texture, animation (đi, đánh, ra chiêu) và AI riêng — thông minh hơn quái thường: ra chiêu theo khoảng cách và lượng máu, báo trước bằng hạt cảnh báo (né được), đoán hướng chạy của bạn, né tên, rút lui hồi phục khi yếu.
+
+| Hồn thú | Niên hạn | Nơi xuất hiện | Hồn kỹ / chiến thuật |
+|---|---|---|---|
+| **Nhân Diện Ma Chu** | 10 – 1.000 năm | Rừng, rừng rậm, đầm lầy (ban đêm), leo tường | Mạng nhện trói từ xa → vồ tới khi bạn bị trói; phun độc vào chỗ bạn *sắp* chạy tới; ẩn thân khi yếu |
+| **Phong Lang** | 10 – 1.000 năm | Rừng taiga, đồng bằng, rừng, núi — theo bầy 2–4 con | Hú gọi bầy & tăng sức cả bầy, gọi thêm sói khi lẻ loi; đánh vòng sườn; phóng phong nhận; lao tới |
+| **Ám Kim Khủng Trảo Hùng** | 100 – 10.000 năm | Rừng, taiga, núi | Liên hoàn 3 trảo; gầm làm suy yếu; tụ lực xung phong theo đường thẳng (tránh sang bên để né); Kim Cương Bất Hoại khi dưới 40% máu |
+| **Thái Thản Cự Viên** (boss) | 10.000 – 100.000 năm | Rừng rậm (hiếm) | Địa Chấn (nhảy lên để né); ném đá đoán trước hướng chạy; đấm liên hoàn; nhảy đập từ xa; cuồng bạo dưới 50% máu |
+
+Có trứng sinh sản cho cả 4 loài trong túi đồ sáng tạo. Hạ chúng sẽ rơi hồn hoàn đúng niên hạn (và có thể rơi hồn cốt).
+
 **Giới hạn hồn hoàn** (như nguyên tác): hoàn 1 ≤ 100 năm, hoàn 2–3 ≤ 1.000 năm, hoàn 4–6 ≤ 10.000 năm, hoàn 7–9 ≤ 100.000 năm. Vượt 1 bậc có 30% thành công (Tiên Thiên Mãn Hồn Lực: 50%), thất bại sẽ bị trọng thương.
 
 **Lệnh**: `/dld:hoso` (mở hồ sơ), `/dld:pvp` (OP – bật hồn kỹ đánh người chơi), `/dld:reset` (OP), `/dld:setlevel <cấp>` (OP).
@@ -30,4 +42,5 @@ Danh hiệu: Hồn Sĩ → Hồn Sư → Đại Hồn Sư → Hồn Tôn → H�
 ## Phát triển
 - `addon/DLDL_BP` — behavior pack (item, công thức, script `scripts/main.js`, dữ liệu `scripts/data.js`).
 - `addon/DLDL_RP` — resource pack (texture, hạt hồn hoàn, tên tiếng Việt).
-- `tools/gen_assets.py` sinh item JSON/texture/hạt; `tools/build.sh` đóng gói `.mcaddon`.
+- `addon/DLDL_BP/scripts/beasts.js` — AI và hồn kỹ của hồn thú model riêng.
+- `tools/gen_assets.py` sinh item JSON/texture/hạt; `tools/gen_mobs.py` sinh model, texture, animation, entity, spawn rule của hồn thú; `tools/build.sh` đóng gói `.mcaddon`.

@@ -1,0 +1,38 @@
+{
+ "format_version": "1.10.0",
+ "minecraft:client_entity": {
+  "description": {
+   "identifier": "dld:demon_spider",
+   "materials": {
+    "default": "entity_alphatest"
+   },
+   "textures": {
+    "default": "textures/entity/dld/demon_spider"
+   },
+   "geometry": {
+    "default": "geometry.dld.demon_spider"
+   },
+   "animations": {
+    "look": "animation.dld.common.look_at_target",
+    "walk": "animation.dld.demon_spider.walk",
+    "attack": "animation.dld.demon_spider.attack",
+    "web": "animation.dld.demon_spider.web",
+    "spit": "animation.dld.demon_spider.spit",
+    "leap": "animation.dld.demon_spider.leap"
+   },
+   "scripts": {
+    "animate": [
+     "look",
+     "walk"
+    ]
+   },
+   "render_controllers": [
+    "controller.render.default"
+   ],
+   "spawn_egg": {
+    "base_color": "#2d1937",
+    "overlay_color": "#c8142a"
+   }
+  }
+ }
+}

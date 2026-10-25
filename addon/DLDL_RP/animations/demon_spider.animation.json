@@ -1,0 +1,369 @@
+{
+ "format_version": "1.8.0",
+ "animations": {
+  "animation.dld.demon_spider.walk": {
+   "loop": true,
+   "bones": {
+    "leg_r0": {
+     "rotation": [
+      "0",
+      "math.cos(query.modified_distance_moved * 60 + 0) * 22 * query.modified_move_speed",
+      "math.max(0, math.sin(query.modified_distance_moved * 60 + 0)) * -25 * query.modified_move_speed"
+     ]
+    },
+    "leg_l0": {
+     "rotation": [
+      "0",
+      "math.cos(query.modified_distance_moved * 60 + 180) * 22 * query.modified_move_speed",
+      "math.max(0, math.sin(query.modified_distance_moved * 60 + 180)) * 25 * query.modified_move_speed"
+     ]
+    },
+    "leg_r1": {
+     "rotation": [
+      "0",
+      "math.cos(query.modified_distance_moved * 60 + 90) * 22 * query.modified_move_speed",
+      "math.max(0, math.sin(query.modified_distance_moved * 60 + 90)) * -25 * query.modified_move_speed"
+     ]
+    },
+    "leg_l1": {
+     "rotation": [
+      "0",
+      "math.cos(query.modified_distance_moved * 60 + 270) * 22 * query.modified_move_speed",
+      "math.max(0, math.sin(query.modified_distance_moved * 60 + 270)) * 25 * query.modified_move_speed"
+     ]
+    },
+    "leg_r2": {
+     "rotation": [
+      "0",
+      "math.cos(query.modified_distance_moved * 60 + 180) * 22 * query.modified_move_speed",
+      "math.max(0, math.sin(query.modified_distance_moved * 60 + 180)) * -25 * query.modified_move_speed"
+     ]
+    },
+    "leg_l2": {
+     "rotation": [
+      "0",
+      "math.cos(query.modified_distance_moved * 60 + 0) * 22 * query.modified_move_speed",
+      "math.max(0, math.sin(query.modified_distance_moved * 60 + 0)) * 25 * query.modified_move_speed"
+     ]
+    },
+    "leg_r3": {
+     "rotation": [
+      "0",
+      "math.cos(query.modified_distance_moved * 60 + 270) * 22 * query.modified_move_speed",
+      "math.max(0, math.sin(query.modified_distance_moved * 60 + 270)) * -25 * query.modified_move_speed"
+     ]
+    },
+    "leg_l3": {
+     "rotation": [
+      "0",
+      "math.cos(query.modified_distance_moved * 60 + 90) * 22 * query.modified_move_speed",
+      "math.max(0, math.sin(query.modified_distance_moved * 60 + 90)) * 25 * query.modified_move_speed"
+     ]
+    },
+    "abdomen": {
+     "rotation": [
+      "math.sin(query.anim_time * 90) * 3",
+      "0",
+      "0"
+     ]
+    }
+   }
+  },
+  "animation.dld.demon_spider.attack": {
+   "animation_length": 0.4,
+   "bones": {
+    "head": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.15": [
+       25,
+       0,
+       0
+      ],
+      "0.40": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_r0": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.15": [
+       0,
+       0,
+       40
+      ],
+      "0.40": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_l0": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.15": [
+       0,
+       0,
+       -40
+      ],
+      "0.40": [
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "animation.dld.demon_spider.web": {
+   "animation_length": 0.8,
+   "bones": {
+    "abdomen": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.30": [
+       -55,
+       0,
+       0
+      ],
+      "0.50": [
+       -50,
+       0,
+       0
+      ],
+      "0.80": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "body": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.30": [
+       15,
+       0,
+       0
+      ],
+      "0.80": [
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "animation.dld.demon_spider.spit": {
+   "animation_length": 0.7,
+   "bones": {
+    "head": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.30": [
+       -30,
+       0,
+       0
+      ],
+      "0.45": [
+       25,
+       0,
+       0
+      ],
+      "0.70": [
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "animation.dld.demon_spider.leap": {
+   "animation_length": 0.6,
+   "bones": {
+    "leg_r0": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.25": [
+       0,
+       0,
+       -30
+      ],
+      "0.60": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_r1": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.25": [
+       0,
+       0,
+       -30
+      ],
+      "0.60": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_r2": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.25": [
+       0,
+       0,
+       -30
+      ],
+      "0.60": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_r3": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.25": [
+       0,
+       0,
+       -30
+      ],
+      "0.60": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_l0": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.25": [
+       0,
+       0,
+       30
+      ],
+      "0.60": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_l1": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.25": [
+       0,
+       0,
+       30
+      ],
+      "0.60": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_l2": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.25": [
+       0,
+       0,
+       30
+      ],
+      "0.60": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "leg_l3": {
+     "rotation": {
+      "0.00": [
+       0,
+       0,
+       0
+      ],
+      "0.25": [
+       0,
+       0,
+       30
+      ],
+      "0.60": [
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   }
+  }
+ }
+}

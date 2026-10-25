@@ -1,0 +1,38 @@
+{
+ "format_version": "1.10.0",
+ "minecraft:client_entity": {
+  "description": {
+   "identifier": "dld:gold_claw_bear",
+   "materials": {
+    "default": "entity_alphatest"
+   },
+   "textures": {
+    "default": "textures/entity/dld/gold_claw_bear"
+   },
+   "geometry": {
+    "default": "geometry.dld.gold_claw_bear"
+   },
+   "animations": {
+    "look": "animation.dld.common.look_at_target",
+    "walk": "animation.dld.gold_claw_bear.walk",
+    "attack": "animation.dld.gold_claw_bear.attack",
+    "claw": "animation.dld.gold_claw_bear.claw",
+    "roar": "animation.dld.gold_claw_bear.roar",
+    "charge": "animation.dld.gold_claw_bear.charge"
+   },
+   "scripts": {
+    "animate": [
+     "look",
+     "walk"
+    ]
+   },
+   "render_controllers": [
+    "controller.render.default"
+   ],
+   "spawn_egg": {
+    "base_color": "#37281e",
+    "overlay_color": "#f0be32"
+   }
+  }
+ }
+}

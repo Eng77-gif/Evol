@@ -3,6 +3,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 python3 tools/gen_assets.py
+python3 tools/gen_mobs.py
 rm -rf dist && mkdir -p dist/tmp
 (cd addon/DLDL_BP && zip -qr ../../dist/tmp/DLDL_BP.mcpack .)
 (cd addon/DLDL_RP && zip -qr ../../dist/tmp/DLDL_RP.mcpack .)

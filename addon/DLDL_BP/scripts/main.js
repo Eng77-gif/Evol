@@ -22,6 +22,7 @@ import {
   expToNext,
   weightedPick,
 } from "./data.js";
+import { beastName } from "./beasts.js";
 
 const P = "dld:";
 const TARGET_EXCLUDE_TYPES = ["minecraft:item", "minecraft:xp_orb", "minecraft:arrow", "minecraft:armor_stand", "minecraft:lightning_bolt"];
@@ -697,7 +698,7 @@ system.runInterval(() => {
       const hit = player.getEntitiesFromViewDirection({ maxDistance: 24 })[0]?.entity;
       if (hit?.hasTag("dld_beast")) {
         const t = RING_TIERS[hit.getDynamicProperty(P + "tier") ?? 0];
-        bar += `\n${t.color}Hồn Thú ${t.age} §7(${BEAST_TYPES[hit.typeId] ?? hit.typeId})`;
+        bar += `\n${t.color}Hồn Thú ${t.age} §7(${beastName(hit.typeId, BEAST_TYPES[hit.typeId] ?? hit.typeId)})`;
       }
     } catch {}
     player.onScreenDisplay.setActionBar(bar);

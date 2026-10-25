@@ -1,0 +1,39 @@
+{
+ "format_version": "1.10.0",
+ "minecraft:client_entity": {
+  "description": {
+   "identifier": "dld:titan_ape",
+   "materials": {
+    "default": "entity_alphatest"
+   },
+   "textures": {
+    "default": "textures/entity/dld/titan_ape"
+   },
+   "geometry": {
+    "default": "geometry.dld.titan_ape"
+   },
+   "animations": {
+    "look": "animation.dld.common.look_at_target",
+    "walk": "animation.dld.titan_ape.walk",
+    "attack": "animation.dld.titan_ape.attack",
+    "slam": "animation.dld.titan_ape.slam",
+    "throw": "animation.dld.titan_ape.throw",
+    "roar": "animation.dld.titan_ape.roar",
+    "punch": "animation.dld.titan_ape.punch"
+   },
+   "scripts": {
+    "animate": [
+     "look",
+     "walk"
+    ]
+   },
+   "render_controllers": [
+    "controller.render.default"
+   ],
+   "spawn_egg": {
+    "base_color": "#4b3223",
+    "overlay_color": "#ff2a1e"
+   }
+  }
+ }
+}
