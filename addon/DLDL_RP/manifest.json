@@ -1,0 +1,16 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Đấu La Đại Lục §7[RP]",
+    "description": "Texture, hiệu ứng hồn hoàn và ngôn ngữ cho addon Đấu La Đại Lục",
+    "uuid": "7512617b-bb2b-4bec-8c1e-141f92c18169",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 120]
+  },
+  "modules": [
+    { "type": "resources", "uuid": "0086e23d-b91e-4c31-98e0-848482817794", "version": [1, 0, 0] }
+  ],
+  "dependencies": [
+    { "uuid": "7613fca0-bde3-43a1-81f5-97506f7c1b6b", "version": [1, 0, 0] }
+  ]
+}

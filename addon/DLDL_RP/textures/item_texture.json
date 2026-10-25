@@ -1,0 +1,33 @@
+{
+  "resource_pack_name": "dldl",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "dld_awakening_crystal": {
+      "textures": "textures/items/awakening_crystal"
+    },
+    "dld_spirit_token": {
+      "textures": "textures/items/spirit_token"
+    },
+    "dld_soul_bone": {
+      "textures": "textures/items/soul_bone"
+    },
+    "dld_immortal_herb": {
+      "textures": "textures/items/immortal_herb"
+    },
+    "dld_soul_ring_0": {
+      "textures": "textures/items/soul_ring_0"
+    },
+    "dld_soul_ring_1": {
+      "textures": "textures/items/soul_ring_1"
+    },
+    "dld_soul_ring_2": {
+      "textures": "textures/items/soul_ring_2"
+    },
+    "dld_soul_ring_3": {
+      "textures": "textures/items/soul_ring_3"
+    },
+    "dld_soul_ring_4": {
+      "textures": "textures/items/soul_ring_4"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dld:soul_bone",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": "dld_soul_bone",
+      "minecraft:max_stack_size": 16,
+      "minecraft:glint": true,
+      "minecraft:rarity": {
+        "value": "epic"
+      }
+    }
+  }
+}

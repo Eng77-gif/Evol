@@ -1,0 +1,19 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Đấu La Đại Lục §7[BP]",
+    "description": "Võ hồn, hồn hoàn, hồn thú, hồn kỹ và hồn cốt — thế giới Đấu La Đại Lục cho Minecraft Bedrock 26.50",
+    "uuid": "7613fca0-bde3-43a1-81f5-97506f7c1b6b",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 120]
+  },
+  "modules": [
+    { "type": "data", "uuid": "185ec54f-408d-44ee-a522-107f48a78703", "version": [1, 0, 0] },
+    { "type": "script", "language": "javascript", "entry": "scripts/main.js", "uuid": "562705e8-f17e-4812-8208-9eef438d62c9", "version": [1, 0, 0] }
+  ],
+  "dependencies": [
+    { "module_name": "@minecraft/server", "version": "2.4.0" },
+    { "module_name": "@minecraft/server-ui", "version": "2.0.0" },
+    { "uuid": "7512617b-bb2b-4bec-8c1e-141f92c18169", "version": [1, 0, 0] }
+  ]
+}
